@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 305: Line is indented, but the preceding style statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    padding 0
-    ^
+File "game/screens.rpy", line 455: hbox expects a non-empty block.
+    hbox:
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May  2 01:09:16 2025
+Fri May  2 13:55:04 2025

@@ -35,3 +35,14 @@ label Tutorial:
     # This ends the game.
 
     return
+label mainload:
+    call screen load
+    return  # Ends the new game session if user cancels load
+
+label mainpreferences:
+    call screen preferences
+    return  # Ends the new game session if user cancels load
+label mainabout:
+    call screen about
+    return  # Ends the new game session if user cancels load
+#lets goooooooo finally found a way to hide main menu buttons

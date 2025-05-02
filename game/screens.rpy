@@ -17,6 +17,15 @@ style main_menu_button:
 style main_menu_button_text:
     xalign 0.5
     yalign 0.5
+style game_menu_button:
+    background Frame("menu_button.png", 0, 0)
+    xminimum 200
+    yminimum 50
+    right_padding 15
+    bottom_padding 15
+style game_menu_button_text:
+    xalign 0.5
+    yalign 0.5
 style default:
     properties gui.text_properties()
     language gui.language
@@ -293,25 +302,21 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen navigation():
-
     vbox:
         style_prefix "navigation"
 
         xalign 0.5
-        yalign 0.90
+        yalign 0.95
+        spacing -10
 
         if main_menu:
             textbutton _("Tutorial") action Start("Tutorial") style "main_menu_button"
+            textbutton _("Load") action Start("mainload") style "main_menu_button"
             textbutton _("Normal Start") action Start("Normal Start") style "main_menu_button"
             textbutton _("Custom Start") action Start("Custom Start") style "main_menu_button"
-            textbutton _("Controls") action Start("Controls") style "main_menu_button"
-            textbutton _("Load") action ShowMenu("load") style "main_menu_button"
-            textbutton _("Preferences") action ShowMenu("preferences") style "main_menu_button"
-            textbutton _("Development & Credits") action ShowMenu("about") style "main_menu_button"
-        #idk why is not center, need 15 right and bottom padding to center
-        else:
-            textbutton _("Save") action ShowMenu("save")
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Controls") action Start("mainControls") style "main_menu_button"
+            textbutton _("Preferences") action Start("mainpreferences") style "main_menu_button"
+            textbutton _("Development & Credits") action Start("mainabout") style "main_menu_button"
 
 
 style navigation_button is gui_button
@@ -456,10 +461,17 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("Return"):
-        style "return_button"
+    vbox:
+        yalign 0.5
+        xalign 0.04
+        spacing 20
+        textbutton _("Return") style "game_menu_button":
+            action Return()
+        textbutton _("Load") style "game_menu_button":
+            action ShowMenu("load")
+        textbutton _("Main menu") style "game_menu_button":
+            action MainMenu(confirm=True)
 
-        action Return()
 
     label title
 
@@ -537,6 +549,9 @@ screen about():
 
         style_prefix "about"
 
+        key "mouseup_3" action Return()
+        key "mousedown_3" action Return()
+
         vbox:
 
             label "[config.name!t]"
@@ -576,6 +591,8 @@ screen save():
 screen load():
 
     tag menu
+    key "mouseup_3" action Return()
+    key "mousedown_3" action Return()
 
     use file_slots(_("Load"))
 
@@ -715,6 +732,9 @@ screen preferences():
     tag menu
 
     use game_menu(_("Preferences"), scroll="viewport"):
+
+        key "mouseup_3" action Return()
+        key "mousedown_3" action Return()
 
         vbox:
 

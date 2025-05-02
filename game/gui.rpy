@@ -198,7 +198,7 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## navigation button.
 
 # define gui.navigation_button_width = 250
-
+#
 
 ## Choice Buttons ##############################################################
 ##
@@ -261,6 +261,7 @@ define gui.choice_spacing = 22
 
 ## Buttons in the navigation section of the main and game menus.
 define gui.navigation_spacing = 4
+#try and error
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 10
