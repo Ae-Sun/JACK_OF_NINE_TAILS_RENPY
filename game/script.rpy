@@ -7,10 +7,31 @@ define e = Character("Eileen")
 
 
 # The game starts here.
+
 label splashscreen:
+    # Show the warning message
     show warning
-    pause 5
-    hide warning
+
+    # Display two options (Accept or Quit) after the warning
+    menu:
+        
+        "Yes, I am adult and I want to continue":
+            # Logic for when the player chooses "Accept"
+            $ result = "Accepted"
+            jump after_splash
+
+        "Exit immediately":
+            # Logic for when the player chooses "Quit"
+            $ result = "Quit"
+            $ renpy.quit()
+
+label after_splash:
+    # Handle the outcome after the player selects an option
+    if result == "Accepted":
+        "You accepted the warning and continue the game."
+    elif result == "Quit":
+        "You chose to quit the game."
+
     return
 label Tutorial:
 

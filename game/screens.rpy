@@ -23,6 +23,7 @@ style game_menu_button:
     yminimum 50
     right_padding 15
     bottom_padding 15
+style smallertextforC
 style game_menu_button_text:
     xalign 0.5
     yalign 0.5
@@ -235,7 +236,7 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 270
+    ypos 650
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -351,6 +352,7 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
+    
 
     if gui.show_name:
 
@@ -545,7 +547,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_("C & D"), scroll="viewport"):
 
         style_prefix "about"
 
@@ -559,9 +561,10 @@ screen about():
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
-                text "[gui.about!t]\n"
+                text "[gui.about!t]\n" 
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]\n")
+            text _("Credits")
 
 
 style about_label is gui_label

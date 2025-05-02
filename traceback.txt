@@ -1,28 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 282, in script
+  File "renpy/common/00start.rpy", line 244, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/script.rpy", line 18, in script
     python:
-ScriptError: could not find label 'mainControls'.
+  File "game/script.rpy", line 22, in <module>
+    ui.close()
+Exception: ui.close() called when no layer or widget is open.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "renpy/common/00start.rpy", line 282, in script
+  File "renpy/common/00start.rpy", line 244, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/script.rpy", line 18, in script
     python:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'mainControls'.
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 22, in <module>
+    ui.close()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 390, in close
+    raise Exception("ui.close() called when no layer or widget is open.")
+Exception: ui.close() called when no layer or widget is open.
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
-JONT 0.0.2
-Fri May  2 15:07:39 2025
+JONT Port by Rec3ks ver. 0.0.4
+Fri May  2 16:31:38 2025

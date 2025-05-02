@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.0.2"
+define config.version = "Port by Rec3ks ver. 0.0.4"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -49,6 +49,7 @@ define build.name = "JONT"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
+define config.main_menu_music = "sounds/mainscreen.wav"
 
 
 ## To allow the user to play a test sound on the sound or voice channel,
