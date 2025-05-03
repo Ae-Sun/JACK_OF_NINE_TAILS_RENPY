@@ -1,64 +1,43 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 123, in script
-    call screen imagebutton_grid
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/script.rpy", line 65, in execute
-    screen imagebutton_grid():
-  File "game/script.rpy", line 65, in execute
-    screen imagebutton_grid():
-  File "game/script.rpy", line 67, in execute
-    grid 4 3:
-Exception: Grid overfull.
+  File "game/script.rpy", line 151, in script
+    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press [bold] S [/bold] or A when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing SPACE is usually \n equivalent to clicking the right arrow. Press ESC to close some menus and exit some \n locations. At home, you can press D to open the master screen\n        Have a nice game!{/color}" at custom_position
+NameError: name 'bold' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 123, in script
-    call screen imagebutton_grid
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/script.rpy", line 65, in execute
-    screen imagebutton_grid():
-  File "game/script.rpy", line 65, in execute
-    screen imagebutton_grid():
-  File "game/script.rpy", line 67, in execute
-    grid 4 3:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\layout.py", line 556, in add
-    raise Exception("Grid overfull.")
-Exception: Grid overfull.
+  File "game/script.rpy", line 151, in script
+    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press [bold] S [/bold] or A when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing SPACE is usually \n equivalent to clicking the right arrow. Press ESC to close some menus and exit some \n locations. At home, you can press D to open the master screen\n        Have a nice game!{/color}" at custom_position
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1087, in show_imspec
+    renpy.config.show(name,
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\extras.py", line 268, in _duplicate
+    return renpy.text.text.Text(string, style=self.style, **self.properties)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2079, in __init__
+    self.set_text(text, scope, substitute) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'bold' is not defined
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
-JONT Port by Rec3ks ver. 0.0.6
-Sat May  3 13:06:33 2025
+JONT Port by Rec3ks ver. 0.0.7
+Sat May  3 16:01:51 2025

@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+default mc ="Jack"
 
 
 # The game starts here.
@@ -61,10 +61,12 @@ label Tutorial:
     # This ends the game.
 
     return
-######### CHARACTER SELECTION COMPONENT REUTILIZABLE
+##### Normal Start menu page code -rec3ks
+####################################################
+######### CHARACTER SELECTION
 ################################################################################################################
 # hover imagen version, nice -rec3ks 
-screen imagebutton_grid():
+screen character_selection():
     text "SELECT YOUR CHARACTER"color "#000000" pos (520, 60) font "fonts/Segoe Print.ttf" size 17 bold True
     grid 4 3:
         xalign 0.5
@@ -73,64 +75,71 @@ screen imagebutton_grid():
         imagebutton:
             idle "master/master_noble.png"
             hover "master/master_noble_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_noble"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_torturer.png"
             hover "master/master_torturer_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_torturer"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_fighter.png"
             hover "master/master_fighter_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_fighter"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_pimp.png"
             hover "master/master_pimp_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_pimp"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_teacher.png"
             hover "master/master_teacher_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_teacher"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_impressario.png"
             hover "master/master_impressario_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_impressario"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_doctor.png"
             hover "master/master_doctor_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_doctor"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_butler.png"
             hover "master/master_butler_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_butler"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_granpa.png"
             hover "master/master_granpa_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_granpa"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_nerd.png"
             hover "master/master_nerd_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_nerd"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_werwolf.png"
             hover "master/master_werwolf_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_werwolf"), Jump("Normal_Start2")]
         imagebutton:
             idle "master/master_vampire.png"
             hover "master/master_vampire_hover.png"
-            action Jump("mainabout")
+            action [SetVariable("mc", "master_vampire"), Jump("Normal_Start2")]
     imagebutton:
         idle "buttons/close_button.png" pos (980,20)
         hover "buttons/close_button_hover.png"
-        action Return()
+        action MainMenu(confirm=False)
 
-##### Normal Start menu page code -rec3ks
-####################################################
-
+screen character_selection2():
+    imagebutton:
+        idle "buttons/close_button.png" pos (980,20)
+        hover "buttons/close_button_hover.png"
+        action MainMenu(confirm=False)
+    add "master/%s.png" % mc xpos 0.3 ypos 0.2 anchor (0.5, 0.5)
 
 label Normal_Start:
     scene donotdelete
     show scroll_large
-    call screen imagebutton_grid
+    call screen character_selection
+label Normal_Start2:
+    scene donotdelete
+    show scroll_large
+    call screen character_selection2
 
     return
 label Custom_Start:
@@ -148,7 +157,7 @@ image maincontroltext = ParameterizedText(xalign=0.5, yalign=0.0)
 label mainControls:
     scene donotdelete
     show scroll_large
-    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press S or A when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing SPACE is usually \n equivalent to clicking the right arrow. Press ESC to close some menus and exit some \n locations. At home, you can press D to open the master screen\n        Have a nice game!{/color}" at custom_position
+    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press {b}S{/b} or {b}A{/b} when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing{b} SPACE{/b} is usually \n equivalent to clicking the right arrow. Press {b}ESC{/b} to close some menus and exit some \n locations. At home, you can press{b} D {/b}to open the master screen\n        Have a nice game!{/color}" at custom_position
 
     "Click to return"
     return
