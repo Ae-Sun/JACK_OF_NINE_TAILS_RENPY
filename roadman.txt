@@ -1,0 +1,8 @@
+roadman for 0.1.0
+  Goal - Finish the main menu  
+    main menu screen - Done
+    Tutorial - Not done yet
+    Normal Start - 1/2 Done
+    Custom Start - Not done yet
+    Controls - 99/100 Done (need bold some words)
+    Development & Credits - Done
