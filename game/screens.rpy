@@ -18,6 +18,7 @@ style main_menu_button:
 style main_menu_button_text:
     xalign 0.5
     yalign 0.5
+
 style game_menu_button:
     background Frame("menu_button.png", 0, 0)
     xminimum 200
@@ -27,6 +28,7 @@ style game_menu_button:
 style game_menu_button_text:
     xalign 0.5
     yalign 0.5
+
 style close_button:
     background Frame("buttons/close_button.png", 0, 0)
     xminimum 100

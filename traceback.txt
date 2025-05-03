@@ -1,43 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 151, in script
-    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press [bold] S [/bold] or A when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing SPACE is usually \n equivalent to clicking the right arrow. Press ESC to close some menus and exit some \n locations. At home, you can press D to open the master screen\n        Have a nice game!{/color}" at custom_position
-NameError: name 'bold' is not defined
+After initialization, but before game start.
+  File "game/script.rpy", line 106, in prepare_screen
+    screen character_selection2():
+  File "game/script.rpy", line 106, in prepare
+    screen character_selection2():
+  File "game/script.rpy", line 129, in prepare
+    imagebutton:
+  File "game/script.rpy", line 129, in prepare
+    imagebutton:
+SyntaxError: invalid syntax (game/script.rpy, line 136)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 151, in script
-    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press [bold] S [/bold] or A when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing SPACE is usually \n equivalent to clicking the right arrow. Press ESC to close some menus and exit some \n locations. At home, you can press D to open the master screen\n        Have a nice game!{/color}" at custom_position
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1087, in show_imspec
-    renpy.config.show(name,
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\extras.py", line 268, in _duplicate
-    return renpy.text.text.Text(string, style=self.style, **self.properties)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2079, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 1027, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/script.rpy", line 106, in prepare_screen
+    screen character_selection2():
+  File "game/script.rpy", line 106, in prepare
+    screen character_selection2():
+  File "game/script.rpy", line 129, in prepare
+    imagebutton:
+  File "game/script.rpy", line 129, in prepare
+    imagebutton:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\py3analysis.py", line 803, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
     raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-NameError: name 'bold' is not defined
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/script.rpy, line 136)
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.7
-Sat May  3 16:01:51 2025
+Sat May  3 21:23:37 2025

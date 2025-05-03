@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 79: expected a keyword argument or child statement.
-    $ mc = "master_noble"
-    ^
+File "game/script.rpy", line 192: expected statement.
+    def
+       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  3 16:30:39 2025
+Sat May  3 20:53:39 2025

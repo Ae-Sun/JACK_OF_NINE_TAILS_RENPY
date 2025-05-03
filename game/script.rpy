@@ -4,6 +4,21 @@
 # name of the character.
 
 default mc ="Jack"
+default characters = [
+    ("master_noble", "master/master_noble.png", "master/master_noble_hover.png"),
+    ("master_torturer", "master/master_torturer.png", "master/master_torturer_hover.png"),
+    ("master_fighter", "master/master_fighter.png", "master/master_fighter_hover.png"),
+    ("master_pimp", "master/master_pimp.png", "master/master_pimp_hover.png"),
+    ("master_teacher", "master/master_teacher.png", "master/master_teacher_hover.png"),
+    ("master_impressario", "master/master_impressario.png", "master/master_impressario_hover.png"),
+    ("master_doctor", "master/master_doctor.png", "master/master_doctor_hover.png"),
+    ("master_butler", "master/master_butler.png", "master/master_butler_hover.png"),
+    ("master_granpa", "master/master_granpa.png", "master/master_granpa_hover.png"),
+    ("master_nerd", "master/master_nerd.png", "master/master_nerd_hover.png"),
+    ("master_werwolf", "master/master_werwolf.png", "master/master_werwolf_hover.png"),
+    ("master_vampire", "master/master_vampire.png", "master/master_vampire_hover.png")
+]
+
 
 
 # The game starts here.
@@ -67,70 +82,107 @@ label Tutorial:
 ################################################################################################################
 # hover imagen version, nice -rec3ks 
 screen character_selection():
-    text "SELECT YOUR CHARACTER"color "#000000" pos (520, 60) font "fonts/Segoe Print.ttf" size 17 bold True
+    text "SELECT YOUR CHARACTER" color "#000000" pos (520, 60) font "fonts/Segoe Print.ttf" size 17 bold True
+
+    # List of character data (name, image path, hover image path)
+
     grid 4 3:
         xalign 0.5
         yalign 0.5
         spacing 20
-        imagebutton:
-            idle "master/master_noble.png"
-            hover "master/master_noble_hover.png"
-            action [SetVariable("mc", "master_noble"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_torturer.png"
-            hover "master/master_torturer_hover.png"
-            action [SetVariable("mc", "master_torturer"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_fighter.png"
-            hover "master/master_fighter_hover.png"
-            action [SetVariable("mc", "master_fighter"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_pimp.png"
-            hover "master/master_pimp_hover.png"
-            action [SetVariable("mc", "master_pimp"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_teacher.png"
-            hover "master/master_teacher_hover.png"
-            action [SetVariable("mc", "master_teacher"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_impressario.png"
-            hover "master/master_impressario_hover.png"
-            action [SetVariable("mc", "master_impressario"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_doctor.png"
-            hover "master/master_doctor_hover.png"
-            action [SetVariable("mc", "master_doctor"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_butler.png"
-            hover "master/master_butler_hover.png"
-            action [SetVariable("mc", "master_butler"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_granpa.png"
-            hover "master/master_granpa_hover.png"
-            action [SetVariable("mc", "master_granpa"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_nerd.png"
-            hover "master/master_nerd_hover.png"
-            action [SetVariable("mc", "master_nerd"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_werwolf.png"
-            hover "master/master_werwolf_hover.png"
-            action [SetVariable("mc", "master_werwolf"), Jump("Normal_Start2")]
-        imagebutton:
-            idle "master/master_vampire.png"
-            hover "master/master_vampire_hover.png"
-            action [SetVariable("mc", "master_vampire"), Jump("Normal_Start2")]
+
+        # Loop through the list of characters to generate buttons dynamically
+        for char in characters:
+            imagebutton:
+                idle char[1]
+                hover char[2]
+                action [SetVariable("mc", char[0]), Jump("Normal_Start2")]
+
     imagebutton:
-        idle "buttons/close_button.png" pos (980,20)
+        idle "buttons/close_button.png" pos (997,12)
         hover "buttons/close_button_hover.png"
         action MainMenu(confirm=False)
 
 screen character_selection2():
     imagebutton:
-        idle "buttons/close_button.png" pos (980,20)
+        idle "buttons/close_button.png" pos (997,12)
         hover "buttons/close_button_hover.png"
         action MainMenu(confirm=False)
-    add "master/%s.png" % mc xpos 0.3 ypos 0.2 anchor (0.5, 0.5)
+
+    add "master/%s.png" % mc xpos 0.3 ypos 0.24 anchor (0.5, 0.5)
+    # Mapping of mc values to names
+    default mc_names = {
+        "master_noble": "M'lord",
+        "master_torturer": "Robespierre",
+        "master_fighter": "Blade",
+        "master_pimp": "Silk Daddy",
+        "master_teacher": "Teacher",
+        "master_impressario": "Maestro",
+        "master_doctor": "Doc",
+        "master_butler": "Butler",
+        "master_granpa": "Uncle Tom",
+        "master_nerd": "Johny",
+        "master_werwolf": "Fenris",
+        "master_vampire": "Saruman"
+    }
+
+    imagebutton:
+        idle "buttons/forward_button.png" pos (960, 665)
+        hover "buttons/forward_button_hover.png"
+        action [
+            ##### I need to find a way to make this bottom works  -rec3ks
+            If(lambda: mc == "master_noble", 
+            SetVariable("mc","master_torturer")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_torturer", 
+            SetVariable("mc", "master_fighter")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_fighter", 
+            SetVariable("mc", "master_pimp")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_pimp", 
+            SetVariable("mc", "master_teacher")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_teacher", 
+            SetVariable("mc", "master_impressario")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_impressario", 
+            SetVariable("mc", "master_doctor")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_doctor", 
+            SetVariable("mc", "master_butler")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_butler", 
+            SetVariable("mc", "master_granpa")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_granpa", 
+            SetVariable("mc", "master_nerd")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_nerd", 
+            SetVariable("mc", "master_werwolf")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_werwolf", 
+            SetVariable("mc", "master_vampire")),
+            Jump("Normal_Start2"),
+            If(lambda: mc == "master_vampire", 
+            SetVariable("mc", "master_noble")),
+            Jump("Normal_Start2")
+
+        ]
+    imagebutton:
+        idle "buttons/back_button.png" pos (265, 665)
+        hover "buttons/back_button_hover.png"
+        action MainMenu(confirm=False)
+    
+    # Fallback name if mc is not recognized
+    $ display_name = mc_names.get(mc, "Error - Try restart your game")
+
+    text display_name:
+        size 72
+        pos (0.60, 0.19)
+        color "#000000"
+        font "fonts/Victoriana.ttf"
+        anchor (0.5, 0.5)
 
 label Normal_Start:
     scene donotdelete
@@ -139,9 +191,9 @@ label Normal_Start:
 label Normal_Start2:
     scene donotdelete
     show scroll_large
+    
     call screen character_selection2
 
-    return
 label Custom_Start:
     "WIP"
     return
