@@ -4,5 +4,9 @@ roadman for 0.1.0
     Tutorial - Not done yet
     Normal Start - 1/2 Done
     Custom Start - Not done yet
+<<<<<<< HEAD
     Controls - Done
+=======
+    Controls - 99/100 Done (need bold some words)
+>>>>>>> 6a652f9964ce696ef36315f5681f850d0abcfc4c
     Development & Credits - Done
