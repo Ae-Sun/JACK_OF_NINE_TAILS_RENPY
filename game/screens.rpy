@@ -24,10 +24,15 @@ style game_menu_button:
     yminimum 50
     right_padding 15
     bottom_padding 15
-style smallertextforC
 style game_menu_button_text:
     xalign 0.5
     yalign 0.5
+style close_button:
+    background Frame("buttons/close_button.png", 0, 0)
+    xminimum 100
+    yminimum 35
+    right_padding 15
+    bottom_padding 15
 style leftalign:
     xalign 0.0
     yalign 0.0    
@@ -317,8 +322,8 @@ screen navigation():
         if main_menu:
             textbutton _("Tutorial") action Start("Tutorial") style "main_menu_button"
             textbutton _("Load") action Start("mainload") style "main_menu_button"
-            textbutton _("Normal Start") action Start("Normal Start") style "main_menu_button"
-            textbutton _("Custom Start") action Start("Custom Start") style "main_menu_button"
+            textbutton _("Normal Start") action Start("Normal_Start") style "main_menu_button"
+            textbutton _("Custom Start") action Start("Custom_Start") style "main_menu_button"
             textbutton _("Controls") action Start("mainControls") style "main_menu_button"
             textbutton _("Preferences") action Start("mainpreferences") style "main_menu_button"
             textbutton _("Development & Credits") action Start("mainabout") style "main_menu_button"

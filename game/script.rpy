@@ -8,6 +8,8 @@ define e = Character("Eileen")
 
 # The game starts here.
 
+########## Warning screen -rec3ks
+###########################################################################
 label splashscreen:
     # Show the warning message
     show warning
@@ -33,29 +35,110 @@ label after_splash:
         "You chose to quit the game."
 
     return
+
+###########################################################################
 label Tutorial:
+    "WIP"
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+#    scene bg room
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+#    show eileen happy
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+#    e "You've created a new Ren'Py game."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+#    e "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
 
     return
+######### CHARACTER SELECTION COMPONENT REUTILIZABLE
+################################################################################################################
+# hover imagen version, nice -rec3ks 
+screen imagebutton_grid():
+    text "SELECT YOUR CHARACTER"color "#000000" pos (520, 60) font "fonts/Segoe Print.ttf" size 17 bold True
+    grid 4 3:
+        xalign 0.5
+        yalign 0.5
+        spacing 20
+        imagebutton:
+            idle "master/master_noble.png"
+            hover "master/master_noble_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_torturer.png"
+            hover "master/master_torturer_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_fighter.png"
+            hover "master/master_fighter_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_pimp.png"
+            hover "master/master_pimp_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_teacher.png"
+            hover "master/master_teacher_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_impressario.png"
+            hover "master/master_impressario_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_doctor.png"
+            hover "master/master_doctor_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_butler.png"
+            hover "master/master_butler_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_granpa.png"
+            hover "master/master_granpa_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_nerd.png"
+            hover "master/master_nerd_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_werwolf.png"
+            hover "master/master_werwolf_hover.png"
+            action Jump("mainabout")
+        imagebutton:
+            idle "master/master_vampire.png"
+            hover "master/master_vampire_hover.png"
+            action Jump("mainabout")
+    imagebutton:
+        idle "buttons/close_button.png" pos (980,20)
+        hover "buttons/close_button_hover.png"
+        action Return()
+
+##### Normal Start menu page code -rec3ks
+####################################################
+
+
+label Normal_Start:
+    scene donotdelete
+    show scroll_large
+    call screen imagebutton_grid
+
+    return
+label Custom_Start:
+    "WIP"
+    return
+################################################################
+#### main menu control page code -rec3ks
+###########################################################
 transform custom_position:
     xpos 0.23
     ypos 0.1
@@ -69,7 +152,9 @@ label mainControls:
 
     "Click to return"
     return
-
+#####################################################################
+###### Code that someday I may fix. Dont touch it -rec3ks 
+#######################################################################
 label mainload:
     call screen load
     return  # Ends the new game session if user cancels load
@@ -80,4 +165,4 @@ label mainpreferences:
 label mainabout:
     call screen about
     return  # Ends the new game session if user cancels load
-#lets goooooooo finally found a way to hide main menu buttons probaby wrong 
+#######################################################################
