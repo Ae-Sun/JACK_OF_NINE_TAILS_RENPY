@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 18: expected ':' not found.
-    "{b}Yes, I am adult and I want to continue"{/b}:
-                                               ^
+File "game/screens.rpy", line 32: Line is indented, but the preceding style statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    xalign 0.0
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May  2 17:12:42 2025
+Sat May  3 01:13:27 2025

@@ -56,6 +56,20 @@ label Tutorial:
     # This ends the game.
 
     return
+transform custom_position:
+    xpos 0.23
+    ypos 0.1
+    xanchor 0 # -this shit does nothing but if delete control text wont show correctly. Probably some quirk -rec3ks
+    yanchor 0 # -this shit does nothing but if delete control text wont show correctly. Probably some quirk -rec3ks
+image maincontroltext = ParameterizedText(xalign=0.5, yalign=0.0) 
+label mainControls:
+    scene donotdelete
+    show scroll_large
+    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press S or A when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing SPACE is usually \n equivalent to clicking the right arrow. Press ESC to close some menus and exit some \n locations. At home, you can press D to open the master screen\n        Have a nice game!{/color}" at custom_position
+
+    "Click to return"
+    return
+
 label mainload:
     call screen load
     return  # Ends the new game session if user cancels load
@@ -66,4 +80,4 @@ label mainpreferences:
 label mainabout:
     call screen about
     return  # Ends the new game session if user cancels load
-#lets goooooooo finally found a way to hide main menu buttons
+#lets goooooooo finally found a way to hide main menu buttons probaby wrong 
