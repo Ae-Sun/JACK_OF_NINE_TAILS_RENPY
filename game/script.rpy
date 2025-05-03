@@ -2,23 +2,41 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
-default mc ="Jack"
+### Please use default for constant values and $ for variables -rec3ks
+############ Be caution a stupid colon can make you game explote
 default characters = [
-    ("master_noble", "master/master_noble.png", "master/master_noble_hover.png"),
-    ("master_torturer", "master/master_torturer.png", "master/master_torturer_hover.png"),
-    ("master_fighter", "master/master_fighter.png", "master/master_fighter_hover.png"),
-    ("master_pimp", "master/master_pimp.png", "master/master_pimp_hover.png"),
-    ("master_teacher", "master/master_teacher.png", "master/master_teacher_hover.png"),
-    ("master_impressario", "master/master_impressario.png", "master/master_impressario_hover.png"),
-    ("master_doctor", "master/master_doctor.png", "master/master_doctor_hover.png"),
-    ("master_butler", "master/master_butler.png", "master/master_butler_hover.png"),
-    ("master_granpa", "master/master_granpa.png", "master/master_granpa_hover.png"),
-    ("master_nerd", "master/master_nerd.png", "master/master_nerd_hover.png"),
-    ("master_werwolf", "master/master_werwolf.png", "master/master_werwolf_hover.png"),
-    ("master_vampire", "master/master_vampire.png", "master/master_vampire_hover.png")
+    ("master_noble", "master/master_noble.png", "master/master_noble_hover.png",0),
+    ("master_torturer", "master/master_torturer.png", "master/master_torturer_hover.png",1),
+    ("master_fighter", "master/master_fighter.png", "master/master_fighter_hover.png",2),
+    ("master_pimp", "master/master_pimp.png", "master/master_pimp_hover.png",3),
+    ("master_teacher", "master/master_teacher.png", "master/master_teacher_hover.png",4),
+    ("master_impressario", "master/master_impressario.png", "master/master_impressario_hover.png",5),
+    ("master_doctor", "master/master_doctor.png", "master/master_doctor_hover.png",6),
+    ("master_butler", "master/master_butler.png", "master/master_butler_hover.png",7),
+    ("master_granpa", "master/master_granpa.png", "master/master_granpa_hover.png",8),
+    ("master_nerd", "master/master_nerd.png", "master/master_nerd_hover.png",9),
+    ("master_werwolf", "master/master_werwolf.png", "master/master_werwolf_hover.png",10),
+    ("master_vampire", "master/master_vampire.png", "master/master_vampire_hover.png",11)
 ]
-
+default charactersOnlyName = ["master_noble", "master_torturer", "master_fighter", "master_pimp", "master_teacher", 
+    "master_impressario", "master_doctor", "master_butler", "master_granpa", "master_nerd", 
+    "master_werwolf", "master_vampire"]
+default mc_names = {
+    "master_noble": "M'lord",
+    "master_torturer": "Robespierre",
+    "master_fighter": "Blade",
+    "master_pimp": "Silk Daddy",
+    "master_teacher": "Teacher",
+    "master_impressario": "Maestro",
+    "master_doctor": "Doc",
+    "master_butler": "Butler",
+    "master_granpa": "Uncle Tom",
+    "master_nerd": "Johny",
+    "master_werwolf": "Fenris",
+    "master_vampire": "Saruman"
+}
+$ mc ="Jack"
+$ characterOnlyNameIndex = 0
 
 
 # The game starts here.
@@ -96,14 +114,14 @@ screen character_selection():
             imagebutton:
                 idle char[1]
                 hover char[2]
-                action [SetVariable("mc", char[0]), Jump("Normal_Start2")]
+                action [SetVariable("mc", char[0]),SetVariable("characterOnlyNameIndex",char[3]),Jump("Normal_Start2")]
 
     imagebutton:
         idle "buttons/close_button.png" pos (997,12)
         hover "buttons/close_button_hover.png"
         action MainMenu(confirm=False)
 
-screen character_selection2():
+screen character_selection2(x,y):
     imagebutton:
         idle "buttons/close_button.png" pos (997,12)
         hover "buttons/close_button_hover.png"
@@ -111,72 +129,25 @@ screen character_selection2():
 
     add "master/%s.png" % mc xpos 0.3 ypos 0.24 anchor (0.5, 0.5)
     # Mapping of mc values to names
-    default mc_names = {
-        "master_noble": "M'lord",
-        "master_torturer": "Robespierre",
-        "master_fighter": "Blade",
-        "master_pimp": "Silk Daddy",
-        "master_teacher": "Teacher",
-        "master_impressario": "Maestro",
-        "master_doctor": "Doc",
-        "master_butler": "Butler",
-        "master_granpa": "Uncle Tom",
-        "master_nerd": "Johny",
-        "master_werwolf": "Fenris",
-        "master_vampire": "Saruman"
-    }
-
     imagebutton:
         idle "buttons/forward_button.png" pos (960, 665)
         hover "buttons/forward_button_hover.png"
         action [
-            ##### I need to find a way to make this bottom works  -rec3ks
-            If(lambda: mc == "master_noble", 
-            SetVariable("mc","master_torturer")),
+            ##### this is a genius idea  -rec3ks
+            SetVariable("mc",x),
             Jump("Normal_Start2"),
-            If(lambda: mc == "master_torturer", 
-            SetVariable("mc", "master_fighter")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_fighter", 
-            SetVariable("mc", "master_pimp")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_pimp", 
-            SetVariable("mc", "master_teacher")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_teacher", 
-            SetVariable("mc", "master_impressario")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_impressario", 
-            SetVariable("mc", "master_doctor")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_doctor", 
-            SetVariable("mc", "master_butler")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_butler", 
-            SetVariable("mc", "master_granpa")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_granpa", 
-            SetVariable("mc", "master_nerd")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_nerd", 
-            SetVariable("mc", "master_werwolf")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_werwolf", 
-            SetVariable("mc", "master_vampire")),
-            Jump("Normal_Start2"),
-            If(lambda: mc == "master_vampire", 
-            SetVariable("mc", "master_noble")),
-            Jump("Normal_Start2")
-
         ]
     imagebutton:
         idle "buttons/back_button.png" pos (265, 665)
         hover "buttons/back_button_hover.png"
-        action MainMenu(confirm=False)
-    
+        action [
+            ##### this is a genius idea  -rec3ks
+            SetVariable("mc",y),
+            SetVariable("characterOnlyNameIndex",characterOnlyNameIndex - 2),
+            Jump("Normal_Start2"),
+        ]
     # Fallback name if mc is not recognized
     $ display_name = mc_names.get(mc, "Error - Try restart your game")
-
     text display_name:
         size 72
         pos (0.60, 0.19)
@@ -191,8 +162,18 @@ label Normal_Start:
 label Normal_Start2:
     scene donotdelete
     show scroll_large
-    
-    call screen character_selection2
+    $ characterOnlyNameIndex = int(characterOnlyNameIndex) + 1
+    if -5 <= characterOnlyNameIndex <= 11:
+        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
+    elif characterOnlyNameIndex >= -5:
+        #block of code to run:
+        $ characterOnlyNameIndex = 0
+        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
+    else:
+        $ characterOnlyNameIndex = 6
+        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
+
+
 
 label Custom_Start:
     "WIP"
