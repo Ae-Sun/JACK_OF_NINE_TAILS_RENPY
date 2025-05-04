@@ -22,8 +22,24 @@ Si hiciste otra versión del juego, por favor contáctame.
 क्रेडिट्स मूल भाषा में और बिना किसी बदलाव के होने चाहिए।
 अगर आपने गेम का कोई दूसरा वर्शन बनाया है, तो कृपया मुझसे संपर्क करें।
 
+🔥🚨 but you can add your credits 🔥🚨 | 💥 하지만 당신의 크레딧을 추가할 수 있습니다 💥 | 🔥 但你可以添加你的信用 🔥 | ⚡ pero puedes agregar tus créditos ⚡ | 💫 लेकिन आप अपना क्रेडिट जोड़ सकते हैं 💫
+
 -----
-# Orginal VERSION FastQSP (Jack-o-Nine-Tails F95 Edition)
-This is the source code of the engine for the game "Jack-o-Nine-Tails". Specifically, for the version of the game found on F95Zone. Don't use it for other versions of Jack, it's not gonna work.
-The only reason you'd want this would be to edit the engine of the game. If that's your intention, strap in 'cause it's gonna be a wild ride :D
-If you get stuck at any point feel free to shoot me a message on F95Zone @Lokplart.
+# OrIginal VERSION FastQSP (Jack-o-Nine-Tails F95 Edition)
+The port is made using 2.3 as reference
+-----
+# CREDITS
+"This game was built on the AERO QSP platform and was designed for use with the FastQSP player by Graylor. You can check the author's blog here for other games (untranslated) from this author. If you want to support the author in creating new games or just thank him for this one, don't be shy to send your donations via Yandex-money or PayPal, all necessary information is available for this in his blog.[blogger](https://oldhuntergames.blogspot.com/?zx=ba52e1890e307066)
+
+Thanks to qwertyu12359 for leading the 2.0 project to completion and continuing to lead the team since 2019. Thanks to Powerairmax for all his tedious work that made the post HF rebirth possible. Thanks to Lokplart for his crucial work done in v2.2. Thanks to ImperatorAugustus for taking up the role of lead developer since 2020. Thanks to all the F95Zone community users for reviews, suggestions, help with bugs, playthrough guides, and mods.
+
+This port is made from scratch by Rec3ks. Any bugs found may not be present in the original game.
+
+You can also find this credits in the game, do not change
+-----
+# Development 
+Jack-o-nine-tails Game and Development Information:
+
+Current game play discussion (questions, bug reports, feature requests, etc.) can be found on the main thread at [F95Zone](https://f95zone.to/threads/jack-o-nine-tails-v2-3-imperatoraugustustertius-qwertyu12359.390/)
+
+Please report any reproducible bugs that you find in-game. This helps to ensure cleaner releases in the future. Happy Gaming
