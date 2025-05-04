@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 213: 'font' is not a keyword argument or valid child of the textbutton statement.
-    font "fonts/Consolas.ttf"
-        ^
+File "game/script.rpy", line 13: expected 'simple_expression' not found.
+    kerning 
+            ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May  4 14:39:51 2025
+Sun May  4 18:10:08 2025

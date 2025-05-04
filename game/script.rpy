@@ -5,10 +5,12 @@
 ### only use default, you can also use $ but cause a lot of errors -rec3ks 
 ############ Be caution a stupid colon can make you game explote
 init:
-    style attribute_button_F is default
-    style attribute_button_F:
-        size 20
+    style attribute_buttonF is default
+    style attribute_buttonF_text:
         font "fonts/Consolas.ttf"
+        color "#ff0000"
+        size 17
+        kerning 1
 default characters = [
     ("master_noble", "master/master_noble.png", "master/master_noble_hover.png",0),
     ("master_torturer", "master/master_torturer.png", "master/master_torturer_hover.png",1),
@@ -27,24 +29,24 @@ default charactersOnlyName = ["master_noble", "master_torturer", "master_fighter
     "master_impressario", "master_doctor", "master_butler", "master_granpa", "master_nerd", 
     "master_werwolf", "master_vampire"]
 default mc_names = {
-    "master_noble": "M'lord",
-    "master_torturer": "Robespierre",
-    "master_fighter": "Blade",
-    "master_pimp": "Silk Daddy",
-    "master_teacher": "Teacher",
-    "master_impressario": "Maestro",
-    "master_doctor": "Doc",
-    "master_butler": "Butler",
-    "master_granpa": "Uncle Tom",
-    "master_nerd": "Johny",
-    "master_werwolf": "Fenris",
-    "master_vampire": "Saruman"
+    "master_noble": ["M'lord",240,120,800,135,360,0,0,0,1000,300,1000,400,400,600,400,800,0,800,600,0,600,400,800,600],
+    "master_torturer": ["Robespierre"],
+    "master_fighter": ["Blade"],
+    "master_pimp": ["Silk Daddy"],
+    "master_teacher": ["Teacher"],
+    "master_impressario": ["Maestro"],
+    "master_doctor": ["Doc"],
+    "master_butler": ["Butler"],
+    "master_granpa": ["Uncle Tom"],
+    "master_nerd": ["Johny"],
+    "master_werwolf": ["Fenris"],
+    "master_vampire": ["Saruman"]
 }
 default mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS and ANY DICTIONARY believe me I tried, the game explote -rec3ks
     "STRENGTH": ["Frail", "Weak", "Unfit", "Vigorous", "Strong", "Herculean"],
     "PERSONALITY": ["Caitiff", "Rube", "Churl", "Knave", "Vulgarian", "Aristocrat"],
-    "LIBIDO": ["Impotent", "Effete", "Lustful", "Libidinous", "Lubricious", "Salacious"],
     "ALLURE": ["Repulsive", "Unpleasant", "Unmemorable", "Charming", "Captivating", "Irresistible"],
+    "LIBIDO": ["Impotent", "Effete", "Lustful", "Libidinous", "Lubricious", "Salacious"],
     "DOMINANCE": ["Submissive", "Compliant", "Passive", "Authoritative", "Dominant", "Imperious"],
     "BRAND REPUTATION": ["Unknown", "Rumored", "Recognized", "Celebrity", "Famous", "Legendary"],
     "GUILD REPUTATION": ["Guild Fall Guy", "Guild Punching Bag", "Guild Lackey", "Guild Hotshot", "Guild Muscle", "Guild Boss"],
@@ -52,7 +54,7 @@ default mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS and ANY DICTIONARY bel
     "HYGIENE": ["Filthy", "Dirty", "Unclean", "Unsullied", "Clean", "Pristine"],
     "MOOD": ["Depressed", "Dysphoric", "Sullen", "Melancholic", "Pessimistic", "Calm", "Hopeful", "Optimistic", "Pleased", "Euphoric", "Ecstatic"],
     "INJURIES": ["Mortally wounded", "Seriously Injured", "Moderately Injured", "Lightly Injured", "Slightly Wounded", "Safe and unharmed"],
-    "TEACHING": ["Never Taught", "Tutor", "Mentor", "Pedagogue", "Teacher", "Lecturer"],
+    "TEACHING": ["Incoherent", "Tutor", "Mentor", "Pedagogue", "Teacher", "Lecturer"],
     "STEWARDSHIP": ["Ingenuous Dweller", "Peon", "Houseboy", "Homemaker", "Houselord", "Steward"],
     "ARTISTRY": ["Tasteless", "Uncultured", "Dilettante", "Artist", "Prodigy", "Virtuoso"],
     "MEDIC": ["Homeopath", "Quack", "Paramedic", "Medic", "Physician", "Surgeon"],
@@ -66,10 +68,11 @@ default mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS and ANY DICTIONARY bel
     "PENETRATION": ["Penetration"],
     "FETISHISM": ["Fetishism"]
 }
+##################################### determinate the text value
 default strength_value = 0
 default personality_value = 0
-default libido_value = 0
 default allure_value = 0
+default libido_value = 0
 default dominance_value = 0
 default brand_reputation_value = 0
 default guild_reputation_value = 0
@@ -90,6 +93,34 @@ default petting_value = 0
 default oral_sex_value = 0
 default penetration_value = 0
 default fetishism_value = 0
+############################################# number value -rec3ks
+
+default strength_number_value = 0
+default personality_number_value = 0
+default allure_number_value = 0
+default libido_number_value = 0
+default dominance_number_value = 0
+default brand_reputation_number_value = 0
+default guild_reputation_number_value = 0
+default standard_of_living_number_value = 0
+default hygiene_number_value = 0
+default mood_number_value = 0
+default injuries_number_value = 0
+default teaching_number_value = 0
+default stewardship_number_value = 0
+default artistry_number_value = 0
+default medic_number_value = 0
+default fighter_number_value = 0
+default magic_number_value = 0
+default flagellation_number_value = 0
+default torture_number_value = 0
+default binding_number_value = 0
+default petting_number_value = 0
+default oral_sex_number_value = 0
+default penetration_number_value = 0
+default fetishism_number_value = 0
+
+#################################################################
 default mc ="Jack"
 default characterOnlyNameIndex = 0
 
@@ -202,68 +233,70 @@ screen character_selection2(x,y,a):
             Jump("Normal_Start2")
         ]
     vbox:
-        xalign 0.255
-        yalign 0.40
-        spacing -10
+        xalign 0.262
+        yalign 0.42
+        spacing 2.5
 
         
         #####this part I guess could be improve but i couldn't find a way to work -rec3ks
         textbutton strength_textvalue:
-            style "attribute_button_" + a
+            style "attribute_button" + a
             action Jump("Tutorial")
         textbutton personality_textvalue:
-            style "attribute_button"
+            style "attribute_button" + a
             action Jump("Tutorial")
         textbutton libido_textvalue:
-            style "attribute_button"
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton dominance_textvalue:
-            style "attribute_button"
+            style "attribute_button" +a
             action Jump("Tutorial")
     vbox:
-        xalign 0.6
-        yalign 0.40
-        textbutton brand_reputation_textvalue:
-            action Jump("Tutorial")
-        textbutton guild_reputation_textvalue:
-            action Jump("Tutorial")
-        textbutton standard_of_living_textvalue:
-            action Jump("Tutorial")
-        textbutton hygiene_textvalue:
-            action Jump("Tutorial")
-        textbutton mood_textvalue:
-            action Jump("Tutorial")
-        textbutton injuries_textvalue:
-            action Jump("Tutorial")
+        xalign 0.282 #### don't ask me why this is 0.282 and the other is 0.262 Idk 
+        yalign 0.805
+        spacing 2.5
         textbutton teaching_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton stewardship_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton artistry_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton medic_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton fighter_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton magic_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton flagellation_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton torture_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton binding_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton petting_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton oral_sex_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton penetration_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton fetishism_textvalue:
+            style "attribute_button" +a
             action Jump("Tutorial")
 
     # Fallback name if mc is not recognized
-    $ display_name = mc_names.get(mc, "Error - Try restart your game")
+    $ display_name = mc_names.get(mc, ["Error - Try restart your game"])[0]
     text display_name:
         size 72
         pos (0.60, 0.19)
@@ -280,8 +313,8 @@ label Normal_Start2:
     show scroll_large
     $ strength_textvalue = mc_attribute["STRENGTH"][strength_value]
     $ personality_textvalue = mc_attribute["PERSONALITY"][personality_value]
-    $ libido_textvalue = mc_attribute["LIBIDO"][libido_value]
     $ allure_textvalue = mc_attribute["ALLURE"][allure_value]
+    $ libido_textvalue = mc_attribute["LIBIDO"][libido_value]
     $ dominance_textvalue = mc_attribute["DOMINANCE"][dominance_value]
     $ brand_reputation_textvalue = mc_attribute["BRAND REPUTATION"][brand_reputation_value]
     $ guild_reputation_textvalue = mc_attribute["GUILD REPUTATION"][guild_reputation_value]
@@ -323,9 +356,9 @@ label Custom_Start:
 ###########################################################
 transform custom_position:
     xpos 0.23
-    ypos 0.1
-    xanchor 0 # -this shit does nothing but if delete control text wont show correctly. Probably some quirk -rec3ks
-    yanchor 0 # -this shit does nothing but if delete control text wont show correctly. Probably some quirk -rec3ks
+    ypos 0.12
+    xanchor 0 # idk this, i only know it works -rec3ks
+    yanchor 0 # idk this, i only know it works -rec3ks
 image maincontroltext = ParameterizedText(xalign=0.5, yalign=0.0) 
 label mainControls:
     scene donotdelete

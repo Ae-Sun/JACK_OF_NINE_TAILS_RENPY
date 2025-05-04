@@ -12,4 +12,6 @@ roadman for 0.1.0
       if attribute value are over or below x value change the attribute name - 1/2 Done
       define the checking values for every attribute - Not done yet
     Custom Start - Not done yet
+    Finish github page - Done
     Controls - Done
+    Credits & Development - Done

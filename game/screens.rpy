@@ -581,11 +581,11 @@ screen about():
             text _("Mail for contact:{color=#FFD700} old_huntsman@yahoo.com{/color}")
             text _("This game was built on the {color=#FFD700}AERO QSP{/color} platform and was designed for use with the FastQSP player by Graylor. You can check the author's blog {a=https://oldhuntergames.blogspot.com/?zx=ba52e1890e307066}here{/a} for other games (untranslated) from this author. If you want to support the author in creating new games or just thank him for this one, don't be shy to send your donations via Yandex-money or PayPal, all necessary information is available for this in his blog.\n")
             text _("Thanks to {color=#FFD700}qwertyu12359{/color} for leading the 2.0 project to completion and continuing to lead the team since 2019. Thanks to {color=#FFD700}Powerairmax{/color} for all his tedious work that made the post HF rebirth possible. Thanks to {color=#FFD700}Lokplart{/color} for his crucial work done in v2.2. Thanks to {color=#FFD700}ImperatorAugustus{/color} for taking up the role of lead developer since 2020. Thanks to all the F95Zone community users for reviews, suggestions, help with bugs, playthrough guides, and mods.\n")
+            text _("This port is made from scratch by {color=#FFD700}Rec3ks{/color}. Any bugs found may not be present in the original game\n")
             text _("Development\n") size 30 color "#69ff05"
             text _("Jack-o-nine-tails Game and Development Information:\n")
             text _("Current game play discussion (questions, bug reports, feature requests, etc.) can be found on the main thread at {a=https://f95zone.to/threads/jack-o-nine-tails-v2-3-imperatoraugustustertius-qwertyu12359.390/}F95Zone{/a}\n")
             text _("Please report any reproducible bugs that you find in -game. This helps to ensure cleaner releases in the future. Happy Gaming\n")
-            text _("This port is made from scratch by {color=#FFD700}Rec3ks{/color}. Any bugs found may not be present in the original game")
 
 style about_label is gui_label
 style about_label_text is gui_label_text
