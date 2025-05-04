@@ -34,6 +34,7 @@ Si hiciste otra versión del juego, por favor contáctame.
 -----
 # Original VERSION FastQSP (Jack-o-Nine-Tails F95 Edition)
 The port is made using 2.3 as reference
+You can find the original source code here - [Original Sorce Code](https://gitgud.io/jack-o-nine-tails/engine-base#fastqsp-jack-o-nine-tails-f95-edition)
 -----
 # CREDITS
 "This game was built on the AERO QSP platform and was designed for use with the FastQSP player by Graylor. You can check the author's blog here for other games (untranslated) from this author. If you want to support the author in creating new games or just thank him for this one, don't be shy to send your donations via Yandex-money or PayPal, all necessary information is available for this in his [BLOG](https://oldhuntergames.blogspot.com/?zx=ba52e1890e307066).
