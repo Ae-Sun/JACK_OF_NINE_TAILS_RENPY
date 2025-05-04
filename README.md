@@ -50,3 +50,10 @@ Jack-o-nine-tails Game and Development Information:
 Current game play discussion (questions, bug reports, feature requests, etc.) can be found on the main thread at [F95Zone](https://f95zone.to/threads/jack-o-nine-tails-v2-3-imperatoraugustustertius-qwertyu12359.390/)
 
 Please report any reproducible bugs that you find in-game. This helps to ensure cleaner releases in the future. Happy Gaming
+# Wikis
+A list of wikis that might interest you
+English 
+  Our Wiki - https://wiki.anime-sharing.com/hgames/index.php?title=Jack-o-nine
+Korean
+  https://namu.wiki/w/Jack-o-nine-tails
+  
