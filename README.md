@@ -25,7 +25,7 @@ Si hiciste otra versión del juego, por favor contáctame.
 🔥🚨 but you can add your credits 🔥🚨 | 💥 하지만 당신의 크레딧을 추가할 수 있습니다 💥 | 🔥 但你可以添加你的信用 🔥 | ⚡ pero puedes agregar tus créditos ⚡ | 💫 लेकिन आप अपना क्रेडिट जोड़ सकते हैं 💫
 
 -----
-# OrIginal VERSION FastQSP (Jack-o-Nine-Tails F95 Edition)
+# Original VERSION FastQSP (Jack-o-Nine-Tails F95 Edition)
 The port is made using 2.3 as reference
 -----
 # CREDITS
