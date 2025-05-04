@@ -34,20 +34,25 @@ Thanks to qwertyu12359 for leading the 2.0 project to completion and continuing 
 
 This port is made from scratch by Rec3ks. Any bugs found may not be present in the original game.
 
-YOU CAN ALSO FIND THESE CREDITS IN THE GAME, DO NOT CHANGE
+### YOU CAN ALSO FIND THESE CREDITS IN THE GAME, DO NOT CHANGE
+
 -----
+
 # Original VERSION FastQSP (Jack-o-Nine-Tails F95 Edition)
 The port is made using 2.3 as reference
 
 You can find the original source code here - [Original Sorce Code](https://gitgud.io/jack-o-nine-tails/engine-base#fastqsp-jack-o-nine-tails-f95-edition)
 
 -----
+
 # Development 
 Jack-o-nine-tails Game and Development Information:
 
 Current game play discussion (questions, bug reports, feature requests, etc.) can be found on the main thread at [F95Zone](https://f95zone.to/threads/jack-o-nine-tails-v2-3-imperatoraugustustertius-qwertyu12359.390/)
 
 Please report any reproducible bugs that you find in-game. This helps to ensure cleaner releases in the future. Happy Gaming
+
+-----
 # Wikis
 A list of wikis that might interest you
 
