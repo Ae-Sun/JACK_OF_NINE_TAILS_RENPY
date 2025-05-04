@@ -41,7 +41,7 @@ This port is made from scratch by Rec3ks. Any bugs found may not be present in t
 # Original VERSION FastQSP (Jack-o-Nine-Tails F95 Edition)
 The port is made using 2.3 as reference
 
-You can find the original source code here - [Original Sorce Code](https://gitgud.io/jack-o-nine-tails/engine-base#fastqsp-jack-o-nine-tails-f95-edition)
+You can find the original engine source code here - [Original Sorce Code](https://gitgud.io/jack-o-nine-tails/engine-base#fastqsp-jack-o-nine-tails-f95-edition)
 
 -----
 
