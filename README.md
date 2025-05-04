@@ -35,7 +35,7 @@ Thanks to qwertyu12359 for leading the 2.0 project to completion and continuing 
 
 This port is made from scratch by Rec3ks. Any bugs found may not be present in the original game.
 
-You can also find this credits in the game, do not change
+YOU CAN ALSO FIND THESE CREDITS IN THE GAME, DO NOT CHANGE
 -----
 # Development 
 Jack-o-nine-tails Game and Development Information:
