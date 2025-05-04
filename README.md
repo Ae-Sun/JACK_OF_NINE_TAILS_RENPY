@@ -52,11 +52,12 @@ Current game play discussion (questions, bug reports, feature requests, etc.) ca
 Please report any reproducible bugs that you find in-game. This helps to ensure cleaner releases in the future. Happy Gaming
 # Wikis
 A list of wikis that might interest you
-English 
+
+### English 
 
 Our Wiki - https://wiki.anime-sharing.com/hgames/index.php?title=Jack-o-nine
 
-Korean
+###Korean
 
 https://namu.wiki/w/Jack-o-nine-tails
   
