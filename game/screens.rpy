@@ -37,7 +37,8 @@ style close_button:
     bottom_padding 15
 style leftalign:
     xalign 0.0
-    yalign 0.0    
+    yalign 0.0
+ 
 style default:
     properties gui.text_properties()
     language gui.language

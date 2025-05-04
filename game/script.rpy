@@ -2,8 +2,13 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-### Please use default for constant values and $ for variables -rec3ks
+### only use default, you can also use $ but cause a lot of errors -rec3ks 
 ############ Be caution a stupid colon can make you game explote
+init:
+    style attribute_button_F_text is default
+    style attribute_button_F_text:
+        size 20
+        font "fonts/Consolas.ttf"
 default characters = [
     ("master_noble", "master/master_noble.png", "master/master_noble_hover.png",0),
     ("master_torturer", "master/master_torturer.png", "master/master_torturer_hover.png",1),
@@ -35,8 +40,58 @@ default mc_names = {
     "master_werwolf": "Fenris",
     "master_vampire": "Saruman"
 }
-$ mc ="Jack"
-$ characterOnlyNameIndex = 0
+default mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS and ANY DICTIONARY believe me I tried, the game explote -rec3ks
+    "STRENGTH": ["Frail", "Weak", "Unfit", "Vigorous", "Strong", "Herculean"],
+    "PERSONALITY": ["Caitiff", "Rube", "Churl", "Knave", "Vulgarian", "Aristocrat"],
+    "LIBIDO": ["Impotent", "Effete", "Lustful", "Libidinous", "Lubricious", "Salacious"],
+    "ALLURE": ["Repulsive", "Unpleasant", "Unmemorable", "Charming", "Captivating", "Irresistible"],
+    "DOMINANCE": ["Submissive", "Compliant", "Passive", "Authoritative", "Dominant", "Imperious"],
+    "BRAND REPUTATION": ["Unknown", "Rumored", "Recognized", "Celebrity", "Famous", "Legendary"],
+    "GUILD REPUTATION": ["Guild Fall Guy", "Guild Punching Bag", "Guild Lackey", "Guild Hotshot", "Guild Muscle", "Guild Boss"],
+    "STANDARD OF LIVING": ["Impoverished", "Poor", "Basic", "Comfortable", "Respectable", "Luxurious"],
+    "HYGIENE": ["Filthy", "Dirty", "Unclean", "Unsullied", "Clean", "Pristine"],
+    "MOOD": ["Depressed", "Dysphoric", "Sullen", "Melancholic", "Pessimistic", "Calm", "Hopeful", "Optimistic", "Pleased", "Euphoric", "Ecstatic"],
+    "INJURIES": ["Mortally wounded", "Seriously Injured", "Moderately Injured", "Lightly Injured", "Slightly Wounded", "Safe and unharmed"],
+    "TEACHING": ["Never Taught", "Tutor", "Mentor", "Pedagogue", "Teacher", "Lecturer"],
+    "STEWARDSHIP": ["Ingenuous Dweller", "Peon", "Houseboy", "Homemaker", "Houselord", "Steward"],
+    "ARTISTRY": ["Tasteless", "Uncultured", "Dilettante", "Artist", "Prodigy", "Virtuoso"],
+    "MEDIC": ["Homeopath", "Quack", "Paramedic", "Medic", "Physician", "Surgeon"],
+    "FIGHTER": ["Non-Combatant", "Brawler", "Duelist", "Combatant", "Warrior", "Champion"],
+    "MAGIC": ["Mundane", "Esoterist", "Warlock", "Sorcerer", "Mage", "Archmage"],
+    "FLAGELLATION": ["Cannot Whip", "Poor Whip Skill", "Basic Whip Skill", "Good Whip Skill", "Whip Expert", "Master of the Whip"],
+    "TORTURE": ["Not a Torturer", "Needler", "Tormentor", "Torturer", "Inquisitor", "Master Inquisitor"],
+    "BINDING": ["Unskilled with Rope", "Novice Rope Binder", "Binds Correctly", "Binds Skillfully", "Binds Artfully", "Master of Rope"],
+    "PETTING": ["Petting"],
+    "ORAL SEX": ["Oral Sex"],
+    "PENETRATION": ["Penetration"],
+    "FETISHISM": ["Fetishism"]
+}
+default strength_value = 0
+default personality_value = 0
+default libido_value = 0
+default allure_value = 0
+default dominance_value = 0
+default brand_reputation_value = 0
+default guild_reputation_value = 0
+default standard_of_living_value = 0
+default hygiene_value = 0
+default mood_value = 0
+default injuries_value = 0
+default teaching_value = 0
+default stewardship_value = 0
+default artistry_value = 0
+default medic_value = 0
+default fighter_value = 0
+default magic_value = 0
+default flagellation_value = 0
+default torture_value = 0
+default binding_value = 0
+default petting_value = 0
+default oral_sex_value = 0
+default penetration_value = 0
+default fetishism_value = 0
+default mc ="Jack"
+default characterOnlyNameIndex = 0
 
 
 # The game starts here.
@@ -121,7 +176,7 @@ screen character_selection():
         hover "buttons/close_button_hover.png"
         action MainMenu(confirm=False)
 
-screen character_selection2(x,y):
+screen character_selection2(x,y,a):
     imagebutton:
         idle "buttons/close_button.png" pos (997,12)
         hover "buttons/close_button_hover.png"
@@ -146,6 +201,67 @@ screen character_selection2(x,y):
             SetVariable("characterOnlyNameIndex",characterOnlyNameIndex - 2),
             Jump("Normal_Start2"),
         ]
+    vbox:
+        xalign 0.255
+        yalign 0.40
+        spacing -10
+
+        
+        #####this part I guess could be improve but i couldn't find a way to work -rec3ks
+        textbutton strength_textvalue:
+            style "attribute_button_" + a
+            action Jump("Tutorial")
+        textbutton personality_textvalue:
+            style "attribute_button"
+            action Jump("Tutorial")
+        textbutton libido_textvalue:
+            style "attribute_button"
+            action Jump("Tutorial")
+        textbutton dominance_textvalue:
+            style "attribute_button"
+            action Jump("Tutorial")
+    vbox:
+        xalign 0.6
+        yalign 0.40
+        textbutton brand_reputation_textvalue:
+            action Jump("Tutorial")
+        textbutton guild_reputation_textvalue:
+            action Jump("Tutorial")
+        textbutton standard_of_living_textvalue:
+            action Jump("Tutorial")
+        textbutton hygiene_textvalue:
+            action Jump("Tutorial")
+        textbutton mood_textvalue:
+            action Jump("Tutorial")
+        textbutton injuries_textvalue:
+            action Jump("Tutorial")
+        textbutton teaching_textvalue:
+            action Jump("Tutorial")
+        textbutton stewardship_textvalue:
+            action Jump("Tutorial")
+        textbutton artistry_textvalue:
+            action Jump("Tutorial")
+        textbutton medic_textvalue:
+            action Jump("Tutorial")
+        textbutton fighter_textvalue:
+            action Jump("Tutorial")
+        textbutton magic_textvalue:
+            action Jump("Tutorial")
+        textbutton flagellation_textvalue:
+            action Jump("Tutorial")
+        textbutton torture_textvalue:
+            action Jump("Tutorial")
+        textbutton binding_textvalue:
+            action Jump("Tutorial")
+        textbutton petting_textvalue:
+            action Jump("Tutorial")
+        textbutton oral_sex_textvalue:
+            action Jump("Tutorial")
+        textbutton penetration_textvalue:
+            action Jump("Tutorial")
+        textbutton fetishism_textvalue:
+            action Jump("Tutorial")
+
     # Fallback name if mc is not recognized
     $ display_name = mc_names.get(mc, "Error - Try restart your game")
     text display_name:
@@ -162,16 +278,39 @@ label Normal_Start:
 label Normal_Start2:
     scene donotdelete
     show scroll_large
-    $ characterOnlyNameIndex = int(characterOnlyNameIndex) + 1
+    $ strength_textvalue = mc_attribute["STRENGTH"][strength_value]
+    $ personality_textvalue = mc_attribute["PERSONALITY"][personality_value]
+    $ libido_textvalue = mc_attribute["LIBIDO"][libido_value]
+    $ allure_textvalue = mc_attribute["ALLURE"][allure_value]
+    $ dominance_textvalue = mc_attribute["DOMINANCE"][dominance_value]
+    $ brand_reputation_textvalue = mc_attribute["BRAND REPUTATION"][brand_reputation_value]
+    $ guild_reputation_textvalue = mc_attribute["GUILD REPUTATION"][guild_reputation_value]
+    $ standard_of_living_textvalue = mc_attribute["STANDARD OF LIVING"][standard_of_living_value]
+    $ hygiene_textvalue = mc_attribute["HYGIENE"][hygiene_value]
+    $ mood_textvalue = mc_attribute["MOOD"][mood_value]
+    $ injuries_textvalue = mc_attribute["INJURIES"][injuries_value]
+    $ teaching_textvalue = mc_attribute["TEACHING"][teaching_value]
+    $ stewardship_textvalue = mc_attribute["STEWARDSHIP"][stewardship_value]
+    $ artistry_textvalue = mc_attribute["ARTISTRY"][artistry_value]
+    $ medic_textvalue = mc_attribute["MEDIC"][medic_value]
+    $ fighter_textvalue = mc_attribute["FIGHTER"][fighter_value]
+    $ magic_textvalue = mc_attribute["MAGIC"][magic_value]
+    $ flagellation_textvalue = mc_attribute["FLAGELLATION"][flagellation_value]
+    $ torture_textvalue = mc_attribute["TORTURE"][torture_value]
+    $ binding_textvalue = mc_attribute["BINDING"][binding_value]
+    $ petting_textvalue = mc_attribute["PETTING"][petting_value]
+    $ oral_sex_textvalue = mc_attribute["ORAL SEX"][oral_sex_value]
+    $ penetration_textvalue = mc_attribute["PENETRATION"][penetration_value]
+    $ fetishism_textvalue = mc_attribute["FETISHISM"][fetishism_value]
     if -5 <= characterOnlyNameIndex <= 11:
-        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
+        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2],"F")
     elif characterOnlyNameIndex >= -5:
         #block of code to run:
         $ characterOnlyNameIndex = 0
-        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
+        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2],"F")
     else:
         $ characterOnlyNameIndex = 6
-        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
+        call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2],"F")
 
 
 
