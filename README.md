@@ -43,6 +43,8 @@ The port is made using 2.3 as reference
 
 You can find the original engine source code here - [Original Sorce Code](https://gitgud.io/jack-o-nine-tails/engine-base#fastqsp-jack-o-nine-tails-f95-edition)
 
+the original source game are in \game\locations
+
 -----
 
 # Development 
