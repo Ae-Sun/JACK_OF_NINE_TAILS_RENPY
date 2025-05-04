@@ -5,8 +5,8 @@
 ### only use default, you can also use $ but cause a lot of errors -rec3ks 
 ############ Be caution a stupid colon can make you game explote
 init:
-    style attribute_button_F_text is default
-    style attribute_button_F_text:
+    style attribute_button_F is default
+    style attribute_button_F:
         size 20
         font "fonts/Consolas.ttf"
 default characters = [
@@ -190,7 +190,7 @@ screen character_selection2(x,y,a):
         action [
             ##### this is a genius idea  -rec3ks
             SetVariable("mc",x),
-            Jump("Normal_Start2"),
+            Jump("Normal_Start2")
         ]
     imagebutton:
         idle "buttons/back_button.png" pos (265, 665)
@@ -199,7 +199,7 @@ screen character_selection2(x,y,a):
             ##### this is a genius idea  -rec3ks
             SetVariable("mc",y),
             SetVariable("characterOnlyNameIndex",characterOnlyNameIndex - 2),
-            Jump("Normal_Start2"),
+            Jump("Normal_Start2")
         ]
     vbox:
         xalign 0.255
@@ -302,6 +302,7 @@ label Normal_Start2:
     $ oral_sex_textvalue = mc_attribute["ORAL SEX"][oral_sex_value]
     $ penetration_textvalue = mc_attribute["PENETRATION"][penetration_value]
     $ fetishism_textvalue = mc_attribute["FETISHISM"][fetishism_value]
+    $ characterOnlyNameIndex = characterOnlyNameIndex +1
     if -5 <= characterOnlyNameIndex <= 11:
         call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2],"F")
     elif characterOnlyNameIndex >= -5:
