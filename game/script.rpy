@@ -11,6 +11,7 @@ init:
         color "#ff0000"
         size 17
         kerning 1
+# I can probably merge characters and mc inicial_stats into a giga big dictionaly, but i won't. Im too lazy -rec3ks
 default characters = [
     ("master_noble", "master/master_noble.png", "master/master_noble_hover.png",0),
     ("master_torturer", "master/master_torturer.png", "master/master_torturer_hover.png",1),
@@ -25,23 +26,24 @@ default characters = [
     ("master_werwolf", "master/master_werwolf.png", "master/master_werwolf_hover.png",10),
     ("master_vampire", "master/master_vampire.png", "master/master_vampire_hover.png",11)
 ]
+default mc_inicial_stats = {
+"master_noble"      : ["M'lord"     , 4, 4, 0, 2, 4, 0, 0, 0, 5, 0, 5, 2, 2, 3, 2, 4, 0, 4, 3, 0, 3, 2, 4, 3], 
+"master_torturer"   : ["Robespierre", 5, 1, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 3, 3, 0, 5, 5, 5, 2, 2, 4, 4],
+"master_fighter"    : ["Blade"      , 5, 2, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 2, 5, 0, 2, 2, 2, 2, 2, 4, 2],
+"master_pimp"       : ["Silk Daddy" , 3, 4, 0, 3, 4, 0, 0, 0, 5, 0, 5, 3, 2, 2, 1, 1, 0, 0, 4, 4, 2, 5, 5, 5],
+"master_teacher"    : ["Teacher"    , 3, 3, 0, 3, 4, 0, 0, 0, 5, 0, 5, 5, 2, 2, 1, 0, 0, 4, 1, 2, 0, 1, 3, 0],
+"master_impressario": ["Maestro"    , 2, 4, 0, 1, 3, 0, 0, 0, 5, 0, 5, 3, 1, 5, 0, 0, 0, 3, 0, 3, 0, 5, 4, 1],
+"master_doctor"     : ["Doc"        , 3, 3, 0, 2, 2, 0, 0, 0, 5, 0, 5, 2, 1, 0, 5, 0, 0, 0, 3, 2, 0, 1, 3, 0],
+"master_butler"     : ["Butler"     , 3, 3, 0, 2, 3, 0, 0, 0, 5, 0, 5, 3, 5, 1, 1, 0, 0, 2, 0, 2, 0, 1, 2, 0],
+"master_granpa"     : ["Uncle Tom"  , 2, 1, 0, 0, 1, 0, 0, 0, 5, 0, 5, 2, 1, 0, 1, 0, 0, 2, 0, 4, 0, 3, 1, 4],
+"master_nerd"       : ["Johny"      , 2, 1, 0, 5, 0, 0, 0, 0, 5, 0, 5, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 5],
+"master_werwolf"    : ["Fenris"     , 4, 0, 0, 4, 3, 0, 0, 0, 5, 0, 5, 1, 0, 0, 3, 3, 3, 2, 2, 2, 0, 0, 4, 2],
+"master_vampire"    : ["Saruman"    , 5, 5, 0, 0, 4, 0, 0, 0, 5, 0, 5, 1, 3, 0, 2, 2, 4, 1, 1, 3, 1, 3, 3, 0],
+}
 default charactersOnlyName = ["master_noble", "master_torturer", "master_fighter", "master_pimp", "master_teacher", 
     "master_impressario", "master_doctor", "master_butler", "master_granpa", "master_nerd", 
     "master_werwolf", "master_vampire"]
-default mc_names = {
-    "master_noble": ["M'lord",240,120,800,135,360,0,0,0,1000,300,1000,400,400,600,400,800,0,800,600,0,600,400,800,600],
-    "master_torturer": ["Robespierre"],
-    "master_fighter": ["Blade"],
-    "master_pimp": ["Silk Daddy"],
-    "master_teacher": ["Teacher"],
-    "master_impressario": ["Maestro"],
-    "master_doctor": ["Doc"],
-    "master_butler": ["Butler"],
-    "master_granpa": ["Uncle Tom"],
-    "master_nerd": ["Johny"],
-    "master_werwolf": ["Fenris"],
-    "master_vampire": ["Saruman"]
-}
+
 default mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS and ANY DICTIONARY believe me I tried, the game explote -rec3ks
     "STRENGTH": ["Frail", "Weak", "Unfit", "Vigorous", "Strong", "Herculean"],
     "PERSONALITY": ["Caitiff", "Rube", "Churl", "Knave", "Vulgarian", "Aristocrat"],
@@ -68,7 +70,7 @@ default mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS and ANY DICTIONARY bel
     "PENETRATION": ["Penetration"],
     "FETISHISM": ["Fetishism"]
 }
-##################################### determinate the text value
+##################################### determinate the text value DO NOT CHANGE THE ORDER 
 default strength_value = 0
 default personality_value = 0
 default allure_value = 0
@@ -79,7 +81,7 @@ default guild_reputation_value = 0
 default standard_of_living_value = 0
 default hygiene_value = 0
 default mood_value = 0
-default injuries_value = 0
+default not_injuries_value = 0
 default teaching_value = 0
 default stewardship_value = 0
 default artistry_value = 0
@@ -296,7 +298,7 @@ screen character_selection2(x,y,a):
             action Jump("Tutorial")
 
     # Fallback name if mc is not recognized
-    $ display_name = mc_names.get(mc, ["Error - Try restart your game"])[0]
+    $ display_name = mc_inicial_stats.get(mc, ["Error - Try restart your game"])[0]
     text display_name:
         size 72
         pos (0.60, 0.19)
@@ -321,7 +323,7 @@ label Normal_Start2:
     $ standard_of_living_textvalue = mc_attribute["STANDARD OF LIVING"][standard_of_living_value]
     $ hygiene_textvalue = mc_attribute["HYGIENE"][hygiene_value]
     $ mood_textvalue = mc_attribute["MOOD"][mood_value]
-    $ injuries_textvalue = mc_attribute["INJURIES"][injuries_value]
+    $ injuries_textvalue = mc_attribute["INJURIES"][not_injuries_value]
     $ teaching_textvalue = mc_attribute["TEACHING"][teaching_value]
     $ stewardship_textvalue = mc_attribute["STEWARDSHIP"][stewardship_value]
     $ artistry_textvalue = mc_attribute["ARTISTRY"][artistry_value]
@@ -363,7 +365,7 @@ image maincontroltext = ParameterizedText(xalign=0.5, yalign=0.0)
 label mainControls:
     scene donotdelete
     show scroll_large
-    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press {b}S{/b} or {b}A{/b} when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing{b} SPACE{/b} is usually \n equivalent to clicking the right arrow. Press {b}ESC{/b} to close some menus and exit some \n locations. At home, you can press{b} D {/b}to open the master screen\n        Have a nice game!{/color}" at custom_position
+    show maincontroltext "{size=18}{color=#0000ff}        Controls in this game can be carried out solely with the help of the mouse. Interactive,\n clickable elements will turn your cursor into a hand.\n        Almost all actions are available from the central menu, but there are short cuts for\n most common ones. Orders for cooking, cleanig, bathing, sex milking, punishment and \n rewards can be issued with quick buttons under the character portraits (when correspon- \n ding actions are needed). You can set who will do cleaning and cooking with rules on your\n slave/assistant screen (click their portait or press {b}S{/b} or {b}A{/b} when at home) the big button \n with the image of an academic cap opens a list of training courses. You also can start a \n personal lesson by clicking a skill on the slave screen or order your assistant to teach a\n lesson via buttons on the side of the assitant screen.\n        Some choices are colered gray, which means that they are unavailable. The reason \n for this may be not meeting the requirements. Usually, you can click the grey text (or in \n menus hover over the small arrow in the lower left corner of the button icon) for more\n information.\n        When clickable left and right arrows are displayed, pressing{b} SPACE{/b} is usually \n equivalent to clicking the right arrow. Press {b}ESC{/b} to close some menus and exit some \n locations. At home, you can press{b} D {/b}to open the master screen.\n        Have a nice game!{/color}" at custom_position
 
     "Click to return"
     return
