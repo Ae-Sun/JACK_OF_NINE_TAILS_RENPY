@@ -5,26 +5,57 @@
 ### only use default, you can also use $ but cause a lot of errors -rec3ks 
 ############ Be caution a stupid colon can make you game explote
 init:
+    style attribute_buttonS is default
+    style attribute_buttonS_text:
+        font "fonts/Consolas.ttf"
+        color "#06aa00"
+        size 17
+        kerning 1
+    style attribute_buttonA is default
+    style attribute_buttonA_text:
+        font "fonts/Consolas.ttf"
+        color "#02fff2"
+        size 17
+        kerning 1
+    style attribute_buttonB is default
+    style attribute_buttonB_text:
+        font "fonts/Consolas.ttf"
+        color "#0011ff"
+        size 17
+        kerning 1
+    style attribute_buttonC is default
+    style attribute_buttonC_text:
+        font "fonts/Consolas.ttf"
+        color "#cc00ff"
+        size 17
+        kerning 1
+    style attribute_buttonD is default
+    style attribute_buttonD_text:
+        font "fonts/Consolas.ttf"
+        color "#ff00b3"
+        size 17
+        kerning 1
     style attribute_buttonF is default
     style attribute_buttonF_text:
         font "fonts/Consolas.ttf"
         color "#ff0000"
         size 17
         kerning 1
+    
 # I can probably merge characters and mc inicial_stats into a giga big dictionaly, but i won't. Im too lazy -rec3ks
 default characters = [
-    ("master_noble", "master/master_noble.png", "master/master_noble_hover.png",0),
-    ("master_torturer", "master/master_torturer.png", "master/master_torturer_hover.png",1),
-    ("master_fighter", "master/master_fighter.png", "master/master_fighter_hover.png",2),
-    ("master_pimp", "master/master_pimp.png", "master/master_pimp_hover.png",3),
-    ("master_teacher", "master/master_teacher.png", "master/master_teacher_hover.png",4),
-    ("master_impressario", "master/master_impressario.png", "master/master_impressario_hover.png",5),
-    ("master_doctor", "master/master_doctor.png", "master/master_doctor_hover.png",6),
-    ("master_butler", "master/master_butler.png", "master/master_butler_hover.png",7),
-    ("master_granpa", "master/master_granpa.png", "master/master_granpa_hover.png",8),
-    ("master_nerd", "master/master_nerd.png", "master/master_nerd_hover.png",9),
-    ("master_werwolf", "master/master_werwolf.png", "master/master_werwolf_hover.png",10),
-    ("master_vampire", "master/master_vampire.png", "master/master_vampire_hover.png",11)
+    ("master_noble", "master/master_noble.webp", "master/master_noble_hover.webp",0),
+    ("master_torturer", "master/master_torturer.webp", "master/master_torturer_hover.webp",1),
+    ("master_fighter", "master/master_fighter.webp", "master/master_fighter_hover.webp",2),
+    ("master_pimp", "master/master_pimp.webp", "master/master_pimp_hover.webp",3),
+    ("master_teacher", "master/master_teacher.webp", "master/master_teacher_hover.webp",4),
+    ("master_impressario", "master/master_impressario.webp", "master/master_impressario_hover.webp",5),
+    ("master_doctor", "master/master_doctor.webp", "master/master_doctor_hover.webp",6),
+    ("master_butler", "master/master_butler.webp", "master/master_butler_hover.webp",7),
+    ("master_granpa", "master/master_granpa.webp", "master/master_granpa_hover.webp",8),
+    ("master_nerd", "master/master_nerd.webp", "master/master_nerd_hover.webp",9),
+    ("master_werwolf", "master/master_werwolf.webp", "master/master_werwolf_hover.webp",10),
+    ("master_vampire", "master/master_vampire.webp", "master/master_vampire_hover.webp",11)
 ]
 default mc_inicial_stats = {
 "master_noble"      : ["M'lord"     , 4, 4, 0, 2, 4, 0, 0, 0, 5, 0, 5, 2, 2, 3, 2, 4, 0, 4, 3, 0, 3, 2, 4, 3], 
@@ -71,56 +102,56 @@ default mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS and ANY DICTIONARY bel
     "FETISHISM": ["Fetishism"]
 }
 ##################################### determinate the text value DO NOT CHANGE THE ORDER 
-default strength_value = 0
-default personality_value = 0
-default allure_value = 0
-default libido_value = 0
-default dominance_value = 0
-default brand_reputation_value = 0
-default guild_reputation_value = 0
-default standard_of_living_value = 0
-default hygiene_value = 0
-default mood_value = 0
-default not_injuries_value = 0
-default teaching_value = 0
-default stewardship_value = 0
-default artistry_value = 0
-default medic_value = 0
-default fighter_value = 0
-default magic_value = 0
-default flagellation_value = 0
-default torture_value = 0
-default binding_value = 0
-default petting_value = 0
-default oral_sex_value = 0
-default penetration_value = 0
-default fetishism_value = 0
+default strength_value_1 = 0
+default personality_value_2 = 0
+default allure_value_3 = 0
+default libido_value_4 = 0
+default dominance_value_5 = 0
+default brand_reputation_value_6 = 0
+default guild_reputation_value_7 = 0
+default standard_of_living_value_8 = 0
+default hygiene_value_9 = 0
+default mood_value_10 = 0
+default not_injuries_value_11 = 0
+default teaching_value_12 = 0
+default stewardship_value_13 = 0
+default artistry_value_14 = 0
+default medic_value_15 = 0
+default fighter_value_16 = 0
+default magic_value_17 = 0
+default flagellation_value_18 = 0
+default torture_value_19 = 0
+default binding_value_20 = 0
+default petting_value_21 = 0
+default oral_sex_value_22 = 0
+default penetration_value_23 = 0
+default fetishism_value_24 = 0
 ############################################# number value -rec3ks
 
-default strength_number_value = 0
-default personality_number_value = 0
-default allure_number_value = 0
-default libido_number_value = 0
-default dominance_number_value = 0
-default brand_reputation_number_value = 0
-default guild_reputation_number_value = 0
-default standard_of_living_number_value = 0
-default hygiene_number_value = 0
-default mood_number_value = 0
-default injuries_number_value = 0
-default teaching_number_value = 0
-default stewardship_number_value = 0
-default artistry_number_value = 0
-default medic_number_value = 0
-default fighter_number_value = 0
-default magic_number_value = 0
-default flagellation_number_value = 0
-default torture_number_value = 0
-default binding_number_value = 0
-default petting_number_value = 0
-default oral_sex_number_value = 0
-default penetration_number_value = 0
-default fetishism_number_value = 0
+default strength_number_value_1 = 0
+default personality_number_value_2 = 0
+default allure_number_value_3 = 0
+default libido_number_value_4 = 0
+default dominance_number_value_5 = 0
+default brand_reputation_number_value_6 = 0
+default guild_reputation_number_value_7 = 0
+default standard_of_living_number_value_8 = 0
+default hygiene_number_value_9 = 0
+default mood_number_value_10 = 0
+default injuries_number_value_11 = 0
+default teaching_number_value_12 = 0
+default stewardship_number_value_13 = 0
+default artistry_number_value_14 = 0
+default medic_number_value_15 = 0
+default fighter_number_value_16 = 0
+default magic_number_value_17 = 0
+default flagellation_number_value_18 = 0
+default torture_number_value_19 = 0
+default binding_number_value_20 = 0
+default petting_number_value_21 = 0
+default oral_sex_number_value_22 = 0
+default penetration_number_value_23 = 0
+default fetishism_number_value_24 = 0
 
 #################################################################
 default mc ="Jack"
@@ -162,13 +193,13 @@ label Tutorial:
     "WIP"
 
     # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # add a file (named either "bg room.webp" or "bg room.jpg") to the
     # images directory to show it.
 
 #    scene bg room
 
     # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
+    # replace it by adding a file named "eileen happy.webp" to the images
     # directory.
 
 #    show eileen happy
@@ -205,29 +236,31 @@ screen character_selection():
                 action [SetVariable("mc", char[0]),SetVariable("characterOnlyNameIndex",char[3]),Jump("Normal_Start2")]
 
     imagebutton:
-        idle "buttons/close_button.png" pos (997,12)
-        hover "buttons/close_button_hover.png"
+        idle "buttons/close_button.webp" pos (997,12)
+        hover "buttons/close_button_hover.webp"
         action MainMenu(confirm=False)
 
-screen character_selection2(x,y,a):
+
+
+screen character_selection2(x,y,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q):
     imagebutton:
-        idle "buttons/close_button.png" pos (997,12)
-        hover "buttons/close_button_hover.png"
+        idle "buttons/close_button.webp" pos (997,12)
+        hover "buttons/close_button_hover.webp"
         action MainMenu(confirm=False)
 
-    add "master/%s.png" % mc xpos 0.3 ypos 0.24 anchor (0.5, 0.5)
+    add "master/%s.webp" % mc xpos 0.3 ypos 0.24 anchor (0.5, 0.5)
     # Mapping of mc values to names
     imagebutton:
-        idle "buttons/forward_button.png" pos (960, 665)
-        hover "buttons/forward_button_hover.png"
+        idle "buttons/forward_button.webp" pos (960, 665)
+        hover "buttons/forward_button_hover.webp"
         action [
             ##### this is a genius idea  -rec3ks
             SetVariable("mc",x),
             Jump("Normal_Start2")
         ]
     imagebutton:
-        idle "buttons/back_button.png" pos (265, 665)
-        hover "buttons/back_button_hover.png"
+        idle "buttons/back_button.webp" pos (265, 665)
+        hover "buttons/back_button_hover.webp"
         action [
             ##### this is a genius idea  -rec3ks
             SetVariable("mc",y),
@@ -242,59 +275,59 @@ screen character_selection2(x,y,a):
         
         #####this part I guess could be improve but i couldn't find a way to work -rec3ks
         textbutton strength_textvalue:
-            style "attribute_button" + a
+            style "attribute_button" +a
             action Jump("Tutorial")
         textbutton personality_textvalue:
-            style "attribute_button" + a
+            style "attribute_button" +b
             action Jump("Tutorial")
         textbutton libido_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +c
             action Jump("Tutorial")
         textbutton dominance_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +d
             action Jump("Tutorial")
     vbox:
         xalign 0.282 #### don't ask me why this is 0.282 and the other is 0.262 Idk 
         yalign 0.805
         spacing 2.5
         textbutton teaching_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +e
             action Jump("Tutorial")
         textbutton stewardship_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +f
             action Jump("Tutorial")
         textbutton artistry_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +g
             action Jump("Tutorial")
         textbutton medic_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +h
             action Jump("Tutorial")
         textbutton fighter_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +i
             action Jump("Tutorial")
         textbutton magic_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +j
             action Jump("Tutorial")
         textbutton flagellation_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +k
             action Jump("Tutorial")
         textbutton torture_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +l
             action Jump("Tutorial")
         textbutton binding_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +m
             action Jump("Tutorial")
         textbutton petting_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +n
             action Jump("Tutorial")
         textbutton oral_sex_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +o
             action Jump("Tutorial")
         textbutton penetration_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +p
             action Jump("Tutorial")
         textbutton fetishism_textvalue:
-            style "attribute_button" +a
+            style "attribute_button" +q
             action Jump("Tutorial")
 
     # Fallback name if mc is not recognized

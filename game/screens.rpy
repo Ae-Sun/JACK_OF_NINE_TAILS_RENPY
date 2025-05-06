@@ -9,7 +9,7 @@ init offset = -1
 ## Styles
 ################################################################################
 style main_menu_button:
-    background Frame("menu_button.png", 0, 0)
+    background Frame("menu_button.webp", 0, 0)
     xminimum 300
     yminimum 50
     right_padding 15
@@ -20,7 +20,7 @@ style main_menu_button_text:
     yalign 0.5
 
 style game_menu_button:
-    background Frame("menu_button.png", 0, 0)
+    background Frame("menu_button.webp", 0, 0)
     xminimum 200
     yminimum 50
     right_padding 15
@@ -29,12 +29,6 @@ style game_menu_button_text:
     xalign 0.5
     yalign 0.5
 
-style close_button:
-    background Frame("buttons/close_button.png", 0, 0)
-    xminimum 100
-    yminimum 35
-    right_padding 15
-    bottom_padding 15
 style leftalign:
     xalign 0.0
     yalign 0.0
