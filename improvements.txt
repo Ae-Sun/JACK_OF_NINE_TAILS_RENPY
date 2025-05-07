@@ -3,5 +3,4 @@
 - The penetration is now after oral sex - (more clean)
 - The master selection now is ordered by difficulty
 - the game no longer use png, now use webp
-- the text "cannot affort apartment yet" is gone - – It's not like you start with an apartment or can buy one at the beginning of the game anyway.
 - some skill text are changed (2 way to call the same thing? no,no,no...)

@@ -101,27 +101,27 @@ default characters = [
     ("master_fighter", "master/master_fighter.webp", "master/master_fighter_hover.webp",4),
     ("master_teacher", "master/master_teacher.webp", "master/master_teacher_hover.webp",5),
     ("master_impressario", "master/master_impressario.webp", "master/master_impressario_hover.webp",6),
-    ("master_doctor", "master/master_doctor.webp", "master/master_doctor_hover.webp",7),
     ("master_butler", "master/master_butler.webp", "master/master_butler_hover.webp",8),
+    ("master_doctor", "master/master_doctor.webp", "master/master_doctor_hover.webp",7),
     ("master_werwolf", "master/master_werwolf.webp", "master/master_werwolf_hover.webp",9),
     ("master_granpa", "master/master_granpa.webp", "master/master_granpa_hover.webp",10),
     ("master_nerd", "master/master_nerd.webp", "master/master_nerd_hover.webp",11),
 ]
 default mc_inicial_stats = {
-    "master_noble"      : ["M'lord"     , 4, 4, 0, 2, 4, 0, 0, 0, 5, 0, 5, 2, 2, 3, 2, 4, 0, 4, 3, 0, 3, 2, 4, 3,"simple difficulty",    5,"   An aristocrat with a great education, with \n experience in court and military service. Having all \n the basic skills that are necesarry to teach, the easily \n joined the ranks of the slavers and all agree that a \n wonderful career awaits him..."], 
-    "master_torturer"   : ["Robespierre", 5, 1, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 3, 3, 0, 5, 5, 5, 2, 2, 4, 4,"simple difficulty",    5,"wip"],
-    "master_pimp"       : ["Silk Daddy" , 3, 4, 0, 3, 4, 0, 0, 0, 5, 0, 5, 3, 2, 2, 1, 1, 0, 0, 4, 4, 2, 5, 5, 5,"simple difficulty",    5,"wip"],
-    "master_vampire"    : ["Saruman"    , 5, 5, 0, 0, 4, 0, 0, 0, 5, 0, 5, 1, 3, 0, 2, 2, 4, 1, 1, 3, 1, 3, 3, 0,"simple difficulty",    5,"wip"],
-    "master_fighter"    : ["Blade"      , 5, 2, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 2, 5, 0, 2, 2, 2, 2, 2, 4, 2,"normal difficulty",    3,"wip"],
-    "master_teacher"    : ["Teacher"    , 3, 3, 0, 3, 4, 0, 0, 0, 5, 0, 5, 5, 2, 2, 1, 0, 0, 4, 1, 2, 0, 1, 3, 0,"normal difficulty",    3,"wip"],
-    "master_impressario": ["Maestro"    , 2, 4, 0, 1, 3, 0, 0, 0, 5, 0, 5, 3, 1, 5, 0, 0, 0, 3, 0, 3, 0, 5, 4, 1,"normal difficulty",    3,"wip"],
-    "master_doctor"     : ["Doc"        , 3, 3, 0, 2, 2, 0, 0, 0, 5, 0, 5, 2, 1, 0, 5, 0, 0, 0, 3, 2, 0, 1, 3, 0,"high difficulty",      2,"wip"],
-    "master_butler"     : ["Butler"     , 3, 3, 0, 2, 3, 0, 0, 0, 5, 0, 5, 3, 5, 1, 1, 0, 0, 2, 0, 2, 0, 1, 2, 0,"high difficulty",      2,"wip"],
-    "master_werwolf"    : ["Fenris"     , 4, 0, 0, 4, 3, 0, 0, 0, 5, 0, 5, 1, 0, 0, 3, 3, 3, 2, 2, 2, 0, 0, 4, 2,"high difficulty",      2,"wip"],
-    "master_granpa"     : ["Uncle Tom"  , 2, 1, 0, 0, 1, 0, 0, 0, 5, 0, 5, 2, 1, 0, 1, 0, 0, 2, 0, 4, 0, 3, 1, 4,"very high difficulty", 1,"wip"],
-    "master_nerd"       : ["Johny"      , 2, 1, 0, 5, 0, 0, 0, 0, 5, 0, 5, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 5,"maximum difficulty",   0,"wip"]
+    "master_noble"      : ["M'lord"     , 4, 4, 0, 2, 4, 0, 0, 0, 5, 0, 5, 2, 2, 3, 2, 4, 0, 4, 3, 0, 3, 2, 4, 3,"Elven Chainmail"     ,""           ,"Fist"         ,"Epée"           ,""                 ,""        ,"Noble Regalia"       ,"","","","","Taurus Great House",8000, "simple difficulty",    5,"   An aristocrat with a great education, with \n experience in court and military service. Having all \n the basic skills that are necesarry to teach, the easily \n joined the ranks of the slavers and all agree that a \n wonderful career awaits him..."], 
+    "master_torturer"   : ["Robespierre", 5, 1, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 3, 3, 0, 5, 5, 5, 2, 2, 4, 4,"Without armor"       ,""           ,"Fist"         ,"Whip"           ,""                 ,""        ,"Worn clothes"        ,"","","","","Taurus Great House",7000, "simple difficulty",    5,"wip"],
+    "master_pimp"       : ["Silk Daddy" , 3, 4, 0, 3, 4, 0, 0, 0, 5, 0, 5, 3, 2, 2, 1, 1, 0, 0, 4, 4, 2, 5, 5, 5,"Without armor"       ,""           ,"Fist"         ,"Brass Knuckles" ,""                 ,""        ,"Fashionable Attire"  ,"","","","","Serpis Great House",4500, "simple difficulty",    5,"wip"],
+    "master_vampire"    : ["Saruman"    , 5, 5, 0, 0, 4, 0, 0, 0, 5, 0, 5, 1, 3, 0, 2, 2, 4, 1, 1, 3, 1, 3, 3, 0,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,"Wizard Robes"        ,"","","","","Serpis Great House",5000, "simple difficulty",    5,"wip"],
+    "master_fighter"    : ["Blade"      , 5, 2, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 2, 5, 0, 2, 2, 2, 2, 2, 4, 2,"Yatserin Mail"       ,""           ,"Fist"         ,"Bastard Sword"  ,""                 ,""        ,"Aketon"              ,"","","","","Taurus Great House",6000, "normal difficulty",    3,"wip"],
+    "master_teacher"    : ["Teacher"    , 3, 3, 0, 3, 4, 0, 0, 0, 5, 0, 5, 5, 2, 2, 1, 0, 0, 4, 1, 2, 0, 1, 3, 0,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,"Formal Suit"         ,"","","","","Serpis Great House",3000, "normal difficulty",    3,"wip"],
+    "master_impressario": ["Maestro"    , 2, 4, 0, 1, 3, 0, 0, 0, 5, 0, 5, 3, 1, 5, 0, 0, 0, 3, 0, 3, 0, 5, 4, 1,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,"Formal Suit"         ,"","","","","Taurus Great House",6000, "normal difficulty",    3,"wip"],
+    "master_butler"     : ["Butler"     , 3, 3, 0, 2, 3, 0, 0, 0, 5, 0, 5, 3, 5, 1, 1, 0, 0, 2, 0, 2, 0, 1, 2, 0,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,"Livery"              ,"","","","","Taurus Great House",5000, "normal difficulty",    2,"wip"],
+    "master_doctor"     : ["Doc"        , 3, 3, 0, 2, 2, 0, 0, 0, 5, 0, 5, 2, 1, 0, 5, 0, 0, 0, 3, 2, 0, 1, 3, 0,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,"Medical Gown"        ,"","","","","Serpis Great House",1000, "high difficulty"  ,    2,"wip"],
+    "master_werwolf"    : ["Fenris"     , 4, 0, 0, 4, 3, 0, 0, 0, 5, 0, 5, 1, 0, 0, 3, 3, 3, 2, 2, 2, 0, 0, 4, 2,"Elven Chaimail"      ,"Morningstar","Katana"       ,"Epée"           ,"Cat o' Nine Tails","Dagger"  ,"Aketon"              ,"","","","","Camira Great House",400 , "high difficulty"  ,    2,"wip"],
+    "master_granpa"     : ["Uncle Tom"  , 2, 1, 0, 0, 1, 0, 0, 0, 5, 0, 5, 2, 1, 0, 1, 0, 0, 2, 0, 4, 0, 3, 1, 4,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,"Housecoat"           ,"","","","","Serpis Great House",800 , "very high difficulty", 1,"wip"],
+    "master_nerd"       : ["Johny"      , 2, 1, 0, 5, 0, 0, 0, 0, 5, 0, 5, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 5,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,"Worn clothes"        ,"","","","","Serpis Great House",200 , "maximum difficulty",   0,"wip"]
     }
-default charactersOnlyName = ["master_noble", "master_torturer", "master_pimp", "master_vampire", "master_fighter","master_teacher", "master_impressario", "master_doctor", "master_butler", "master_werwolf", "master_granpa", "master_nerd"]
+default charactersOnlyName = ["master_noble", "master_torturer", "master_pimp", "master_vampire", "master_fighter","master_teacher", "master_impressario", "master_butler", "master_doctor", "master_werwolf", "master_granpa", "master_nerd"]
 
 default mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS and ANY DICTIONARY believe me I tried, the game explote -rec3ks
     "STRENGTH": ["Frail", "Weak", "Unfit", "Vigorous", "Strong", "Herculean"],
@@ -231,12 +231,27 @@ default fetishism_number_value_24 = 0
 ############################################ textvalue track - herculean
 ############################################ value track - 5
 ############################################ number value track 999/999
-
+default armour_25 = ""
+default Shoulder_26 = ""
+default left_hand_27 = ""
+default righ_hand_28 = ""
+default sleeve_holster_29 = ""
+default boot_holster_30 = ""
+default clothes_31 = ""
+default headgear_32 = ""
+default earring_33 = ""
+default neck_34 = ""
+default ring_35 =""
+##################################################
+default faction_36 =""
+default sparks_37 =""
+###################################################
 default inicial_difficulty_textvalue =""
 default inicial_difficulty_value = 0
 
 default mc ="Jack"
 default characterOnlyNameIndex = 0
+
 
 
 # The game starts here.
@@ -441,7 +456,7 @@ screen character_selection2(x,y):
         color "#000000"
         font "fonts/Victoriana.ttf"
         anchor (0.5, 0.5)
-    text mc_inicial_stats[mc][27]:
+    text mc_inicial_stats[mc][40]:
         pos(0.40,0.37)
         color "#191970"
         size 16
@@ -510,8 +525,8 @@ label Normal_Start2:
     $ penetration_textvalue_23 = mc_attribute["PENETRATION"][mc_inicial_stats[mc][23]]
     $ fetishism_textvalue_24 = mc_attribute["FETISHISM"][mc_inicial_stats[mc][24]]
 
-    $ inicial_difficulty_textvalue = mc_inicial_stats[mc][25] #need to fix number later
-    $ inicial_difficulty_value = mc_inicial_stats[mc][26] #need to fix number later
+    $ inicial_difficulty_textvalue = mc_inicial_stats[mc][38] #need to fix number later
+    $ inicial_difficulty_value = mc_inicial_stats[mc][39] #need to fix number later
 
     if -5 <= characterOnlyNameIndex < 11:
         call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
