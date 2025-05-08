@@ -32,8 +32,7 @@ Si hiciste otra versión del juego, por favor contáctame.
 
 Thanks to qwertyu12359 for leading the 2.0 project to completion and continuing to lead the team since 2019. Thanks to Powerairmax for all his tedious work that made the post HF rebirth possible. Thanks to Lokplart for his crucial work done in v2.2. Thanks to ImperatorAugustus for taking up the role of lead developer since 2020. Thanks to all the F95Zone community users for reviews, suggestions, help with bugs, playthrough guides, and mods.
 
-This port is made from scratch by Rec3ks. Any bugs found may not be present in the original game.
-
+This port is made from scratch by Rec3ks.
 ### YOU CAN ALSO FIND THESE CREDITS IN THE GAME, DO NOT CHANGE
 
 -----
@@ -65,4 +64,3 @@ Our Wiki - https://wiki.anime-sharing.com/hgames/index.php?title=Jack-o-nine.
 ### Korean
 
 https://namu.wiki/w/Jack-o-nine-tails.
-  

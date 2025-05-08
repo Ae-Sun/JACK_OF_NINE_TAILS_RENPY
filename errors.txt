@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 445: Line is indented, but the preceding text statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    pos(0.30,0.4)
-    ^
+File "game/script.rpy", line 498: invalid syntax
+    mc_inicial_description =
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed May  7 13:40:23 2025
+Thu May  8 11:55:08 2025
