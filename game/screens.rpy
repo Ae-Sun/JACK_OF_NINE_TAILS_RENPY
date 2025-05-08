@@ -8,6 +8,104 @@ init offset = -1
 ################################################################################
 ## Styles
 ################################################################################
+style attribute_button0 is default
+style attribute_button0_text:
+    font "fonts/Consolas.ttf"
+    color "#CD0000"
+    size 17
+    kerning 1
+    hover_color  "#ffff00"
+style attribute_button1 is default
+style attribute_button1_text:
+    font "fonts/Consolas.ttf"
+    color "#EA0090"
+    size 17
+    kerning 1
+    hover_color  "#ffff00"
+style attribute_button2 is default
+style attribute_button2_text:
+    font "fonts/Consolas.ttf"
+    color "#6B0084"
+    size 17
+    kerning 1
+    hover_color  "#ffff00"
+style attribute_button3 is default
+style attribute_button3_text:
+    font "fonts/Consolas.ttf"
+    color "#002BA7"
+    size 17
+    kerning 1
+    hover_color  "#ffff00"
+style attribute_button4 is default
+style attribute_button4_text:
+    font "fonts/Consolas.ttf"
+    color "#009FEF"
+    size 17
+    kerning 1
+    hover_color  "#ffff00"
+style attribute_button5 is default
+style attribute_button5_text:
+    font "fonts/Consolas.ttf"
+    color "#009900"
+    size 17
+    kerning 1
+    hover_color  "#ffff00"
+################################################## difficulty button style
+style difficulty_button0 is default
+style difficulty_button0_text:
+    font "fonts/victoriana.ttf"
+    color "#CD0000"
+    size 48
+    hover_color "#ffff00"
+
+style difficulty_button1 is default
+style difficulty_button1_text:
+    font "fonts/victoriana.ttf"
+    color "#EA0090"
+    size 48
+    hover_color "#ffff00"
+
+style difficulty_button2 is default
+style difficulty_button2_text:
+    font "fonts/victoriana.ttf"
+    color "#6B0084"
+    size 48
+    hover_color "#ffff00"
+
+style difficulty_button3 is default
+style difficulty_button3_text:
+    font "fonts/victoriana.ttf"
+    color "#002BA7"
+    size 48
+    hover_color "#ffff00"
+
+style difficulty_button4 is default
+style difficulty_button4_text:
+    font "fonts/victoriana.ttf"
+    color "#009FEF"
+    size 48
+    hover_color "#ffff00"
+
+style difficulty_button5 is default
+style difficulty_button5_text:
+    font "fonts/victoriana.ttf"
+    color "#009900"
+    size 48
+    hover_color "#ffff00"
+################################################
+style display_mc_name is default
+style display_mc_name_text:
+    size 72
+    color "#000000"
+    font "fonts/Victoriana.ttf"
+    hover_color "#ffff00"
+style simpletext is default
+style simpletext_text:
+    color "#191970"
+    size 16
+    font "fonts/Segoe Print.ttf"    
+    hover_color "#ffff00"
+
 style main_menu_button:
     background Frame("menu_button.webp", 0, 0)
     xminimum 300

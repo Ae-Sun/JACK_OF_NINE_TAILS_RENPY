@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 498: invalid syntax
-    mc_inicial_description =
+File "game/mainmenu.rpy", line 75: 'SetVariable' is not a keyword argument or valid child of the textbutton statement.
+    SetVariable("mc_normal_selection_textdescription_value","STRENGTH"),
+               ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May  8 11:55:08 2025
+Thu May  8 21:47:33 2025
