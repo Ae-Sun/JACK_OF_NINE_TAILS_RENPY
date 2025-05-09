@@ -4,30 +4,31 @@
 # name of the character.
 ### only use default, you can also use $ but cause a lot of errors -rec3ks 
 ##################################### Text value, DO NOT CHANGE ANY ORDER OF ANY VARIABLE
-default strength_textvalue_1 = 0
-default personality_textvalue_2 = 0
-default allure_textvalue_3 = 0
-default libido_textvalue_4 = 0
-default dominance_textvalue_5 = 0
-default brand_reputation_textvalue_6 = 0
-default guild_reputation_textvalue_7 = 0
-default standard_of_living_textvalue_8 = 0
-default hygiene_textvalue_9 = 0
-default mood_textvalue_10 = 0
-default not_injuries_textvalue_11 = 0
-default teaching_textvalue_12 = 0
-default stewardship_textvalue_13 = 0
-default artistry_textvalue_14 = 0
-default medic_textvalue_15 = 0
-default fighter_textvalue_16 = 0
-default magic_textvalue_17 = 0
-default flagellation_textvalue_18 = 0
-default torture_textvalue_19 = 0
-default binding_textvalue_20 = 0
-default petting_textvalue_21 = 0
-default oral_sex_textvalue_22 = 0
-default penetration_textvalue_23 = 0
-default fetishism_textvalue_24 = 0
+default strength_textvalue_1 = ""
+default personality_textvalue_2 = ""
+default allure_textvalue_3 = ""
+default libido_textvalue_4 = ""
+default dominance_textvalue_5 = ""
+default brand_reputation_textvalue_6 = ""
+default guild_reputation_textvalue_7 = ""
+default standard_of_living_textvalue_8 = ""
+default hygiene_textvalue_9 = ""
+default mood_textvalue_10 = ""
+default not_injuries_textvalue_11 = ""
+default teaching_textvalue_12 = ""
+default stewardship_textvalue_13 = ""
+default artistry_textvalue_14 = ""
+default medic_textvalue_15 = ""
+default fighter_textvalue_16 = ""
+default magic_textvalue_17 = ""
+default flagellation_textvalue_18 = ""
+default torture_textvalue_19 = ""
+default binding_textvalue_20 = ""
+default petting_textvalue_21 = ""
+default oral_sex_textvalue_22 = ""
+default penetration_textvalue_23 = ""
+default fetishism_textvalue_24 = ""
+default reputation_textvalue_1 = ""
 ################################## values -rec3ks
 
 default strength_value_1 = 0
@@ -54,33 +55,9 @@ default petting_value_21 = 0
 default oral_sex_value_22 = 0
 default penetration_value_23 = 0
 default fetishism_value_24 = 0
+default reputation_value_1 = 0
 
 ############################################# number value -rec3ks
-default strength_custom_value_1 = 0
-default personality_custom_value_2 = 0
-default allure_custom_value_3 = 0
-default libido_custom_value_4 = 0
-default dominance_custom_value_5 = 0
-default brand_reputation_custom_value_6 = 0
-default guild_reputation_custom_value_7 = 0
-default standard_of_living_custom_value_8 = 0
-default hygiene_custom_value_9 = 0
-default mood_custom_value_10 = 0
-default injuries_custom_value_11 = 0
-default teaching_custom_value_12 = 0
-default stewardship_custom_value_13 = 0
-default artistry_custom_value_14 = 0
-default medic_custom_value_15 = 0
-default fighter_custom_value_16 = 0
-default magic_custom_value_17 = 0
-default flagellation_custom_value_18 = 0
-default torture_custom_value_19 = 0
-default binding_custom_value_20 = 0
-default petting_custom_value_21 = 0
-default oral_sex_custom_value_22 = 0
-default penetration_custom_value_23 = 0
-default fetishism_custom_value_24 = 0
-####################################################################
 default strength_number_value_1 = 0
 default personality_number_value_2 = 0
 default allure_number_value_3 = 0
@@ -130,6 +107,7 @@ default mc_normal_selection_textdescription_value = "master_noble"
 #############################################################
 default mc ="Jack"
 default characterOnlyNameIndex = 0
+default customcount = 0
 default mc_normal_selection_textdescription ={ 
     "master_noble":       [mc_inicial_stats["master_noble"][40]],
     "master_torturer":    [mc_inicial_stats["master_torturer"][40]],
@@ -172,7 +150,9 @@ default mc_normal_selection_textdescription ={
     "normal difficulty":   ["{b} NORMAL DIFFICULTY:{/b} \n A balanced experience for players seeking a fair \n challenge."],
     "high difficulty":     ["{b} HIGH DIFFICULTY:{/b} \n Designed for experienced players, resources \n are scarcer, and  mistakes are costly."],
     "very high difficulty":["{b} VERY HIGH DIFFICULTY:{/b} \n Only for the truly daring. , resources are rare, and \n every decision counts. One wrong move could be your \n last."],
-    "extreme difficulty":  ["{b} EXTREME DIFFICULTY:{/b} \n Brutal and unforgiving. resources are nearly \n nonexistent, and survival demands perfection."]
+    "extreme difficulty":  ["{b} EXTREME DIFFICULTY:{/b} \n Brutal and unforgiving. resources are nearly \n nonexistent, and survival demands perfection."],
+    "SPARKS":              ["{b} SPARKS:{/b} \n Money, very usefull"],
+    "FACTION":             ["{b} FACTION:{/b} \n You can rent a house in this faction at the start of \n game in Trade center, Real State "]
     }
 
 
@@ -274,30 +254,30 @@ label Normal_Start2:
     $ fetishism_value_24 = mc_inicial_stats[mc][24]
 
     # reassining more variables  -rec3ks
-    $ strength_textvalue_1 = mc_attribute["STRENGTH"][mc_inicial_stats[mc][1]]
-    $ personality_textvalue_2 = mc_attribute["PERSONALITY"][mc_inicial_stats[mc][2]]
-    $ allure_textvalue_3 = mc_attribute["ALLURE"][mc_inicial_stats[mc][3]]
-    $ libido_textvalue_4 = mc_attribute["LIBIDO"][mc_inicial_stats[mc][4]]
-    $ dominance_textvalue_5 = mc_attribute["DOMINANCE"][mc_inicial_stats[mc][5]]
-    $ brand_reputation_textvalue_6 = mc_attribute["BRAND REPUTATION"][mc_inicial_stats[mc][6]]
-    $ guild_reputation_textvalue_7 = mc_attribute["GUILD REPUTATION"][mc_inicial_stats[mc][7]]
-    $ standard_of_living_textvalue_8 = mc_attribute["STANDARD OF LIVING"][mc_inicial_stats[mc][8]]
-    $ hygiene_textvalue_9 = mc_attribute["HYGIENE"][mc_inicial_stats[mc][9]]
-    $ mood_textvalue_10 = mc_attribute["MOOD"][mc_inicial_stats[mc][10]]
-    $ injuries_textvalue_11 = mc_attribute["INJURIES"][mc_inicial_stats[mc][11]]
-    $ teaching_textvalue_12 = mc_attribute["TEACHING"][mc_inicial_stats[mc][12]]
-    $ stewardship_textvalue_13 = mc_attribute["STEWARDSHIP"][mc_inicial_stats[mc][13]]
-    $ artistry_textvalue_14 = mc_attribute["ARTISTRY"][mc_inicial_stats[mc][14]]
-    $ medic_textvalue_15 = mc_attribute["MEDIC"][mc_inicial_stats[mc][15]]
-    $ fighter_textvalue_16 = mc_attribute["FIGHTER"][mc_inicial_stats[mc][16]]
-    $ magic_textvalue_17 = mc_attribute["MAGIC"][mc_inicial_stats[mc][17]]
-    $ flagellation_textvalue_18 = mc_attribute["FLAGELLATION"][mc_inicial_stats[mc][18]]
-    $ torture_textvalue_19 = mc_attribute["TORTURE"][mc_inicial_stats[mc][19]]
-    $ binding_textvalue_20 = mc_attribute["BINDING"][mc_inicial_stats[mc][20]]
-    $ petting_textvalue_21 = mc_attribute["PETTING"][mc_inicial_stats[mc][21]]
-    $ oral_sex_textvalue_22 = mc_attribute["ORAL SEX"][mc_inicial_stats[mc][22]]
-    $ penetration_textvalue_23 = mc_attribute["PENETRATION"][mc_inicial_stats[mc][23]]
-    $ fetishism_textvalue_24 = mc_attribute["FETISHISM"][mc_inicial_stats[mc][24]]
+    $ strength_textvalue_1 = mc_attribute["STRENGTH"][strength_value_1]
+    $ personality_textvalue_2 = mc_attribute["PERSONALITY"][personality_value_2]
+    $ allure_textvalue_3 = mc_attribute["ALLURE"][allure_value_3]
+    $ libido_textvalue_4 = mc_attribute["LIBIDO"][libido_value_4]
+    $ dominance_textvalue_5 = mc_attribute["DOMINANCE"][dominance_value_5]
+    $ brand_reputation_textvalue_6 = mc_attribute["BRAND REPUTATION"][brand_reputation_value_6]
+    $ guild_reputation_textvalue_7 = mc_attribute["GUILD REPUTATION"][guild_reputation_value_7]
+    $ standard_of_living_textvalue_8 = mc_attribute["STANDARD OF LIVING"][standard_of_living_value_8]
+    $ hygiene_textvalue_9 = mc_attribute["HYGIENE"][hygiene_value_9]
+    $ mood_textvalue_10 = mc_attribute["MOOD"][mood_value_10]
+    $ injuries_textvalue_11 = mc_attribute["INJURIES"][injuries_value_11]
+    $ teaching_textvalue_12 = mc_attribute["TEACHING"][teaching_value_12]
+    $ stewardship_textvalue_13 = mc_attribute["STEWARDSHIP"][stewardship_value_13]
+    $ artistry_textvalue_14 = mc_attribute["ARTISTRY"][artistry_value_14]
+    $ medic_textvalue_15 = mc_attribute["MEDIC"][medic_value_15]
+    $ fighter_textvalue_16 = mc_attribute["FIGHTER"][fighter_value_16]
+    $ magic_textvalue_17 = mc_attribute["MAGIC"][magic_value_17]
+    $ flagellation_textvalue_18 = mc_attribute["FLAGELLATION"][flagellation_value_18]
+    $ torture_textvalue_19 = mc_attribute["TORTURE"][torture_value_19]
+    $ binding_textvalue_20 = mc_attribute["BINDING"][binding_value_20]
+    $ petting_textvalue_21 = mc_attribute["PETTING"][petting_value_21]
+    $ oral_sex_textvalue_22 = mc_attribute["ORAL SEX"][oral_sex_value_22]
+    $ penetration_textvalue_23 = mc_attribute["PENETRATION"][penetration_value_23]
+    $ fetishism_textvalue_24 = mc_attribute["FETISHISM"][fetishism_value_24]
 
     $ inicial_difficulty_textvalue = mc_inicial_stats[mc][38]
     $ inicial_difficulty_value = mc_inicial_stats[mc][39] 
@@ -319,30 +299,62 @@ label Normal_Start2:
 label Custom_Start:
     scene donotdelete
     show scroll_large
-    $ strength_textvalue_1 = mc_attribute["STRENGTH"][mc_inicial_stats[mc][1]]
-    $ personality_textvalue_2 = mc_attribute["PERSONALITY"][mc_inicial_stats[mc][2]]
-    $ allure_textvalue_3 = mc_attribute["ALLURE"][mc_inicial_stats[mc][3]]
-    $ libido_textvalue_4 = mc_attribute["LIBIDO"][mc_inicial_stats[mc][4]]
-    $ dominance_textvalue_5 = mc_attribute["DOMINANCE"][mc_inicial_stats[mc][5]]
-    $ brand_reputation_textvalue_6 = mc_attribute["BRAND REPUTATION"][mc_inicial_stats[mc][6]]
-    $ guild_reputation_textvalue_7 = mc_attribute["GUILD REPUTATION"][mc_inicial_stats[mc][7]]
-    $ standard_of_living_textvalue_8 = mc_attribute["STANDARD OF LIVING"][mc_inicial_stats[mc][8]]
-    $ hygiene_textvalue_9 = mc_attribute["HYGIENE"][mc_inicial_stats[mc][9]]
-    $ mood_textvalue_10 = mc_attribute["MOOD"][mc_inicial_stats[mc][10]]
-    $ injuries_textvalue_11 = mc_attribute["INJURIES"][mc_inicial_stats[mc][11]]
-    $ teaching_textvalue_12 = mc_attribute["TEACHING"][mc_inicial_stats[mc][12]]
-    $ stewardship_textvalue_13 = mc_attribute["STEWARDSHIP"][mc_inicial_stats[mc][13]]
-    $ artistry_textvalue_14 = mc_attribute["ARTISTRY"][mc_inicial_stats[mc][14]]
-    $ medic_textvalue_15 = mc_attribute["MEDIC"][mc_inicial_stats[mc][15]]
-    $ fighter_textvalue_16 = mc_attribute["FIGHTER"][mc_inicial_stats[mc][16]]
-    $ magic_textvalue_17 = mc_attribute["MAGIC"][mc_inicial_stats[mc][17]]
-    $ flagellation_textvalue_18 = mc_attribute["FLAGELLATION"][mc_inicial_stats[mc][18]]
-    $ torture_textvalue_19 = mc_attribute["TORTURE"][mc_inicial_stats[mc][19]]
-    $ binding_textvalue_20 = mc_attribute["BINDING"][mc_inicial_stats[mc][20]]
-    $ petting_textvalue_21 = mc_attribute["PETTING"][mc_inicial_stats[mc][21]]
-    $ oral_sex_textvalue_22 = mc_attribute["ORAL SEX"][mc_inicial_stats[mc][22]]
-    $ penetration_textvalue_23 = mc_attribute["PENETRATION"][mc_inicial_stats[mc][23]]
-    $ fetishism_textvalue_24 = mc_attribute["FETISHISM"][mc_inicial_stats[mc][24]]
+    $ customcount = customcount +1
+    if customcount <= 1:
+        $ strength_value_1 = mc_inicial_stats[mc][1]
+        $ personality_value_2 = mc_inicial_stats[mc][2]
+        $ allure_value_3 = mc_inicial_stats[mc][3]
+        $ libido_value_4 = mc_inicial_stats[mc][4]
+        $ dominance_value_5 = mc_inicial_stats[mc][5]
+        $ brand_reputation_value_6 = mc_inicial_stats[mc][6]
+        $ guild_reputation_value_7 = mc_inicial_stats[mc][7]
+        $ standard_of_living_value_8 = mc_inicial_stats[mc][8]
+        $ hygiene_value_9 = mc_inicial_stats[mc][9]
+        $ mood_value_10 = mc_inicial_stats[mc][10]
+        $ injuries_value_11 = mc_inicial_stats[mc][11]
+        $ teaching_value_12 = mc_inicial_stats[mc][12]
+        $ stewardship_value_13 = mc_inicial_stats[mc][13]
+        $ artistry_value_14 = mc_inicial_stats[mc][14]
+        $ medic_value_15 = mc_inicial_stats[mc][15]
+        $ fighter_value_16 = mc_inicial_stats[mc][16]
+        $ magic_value_17 = mc_inicial_stats[mc][17]
+        $ flagellation_value_18 = mc_inicial_stats[mc][18]
+        $ torture_value_19 = mc_inicial_stats[mc][19]
+        $ binding_value_20 = mc_inicial_stats[mc][20]
+        $ petting_value_21 = mc_inicial_stats[mc][21]
+        $ oral_sex_value_22 = mc_inicial_stats[mc][22]
+        $ penetration_value_23 = mc_inicial_stats[mc][23]
+        $ fetishism_value_24 = mc_inicial_stats[mc][24]
+
+    # reassining more variables  -rec3ks
+    $ strength_textvalue_1 = mc_attribute["STRENGTH"][strength_value_1]
+    $ personality_textvalue_2 = mc_attribute["PERSONALITY"][personality_value_2]
+    $ allure_textvalue_3 = mc_attribute["ALLURE"][allure_value_3]
+    $ libido_textvalue_4 = mc_attribute["LIBIDO"][libido_value_4]
+    $ dominance_textvalue_5 = mc_attribute["DOMINANCE"][dominance_value_5]
+    $ brand_reputation_textvalue_6 = mc_attribute["BRAND REPUTATION"][brand_reputation_value_6]
+    $ guild_reputation_textvalue_7 = mc_attribute["GUILD REPUTATION"][guild_reputation_value_7]
+    $ standard_of_living_textvalue_8 = mc_attribute["STANDARD OF LIVING"][standard_of_living_value_8]
+    $ hygiene_textvalue_9 = mc_attribute["HYGIENE"][hygiene_value_9]
+    $ mood_textvalue_10 = mc_attribute["MOOD"][mood_value_10]
+    $ injuries_textvalue_11 = mc_attribute["INJURIES"][injuries_value_11]
+    $ teaching_textvalue_12 = mc_attribute["TEACHING"][teaching_value_12]
+    $ stewardship_textvalue_13 = mc_attribute["STEWARDSHIP"][stewardship_value_13]
+    $ artistry_textvalue_14 = mc_attribute["ARTISTRY"][artistry_value_14]
+    $ medic_textvalue_15 = mc_attribute["MEDIC"][medic_value_15]
+    $ fighter_textvalue_16 = mc_attribute["FIGHTER"][fighter_value_16]
+    $ magic_textvalue_17 = mc_attribute["MAGIC"][magic_value_17]
+    $ flagellation_textvalue_18 = mc_attribute["FLAGELLATION"][flagellation_value_18]
+    $ torture_textvalue_19 = mc_attribute["TORTURE"][torture_value_19]
+    $ binding_textvalue_20 = mc_attribute["BINDING"][binding_value_20]
+    $ petting_textvalue_21 = mc_attribute["PETTING"][petting_value_21]
+    $ oral_sex_textvalue_22 = mc_attribute["ORAL SEX"][oral_sex_value_22]
+    $ penetration_textvalue_23 = mc_attribute["PENETRATION"][penetration_value_23]
+    $ fetishism_textvalue_24 = mc_attribute["FETISHISM"][fetishism_value_24]
+    $ reputation_textvalue_1 = mc_attribute["REPUTATION"][reputation_value_1]
+    $ inicial_difficulty_textvalue = mc_inicial_stats[mc][38]
+
+    $ inicial_difficulty_value = mc_inicial_stats[mc][39] 
     call screen custom_selection()
     "WIP"
     return
@@ -352,21 +364,287 @@ label Custom_Start:
 screen custom_selection():
     vbox:
         anchor (0.0, 0.0)  # Aligns the anchor to the top-left corner
-        spacing 2.5    # Spacing between all buttons
-        xpos 310 
-        ypos 250  
+        spacing -1.5    # Spacing between all buttons
+        xpos 360 
+        ypos 115 
+
+        textbutton reputation_textvalue_1:
+            style "attribute_button_custom" + str(reputation_value_1),
+            action Jump("Custom_Start")
+
         textbutton strength_textvalue_1:
-            style "attribute_button" + str(strength_custom_value_1)
+            style "attribute_button_custom" + str(strength_value_1),
+            action Jump("Custom_Start")
 
         textbutton personality_textvalue_2:
-            style "attribute_button" + str(personality_custom_value_2)
+            style "attribute_button_custom" + str(personality_value_2),
+            action Jump("Custom_Start")
 
         textbutton libido_textvalue_4:
-            style "attribute_button" + str(libido_custom_value_4)
+            style "attribute_button_custom" + str(libido_value_4),
+            action Jump("Custom_Start")
 
         textbutton dominance_textvalue_5:
-            style "attribute_button" + str(dominance_custom_value_5)
+            style "attribute_button_custom" + str(dominance_value_5),
+            action Jump("Custom_Start")
 
+        # Adding extra spacing here:
+        add "spacer" size (0, 20)
+
+        textbutton teaching_textvalue_12:
+            style "attribute_button_custom" + str(teaching_value_12),
+            action Jump("Custom_Start")
+
+        textbutton stewardship_textvalue_13:
+            style "attribute_button_custom" + str(stewardship_value_13),
+            action Jump("Custom_Start")
+
+        textbutton artistry_textvalue_14:
+            style "attribute_button_custom" + str(artistry_value_14),
+            action Jump("Custom_Start")
+
+        textbutton medic_textvalue_15:
+            style "attribute_button_custom" + str(medic_value_15),
+            action Jump("Custom_Start")
+
+        textbutton fighter_textvalue_16:
+            style "attribute_button_custom" + str(fighter_value_16),
+            action Jump("Custom_Start")
+
+        textbutton magic_textvalue_17:
+            style "attribute_button_custom" + str(magic_value_17),
+            action Jump("Custom_Start")
+
+        textbutton flagellation_textvalue_18:
+            style "attribute_button_custom" + str(flagellation_value_18),
+            action Jump("Custom_Start")
+
+        textbutton torture_textvalue_19:
+            style "attribute_button_custom" + str(torture_value_19),
+            action Jump("Custom_Start")
+
+        textbutton binding_textvalue_20:
+            style "attribute_button_custom" + str(binding_value_20),
+            action Jump("Custom_Start")
+
+        add "spacer" size (0, 20)
+
+        textbutton petting_textvalue_21:
+            style "attribute_button_custom" + str(petting_value_21),
+            action Jump("Custom_Start")
+
+        textbutton oral_sex_textvalue_22:
+            style "attribute_button_custom" + str(oral_sex_value_22),
+            action Jump("Custom_Start")
+
+        textbutton penetration_textvalue_23:
+            style "attribute_button_custom" + str(penetration_value_23),
+            action Jump("Custom_Start")
+
+        textbutton fetishism_textvalue_24:
+            style "attribute_button_custom" + str(fetishism_value_24),
+            action Jump("Custom_Start")
+    vbox:
+        anchor (0.0, 0.0)  # Aligns the anchor to the top-left corner
+        spacing -1.5    # Spacing between all buttons
+        xpos 290 
+        ypos 115 
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(reputation_value_1)
+            action SetVariable("reputation_value_1", min(reputation_value_1 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(strength_value_1)
+            action SetVariable("strength_value_1", min(strength_value_1 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(personality_value_2)
+            action SetVariable("personality_value_2", min(personality_value_2 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(libido_value_4)
+            action SetVariable("libido_value_4", min(libido_value_4 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(dominance_value_5)
+            action SetVariable("dominance_value_5", min(dominance_value_5 + 1, 5)), Jump("Custom_Start")
+
+        # Adding extra spacing here:
+        add "spacer" size (0, 20)
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(teaching_value_12)
+            action SetVariable("teaching_value_12", min(teaching_value_12 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(stewardship_value_13)
+            action SetVariable("stewardship_value_13", min(stewardship_value_13 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(artistry_value_14)
+            action SetVariable("artistry_value_14", min(artistry_value_14 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(medic_value_15)
+            action SetVariable("medic_value_15", min(medic_value_15 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(fighter_value_16)
+            action SetVariable("fighter_value_16", min(fighter_value_16 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(magic_value_17)
+            action SetVariable("magic_value_17", min(magic_value_17 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(flagellation_value_18)
+            action SetVariable("flagellation_value_18", min(flagellation_value_18 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(torture_value_19)
+            action SetVariable("torture_value_19", min(torture_value_19 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(binding_value_20)
+            action SetVariable("binding_value_20", min(binding_value_20 + 1, 5)), Jump("Custom_Start")
+
+        add "spacer" size (0, 20)
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(petting_value_21)
+            action SetVariable("petting_value_21", min(petting_value_21 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(oral_sex_value_22)
+            action SetVariable("oral_sex_value_22", min(oral_sex_value_22 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(penetration_value_23)
+            action SetVariable("penetration_value_23", min(penetration_value_23 + 1, 5)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(fetishism_value_24)
+            action SetVariable("fetishism_value_24", min(fetishism_value_24 + 1, 5)), Jump("Custom_Start")
+       
+    vbox:
+        anchor (0.0, 0.0)  # Aligns the anchor to the top-left corner
+        spacing -1.5    # Spacing between all buttons
+        xpos 328
+        ypos 115 
+       
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(reputation_value_1),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(strength_value_1),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(personality_value_2),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(libido_value_4),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(dominance_value_5),
+            action Jump("Custom_Start")
+
+        # Adding extra spacing here:
+        add "spacer" size (0, 20)
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(teaching_value_12),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(stewardship_value_13),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(artistry_value_14),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(medic_value_15),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(fighter_value_16),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(magic_value_17),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(flagellation_value_18),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(torture_value_19),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(binding_value_20),
+            action Jump("Custom_Start")
+
+        add "spacer" size (0, 20)
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(petting_value_21),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(oral_sex_value_22),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(penetration_value_23),
+            action Jump("Custom_Start")
+
+        textbutton "[[-]":
+            style "attribute_button_custom" + str(fetishism_value_24),
+            action Jump("Custom_Start")
+
+    vbox:
+        anchor (0.0, 0.0)
+        xpos 315
+        ypos 120
+        spacing 1.12  # Adjusted for cleaner spacing
+
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+
+        null height 20  # Spacer
+
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+
+        null height 20  # Spacer
+
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+        text "/" color "#000000"
+    imagebutton:
+        idle "buttons/close_button.webp" pos (997,12)
+        hover "buttons/close_button_hover.webp"
+        action MainMenu(confirm=False)    
+        
 transform custom_position:
     xpos 0.23
     ypos 0.12

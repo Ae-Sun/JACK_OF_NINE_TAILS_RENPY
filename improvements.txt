@@ -8,3 +8,4 @@
 - clicking attributes on selection menu will show attribute tips
 - clicking on mc name will show some persistent data -WIP 
 - clicking on difficulty will show a difficulty description (need improvement)
+- 

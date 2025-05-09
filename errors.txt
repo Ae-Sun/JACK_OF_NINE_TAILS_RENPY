@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/dictionary.rpy", line 29: invalid syntax
-        "Jack"              : ["jack"       , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,""                    ,"","","","",""                  ,6000, "Normal"           ,    3,585]           \
-         ^
+File "game/script.rpy", line 354: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    $ reputation_textvalue_1 = mc_attribute["REPUTATION"][reputation_value_1]
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May  9 15:13:15 2025
+Sat May 10 00:37:57 2025

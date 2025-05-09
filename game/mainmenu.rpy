@@ -152,9 +152,9 @@ screen character_selection2(x,y):
     textbutton " Faction: [mc_inicial_stats[mc][36]]":
         pos (0.42, 0.80)
         style "simpletext"
-        action NullAction()
+        action SetVariable("mc_normal_selection_textdescription_value","FACTION"), Jump("Normal_Start2")
 
     textbutton " Sparks: [mc_inicial_stats[mc][37]]":
         pos (0.42, 0.84)
         style "simpletext"
-        action NullAction()
+        action SetVariable("mc_normal_selection_textdescription_value","SPARKS"), Jump("Normal_Start2")

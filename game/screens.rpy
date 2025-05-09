@@ -93,6 +93,48 @@ style difficulty_button5_text:
     size 48
     hover_color "#ffff00"
 ################################################
+style attribute_button_custom0 is default
+style attribute_button_custom0_text:
+    font "fonts/Segoe Print.ttf"
+    color "#CD0000"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_button_custom1 is default
+style attribute_button_custom1_text:
+    font "fonts/Segoe Print.ttf"
+    color "#EA0090"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_button_custom2 is default
+style attribute_button_custom2_text:
+    font "fonts/Segoe Print.ttf"
+    color "#6B0084"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_button_custom3 is default
+style attribute_button_custom3_text:
+    font "fonts/Segoe Print.ttf"
+    color "#002BA7"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_button_custom4 is default
+style attribute_button_custom4_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009FEF"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_button_custom5 is default
+style attribute_button_custom5_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009900"
+    size 16
+    hover_color "#ffff00"
+##############################################################
 style display_mc_name is default
 style display_mc_name_text:
     size 72
