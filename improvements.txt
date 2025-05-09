@@ -4,3 +4,7 @@
 - The master selection now is ordered by difficulty
 - the game no longer use png, now use webp
 - some skill text are changed (2 way to call the same thing? no,no,no...)
+- maximun difficulty is called now extreme difficulty and extreme difficulty is called maximun difficulty (because nothing can be harder that maximun difficulty)
+- clicking attributes on selection menu will show attribute tips
+- clicking on mc name will show some persistent data -WIP 
+- clicking on difficulty will show a difficulty description (need improvement)

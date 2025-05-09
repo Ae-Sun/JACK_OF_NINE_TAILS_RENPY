@@ -2,15 +2,12 @@ roadman for 0.1.0
   Goal - Finish the main menu  
     main menu screen - Done
     Tutorial(only the explaination part ) - Not done yet
-    Normal Start - 70% Done
+    Normal Start -  Done
       Select character screen -Done
       forward and backward button -Done
       imprementing attribute system
-    attribute system -50% Done
       define all attribute state -Done
       find a way to change text color depending of attribute value - Done
-      if attribute value are over or below x value change the attribute name - 1/2 Done
-      define the checking values for every attribute - Not done yet
     Custom Start - Not done yet
     Finish github page - Done
     Controls - Done

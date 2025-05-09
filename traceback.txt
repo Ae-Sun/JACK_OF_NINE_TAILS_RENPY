@@ -1,66 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 280, in script
-    call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/mainmenu.rpy", line 28, in execute
-    screen character_selection2(x,y):
-  File "game/mainmenu.rpy", line 28, in execute
-    screen character_selection2(x,y):
-  File "game/mainmenu.rpy", line 146, in execute
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][0]:
-  File "game/mainmenu.rpy", line 146, in <module>
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][0]:
-KeyError: 'MC NAME'
+  File "game/script.rpy", line 322, in script
+    $ strength_textvalue_1 = mc_attribute["STRENGTH"][mc_inicial_stats[mc][1]]
+  File "game/script.rpy", line 322, in <module>
+    $ strength_textvalue_1 = mc_attribute["STRENGTH"][mc_inicial_stats[mc][1]]
+KeyError: 'Jack'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 280, in script
-    call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/mainmenu.rpy", line 28, in execute
-    screen character_selection2(x,y):
-  File "game/mainmenu.rpy", line 28, in execute
-    screen character_selection2(x,y):
-  File "game/mainmenu.rpy", line 146, in execute
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][0]:
-  File "game/mainmenu.rpy", line 146, in <module>
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][0]:
-KeyError: 'MC NAME'
+  File "game/script.rpy", line 322, in script
+    $ strength_textvalue_1 = mc_attribute["STRENGTH"][mc_inicial_stats[mc][1]]
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 322, in <module>
+    $ strength_textvalue_1 = mc_attribute["STRENGTH"][mc_inicial_stats[mc][1]]
+KeyError: 'Jack'
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Fri May  9 00:14:40 2025
+Fri May  9 15:06:12 2025

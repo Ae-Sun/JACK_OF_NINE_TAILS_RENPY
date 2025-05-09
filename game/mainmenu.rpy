@@ -33,7 +33,7 @@ screen character_selection2(x,y):
         
     textbutton inicial_difficulty_textvalue pos (765, 195) anchor(0.5,0.5):
         style "difficulty_button" + str(inicial_difficulty_value)
-        action Jump("Normal_Start2")
+        action SetVariable("mc_normal_selection_textdescription_value",inicial_difficulty_textvalue), Jump("Normal_Start2")
 
     imagebutton:
         idle "buttons/close_button.webp" pos (997,12)
