@@ -32,7 +32,7 @@ style attribute_button2_text:
 style attribute_button3 is default
 style attribute_button3_text:
     font "fonts/Consolas.ttf"
-    color "#002BA7"
+    color "#0000D8"
     size 17
     kerning 1
     hover_color  "#ffff00"
@@ -47,6 +47,13 @@ style attribute_button5 is default
 style attribute_button5_text:
     font "fonts/Consolas.ttf"
     color "#009900"
+    size 17
+    kerning 1
+    hover_color  "#ffff00"
+style attribute_button6 is default
+style attribute_button6_text:
+    font "fonts/Consolas.ttf"
+    color "#996515"
     size 17
     kerning 1
     hover_color  "#ffff00"
@@ -75,7 +82,7 @@ style difficulty_button2_text:
 style difficulty_button3 is default
 style difficulty_button3_text:
     font "fonts/victoriana.ttf"
-    color "#002BA7"
+    color "#0000D8"
     size 48
     hover_color "#ffff00"
 
@@ -96,45 +103,71 @@ style difficulty_button5_text:
 style attribute_button_custom0 is default
 style attribute_button_custom0_text:
     font "fonts/Segoe Print.ttf"
-    color "#CD0000"
+    color "#000000"
     size 16
-    hover_color "#ffff00"
-
+    kerning 1
 style attribute_button_custom1 is default
 style attribute_button_custom1_text:
     font "fonts/Segoe Print.ttf"
-    color "#EA0090"
+    color "#CD0000"
     size 16
     hover_color "#ffff00"
 
 style attribute_button_custom2 is default
 style attribute_button_custom2_text:
     font "fonts/Segoe Print.ttf"
-    color "#6B0084"
+    color "#EA0090"
     size 16
     hover_color "#ffff00"
 
 style attribute_button_custom3 is default
 style attribute_button_custom3_text:
     font "fonts/Segoe Print.ttf"
-    color "#002BA7"
+    color "#6B0084"
     size 16
     hover_color "#ffff00"
 
 style attribute_button_custom4 is default
 style attribute_button_custom4_text:
     font "fonts/Segoe Print.ttf"
-    color "#009FEF"
+    color "#0000D8"
     size 16
     hover_color "#ffff00"
 
 style attribute_button_custom5 is default
 style attribute_button_custom5_text:
     font "fonts/Segoe Print.ttf"
+    color "#009FEF"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_button_custom6 is default
+style attribute_button_custom6_text:
+    font "fonts/Segoe Print.ttf"
     color "#009900"
     size 16
     hover_color "#ffff00"
+style attribute_button_custom7 is default
+style attribute_button_custom7_text:
+    font "fonts/Segoe Print.ttf"
+    color "#996515"
+    size 16
+    kerning 1
+    hover_color  "#ffff00"
+style attribute_button_custom8 is default
+style attribute_button_custom8_text:
+    font "fonts/Segoe Print.ttf"
+    color "#000000"
+    size 16
+    kerning 1
 ##############################################################
+style charge_button is default 
+style change_button_text:
+    font "fonts/Segoe Print.ttf"
+    color "#002BA7"
+    size 16
+    hover_color "#ffff00"
+#########################################
 style display_mc_name is default
 style display_mc_name_text:
     size 72
@@ -147,7 +180,7 @@ style simpletext_text:
     size 16
     font "fonts/Segoe Print.ttf"    
     hover_color "#ffff00"
-
+###########################################################################
 style main_menu_button:
     background Frame("menu_button.webp", 0, 0)
     xminimum 300

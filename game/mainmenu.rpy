@@ -27,6 +27,8 @@ screen character_selection():
 
 screen character_selection2(x,y):
 
+    text mc_inicial_stats[mc][40] size 15 pos (765, 230) anchor(0.5,0.5) font "fonts/Victoriana.ttf" color "000000"
+
     textbutton display_name pos (0.60, 0.19) anchor (0.5, 0.5):
         style "display_mc_name"
         action SetVariable("mc_normal_selection_textdescription_value","MC NAME"), Jump("Normal_Start2")
@@ -149,12 +151,12 @@ screen character_selection2(x,y):
         size 16
         font "fonts/Segoe Print.ttf"
 
-    textbutton " Faction: [mc_inicial_stats[mc][36]]":
+    textbutton " Faction: [faction_36]":
         pos (0.42, 0.80)
         style "simpletext"
         action SetVariable("mc_normal_selection_textdescription_value","FACTION"), Jump("Normal_Start2")
 
-    textbutton " Sparks: [mc_inicial_stats[mc][37]]":
+    textbutton " Sparks: [sparks_37]":
         pos (0.42, 0.84)
         style "simpletext"
         action SetVariable("mc_normal_selection_textdescription_value","SPARKS"), Jump("Normal_Start2")

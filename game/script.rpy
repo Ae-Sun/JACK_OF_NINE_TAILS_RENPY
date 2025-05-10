@@ -107,44 +107,37 @@ default mc_normal_selection_textdescription_value = "master_noble"
 #############################################################
 default mc ="Jack"
 default characterOnlyNameIndex = 0
-default customcount = 0
+default costumcheck = True
 default mc_normal_selection_textdescription ={ 
-    "master_noble":       [mc_inicial_stats["master_noble"][40]],
-    "master_torturer":    [mc_inicial_stats["master_torturer"][40]],
-    "master_pimp":        [mc_inicial_stats["master_pimp"][40]],
-    "master_vampire":     [mc_inicial_stats["master_vampire"][40]],
-    "master_fighter":     [mc_inicial_stats["master_fighter"][40]],
-    "master_teacher":     [mc_inicial_stats["master_teacher"][40]],
-    "master_impressario": [mc_inicial_stats["master_impressario"][40]],
-    "master_butler":      [mc_inicial_stats["master_butler"][40]],
-    "master_doctor":      [mc_inicial_stats["master_doctor"][40]],
-    "master_werwolf":     [mc_inicial_stats["master_werwolf"][40]],
-    "master_granpa":      [mc_inicial_stats["master_granpa"][40]],
-    "master_nerd":        [mc_inicial_stats["master_nerd"][40]],
-    "STRENGTH":            [mc_attribute["STRENGTH"][6]],
-    "PERSONALITY":         [mc_attribute["PERSONALITY"][6]],
-    "ALLURE":              [mc_attribute["ALLURE"][6]],
-    "LIBIDO":              [mc_attribute["LIBIDO"][6]],
-    "DOMINANCE":           [mc_attribute["DOMINANCE"][6]],
-    "BRAND REPUTATION":    [mc_attribute["BRAND REPUTATION"][6]],
-    "GUILD REPUTATION":    [mc_attribute["GUILD REPUTATION"][6]],
-    "STANDARD OF LIVING":  [mc_attribute["STANDARD OF LIVING"][6]],
-    "HYGIENE":             [mc_attribute["HYGIENE"][6]],
-    "MOOD":                [mc_attribute["MOOD"][11]],
-    "INJURIES":            [mc_attribute["INJURIES"][6]],
-    "TEACHING":            [mc_attribute["TEACHING"][6]],
-    "STEWARDSHIP":         [mc_attribute["STEWARDSHIP"][6]],
-    "ARTISTRY":            [mc_attribute["ARTISTRY"][6]],
-    "MEDIC":               [mc_attribute["MEDIC"][6]],
-    "FIGHTER":             [mc_attribute["FIGHTER"][6]],
-    "MAGIC":               [mc_attribute["MAGIC"][6]],
-    "FLAGELLATION":        [mc_attribute["FLAGELLATION"][6]],
-    "TORTURE":             [mc_attribute["TORTURE"][6]],
-    "BINDING":             [mc_attribute["BINDING"][6]],
-    "PETTING":             [mc_attribute["PETTING"][6]],
-    "ORAL SEX":            [mc_attribute["ORAL SEX"][6]],
-    "PENETRATION":         [mc_attribute["PENETRATION"][6]],
-    "FETISHISM":           [mc_attribute["FETISHISM"][6]],
+    "master_noble":       [mc_inicial_stats["master_noble"][41]],
+    "master_torturer":    [mc_inicial_stats["master_torturer"][41]],
+    "master_pimp":        [mc_inicial_stats["master_pimp"][41]],
+    "master_vampire":     [mc_inicial_stats["master_vampire"][41]],
+    "master_fighter":     [mc_inicial_stats["master_fighter"][41]],
+    "master_teacher":     [mc_inicial_stats["master_teacher"][41]],
+    "master_impressario": [mc_inicial_stats["master_impressario"][41]],
+    "master_butler":      [mc_inicial_stats["master_butler"][41]],
+    "master_doctor":      [mc_inicial_stats["master_doctor"][41]],
+    "master_werwolf":     [mc_inicial_stats["master_werwolf"][41]],
+    "master_granpa":      [mc_inicial_stats["master_granpa"][41]],
+    "master_nerd":        [mc_inicial_stats["master_nerd"][41]],
+    "STRENGTH":            [mc_attribute["STRENGTH"][7]],
+    "PERSONALITY":         [mc_attribute["PERSONALITY"][7]],
+    "LIBIDO":              [mc_attribute["LIBIDO"][7]],
+    "DOMINANCE":           [mc_attribute["DOMINANCE"][7]],
+    "TEACHING":            [mc_attribute["TEACHING"][7]],
+    "STEWARDSHIP":         [mc_attribute["STEWARDSHIP"][7]],
+    "ARTISTRY":            [mc_attribute["ARTISTRY"][7]],
+    "MEDIC":               [mc_attribute["MEDIC"][7]],
+    "FIGHTER":             [mc_attribute["FIGHTER"][7]],
+    "MAGIC":               [mc_attribute["MAGIC"][7]],
+    "FLAGELLATION":        [mc_attribute["FLAGELLATION"][7]],
+    "TORTURE":             [mc_attribute["TORTURE"][7]],
+    "BINDING":             [mc_attribute["BINDING"][7]],
+    "PETTING":             [mc_attribute["PETTING"][7]],
+    "ORAL SEX":            [mc_attribute["ORAL SEX"][7]],
+    "PENETRATION":         [mc_attribute["PENETRATION"][7]],
+    "FETISHISM":           [mc_attribute["FETISHISM"][7]],
     "MC NAME":             ["{b} MISCELLANEOS:{/b} \n Total time played with this character: WIP \n Total number of slave buyed: WIP \n The highest sell slave value: WIP \n Total amount of spark gained: WIP: \n  "],
     "simple difficulty":   ["{b} SIMPLE DIFFICULTY:{/b} \n Perfect for beginners or those looking to enjoy the game \n without too much challenge"],
     "normal difficulty":   ["{b} NORMAL DIFFICULTY:{/b} \n A balanced experience for players seeking a fair \n challenge."],
@@ -252,6 +245,8 @@ label Normal_Start2:
     $ oral_sex_value_22 = mc_inicial_stats[mc][22]
     $ penetration_value_23 = mc_inicial_stats[mc][23]
     $ fetishism_value_24 = mc_inicial_stats[mc][24]
+    $ faction_36 = mc_inicial_stats[mc][36]
+    $ sparks_37 = mc_inicial_stats[mc][37]
 
     # reassining more variables  -rec3ks
     $ strength_textvalue_1 = mc_attribute["STRENGTH"][strength_value_1]
@@ -299,8 +294,7 @@ label Normal_Start2:
 label Custom_Start:
     scene donotdelete
     show scroll_large
-    $ customcount = customcount +1
-    if customcount <= 1:
+    if costumcheck:
         $ strength_value_1 = mc_inicial_stats[mc][1]
         $ personality_value_2 = mc_inicial_stats[mc][2]
         $ allure_value_3 = mc_inicial_stats[mc][3]
@@ -325,7 +319,14 @@ label Custom_Start:
         $ oral_sex_value_22 = mc_inicial_stats[mc][22]
         $ penetration_value_23 = mc_inicial_stats[mc][23]
         $ fetishism_value_24 = mc_inicial_stats[mc][24]
+        # creating new temporal values
+        $ namechange = False
 
+
+
+    # creating new temporal values
+    $ reputationstyle= 2
+    
     # reassining more variables  -rec3ks
     $ strength_textvalue_1 = mc_attribute["STRENGTH"][strength_value_1]
     $ personality_textvalue_2 = mc_attribute["PERSONALITY"][personality_value_2]
@@ -352,9 +353,18 @@ label Custom_Start:
     $ penetration_textvalue_23 = mc_attribute["PENETRATION"][penetration_value_23]
     $ fetishism_textvalue_24 = mc_attribute["FETISHISM"][fetishism_value_24]
     $ reputation_textvalue_1 = mc_attribute["REPUTATION"][reputation_value_1]
-    $ inicial_difficulty_textvalue = mc_inicial_stats[mc][38]
+    $ costumcheck = False
+    if reputationstyle + reputation_value_1 == 7:
+        $ reputationstyle = 3
+    if namechange == True:
+        python:
+            name = renpy.input("Give your character a name. Keep this shorter than 14 character.", length=13)
+            name = name.strip()
+            if name != "":
+                mc = name
+        $ namechange = False
 
-    $ inicial_difficulty_value = mc_inicial_stats[mc][39] 
+
     call screen custom_selection()
     "WIP"
     return
@@ -369,80 +379,79 @@ screen custom_selection():
         ypos 115 
 
         textbutton reputation_textvalue_1:
-            style "attribute_button_custom" + str(reputation_value_1),
+            style "attribute_button_custom" + str(reputation_value_1 + 1),
             action Jump("Custom_Start")
 
         textbutton strength_textvalue_1:
-            style "attribute_button_custom" + str(strength_value_1),
+            style "attribute_button_custom" + str(strength_value_1 + 1),
             action Jump("Custom_Start")
 
         textbutton personality_textvalue_2:
-            style "attribute_button_custom" + str(personality_value_2),
+            style "attribute_button_custom" + str(personality_value_2 + 1),
             action Jump("Custom_Start")
 
         textbutton libido_textvalue_4:
-            style "attribute_button_custom" + str(libido_value_4),
+            style "attribute_button_custom" + str(libido_value_4 + 1),
             action Jump("Custom_Start")
 
         textbutton dominance_textvalue_5:
-            style "attribute_button_custom" + str(dominance_value_5),
+            style "attribute_button_custom" + str(dominance_value_5 + 1),
             action Jump("Custom_Start")
 
-        # Adding extra spacing here:
         add "spacer" size (0, 20)
 
         textbutton teaching_textvalue_12:
-            style "attribute_button_custom" + str(teaching_value_12),
+            style "attribute_button_custom" + str(teaching_value_12 + 1),
             action Jump("Custom_Start")
 
         textbutton stewardship_textvalue_13:
-            style "attribute_button_custom" + str(stewardship_value_13),
+            style "attribute_button_custom" + str(stewardship_value_13 + 1),
             action Jump("Custom_Start")
 
         textbutton artistry_textvalue_14:
-            style "attribute_button_custom" + str(artistry_value_14),
+            style "attribute_button_custom" + str(artistry_value_14 + 1),
             action Jump("Custom_Start")
 
         textbutton medic_textvalue_15:
-            style "attribute_button_custom" + str(medic_value_15),
+            style "attribute_button_custom" + str(medic_value_15 + 1),
             action Jump("Custom_Start")
 
         textbutton fighter_textvalue_16:
-            style "attribute_button_custom" + str(fighter_value_16),
+            style "attribute_button_custom" + str(fighter_value_16 + 1),
             action Jump("Custom_Start")
 
         textbutton magic_textvalue_17:
-            style "attribute_button_custom" + str(magic_value_17),
+            style "attribute_button_custom" + str(magic_value_17 + 1),
             action Jump("Custom_Start")
 
         textbutton flagellation_textvalue_18:
-            style "attribute_button_custom" + str(flagellation_value_18),
+            style "attribute_button_custom" + str(flagellation_value_18 + 1),
             action Jump("Custom_Start")
 
         textbutton torture_textvalue_19:
-            style "attribute_button_custom" + str(torture_value_19),
+            style "attribute_button_custom" + str(torture_value_19 + 1),
             action Jump("Custom_Start")
 
         textbutton binding_textvalue_20:
-            style "attribute_button_custom" + str(binding_value_20),
+            style "attribute_button_custom" + str(binding_value_20 + 1),
             action Jump("Custom_Start")
 
         add "spacer" size (0, 20)
 
         textbutton petting_textvalue_21:
-            style "attribute_button_custom" + str(petting_value_21),
+            style "attribute_button_custom" + str(petting_value_21 + 1),
             action Jump("Custom_Start")
 
         textbutton oral_sex_textvalue_22:
-            style "attribute_button_custom" + str(oral_sex_value_22),
+            style "attribute_button_custom" + str(oral_sex_value_22 + 1),
             action Jump("Custom_Start")
 
         textbutton penetration_textvalue_23:
-            style "attribute_button_custom" + str(penetration_value_23),
+            style "attribute_button_custom" + str(penetration_value_23 + 1),
             action Jump("Custom_Start")
 
         textbutton fetishism_textvalue_24:
-            style "attribute_button_custom" + str(fetishism_value_24),
+            style "attribute_button_custom" + str(fetishism_value_24 + 1),
             action Jump("Custom_Start")
     vbox:
         anchor (0.0, 0.0)  # Aligns the anchor to the top-left corner
@@ -451,81 +460,80 @@ screen custom_selection():
         ypos 115 
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(reputation_value_1)
+            style "attribute_button_custom" + str(reputation_value_1 + reputationstyle)
             action SetVariable("reputation_value_1", min(reputation_value_1 + 1, 5)), Jump("Custom_Start")
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(strength_value_1)
-            action SetVariable("strength_value_1", min(strength_value_1 + 1, 5)), Jump("Custom_Start")
+            style "attribute_button_custom" + str(strength_value_1 + 2)
+            action SetVariable("strength_value_1", min(strength_value_1 + 1, 6)), Jump("Custom_Start")
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(personality_value_2)
-            action SetVariable("personality_value_2", min(personality_value_2 + 1, 5)), Jump("Custom_Start")
+            style "attribute_button_custom" + str(personality_value_2 + 2)
+            action SetVariable("personality_value_2", min(personality_value_2 + 1, 6)), Jump("Custom_Start")
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(libido_value_4)
-            action SetVariable("libido_value_4", min(libido_value_4 + 1, 5)), Jump("Custom_Start")
+            style "attribute_button_custom" + str(libido_value_4 + 2)
+            action SetVariable("libido_value_4", min(libido_value_4 + 1, 6)), Jump("Custom_Start")
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(dominance_value_5)
-            action SetVariable("dominance_value_5", min(dominance_value_5 + 1, 5)), Jump("Custom_Start")
-
-        # Adding extra spacing here:
-        add "spacer" size (0, 20)
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(teaching_value_12)
-            action SetVariable("teaching_value_12", min(teaching_value_12 + 1, 5)), Jump("Custom_Start")
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(stewardship_value_13)
-            action SetVariable("stewardship_value_13", min(stewardship_value_13 + 1, 5)), Jump("Custom_Start")
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(artistry_value_14)
-            action SetVariable("artistry_value_14", min(artistry_value_14 + 1, 5)), Jump("Custom_Start")
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(medic_value_15)
-            action SetVariable("medic_value_15", min(medic_value_15 + 1, 5)), Jump("Custom_Start")
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(fighter_value_16)
-            action SetVariable("fighter_value_16", min(fighter_value_16 + 1, 5)), Jump("Custom_Start")
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(magic_value_17)
-            action SetVariable("magic_value_17", min(magic_value_17 + 1, 5)), Jump("Custom_Start")
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(flagellation_value_18)
-            action SetVariable("flagellation_value_18", min(flagellation_value_18 + 1, 5)), Jump("Custom_Start")
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(torture_value_19)
-            action SetVariable("torture_value_19", min(torture_value_19 + 1, 5)), Jump("Custom_Start")
-
-        textbutton "[[+]":
-            style "attribute_button_custom" + str(binding_value_20)
-            action SetVariable("binding_value_20", min(binding_value_20 + 1, 5)), Jump("Custom_Start")
+            style "attribute_button_custom" + str(dominance_value_5 + 2)
+            action SetVariable("dominance_value_5", min(dominance_value_5 + 1, 6)), Jump("Custom_Start")
 
         add "spacer" size (0, 20)
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(petting_value_21)
-            action SetVariable("petting_value_21", min(petting_value_21 + 1, 5)), Jump("Custom_Start")
+            style "attribute_button_custom" + str(teaching_value_12 + 2)
+            action SetVariable("teaching_value_12", min(teaching_value_12 + 1, 6)), Jump("Custom_Start")
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(oral_sex_value_22)
-            action SetVariable("oral_sex_value_22", min(oral_sex_value_22 + 1, 5)), Jump("Custom_Start")
+            style "attribute_button_custom" + str(stewardship_value_13 + 2)
+            action SetVariable("stewardship_value_13", min(stewardship_value_13 + 1, 6)), Jump("Custom_Start")
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(penetration_value_23)
-            action SetVariable("penetration_value_23", min(penetration_value_23 + 1, 5)), Jump("Custom_Start")
+            style "attribute_button_custom" + str(artistry_value_14 + 2)
+            action SetVariable("artistry_value_14", min(artistry_value_14 + 1, 6)), Jump("Custom_Start")
 
         textbutton "[[+]":
-            style "attribute_button_custom" + str(fetishism_value_24)
-            action SetVariable("fetishism_value_24", min(fetishism_value_24 + 1, 5)), Jump("Custom_Start")
+            style "attribute_button_custom" + str(medic_value_15 + 2)
+            action SetVariable("medic_value_15", min(medic_value_15 + 1, 6)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(fighter_value_16 + 2)
+            action SetVariable("fighter_value_16", min(fighter_value_16 + 1, 6)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(magic_value_17 + 2)
+            action SetVariable("magic_value_17", min(magic_value_17 + 1, 6)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(flagellation_value_18 + 2)
+            action SetVariable("flagellation_value_18", min(flagellation_value_18 + 1, 6)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(torture_value_19 + 2)
+            action SetVariable("torture_value_19", min(torture_value_19 + 1, 6)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(binding_value_20 + 2)
+            action SetVariable("binding_value_20", min(binding_value_20 + 1, 6)), Jump("Custom_Start")
+
+        add "spacer" size (0, 20)
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(petting_value_21 + 2)
+            action SetVariable("petting_value_21", min(petting_value_21 + 1, 6)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(oral_sex_value_22 + 2)
+            action SetVariable("oral_sex_value_22", min(oral_sex_value_22 + 1, 6)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(penetration_value_23 + 2)
+            action SetVariable("penetration_value_23", min(penetration_value_23 + 1, 6)), Jump("Custom_Start")
+
+        textbutton "[[+]":
+            style "attribute_button_custom" + str(fetishism_value_24 + 2)
+            action SetVariable("fetishism_value_24", min(fetishism_value_24 + 1, 6)), Jump("Custom_Start")
        
     vbox:
         anchor (0.0, 0.0)  # Aligns the anchor to the top-left corner
@@ -535,81 +543,80 @@ screen custom_selection():
        
         textbutton "[[-]":
             style "attribute_button_custom" + str(reputation_value_1),
-            action Jump("Custom_Start")
+            action SetVariable("reputation_value_1", max(reputation_value_1 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(strength_value_1),
-            action Jump("Custom_Start")
+            action SetVariable("strength_value_1", max(strength_value_1 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(personality_value_2),
-            action Jump("Custom_Start")
+            action SetVariable("personality_value_2", max(personality_value_2 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(libido_value_4),
-            action Jump("Custom_Start")
+            action SetVariable("libido_value_4", max(libido_value_4 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(dominance_value_5),
-            action Jump("Custom_Start")
+            action SetVariable("dominance_value_5", max(dominance_value_5 - 1, 0)), Jump("Custom_Start")
 
         # Adding extra spacing here:
         add "spacer" size (0, 20)
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(teaching_value_12),
-            action Jump("Custom_Start")
+            action SetVariable("teaching_value_12", max(teaching_value_12 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(stewardship_value_13),
-            action Jump("Custom_Start")
+            action SetVariable("stewardship_value_13", max(stewardship_value_13 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(artistry_value_14),
-            action Jump("Custom_Start")
+            action SetVariable("artistry_value_14", max(artistry_value_14 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(medic_value_15),
-            action Jump("Custom_Start")
+            action SetVariable("medic_value_15", max(medic_value_15 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(fighter_value_16),
-            action Jump("Custom_Start")
+            action SetVariable("fighter_value_16", max(fighter_value_16 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(magic_value_17),
-            action Jump("Custom_Start")
+            action SetVariable("magic_value_17", max(magic_value_17 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(flagellation_value_18),
-            action Jump("Custom_Start")
+            action SetVariable("flagellation_value_18", max(flagellation_value_18 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(torture_value_19),
-            action Jump("Custom_Start")
+            action SetVariable("torture_value_19", max(torture_value_19 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(binding_value_20),
-            action Jump("Custom_Start")
+            action SetVariable("binding_value_20", max(binding_value_20 - 1, 0)), Jump("Custom_Start")
 
         add "spacer" size (0, 20)
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(petting_value_21),
-            action Jump("Custom_Start")
+            action SetVariable("petting_value_21", max(petting_value_21 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(oral_sex_value_22),
-            action Jump("Custom_Start")
+            action SetVariable("oral_sex_value_22", max(oral_sex_value_22 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(penetration_value_23),
-            action Jump("Custom_Start")
+            action SetVariable("penetration_value_23", max(penetration_value_23 - 1, 0)), Jump("Custom_Start")
 
         textbutton "[[-]":
             style "attribute_button_custom" + str(fetishism_value_24),
-            action Jump("Custom_Start")
-
+            action SetVariable("fetishism_value_24", max(fetishism_value_24 - 1, 0)), Jump("Custom_Start")
     vbox:
         anchor (0.0, 0.0)
         xpos 315
@@ -643,7 +650,17 @@ screen custom_selection():
     imagebutton:
         idle "buttons/close_button.webp" pos (997,12)
         hover "buttons/close_button_hover.webp"
-        action MainMenu(confirm=False)    
+        action MainMenu(confirm=False)
+    hbox:
+        pos (290, 85)
+        spacing 2
+        text "Name: [mc]" font "fonts/Segoe Print.ttf" color "#002BA7" size 16 yalign 0.5
+
+        textbutton "[[change]":
+            style "change_button"
+            yalign 0.5
+            action SetVariable("namechange", True), Jump("Custom_Start")
+        
         
 transform custom_position:
     xpos 0.23
