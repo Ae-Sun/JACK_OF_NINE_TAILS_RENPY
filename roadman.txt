@@ -8,7 +8,7 @@ roadman for 0.1.0
       imprementing attribute system
       define all attribute state -Done
       find a way to change text color depending of attribute value - Done
-    Custom Start - Not done yet
+    Custom Start - 50% Done
     Finish github page - Done
     Controls - Done
     Credits & Development - Done

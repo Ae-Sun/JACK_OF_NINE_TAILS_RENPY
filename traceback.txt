@@ -1,21 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 342, in script
-    call screen custom_selection()
+  File "game/script.rpy", line 252, in script
+    call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/common/00action_data.rpy", line 75, in __call__
-    _set_field(self.object, self.field, self.value_to_set(), self.kind)
-  File "renpy/common/00action_data.rpy", line 41, in _set_field
-    fields, _, attr = name.rpartition(".")
-AttributeError: 'bool' object has no attribute 'rpartition'
+  File "game/normal_selection_screen.rpy", line 25, in execute
+    screen character_selection2(x,y):
+  File "game/normal_selection_screen.rpy", line 25, in execute
+    screen character_selection2(x,y):
+  File "game/normal_selection_screen.rpy", line 151, in execute
+    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
+  File "game/normal_selection_screen.rpy", line 151, in <module>
+    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 342, in script
-    call screen custom_selection()
+  File "game/script.rpy", line 252, in script
+    call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
@@ -30,31 +34,35 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 3289, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 794, in event
-    rv = self.child.event(ev, x, y, st)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\layout.py", line 1297, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\behavior.py", line 1182, in event
-    return handle_click(self.clicked)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\behavior.py", line 1103, in handle_click
-    rv = run(action)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\behavior.py", line 401, in run
-    return action(*args, **kwargs)
-  File "renpy/common/00action_data.rpy", line 75, in __call__
-    _set_field(self.object, self.field, self.value_to_set(), self.kind)
-  File "renpy/common/00action_data.rpy", line 41, in _set_field
-    fields, _, attr = name.rpartition(".")
-AttributeError: 'bool' object has no attribute 'rpartition'
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/normal_selection_screen.rpy", line 25, in execute
+    screen character_selection2(x,y):
+  File "game/normal_selection_screen.rpy", line 25, in execute
+    screen character_selection2(x,y):
+  File "game/normal_selection_screen.rpy", line 151, in execute
+    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
+  File "game/normal_selection_screen.rpy", line 151, in <module>
+    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\revertable.py", line 214, in __getitem__
+    rv = list.__getitem__(self, index)
+IndexError: list index out of range
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Sun May 11 14:59:12 2025
+Sun May 11 18:25:17 2025

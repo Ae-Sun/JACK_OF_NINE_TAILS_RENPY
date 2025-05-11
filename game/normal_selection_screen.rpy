@@ -79,73 +79,73 @@ screen character_selection2(x,y):
     
         textbutton strength_textvalue_1:
             style "attribute_button" + str(strength_value_1)
-            action SetVariable("mc_normal_selection_textdescription_value", "STRENGTH")
+            action SetVariable("mc_normal_selection_textdescription_value", "STRENGTH"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton personality_textvalue_2:
             style "attribute_button" + str(personality_value_2)
-            action SetVariable("mc_normal_selection_textdescription_value", "PERSONALITY")
+            action SetVariable("mc_normal_selection_textdescription_value", "PERSONALITY"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton libido_textvalue_4:
             style "attribute_button" + str(libido_value_4)
-            action SetVariable("mc_normal_selection_textdescription_value", "LIBIDO")
+            action SetVariable("mc_normal_selection_textdescription_value", "LIBIDO"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton dominance_textvalue_5:
             style "attribute_button" + str(dominance_value_5)
-            action SetVariable("mc_normal_selection_textdescription_value", "DOMINANCE")
+            action SetVariable("mc_normal_selection_textdescription_value", "DOMINANCE"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         add "spacer" size (0, 20)
 
         textbutton teaching_textvalue_12:
             style "attribute_button" + str(teaching_value_12)
-            action SetVariable("mc_normal_selection_textdescription_value", "TEACHING")
+            action SetVariable("mc_normal_selection_textdescription_value", "TEACHING"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton stewardship_textvalue_13:
             style "attribute_button" + str(stewardship_value_13)
-            action SetVariable("mc_normal_selection_textdescription_value", "STEWARDSHIP")
+            action SetVariable("mc_normal_selection_textdescription_value", "STEWARDSHIP"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton artistry_textvalue_14:
             style "attribute_button" + str(artistry_value_14)
-            action SetVariable("mc_normal_selection_textdescription_value", "ARTISTRY")
+            action SetVariable("mc_normal_selection_textdescription_value", "ARTISTRY"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton medic_textvalue_15:
             style "attribute_button" + str(medic_value_15)
-            action SetVariable("mc_normal_selection_textdescription_value", "MEDIC")
+            action SetVariable("mc_normal_selection_textdescription_value", "MEDIC"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton fighter_textvalue_16:
             style "attribute_button" + str(fighter_value_16)
-            action SetVariable("mc_normal_selection_textdescription_value", "FIGHTER")
+            action SetVariable("mc_normal_selection_textdescription_value", "FIGHTER"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton magic_textvalue_17:
             style "attribute_button" + str(magic_value_17)
-            action SetVariable("mc_normal_selection_textdescription_value", "MAGIC")
+            action SetVariable("mc_normal_selection_textdescription_value", "MAGIC"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton flagellation_textvalue_18:
             style "attribute_button" + str(flagellation_value_18)
-            action SetVariable("mc_normal_selection_textdescription_value", "FLAGELLATION")
+            action SetVariable("mc_normal_selection_textdescription_value", "FLAGELLATION"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton torture_textvalue_19:
             style "attribute_button" + str(torture_value_19)
-            action SetVariable("mc_normal_selection_textdescription_value", "TORTURE")
+            action SetVariable("mc_normal_selection_textdescription_value", "TORTURE"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton binding_textvalue_20:
             style "attribute_button" + str(binding_value_20)
-            action SetVariable("mc_normal_selection_textdescription_value", "BINDING")
+            action SetVariable("mc_normal_selection_textdescription_value", "BINDING"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton petting_textvalue_21:
             style "attribute_button" + str(petting_value_21)
-            action SetVariable("mc_normal_selection_textdescription_value", "PETTING")
+            action SetVariable("mc_normal_selection_textdescription_value", "PETTING"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton oral_sex_textvalue_22:
             style "attribute_button" + str(oral_sex_value_22)
-            action SetVariable("mc_normal_selection_textdescription_value", "ORAL SEX")
+            action SetVariable("mc_normal_selection_textdescription_value", "ORAL SEX"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton penetration_textvalue_23:
             style "attribute_button" + str(penetration_value_23)
-            action SetVariable("mc_normal_selection_textdescription_value", "PENETRATION")
+            action SetVariable("mc_normal_selection_textdescription_value", "PENETRATION"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
         textbutton fetishism_textvalue_24:
             style "attribute_button" + str(fetishism_value_24)
-            action SetVariable("mc_normal_selection_textdescription_value", "FETISHISM")
+            action SetVariable("mc_normal_selection_textdescription_value", "FETISHISM"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
 
     text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
@@ -157,9 +157,9 @@ screen character_selection2(x,y):
     textbutton " Faction: [faction_36]":
         pos (0.42, 0.80)
         style "simpletext"
-        action SetVariable("mc_normal_selection_textdescription_value","FACTION")
+        action SetVariable("mc_normal_selection_textdescription_value","FACTION"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
     textbutton " Sparks: [sparks_37]":
         pos (0.42, 0.84)
         style "simpletext"
-        action SetVariable("mc_normal_selection_textdescription_value","SPARKS")
+        action SetVariable("mc_normal_selection_textdescription_value","SPARKS"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
