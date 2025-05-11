@@ -33,9 +33,9 @@ define gui.about = _p("""
 """)
 ## change mouse look
 define config.mouse = {} # -you need this line or will explote. Stupid chatgpt saying bullshits about how changes mouse look -Rec3ks
-define config.mouse['default'] = [ ( "gui/cursor.png", 0, 0) ]
-define config.mouse['button'] = [ ( "gui/hand.png", 0, 0) ]
-define config.mouse['pressed_default'] = [ ( "gui/whip.png", 0, 0)]
+define config.mouse['default'] = [ ( "gui/cursor.webp", 0, 0) ]
+define config.mouse['button'] = [ ( "gui/hand.webp", 0, 0) ]
+define config.mouse['pressed_default'] = [ ( "gui/whip.webp", 0, 0)]
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,

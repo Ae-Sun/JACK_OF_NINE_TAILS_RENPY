@@ -1,0 +1,4 @@
+screen warning_screen():
+    text "Warning!!!"pos (485, 0) size 72 color "ff0000"
+    text "         This game contains explicit scenes of sex, extreme violence \n and other shocking content, and therefore it can not be \n recommended to anyone at all. Continuing the game, you confirm \n that you have read this warning and you are an adult. \n         This program is freely available for download and \n distribution and is not a commercial product. All rights for the graphics \n and music are copyrighted by their respective owners. \n These materials have been found in the public domain and are used \n solely for the purpose of parody. \n         Game source code is open, you are free to distribute and \n modify it while keeping this warning and information from the \n 'Credits'" pos(100,100) size 36 color "#ff0000"
+

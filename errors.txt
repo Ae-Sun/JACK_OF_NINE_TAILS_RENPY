@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 363: expected statement.
-    name = renpy.input("Escribe el nuevo nombre del personaje:", length=30)
-         ^
-
-File "game/script.rpy", line 364: expected statement.
-    name = name.strip()
-         ^
-
-File "game/script.rpy", line 366: expected statement.
-    renpy.store.mc = name  
-                   ^
+File "game/script.rpy", line 339: reached end of line when expecting ':'.
+    if custom_start_difficulty_selection_index_index == 0
+                                                         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May 10 14:41:52 2025
+Sun May 11 14:48:02 2025

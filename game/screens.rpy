@@ -164,10 +164,17 @@ style attribute_button_custom8_text:
 style charge_button is default 
 style change_button_text:
     font "fonts/Segoe Print.ttf"
-    color "#002BA7"
+    color "#0000D8"
     size 16
     hover_color "#ffff00"
 #########################################
+style custom_information is default 
+style custom_information_text:
+    font "fonts/Segoe Print.ttf"
+    color "#002BA7"
+    size 16
+    hover_color "#ffff00"
+#############################################
 style display_mc_name is default
 style display_mc_name_text:
     size 72
