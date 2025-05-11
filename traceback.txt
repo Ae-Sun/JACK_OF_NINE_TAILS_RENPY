@@ -1,25 +1,35 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 252, in script
-    call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
+  File "game/script.rpy", line 390, in script
+    call screen custom_selection()
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/normal_selection_screen.rpy", line 25, in execute
-    screen character_selection2(x,y):
-  File "game/normal_selection_screen.rpy", line 25, in execute
-    screen character_selection2(x,y):
-  File "game/normal_selection_screen.rpy", line 151, in execute
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
-  File "game/normal_selection_screen.rpy", line 151, in <module>
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
-IndexError: list index out of range
+  File "game/script.rpy", line 449, in execute
+    screen custom_selection():
+  File "game/script.rpy", line 449, in execute
+    screen custom_selection():
+  File "game/script.rpy", line 452, in execute
+    hbox:
+  File "game/script.rpy", line 464, in execute
+    imagebutton:
+  File "game/script.rpy", line 464, in keywords
+    imagebutton:
+  File "game/script.rpy", line 467, in <module>
+    action SetVariable("custom_start_difficulty_selection_index_index",SetVariable("difficult_sparks_mantain",True),max(custom_start_difficulty_selection_index_index-1,0)), Jump("Custom_Start")
+  File "renpy/common/00action_data.rpy", line 89, in __init__
+    super(Variable, self).__init__(store, name, *args, **kwargs)
+  File "renpy/common/00action_data.rpy", line 70, in __init__
+    super(Field, self).__init__(*args, **kwargs)
+  File "renpy/common/00action_data.rpy", line 174, in __init__
+    super(Set, self).__init__(*args, **kwargs)
+TypeError: object() takes no parameters.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 252, in script
-    call screen character_selection2(charactersOnlyName[characterOnlyNameIndex], charactersOnlyName[characterOnlyNameIndex - 2])
+  File "game/script.rpy", line 390, in script
+    call screen custom_selection()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
@@ -50,19 +60,29 @@ Full traceback:
     self.update()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/normal_selection_screen.rpy", line 25, in execute
-    screen character_selection2(x,y):
-  File "game/normal_selection_screen.rpy", line 25, in execute
-    screen character_selection2(x,y):
-  File "game/normal_selection_screen.rpy", line 151, in execute
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
-  File "game/normal_selection_screen.rpy", line 151, in <module>
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\revertable.py", line 214, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
+  File "game/script.rpy", line 449, in execute
+    screen custom_selection():
+  File "game/script.rpy", line 449, in execute
+    screen custom_selection():
+  File "game/script.rpy", line 452, in execute
+    hbox:
+  File "game/script.rpy", line 464, in execute
+    imagebutton:
+  File "game/script.rpy", line 464, in keywords
+    imagebutton:
+  File "game/script.rpy", line 467, in <module>
+    action SetVariable("custom_start_difficulty_selection_index_index",SetVariable("difficult_sparks_mantain",True),max(custom_start_difficulty_selection_index_index-1,0)), Jump("Custom_Start")
+  File "renpy/common/00action_data.rpy", line 89, in __init__
+    super(Variable, self).__init__(store, name, *args, **kwargs)
+  File "renpy/common/00action_data.rpy", line 70, in __init__
+    super(Field, self).__init__(*args, **kwargs)
+  File "renpy/common/00action_data.rpy", line 174, in __init__
+    super(Set, self).__init__(*args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\revertable.py", line 484, in __init__
+    raise TypeError("object() takes no parameters.")
+TypeError: object() takes no parameters.
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Sun May 11 18:25:17 2025
+Sun May 11 21:31:03 2025

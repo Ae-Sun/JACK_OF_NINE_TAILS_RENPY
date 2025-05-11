@@ -114,7 +114,9 @@ default customboxcheck = False
 default mc_normal_selection_textdescription_value_index = 0
 default custom_start_difficulty_selection_index_index = 1
 default alltier_s = False
-
+default custom_points = 0
+default blue_or_red = "#0000D8"
+default difficult_sparks_mantain = True
 # The game starts here.
 
 ########## Warning screen -rec3ks
@@ -290,8 +292,10 @@ label Custom_Start:
         $ penetration_value_23 = mc_inicial_stats[mc][23]
         $ fetishism_value_24 = mc_inicial_stats[mc][24]
         $ mc = mc_name_save
+        $ customcheck = False
         # creating new temporal values
         $ namechange = False
+
   
     if alltier_s:
         $ reputation_value_1         = 5
@@ -320,10 +324,13 @@ label Custom_Start:
         $ penetration_value_23       = 6
         $ fetishism_value_24         = 6
         $ alltier_s                  = False
-
+    if difficult_sparks_mantain:
+        $ sparks_37 = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][1]
+        $ difficult_sparks_mantain = False
     # creating new temporal values
     $ reputationstyle= 2
     # reassining variables  -rec3ks
+    
     $ strength_textvalue_1 = mc_attribute["STRENGTH"][strength_value_1]
     $ personality_textvalue_2 = mc_attribute["PERSONALITY"][personality_value_2]
     $ allure_textvalue_3 = mc_attribute["ALLURE"][allure_value_3]
@@ -349,11 +356,13 @@ label Custom_Start:
     $ penetration_textvalue_23 = mc_attribute["PENETRATION"][penetration_value_23]
     $ fetishism_textvalue_24 = mc_attribute["FETISHISM"][fetishism_value_24]
     $ reputation_textvalue_1 = mc_attribute["REPUTATION"][reputation_value_1]
-    $ customcheck = False
     $ custom_difficulty_textvalue = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][0]
-
-    if reputationstyle + reputation_value_1 == 7:
-        $ reputationstyle = 3
+    $ custom_points = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][2]
+    $ custom_points = custom_points - custom_skill_cost_value[strength_value_1] - custom_skill_cost_value[personality_value_2] - custom_skill_cost_value[allure_value_3] - custom_skill_cost_value[libido_value_4] - custom_skill_cost_value[dominance_value_5] - custom_skill_cost_value[brand_reputation_value_6] - custom_skill_cost_value[guild_reputation_value_7] - custom_skill_cost_value[standard_of_living_value_8] - custom_skill_cost_value[hygiene_value_9] - custom_skill_cost_value[mood_value_10] - custom_skill_cost_value[injuries_value_11] - custom_skill_cost_value[teaching_value_12] - custom_skill_cost_value[stewardship_value_13] - custom_skill_cost_value[artistry_value_14] - custom_skill_cost_value[medic_value_15] - custom_skill_cost_value[fighter_value_16] - custom_skill_cost_value[magic_value_17] - custom_skill_cost_value[flagellation_value_18] - custom_skill_cost_value[torture_value_19] - custom_skill_cost_value[binding_value_20] - custom_skill_cost_value[petting_value_21] - custom_skill_cost_value[oral_sex_value_22] - custom_skill_cost_value[penetration_value_23] - custom_skill_cost_value[fetishism_value_24] - custom_skill_cost_value[reputation_value_1] - int((sparks_37 - custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][1])/10)
+    if custom_points < 0:
+        $ blue_or_red = "#CD0000"
+    else:
+        $ blue_or_red = "#0000D8"
     if namechange == True:
         python:
             name = renpy.input("Give your character a name. Keep this shorter than 14 character.", length=13)
@@ -363,8 +372,18 @@ label Custom_Start:
         $ namechange = False
     if custom_start_difficulty_selection_index_index == 0:
         show screen s_tier_button
+        hide screen points_tier_text
+        if reputationstyle + reputation_value_1 == 7:
+            $ reputationstyle = 3
     else:
         hide screen s_tier_button
+        show screen points_tier_text
+        if reputation_value_1 > 4:
+            $ reputation_value_1 = 4
+            $ reputation_textvalue_1 = mc_attribute["REPUTATION"][reputation_value_1]
+            $ mc_normal_selection_textdescription_value = "WHITE TOWN"
+            show screen custom_value_information
+
     if customboxcheck:
         show screen custom_selection
         call screen custom_value_information
@@ -401,7 +420,31 @@ screen s_tier_button():
         idle "buttons/teach_s.webp" pos (0.29, 0.35)
         hover "buttons/teach_s_hover.webp"
         action SetVariable("alltier_s", True),Jump("Custom_Start")
-
+screen points_tier_text():
+    zorder 3
+    vbox:
+        xpos 0.65
+        ypos 0.13
+        xanchor 0.5
+        yanchor 0.0
+        text "Points:":
+            size 42
+            color "000000"
+            font "fonts/Victoriana.ttf"
+            yalign 0.5
+            xalign 0.5            
+        text str(custom_points):
+            size 42
+            color blue_or_red
+            font "fonts/Victoriana.ttf"
+            yalign 0.5
+            xalign 0.5
+        text "APPEARANCE:":
+            size 45
+            color "000000"
+            font "fonts/Victoriana.ttf"
+            yalign 0.5
+            xalign 0.5            
 
 screen custom_selection():
     zorder 0
@@ -421,8 +464,11 @@ screen custom_selection():
         imagebutton:
             idle "buttons/Minus.webp"
             hover "buttons/Minus_hover.webp"
-            action SetVariable("custom_start_difficulty_selection_index_index",max(custom_start_difficulty_selection_index_index-1,0)),SetVariable("customcheck",True), Jump("Custom_Start")
-            yalign 0.5
+            action (
+                SetVariable("difficult_sparks_mantain", True),
+                SetVariable("custom_start_difficulty_selection_index_index", max(custom_start_difficulty_selection_index_index - 1, 0)),
+                Jump("Custom_Start")
+)            yalign 0.5
         text custom_difficulty_textvalue:
             size 48
             color "000000"
@@ -431,7 +477,37 @@ screen custom_selection():
         imagebutton:
             idle "buttons/Plus.webp"
             hover "buttons/Plus_hover.webp"
-            action SetVariable("custom_start_difficulty_selection_index_index",min(custom_start_difficulty_selection_index_index+1,2)),SetVariable("customcheck",True), Jump("Custom_Start")
+            action (
+                SetVariable("difficult_sparks_mantain", True),
+                SetVariable("custom_start_difficulty_selection_index_index", min(custom_start_difficulty_selection_index_index + 1, 2)),
+                Jump("Custom_Start")
+)            yalign 0.5
+    hbox:
+        xpos 0.5
+        ypos 0.1
+        xanchor 0.5
+        yanchor 0.0
+
+        text "Sparks:":
+            size 48
+            color "000000"
+            font "fonts/Victoriana.ttf"
+            yalign 0.5
+
+        imagebutton:
+            idle "buttons/Minus.webp"
+            hover "buttons/Minus_hover.webp"
+            action SetVariable("sparks_37",max(sparks_37-100,200)), Jump("Custom_Start")
+            yalign 0.5
+        text str(sparks_37):
+            size 30
+            color "0000ff"
+            font "fonts/Victoriana.ttf"
+            yalign 0.5
+        imagebutton:
+            idle "buttons/Plus.webp"
+            hover "buttons/Plus_hover.webp"
+            action SetVariable("sparks_37",min(sparks_37+100,custom_selection_max_cap_sparks[custom_start_difficulty_selection_index_index])), Jump("Custom_Start")
             yalign 0.5
         
     vbox:
