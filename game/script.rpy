@@ -323,6 +323,7 @@ label Custom_Start:
         $ oral_sex_value_22          = 6
         $ penetration_value_23       = 6
         $ fetishism_value_24         = 6
+        $ sparks_37                  = 999999
         $ alltier_s                  = False
     if difficult_sparks_mantain:
         $ sparks_37 = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][1]
