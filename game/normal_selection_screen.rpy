@@ -1,3 +1,7 @@
+default inicial_difficulty_textvalue =""
+default inicial_difficulty_value = 0
+default mc_normal_selection_textdescription_value = "master_noble"
+
 screen character_selection():
     text "SELECT YOUR CHARACTER" color "#000000" pos (520, 60) font "fonts/Segoe Print.ttf" size 17 bold True
 

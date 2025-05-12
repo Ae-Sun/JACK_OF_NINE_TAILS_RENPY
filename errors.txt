@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 118: expected expression
-    default blue_or_red =
-                         ^
+File "game/script.rpy", line 476: text expects a non-empty block.
+    text "Astonishing      80 pnts":
+                                    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May 11 20:48:15 2025
+Mon May 12 02:03:16 2025

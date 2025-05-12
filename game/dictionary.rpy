@@ -105,6 +105,20 @@ define custom_start_difficulty_selection = {
     "Normal":    ["Normal"   ,6000 ,590   ],
     "Maximun":   ["Maximun"  ,400  ,340   ]
 }
+define custom_character_selection = {
+    "master_noble":        ["custom_master/master_noble.webp", "custom_master/master_noble_hover.webp",0],
+    "master_torturer":     ["custom_master/master_torturer.webp", "custom_master/master_torturer_hover.webp",1],
+    "master_pimp":         ["custom_master/master_pimp.webp", "custom_master/master_pimp_hover.webp",2],
+    "master_vampire":      ["custom_master/master_vampire.webp", "custom_master/master_vampire_hover.webp",3],
+    "master_fighter":      ["custom_master/master_fighter.webp", "custom_master/master_fighter_hover.webp",4],
+    "master_teacher":      ["custom_master/master_teacher.webp", "custom_master/master_teacher_hover.webp",5],
+    "master_impressario":  ["custom_master/master_impressario.webp", "custom_master/master_impressario_hover.webp",6],
+    "master_butler":       ["custom_master/master_butler.webp", "custom_master/master_butler_hover.webp",7],
+    "master_doctor":       ["custom_master/master_doctor.webp", "custom_master/master_doctor_hover.webp",8],
+    "master_werwolf":      ["custom_master/master_werwolf.webp", "custom_master/master_werwolf_hover.webp",9],
+    "master_granpa":       ["custom_master/master_granpa.webp", "custom_master/master_granpa_hover.webp",10],
+    "master_nerd":         ["custom_master/master_nerd.webp", "custom_master/master_nerd_hover.webp",11],
+}
 define custom_start_difficulty_selection_index = ["Free mode","Normal","Maximun"]
 define custom_skill_cost_value = [0,5,15,35,75,155,315]
 define custom_selection_max_cap_sparks = [999999,8000,400]

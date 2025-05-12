@@ -101,13 +101,11 @@ default ring_35 =""
 default faction_36 =""
 default sparks_37 =""
 ###################################################
-default inicial_difficulty_textvalue =""
-default inicial_difficulty_value = 0
-default mc_normal_selection_textdescription_value = "master_noble"
-#############################################################
 default mc ="Jack"
 default characterOnlyNameIndex = 0
 ###################################################################
+default follow_story = False
+default follow_story_count = 0
 default mc_name_save ="rec3ks"
 default customcheck = True
 default customboxcheck = False
@@ -115,8 +113,11 @@ default mc_normal_selection_textdescription_value_index = 0
 default custom_start_difficulty_selection_index_index = 1
 default alltier_s = False
 default custom_points = 0
-default blue_or_red = "#0000D8"
+default green_or_red = "#009900"
 default difficult_sparks_mantain = True
+default pre_characterOnlyNameIndex = 0
+default buttonimage = ""
+default buttonimage_hover = ""
 # The game starts here.
 
 ########## Warning screen -rec3ks
@@ -332,6 +333,15 @@ label Custom_Start:
     $ reputationstyle= 2
     # reassining variables  -rec3ks
     
+    if follow_story_count % 2 == 1:
+        $ buttonimage = "buttons/unsel_button.webp"
+        $ buttonimage_hover = "buttons/unsel_button_hover.webp"
+        $ follow_story = True
+    else:
+        $ buttonimage = "buttons/sel_button.webp"
+        $ buttonimage_hover = "buttons/sel_button_hover.webp"
+        $ follow_story = False
+    #####################################
     $ strength_textvalue_1 = mc_attribute["STRENGTH"][strength_value_1]
     $ personality_textvalue_2 = mc_attribute["PERSONALITY"][personality_value_2]
     $ allure_textvalue_3 = mc_attribute["ALLURE"][allure_value_3]
@@ -360,10 +370,11 @@ label Custom_Start:
     $ custom_difficulty_textvalue = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][0]
     $ custom_points = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][2]
     $ custom_points = custom_points - custom_skill_cost_value[strength_value_1] - custom_skill_cost_value[personality_value_2] - custom_skill_cost_value[allure_value_3] - custom_skill_cost_value[libido_value_4] - custom_skill_cost_value[dominance_value_5] - custom_skill_cost_value[brand_reputation_value_6] - custom_skill_cost_value[guild_reputation_value_7] - custom_skill_cost_value[standard_of_living_value_8] - custom_skill_cost_value[hygiene_value_9] - custom_skill_cost_value[mood_value_10] - custom_skill_cost_value[injuries_value_11] - custom_skill_cost_value[teaching_value_12] - custom_skill_cost_value[stewardship_value_13] - custom_skill_cost_value[artistry_value_14] - custom_skill_cost_value[medic_value_15] - custom_skill_cost_value[fighter_value_16] - custom_skill_cost_value[magic_value_17] - custom_skill_cost_value[flagellation_value_18] - custom_skill_cost_value[torture_value_19] - custom_skill_cost_value[binding_value_20] - custom_skill_cost_value[petting_value_21] - custom_skill_cost_value[oral_sex_value_22] - custom_skill_cost_value[penetration_value_23] - custom_skill_cost_value[fetishism_value_24] - custom_skill_cost_value[reputation_value_1] - int((sparks_37 - custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][1])/10)
+    $ characterOnlyNameIndex = pre_characterOnlyNameIndex % 12
     if custom_points < 0:
-        $ blue_or_red = "#CD0000"
+        $ green_or_red = "#CD0000"
     else:
-        $ blue_or_red = "#0000D8"
+        $ green_or_red = "#009900"
     if namechange == True:
         python:
             name = renpy.input("Give your character a name. Keep this shorter than 14 character.", length=13)
@@ -436,17 +447,92 @@ screen points_tier_text():
             xalign 0.5            
         text str(custom_points):
             size 42
-            color blue_or_red
+            color green_or_red
             font "fonts/Victoriana.ttf"
             yalign 0.5
             xalign 0.5
-        text "APPEARANCE:":
+        text "APPEARANCE":
             size 45
             color "000000"
             font "fonts/Victoriana.ttf"
             yalign 0.5
-            xalign 0.5            
-
+            xalign 0.5
+        add "spacer" size (0, 5)
+        add custom_character_selection[charactersOnlyName[characterOnlyNameIndex]][0] at truecenter          
+        add "spacer" size (0, 5)
+        text "{u}Ignore story:{u}":
+            size 17
+            color "000000"
+            font "fonts/segoe print.ttf"
+            yalign 0.5
+            xalign 0.3
+        add "spacer" size (0, -7.5)
+        text "{u}CUSTOMIZATION COST:{/u}":
+            color "000000"
+            size 17
+            font "fonts/segoe print.ttf"
+            yalign 0.5
+            xalign 0.5
+        text "Perfection      160 pnts":
+            color "996515"
+            font "fonts/segoe print.ttf"
+            size 16
+            yalign 0.0
+            xalign 0.0
+        text "Astonishing     80  pnts":
+            color "009900"
+            font "fonts/segoe print.ttf"
+            size 16
+            yalign 0.0
+            xalign 0.0
+        text "Excellent         40  pnts":
+            color "009FEF"
+            font "fonts/segoe print.ttf"
+            size 16
+            yalign 0.0
+            xalign 0.0
+        text "Good              20  pnts":
+            color "0000D8"
+            font "fonts/segoe print.ttf"
+            size 16
+            yalign 0.0
+            xalign 0.0
+        text "Mediocre         10  pnts":
+            color "6B0084"
+            font "fonts/segoe print.ttf"
+            size 16
+            yalign 0.0
+            xalign 0.0
+        text "Bad                5   pnts":
+            color "EA0090"
+            font "fonts/segoe print.ttf"
+            size 16
+            yalign 0.0
+            xalign 0.0
+        text "Awful              0   pnts":
+            color "CD0000"
+            font "fonts/segoe print.ttf"
+            size 16
+            yalign 0.0
+            xalign 0.0
+    imagebutton:
+        idle buttonimage pos (0.69, 0.55)
+        hover buttonimage_hover
+        action SetVariable("follow_story_count", follow_story_count+1), Jump("Custom_Start")
+    imagebutton:
+        idle "buttons/forward_button.webp" pos (0.725,0.265 )
+        hover "buttons/forward_button_hover.webp"
+        action [
+            SetVariable("pre_characterOnlyNameIndex",pre_characterOnlyNameIndex +1),
+            Jump("Custom_Start")
+        ]
+    imagebutton:
+        idle "buttons/back_button.webp" pos (0.535, 0.265)
+        hover "buttons/back_button_hover.webp"
+        action [
+            SetVariable("pre_characterOnlyNameIndex",pre_characterOnlyNameIndex -1),
+            Jump("Custom_Start")
+        ]
 screen custom_selection():
     zorder 0
 
