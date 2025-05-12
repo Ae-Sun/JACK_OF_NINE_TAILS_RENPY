@@ -104,28 +104,56 @@ default sparks_37 =""
 default mc ="Jack"
 default characterOnlyNameIndex = 0
 ###################################################################
-
-
+default angelika_speech_text_count = 0
+default speakcolor = "#8B0A50"
 # The game starts here.
 
 ########## Warning screen -rec3ks
 ###########################################################################
 screen angelika_speech():
-    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color "#8B0A50" font "consolas.ttf"
+    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf" 
+screen angelika_speech2():
+    text " It indicates here that you have already fully paid the entry fee,\n {b}[mc]{/b}. Good. But consider this: we will not tolerate black \n sheep in our guild, no matter how much they pay. The honor of our \n organization is paramount."pos (0.02, 0.78) size 20 color"#8B0A50"  font "consolas.ttf"
+screen angelika_speech3():
     vbox:
         xalign 0.655
         yalign 0.96
         imagebutton:
-            idle "buttons/demo_back_button.webp" anchor (0.5, 0.5)
-            hover "buttons/demo_back_button_hover.webp"
-            action SetVariable("angelika_speech_text_count", angelika_speech_text_count - 1)
+            idle tutorial_backbutton anchor (0.5, 0.5)
+            hover tutorial_backbutton_hover
+            action SetVariable("angelika_speech_text_count", max(angelika_speech_text_count - 1,0)),Jump("Tutorial")
         imagebutton:
             idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
             hover "buttons/auk_fwrd_hover.webp"
-            action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1)
+            action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Tutorial")
 label Tutorial:
     scene bg_old
-    $ angelika_speech_text_count = 0
+    show screen angelika_speech3()
+    if angelika_speech_text_count == 0:
+        $ tutorial_backbutton = "buttons/demo_noback_button.webp"
+        $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"
+        $ speakcolor = "#8B0A50"
+    else:
+        $ tutorial_backbutton = "buttons/demo_back_button.webp"
+        $ tutorial_backbutton_hover = "buttons/demo_back_button_hover.webp"
+    if angelika_speech_text_count == 1:
+        python:
+            name = renpy.input("My name is... (Keep this shorter than 14 character.)", length=13)
+            name = name.strip()
+            if name != "":
+                mc = name
+        $ speakcolor = "#191970"
+    if angelika_speech_text_count == 2:
+        $ speakcolor = "#000000"
+        show screen angelika_speech2()
+    else:
+        hide screen angelika_speech2
+    if angelika_speech_text_count == 3:
+        $ speakcolor = "#8B0A50"
+    if angelika_speech_text_count == 4:
+        $ speakcolor = "#000000"
+        hide screen angelika_speech3
+
     call screen angelika_speech()
 
     return

@@ -5,10 +5,9 @@ roadman for 0.1.0
     Normal Start -  Done
       Select character screen -Done
       forward and backward button -Done
-      imprementing attribute system
       define all attribute state -Done
       find a way to change text color depending of attribute value - Done
-    Custom Start - 50% Done
+    Custom Start - Done
     Finish github page - Done
     Controls - Done
     Credits & Development - Done
