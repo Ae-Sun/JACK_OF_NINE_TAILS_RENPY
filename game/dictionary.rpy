@@ -98,7 +98,8 @@ define mc_normal_selection_textdescription ={
     "FACTION":             ["{b} FACTION:{/b} \n You can rent a house in this faction at the start of \n game in Trade center, Real State. "],
     "SKILLS":              ["{b} SKILLS:{/b} \n Skills are the abilities and competencies that a person \n develops through learning, practice, or experience,\n which enable them to perform specific tasks \n effectively and efficiently."],
     "SEX TECHNIQUES":      ["{b} SEX TECHNIQUES:{/b} \n Different sex techniques will increase the effectiveness \n of training relevant skills and it will be easier to arouse \n and excite your sexual partners. "],
-    "WHITE TOWN":          ["{b} WHITE TOWN:{/b} \n Cannot start in White Town on Normal or Extreme \n difficulty. Only patricians are allowed to live there."]
+    "WHITE TOWN":          ["{b} WHITE TOWN:{/b} \n Cannot start in White Town on Normal or Extreme \n difficulty. Only patricians are allowed to live there."],
+    "START FAIL":          ["{b} START FAIL:{/b} \n Points must be igual or greater than 0."]
     }
 define custom_start_difficulty_selection = {
     "Free mode": ["Free mode",10000,999999],
@@ -122,3 +123,8 @@ define custom_character_selection = {
 define custom_start_difficulty_selection_index = ["Free mode","Normal","Maximun"]
 define custom_skill_cost_value = [0,5,15,35,75,155,315]
 define custom_selection_max_cap_sparks = [999999,8000,400]
+
+define angelika_speech_text = [
+" - Gaudete! I am Mistress Angelika. The council of Guild Masters has \n given me the honor to train and certify beginners. What is your \n name?",
+" - lalalallallallal"
+]

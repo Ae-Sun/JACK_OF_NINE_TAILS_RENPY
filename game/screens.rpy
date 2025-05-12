@@ -187,6 +187,12 @@ style simpletext_text:
     size 16
     font "fonts/Segoe Print.ttf"    
     hover_color "#ffff00"
+style start_button is default
+style start_button_text:
+    font "fonts/victoriana.ttf"
+    color "#0000D8"
+    size 36
+    hover_color "#ffff00"
 ###########################################################################
 style main_menu_button:
     background Frame("menu_button.webp", 0, 0)
