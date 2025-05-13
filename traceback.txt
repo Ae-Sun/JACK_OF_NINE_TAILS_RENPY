@@ -1,68 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 156, in script
-    call screen angelika_speech()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/script.rpy", line 115, in execute
-    screen angelika_speech():
-  File "game/script.rpy", line 115, in execute
-    screen angelika_speech():
-  File "game/script.rpy", line 116, in execute
-    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf"
-  File "game/script.rpy", line 116, in <module>
-    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf"
-IndexError: list index out of range
+  File "game/script.rpy", line 132, in script
+    show guild pos (0, 0)
+Exception: Image 'guild' does not accept attributes 'pos (0, 0)'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 156, in script
-    call screen angelika_speech()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/script.rpy", line 115, in execute
-    screen angelika_speech():
-  File "game/script.rpy", line 115, in execute
-    screen angelika_speech():
-  File "game/script.rpy", line 116, in execute
-    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf"
-  File "game/script.rpy", line 116, in <module>
-    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf"
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\revertable.py", line 214, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
+  File "game/script.rpy", line 132, in script
+    show guild pos (0, 0)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1087, in show_imspec
+    renpy.config.show(name,
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 249, in _duplicate
+    args.extraneous()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'guild' does not accept attributes 'pos (0, 0)'.
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Mon May 12 23:03:31 2025
+Tue May 13 01:23:54 2025

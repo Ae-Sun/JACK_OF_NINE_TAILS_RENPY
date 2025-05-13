@@ -170,7 +170,7 @@ screen custom_value_information():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
 
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
+    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index] xmaximum 470:
         pos (0.33, 0.28)
         color "#191970"
         size 14

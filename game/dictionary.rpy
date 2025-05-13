@@ -101,6 +101,7 @@ define mc_normal_selection_textdescription ={
     "WHITE TOWN":          ["{b} WHITE TOWN:{/b} \n Cannot start in White Town on Normal or Extreme \n difficulty. Only patricians are allowed to live there."],
     "START FAIL":          ["{b} START FAIL:{/b} \n Points must be igual or greater than 0."]
     }
+# I know you can use xmaximun and xminimun, just happened I learned that too late, so unless someone want to change it, I will leave it like this with the \n
 define custom_start_difficulty_selection = {
     "Free mode": ["Free mode",10000,999999],
     "Normal":    ["Normal"   ,6000 ,590   ],

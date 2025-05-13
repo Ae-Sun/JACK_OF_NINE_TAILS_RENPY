@@ -111,7 +111,9 @@ default speakcolor = "#8B0A50"
 ########## Warning screen -rec3ks
 ###########################################################################
 screen angelika_speech():
-    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf" 
+    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf"
+    add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
+
 screen angelika_speech2():
     text " It indicates here that you have already fully paid the entry fee,\n {b}[mc]{/b}. Good. But consider this: we will not tolerate black \n sheep in our guild, no matter how much they pay. The honor of our \n organization is paramount."pos (0.02, 0.78) size 20 color"#8B0A50"  font "consolas.ttf"
 screen angelika_speech3():
@@ -129,6 +131,7 @@ screen angelika_speech3():
 label Tutorial:
     scene bg_old
     show screen angelika_speech3()
+    
     if angelika_speech_text_count == 0:
         $ tutorial_backbutton = "buttons/demo_noback_button.webp"
         $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"

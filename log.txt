@@ -1,36 +1,37 @@
-2025-05-12 21:04:07 UTC
+2025-05-12 23:18:17 UTC
 Windows-10-10.0.19041
 Ren'Py 8.3.7.25031702
 
-Early init took 0.14s
-Loading error handling took 0.04s
-Loading script took 0.45s
-Loading save slot metadata took 0.05s
+Early init took 0.89s
+Loading error handling took 0.10s
+Loading script took 0.69s
+Loading save slot metadata took 0.60s
 Loading persistent took 0.00s
-Running init code took 0.09s
-Loading analysis data took 0.02s
+Running init code took 0.17s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
+Reloading save slot metadata took 0.22s
 Index archives took 0.00s
-Dump and make backups took 0.06s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.05s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.45s
+Creating interface object took 0.62s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.01s
+Save screen analysis took 0.04s
 Prepare screens took 0.10s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.46s
+Interface start took 0.42s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -40,9 +41,230 @@ Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 72.92s
+Loading error handling took 0.04s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.37s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.39s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 168.73s
+Loading error handling took 0.04s
+Loading script took 0.25s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.46s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.40s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 235.39s
+Loading error handling took 0.02s
+Loading script took 0.49s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.50s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 278.17s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.46s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.40s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 280.46s
+Loading error handling took 0.02s
+Loading script took 0.18s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.37s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Cleaning stores took 0.00s
 Init translation took 0.00s
@@ -52,9 +274,107 @@ Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s
 Resetting cache.
-Early init took 290.76s
+Early init took 294.94s
+Loading error handling took 0.02s
+Loading script took 0.33s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 325.21s
 Loading error handling took 0.03s
-Loading script took 0.24s
+Loading script took 0.26s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.42s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 336.30s
+Loading error handling took 0.03s
+Loading script took 0.23s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
 Running init code took 0.04s
@@ -70,7 +390,71 @@ Initial gc took 0.07s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 1.01s
+Creating interface object took 0.36s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 132, in script
+    show guild pos (0, 0)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1087, in show_imspec
+    renpy.config.show(name,
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 249, in _duplicate
+    args.extraneous()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'guild' does not accept attributes 'pos (0, 0)'.
+
+While running game code:
+  File "game/script.rpy", line 132, in script
+    show guild pos (0, 0)
+Exception: Image 'guild' does not accept attributes 'pos (0, 0)'.
+Resetting cache.
+Early init took 370.41s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.48s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
@@ -78,7 +462,1326 @@ Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
 Prepare screens took 0.10s
-Save pyanalysis. took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 384.63s
+Loading error handling took 0.02s
+Loading script took 0.28s
+Loading save slot metadata took 0.07s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 132: end of line expected.
+    show guild at Position(xpos=0.0, ypos=0.0) anchor (0.5, 0.5)
+                                               ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.53s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 399.99s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.36s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 417.56s
+Loading error handling took 0.03s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 132: end of line expected.
+    show guild at Position(xpos=0.5, ypos=0.5) anchor (0.5, 0.5) 
+                                               ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.52s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 440.53s
+Loading error handling took 0.08s
+Loading script took 0.27s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 454.76s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.09s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.37s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 466.03s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.09s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.46s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 598.79s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.13s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.44s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 609.88s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.40s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.35s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 621.15s
+Loading error handling took 0.02s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.37s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 630.90s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.42s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 640.67s
+Loading error handling took 0.02s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.11s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.44s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 911.90s
+Loading error handling took 0.15s
+Loading script took 1.77s
+Loading save slot metadata took 0.48s
+Loading persistent took 0.00s
+Running init code took 0.20s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.50s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 972.27s
+Loading error handling took 0.02s
+Loading script took 0.25s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 132: end of line expected.
+    show guild at Position(xpos=0.005, ypos=0.005, xanchor=0.0, yanchor=0.0) transform (0.8, 1)
+                                                                             ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.63s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1078.48s
+Loading error handling took 0.02s
+Loading script took 0.35s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.40s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.39s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1425.74s
+Loading error handling took 0.21s
+Loading script took 1.81s
+Loading save slot metadata took 0.48s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 114: the xmaximum keyword argument was not given a value.
+    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf" xmaximum=400
+                                                                                                                                ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.62s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1474.45s
+Loading error handling took 0.02s
+Loading script took 0.40s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.16s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.04s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1525.86s
+Loading error handling took 0.03s
+Loading script took 0.35s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.64s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.13s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.07s
+Running _start took 0.00s
+Interface start took 0.47s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1675.55s
+Loading error handling took 0.02s
+Loading script took 0.29s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.09s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.41s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.39s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1785.39s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.10s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1818.11s
+Loading error handling took 0.03s
+Loading script took 0.30s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.07s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.57s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.08s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.17s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.54s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2168.45s
+Loading error handling took 0.02s
+Loading script took 0.30s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 115: Line is indented, but the preceding text statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    frame:
+    ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.58s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2189.83s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata took 0.07s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.45s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 2230.77s
+Loading error handling took 0.15s
+Loading script took 1.90s
+Loading save slot metadata took 0.38s
+Loading persistent took 0.00s
+
+File "game/normal_selection_screen.rpy", line 242: end of line expected.
+    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:xmaximum 800
+                                                                                                                                         ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.56s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2243.25s
+Loading error handling took 0.03s
+Loading script took 0.30s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.17s
+Loading analysis data took 0.06s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.41s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.06s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.39s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2253.12s
+Loading error handling took 0.02s
+Loading script took 0.25s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.37s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2262.99s
+Loading error handling took 0.02s
+Loading script took 0.27s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.44s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2269.45s
+Loading error handling took 0.02s
+Loading script took 0.25s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.08s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.43s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2275.97s
+Loading error handling took 0.02s
+Loading script took 0.27s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2283.90s
+Loading error handling took 0.03s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.42s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2302.69s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.44s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2319.95s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.11s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.41s
@@ -93,6 +1796,1072 @@ Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
 Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2345.37s
+Loading error handling took 0.03s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.40s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.47s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2355.05s
+Loading error handling took 0.02s
+Loading script took 0.25s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.15s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.41s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.39s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2370.94s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.36s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.09s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 2459.00s
+Loading error handling took 0.02s
+Loading script took 0.28s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.44s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 2538.35s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.15s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.39s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2584.98s
+Loading error handling took 0.03s
+Loading script took 0.28s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.09s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.48s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.40s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2604.02s
+Loading error handling took 0.02s
+Loading script took 0.25s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.40s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2618.19s
+Loading error handling took 0.02s
+Loading script took 0.26s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2630.86s
+Loading error handling took 0.02s
+Loading script took 0.30s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.09s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.45s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.38s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2655.88s
+Loading error handling took 0.02s
+Loading script took 0.26s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.09s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.40s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2680.88s
+Loading error handling took 0.02s
+Loading script took 0.31s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.04s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.09s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.40s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2707.53s
+Loading error handling took 0.02s
+Loading script took 0.28s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2744.84s
+Loading error handling took 0.03s
+Loading script took 0.29s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.51s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.39s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2754.54s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2795.20s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2846.32s
+Loading error handling took 0.03s
+Loading script took 0.31s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.51s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2893.16s
+Loading error handling took 0.03s
+Loading script took 0.24s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.04s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.09s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.45s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2904.31s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.43s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.37s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2921.52s
+Loading error handling took 0.02s
+Loading script took 0.23s
+Loading save slot metadata took 0.08s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.07s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.46s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3287.15s
+Loading error handling took 0.18s
+Loading script took 2.19s
+Loading save slot metadata took 0.37s
+Loading persistent took 0.00s
+Running init code took 0.16s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.04s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.51s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.08s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3341.50s
+Loading error handling took 0.05s
+Loading script took 0.26s
+Loading save slot metadata took 0.18s
+Loading persistent took 0.00s
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.41s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3722.20s
+Loading error handling took 0.18s
+Loading script took 2.07s
+Loading save slot metadata took 0.45s
+Loading persistent took 0.00s
+Running init code took 0.20s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.07s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.35s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.14s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.44s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3736.42s
+Loading error handling took 0.02s
+Loading script took 0.31s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.46s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.16s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.43s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3794.21s
+Loading error handling took 0.02s
+Loading script took 0.25s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.43s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.40s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1280, 720) physical=(1920, 1177) drawable=(1920, 1177)

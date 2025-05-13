@@ -239,7 +239,7 @@ screen character_selection2(x,y):
             action SetVariable("mc_normal_selection_textdescription_value", "FETISHISM"), SetVariable("mc_normal_selection_textdescription_value_index", 0)
 
 
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:
+    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index] xmaximum 470:
         pos(0.42,0.37)
         color "#191970"
         size 16
