@@ -205,13 +205,13 @@ screen points_tier_text():
         text "Points:":
             size 42
             color "000000"
-            font "fonts/Victoriana.ttf"
+            font "fonts/victoriana.ttf"
             yalign 0.5
             xalign 0.5            
         text str(custom_points):
             size 42
             color green_or_red
-            font "fonts/Victoriana.ttf"
+            font "fonts/victoriana.ttf"
             yalign 0.5
             xalign 0.5
 screen points_tier_text2():
@@ -224,7 +224,7 @@ screen points_tier_text2():
         text "APPEARANCE":
             size 45
             color "000000"
-            font "fonts/Victoriana.ttf"
+            font "fonts/victoriana.ttf"
             yalign 0.5
             xalign 0.5
         add "spacer" size (0, 5)
@@ -315,7 +315,7 @@ screen custom_selection():
         text "Difficulty:":
             size 48
             color "000000"
-            font "fonts/Victoriana.ttf"
+            font "fonts/victoriana.ttf"
             yalign 0.5
 
         imagebutton:
@@ -329,7 +329,7 @@ screen custom_selection():
         text custom_difficulty_textvalue:
             size 48
             color "000000"
-            font "fonts/Victoriana.ttf"
+            font "fonts/victoriana.ttf"
             yalign 0.5
         imagebutton:
             idle "buttons/Plus.webp"
@@ -348,7 +348,7 @@ screen custom_selection():
         text "Sparks:":
             size 48
             color "000000"
-            font "fonts/Victoriana.ttf"
+            font "fonts/victoriana.ttf"
             yalign 0.5
 
         imagebutton:
@@ -359,7 +359,7 @@ screen custom_selection():
         text str(sparks_37):
             size 30
             color "0000ff"
-            font "fonts/Victoriana.ttf"
+            font "fonts/victoriana.ttf"
             yalign 0.5
         imagebutton:
             idle "buttons/Plus.webp"

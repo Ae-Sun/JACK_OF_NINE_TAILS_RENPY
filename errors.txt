@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/normal_selection_screen.rpy", line 242: end of line expected.
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index]:xmaximum 800
-                                                                                                                                         ^
+File "game/script.rpy", line 162: 'size' is not a keyword argument or valid child of the textbutton statement.
+    textbutton "Lecture I: Components of success" size 42:
+                                                      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue May 13 01:55:29 2025
+Tue May 13 13:21:26 2025

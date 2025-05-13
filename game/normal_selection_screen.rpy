@@ -112,7 +112,7 @@ screen character_selection():
 
 screen character_selection2(x,y):
 
-    text mc_inicial_stats[mc][40] size 15 pos (765, 230) anchor(0.5,0.5) font "fonts/Victoriana.ttf" color "000000"
+    text mc_inicial_stats[mc][40] size 15 pos (765, 230) anchor(0.5,0.5) font "fonts/victoriana.ttf" color "000000"
 
     textbutton display_name pos (0.60, 0.19) anchor (0.5, 0.5):
         style "display_mc_name"

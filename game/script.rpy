@@ -106,14 +106,18 @@ default characterOnlyNameIndex = 0
 ###################################################################
 default angelika_speech_text_count = 0
 default speakcolor = "#8B0A50"
+##############################
+
 # The game starts here.
 
 ########## Warning screen -rec3ks
 ###########################################################################
+screen angelika_speech_bg():
+    add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
+screen angelika_angelika():
+    add "characters/mistress_angelika.webp"pos(0.3, 0.307) anchor (0.5, 0.5) 
 screen angelika_speech():
     text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf"
-    add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
-
 screen angelika_speech2():
     text " It indicates here that you have already fully paid the entry fee,\n {b}[mc]{/b}. Good. But consider this: we will not tolerate black \n sheep in our guild, no matter how much they pay. The honor of our \n organization is paramount."pos (0.02, 0.78) size 20 color"#8B0A50"  font "consolas.ttf"
 screen angelika_speech3():
@@ -127,11 +131,62 @@ screen angelika_speech3():
         imagebutton:
             idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
             hover "buttons/auk_fwrd_hover.webp"
-            action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Tutorial")
+            action SetVariable("angelika_speech_text_count", min(angelika_speech_text_count + 1,4)),Jump("Tutorial")
+    vbox:
+        pos(0.82,0.05)
+        text "Mistress Angelika" size 45 color "#000000" font "fonts/victoriana.ttf" anchor (0.5, 0.5)
+        add "spacer" size (0,-10)
+        text "Slavers Guild Master"size 30 color "#000000" font "fonts/victoriana.ttf" anchor (0.5, 0.5)
+        text "Neutrals"size 30 color "#000000" font "fonts/victoriana.ttf" anchor (0.5, 0.5)
+        add "spacer" size (0,20)
+        text "Information for consideration:" size 30 color "#000000" font "fonts/victoriana.ttf" anchor (0.5, 0.5)
+    vbox:
+        pos(0.650,0.25)
+        text attitude_text["haughty"][0] size 20 color "#191970" font "fonts/Segoe Print.ttf" anchor (0.0,0.0)
+        add "spacer" size (0,60)    
+        text "   It seems from this lady depends the final decision about my entry into the guild. Most likely, this is just a formality, but it is necessary to remain vigilant. She looks like a person who does not forgive weakness and enjoys suffering neighbors…" xmaximum 425 size 20 color "#191970" font "fonts/Segoe Print.ttf" anchor (0.0,0.0)
+        text "   What the hell?! She looks like a complete bitch, though sexy." xmaximum 425 size 20 color "#191970" font "fonts/Segoe Print.ttf" anchor (0.0,0.0)
+screen slaver_guild():
+    vbox:
+        pos(0.82,0.05)
+        text "Slavers Guild" size 45 color "#000000" font "fonts/victoriana.ttf" anchor (0.5, 0.5)
+        add "spacer" size (0,-10)
+        text "Vatican Suburbs"size 30 color "#000000" font "fonts/victoriana.ttf" anchor (0.5, 0.5)
+        add "spacer" size (0,20)
+        text "Information for consideration:" size 30 color "#000000" font "fonts/victoriana.ttf" anchor (0.5, 0.5)
+    vbox:
+        pos(0.650,0.25)
+        text "   Judging by the interior of this place, you can say that the Slavers Guild members have a high place in the social hierarchy. The rooms all distinguish themselves by their apparent class and comfort, with the exception of the prisons and dungeons, of course…" xmaximum 425 size 20 color "#191970" font "fonts/Segoe Print.ttf" anchor (0.0,0.0)
+    vbox:
+        pos(0.165,0.05)
+        spacing 18  
+        textbutton "Lecture I: Components of success":
+            style "lecture_button"
+            action Jump("Tutorial")
+        textbutton "Lecture II: Psychology of submission":
+            style "lecture_button"
+            action Jump("Tutorial")
+        textbutton "Lecture III: Sticks and carrots":
+            style "lecture_button"
+            action Jump("Tutorial")
+        textbutton "Lecture IV: Kitchen slavery":
+            style "lecture_button"
+            action Jump("Tutorial")
+        textbutton "Check the conditions of the exam":
+            style "lecture_button"
+            action Jump("Tutorial")
+        textbutton "Start the practical examination":
+            style "lecture_button"
+            action Jump("Tutorial")
+        textbutton "Leave the guild":
+            style "lecture_button"
+            action Jump("Tutorial")
+        
 label Tutorial:
-    scene bg_old
+    scene bg_old 
     show screen angelika_speech3()
-    
+    show screen angelika_speech_bg()
+    show screen angelika_angelika()
     if angelika_speech_text_count == 0:
         $ tutorial_backbutton = "buttons/demo_noback_button.webp"
         $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"
@@ -156,7 +211,8 @@ label Tutorial:
     if angelika_speech_text_count == 4:
         $ speakcolor = "#000000"
         hide screen angelika_speech3
-
+        hide screen angelika_angelika
+        show screen slaver_guild()
     call screen angelika_speech()
 
     return

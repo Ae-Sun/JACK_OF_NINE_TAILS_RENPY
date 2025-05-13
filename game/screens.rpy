@@ -179,7 +179,7 @@ style display_mc_name is default
 style display_mc_name_text:
     size 72
     color "#000000"
-    font "fonts/Victoriana.ttf"
+    font "fonts/victoriana.ttf"
     hover_color "#ffff00"
 style simpletext is default
 style simpletext_text:
@@ -193,6 +193,15 @@ style start_button_text:
     color "#0000D8"
     size 36
     hover_color "#ffff00"
+style lecture_button:
+    background Frame("menu_button.webp", 0, 0)
+    xminimum 400
+    yminimum 50
+    bottom_padding 15
+style lecture_button_text:
+    size 20
+    xalign 0.5
+    yalign 0.5
 ###########################################################################
 style main_menu_button:
     background Frame("menu_button.webp", 0, 0)

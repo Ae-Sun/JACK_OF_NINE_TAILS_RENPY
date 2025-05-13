@@ -132,3 +132,14 @@ define angelika_speech_text = [
 " - In order to become a full member of the Slavers Guild you’ll have \n to pass the exam in conditions close to practice. We also provide \n training for beginners. I will tell you everything I know a hundred \n times if need be.",
 " I must choose which lecture I want to hear, or I can ask about the \n conditions of the examination or ask to start when I am ready."
 ]
+define attitude_text = {
+    "cold":         ["   Attitude: cold"],
+    "haughty":      ["   Attitude: haughty"],
+    "polite":       ["   Attitude: polite"],
+    "unkind":       ["   Attitude: unkind"],
+    "fastidious":   ["   Attitude: fastidious"],
+    "cautious":     ["   Attitude: cautious"],
+    "friendly":     ["   Attitude: friendly"],
+    "protective":   ["   Attitude: protective"],
+    "obsequious":   ["   Attitude: obsequious"]
+}

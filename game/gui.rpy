@@ -63,7 +63,7 @@ define gui.text_font = "Philosopher-Italic.ttf"
 define gui.name_text_font = "DejaVuSans.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "fonts/Victoriana.ttf"
+define gui.interface_text_font = "fonts/victoriana.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 22
