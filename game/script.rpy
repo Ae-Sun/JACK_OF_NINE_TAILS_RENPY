@@ -105,22 +105,22 @@ default mc ="Jack"
 default characterOnlyNameIndex = 0
 ###################################################################
 default angelika_speech_text_count = 0
-default speakcolor = "#8B0A50"
+default lecture_name = ""
+default inicial_girl = "demo/choose_slave.webp"
 ##############################
+
 
 # The game starts here.
 
 ########## Warning screen -rec3ks
 ###########################################################################
-screen angelika_speech_bg():
+screen tutorial_bg():
     add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
-screen angelika_angelika():
-    add "characters/mistress_angelika.webp"pos(0.3, 0.307) anchor (0.5, 0.5) 
+screen mistress_angelika():
+    add "characters/mistress_angelika.webp"pos(0.3, 0.365) anchor (0.5, 0.5) xsize 795 ysize 515
 screen angelika_speech():
-    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 color speakcolor font "consolas.ttf"
-screen angelika_speech2():
-    text " It indicates here that you have already fully paid the entry fee,\n {b}[mc]{/b}. Good. But consider this: we will not tolerate black \n sheep in our guild, no matter how much they pay. The honor of our \n organization is paramount."pos (0.02, 0.78) size 20 color"#8B0A50"  font "consolas.ttf"
-screen angelika_speech3():
+    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 
+screen angelika_buttons():
     vbox:
         xalign 0.655
         yalign 0.96
@@ -131,7 +131,8 @@ screen angelika_speech3():
         imagebutton:
             idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
             hover "buttons/auk_fwrd_hover.webp"
-            action SetVariable("angelika_speech_text_count", min(angelika_speech_text_count + 1,4)),Jump("Tutorial")
+            action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Tutorial")
+screen angelika_display():
     vbox:
         pos(0.82,0.05)
         text "Mistress Angelika" size 45 color "#000000" font "fonts/victoriana.ttf" anchor (0.5, 0.5)
@@ -162,35 +163,115 @@ screen slaver_guild():
         spacing 18  
         textbutton "Lecture I: Components of success":
             style "lecture_button"
-            action Jump("Tutorial")
+            action SetVariable("angelika_speech_text_count",0),SetVariable("lecture_name","tutorial_lecture1"),Jump("Lecture")
         textbutton "Lecture II: Psychology of submission":
             style "lecture_button"
-            action Jump("Tutorial")
+            action SetVariable("angelika_speech_text_count",0),SetVariable("lecture_name","tutorial_lecture2"),Jump("Lecture")
         textbutton "Lecture III: Sticks and carrots":
             style "lecture_button"
-            action Jump("Tutorial")
+            action SetVariable("angelika_speech_text_count",0),SetVariable("lecture_name","tutorial_lecture3"),Jump("Lecture")
         textbutton "Lecture IV: Kitchen slavery":
             style "lecture_button"
-            action Jump("Tutorial")
+            action SetVariable("angelika_speech_text_count",0),SetVariable("lecture_name","tutorial_lecture4"),Jump("Lecture")
         textbutton "Check the conditions of the exam":
             style "lecture_button"
-            action Jump("Tutorial")
+            action SetVariable("angelika_speech_text_count",0),SetVariable("lecture_name","tutorial_lecture5"),Jump("Lecture")
         textbutton "Start the practical examination":
             style "lecture_button"
-            action Jump("Tutorial")
+            action Jump("choose_inicial_girl")
         textbutton "Leave the guild":
             style "lecture_button"
-            action Jump("Tutorial")
-        
+            action MainMenu(confirm=False)
+    text "{color=#000000}I must choose which lecture I want to hear, or I can ask about the conditions of the examination or ask to start when I am ready.{/color}" pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 
+screen lecture_screen():
+    text tutorial_lectureGIGA[lecture_name][angelika_speech_text_count] pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
+screen lecture_screenbuttons():   
+    vbox:
+        xalign 0.655
+        yalign 0.96
+        imagebutton:
+            idle tutorial_backbutton anchor (0.5, 0.5)
+            hover tutorial_backbutton_hover
+            action SetVariable("angelika_speech_text_count", max(angelika_speech_text_count - 1,0)),Jump("Lecture")
+        imagebutton:
+            idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
+            hover "buttons/auk_fwrd_hover.webp"
+            action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Lecture")
+screen choose_inicial_girl_screen():
+    add "bg/interiors/classic_dungeon.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
+    text "Choose your slave" pos(0.315, 0.04) anchor (0.5, 0.5) size 36 color "#ffff00" font "fonts/victoriana.ttf"
+    text tutorial_lectureGIGA[lecture_name] pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
+
+    add inicial_girl pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
+    button:
+        xpos 0
+        ypos 0
+        xsize 265
+        ysize 515
+        action SetVariable("inicial_girl","demo/choose_princess.webp"), Jump("choose_inicial_girl")
+    button:
+        xpos 265
+        ypos 0
+        xsize 265
+        ysize 515
+        action SetVariable("inicial_girl","demo/choose_amazon.webp"), Jump("choose_inicial_girl")
+    button:
+        xpos 530
+        ypos 0
+        xsize 265
+        ysize 515
+        action SetVariable("inicial_girl","demo/choose_slave.webp"), Jump("choose_inicial_girl")
+
+label choose_inicial_girl:
+    scene bg_old
+    #if inicial_girl == "demo/choose_slave.webp":
+    call screen choose_inicial_girl_screen
+label Lecture:
+    show screen mistress_angelika
+    hide screen slaver_guild
+    show screen lecture_screen
+    show screen angelika_display
+    if lecture_name == "tutorial_lecture1":
+        if angelika_speech_text_count == 8:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    if lecture_name == "tutorial_lecture2":
+        if angelika_speech_text_count == 27:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    if lecture_name == "tutorial_lecture3":
+        if angelika_speech_text_count == 24:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    if lecture_name == "tutorial_lecture4":
+        if angelika_speech_text_count == 11:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    if lecture_name == "tutorial_lecture5":
+        if angelika_speech_text_count == 6:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    call screen lecture_screenbuttons
+
 label Tutorial:
     scene bg_old 
-    show screen angelika_speech3()
-    show screen angelika_speech_bg()
-    show screen angelika_angelika()
+    show screen tutorial_bg()
+    show screen angelika_buttons()
+    show screen mistress_angelika()
+    show screen angelika_display()
     if angelika_speech_text_count == 0:
         $ tutorial_backbutton = "buttons/demo_noback_button.webp"
         $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"
-        $ speakcolor = "#8B0A50"
     else:
         $ tutorial_backbutton = "buttons/demo_back_button.webp"
         $ tutorial_backbutton_hover = "buttons/demo_back_button_hover.webp"
@@ -200,20 +281,15 @@ label Tutorial:
             name = name.strip()
             if name != "":
                 mc = name
-        $ speakcolor = "#191970"
     if angelika_speech_text_count == 2:
-        $ speakcolor = "#000000"
-        show screen angelika_speech2()
-    else:
-        hide screen angelika_speech2
-    if angelika_speech_text_count == 3:
-        $ speakcolor = "#8B0A50"
+        $ mynamebugfix = True
     if angelika_speech_text_count == 4:
-        $ speakcolor = "#000000"
-        hide screen angelika_speech3
-        hide screen angelika_angelika
+        hide screen angelika_buttons
+        hide screen mistress_angelika
+        hide screen angelika_display
         show screen slaver_guild()
-    call screen angelika_speech()
+        $ mynamebugfix = False
+    call screen angelika_speech()   
 
     return
 label splashscreen:

@@ -15,7 +15,7 @@ default buttonimage_hover = ""
 default start = False
 label Custom_Start:
     scene donotdelete
-    show scroll_large
+    show scroll_large 
     if customcheck:
         $ mc_name_save = mc
         $ mc ="Jack"
@@ -647,7 +647,7 @@ screen custom_selection():
         text "/" color "#000000"
         text "/" color "#000000"
     imagebutton:
-        idle "buttons/close_button.webp" pos (997,12)
+        idle "buttons/close_button.webp" pos (983,12)
         hover "buttons/close_button_hover.webp"
         action MainMenu(confirm=False)
     hbox:

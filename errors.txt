@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 162: 'size' is not a keyword argument or valid child of the textbutton statement.
-    textbutton "Lecture I: Components of success" size 42:
-                                                      ^
+File "game/script.rpy", line 227: if statement expects a non-empty block.
+    if inicial_girl == "demo/choose_slave.webp":
+                                                ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue May 13 13:21:26 2025
+Wed May 14 00:36:27 2025

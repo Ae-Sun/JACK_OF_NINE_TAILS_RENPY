@@ -104,7 +104,7 @@ screen character_selection():
                 action [SetVariable("mc", char[0]),SetVariable("characterOnlyNameIndex",char[3]),SetVariable("mc_normal_selection_textdescription_value",char[0]),Jump("Normal_Start2")]
 
     imagebutton:
-        idle "buttons/close_button.webp" pos (997,12)
+        idle "buttons/close_button.webp" pos (983,12)
         hover "buttons/close_button_hover.webp"
         action MainMenu(confirm=False)
 
@@ -123,7 +123,7 @@ screen character_selection2(x,y):
         action SetVariable("mc_normal_selection_textdescription_value",inicial_difficulty_textvalue), Jump("Normal_Start2")
 
     imagebutton:
-        idle "buttons/close_button.webp" pos (997,12)
+        idle "buttons/close_button.webp" pos (983,12)
         hover "buttons/close_button_hover.webp"
         action MainMenu(confirm=False)
 
@@ -149,7 +149,7 @@ screen character_selection2(x,y):
             Jump("Normal_Start2")
         ]
     imagebutton:
-        idle "buttons/auk_fwrd.webp" pos (960, 580)
+        idle "buttons/auk_fwrd.webp" pos (950, 580)
         hover "buttons/auk_fwrd_hover.webp"
         action [
             SetVariable("mc_normal_selection_textdescription_value",mc),
