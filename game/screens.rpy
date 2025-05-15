@@ -203,6 +203,56 @@ style lecture_button_text:
     xalign 0.5
     yalign 0.5
 ###########################################################################
+style attribute_custom_slave0 is default
+style attribute_custom_slave0_text:
+    font "fonts/Segoe Print.ttf"
+    color "#CD0000"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_slave1 is default
+style attribute_custom_slave1_text:
+    font "fonts/Segoe Print.ttf"
+    color "#EA0090"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_slave2 is default
+style attribute_custom_slave2_text:
+    font "fonts/Segoe Print.ttf"
+    color "#6B0084"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_slave3 is default
+style attribute_custom_slave3_text:
+    font "fonts/Segoe Print.ttf"
+    color "#0000D8"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_slave4 is default
+style attribute_custom_slave4_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009FEF"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_slave5 is default
+style attribute_custom_slave5_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009900"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_slave6 is default
+style attribute_custom_slave6_text:
+    font "fonts/Segoe Print.ttf"
+    color "#996515"
+    size 16
+    kerning 1
+    hover_color "#ffff00"
+
 style main_menu_button:
     background Frame("menu_button.webp", 0, 0)
     xminimum 300

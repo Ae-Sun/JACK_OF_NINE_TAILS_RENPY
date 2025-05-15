@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 227: if statement expects a non-empty block.
-    if inicial_girl == "demo/choose_slave.webp":
-                                                ^
+File "game/tutorial.rpy", line 217: Line is indented, but the preceding screen statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    textbutton "CLICK HERE" at truecenter:
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed May 14 00:36:27 2025
+Thu May 15 02:19:51 2025
