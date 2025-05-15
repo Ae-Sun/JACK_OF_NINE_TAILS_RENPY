@@ -3,6 +3,9 @@ default lecture_name = ""
 default inicial_girl = "demo/choose_slave.webp"
 default demo_girl_text_index = 0
 default demo_girl_selection = "Helen"
+default all_girls_list = {}
+default girl_index = 0
+default premiun_girl_tutorial_selected_localization = "girl_packs/original_premiun_slaves_pack/helen.json"
 screen tutorial_bg():
     add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
 screen mistress_angelika():
@@ -129,12 +132,18 @@ label choose_inicial_girl:
     if inicial_girl == "demo/choose_slave.webp":
         $ demo_girl_text_index = 0
         $ demo_girl_selection = "Helen"
+        $ premiun_girl_tutorial_selected_localization = "girl_packs/original_premiun_slaves_pack/helen.json"
+
     if inicial_girl == "demo/choose_amazon.webp":
         $ demo_girl_text_index = 1
         $ demo_girl_selection = "Yasmin"
+        $ premiun_girl_tutorial_selected_localization = "girl_packs/original_premiun_slaves_pack/yasmin.json"
+        
     if inicial_girl == "demo/choose_princess.webp":
         $ demo_girl_text_index = 2         
         $ demo_girl_selection = "Wilhelmine"
+        $ premiun_girl_tutorial_selected_localization = "girl_packs/original_premiun_slaves_pack/wilhelmine.json"
+        
     call screen choose_inicial_girl_screen
 
 label Lecture:
@@ -212,10 +221,20 @@ label Tutorial:
 
     return
 label iniciation_state:
-    $ girl = selected_json_data
-    call screen tryscreen()
-screen tryscreen():
+    $ all_girls_list[girl_index] = load_json(premiun_girl_tutorial_selected_localization)
+    call screen testdemoscreen()
+
+screen testdemoscreen():
+    add all_girls_list[girl_index]["fullimage"] + ".webp" pos(0.1,0.1)
+
+
+
+label testlabel:
+
+    $ all_girls_list[girl_index] = selected_json_data
+    call screen testscreen()
+screen testscreen():
     textbutton "CLICK HERE" at truecenter:
-        action Function(load_random_json), Jump("iniciation_state")
-    add girl["fullimage"] + ".png" pos(0.1,0.1)
+        action Function(load_random_json), Jump("testlabel")
+    add all_girls_list[girl_index]["fullimage"] + ".webp" pos(0.1,0.1)
     

@@ -3,13 +3,13 @@
     "fullmade": "",
     "fullmistress": "",
     "fullsecretary": "",
-    "seed_ava": "content/pic/girls/face/1102_green_long_young_sepia",
-    "seed_ava_gray": "content/pic/girls/face/1102_green_long_young_gray",
-    "seed_ava_clear": "content/pic/girls/face/1102_green_long_young",
-    "seed_age": 0,
-    "seed_boobs": 4,
-    "seed_boobs_img": "boobs_EE",
-    "seed_pussy_img": "pussy_m1",
-    "seed_psy_basic": "",
-    "seed_world": ""
+    "slave_ava": "girls/face/1102_green_long_young_sepia",
+    "slave_ava_gray": "girls/face/1102_green_long_young_gray",
+    "slave_ava_clear": "girls/face/1102_green_long_young",
+    "slave_age": 0,
+    "slave_boobs": 4,
+    "slave_boobs_img": "boobs_EE",
+    "slave_pussy_img": "pussy_m1",
+    "slave_psy_basic": "",
+    "slave_world": ""
 }

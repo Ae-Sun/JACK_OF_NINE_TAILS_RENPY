@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/tutorial.rpy", line 217: Line is indented, but the preceding screen statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    textbutton "CLICK HERE" at truecenter:
-    ^
+File "game/tutorial.rpy", line 215: reached end of line when expecting ':'.
+    if 
+       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 15 02:19:51 2025
+Thu May 15 14:10:15 2025

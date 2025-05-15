@@ -7,7 +7,7 @@ init python:
         mods_path = os.path.join(config.gamedir, "girl_packs")
         json_files = []
         # Folder(s) to exclude
-        excluded_folders = {"exclude_this_folder", "another_folder_to_skip"}
+        excluded_folders = {"original_premiun_slaves_pack"}
 
         for root, dirs, files in os.walk(mods_path):
             # Remove excluded folders from dirs to avoid walking into them
@@ -30,3 +30,11 @@ init python:
         else:
             renpy.log("No JSON files found.")
     load_random_json()
+
+    def load_json(filename):
+        try:
+            with renpy.loader.load(filename) as f:
+                return json.load(f)
+        except Exception as e:
+            renpy.log(f"Failed to load {filename}: {e}")
+            return None
