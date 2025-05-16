@@ -3,8 +3,8 @@ default follow_story_count = 0
 default mc_name_save ="rec3ks"
 default customcheck = True
 default customboxcheck = False
-default mc_normal_selection_textdescription_value_index = 0
-default custom_start_difficulty_selection_index_index = 1
+default dic_mc_normal_selection_textdescription_value_index = 0
+default dic_custom_start_difficulty_selection_index_index = 1
 default alltier_s = False
 default custom_points = 0
 default green_or_red = "#009900"
@@ -20,30 +20,30 @@ label Custom_Start:
         $ mc_name_save = mc
         $ mc ="Jack"
         $ reputation_value_1 = 0
-        $ strength_value_1 = mc_inicial_stats[mc][1]
-        $ personality_value_2 = mc_inicial_stats[mc][2]
-        $ allure_value_3 = mc_inicial_stats[mc][3]
-        $ libido_value_4 = mc_inicial_stats[mc][4]
-        $ dominance_value_5 = mc_inicial_stats[mc][5]
-        $ brand_reputation_value_6 = mc_inicial_stats[mc][6]
-        $ guild_reputation_value_7 = mc_inicial_stats[mc][7]
-        $ standard_of_living_value_8 = mc_inicial_stats[mc][8]
-        $ hygiene_value_9 = mc_inicial_stats[mc][9]
-        $ mood_value_10 = mc_inicial_stats[mc][10]
-        $ injuries_value_11 = mc_inicial_stats[mc][11]
-        $ teaching_value_12 = mc_inicial_stats[mc][12]
-        $ stewardship_value_13 = mc_inicial_stats[mc][13]
-        $ artistry_value_14 = mc_inicial_stats[mc][14]
-        $ medic_value_15 = mc_inicial_stats[mc][15]
-        $ fighter_value_16 = mc_inicial_stats[mc][16]
-        $ magic_value_17 = mc_inicial_stats[mc][17]
-        $ flagellation_value_18 = mc_inicial_stats[mc][18]
-        $ torture_value_19 = mc_inicial_stats[mc][19]
-        $ binding_value_20 = mc_inicial_stats[mc][20]
-        $ petting_value_21 = mc_inicial_stats[mc][21]
-        $ oral_sex_value_22 = mc_inicial_stats[mc][22]
-        $ penetration_value_23 = mc_inicial_stats[mc][23]
-        $ fetishism_value_24 = mc_inicial_stats[mc][24]
+        $ strength_value_1 = dic_mc_inicial_stats[mc][1]
+        $ personality_value_2 = dic_mc_inicial_stats[mc][2]
+        $ allure_value_3 = dic_mc_inicial_stats[mc][3]
+        $ libido_value_4 = dic_mc_inicial_stats[mc][4]
+        $ dominance_value_5 = dic_mc_inicial_stats[mc][5]
+        $ brand_reputation_value_6 = dic_mc_inicial_stats[mc][6]
+        $ guild_reputation_value_7 = dic_mc_inicial_stats[mc][7]
+        $ standard_of_living_value_8 = dic_mc_inicial_stats[mc][8]
+        $ hygiene_value_9 = dic_mc_inicial_stats[mc][9]
+        $ mood_value_10 = dic_mc_inicial_stats[mc][10]
+        $ injuries_value_11 = dic_mc_inicial_stats[mc][11]
+        $ teaching_value_12 = dic_mc_inicial_stats[mc][12]
+        $ stewardship_value_13 = dic_mc_inicial_stats[mc][13]
+        $ artistry_value_14 = dic_mc_inicial_stats[mc][14]
+        $ medic_value_15 = dic_mc_inicial_stats[mc][15]
+        $ fighter_value_16 = dic_mc_inicial_stats[mc][16]
+        $ magic_value_17 = dic_mc_inicial_stats[mc][17]
+        $ flagellation_value_18 = dic_mc_inicial_stats[mc][18]
+        $ torture_value_19 = dic_mc_inicial_stats[mc][19]
+        $ binding_value_20 = dic_mc_inicial_stats[mc][20]
+        $ petting_value_21 = dic_mc_inicial_stats[mc][21]
+        $ oral_sex_value_22 = dic_mc_inicial_stats[mc][22]
+        $ penetration_value_23 = dic_mc_inicial_stats[mc][23]
+        $ fetishism_value_24 = dic_mc_inicial_stats[mc][24]
         $ mc = mc_name_save
         $ customcheck = False
         # creating new temporal values
@@ -79,7 +79,7 @@ label Custom_Start:
         $ sparks_37                  = 999999
         $ alltier_s                  = False
     if difficult_sparks_mantain:
-        $ sparks_37 = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][1]
+        $ sparks_37 = dic_custom_start_difficulty_selection[dic_custom_start_difficulty_selection_index[dic_custom_start_difficulty_selection_index_index]][1]
         $ difficult_sparks_mantain = False
     # creating new temporal values
     $ reputationstyle= 2
@@ -94,33 +94,33 @@ label Custom_Start:
         $ buttonimage_hover = "buttons/sel_button_hover.webp"
         $ follow_story = False
     #####################################
-    $ strength_textvalue_1 = mc_attribute["STRENGTH"][strength_value_1]
-    $ personality_textvalue_2 = mc_attribute["PERSONALITY"][personality_value_2]
-    $ allure_textvalue_3 = mc_attribute["ALLURE"][allure_value_3]
-    $ libido_textvalue_4 = mc_attribute["LIBIDO"][libido_value_4]
-    $ dominance_textvalue_5 = mc_attribute["DOMINANCE"][dominance_value_5]
-    $ brand_reputation_textvalue_6 = mc_attribute["BRAND REPUTATION"][brand_reputation_value_6]
-    $ guild_reputation_textvalue_7 = mc_attribute["GUILD REPUTATION"][guild_reputation_value_7]
-    $ standard_of_living_textvalue_8 = mc_attribute["STANDARD OF LIVING"][standard_of_living_value_8]
-    $ hygiene_textvalue_9 = mc_attribute["HYGIENE"][hygiene_value_9]
-    $ mood_textvalue_10 = mc_attribute["MOOD"][mood_value_10]
-    $ injuries_textvalue_11 = mc_attribute["INJURIES"][injuries_value_11]
-    $ teaching_textvalue_12 = mc_attribute["TEACHING"][teaching_value_12]
-    $ stewardship_textvalue_13 = mc_attribute["STEWARDSHIP"][stewardship_value_13]
-    $ artistry_textvalue_14 = mc_attribute["ARTISTRY"][artistry_value_14]
-    $ medic_textvalue_15 = mc_attribute["MEDIC"][medic_value_15]
-    $ fighter_textvalue_16 = mc_attribute["FIGHTER"][fighter_value_16]
-    $ magic_textvalue_17 = mc_attribute["MAGIC"][magic_value_17]
-    $ flagellation_textvalue_18 = mc_attribute["FLAGELLATION"][flagellation_value_18]
-    $ torture_textvalue_19 = mc_attribute["TORTURE"][torture_value_19]
-    $ binding_textvalue_20 = mc_attribute["BINDING"][binding_value_20]
-    $ petting_textvalue_21 = mc_attribute["PETTING"][petting_value_21]
-    $ oral_sex_textvalue_22 = mc_attribute["ORAL SEX"][oral_sex_value_22]
-    $ penetration_textvalue_23 = mc_attribute["PENETRATION"][penetration_value_23]
-    $ fetishism_textvalue_24 = mc_attribute["FETISHISM"][fetishism_value_24]
-    $ reputation_textvalue_1 = mc_attribute["REPUTATION"][reputation_value_1]
-    $ custom_difficulty_textvalue = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][0]
-    $ custom_points = custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][2]
+    $ strength_textvalue_1 = dic_mc_attribute["STRENGTH"][strength_value_1]
+    $ personality_textvalue_2 = dic_mc_attribute["PERSONALITY"][personality_value_2]
+    $ allure_textvalue_3 = dic_mc_attribute["ALLURE"][allure_value_3]
+    $ libido_textvalue_4 = dic_mc_attribute["LIBIDO"][libido_value_4]
+    $ dominance_textvalue_5 = dic_mc_attribute["DOMINANCE"][dominance_value_5]
+    $ brand_reputation_textvalue_6 = dic_mc_attribute["BRAND REPUTATION"][brand_reputation_value_6]
+    $ guild_reputation_textvalue_7 = dic_mc_attribute["GUILD REPUTATION"][guild_reputation_value_7]
+    $ standard_of_living_textvalue_8 = dic_mc_attribute["STANDARD OF LIVING"][standard_of_living_value_8]
+    $ hygiene_textvalue_9 = dic_mc_attribute["HYGIENE"][hygiene_value_9]
+    $ mood_textvalue_10 = dic_mc_attribute["MOOD"][mood_value_10]
+    $ injuries_textvalue_11 = dic_mc_attribute["INJURIES"][injuries_value_11]
+    $ teaching_textvalue_12 = dic_mc_attribute["TEACHING"][teaching_value_12]
+    $ stewardship_textvalue_13 = dic_mc_attribute["STEWARDSHIP"][stewardship_value_13]
+    $ artistry_textvalue_14 = dic_mc_attribute["ARTISTRY"][artistry_value_14]
+    $ medic_textvalue_15 = dic_mc_attribute["MEDIC"][medic_value_15]
+    $ fighter_textvalue_16 = dic_mc_attribute["FIGHTER"][fighter_value_16]
+    $ magic_textvalue_17 = dic_mc_attribute["MAGIC"][magic_value_17]
+    $ flagellation_textvalue_18 = dic_mc_attribute["FLAGELLATION"][flagellation_value_18]
+    $ torture_textvalue_19 = dic_mc_attribute["TORTURE"][torture_value_19]
+    $ binding_textvalue_20 = dic_mc_attribute["BINDING"][binding_value_20]
+    $ petting_textvalue_21 = dic_mc_attribute["PETTING"][petting_value_21]
+    $ oral_sex_textvalue_22 = dic_mc_attribute["ORAL SEX"][oral_sex_value_22]
+    $ penetration_textvalue_23 = dic_mc_attribute["PENETRATION"][penetration_value_23]
+    $ fetishism_textvalue_24 = dic_mc_attribute["FETISHISM"][fetishism_value_24]
+    $ reputation_textvalue_1 = dic_mc_attribute["REPUTATION"][reputation_value_1]
+    $ custom_difficulty_textvalue = dic_custom_start_difficulty_selection[dic_custom_start_difficulty_selection_index[dic_custom_start_difficulty_selection_index_index]][0]
+    $ custom_points = dic_custom_start_difficulty_selection[dic_custom_start_difficulty_selection_index[dic_custom_start_difficulty_selection_index_index]][2]
     $ characterOnlyNameIndex = pre_characterOnlyNameIndex % 12
     show screen points_tier_text2
     if namechange == True:
@@ -130,7 +130,7 @@ label Custom_Start:
             if name != "":
                 mc = name
         $ namechange = False
-    if custom_start_difficulty_selection_index_index == 0:
+    if dic_custom_start_difficulty_selection_index_index == 0:
         show screen s_tier_button
         hide screen points_tier_text
         if reputationstyle + reputation_value_1 == 7:
@@ -140,10 +140,10 @@ label Custom_Start:
         show screen points_tier_text
         if reputation_value_1 > 4:
             $ reputation_value_1 = 4
-            $ reputation_textvalue_1 = mc_attribute["REPUTATION"][reputation_value_1]
-            $ mc_normal_selection_textdescription_value = "WHITE TOWN"
+            $ reputation_textvalue_1 = dic_mc_attribute["REPUTATION"][reputation_value_1]
+            $ dic_mc_normal_selection_textdescription_value = "WHITE TOWN"
             show screen custom_value_information
-    $ custom_points = custom_points - custom_skill_cost_value[strength_value_1] - custom_skill_cost_value[personality_value_2] - custom_skill_cost_value[allure_value_3] - custom_skill_cost_value[libido_value_4] - custom_skill_cost_value[dominance_value_5] - custom_skill_cost_value[brand_reputation_value_6] - custom_skill_cost_value[guild_reputation_value_7] - custom_skill_cost_value[standard_of_living_value_8] - custom_skill_cost_value[hygiene_value_9] - custom_skill_cost_value[mood_value_10] - custom_skill_cost_value[injuries_value_11] - custom_skill_cost_value[teaching_value_12] - custom_skill_cost_value[stewardship_value_13] - custom_skill_cost_value[artistry_value_14] - custom_skill_cost_value[medic_value_15] - custom_skill_cost_value[fighter_value_16] - custom_skill_cost_value[magic_value_17] - custom_skill_cost_value[flagellation_value_18] - custom_skill_cost_value[torture_value_19] - custom_skill_cost_value[binding_value_20] - custom_skill_cost_value[petting_value_21] - custom_skill_cost_value[oral_sex_value_22] - custom_skill_cost_value[penetration_value_23] - custom_skill_cost_value[fetishism_value_24] - custom_skill_cost_value[reputation_value_1] - int((sparks_37 - custom_start_difficulty_selection[custom_start_difficulty_selection_index[custom_start_difficulty_selection_index_index]][1])/10)
+    $ custom_points = custom_points - custom_skill_cost_value[strength_value_1] - custom_skill_cost_value[personality_value_2] - custom_skill_cost_value[allure_value_3] - custom_skill_cost_value[libido_value_4] - custom_skill_cost_value[dominance_value_5] - custom_skill_cost_value[brand_reputation_value_6] - custom_skill_cost_value[guild_reputation_value_7] - custom_skill_cost_value[standard_of_living_value_8] - custom_skill_cost_value[hygiene_value_9] - custom_skill_cost_value[mood_value_10] - custom_skill_cost_value[injuries_value_11] - custom_skill_cost_value[teaching_value_12] - custom_skill_cost_value[stewardship_value_13] - custom_skill_cost_value[artistry_value_14] - custom_skill_cost_value[medic_value_15] - custom_skill_cost_value[fighter_value_16] - custom_skill_cost_value[magic_value_17] - custom_skill_cost_value[flagellation_value_18] - custom_skill_cost_value[torture_value_19] - custom_skill_cost_value[binding_value_20] - custom_skill_cost_value[petting_value_21] - custom_skill_cost_value[oral_sex_value_22] - custom_skill_cost_value[penetration_value_23] - custom_skill_cost_value[fetishism_value_24] - custom_skill_cost_value[reputation_value_1] - int((sparks_37 - dic_custom_start_difficulty_selection[dic_custom_start_difficulty_selection_index[dic_custom_start_difficulty_selection_index_index]][1])/10)
     
     if custom_points < 0:
         $ green_or_red = "#CD0000"
@@ -160,7 +160,8 @@ label Custom_Start:
 
             jump home
         else:
-            $ mc_normal_selection_textdescription_value = "START FAIL"
+            $ dic_mc_normal_selection_textdescription_value = "START FAIL"
+            $ start = False
             show screen custom_value_information
     if customboxcheck:
         show screen custom_selection
@@ -170,7 +171,7 @@ screen custom_value_information():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
 
-    text mc_normal_selection_textdescription[mc_normal_selection_textdescription_value][mc_normal_selection_textdescription_value_index] xmaximum 470:
+    text dic_mc_normal_selection_textdescription[dic_mc_normal_selection_textdescription_value][dic_mc_normal_selection_textdescription_value_index] xmaximum 470:
         pos (0.33, 0.28)
         color "#191970"
         size 14
@@ -228,7 +229,7 @@ screen points_tier_text2():
             yalign 0.5
             xalign 0.5
         add "spacer" size (0, 5)
-        add custom_character_selection[charactersOnlyName[characterOnlyNameIndex]][0] at truecenter          
+        add dic_custom_character_selection[dic_charactersOnlyName[characterOnlyNameIndex]][0] at truecenter          
         add "spacer" size (0, 5)
         text "{u}Ignore story:{u}":
             size 17
@@ -323,7 +324,7 @@ screen custom_selection():
             hover "buttons/Minus_hover.webp"
             action (
                 SetVariable("difficult_sparks_mantain", True),
-                SetVariable("custom_start_difficulty_selection_index_index", max(custom_start_difficulty_selection_index_index - 1, 0)),
+                SetVariable("dic_custom_start_difficulty_selection_index_index", max(dic_custom_start_difficulty_selection_index_index - 1, 0)),
                 Jump("Custom_Start")
 )            yalign 0.5
         text custom_difficulty_textvalue:
@@ -336,7 +337,7 @@ screen custom_selection():
             hover "buttons/Plus_hover.webp"
             action (
                 SetVariable("difficult_sparks_mantain", True),
-                SetVariable("custom_start_difficulty_selection_index_index", min(custom_start_difficulty_selection_index_index + 1, 2)),
+                SetVariable("dic_custom_start_difficulty_selection_index_index", min(dic_custom_start_difficulty_selection_index_index + 1, 2)),
                 Jump("Custom_Start")
 )            yalign 0.5
     hbox:
@@ -364,7 +365,7 @@ screen custom_selection():
         imagebutton:
             idle "buttons/Plus.webp"
             hover "buttons/Plus_hover.webp"
-            action SetVariable("sparks_37",min(sparks_37+100,custom_selection_max_cap_sparks[custom_start_difficulty_selection_index_index])), Jump("Custom_Start")
+            action SetVariable("sparks_37",min(sparks_37+100,custom_selection_max_cap_sparks[dic_custom_start_difficulty_selection_index_index])), Jump("Custom_Start")
             yalign 0.5
     textbutton "Start" pos (0.5, 0.945) anchor (0.5, 0.5):
         style "start_button"
@@ -379,79 +380,79 @@ screen custom_selection():
 
         textbutton reputation_textvalue_1:
             style "attribute_button_custom" + str(reputation_value_1 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "REPUTATION")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "REPUTATION")
 
         textbutton strength_textvalue_1:
             style "attribute_button_custom" + str(strength_value_1 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "STRENGTH")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "STRENGTH")
 
         textbutton personality_textvalue_2:
             style "attribute_button_custom" + str(personality_value_2 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "PERSONALITY")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "PERSONALITY")
 
         textbutton libido_textvalue_4:
             style "attribute_button_custom" + str(libido_value_4 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "LIBIDO")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "LIBIDO")
 
         textbutton dominance_textvalue_5:
             style "attribute_button_custom" + str(dominance_value_5 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "DOMINANCE")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "DOMINANCE")
 
         add "spacer" size (0, 35)
 
         textbutton teaching_textvalue_12:
             style "attribute_button_custom" + str(teaching_value_12 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "TEACHING")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "TEACHING")
 
         textbutton stewardship_textvalue_13:
             style "attribute_button_custom" + str(stewardship_value_13 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "STEWARDSHIP")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "STEWARDSHIP")
 
         textbutton artistry_textvalue_14:
             style "attribute_button_custom" + str(artistry_value_14 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "ARTISTRY")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "ARTISTRY")
 
         textbutton medic_textvalue_15:
             style "attribute_button_custom" + str(medic_value_15 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "MEDIC")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "MEDIC")
 
         textbutton fighter_textvalue_16:
             style "attribute_button_custom" + str(fighter_value_16 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "FIGHTER")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "FIGHTER")
 
         textbutton magic_textvalue_17:
             style "attribute_button_custom" + str(magic_value_17 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "MAGIC")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "MAGIC")
 
         textbutton flagellation_textvalue_18:
             style "attribute_button_custom" + str(flagellation_value_18 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "FLAGELLATION")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "FLAGELLATION")
 
         textbutton torture_textvalue_19:
             style "attribute_button_custom" + str(torture_value_19 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "TORTURE")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "TORTURE")
 
         textbutton binding_textvalue_20:
             style "attribute_button_custom" + str(binding_value_20 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "BINDING")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "BINDING")
 
         add "spacer" size (0, 20)
 
         textbutton petting_textvalue_21:
             style "attribute_button_custom" + str(petting_value_21 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "PETTING")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "PETTING")
 
         textbutton oral_sex_textvalue_22:
             style "attribute_button_custom" + str(oral_sex_value_22 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "ORAL SEX")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "ORAL SEX")
 
         textbutton penetration_textvalue_23:
             style "attribute_button_custom" + str(penetration_value_23 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "PENETRATION")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "PENETRATION")
 
         textbutton fetishism_textvalue_24:
             style "attribute_button_custom" + str(fetishism_value_24 + 1)
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "FETISHISM")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "FETISHISM")
     vbox:
         anchor (0.0, 0.0)  # Aligns the anchor to the top-left corner
         spacing -1.5    # Spacing between all buttons
@@ -664,9 +665,9 @@ screen custom_selection():
         ypos 258
         textbutton "{u}SKILLS:{/u}":
             style "custom_information",
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "SKILLS")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "SKILLS")
 
         null height 230  # Spacer
         textbutton "{u}SEX TECHNIQUES:{/u}":
             style "custom_information",
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("mc_normal_selection_textdescription_value", "SEX TECHNIQUES")
+            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "SEX TECHNIQUES")

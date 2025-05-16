@@ -1,5 +1,5 @@
 # I can probably merge characters and mc inicial_stats into a giga big dictionaly, but I'm lazy -rec3ks
-define characters = [ #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
+define dic_characters = [ #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     ("master_noble", "master/master_noble.webp", "master/master_noble_hover.webp",0),
     ("master_torturer", "master/master_torturer.webp", "master/master_torturer_hover.webp",1),
     ("master_pimp", "master/master_pimp.webp", "master/master_pimp_hover.webp",2),
@@ -13,7 +13,7 @@ define characters = [ #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     ("master_granpa", "master/master_granpa.webp", "master/master_granpa_hover.webp",10),
     ("master_nerd", "master/master_nerd.webp", "master/master_nerd_hover.webp",11),
 ]
-define mc_inicial_stats = { #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
+define dic_mc_inicial_stats = { #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     "master_noble"      : ["M'lord"     , 4, 4, 0, 2, 4, 0, 0, 0, 5, 0, 5, 2, 2, 3, 2, 4, 0, 4, 3, 0, 3, 2, 4, 3,"Elven Chainmail"     ,""           ,"Fist"         ,"Epée"           ,""                 ,""        ,"Noble Regalia"       ,"","","","","Taurus Great House",8000, "simple difficulty",    5,""                                 , "   An aristocrat with a great education, with \n experience in court and military service. Having all \n the basic skills that are necesarry to teach, the easily \n joined the ranks of the slavers and all agree that a \n wonderful career awaits him..."], 
     "master_torturer"   : ["Robespierre", 5, 1, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 3, 3, 0, 5, 5, 5, 2, 2, 4, 4,"Without armor"       ,""           ,"Fist"         ,"Whip"           ,""                 ,""        ,"Worn clothes"        ,"","","","","Taurus Great House",7000, "simple difficulty",    5,""                                 , "   Once upon a time he was a soldier and fought for \n the king in his colonial wars. Then the king was \n overthrown and the revolution needed executioners. \n More than anything, he is proud to have personally \n decapitated the beautiful, but hanghty queen. In the \n Eternal Rome, a hangman's skills some in handy. "],
     "master_pimp"       : ["Silk Daddy" , 3, 4, 0, 3, 4, 0, 0, 0, 5, 0, 5, 3, 2, 2, 1, 1, 0, 0, 2, 2, 4, 4, 5, 5,"Without armor"       ,""           ,"Fist"         ,"Brass Knuckles" ,""                 ,""        ,"Fashionable Attire"  ,"","","","","Serpis Great House",4500, "simple difficulty",    5,""                                 , "   Everyone has his own idea of success. For Silk \n Daddy, establishing himself as a pimp was a dream \n come true. Now he's in a new world, but the work is \n somewhat similar. Black, white, yellow or tailed - \n bitches will always be bitches. They need a big black \n daddy. And Daddy needs a lot of money."],
@@ -28,9 +28,9 @@ define mc_inicial_stats = { #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     "master_nerd"       : ["Johny"      , 2, 1, 0, 5, 0, 0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 5,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,"Worn clothes"        ,"","","","","Serpis Great House",200 , "extreme difficulty",   0,"He cannot afford an apartment yet", "   People just see a quiet, young nerd. Other kids call \n him 'loser'. But in his dreams? He's a great slave \n master. Womn crawl at his feet...no,{i} bitches...{/i}naked \n bitches...with enormous saggy tits. Oh, the disgusting \n things he would force them to do!! The kid jerks off \n a dozen times a day imagining it. He's learned \n enough magic to find the Fogs, but does this horny \n virgin schoolboy really have what it takes to break \n grown women to his will? Will they take him \n seriously? Or will they just think he's a loser, too? "],
     "Jack"              : ["jack"       , 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,"Without armor"       ,""           ,"Fist"         ,"Fist"           ,""                 ,""        ,""                    ,"","","","",""                  ,6000, "Normal"           ,    3,585]           
     }
-define charactersOnlyName = ["master_noble", "master_torturer", "master_pimp", "master_vampire", "master_fighter","master_teacher", "master_impressario", "master_butler", "master_doctor", "master_werwolf", "master_granpa", "master_nerd"]
+define dic_charactersOnlyName = ["master_noble", "master_torturer", "master_pimp", "master_vampire", "master_fighter","master_teacher", "master_impressario", "master_butler", "master_doctor", "master_werwolf", "master_granpa", "master_nerd"]
 
-define mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
+define dic_mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     "STRENGTH"             : ["Frail"               , "Weak"                 , "Unfit"               , "Vigorous"           , "Strong"            , "Herculean"             ,"{b}Inmortal{/b}"          ,"{b} STRENGTH:{/b} \n Strength commands respect. It is important for a \n trainer  to be strong. Strength affects the force of your \n blows in combat, your endurance in daily tasks, and the \n submissiveness of your slaves. To build and maintain \n strength, avoid lower-quality food, engage in athletics, \n dance, intercourse, or martial arts, firmly discipline \n your slaves, and avoid exhaustion (red energy stars)."],
     "PERSONALITY"          : ["Caitiff"             , "Rube"                 , "Churl"               , "Knave"              , "Vulgarian"         , "Aristocrat"            ,"{b}Aristocrat+{/b}"       ,"{b} PERSONALITY:{/b} \n Charisma, determination and will play a crusial role \n for  a trainer of slaves, as they make it much easier to \n control other people. How you are viewed is a reflection \n of your prestige, which is influenced by your standard \n of living, the location of your residence, the quality \n of your interior decor, and your brand reputation" ],
     "ALLURE"               : ["Repulsive"           , "Unpleasant"           , "Unmemorable"         , "Charming"           , "Captivating"       , "Irresistible"          ,"{b}Irresistible+{/b}" ]   ,
@@ -57,37 +57,37 @@ define mc_attribute = { #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     "FETISHISM"            : ["Unadventurous F-"    , "Fetishism D-"         , "Fetishism C-"        , "Fetishism B+"       , "Fetishism A+"      , "Worst of Perverts S+"  ,"{b}Worst of Perverts S++{/b}"    ,""],
     "REPUTATION"           : ["The Slums"           , "Quarter of the Outcasts","Serpentine Quarter" , "Quarter of the Bull", "Necropolis"        , "White Town"            ,"{b} REPUTATION:{/b} \n Reputation measures your personal notoriety (how \n well you are known by the citizens of the Eternal \n Rome) and determines your access to the higher echelons \n of society and to higher-quality, higher-cost living \n conditions. Living in a shack is cheap but very difficult. \n Satisfying clients will improve your reputation with \n their faction and allow you to rent or purchase a \n residence in their vicinity. "]
 }
-define mc_normal_selection_textdescription ={ 
-    "master_noble":       [mc_inicial_stats["master_noble"][41]," - No particular advantages or disadvantages."],
-    "master_torturer":    [mc_inicial_stats["master_torturer"][41]," - No particular advantages or disadvantages."],
-    "master_pimp":        [mc_inicial_stats["master_pimp"][41]," - No particular advantages or disadvantages."],
-    "master_vampire":     [mc_inicial_stats["master_vampire"][41]," - No particular advantages or disadvantages."],
-    "master_fighter":     [mc_inicial_stats["master_fighter"][41]," - Fighter Skills will not naturally decay."],
-    "master_teacher":     [mc_inicial_stats["master_teacher"][41]," - Teaching Skills will not naturally decay."],
-    "master_impressario": [mc_inicial_stats["master_impressario"][41]," - Artistry Skills will not naturally decay. \n - Get free theather tickets"],
-    "master_butler":      [mc_inicial_stats["master_butler"][41]," - Stewardship Skills will not naturally decay."],
-    "master_doctor":      [mc_inicial_stats["master_doctor"][41]," - Medic Skills will not naturally decay. \n - Free hospital examination"],
-    "master_werwolf":     [mc_inicial_stats["master_werwolf"][41]," - No particular advantages or disadvantages."],
-    "master_granpa":      [mc_inicial_stats["master_granpa"][41]," - No particular advantages or disadvantages."],
-    "master_nerd":        [mc_inicial_stats["master_nerd"][41]," - No particular advantages or disadvantages."],
-    "STRENGTH":            [mc_attribute["STRENGTH"][7]],
-    "PERSONALITY":         [mc_attribute["PERSONALITY"][7]],
-    "LIBIDO":              [mc_attribute["LIBIDO"][7]],
-    "DOMINANCE":           [mc_attribute["DOMINANCE"][7]],
-    "TEACHING":            [mc_attribute["TEACHING"][7]],
-    "STEWARDSHIP":         [mc_attribute["STEWARDSHIP"][7]],
-    "ARTISTRY":            [mc_attribute["ARTISTRY"][7]],
-    "MEDIC":               [mc_attribute["MEDIC"][7]],
-    "FIGHTER":             [mc_attribute["FIGHTER"][7]],
-    "MAGIC":               [mc_attribute["MAGIC"][7]],
-    "FLAGELLATION":        [mc_attribute["FLAGELLATION"][7]],
-    "TORTURE":             [mc_attribute["TORTURE"][7]],
-    "BINDING":             [mc_attribute["BINDING"][7]],
-    "PETTING":             [mc_attribute["PETTING"][7]],
-    "ORAL SEX":            [mc_attribute["ORAL SEX"][7]],
-    "PENETRATION":         [mc_attribute["PENETRATION"][7]],
-    "FETISHISM":           [mc_attribute["FETISHISM"][7]],
-    "REPUTATION":          [mc_attribute["REPUTATION"][6]],
+define dic_mc_normal_selection_textdescription ={ 
+    "master_noble":       [dic_mc_inicial_stats["master_noble"][41]," - No particular advantages or disadvantages."],
+    "master_torturer":    [dic_mc_inicial_stats["master_torturer"][41]," - No particular advantages or disadvantages."],
+    "master_pimp":        [dic_mc_inicial_stats["master_pimp"][41]," - No particular advantages or disadvantages."],
+    "master_vampire":     [dic_mc_inicial_stats["master_vampire"][41]," - No particular advantages or disadvantages."],
+    "master_fighter":     [dic_mc_inicial_stats["master_fighter"][41]," - Fighter Skills will not naturally decay."],
+    "master_teacher":     [dic_mc_inicial_stats["master_teacher"][41]," - Teaching Skills will not naturally decay."],
+    "master_impressario": [dic_mc_inicial_stats["master_impressario"][41]," - Artistry Skills will not naturally decay. \n - Get free theather tickets"],
+    "master_butler":      [dic_mc_inicial_stats["master_butler"][41]," - Stewardship Skills will not naturally decay."],
+    "master_doctor":      [dic_mc_inicial_stats["master_doctor"][41]," - Medic Skills will not naturally decay. \n - Free hospital examination"],
+    "master_werwolf":     [dic_mc_inicial_stats["master_werwolf"][41]," - No particular advantages or disadvantages."],
+    "master_granpa":      [dic_mc_inicial_stats["master_granpa"][41]," - No particular advantages or disadvantages."],
+    "master_nerd":        [dic_mc_inicial_stats["master_nerd"][41]," - No particular advantages or disadvantages."],
+    "STRENGTH":            [dic_mc_attribute["STRENGTH"][7]],
+    "PERSONALITY":         [dic_mc_attribute["PERSONALITY"][7]],
+    "LIBIDO":              [dic_mc_attribute["LIBIDO"][7]],
+    "DOMINANCE":           [dic_mc_attribute["DOMINANCE"][7]],
+    "TEACHING":            [dic_mc_attribute["TEACHING"][7]],
+    "STEWARDSHIP":         [dic_mc_attribute["STEWARDSHIP"][7]],
+    "ARTISTRY":            [dic_mc_attribute["ARTISTRY"][7]],
+    "MEDIC":               [dic_mc_attribute["MEDIC"][7]],
+    "FIGHTER":             [dic_mc_attribute["FIGHTER"][7]],
+    "MAGIC":               [dic_mc_attribute["MAGIC"][7]],
+    "FLAGELLATION":        [dic_mc_attribute["FLAGELLATION"][7]],
+    "TORTURE":             [dic_mc_attribute["TORTURE"][7]],
+    "BINDING":             [dic_mc_attribute["BINDING"][7]],
+    "PETTING":             [dic_mc_attribute["PETTING"][7]],
+    "ORAL SEX":            [dic_mc_attribute["ORAL SEX"][7]],
+    "PENETRATION":         [dic_mc_attribute["PENETRATION"][7]],
+    "FETISHISM":           [dic_mc_attribute["FETISHISM"][7]],
+    "REPUTATION":          [dic_mc_attribute["REPUTATION"][6]],
     "MC NAME":             ["{b} MISCELLANEOS:{/b} \n Total time played with this character: WIP \n Total number of slave buyed: WIP \n The highest sell slave value: WIP \n Total amount of spark gained: WIP: \n  "],
     "simple difficulty":   ["{b} SIMPLE DIFFICULTY:{/b} \n Perfect for beginners or those looking to enjoy the game \n without too much challenge."],
     "normal difficulty":   ["{b} NORMAL DIFFICULTY:{/b} \n A balanced experience for players seeking a fair \n challenge."],
@@ -102,12 +102,12 @@ define mc_normal_selection_textdescription ={
     "START FAIL":          ["{b} START FAIL:{/b} \n Points must be igual or greater than 0."]
     }
 # I know you can use xmaximun and xminimun, just happened I learned that too late, so unless someone want to change it, I will leave it like this with the \n
-define custom_start_difficulty_selection = {
+define dic_custom_start_difficulty_selection = {
     "Free mode": ["Free mode",10000,999999],
     "Normal":    ["Normal"   ,6000 ,590   ],
     "Maximun":   ["Maximun"  ,400  ,340   ]
 }
-define custom_character_selection = {
+define dic_custom_character_selection = {
     "master_noble":        ["custom_master/master_noble.webp", "custom_master/master_noble_hover.webp",0],
     "master_torturer":     ["custom_master/master_torturer.webp", "custom_master/master_torturer_hover.webp",1],
     "master_pimp":         ["custom_master/master_pimp.webp", "custom_master/master_pimp_hover.webp",2],
@@ -121,7 +121,7 @@ define custom_character_selection = {
     "master_granpa":       ["custom_master/master_granpa.webp", "custom_master/master_granpa_hover.webp",10],
     "master_nerd":         ["custom_master/master_nerd.webp", "custom_master/master_nerd_hover.webp",11],
 }
-define custom_start_difficulty_selection_index = ["Free mode","Normal","Maximun"]
+define dic_custom_start_difficulty_selection_index = ["Free mode","Normal","Maximun"]
 define custom_skill_cost_value = [0,5,15,35,75,155,315]
 define custom_selection_max_cap_sparks = [999999,8000,400]
 

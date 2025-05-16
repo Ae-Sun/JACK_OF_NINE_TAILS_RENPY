@@ -107,8 +107,8 @@ screen choose_inicial_girl_screen():
         ypos 35
         spacing 2
         text "{u}ATTRIBUTES{/u}" font "fonts/Segoe Print.ttf" color "000000" size 16
-        for i, (key, values) in enumerate(slave_attributes.items()):
-            textbutton values[demo_girl_stats[demo_girl_selection][i]]:
+        for key, values in dic_slave_attributes.items():
+            textbutton values[all_girls_list[girl_index]["slave_attributes"][key]]:
                 style "attribute_custom_slave" + str(demo_girl_stats[demo_girl_selection][i])
                 action Jump("choose_inicial_girl")
         add "spacer" size(0,20) 
@@ -127,6 +127,7 @@ screen choose_inicial_girl_screen():
             action Jump("iniciation_state")
 
 label choose_inicial_girl:
+    $ all_girls_list[girl_index] = load_json(premiun_girl_tutorial_selected_localization)
     hide screen slaver_guild
     scene bg_old
     if inicial_girl == "demo/choose_slave.webp":
@@ -221,7 +222,7 @@ label Tutorial:
 
     return
 label iniciation_state:
-    $ all_girls_list[girl_index] = load_json(premiun_girl_tutorial_selected_localization)
+
     call screen testdemoscreen()
 
 screen testdemoscreen():

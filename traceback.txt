@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/tutorial.rpy", line 147, in script
-    call screen choose_inicial_girl_screen
-ScriptError: could not find label 'testdemolabel'.
+  File "game/custom_selection_screen.rpy", line 23, in script
+    $ strength_value_1 = mc_inicial_stats[mc][1]
+  File "game/custom_selection_screen.rpy", line 23, in <module>
+    $ strength_value_1 = mc_inicial_stats[mc][1]
+NameError: name 'mc_inicial_stats' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "game/tutorial.rpy", line 147, in script
-    call screen choose_inicial_girl_screen
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'testdemolabel'.
+  File "game/custom_selection_screen.rpy", line 23, in script
+    $ strength_value_1 = mc_inicial_stats[mc][1]
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/custom_selection_screen.rpy", line 23, in <module>
+    $ strength_value_1 = mc_inicial_stats[mc][1]
+NameError: name 'mc_inicial_stats' is not defined
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Thu May 15 15:52:55 2025
+Fri May 16 23:34:03 2025

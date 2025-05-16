@@ -1,55 +1,166 @@
 {
     "fullimage": "girls/full/wilhelmine_pink_long",
-    "fullmade": "",
+    "fullmaid": "",
     "fullmistress": "",
     "fullsecretary": "",
-    "slave_ava": "girls/face/wilhelmine_sepia",
-    "slave_ava_gray": "girls/face/wilhelmine_gray",
-    "slave_ava_clear": "girls/face/wilhelmine",
-    "slave_age": 1,
-    "slave_boobs": 1,
-    "slave_boobs_img": "boobs_BB",
-    "slave_pussy_img": "pussy_l3",
-    "slave_psy_basic": "arrogant",
-    "slave_world_description": "In my world the Bright Alliance leads a never-ending war against an ancient evil. The Alliance includes all worthy nations: bright elves, dwarves and civilized people. Even the angels and unicorns fight on our side, but the enemy has dragons and trolls. He wants to enslave everyone so that Darkness reigns in the world.",
-    "slave_family_description": "My dad is the king of Arthuria. Arthuria is a very proud kingdom with a long military history, although we own only a little land. Our paladins are known worldwide for their nobility and they strike fear in the enemy's miserable henchmen with only their looks. And I had a pet unicorn. Oh, if only he was here...",
-    "slave_name": "Wilhelmine",
-    "slave_aura":{
-        "slave_fear": 0,
-        "slave_despair": 0,
-        "slave_awareness": 0,
-        "slave_taming": 0,
-        "slave_habit": 0,
-        "slave_spoil": 5,
-        "slave_devotion": 0
+    "ava": "girls/face/wilhelmine_sepia",
+    "ava_gray": "girls/face/wilhelmine_gray",
+    "ava_clear": "girls/face/wilhelmine",
+    "age": 1,
+    "boobs": 1,
+    "boobs_img": "boobs_BB",
+    "pussy_img": "pussy_l3",
+    "psy_basic": "arrogant",
+    "world_description": "In my world the Bright Alliance leads a never-ending war against an ancient evil. The Alliance includes all worthy nations: bright elves, dwarves and civilized people. Even the angels and unicorns fight on our side, but the enemy has dragons and trolls. He wants to enslave everyone so that Darkness reigns in the world.",
+    "family_description": "My dad is the king of Arthuria. Arthuria is a very proud kingdom with a long military history, although we own only a little land. Our paladins are known worldwide for their nobility and they strike fear in the enemy's miserable henchmen with only their looks. And I had a pet unicorn. Oh, if only he was here...",
+    "name": "Wilhelmine",
+    "virginity": 0,
+    "aura":{
+        "fear": 0,
+        "despair": 0,
+        "awareness": 0,
+        "taming": 0,
+        "habit": 0,
+        "spoil": 5,
+        "devotion": 0
     },
     
-    "slave_attributes":{
-        "slave_beauty": 5,
-        "slave_endurance": 2,
-        "slave_empathy": 5,
-        "slave_temperament": 5,
-        "slave_intelligence": 3,
-        "slave_nature": 5,
-        "slave_pride": 5,
-        "slave_exotic": 1,
-        "slave_physical": 1
+    "attributes":{
+        "beauty": 5,
+        "endurance": 2,
+        "empathy": 5,
+        "temperament": 5,
+        "intelligence": 3,
+        "nature": 5,
+        "pride": 5,
+        "exotic": 1,
+        "physical": 1
     },
-    "slave_skills":{
-        "slave_elocution": 2,
-        "slave_athletics": 2,
-        "slave_painting": 2
+    "skills":{
+        "elocution": 2,
+        "athletics": 2,
+        "painting": 2
     },
-    "slave_traits":{
-        "slave_nymphomania": -1,
-        "slave_nymphomania_revealed": 2,
-        "slave_masochism": -1,
-        "slave_abuse_attitude": -1,
-        "slave_blood_attitude": -1,
-        "slave_passion_sweets": 1,
-        "slave_passion_fame": 1,
-        "slave_passion_comfort": 1,
-        "slave_metabolism": 1,
-        "slave_virginity": 0
+        "traits":{
+        "traits_open":{
+            "traits_always":{
+                "scars": 0,
+                "bruises": 0,
+                "recovery":0
+            },
+            "traits_especial":{
+                "arena_champion":0,
+                "arena_grand_champion":0,
+                "racing_champion":0,
+                "racing_grand_champion":0
+            }
+
+        },
+        "traits_hidden": {
+            "traits_commun(1/8)": {
+
+            },
+            "traits_rare(1/12)": {
+                "lust_driver": {
+                    "value": -2,
+                    "revealed": true
+                },
+                "masochism":{
+                    "value": -2,
+                    "revealed": false
+                },
+ 
+                "abuse_attitude": {
+                    "value": -2,
+                    "revealed": false
+                },
+
+                "blood_attitude": {
+                    "value": -2,
+                    "revealed": false
+                },
+
+                "passion_comfort": {
+                    "value": 1,
+                    "revealed": false
+                },
+                "passion_fame": {
+                    "value": 1,
+                    "revealed": false
+                },
+
+                "passion_sweets": {
+                    "value": 1,
+                    "revealed": false
+                }
+
+            },
+            "traits_epic(1/16)": {
+
+            },
+            "traits_legendary(1/20)": {
+                "radiant": {
+                    "value": 2,
+                    "revealed": true
+                },
+
+                "metabolism": {
+                    "value": -1,
+                    "revealed": false
+                }
+
+            }
+        }
+    },
+    "sex_experience":{
+        "petting":{
+            "handjob":0,
+            "footjob":0,
+            "rubbing":0,
+            "titjob":0
+        },
+        "oral_pleasure":{
+            "kissing":0,
+            "licking":0,
+            "blowjob":0,
+            "deep_throat":0,
+            "rimming":0
+        },
+        "penetration":{
+            "vaginal_sex":0,
+            "fisting":0,
+            "anal_sex":0,
+            "anal_fisting":0
+        },
+        "group_sex":{
+            "threesome":0,
+            "bukkake":0,
+            "doble_penetration":0,
+            "triple_penetration":0,
+            "gangbang":0
+        },
+        "demostration":{
+            "seduction":0,
+            "masturbation":0,
+            "dildo":0,
+            "humiliation":0,
+            "exhibitionism":0
+        },
+        "fetishism":{
+            "enema":0,
+            "masochism":0,
+            "self-torture":0,
+            "golden_shower":0,
+            "scat":0
+        },
+        "xenophily":{
+            "dog_mating":0,
+            "pig_mating":0,
+            "house_mating":0,
+            "spider_mating":0,
+            "sea_tentacle_mating":0,
+            "field_mating":0
+        }
+
     }
 }

@@ -1,95 +1,130 @@
 {
     "fullimage": "girls/full/helen_purple_long",
-    "fullmade": "",
+    "fullmaid": "",
     "fullmistress": "",
     "fullsecretary": "",
-    "slave_ava": "girls/face/helen_sepia",
-    "slave_ava_gray": "girls/face/helen_gray",
-    "slave_ava_clear": "girls/face/helen",
-    "slave_age": 2,
-    "slave_boobs": 4,
-    "slave_boobs_img": "boobs_EE",
-    "slave_pussy_img": "pussy_m3",
-    "slave_psy_basic": "soft",
-    "slave_world_description": "  [Helen]<br>- My world is ruled by giant multinational corporations. Territorial governments have lost their power and do what the oligarchs dictate. It is difficult to find a good job, but those who work for corporations can rely on good earnings.",
-    "slave_family_description": "  [Helen]<br>- My father was the manager of recruitment in Dynamical Pharmaceuticals, and my mother worked as a math tutor for rich kids. With the support of my parents, I managed to get a good education and a career in the company where my dad worked.",
-    "slave_occupation_description": "  [Helen]<br>- Then I met Greg - he was a line manager at Vega Industries and had good prospects for his career. We got married and I quit my job to become a housewife, gave birth to a son. But then Greg fucked up and he was expelled from the service. Because of debts we were deprived of civil rights and became the property of the bank.",
-    "slave_world": "",
-    "slave_name": "Helen",
-    "slave_attributes":{
-        "slave_beauty": 3,
-        "slave_endurance": 3,
-        "slave_empathy": 3,
-        "slave_temperament": 3,
-        "slave_intelligence": 5,
-        "slave_nature": 3,
-        "slave_pride": 2,
-        "slave_physical": 3
+    "ava": "girls/face/helen_sepia",
+    "ava_gray": "girls/face/helen_gray",
+    "ava_clear": "girls/face/helen",
+    "age": 2,
+    "boobs": 4,
+    "boobs_img": "boobs_EE",
+    "pussy_img": "pussy_m3",
+    "psy_basic": "soft",
+    "world_description": "  [Helen]<br>- My world is ruled by giant multinational corporations. Territorial governments have lost their power and do what the oligarchs dictate. It is difficult to find a good job, but those who work for corporations can rely on good earnings.",
+    "family_description": "  [Helen]<br>- My father was the manager of recruitment in Dynamical Pharmaceuticals, and my mother worked as a math tutor for rich kids. With the support of my parents, I managed to get a good education and a career in the company where my dad worked.",
+    "occupation_description": "  [Helen]<br>- Then I met Greg - he was a line manager at Vega Industries and had good prospects for his career. We got married and I quit my job to become a housewife, gave birth to a son. But then Greg fucked up and he was expelled from the service. Because of debts we were deprived of civil rights and became the property of the bank.",
+    "world": "",
+    "name": "Helen",
+    "virginity": 3,
+    "attributes":{
+        "beauty": 3,
+        "endurance": 3,
+        "empathy": 3,
+        "temperament": 3,
+        "intelligence": 5,
+        "nature": 3,
+        "pride": 2,
+        "physical": 3
     },
-    "slave_skills":{
-        "slave_maid": 3,
-        "slave_cooking": 2,
-        "slave_secretary": 1,
-        "slave_elocution": 1
+    "skills":{
+        "maid": 3,
+        "cooking": 2,
+        "secretary": 1,
+        "elocution": 1
     },
-    "slave_traits":{
-        "slave_virginity": 3,
-        "slave_metabolism": 3,
-        "slave_homosexualism": 1,
-        "slave_homosexualism_revealed": 2,
-        "slave_meekness": 4,
-        "slave_nymphomania": 1,
-        "slave_nymphomania_revealed": 2
-    },
+    "traits":{
+        "traits_open":{
+            "traits_always":{
+                "scars": 0,
+                "bruises": 0,
+                "recovery":0
+            },
+            "traits_especial":{
+                "arena_champion":0,
+                "arena_grand_champion":0,
+                "racing_champion":0,
+                "racing_grand_champion":0
+            }
 
-    "slave_sex_experience":{
-        "slave_petting":{
-            "slave_handjob":2,
-            "slave_footjob":0,
-            "slave_rubbing":3,
-            "slave_titjob":0
         },
-        "slave_oral_pleasure":{
-            "slave_kissing":3,
-            "slave_licking":0,
-            "slave_blowjob":2,
-            "slave_deep_throat":0,
-            "slave_rimming":0
+        "traits_hidden": {
+            "traits_commun(1/8)": {
+
+            },
+            "traits_rare(1/12)": {
+                "lust_driver": {
+                    "value": 2,
+                    "revealed": true
+                },
+
+                "sexual_orientation": {
+                    "value": 2,
+                    "revealed": true
+                }
+
+            },
+            "traits_epic(1/16)": {
+                "feartrait": {
+                    "value": 2,
+                    "revealed": false
+                }
+
+            },
+            "traits_legendary(1/20)": {
+
+            }
+        }
+    },    
+
+    "sex_experience":{
+        "petting":{
+            "handjob":2,
+            "footjob":0,
+            "rubbing":3,
+            "titjob":0
         },
-        "slave_penetration":{
+        "oral_pleasure":{
+            "kissing":3,
+            "licking":0,
+            "blowjob":2,
+            "deep_throat":0,
+            "rimming":0
+        },
+        "penetration":{
             "vaginal_sex":3,
             "fisting":0,
             "anal_sex":3,
             "anal_fisting":2
         },
-        "slave_group_sex":{
-            "slave_threesome":0,
-            "slave_bukkake":0,
-            "slave_doble_penetration":0,
-            "slave_triple_penetration":0,
-            "slave_gangbang":0
+        "group_sex":{
+            "threesome":0,
+            "bukkake":0,
+            "doble_penetration":0,
+            "triple_penetration":0,
+            "gangbang":0
         },
-        "slave_demostration":{
-            "slave_seduction":1,
-            "slave_masturbation":1,
-            "slave_dildo":1,
-            "slave_humiliation":2,
-            "slave_exhibitionism":1
+        "demostration":{
+            "seduction":1,
+            "masturbation":1,
+            "dildo":1,
+            "humiliation":2,
+            "exhibitionism":1
         },
-        "slave_fetishism":{
-            "slave_enema":0,
-            "slave_masochism":2,
-            "slave_self-torture":0,
-            "slave_golden_shower":0,
-            "slave_scat":0
+        "fetishism":{
+            "enema":0,
+            "masochism":2,
+            "self-torture":0,
+            "golden_shower":0,
+            "scat":0
         },
-        "slave_xenophily":{
-            "slave_dog_mating":0,
-            "slave_pig_mating":0,
-            "slave_house_mating":0,
-            "slave_spider_mating":0,
-            "slave_sea_tentacle_mating":0,
-            "slave_field_mating":0
+        "xenophily":{
+            "dog_mating":0,
+            "pig_mating":0,
+            "house_mating":0,
+            "spider_mating":0,
+            "sea_tentacle_mating":0,
+            "field_mating":0
         }
 
     }

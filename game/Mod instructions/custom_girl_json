@@ -1,0 +1,317 @@
+{
+    "fullimage": "Mod/YourGamePackName/full/filename",
+    "fullmaid":"Mod/YourGamePackName/full/maid/filename",
+    "fullmistress": "Mod/YourGamePackName/full/mistress/felicity",
+    "fullsecretary": "Mod/YourGamePackName/full/secretary/felicity",
+    "ava": "Mod/YourGamePackName/face/felicity_sepia",
+    "ava_gray": "Mod/YourGamePackName/face/felicity_gray",
+    "ava_clear": "Mod/YourGamePackName/face/felicity",
+    "age": 0,
+    "boobs": 2,
+    "boobs_img": "",
+    "pussy_img": "",
+    "psy_basic": "",
+    "world_description": "",
+    "family_description": "",
+    "name": "",
+    "aura":{
+        "fear": 0,
+        "despair": 0,
+        "awareness": 0,
+        "taming": 0,
+        "habit": 0,
+        "spoil": 0,
+        "devotion": 0,
+        "obedience_bonus":0
+    },
+    "attributes":{
+        "beauty": 0,
+        "endurance": 0,
+        "empathy": 0,
+        "temperament": 0,
+        "intelligence": 0,
+        "nature": 0,
+        "pride": 0,
+        "physical": 0,
+        "exotic": 0,
+        "fame": 0
+    },
+    "skills":{
+        "maid": 0,
+        "cooking": 0,
+        "secretary": 0,
+        "elocution": 0,
+        "nursing": 0,
+        "alchemy": 0,
+        "witchcraft": 0,
+        "athletics": 0,
+        "gladiatrix": 0,
+        "dance": 0,
+        "music": 0,
+        "painting": 0,
+        "pet": 0,
+        "pony":0,
+        "cow":0
+    },
+    "traits":{
+        "traits_open":{
+            "traits_always":{
+                "scars": 0,
+                "bruises": 0,
+                "recovery":0
+            },
+            "traits_especial":{
+                "arena_champion":0,
+                "arena_grand_champion":0,
+                "racing_champion":0,
+                "racing_grand_champion":0
+            }
+
+        },
+        "traits_hidden": {
+            "traits_commun(1/8)": {
+                "expert_maid": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "gourmet_chef": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "secretary": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "orator": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "expert_nurse": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "expert_alchemy": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "expert_witchcraft": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "expert_athletics": {
+                    "value": "NONE",
+                    "revealed": false
+                },
+                "gladiatrix": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "exotic_dancer": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "musician": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "painter": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "pet_prodigy": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "brony": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "cow_prodigy": {
+                    "value": 0,
+                    "revealed": false
+                }
+            },
+            "traits_rare(1/12)": {
+                "lust_driver": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "masochism":{
+                    "value": 0,
+                    "revealed": false
+                },
+                "exhibitionism": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "sexual_orientation": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "abuse_attitude": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "darkness_attitude": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "blood_attitude": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "fire_attitude": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "water_attitude": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "spider_attitude": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "passion_comfort": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "passion_fame": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "passion_luxury": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "passion_sweets": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "fertility":{
+                    "value":0,
+                    "revealed": false
+                }
+            },
+            "traits_epic(1/16)": {
+                "feartrait": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "despairtrait": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "awarenesstrait": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "tamingtrait": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "habittrait": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "spoiltrait": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "devotiontrait": {
+                    "value": 0,
+                    "revealed": false
+                }
+            },
+            "traits_legendary(1/20)": {
+                "radiant": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "fortitude": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "emotional_resonance": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "unshakable_mindset": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "thinker": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "tenacious_soul": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "overconfident": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "metabolism": {
+                    "value": 0,
+                    "revealed": false
+                },
+                "rare_blossom": {
+                    "value": 0,
+                    "revealed": false
+                }
+            }
+        }
+    },
+    "sex_experience":{
+        "petting":{
+            "handjob":0,
+            "footjob":0,
+            "rubbing":0,
+            "titjob":0
+        },
+        "oral_pleasure":{
+            "kissing":0,
+            "licking":0,
+            "blowjob":0,
+            "deep_throat":0,
+            "rimming":0
+        },
+        "penetration":{
+            "vaginal_sex":0,
+            "fisting":0,
+            "anal_sex":0,
+            "anal_fisting":0
+        },
+        "group_sex":{
+            "threesome":0,
+            "bukkake":0,
+            "doble_penetration":0,
+            "triple_penetration":0,
+            "gangbang":0
+        },
+        "demostration":{
+            "seduction":0,
+            "masturbation":0,
+            "dildo":0,
+            "humiliation":0,
+            "exhibitionism":0
+        },
+        "fetishism":{
+            "enema":0,
+            "masochism":0,
+            "self-torture":0,
+            "golden_shower":0,
+            "scat":0
+        },
+        "xenophily":{
+            "dog_mating":0,
+            "pig_mating":0,
+            "house_mating":0,
+            "spider_mating":0,
+            "sea_tentacle_mating":0,
+            "field_mating":0
+        }
+
+    }
+}

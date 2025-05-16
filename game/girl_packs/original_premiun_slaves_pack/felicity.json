@@ -1,109 +1,141 @@
 {
     "fullimage": "girls/full/felicity_blond_long",
-    "fullmade": "girls/full/maid/felicity",
+    "fullmaid": "girls/full/maid/felicity",
     "fullmistress": "girls/full/mistress/felicity",
     "fullsecretary": "girls/full/secretary/felicity",
-    "slave_ava": "girls/face/felicity_sepia",
-    "slave_ava_gray": "girls/face/felicity_gray",
-    "slave_ava_clear": "girls/face/felicity",
-    "slave_age": 0,
-    "slave_boobs": 2,
-    "slave_boobs_img": "boobs_C",
-    "slave_pussy_img": "pussy_g1",
-    "slave_psy_basic": "hateful",
-    "slave_world_description": "I am a princess.",
-    "slave_family_description": "My father is a Lord of White Town.",
-    "slave_name": "Felicity",
-    "slave_aura":{
-        "slave_fear": 0,
-        "slave_despair": 0,
-        "slave_awareness": 0,
-        "slave_taming": 0,
-        "slave_habit": 0,
-        "slave_spoil": 5,
-        "slave_devotion": 0
+    "ava": "girls/face/felicity_sepia",
+    "ava_gray": "girls/face/felicity_gray",
+    "ava_clear": "girls/face/felicity",
+    "age": 0,
+    "boobs": 2,
+    "boobs_img": "boobs_C",
+    "pussy_img": "pussy_g1",
+    "psy_basic": "hateful",
+    "world_description": "I am a princess.",
+    "family_description": "My father is a Lord of White Town.",
+    "name": "Felicity",
+    "virginity": 0,
+    "aura":{
+        "fear": 0,
+        "despair": 0,
+        "awareness": 0,
+        "taming": 0,
+        "habit": 0,
+        "spoil": 5,
+        "devotion": 0
     },
-    "slave_attributes":{
-        "slave_beauty": 5,
-        "slave_endurance": 4,
-        "slave_empathy": 4,
-        "slave_temperament": 5,
-        "slave_intelligence": 5,
-        "slave_nature": 5,
-        "slave_pride": 5,
-        "slave_physical": 1,
-        "slave_exotic": 2,
-        "slave_fame": 10
+    "attributes":{
+        "beauty": 5,
+        "endurance": 4,
+        "empathy": 4,
+        "temperament": 5,
+        "intelligence": 5,
+        "nature": 5,
+        "pride": 5,
+        "physical": 1,
+        "exotic": 2,
+        "fame": 10
     },
-    "slave_skills":{
-        "slave_maid": 0,
-        "slave_cooking": 0,
-        "slave_secretary": 0,
-        "slave_elocution": 2,
-        "slave_nursing": 0,
-        "slave_witchcraft": 0,
-        "slave_athletics": 4,
-        "slave_gladiatrix": 1,
-        "slave_painting": 4,
-        "slave_dance": 0,
-        "slave_music": 4,
-        "slave_pet": 0
+    "skills":{
+        "maid": 0,
+        "cooking": 0,
+        "secretary": 0,
+        "elocution": 2,
+        "nursing": 0,
+        "witchcraft": 0,
+        "athletics": 4,
+        "gladiatrix": 1,
+        "painting": 4,
+        "dance": 0,
+        "music": 4,
+        "pet": 0
     },
-    "slave_traits":{
-        "slave_scars": 0,
-        "slave_bruises": 0,
-        "slave_courage": 1,
-        "slave_grace": 1,
-        "slave_meekness": -5
-    },
-    "slave_sex_experience":{
-        "slave_petting":{
-            "slave_handjob":0,
-            "slave_footjob":0,
-            "slave_rubbing":0,
-            "slave_titjob":0
+        "traits":{
+        "traits_open":{
+            "traits_always":{
+                "scars": 0,
+                "bruises": 0,
+                "recovery":0
+            },
+            "traits_especial":{
+                "arena_champion":0,
+                "arena_grand_champion":0,
+                "racing_champion":0,
+                "racing_grand_champion":0
+            }
+
         },
-        "slave_oral_pleasure":{
-            "slave_kissing":0,
-            "slave_licking":0,
-            "slave_blowjob":0,
-            "slave_deep_throat":0,
-            "slave_rimming":0
+        "traits_hidden": {
+            "traits_commun(1/8)": {
+
+            },
+            "traits_rare(1/12)": {
+
+            },
+            "traits_epic(1/16)": {
+                "feartrait": {
+                    "value": -2,
+                    "revealed": false
+                }
+
+            },
+            "traits_legendary(1/20)": {
+
+                "rare_blossom": {
+                    "value": 1,
+                    "revealed": false
+                }
+            }
+        }
+    },
+    "sex_experience":{
+        "petting":{
+            "handjob":0,
+            "footjob":0,
+            "rubbing":0,
+            "titjob":0
         },
-        "slave_penetration":{
+        "oral_pleasure":{
+            "kissing":0,
+            "licking":0,
+            "blowjob":0,
+            "deep_throat":0,
+            "rimming":0
+        },
+        "penetration":{
             "vaginal_sex":0,
             "fisting":0,
             "anal_sex":0,
             "anal_fisting":0
         },
-        "slave_group_sex":{
-            "slave_threesome":0,
-            "slave_bukkake":0,
-            "slave_doble_penetration":0,
-            "slave_triple_penetration":0,
-            "slave_gangbang":0
+        "group_sex":{
+            "threesome":0,
+            "bukkake":0,
+            "doble_penetration":0,
+            "triple_penetration":0,
+            "gangbang":0
         },
-        "slave_demostration":{
-            "slave_seduction":0,
-            "slave_masturbation":0,
-            "slave_dildo":0,
-            "slave_humiliation":0,
-            "slave_exhibitionism":0
+        "demostration":{
+            "seduction":0,
+            "masturbation":0,
+            "dildo":0,
+            "humiliation":0,
+            "exhibitionism":0
         },
-        "slave_fetishism":{
-            "slave_enema":0,
-            "slave_masochism":0,
-            "slave_self-torture":0,
-            "slave_golden_shower":0,
-            "slave_scat":0
+        "fetishism":{
+            "enema":0,
+            "masochism":0,
+            "self-torture":0,
+            "golden_shower":0,
+            "scat":0
         },
-        "slave_xenophily":{
-            "slave_dog_mating":0,
-            "slave_pig_mating":0,
-            "slave_house_mating":0,
-            "slave_spider_mating":0,
-            "slave_sea_tentacle_mating":0,
-            "slave_field_mating":0
+        "xenophily":{
+            "dog_mating":0,
+            "pig_mating":0,
+            "house_mating":0,
+            "spider_mating":0,
+            "sea_tentacle_mating":0,
+            "field_mating":0
         }
 
     }

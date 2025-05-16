@@ -1,37 +1,136 @@
 {
     "fullimage": "girls/full/yasmin_red_long",
-    "fullmade": "",
+    "fullmaid": "",
     "fullmistress": "",
     "fullsecretary": "",
-    "slave_ava": "girls/face/yasmin_sepia",
-    "slave_ava_gray": "girls/face/yasmin_gray",
-    "slave_ava_clear": "girls/face/yasmin",
-    "slave_age": 0,
-    "slave_boobs": 2,
-    "slave_boobs_img": "boobs_CC",
-    "slave_pussy_img": "pussy_g3",
-    "slave_psy_basic": "hateful",
-    "slave_world_description": "  [Yasmin]<br>- Previously, our universe was ruled by the great empire of the Ancients. But it collapsed. Now there are many tribes that roam the space on a starship created by the Ancients. The more ships in the tribe, the more powerful it is. Everyone wants to grab a new ships, because no one knows how to build them.",
-    "slave_family_description": "  [Yasmin]<br>- My tribe is very powerful - we have three destroyers of 'Typhoon' type and two assault transports. Men like you we are keeping in bondage because they are stupid and unreliable. Only women are allowed to make decisions, as our mind is open to the Great Goddess.",
-    "slave_occupation_description": "  [Yasmin]<br>- I've always been strong and quick, so I went into the boarding psingingy as soon as I could pick up an assault blaster. We had glorious fights. For my services the Mothers Council made me the commander of the wing. And then I got into the damn fogs, when I went to hunt on the planet where we restock.",
-    "slave_name": "Yasmin",
-    "slave_beauty": 4,
-    "slave_endurance": 5,
-    "slave_empathy": 2,
-    "slave_temperament": 5,
-    "slave_intelligence": 4,
-    "slave_nature": 4,
-    "slave_pride": 4,
-    "slave_physical": 1,
-    "slave_exotic": 3,
-    "slave_sub_hug": 3,
-    "slave_sub_kiss": 3,
-    "slave_gladiatrix": 4,
-    "slave_virginity": 0,
-    "slave_metabolism": 5,
-    "slave_masochism": 1,
-    "slave_homosexualism": 2,
-    "slave_homosexualism_revealed": 2,
-    "slave_blood_attitude": 2,
-    "slave_courage": 1
+    "ava": "girls/face/yasmin_sepia",
+    "ava_gray": "girls/face/yasmin_gray",
+    "ava_clear": "girls/face/yasmin",
+    "age": 0,
+    "boobs": 2,
+    "boobs_img": "boobs_CC",
+    "pussy_img": "pussy_g3",
+    "psy_basic": "hateful",
+    "world_description": "  [Yasmin]<br>- Previously, our universe was ruled by the great empire of the Ancients. But it collapsed. Now there are many tribes that roam the space on a starship created by the Ancients. The more ships in the tribe, the more powerful it is. Everyone wants to grab a new ships, because no one knows how to build them.",
+    "family_description": "  [Yasmin]<br>- My tribe is very powerful - we have three destroyers of 'Typhoon' type and two assault transports. Men like you we are keeping in bondage because they are stupid and unreliable. Only women are allowed to make decisions, as our mind is open to the Great Goddess.",
+    "occupation_description": "  [Yasmin]<br>- I've always been strong and quick, so I went into the boarding psingingy as soon as I could pick up an assault blaster. We had glorious fights. For my services the Mothers Council made me the commander of the wing. And then I got into the damn fogs, when I went to hunt on the planet where we restock.",
+    "name": "Yasmin",
+    "virginity": 0,
+    "attributes":{
+        "beauty": 4,
+        "endurance": 5,
+        "empathy": 2,
+        "temperament": 5,
+        "intelligence": 4,
+        "nature": 4,
+        "pride": 4,
+        "physical": 1,
+        "exotic": 3
+    },
+    "traits":{
+        "traits_open":{
+            "traits_always":{
+                "scars": 0,
+                "bruises": 0,
+                "recovery":0
+            },
+            "traits_especial":{
+                "arena_champion":0,
+                "arena_grand_champion":0,
+                "racing_champion":0,
+                "racing_grand_champion":0
+            }
+
+        },
+        "traits_hidden": {
+            "traits_commun(1/8)": {
+
+            },
+            "traits_rare(1/12)": {
+
+                "masochism":{
+                    "value": 1,
+                    "revealed": false
+                },
+
+                "sexual_orientation": {
+                    "value": -2,
+                    "revealed": true
+                },
+
+                "blood_attitude": {
+                    "value": 2,
+                    "revealed": false
+                }
+
+            },
+            "traits_epic(1/16)": {
+                "feartrait": {
+                    "value": -1,
+                    "revealed": false
+                }
+
+            },
+            "traits_legendary(1/20)": {
+
+                "metabolism": {
+                    "value": 2,
+                    "revealed": false
+                }
+
+            }
+        }
+    },
+    "sex_experience":{
+        "petting":{
+            "handjob":0,
+            "footjob":0,
+            "rubbing":3,
+            "titjob":0
+        },
+        "oral_pleasure":{
+            "kissing":3,
+            "licking":0,
+            "blowjob":0,
+            "deep_throat":0,
+            "rimming":0
+        },
+        "penetration":{
+            "vaginal_sex":0,
+            "fisting":0,
+            "anal_sex":0,
+            "anal_fisting":0
+        },
+        "group_sex":{
+            "threesome":0,
+            "bukkake":0,
+            "doble_penetration":0,
+            "triple_penetration":0,
+            "gangbang":0
+        },
+        "demostration":{
+            "seduction":0,
+            "masturbation":0,
+            "dildo":0,
+            "humiliation":0,
+            "exhibitionism":0
+        },
+        "fetishism":{
+            "enema":0,
+            "masochism":0,
+            "self-torture":0,
+            "golden_shower":0,
+            "scat":0
+        },
+        "xenophily":{
+            "dog_mating":0,
+            "pig_mating":0,
+            "house_mating":0,
+            "spider_mating":0,
+            "sea_tentacle_mating":0,
+            "field_mating":0
+        }
+
+    }
+
 }

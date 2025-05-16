@@ -4,7 +4,7 @@ define inicial_girls = [
     ("demo/choose_slave.webp", 530),
 ]
 
-define slave_attributes = {
+define dic_slave_attributes = {
     "BEAUTY":        ["Ugly"            ,"Plain"          ,"Cute"          ,"Pretty   "    ,"Beautiful"    ,"Exquisite"      ,"Goddess"     ,"  Natural beauty very strongly influences her market price. Your slave's rank will never rise higher than her beauty or fame (whichever is higher). At auctions, beautiful slaves are sold for higher prices.","   ll your efforts to improve the appearance of the slave will influence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by neoplasty surgery in the Technosphere medical center and only once for each slave. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty is decreased while a slave has scars or bruises until they are removed or healed."],
     "ENDURANCE":     ["Dyinng"          ,"Feeble"         ,"Weakened"      ,"Healthy"      ,"Tough"        ,"Enduring"       ,"Iron"        ,"  Hardy slaves have more energy, can work better and are more attractive for clients. Critical decrease of endurance can kill your slave.","   If your slave is weak, feed her well; it's desirable to prescribe supplements and not let her become exhausted (receive red energy stars), nor over-exercise (when she has purple energy stars, intensive exercise is harmful), nor gain weight if she is overweight, nor end the day with negative calories. Build endurance with gymnastics, athletics, dance, racing, martial arts, pet play or vigorous sex. Heal injuries (a nurse assistant and your own skill helps) and sicknesses, and use drugs sparingly."],
     "EMPATHY":       ["Heartless"       ,"Callous"        ,"Insensitive"   ,"Sensitive"    ,"Caring"       ,"Nurturing"      ,"Nurturing+"  ,"  On one hand the gentle slave is easier affected by stress and stung by punishments. On the other hand she is turned on much faster and is more lively, which makes her attractive for customers.","   Callousness develops quickly with mistreatment. Severe punishments are especially harmful. While a less sensitive slave is hardened against depression and endures suffering, she is also less valuable. There are no reliable ways to increase a slave's empathy, but refined petting and pleasures may help."],
@@ -17,7 +17,7 @@ define slave_attributes = {
     "STYLE":         ["Unfashionable"   ,"Unremarkable"   ,"Common"        ,"Stylish"      ,"Refined"      ,"Elegant"        ,"Elegant+"    ,"  A slave's appearance is extremely important during the sale. Customers will like well-groomed and well-dressed slaves, and an unappealing slave can be turned down even if she fits the requirements.","   Style depends little on natural abilities and skills, though it is influenced by the ability to communicate (elocution) and presence (dancing). Style suffers from dirt and sloppiness. Hairstyle, make-up, perfume, beautiful clothes and jewelry - all of these improve style and make the slave more attractive to customers. It is not necessary to constantly maintain style - it plays a role only when it is time to show the girl to the customer."],
     "FAME IN ROME":  ["Unknown"         ,"Rumored"        ,"Recognized"    ,"Celebrity"    ,"Famous"       ,"Legendary"      ,"Legendary+"  ,"  Famous slaves are much more valuable. Your slave's rank can reach the level of her fame, even if she lacks other attributes, beauty included.","   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena and colosseum.","   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena and colosseum."]
     }
-define slave_attribute_keys = [
+define dic_slave_attribute_keys = [
     "BEAUTY",
     "ENDURANCE",
     "EMPATHY",
@@ -30,7 +30,7 @@ define slave_attribute_keys = [
     "STYLE",
     "FAME IN ROME"
 ]
-define slave_traits = {
+define dic_slave_traits = {
     "No brand": "The slave is not branded! You won't be able to sell an unbranded slave to customers, and an unbranded slave will take longer to accept her destiny as a slave. You could put a brand on her yourself if you have a dungeon (through the {b}Anatomy{/b} tab), go to a tattoo parlor in the Quarter of the Outcasts, or use a spell if you have the ability.",
     "sanity_broken": "The slave's spirit is broken. This means that the slave has become a soulless doll - it will reduce her rating, the slave will stop trying and she will also lose the will to live but will fulfill all orders without question. Until her Nature exceeds D-, Pride and Temperament will not rise. Winning battles, a boudoir, the Golden Cage, Garden of Gethsemane and hot springs may help to restore her spirit.",
     "sanity_low": "The state of mind of the slave is approaching dangerously low levels! Be careful with Pride - when pride lowers, the mind weakens. Check the condition of Temperament and Nature - their average should exceed D- for a normal state of mind.",
