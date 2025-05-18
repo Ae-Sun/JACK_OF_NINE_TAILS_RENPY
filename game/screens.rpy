@@ -252,7 +252,129 @@ style attribute_custom_slave6_text:
     size 16
     kerning 1
     hover_color "#ffff00"
+style attribute_custom_physical0 is default
+style attribute_custom_physical0_text:
+    font "fonts/Segoe Print.ttf"
+    color "#CD0000"
+    size 16
+    hover_color "#ffff00"
 
+style attribute_custom_physical1 is default
+style attribute_custom_physical1_text:
+    font "fonts/Segoe Print.ttf"
+    color "#6B0084"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical2 is default
+style attribute_custom_physical2_text:
+    font "fonts/Segoe Print.ttf"
+    color "#0000D8"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical3 is default
+style attribute_custom_physical3_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009FEF"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical4 is default
+style attribute_custom_physical4_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009900"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical5 is default
+style attribute_custom_physical5_text:
+    font "fonts/Segoe Print.ttf"
+    color "#CD0000"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical6 is default
+style attribute_custom_physical6_text:
+    font "fonts/Segoe Print.ttf"
+    color "#996515"
+    size 16
+    kerning 1
+    hover_color "#ffff00"
+######################################################
+
+style slave_traits_bad2 is default
+style slave_traits_bad2_text:
+    font "fonts/Segoe Print.ttf"
+    color "#CD0000"
+    size 16
+    hover_color "#ffff00"
+style slave_traits_bad1 is default
+style slave_traits_bad1_text:
+    font "fonts/Segoe Print.ttf"
+    color "#6B0084"
+    size 16
+    hover_color "#ffff00"
+style slave_traits_good0 is default
+style slave_traits_good0_text:
+    font "fonts/Segoe Print.ttf"
+    color "#000000"
+    size 16
+    hover_color "#ffff00"
+style slave_traits_good1 is default
+style slave_traits_good1_text:
+    font "fonts/Segoe Print.ttf"
+    color "#0000D8"
+    size 16
+    hover_color "#ffff00"
+style slave_traits_good2 is default
+style slave_traits_good2_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009900"
+    size 16
+    hover_color "#ffff00"
+#######################################################
+style attribute_check_slave0 is default
+style attribute_check_slave0_text:
+    font "fonts/Segoe Print.ttf"
+    color "#CD0000"
+    size 20
+    hover_color "#ffff00"
+
+style attribute_check_slave1 is default
+style attribute_check_slave1_text:
+    font "fonts/Segoe Print.ttf"
+    color "#EA0090"
+    size 20
+    hover_color "#ffff00"
+
+style attribute_check_slave2 is default
+style attribute_check_slave2_text:
+    font "fonts/Segoe Print.ttf"
+    color "#6B0084"
+    size 20
+    hover_color "#ffff00"
+
+style attribute_check_slave3 is default
+style attribute_check_slave3_text:
+    font "fonts/Segoe Print.ttf"
+    color "#0000D8"
+    size 20
+    hover_color "#ffff00"
+
+style attribute_check_slave4 is default
+style attribute_check_slave4_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009FEF"
+    size 20
+    hover_color "#ffff00"
+
+style attribute_check_slave5 is default
+style attribute_check_slave5_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009900"
+    size 20
+    hover_color "#ffff00"
 style main_menu_button:
     background Frame("menu_button.webp", 0, 0)
     xminimum 300

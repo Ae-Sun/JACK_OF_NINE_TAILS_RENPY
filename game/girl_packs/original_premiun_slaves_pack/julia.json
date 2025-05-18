@@ -35,7 +35,7 @@
         "nature": 4,
         "pride": 4,
         "physical": 1,    
-        "exotic": 1
+        "exoticism": 1
     },
     "skills":{
         "maid": 1,
@@ -67,15 +67,15 @@
 
         },
         "traits_hidden": {
-            "traits_commun(1/8)": {
+            "traits_skills(1/8)": {
 
-                "expert_witchcraft": {
+                "witchcrafttrait": {
                     "value": 1,
                     "revealed": true
                 }
 
             },
-            "traits_rare(1/12)": {
+            "traits_miscellaneous(1/12)": {
                 "lust_driver": {
                     "value": -1,
                     "revealed": false
@@ -96,16 +96,16 @@
                     "revealed": false
                 }
             },
-            "traits_epic(1/16)": {
+            "traits_aura(1/16)": {
                 "feartrait": {
                     "value": -2,
                     "revealed": false
                 }
 
             },
-            "traits_legendary(1/20)": {
+            "traits_attributes(1/20)": {
 
-                "metabolism": {
+                "physicaltrait": {
                     "value": 2,
                     "revealed": false
                 }

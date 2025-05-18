@@ -33,7 +33,7 @@
         "nature": 0,
         "pride": 0,
         "physical": 0,
-        "exotic": 0,
+        "exoticism": 0,
         "fame": 0
     },
     "skills":{
@@ -69,69 +69,99 @@
 
         },
         "traits_hidden": {
-            "traits_commun(1/8)": {
-                "expert_maid": {
+            "traits_skills(1/8)": {
+                "maidtrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "gourmet_chef": {
+                "cookingtrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "secretary": {
+                "secretarytrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "orator": {
+                "elocutiontrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "expert_nurse": {
+                "nursingtrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "expert_alchemy": {
+                "alchemytrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "expert_witchcraft": {
+                "witchcrafttrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "expert_athletics": {
+                "athleticstrait": {
                     "value": "NONE",
                     "revealed": false
                 },
-                "gladiatrix": {
+                "gladiatrixtrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "exotic_dancer": {
+                "dancetrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "musician": {
+                "musictrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "painter": {
+                "paintingtrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "pet_prodigy": {
+                "pettrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "brony": {
+                "ponytrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "cow_prodigy": {
+                "cowtrait": {
                     "value": 0,
                     "revealed": false
                 }
             },
-            "traits_rare(1/12)": {
+            "traits_sexual(1/10)": {
+                "pettingtrait":{
+                    "value":0,
+                    "revealed": false
+                },
+                "oral_pleasuretrait":{
+                    "value":0,
+                    "revealed": false
+                },
+                "penetrationtrait":{
+                    "value":0,
+                    "revealed": false
+                },
+                "group_sextrait":{
+                    "value":0,
+                    "revealed": false
+                },
+                "demotrationtrait":{
+                    "value":0,
+                    "revealed":false
+                },
+                "fetishismtrait":{
+                    "value":0,
+                    "revealed":false
+                },
+                "xenophily":{
+                    "value":0,
+                    "revealed":false
+                }
+            },
+            "traits_miscellaneous(1/12)": {
                 "lust_driver": {
                     "value": 0,
                     "revealed": false
@@ -193,7 +223,7 @@
                     "revealed": false
                 }
             },
-            "traits_epic(1/16)": {
+            "traits_aura(1/16)": {
                 "feartrait": {
                     "value": 0,
                     "revealed": false
@@ -223,40 +253,40 @@
                     "revealed": false
                 }
             },
-            "traits_legendary(1/20)": {
-                "radiant": {
+            "traits_attributes(1/20)": {
+                "beautytrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "fortitude": {
+                "endurancetrait": {                    
                     "value": 0,
                     "revealed": false
                 },
-                "emotional_resonance": {
+                "empathytrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "unshakable_mindset": {
+                "temperamenttrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "thinker": {
+                "intelligencetrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "tenacious_soul": {
+                "naturetrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "overconfident": {
+                "pridetrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "metabolism": {
+                "physicaltrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "rare_blossom": {
+                "exorticismtrait": {
                     "value": 0,
                     "revealed": false
                 }

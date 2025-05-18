@@ -7,7 +7,11 @@
 - maximun difficulty is called now extreme difficulty and extreme difficulty is called maximun difficulty (because nothing can be harder that maximun difficulty)
 - eazy difficulty is now call Free mode (start with 10000 sparks, full stats, on white town and c+ assistant, is too much even for eazy difficulty, also cause confusion between eazy difficulty and simple difficulty )
 - you can get as many sparks as you want on free mode (no really, max 999,999 sparks)
+- butle difficult is now normal difficult instead of high difficulty (just compare with other high difficult character)
 - clicking attributes on normal selection menu will show attribute tips
 - clicking on mc name will show some persistent data -WIP 
 - clicking on difficulty will show a difficulty description (need improvement)
 - Pressing space will close infobox
+- Reworked the entire trait system — while the original system was solid, it was overly complex and difficult to replicate. Simplified the underlying logic and expanded the variety of available traits for greater flexibility and depth.
+- Improve slave json
+- Created slave Mod support

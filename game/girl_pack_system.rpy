@@ -1,5 +1,5 @@
 init python:
-    import os, json, random
+    import os, json, random 
 
     selected_json_data = None  # This will hold the content of the selected JSON
 
@@ -30,7 +30,6 @@ init python:
         else:
             renpy.log("No JSON files found.")
     load_random_json()
-
     def load_json(filename):
         try:
             with renpy.loader.load(filename) as f:
@@ -38,3 +37,9 @@ init python:
         except Exception as e:
             renpy.log(f"Failed to load {filename}: {e}")
             return None
+    next_id = 0 # Initialize counter
+
+    def add_slave(slave):
+        global next_id       # Tell Python we want to use the external variable
+        all_girls_list[next_id] = slave
+        next_id += 1         # Increase the counter

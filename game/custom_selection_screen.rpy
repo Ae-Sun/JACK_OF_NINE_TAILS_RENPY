@@ -167,11 +167,11 @@ label Custom_Start:
         show screen custom_selection
         call screen custom_value_information
     call screen custom_selection()
-screen custom_value_information():
+screen custom_value_information2():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
 
-    text dic_mc_normal_selection_textdescription[dic_mc_normal_selection_textdescription_value][dic_mc_normal_selection_textdescription_value_index] xmaximum 470:
+    text dic_mc_normal_selection_textdescription[dic_mc_normal_selection_textdescription_value][dic_mc_normal_selection_textdescription_value_index] xmaximum 445:
         pos (0.33, 0.28)
         color "#191970"
         size 14
@@ -186,9 +186,37 @@ screen custom_value_information():
     imagebutton:
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
-        action Hide("custom_value_information"),SetVariable("customboxcheck", False)
+        action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
 
-    key "K_SPACE" action Hide("custom_value_information"),SetVariable("customboxcheck", False)
+    key "K_SPACE" action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
+screen custom_value_information():
+    zorder 5
+    add "gui/confirm_frame.png" at truecenter
+    vbox:
+        pos (0.5, 0.3)
+        text dic_mc_normal_selection_textdescription_value:
+            color "#191970" 
+            anchor (0.5,0.5)
+            size 20
+            font "fonts/Segoe Print.ttf"
+        spacing(-2)
+        for values in range(6):  # 0 to 5 inclusive
+            textbutton dic_mc_attribute[dic_mc_normal_selection_textdescription_value][values] anchor (0.5,0.5):
+                style "attribute_check_slave" + str(values)
+                action Jump("choose_inicial_girl")
+
+    text " Press space to close this window.":
+        pos (0.33, 0.65)
+        color "#191970"
+        size 14
+        font "fonts/Segoe Print.ttf"
+
+    imagebutton:
+        idle "buttons/ok-icon.webp" pos (0.5, 0.7)
+        hover "buttons/ok-icon_hover.webp"
+        action Hide("custom_value_information"),SetVariable("customboxcheck", False),Show("custom_value_information2")
+
+    key "K_SPACE" action Hide("custom_value_information"),SetVariable("customboxcheck", False),Show("custom_value_information2")
 
 screen s_tier_button():
     zorder 2

@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/tutorial.rpy", line 215: reached end of line when expecting ':'.
-    if 
-       ^
+File "game/tutorial.rpy", line 427: if statement expects a non-empty block.
+    if attributeisphysical:
+                           ^
+
+File "game/tutorial.rpy", line 429: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 15 14:10:15 2025
+Sun May 18 18:49:46 2025
