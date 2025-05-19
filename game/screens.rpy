@@ -258,7 +258,6 @@ style attribute_custom_physical0_text:
     color "#CD0000"
     size 16
     hover_color "#ffff00"
-<<<<<<< HEAD
 
 style attribute_custom_physical1 is default
 style attribute_custom_physical1_text:
@@ -383,8 +382,6 @@ style day_tracker_button_text:
     color "#000000"
     size 20
     hover_color "#ffff00"
-=======
->>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635
 
 style attribute_custom_physical1 is default
 style attribute_custom_physical1_text:

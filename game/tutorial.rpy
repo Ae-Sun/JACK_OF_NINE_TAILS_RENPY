@@ -1,5 +1,5 @@
 default angelika_speech_text_count = 0
-default lecture_name = ""
+default lecture_name = "tutorial_lecture1"
 default inicial_girl = "demo/choose_slave.webp"
 default demo_girl_text_index = 0
 default demo_girl_selection = "Helen"
@@ -12,11 +12,7 @@ default attribute_track_basic = ""
 default dictionary_name = {}
 default attribute_checkbox = False
 default attributeisphysical = False
-<<<<<<< HEAD
 default Is_tutorial = False
-=======
-default bola = 0
->>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635
 screen tutorial_bg():
     add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
 screen mistress_angelika():
@@ -321,11 +317,7 @@ screen choose_inicial_girl_screen():
         imagebutton:
             idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
             hover "buttons/auk_fwrd_hover.webp"
-<<<<<<< HEAD
             action SetVariable("Is_tutorial",True),Jump("Home")
-=======
-            action Jump("Home")
->>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635
     for girl_path, xpos in inicial_girls:
         button:
             xpos xpos
@@ -513,10 +505,6 @@ label choose_inicial_girl:
             show screen tutorial_description()
         hide screen tutorial_attribute
     hide screen slaver_guild
-<<<<<<< HEAD
-=======
-    scene bg_old
->>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635
     if inicial_girl == "demo/choose_slave.webp":
         $ demo_girl_text_index = 0
         $ demo_girl_selection = "Helen"

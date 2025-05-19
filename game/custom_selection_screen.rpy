@@ -151,14 +151,12 @@ label Custom_Start:
         $ green_or_red = "#009900"
     if start:
         if custom_points > 0:
-            hide screen custom_value_information
             hide screen custom_value_information2   
             hide screen custom_selection
             hide screen points_tier_text 
             hide screen points_tier_text2
             hide scroll_large
             hide screen s_tier_button
-
             jump Home
         else:
             $ dic_mc_normal_selection_textdescription_value = "START FAIL"
@@ -180,9 +178,9 @@ screen custom_value_information():
             font "fonts/Segoe Print.ttf"
         
         for values in range(6):
-            textbutton dic_mc_attribute[dic_mc_normal_selection_textdescription_value][values] anchor (0.5,0.5):
+            textbutton dic_mc_attribute.get(dic_mc_normal_selection_textdescription_value, [""]*6)[values] anchor (0.5,0.5):
                 style "attribute_check_slave" + str(values)
-                action Jump("Custom_Start")
+                action  SetVariable("customboxcheck", False),Jump("Custom_Start")
 
     text " Press space to close this window.":
         pos (0.33, 0.65)
@@ -216,7 +214,7 @@ screen custom_value_information2():
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
         action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
-        action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
+
 
     key "K_SPACE" action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
 
@@ -399,9 +397,7 @@ screen custom_selection():
             yalign 0.5
     textbutton "Start" pos (0.5, 0.945) anchor (0.5, 0.5):
         style "start_button"
-        action [
-            SetVariable("start", True), Jump("Custom_Start")
-        ]    
+        action SetVariable("customboxcheck", False),Hide("custom_value_information"),SetVariable("start", True), Jump("Custom_Start")
     vbox:
         anchor (0.0, 0.0)  # Aligns the anchor to the top-left corner
         spacing -1.5    # Spacing between all buttons
@@ -695,9 +691,9 @@ screen custom_selection():
         ypos 258
         textbutton "{u}SKILLS:{/u}":
             style "custom_information",
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "SKILLS")
+            action Show("custom_value_information2"), SetVariable("customboxcheck", False),Show("custom_value_information2"), Hide("custom_value_information"), SetVariable("dic_mc_normal_selection_textdescription_value", "SKILLS")
 
         null height 230  # Spacer
         textbutton "{u}SEX TECHNIQUES:{/u}":
             style "custom_information",
-            action Show("custom_value_information"), SetVariable("customboxcheck", True), SetVariable("dic_mc_normal_selection_textdescription_value", "SEX TECHNIQUES")
+            action Show("custom_value_information2"), SetVariable("customboxcheck", False),Show("custom_value_information2"), Hide("custom_value_information"), SetVariable("dic_mc_normal_selection_textdescription_value", "SEX TECHNIQUES")
