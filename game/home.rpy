@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 default bgstyle = "bg_main_old.webp"
 default home_decoration = "bg/interiors/slum_study_large.webp"
 default day_tracker = 1
@@ -18,3 +19,14 @@ screen testscreen():
 screen bg_home():
     add bgstyle xsize 1280 ysize 720
     add home_decoration xsize 1000 ysize 675 pos (0.002,0.057)
+=======
+default home_background = ""
+default estate = ""
+label Home:
+    hide screen tutorial_bg
+    scene basic_study
+    call screen testscreen()
+
+screen testscreen():
+    text "hola"
+>>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635

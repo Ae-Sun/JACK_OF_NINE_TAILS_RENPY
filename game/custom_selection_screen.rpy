@@ -200,7 +200,7 @@ screen custom_value_information2():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
 
-    text dic_mc_normal_selection_textdescription[dic_mc_normal_selection_textdescription_value][dic_mc_normal_selection_textdescription_value_index] xmaximum 470:
+    text dic_mc_normal_selection_textdescription[dic_mc_normal_selection_textdescription_value][dic_mc_normal_selection_textdescription_value_index] xmaximum 445:
         pos (0.33, 0.28)
         color "#191970"
         size 14
@@ -215,6 +215,7 @@ screen custom_value_information2():
     imagebutton:
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
+        action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
         action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
 
     key "K_SPACE" action Hide("custom_value_information2"),SetVariable("customboxcheck", False)

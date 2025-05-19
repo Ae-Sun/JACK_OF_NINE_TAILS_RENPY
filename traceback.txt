@@ -1,6 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
   File "game/home.rpy", line 6, in script
     call screen testscreen()
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
@@ -12,10 +13,20 @@ While running game code:
   File "game/home.rpy", line 9, in execute
     text sparks_37
 Exception: Cannot display 80000 as text.
+=======
+  File "renpy/common/00start.rpy", line 195, in script
+    python:
+  File "renpy/common/00start.rpy", line 196, in <module>
+    renpy.execute_default_statement(True)
+  File "renpy/common/00console.rpy", line 1141, in execute_default
+    default _console.traced_expressions = _console.TracedExpressionsList()
+Exception: store._console.traced_expressions is being given a default a second time.
+>>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+<<<<<<< HEAD
   File "game/home.rpy", line 6, in script
     call screen testscreen()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
@@ -57,8 +68,27 @@ Full traceback:
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2058, in __init__
     raise Exception("Cannot display {0!r} as text.".format(i))
 Exception: Cannot display 80000 as text.
+=======
+  File "renpy/common/00start.rpy", line 195, in script
+    python:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00start.rpy", line 196, in <module>
+    renpy.execute_default_statement(True)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 372, in execute_default_statement
+    i.execute_default(start)
+  File "renpy/common/00console.rpy", line 1141, in execute_default
+    default _console.traced_expressions = _console.TracedExpressionsList()
+Exception: store._console.traced_expressions is being given a default a second time.
+>>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
+<<<<<<< HEAD
 Mon May 19 13:09:37 2025
+=======
+Mon May 19 02:13:46 2025
+>>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635

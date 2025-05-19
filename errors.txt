@@ -2,9 +2,18 @@
 errors listed below, and try again.
 
 
+<<<<<<< HEAD
 File "game/home.rpy", line 17: Line is indented, but the preceding text statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
     style "day_tracker_button_text"
     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
 Mon May 19 14:15:10 2025
+=======
+File "game/home.rpy", line 10: expected statement.
+    sc
+      ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Mon May 19 01:44:11 2025
+>>>>>>> 561ca5603234ef96c31ed5d07d940766efb95635
