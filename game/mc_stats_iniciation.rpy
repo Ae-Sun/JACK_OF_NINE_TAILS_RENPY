@@ -13,6 +13,8 @@ define dic_characters = [ #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     ("master_granpa", "master/master_granpa.webp", "master/master_granpa_hover.webp",10),
     ("master_nerd", "master/master_nerd.webp", "master/master_nerd_hover.webp",11),
 ]
+
+##### I should use Json instead of Dict or make a better Json structure, but requiere a lot rework and I'm lazy -rec3ks
 define dic_mc_inicial_stats = { #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     "master_noble"      : ["M'lord"     , 4, 4, 0, 2, 4, 0, 0, 0, 5, 0, 5, 2, 2, 3, 2, 4, 0, 4, 3, 0, 3, 2, 4, 3,"Elven Chainmail"     ,""           ,"Fist"         ,"Epée"           ,""                 ,""        ,"Noble Regalia"       ,"","","","","Taurus Great House",8000, "simple difficulty",    5,""                                 , "   An aristocrat with a great education, with \n experience in court and military service. Having all \n the basic skills that are necesarry to teach, the easily \n joined the ranks of the slavers and all agree that a \n wonderful career awaits him..."], 
     "master_torturer"   : ["Robespierre", 5, 1, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 3, 3, 0, 5, 5, 5, 2, 2, 4, 4,"Without armor"       ,""           ,"Fist"         ,"Whip"           ,""                 ,""        ,"Worn clothes"        ,"","","","","Taurus Great House",7000, "simple difficulty",    5,""                                 , "   Once upon a time he was a soldier and fought for \n the king in his colonial wars. Then the king was \n overthrown and the revolution needed executioners. \n More than anything, he is proud to have personally \n decapitated the beautiful, but hanghty queen. In the \n Eternal Rome, a hangman's skills some in handy. "],
@@ -88,7 +90,7 @@ define dic_mc_normal_selection_textdescription ={
     "PENETRATION":         [dic_mc_attribute["PENETRATION"][7]],
     "FETISHISM":           [dic_mc_attribute["FETISHISM"][7]],
     "REPUTATION":          [dic_mc_attribute["REPUTATION"][6]],
-    "MC NAME":             ["{b} MISCELLANEOS:{/b} \n Total time played with this character: WIP \n Total number of slave buyed: WIP \n The highest sell slave value: WIP \n Total amount of spark gained: WIP: \n  "],
+    "MC NAME":             ["{b} MISCELLANEOUS:{/b} \n Total time played with this character: WIP \n Total number of slave buyed: WIP \n The highest sell slave value: WIP \n Total amount of spark gained: WIP: \n  "],
     "simple difficulty":   ["{b} SIMPLE DIFFICULTY:{/b} \n Perfect for beginners or those looking to enjoy the game \n without too much challenge."],
     "normal difficulty":   ["{b} NORMAL DIFFICULTY:{/b} \n A balanced experience for players seeking a fair \n challenge."],
     "high difficulty":     ["{b} HIGH DIFFICULTY:{/b} \n Designed for experienced players, resources \n are scarcer, and  mistakes are costly."],
@@ -102,11 +104,6 @@ define dic_mc_normal_selection_textdescription ={
     "START FAIL":          ["{b} START FAIL:{/b} \n Points must be igual or greater than 0."]
     }
 # I know you can use xmaximun and xminimun, just happened I learned that too late, so unless someone want to change it, I will leave it like this with the \n
-define dic_custom_start_difficulty_selection = {
-    "Free mode": ["Free mode",10000,999999],
-    "Normal":    ["Normal"   ,6000 ,590   ],
-    "Maximun":   ["Maximun"  ,400  ,340   ]
-}
 define dic_custom_character_selection = {
     "master_noble":        ["custom_master/master_noble.webp", "custom_master/master_noble_hover.webp",0],
     "master_torturer":     ["custom_master/master_torturer.webp", "custom_master/master_torturer_hover.webp",1],
@@ -121,9 +118,10 @@ define dic_custom_character_selection = {
     "master_granpa":       ["custom_master/master_granpa.webp", "custom_master/master_granpa_hover.webp",10],
     "master_nerd":         ["custom_master/master_nerd.webp", "custom_master/master_nerd_hover.webp",11],
 }
-define dic_custom_start_difficulty_selection_index = ["Free mode","Normal","Maximun"]
-define custom_skill_cost_value = [0,5,15,35,75,155,315]
-define custom_selection_max_cap_sparks = [999999,8000,400]
+
+
+
+
 
 ###############################################################################################################################################################################################################
 ###############################################################################################################################################################################################################

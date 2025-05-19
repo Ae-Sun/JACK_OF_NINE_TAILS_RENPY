@@ -317,7 +317,7 @@ screen choose_inicial_girl_screen():
         imagebutton:
             idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
             hover "buttons/auk_fwrd_hover.webp"
-            action Jump("testlabel")
+            action Jump("Home")
     for girl_path, xpos in inicial_girls:
         button:
             xpos xpos
@@ -418,7 +418,81 @@ screen tutorial_description2():
         action Hide("tutorial_description2"),SetVariable("attribute_checkbox", False),Jump("choose_inicial_girl")
     key "K_SPACE" action Hide("tutorial_description2"),SetVariable("attribute_checkbox", False),Jump("choose_inicial_girl")
 
+label Tutorial:
+    scene bg_old 
+    show screen tutorial_bg()
+    show screen angelika_buttons()
+    show screen mistress_angelika()
+    show screen angelika_display()
+    hide screen choose_inicial_girl_screen
+    if angelika_speech_text_count == 0:
+        $ tutorial_backbutton = "buttons/demo_noback_button.webp"
+        $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"
+    else:
+        $ tutorial_backbutton = "buttons/demo_back_button.webp"
+        $ tutorial_backbutton_hover = "buttons/demo_back_button_hover.webp"
+    if angelika_speech_text_count == 1:
+        python:
+            name = renpy.input("My name is... (Keep this shorter than 14 character.)", length=13)
+            name = name.strip()
+            if name != "":
+                mc = name
+    if angelika_speech_text_count == 2:
+        $ mynamebugfix = True
+    if angelika_speech_text_count == 4:
+        hide screen angelika_buttons
+        hide screen mistress_angelika
+        hide screen angelika_display
+        hide screen lecture_screen
+        show screen slaver_guild()
+        $ mynamebugfix = False
+    call screen angelika_speech()   
+    return
+label Lecture:
+    show screen mistress_angelika
+    hide screen slaver_guild
+    show screen lecture_screen
+    show screen angelika_display
+    if angelika_speech_text_count == 0:
+        $ tutorial_backbutton = "buttons/demo_noback_button.webp"
+        $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"
+    else:
+        $ tutorial_backbutton = "buttons/demo_back_button.webp"
+        $ tutorial_backbutton_hover = "buttons/demo_back_button_hover.webp"
+    if lecture_name == "tutorial_lecture1":
+        if angelika_speech_text_count == 8:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    if lecture_name == "tutorial_lecture2":
+        if angelika_speech_text_count == 27:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    if lecture_name == "tutorial_lecture3":
+        if angelika_speech_text_count == 24:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    if lecture_name == "tutorial_lecture4":
+        if angelika_speech_text_count == 11:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    if lecture_name == "tutorial_lecture5":
+        if angelika_speech_text_count == 6:
+            hide screen mistress_angelika
+            hide lecture_screen
+            hide screen angelika_display
+            call screen slaver_guild
+    call screen lecture_screenbuttons
+    return
 label choose_inicial_girl:
+    $ sparks_37 = 80000
     if customboxcheck:
         hide screen tutorial_description
         hide screen tutorial_description2
@@ -548,91 +622,8 @@ label choose_inicial_girl:
                 else:
                     val = 0
                 traits_attributes[key] = {"value": val, "revealed": False}
-            
-
-
-
     call screen choose_inicial_girl_screen
-
-label Lecture:
-    show screen mistress_angelika
-    hide screen slaver_guild
-    show screen lecture_screen
-    show screen angelika_display
-    if angelika_speech_text_count == 0:
-        $ tutorial_backbutton = "buttons/demo_noback_button.webp"
-        $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"
-    else:
-        $ tutorial_backbutton = "buttons/demo_back_button.webp"
-        $ tutorial_backbutton_hover = "buttons/demo_back_button_hover.webp"
-    if lecture_name == "tutorial_lecture1":
-        if angelika_speech_text_count == 8:
-            hide screen mistress_angelika
-            hide lecture_screen
-            hide screen angelika_display
-            call screen slaver_guild
-    if lecture_name == "tutorial_lecture2":
-        if angelika_speech_text_count == 27:
-            hide screen mistress_angelika
-            hide lecture_screen
-            hide screen angelika_display
-            call screen slaver_guild
-    if lecture_name == "tutorial_lecture3":
-        if angelika_speech_text_count == 24:
-            hide screen mistress_angelika
-            hide lecture_screen
-            hide screen angelika_display
-            call screen slaver_guild
-    if lecture_name == "tutorial_lecture4":
-        if angelika_speech_text_count == 11:
-            hide screen mistress_angelika
-            hide lecture_screen
-            hide screen angelika_display
-            call screen slaver_guild
-    if lecture_name == "tutorial_lecture5":
-        if angelika_speech_text_count == 6:
-            hide screen mistress_angelika
-            hide lecture_screen
-            hide screen angelika_display
-            call screen slaver_guild
-    call screen lecture_screenbuttons
-
-label Tutorial:
-    scene bg_old 
-    show screen tutorial_bg()
-    show screen angelika_buttons()
-    show screen mistress_angelika()
-    show screen angelika_display()
-    hide screen choose_inicial_girl_screen
-    if angelika_speech_text_count == 0:
-        $ tutorial_backbutton = "buttons/demo_noback_button.webp"
-        $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"
-    else:
-        $ tutorial_backbutton = "buttons/demo_back_button.webp"
-        $ tutorial_backbutton_hover = "buttons/demo_back_button_hover.webp"
-    if angelika_speech_text_count == 1:
-        python:
-            name = renpy.input("My name is... (Keep this shorter than 14 character.)", length=13)
-            name = name.strip()
-            if name != "":
-                mc = name
-    if angelika_speech_text_count == 2:
-        $ mynamebugfix = True
-    if angelika_speech_text_count == 4:
-        hide screen angelika_buttons
-        hide screen mistress_angelika
-        hide screen angelika_display
-        hide screen lecture_screen
-        show screen slaver_guild()
-        $ mynamebugfix = False
-    call screen angelika_speech()   
     return
 
-label testlabel:
-    $ bola = bola + 1
-    $ bola2 = bola % 3
-    call screen testscreen()
-screen testscreen():
-    add all_girls_list[girl_index]["fullimage"] + ".webp" pos(0.1,0.1)
-    textbutton "Girl Switch":
-        action SetVariable("girl_index",bola2),Jump("testlabel")
+
+

@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/tutorial.rpy", line 427: if statement expects a non-empty block.
-    if attributeisphysical:
-                           ^
-
-File "game/tutorial.rpy", line 429: expected statement.
-    else:
-        ^
+File "game/home.rpy", line 10: expected statement.
+    sc
+      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May 18 18:49:46 2025
+Mon May 19 01:44:11 2025

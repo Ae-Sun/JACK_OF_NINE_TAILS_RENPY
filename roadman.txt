@@ -1,13 +1,12 @@
 roadman for 0.1.0
   Goal - Finish the main menu  
     main menu screen - Done
-    Tutorial(only the explaination part ) - Not done yet
+    Tutorial(only the explaination part ) - Done
+       trait random assigment - Done
+       attribute random assigment - Done
+       Improve Slave JSON -Done
+       home screen - Not yet
     Normal Start -  Done
-      Select character screen -Done
-      forward and backward button -Done
-      define all attribute state -Done
-      find a way to change text color depending of attribute value - Done
     Custom Start - Done
-    Finish github page - Done
     Controls - Done
     Credits & Development - Done
