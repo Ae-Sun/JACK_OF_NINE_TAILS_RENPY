@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/tutorial.rpy", line 215: reached end of line when expecting ':'.
-    if 
-       ^
+File "game/home.rpy", line 17: Line is indented, but the preceding text statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    style "day_tracker_button_text"
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 15 14:10:15 2025
+Mon May 19 14:15:10 2025

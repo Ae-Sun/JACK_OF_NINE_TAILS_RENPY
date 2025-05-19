@@ -142,7 +142,7 @@ label Custom_Start:
             $ reputation_value_1 = 4
             $ reputation_textvalue_1 = dic_mc_attribute["REPUTATION"][reputation_value_1]
             $ dic_mc_normal_selection_textdescription_value = "WHITE TOWN"
-            show screen custom_value_information
+            show screen custom_value_information2
     $ custom_points = custom_points - custom_skill_cost_value[strength_value_1] - custom_skill_cost_value[personality_value_2] - custom_skill_cost_value[allure_value_3] - custom_skill_cost_value[libido_value_4] - custom_skill_cost_value[dominance_value_5] - custom_skill_cost_value[brand_reputation_value_6] - custom_skill_cost_value[guild_reputation_value_7] - custom_skill_cost_value[standard_of_living_value_8] - custom_skill_cost_value[hygiene_value_9] - custom_skill_cost_value[mood_value_10] - custom_skill_cost_value[injuries_value_11] - custom_skill_cost_value[teaching_value_12] - custom_skill_cost_value[stewardship_value_13] - custom_skill_cost_value[artistry_value_14] - custom_skill_cost_value[medic_value_15] - custom_skill_cost_value[fighter_value_16] - custom_skill_cost_value[magic_value_17] - custom_skill_cost_value[flagellation_value_18] - custom_skill_cost_value[torture_value_19] - custom_skill_cost_value[binding_value_20] - custom_skill_cost_value[petting_value_21] - custom_skill_cost_value[oral_sex_value_22] - custom_skill_cost_value[penetration_value_23] - custom_skill_cost_value[fetishism_value_24] - custom_skill_cost_value[reputation_value_1] - int((sparks_37 - dic_custom_start_difficulty_selection[dic_custom_start_difficulty_selection_index[dic_custom_start_difficulty_selection_index_index]][1])/10)
     
     if custom_points < 0:
@@ -152,22 +152,51 @@ label Custom_Start:
     if start:
         if custom_points > 0:
             hide screen custom_value_information
+            hide screen custom_value_information2   
             hide screen custom_selection
             hide screen points_tier_text 
             hide screen points_tier_text2
             hide scroll_large
             hide screen s_tier_button
 
-            jump home
+            jump Home
         else:
             $ dic_mc_normal_selection_textdescription_value = "START FAIL"
             $ start = False
-            show screen custom_value_information
+            show screen custom_value_information2
     if customboxcheck:
         show screen custom_selection
         call screen custom_value_information
     call screen custom_selection()
 screen custom_value_information():
+    zorder 5
+    add "gui/confirm_frame.png" at truecenter
+    vbox:
+        pos (0.5, 0.3)
+        text dic_mc_normal_selection_textdescription_value :
+            color "#191970" 
+            anchor (0.5,0.5)
+            size 20
+            font "fonts/Segoe Print.ttf"
+        
+        for values in range(6):
+            textbutton dic_mc_attribute[dic_mc_normal_selection_textdescription_value][values] anchor (0.5,0.5):
+                style "attribute_check_slave" + str(values)
+                action Jump("Custom_Start")
+
+    text " Press space to close this window.":
+        pos (0.33, 0.65)
+        color "#191970"
+        size 14
+        font "fonts/Segoe Print.ttf"
+
+    imagebutton:
+        idle "buttons/ok-icon.webp" pos (0.5, 0.7)
+        hover "buttons/ok-icon_hover.webp"
+        action Hide("custom_value_information"),SetVariable("customboxcheck", False),Show("custom_value_information2")
+
+    key "K_SPACE" action Hide("custom_value_information"),SetVariable("customboxcheck", False),Show("custom_value_information2")
+screen custom_value_information2():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
 
@@ -186,9 +215,9 @@ screen custom_value_information():
     imagebutton:
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
-        action Hide("custom_value_information"),SetVariable("customboxcheck", False)
+        action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
 
-    key "K_SPACE" action Hide("custom_value_information"),SetVariable("customboxcheck", False)
+    key "K_SPACE" action Hide("custom_value_information2"),SetVariable("customboxcheck", False)
 
 screen s_tier_button():
     zorder 2

@@ -32,9 +32,9 @@
         "temperament": 5,
         "intelligence": 3,
         "nature": 5,
-        "pride": 5,
-        "exotic": 1,
-        "physical": 1
+        "pride": 0,
+        "exoticism": 1,
+        "physical": 4
     },
     "skills":{
         "elocution": 2,
@@ -57,10 +57,13 @@
 
         },
         "traits_hidden": {
-            "traits_commun(1/8)": {
-
+            "traits_skills(1/8)": {
+                "ponytrait": {
+                    "value": 2,
+                    "revealed": false
+                }
             },
-            "traits_rare(1/12)": {
+            "traits_miscellaneous(1/12)": {
                 "lust_driver": {
                     "value": -2,
                     "revealed": true
@@ -95,16 +98,16 @@
                 }
 
             },
-            "traits_epic(1/16)": {
+            "traits_aura(1/16)": {
 
             },
-            "traits_legendary(1/20)": {
-                "radiant": {
+            "traits_attributes(1/20)": {
+                "beautytrait": {
                     "value": 2,
                     "revealed": true
                 },
 
-                "metabolism": {
+                "physicaltrait": {
                     "value": -1,
                     "revealed": false
                 }

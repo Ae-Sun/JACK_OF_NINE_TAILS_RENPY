@@ -23,9 +23,9 @@
         "temperament": 5,
         "intelligence": 4,
         "nature": 4,
-        "pride": 4,
-        "physical": 1,
-        "exotic": 3
+        "pride": 1,
+        "physical": 4,
+        "exoticism": 3
     },
     "traits":{
         "traits_open":{
@@ -43,10 +43,10 @@
 
         },
         "traits_hidden": {
-            "traits_commun(1/8)": {
+            "traits_skills(1/8)": {
 
             },
-            "traits_rare(1/12)": {
+            "traits_miscellaneous(1/12)": {
 
                 "masochism":{
                     "value": 1,
@@ -64,16 +64,16 @@
                 }
 
             },
-            "traits_epic(1/16)": {
+            "traits_aura(1/16)": {
                 "feartrait": {
                     "value": -1,
                     "revealed": false
                 }
 
             },
-            "traits_legendary(1/20)": {
+            "traits_attributes(1/20)": {
 
-                "metabolism": {
+                "physicaltrait": {
                     "value": 2,
                     "revealed": false
                 }

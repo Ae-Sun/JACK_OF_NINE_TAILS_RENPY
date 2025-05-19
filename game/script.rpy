@@ -63,10 +63,6 @@ transform custom_position:
 image maincontroltext = ParameterizedText(xalign=0.5, yalign=0.0) 
 
 
-label home:
-    
-    "WIP"
-    return
 label mainControls:
     scene donotdelete
     show scroll_large

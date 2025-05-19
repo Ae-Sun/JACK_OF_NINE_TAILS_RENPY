@@ -25,7 +25,7 @@
         "intelligence": 5,
         "nature": 3,
         "pride": 2,
-        "physical": 3
+        "physical": 2
     },
     "skills":{
         "maid": 3,
@@ -49,10 +49,13 @@
 
         },
         "traits_hidden": {
-            "traits_commun(1/8)": {
-
+            "traits_skills(1/8)": {
+                "maidtrait": {
+                    "value": 2,
+                    "revealed": true
+                }
             },
-            "traits_rare(1/12)": {
+            "traits_miscellaneous(1/12)": {
                 "lust_driver": {
                     "value": 2,
                     "revealed": true
@@ -64,14 +67,14 @@
                 }
 
             },
-            "traits_epic(1/16)": {
+            "traits_aura(1/16)": {
                 "feartrait": {
                     "value": 2,
                     "revealed": false
                 }
 
             },
-            "traits_legendary(1/20)": {
+            "traits_attributes(1/20)": {
 
             }
         }

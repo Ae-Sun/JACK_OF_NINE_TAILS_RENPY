@@ -74,7 +74,7 @@ label Normal_Start2:
     $ display_name = dic_mc_inicial_stats.get(mc, ["Error - Try restart your game"])[0]
     if start:
         hide scroll_large
-        jump home
+        jump Home
     if dic_mc_normal_selection_textdescription_value_index > 1:
         $ dic_mc_normal_selection_textdescription_value_index = 0
     if -5 <= characterOnlyNameIndex <= 11:
@@ -116,11 +116,11 @@ screen character_selection2(x,y):
 
     textbutton display_name pos (0.60, 0.19) anchor (0.5, 0.5):
         style "display_mc_name"
-        action SetVariable("dic_mc_normal_selection_textdescription_value","MC NAME"), Jump("Normal_Start2")
+        action SetVariable("dic_mc_normal_selection_textdescription_value","MC NAME"), SetVariable("dic_mc_normal_selection_textdescription_value_index", 0), Jump("Normal_Start2")
         
     textbutton inicial_difficulty_textvalue pos (765, 195) anchor(0.5,0.5):
         style "difficulty_button" + str(inicial_difficulty_value)
-        action SetVariable("dic_mc_normal_selection_textdescription_value",inicial_difficulty_textvalue), Jump("Normal_Start2")
+        action SetVariable("dic_mc_normal_selection_textdescription_value",inicial_difficulty_textvalue), SetVariable("dic_mc_normal_selection_textdescription_value_index", 0), Jump("Normal_Start2")
 
     imagebutton:
         idle "buttons/close_button.webp" pos (983,12)
@@ -239,10 +239,10 @@ screen character_selection2(x,y):
             action SetVariable("dic_mc_normal_selection_textdescription_value", "FETISHISM"), SetVariable("dic_mc_normal_selection_textdescription_value_index", 0)
 
 
-    text dic_mc_normal_selection_textdescription[dic_mc_normal_selection_textdescription_value][dic_mc_normal_selection_textdescription_value_index] xmaximum 470:
+    text dic_mc_normal_selection_textdescription[dic_mc_normal_selection_textdescription_value][dic_mc_normal_selection_textdescription_value_index]:
         pos(0.42,0.37)
         color "#191970"
-        size 16
+        size 15
         font "fonts/Segoe Print.ttf"
 
     textbutton " Faction: [faction_36]":

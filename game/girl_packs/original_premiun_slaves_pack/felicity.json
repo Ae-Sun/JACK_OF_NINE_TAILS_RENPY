@@ -33,8 +33,8 @@
         "nature": 5,
         "pride": 5,
         "physical": 1,
-        "exotic": 2,
-        "fame": 10
+        "exoticism": 2,
+        "fame": 4
     },
     "skills":{
         "maid": 0,
@@ -66,23 +66,23 @@
 
         },
         "traits_hidden": {
-            "traits_commun(1/8)": {
+            "traits_skills(1/8)": {
 
             },
-            "traits_rare(1/12)": {
+            "traits_miscellaneous(1/12)": {
 
             },
-            "traits_epic(1/16)": {
+            "traits_aura(1/16)": {
                 "feartrait": {
                     "value": -2,
                     "revealed": false
                 }
 
             },
-            "traits_legendary(1/20)": {
+            "traits_attributes(1/20)": {
 
-                "rare_blossom": {
-                    "value": 1,
+                "exorticismtrait": {
+                    "value": 2,
                     "revealed": false
                 }
             }

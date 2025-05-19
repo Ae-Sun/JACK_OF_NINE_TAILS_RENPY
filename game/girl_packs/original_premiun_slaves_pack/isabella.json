@@ -32,8 +32,8 @@
         "nature": 5,
         "pride": 3,
         "physical": 3,
-        "exotic": 3
-    },
+        "exoticism": 3
+    },  
     "skills":{
         "maid": 2,
         "cooking": 2,
@@ -65,10 +65,10 @@
 
         },
         "traits_hidden": {
-            "traits_commun(1/8)": {
+            "traits_skills(1/8)": {
   
             },
-            "traits_rare(1/12)": {
+            "traits_miscellaneous(1/12)": {
 
                 "masochism":{
                     "value": 1,
@@ -90,20 +90,20 @@
                     "revealed": true
                 }
             },
-            "traits_epic(1/16)": {
+            "traits_aura(1/16)": {
                 "feartrait": {
                     "value": -1,
                     "revealed": false
                 }
 
             },
-            "traits_legendary(1/20)": {
+            "traits_attributes(1/20)": {
 
-                "fortitude": {
+                "endurancetrait": {                    
                     "value": 1,
                     "revealed": false
                 },
-                "emotional_resonance": {
+                "empathytrait": {
                     "value": 1,
                     "revealed": false
                 }
