@@ -518,6 +518,18 @@ style home_button:
 style home_button_text:
     xalign 0.05
     yalign 0.5
+style home_button_grey:
+    background Frame("menu_button.webp", 0, 0)
+    xminimum 200
+    yminimum 50
+    right_padding 15
+    bottom_padding 15
+style home_button_grey_text is home_button_text
+style home_button_grey_text:
+    xalign 0.1
+    yalign 0.55
+    color "#808080"
+    hover_color "#808080"
 style game_menu_button:
     background Frame("menu_button.webp", 0, 0)
     xminimum 200

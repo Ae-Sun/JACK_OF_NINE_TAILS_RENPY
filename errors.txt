@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 118: hbox expects a non-empty block.
-    if girl_index in all_girls_list and "energy" in all_girls_list[girl_index]:
-                                                                               ^
+File "game/home.rpy", line 115: 'action' is not a keyword argument or valid child of the text statement.
+    action NullAction()
+          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue May 20 02:12:44 2025
+Tue May 20 13:49:04 2025

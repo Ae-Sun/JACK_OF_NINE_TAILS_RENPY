@@ -1,5 +1,5 @@
 default angelika_speech_text_count = 0
-default lecture_name = "tutorial_lecture1"
+default lecture_name = ""
 default inicial_girl = "demo/choose_slave.webp"
 default demo_girl_text_index = 0
 default demo_girl_selection = "Helen"
@@ -18,6 +18,9 @@ screen tutorial_bg():
 screen mistress_angelika():
     add "characters/mistress_angelika.webp"pos(0.3, 0.365) anchor (0.5, 0.5) xsize 795 ysize 515
     key "K_SPACE" action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Lecture")
+screen mistress_angelika2():
+    add "characters/mistress_angelika.webp"pos(0.3, 0.365) anchor (0.5, 0.5) xsize 795 ysize 515
+    key "K_SPACE" action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Tutorial")
 screen angelika_speech():
     text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 
 
@@ -77,12 +80,18 @@ screen slaver_guild():
         textbutton "Check the conditions of the exam":
             style "lecture_button"
             action SetVariable("angelika_speech_text_count",0),SetVariable("lecture_name","tutorial_lecture5"),Jump("Lecture")
-        textbutton "Start the practical examination":
-            style "lecture_button"
-            action Jump("choose_inicial_girl")
-        textbutton "Leave the guild":
-            style "lecture_button"
-            action MainMenu(confirm=False)
+        
+        if is_main_slave:
+            textbutton "Return to home":
+                style "lecture_button"
+                action Jump("Home")
+        else:
+            textbutton "Start the practical examination":
+                style "lecture_button"
+                action Jump("choose_inicial_girl")
+            textbutton "Leave the guild":
+                style "lecture_button"
+                action MainMenu(confirm=False)
     text "{color=#000000}I must choose which lecture I want to hear, or I can ask about the conditions of the examination or ask to start when I am ready.{/color}" pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 
 screen lecture_screen():
     text tutorial_lectureGIGA[lecture_name][angelika_speech_text_count] pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
@@ -422,9 +431,13 @@ label Tutorial:
     scene bg_old 
     show screen tutorial_bg()
     show screen angelika_buttons()
-    show screen mistress_angelika()
+    show screen mistress_angelika2()
     show screen angelika_display()
     hide screen choose_inicial_girl_screen
+    hide screen bg_home
+    hide screen goguild
+    hide screen home_menu
+
     if angelika_speech_text_count == 0:
         $ tutorial_backbutton = "buttons/demo_noback_button.webp"
         $ tutorial_backbutton_hover = "buttons/demo_noback_button_hover.webp"
@@ -441,7 +454,7 @@ label Tutorial:
         $ mynamebugfix = True
     if angelika_speech_text_count == 4:
         hide screen angelika_buttons
-        hide screen mistress_angelika
+        hide screen mistress_angelika2
         hide screen angelika_display
         hide screen lecture_screen
         show screen slaver_guild()
