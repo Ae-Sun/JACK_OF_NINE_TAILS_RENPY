@@ -1,8 +1,9 @@
 default inicial_difficulty_textvalue =""
 default inicial_difficulty_value = 0
 default dic_mc_normal_selection_textdescription_value = "master_noble"
+default is_normal_start = False
 label Normal_Start:
-
+    $ is_normal_start = True
     scene donotdelete
     show scroll_large
     call screen character_selection

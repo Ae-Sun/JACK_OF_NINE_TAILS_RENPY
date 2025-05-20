@@ -1,74 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/custom_selection_screen.rpy", line 168, in script
-    call screen custom_selection()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/custom_selection_screen.rpy", line 335, in execute
-    screen custom_selection():
-  File "game/custom_selection_screen.rpy", line 335, in execute
-    screen custom_selection():
-  File "game/custom_selection_screen.rpy", line 691, in execute
-    vbox:
-  File "game/custom_selection_screen.rpy", line 694, in execute
-    textbutton "{u}SKILLS:{/u}":
-  File "game/custom_selection_screen.rpy", line 694, in keywords
-    textbutton "{u}SKILLS:{/u}":
-  File "game/custom_selection_screen.rpy", line 696, in <module>
-    action Show("custom_value_information2"), SetVariable("customboxcheck", False),Show("custom_value_information2"), hide("custom_value_information"), SetVariable("dic_mc_normal_selection_textdescription_value", "SKILLS")
-NameError: name 'hide' is not defined
+  File "renpy/common/00start.rpy", line 219, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 551, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 551, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 569, in _execute_python_hide
+    renpy.rename_save(renpy.session["_reload_slot"], "_reload-2")
+PermissionError: [WinError 5] Acceso denegado: 'D:\\RE\\Descargas\\Jack o nine tails renpy\\game\\saves\\_reload-2-LT1.save'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/custom_selection_screen.rpy", line 168, in script
-    call screen custom_selection()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/custom_selection_screen.rpy", line 335, in execute
-    screen custom_selection():
-  File "game/custom_selection_screen.rpy", line 335, in execute
-    screen custom_selection():
-  File "game/custom_selection_screen.rpy", line 691, in execute
-    vbox:
-  File "game/custom_selection_screen.rpy", line 694, in execute
-    textbutton "{u}SKILLS:{/u}":
-  File "game/custom_selection_screen.rpy", line 694, in keywords
-    textbutton "{u}SKILLS:{/u}":
-  File "game/custom_selection_screen.rpy", line 696, in <module>
-    action Show("custom_value_information2"), SetVariable("customboxcheck", False),Show("custom_value_information2"), hide("custom_value_information"), SetVariable("dic_mc_normal_selection_textdescription_value", "SKILLS")
-NameError: name 'hide' is not defined
+  File "renpy/common/00start.rpy", line 219, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 551, in script
+    python hide:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 551, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 569, in _execute_python_hide
+    renpy.rename_save(renpy.session["_reload_slot"], "_reload-2")
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\loadsave.py", line 860, in rename_save
+    location.rename(old, new)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\savelocation.py", line 601, in rename
+    l.rename(old, new)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\savelocation.py", line 373, in rename
+    safe_rename(old_tmp, new)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\loadsave.py", line 303, in safe_rename
+    os.unlink(new)
+PermissionError: [WinError 5] Acceso denegado: 'D:\\RE\\Descargas\\Jack o nine tails renpy\\game\\saves\\_reload-2-LT1.save'
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Mon May 19 15:20:29 2025
+Tue May 20 02:38:29 2025

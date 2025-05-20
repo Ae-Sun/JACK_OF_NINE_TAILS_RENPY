@@ -124,12 +124,15 @@ label Custom_Start:
     $ characterOnlyNameIndex = pre_characterOnlyNameIndex % 12
     show screen points_tier_text2
     if namechange == True:
+        hide screen points_tier_text
+        hide screen points_tier_text2
         python:
             name = renpy.input("Give your character a name. Keep this shorter than 14 character.", length=13)
             name = name.strip()
             if name != "":
                 mc = name
         $ namechange = False
+        jump Custom_Start
     if dic_custom_start_difficulty_selection_index_index == 0:
         show screen s_tier_button
         hide screen points_tier_text

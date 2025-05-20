@@ -12,7 +12,7 @@ default attribute_track_basic = ""
 default dictionary_name = {}
 default attribute_checkbox = False
 default attributeisphysical = False
-default Is_tutorial = False
+default is_tutorial = False
 screen tutorial_bg():
     add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
 screen mistress_angelika():
@@ -317,7 +317,7 @@ screen choose_inicial_girl_screen():
         imagebutton:
             idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
             hover "buttons/auk_fwrd_hover.webp"
-            action SetVariable("Is_tutorial",True),Jump("Home")
+            action SetVariable("is_tutorial",True),Jump("Home")
     for girl_path, xpos in inicial_girls:
         button:
             xpos xpos
@@ -492,6 +492,31 @@ label Lecture:
     call screen lecture_screenbuttons
     return
 label choose_inicial_girl:
+    $ strength_value_1 = 3
+    $ personality_value_2 = 3
+    $ allure_value_3 = 3
+    $ libido_value_4 = 3
+    $ dominance_value_5 = 3
+    $ brand_reputation_value_6 = 3
+    $ guild_reputation_value_7 = 3
+    $ standard_of_living_value_8 = 3
+    $ hygiene_value_9 = 3
+    $ mood_value_10 = 3
+    $ injuries_value_11 = 3
+    $ teaching_value_12 = 3
+    $ stewardship_value_13 = 3
+    $ artistry_value_14 = 3
+    $ medic_value_15 = 3
+    $ fighter_value_16 = 3
+    $ magic_value_17 = 3
+    $ flagellation_value_18 = 3
+    $ torture_value_19 = 3
+    $ binding_value_20 = 3
+    $ petting_value_21 = 3
+    $ oral_sex_value_22 = 3
+    $ penetration_value_23 = 3
+    $ fetishism_value_24 = 3
+    $ faction_36 = 3
     $ sparks_37 = 80000
     if customboxcheck:
         hide screen tutorial_description

@@ -505,11 +505,19 @@ style main_menu_button:
     yminimum 50
     right_padding 15
     bottom_padding 15
-    
+
 style main_menu_button_text:
     xalign 0.5
     yalign 0.5
-
+style home_button:
+    background Frame("menu_button.webp", 0, 0)
+    xminimum 200
+    yminimum 50
+    right_padding 15
+    bottom_padding 15
+style home_button_text:
+    xalign 0.05
+    yalign 0.5
 style game_menu_button:
     background Frame("menu_button.webp", 0, 0)
     xminimum 200
