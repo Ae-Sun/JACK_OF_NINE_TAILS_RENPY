@@ -31,8 +31,31 @@ define dic_slave_attributes = {
     "style":         ["Unfashionable"   ,"Unremarkable"   ,"Common"        ,"Stylish"      ,"Refined"      ,"Elegant"        ,"Elegant+"    ,"{b}STYLE:{/b}\n  A slave's appearance is extremely important during the sale. Customers will like well-groomed and well-dressed slaves, and an unappealing slave can be turned down even if she fits the requirements.","   Style depends little on natural abilities and skills, though it is influenced by the ability to communicate (elocution) and presence (dancing). Style suffers from dirt and sloppiness. Hairstyle, make-up, perfume, beautiful clothes and jewelry - all of these improve style and make the slave more attractive to customers. It is not necessary to constantly maintain style - it plays a role only when it is time to show the girl to the customer."],
     "fame":          ["Unknown"         ,"Rumored"        ,"Recognized"    ,"Celebrity"    ,"Famous"       ,"Legendary"      ,"Legendary+"  ,"{b}FAME:{/b}\n  Famous slaves are much more valuable. Your slave's rank can reach the level of her fame, even if she lacks other attributes, beauty included.","   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena and colosseum.","   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena and colosseum."]
     }
-
-
+define dic_slave_skills = {
+    "maid": ["Not a Maid F-", "Drudge D-", "Skivvy C-", "Maid B+", "Handmaid A+", "Housekeeper S+", "Mistress of the Manor S++"],
+    "cooking": ["Not a Cook F-", "Scullery Trainee D-", "Kitchener C-", "Cook B+", "Chef A+", "Culinary Artist S+", "Gastronomic Legend S++"],
+    "secretary": ["Not a Secretary F-", "Paper Shuffler D-", "Novice Clerk C-", "Secretary B+", "Comptroller A+", "Procurator S+", "Chancellor of Ledgers S++"],
+    "elocution": ["Not an Elocutionist F-", "Inarticulate D-", "Raconteuse C-", "Elocutionist B+", "Orator A+", "Rhetorician S+", "Voice of the Realm S++"],
+    "nursing": ["Not a Nurse F-", "Anatomy Student D-", "Triage Aid C-", "Nurse B+", "Ward Sister A+", "Matron S+", "Healer Supreme S++"],
+    "alchemy": ["Not an Alchemist F-", "Potion Apprentice D-", "Alembic Attendant C-", "Alchemist B+", "Arcanist A+", "Mistress of Arcanum S+", "Transmuter of Essence S++"],
+    "witchcraft": ["Not a Witch F-", "Young Hag D-", "Theurgist C-", "Witch B+", "Enchantress A+", "Sorceress S+", "Archwitch Eternal S++"],
+    "athletics": ["Bedridden F-", "Plodder D-", "Walker C-", "Athlete B+", "Sprinter A+", "Marathonist S+", "Olympian S++"],
+    "gladiatrix": ["Not a Gladiatrix F-", "Bustuāria D-", "Prōvocātrīx C-", "Gladiatrix B+", "Bellātrīx A+", "Amazon S+", "Queen Amazon S++"],
+    "dance": ["Not a Dancer F-", "Two Left Feet D-", "Figurant C-", "Dancer B+", "Coryphée A+", "Étoile S+", "Divine Muse S++"],
+    "music": ["Not a Musician F-", "Solfège Initiate D-", "Trained Ear C-", "Musician B+", "Prodigy A+", "Virtuoso S+", "Maestra S++"],
+    "painting": ["Not a Painter F-", "Dauber D-", "Sketcher C-", "Painter B+", "Colorist A+", "Artifex S+", "Master of the Canvas S++"],
+    "pet": ["Not a Pet F-", "Feral D-", "Housebroken C-", "Pet B+", "Domesticated A+", "Animalistic S+", "Primal Companion S++"],
+    "pony": ["Not a Pony F-", "Nag D-", "Hackney C-", "Pony B+", "Trotter A+", "Racehorse S+", "Champion Steed S++"],
+    "cow": ["Not a Cow F-", "Barely Bovine D-", "Learning to Moo C-", "Cow B+", "Heifer A+", "Queen of Kine S+", "Divine Bovine S++"],
+}
+define dic_slave_skills_sexual = {
+    "oral_pleasure": ["Oral Pleasure F-", "Oral Pleasure D-", "Oral Pleasure C-", "Oral Pleasure B+", "Oral Pleasure A+", "Oral Pleasure S+", "Oral Pleasure S++"],
+    "penetration": ["Penetration F-", "Penetration D-", "Penetration C-", "Penetration B+", "Penetration A+", "Penetration S+", "Penetration S++"],
+    "orgy": ["Group Sex F-", "Group Sex D-", "Group Sex C-", "Group Sex B+", "Group Sex A+", "Group Sex S+", "Group Sex S++"],
+    "roleplay": ["Demonstration F-", "Demonstration D-", "Demonstration C-", "Demonstration B+", "Demonstration A+", "Demonstration S+", "Demonstration S++"],
+    "fetishism": ["Fetishism F-", "Fetishism D-", "Fetishism C-", "Fetishism B+", "Fetishism A+", "Fetishism S+", "Fetishism S++"],
+    "xenophily": ["Xenophily F-", "Xenophily D-", "Xenophily C-", "Xenophily B+", "Xenophily A+", "Xenophily S+", "Xenophily S++"]
+}
 define dic_traits_skills = {
     "maidtrait":         ["Average", "Good Maid", "Excellent Maid", "Disastrous Maid", "Bad Maid"],
     "cookingtrait":      ["Average", "Good Cook", "Excellent Cook", "Disastrous Cook", "Bad Cook"],
@@ -222,7 +245,7 @@ define dic_traits_miscellaneous = {
     "lust_driver":       ["None", "Pervert", "Nymphomanic", "Asexual", "frigid"],
     "masochism":         ["None", "Accustomed to pain", "Masochism", "Pain averse", "Pain sensitive"],
     "exhibitionism":     ["None", "Likes Exhibitionism", "Loves Exhibitionism", "Hates Exhibitionism", "Dislikes Exhibitionism"],
-    "sexual_orientation":["None", "Bi-curious", "Bi sexual", "Homosexual", "Homoflexible"],
+    "sexual_orientation":["None", "Bi-curious", "Bisexual", "Homosexual", "Homoflexible"],
     "abuse_attitude":    ["None", "Likes Roughness", "Loves Roughness", "Hates Roughness", "Dislikes Roughness"],
     "darkness_attitude": ["None", "Likes Darkness", "Loves Darkness", "Hates Darkness", "Dislikes Darkness"],
     "blood_attitude":    ["None", "Likes Blood", "Loves Blood", "Hates Blood", "Dislikes Blood"],
@@ -261,7 +284,7 @@ define dic_traits_miscellaneous_description = {
     "sexual_orientation": [
         "Null",
         "{b}Bi-curious{/b}\nYour slave is bi-curious, open to exploring her sexuality with different genders.",
-        "{b}Bi sexual{/b}\nYour slave identifies as bisexual and embraces attraction to multiple genders.",
+        "{b}Bisexual{/b}\nYour slave identifies as bisexual and embraces attraction to multiple genders.",
         "{b}Homosexual{/b}\nYour slave is exclusively homosexual, showing strong preference for the same sex.",
         "{b}Homoflexible{/b}\nYour slave is homoflexible, mostly attracted to one sex but occasionally open."
     ],
@@ -607,4 +630,9 @@ default demo_girl_stats = {
     "Helen":      [3,3,3,3,5,3,3,0,2,0,0],
     "Yasmin":     [4,5,2,5,4,4,1,3,5,0,0],
     "Wilhelmine": [5,2,5,5,3,5,1,2,5,0,0]
+}
+default dic_girl_age_text ={
+    0: "Young",
+    1: "Loli",
+    2: "Madure"
 }

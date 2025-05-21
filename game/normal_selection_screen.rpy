@@ -75,7 +75,7 @@ label Normal_Start2:
     $ display_name = dic_mc_inicial_stats.get(mc, ["Error - Try restart your game"])[0]
     if start:
         hide scroll_large
-        jump Home
+        jump iniciation_label
     if dic_mc_normal_selection_textdescription_value_index > 1:
         $ dic_mc_normal_selection_textdescription_value_index = 0
     if -5 <= characterOnlyNameIndex <= 11:

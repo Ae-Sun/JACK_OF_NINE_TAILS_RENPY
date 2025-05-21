@@ -27,6 +27,10 @@
         "physical": 4,
         "exoticism": 3
     },
+    "skills":{
+        "athletics": 0,
+        "gladiatrix": 4
+    },
     "traits":{
         "traits_open":{
             "traits_always":{
@@ -76,7 +80,14 @@
                 "physicaltrait": {
                     "value": 2,
                     "revealed": false
+                },
+                "exorticismtrait": {
+                    "value": 2,
+                    "revealed": false
                 }
+                
+
+
 
             }
         }

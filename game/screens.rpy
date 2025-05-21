@@ -100,6 +100,13 @@ style difficulty_button5_text:
     size 48
     hover_color "#ffff00"
 ################################################
+style slave_screen_button is default
+style slave_screen_button_text:
+    font "fonts/consolas.ttf"
+    color "#000000"
+    size 16
+    hover_color "#ffff00"
+    xalign 0.5
 style attribute_button_custom0 is default
 style attribute_button_custom0_text:
     font "fonts/Segoe Print.ttf"
@@ -202,6 +209,8 @@ style lecture_button_text:
     size 20
     xalign 0.5
     yalign 0.5
+    selected_color "#FB933B"
+    selected_hover_color "#ffff00"
 ###########################################################################
 style attribute_custom_slave0 is default
 style attribute_custom_slave0_text:
@@ -515,9 +524,12 @@ style home_button:
     yminimum 50
     right_padding 15
     bottom_padding 15
+
 style home_button_text:
     xalign 0.05
     yalign 0.5
+    selected_color "#FB933B"
+    selected_hover_color "#ffff00"
 style home_button_grey:
     background Frame("menu_button.webp", 0, 0)
     xminimum 200
@@ -539,6 +551,8 @@ style game_menu_button:
 style game_menu_button_text:
     xalign 0.5
     yalign 0.5
+
+
 
 style leftalign:
     xalign 0.0
@@ -610,7 +624,8 @@ style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
-
+transform avatar_scale:
+    zoom 0.9333
 
 ################################################################################
 ## In-game screens

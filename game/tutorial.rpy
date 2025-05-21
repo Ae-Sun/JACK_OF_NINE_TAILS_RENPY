@@ -13,16 +13,17 @@ default dictionary_name = {}
 default attribute_checkbox = False
 default attributeisphysical = False
 default is_tutorial = False
+default infobox_jump ="choose_inicial_girl"
 screen tutorial_bg():
-    add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
+    add "bg/guild.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 535
 screen mistress_angelika():
-    add "characters/mistress_angelika.webp"pos(0.3, 0.365) anchor (0.5, 0.5) xsize 795 ysize 515
+    add "characters/mistress_angelika.webp"pos(0.3, 0.3785) anchor (0.5, 0.5) xsize 795 ysize 535
     key "K_SPACE" action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Lecture")
 screen mistress_angelika2():
-    add "characters/mistress_angelika.webp"pos(0.3, 0.365) anchor (0.5, 0.5) xsize 795 ysize 515
+    add "characters/mistress_angelika.webp"pos(0.3, 0.3785) anchor (0.5, 0.5) xsize 795 ysize 535
     key "K_SPACE" action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Tutorial")
 screen angelika_speech():
-    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 
+    text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.78) size 20 font "consolas.ttf" xmaximum 750 
 
 screen angelika_buttons():
     vbox:
@@ -92,9 +93,9 @@ screen slaver_guild():
             textbutton "Leave the guild":
                 style "lecture_button"
                 action MainMenu(confirm=False)
-    text "{color=#000000}I must choose which lecture I want to hear, or I can ask about the conditions of the examination or ask to start when I am ready.{/color}" pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 
+    text "{color=#000000}I must choose which lecture I want to hear, or I can ask about the conditions of the examination or ask to start when I am ready.{/color}" pos (0.02, 0.78) size 20 font "consolas.ttf" xmaximum 750 
 screen lecture_screen():
-    text tutorial_lectureGIGA[lecture_name][angelika_speech_text_count] pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
+    text tutorial_lectureGIGA[lecture_name][angelika_speech_text_count] pos (0.02, 0.78) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
 
 screen lecture_screenbuttons():   
     vbox:
@@ -110,10 +111,10 @@ screen lecture_screenbuttons():
             action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Lecture")
 
 screen choose_inicial_girl_screen():
-    add "bg/interiors/classic_dungeon.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
+    add "bg/interiors/classic_dungeon.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 535
     text "Choose your slave" pos(0.315, 0.04) anchor (0.5, 0.5) size 36 color "#ffff00" font "fonts/victoriana.ttf"
-    text demo_girl_text[demo_girl_text_index] pos (0.02, 0.75) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
-    add inicial_girl pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 515
+    text demo_girl_text[demo_girl_text_index] pos (0.02, 0.78) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
+    add inicial_girl pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 535
     
     python:
 
@@ -326,7 +327,7 @@ screen choose_inicial_girl_screen():
         imagebutton:
             idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
             hover "buttons/auk_fwrd_hover.webp"
-            action SetVariable("is_tutorial",True),Jump("Home")
+            action SetVariable("is_tutorial",True),Jump("iniciation_label")
     for girl_path, xpos in inicial_girls:
         button:
             xpos xpos
@@ -351,8 +352,8 @@ screen tutorial_attribute():
     imagebutton:
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
-        action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump("choose_inicial_girl")
-    key "K_SPACE" action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump("choose_inicial_girl")
+        action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump(infobox_jump)
+    key "K_SPACE" action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump(infobox_jump)
 
 
 screen tutorial_description():
@@ -369,7 +370,7 @@ screen tutorial_description():
         for values in range(6):  # 0 to 5 inclusive
             textbutton dic_slave_attributes[attribute_track_basic][values] anchor (0.5,0.5):
                 style "attribute_check_slave" + str(values)
-                action Jump("choose_inicial_girl")
+                action Jump(infobox_jump)
 
     text " Press space to close this window.":
         pos (0.33, 0.65)
@@ -379,8 +380,8 @@ screen tutorial_description():
     imagebutton:
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
-        action Hide("tutorial_description"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump("choose_inicial_girl")
-    key "K_SPACE" action Hide("tutorial_description"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump("choose_inicial_girl")
+        action Hide("tutorial_description"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump(infobox_jump)
+    key "K_SPACE" action Hide("tutorial_description"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump(infobox_jump)
 screen tutorial_descriptionphysical():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
@@ -395,7 +396,7 @@ screen tutorial_descriptionphysical():
         for values in range(6):  # 0 to 5 inclusive
             textbutton dic_slave_attributes[attribute_track_basic][values] anchor (0.5,0.5):
                 style "attribute_custom_physical" + str(values)
-                action Jump("choose_inicial_girl")
+                action Jump(infobox_jump)
 
     text " Press space to close this window.":
         pos (0.33, 0.65)
@@ -405,8 +406,8 @@ screen tutorial_descriptionphysical():
     imagebutton:
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
-        action Hide("tutorial_descriptionphysical"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump("choose_inicial_girl")
-    key "K_SPACE" action Hide("tutorial_descriptionphysical"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump("choose_inicial_girl")
+        action Hide("tutorial_descriptionphysical"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump(infobox_jump)
+    key "K_SPACE" action Hide("tutorial_descriptionphysical"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump(infobox_jump)
 
 screen tutorial_description2():
     zorder 5
@@ -424,11 +425,13 @@ screen tutorial_description2():
     imagebutton:
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
-        action Hide("tutorial_description2"),SetVariable("attribute_checkbox", False),Jump("choose_inicial_girl")
-    key "K_SPACE" action Hide("tutorial_description2"),SetVariable("attribute_checkbox", False),Jump("choose_inicial_girl")
-
+        action Hide("tutorial_description2"),SetVariable("attribute_checkbox", False),Jump(infobox_jump)
+    key "K_SPACE" action Hide("tutorial_description2"),SetVariable("attribute_checkbox", False),Jump(infobox_jump)
+screen bg_old_tutorial():
+    zorder -10
+    add bgstyle2 xsize 1280 ysize 720
 label Tutorial:
-    scene bg_old 
+    show screen bg_old_tutorial()
     show screen tutorial_bg()
     show screen angelika_buttons()
     show screen mistress_angelika2()
@@ -598,8 +601,18 @@ label choose_inicial_girl:
         traits_miscellaneous = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]
         traits_aura = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_aura(1/16)"]
         traits_attributes = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_attributes(1/20)"]
-        for key, values in dic_traits_skills.items():
+        for key, values in dic_slave_skills.items():
             import random
+            if key not in all_girls_list[girl_index]["skills"]:
+                roll = random.randint(1, 3)
+                if roll == 1:
+                    roll2 = random.randint(1, 5)
+                    val = 2 if roll2 == 1 else 1
+                else:
+                    val = 0
+                all_girls_list[girl_index]["skills"][key] = val
+        for key, values in dic_traits_skills.items():
+
             if key not in traits_skills:
                 roll = random.randint(1, 16)
                 if roll == 1:

@@ -160,7 +160,7 @@ label Custom_Start:
             hide screen points_tier_text2
             hide scroll_large
             hide screen s_tier_button
-            jump Home
+            jump iniciation_label
         else:
             $ dic_mc_normal_selection_textdescription_value = "START FAIL"
             $ start = False
