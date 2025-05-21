@@ -406,9 +406,72 @@ screen slave_menu():
     add bgstyle3 xsize 1280 ysize 720
     add home_decoration_mini xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     add all_girls_list[girl_index]["fullimage"] + ".webp" xalign 0.5 yalign 0.1838 size(795,535)  
+    add "padding.webp" xsize 230 ysize 535 pos(0.2835,0.42) anchor (0.5,0.5)
+    add "padding.webp" xsize 230 ysize 535 pos(0.724,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),Jump("Home")
-
-    
+   
+   
+    vbox:
+        pos(0.20,0.05)
+        anchor (0.0,0.0)
+        text "SLEEP:" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
+        add "spacer" size(0,138)
+        text "DIET:" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"  
+        add "spacer" size(0,138)
+        text "PORTION SIZE:" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
+        add "spacer" size(0,110)
+        text "CALORIES REMAINING:" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
+    vbox:
+        pos(0.225,0.09)
+        anchor (0.0,0.0)
+        textbutton "- in the cells ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- on the floor ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- on a bedroll ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- in my bed ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- Do not sleep ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        add "spacer" size(0,25)
+        textbutton "- Dehydrated food ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- Fresh food ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- Fiend's cum ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- Your leftovers ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- Supplements ": 
+            style "slave_screen_order_button"
+            action NullAction()
+        add "spacer" size(0,25)
+        textbutton "- Restricted":
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- Moderate":
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- Generous":
+            style "slave_screen_order_button"
+            action NullAction()
+        textbutton "- Calculated":
+            style "slave_screen_order_button"
+            action NullAction()
+        add "spacer" size(0,25)
+        textbutton "  2000":
+            style "slave_screen_order_button"
+            action NullAction()
     imagebutton:
         idle "buttons/close_button.webp" pos (1004,1)
         hover "buttons/close_button_hover.webp"
@@ -439,6 +502,11 @@ screen slave_menu():
                     style "attribute_custom_slave" + str(all_girls_list[girl_index]["skills"][key]) xalign 1.0
                     action NullAction()
         text "{u}     SEX TECHNIQUES{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        for key, values in dic_slave_skills_sexual.items():
+            if key in all_girls_list[girl_index]["sex_experience"][key]:
+                textbutton values[all_girls_list[girl_index]["sex_experience"][key][key]]:
+                    style "attribute_custom_slave" + str(all_girls_list[girl_index]["sex_experience"][key][key]) xalign 1.0
+                    action NullAction()
     vbox:
         pos(0.01,0.02)
         text "Name: " + all_girls_list[girl_index]["name"] size 16 color "#000000" font "fonts/Segoe Print.ttf"
@@ -575,7 +643,7 @@ screen slave_menu():
 
                 textbutton label_text:
                     style style_used
-                    action SetVariable("attribute_track_index", key),SetVariable("dictionary_track_index", val),SetVariable("dictionary_name", dic_traits_attributes_description),SetVariable("customboxcheck", True),Jump("choose_inicial_girl")
+                    action SetVariable("attribute_track_index", key),SetVariable("dictionary_track_index", val),SetVariable("dictionary_name", dic_traits_attributes_description),SetVariable("customboxcheck", True),Jump("Home")
 
 screen home_attributes_menu():
     vbox:

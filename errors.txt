@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 432: 'textalign' is not a keyword argument or valid child of the vbox statement.
-    textalign 1
-             ^
+File "game/home.rpy", line 428: textbutton expects a non-empty block.
+    textbutton "- on the couch ": 
+                                  ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed May 21 02:48:54 2025
+Wed May 21 15:06:05 2025

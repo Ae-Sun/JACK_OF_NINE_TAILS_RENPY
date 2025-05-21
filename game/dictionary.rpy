@@ -280,7 +280,7 @@ define dic_improvement_rooms ={
             "risk": 50,
             "modifier": +1
         },
-        "luxurios_boudoir":{
+        "luxurios_room":{
             "cost": 1500,
             "size": 100,
             "risk": 150,

@@ -94,25 +94,29 @@
     },
     "sex_experience":{
         "petting":{
+            "petting":0,
             "handjob":0,
             "footjob":0,
-            "rubbing":3,
+            "rubbing":0,
             "titjob":0
         },
         "oral_pleasure":{
-            "kissing":3,
+            "oral_pleasure":0,
+            "kissing":0,
             "licking":0,
             "blowjob":0,
             "deep_throat":0,
             "rimming":0
         },
         "penetration":{
+            "penetration":0,
             "vaginal_sex":0,
             "fisting":0,
             "anal_sex":0,
             "anal_fisting":0
         },
         "group_sex":{
+            "group_sex":0,
             "threesome":0,
             "bukkake":0,
             "doble_penetration":0,
@@ -120,6 +124,7 @@
             "gangbang":0
         },
         "demostration":{
+            "demostration":0,
             "seduction":0,
             "masturbation":0,
             "dildo":0,
@@ -127,6 +132,7 @@
             "exhibitionism":0
         },
         "fetishism":{
+            "fetishism":0,
             "enema":0,
             "masochism":0,
             "self-torture":0,
@@ -134,6 +140,7 @@
             "scat":0
         },
         "xenophily":{
+            "xenophily":0,
             "dog_mating":0,
             "pig_mating":0,
             "house_mating":0,

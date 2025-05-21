@@ -49,13 +49,66 @@ define dic_slave_skills = {
     "cow": ["Not a Cow F-", "Barely Bovine D-", "Learning to Moo C-", "Cow B+", "Heifer A+", "Queen of Kine S+", "Divine Bovine S++"],
 }
 define dic_slave_skills_sexual = {
+    "petting": ["Petting F-", "Petting D-", "Petting C-", "Petting B+", "Petting A+", "Petting S+", "Petting S++"],
     "oral_pleasure": ["Oral Pleasure F-", "Oral Pleasure D-", "Oral Pleasure C-", "Oral Pleasure B+", "Oral Pleasure A+", "Oral Pleasure S+", "Oral Pleasure S++"],
     "penetration": ["Penetration F-", "Penetration D-", "Penetration C-", "Penetration B+", "Penetration A+", "Penetration S+", "Penetration S++"],
-    "orgy": ["Group Sex F-", "Group Sex D-", "Group Sex C-", "Group Sex B+", "Group Sex A+", "Group Sex S+", "Group Sex S++"],
-    "roleplay": ["Demonstration F-", "Demonstration D-", "Demonstration C-", "Demonstration B+", "Demonstration A+", "Demonstration S+", "Demonstration S++"],
+    "group_sex": ["Group Sex F-", "Group Sex D-", "Group Sex C-", "Group Sex B+", "Group Sex A+", "Group Sex S+", "Group Sex S++"],
+    "demostration": ["Demonstration F-", "Demonstration D-", "Demonstration C-", "Demonstration B+", "Demonstration A+", "Demonstration S+", "Demonstration S++"],
     "fetishism": ["Fetishism F-", "Fetishism D-", "Fetishism C-", "Fetishism B+", "Fetishism A+", "Fetishism S+", "Fetishism S++"],
     "xenophily": ["Xenophily F-", "Xenophily D-", "Xenophily C-", "Xenophily B+", "Xenophily A+", "Xenophily S+", "Xenophily S++"]
 }
+define dic_sex_experience = {
+        "petting":{
+            "handjob":0,
+            "footjob":0,
+            "rubbing":0,
+            "titjob":0
+        },
+        "oral_pleasure":{
+            "kissing":0,
+            "licking":0,
+            "blowjob":0,
+            "deep_throat":0,
+            "rimming":0
+        },
+        "penetration":{
+            "vaginal_sex":0,
+            "fisting":0,
+            "anal_sex":0,
+            "anal_fisting":0
+        },
+        "group_sex":{
+            "threesome":0,
+            "bukkake":0,
+            "doble_penetration":0,
+            "triple_penetration":0,
+            "gangbang":0
+        },
+        "demostration":{
+            "seduction":0,
+            "masturbation":0,
+            "dildo":0,
+            "humiliation":0,
+            "exhibitionism":0
+        },
+        "fetishism":{
+            "enema":0,
+            "masochism":0,
+            "self-torture":0,
+            "golden_shower":0,
+            "scat":0
+        },
+        "xenophily":{
+            "dog_mating":0,
+            "pig_mating":0,
+            "house_mating":0,
+            "spider_mating":0,
+            "sea_tentacle_mating":0,
+            "field_mating":0
+        }
+
+    }
+
 define dic_traits_skills = {
     "maidtrait":         ["Average", "Good Maid", "Excellent Maid", "Disastrous Maid", "Bad Maid"],
     "cookingtrait":      ["Average", "Good Cook", "Excellent Cook", "Disastrous Cook", "Bad Cook"],
