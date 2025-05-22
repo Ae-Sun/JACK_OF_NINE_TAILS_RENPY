@@ -340,5 +340,33 @@ define dic_improvement_rooms ={
         }
     }
 }
+define dic_slave_conditions = {
+    "in_the_cells": "  Prison - a tiny dark room. It is impossible to lie down or completely stretch out. A night in this cell is able to break the will to resist, but it can also damage health, not to mention the bad dreams. Has an especially strong effect on people with claustrophobia.",
+    "On_the_floor": "  You took away the bedroll from your slave to show her that comfort should be earned. A night on the cold hard floor is neither good for resting, nor for her health, but [all_girls_list[girl_index]['name']] certainly will be a little more compliant. (TODO: But if she does not feel guilty, it may drive her into depression.)",
+    "On_a_bedroll": "  It is a common thing for slaves to sleep on a hard bedroll right on the floor. A small warm blanket and cushion filled with rice husks will keep her warm at night and enable her to sleep well, although it's not comfortable at all.",
+    "In_my_bed": "  As a special encouragement, your slave can be allowed to sleep with her master on his bed. This will let her sleep deeper and more comfortably. Sleeping with her owner is a great source of happiness for an obedient and devoted slave, but a poorly trained or moody girl will not be pleased at all.",
+    "Do_not_sleep": "  Order her to not sleep at all. This will be a great punishment for a slave, but also greatly damage her health.",
+    "No_food": "  In the Eternal Rome there are almost no opportunities to grow your own food. All food is brought from the worlds that lie beyond the Fog and because of that it costs fair amount of money. By depriving your slave of food you will kill two birds with one stone - it will teach her to be more obedient and you will save money. Of course, it is not good for her health.",
+    "Dehydrated_food": "  Dzhulbars Jumas' dehydrated pet food is the choice of leading slave traders. It is delivered in ten-liter cellophane bags, and due to its low weight it is cheap to transport through the Fogs. Contains all the nutrients and fiber a female slave needs, but it tastes disgusting.",
+    "Canned_food": "  Canned food for pets. It perfectly matches the composition of nutrients for female slaves and it tastes better than dry food or fiend cum. Unfortunately, it is rather expensive - fresh food weighs a lot, and it is necessary to import it from other worlds. This should be used as a reward for excellent obedience and moderate devotion, otherwise you risk spoiling your slave.",
+    "Fiend_cum": "  Fiends are the scourge and blessing of Rome. They are dangerous, but they can produce huge masses of nasty but nutritious sperm. It is not easy to milk these creatures so the seed is not cheap. However, if you have your own fiend and a good milker, feeding your slave becomes a lot easier. Only if you are able to make her eat it of course…",
+    "no_leftovers": "  Not every slave deserves to eat scraps from her master's table. This honor must be earned. Also, do not forget about the slave's shape.\n\n  If you are fattening a woman up in a barn you could feed her the scraps, instead.",
+    "eats_leftovers": "  Your slave may eat your left-overs. Table scraps are more delicious than ordinary slave food although usually not enough to be sated. You can consider this dessert, a nice addition to the staple food. This should be used as a reward for excellent obedience and moderate devotion, otherwise you risk spoiling your slave.",
+    "min_portion": "  Just enough for your slave not to starve, as long as you do not over-spend her calories. It is unlikely that she will be satisfied, but she will lose weight and understand who's the boss. And you will save some money.",
+    "normal_portion": "  Just the right amount of food for your slave to maintain her weight, as long as you do not over-spend her calories. For an accurate calculation of calories, a medical assistant would be helpful. Instead, you do everything by eye; it should be fine.",
+    "max_portion": "  Your slave's bowl is filled to the brim. She can eat as much as she wants. This is, of course, wasteful, but she will not be hungry, as long as you do not over-spend her calories. She might gain a little weight though.",
+    "default":""
+}
+define dic_slave_conditions_sleep ={
+    0:"in_the_cells",
+    1:"On_the_floor",
+    2:"On_a_bedroll",
+    3:"In_my_bed",
+    4:"Do_not_sleep" 
+}
+define dic_slave_conditions_food ={
+    0:"Dehydrated_food",
+    1:"Canned_food",
+    2:"Fiend_cum",
 
-
+}

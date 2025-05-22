@@ -1,17 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing the color property of anonymous style:
-  File "game/home.rpy", line 87, in script
-    call screen slave_menu()
+While running game code:
+  File "game/home.rpy", line 91, in script
+    call screen slave_rules_menu()
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-Exception: Color string '#FFD700' must be 3, 4, 6, or 8 hex digits long.
+  File "game/home.rpy", line 433, in execute
+    screen slave_rules_menu():
+  File "game/home.rpy", line 433, in execute
+    screen slave_rules_menu():
+  File "game/home.rpy", line 438, in execute
+    text dic_slave_conditions[text_slave_conditions_index] size 16 color "#000000" font "fonts/Segoe Print.ttf" pos(0.5,0.5) xmaximum 500
+  File "game/home.rpy", line 438, in <module>
+    text dic_slave_conditions[text_slave_conditions_index] size 16 color "#000000" font "fonts/Segoe Print.ttf" pos(0.5,0.5) xmaximum 500
+KeyError: '  Prison - a tiny dark room. It is impossible to lie down or completely stretch out. A night in this cell is able to break the will to resist, but it can also damage health, not to mention the bad dreams. Has an especially strong effect on people with claustrophobia.'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/home.rpy", line 87, in script
-    call screen slave_menu()
+  File "game/home.rpy", line 91, in script
+    call screen slave_rules_menu()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
@@ -34,26 +42,25 @@ Full traceback:
     d.visit_all(callback, seen)
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
     d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 485, in visit_all
-    self.child.visit_all(callback, seen=None)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 436, in visit_all
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
     callback(self)
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
     root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2245, in per_interact
-    if self.style.slow_abortable:
-  File "gen3-static/styleclass.pxi", line 613, in renpy.styledata.styleclass.Style.slow_abortable.__get__
-  File "style.pyx", line 493, in renpy.style.StyleCore._get
-  File "style.pyx", line 717, in renpy.style.build_style
-  File "style.pyx", line 714, in renpy.style.build_style
-  File "gen3-static/style_functions.pyx", line 349, in style_functions.color_property
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\color.py", line 165, in __new__
-    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
-Exception: Color string '#FFD700' must be 3, 4, 6, or 8 hex digits long.
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/home.rpy", line 433, in execute
+    screen slave_rules_menu():
+  File "game/home.rpy", line 433, in execute
+    screen slave_rules_menu():
+  File "game/home.rpy", line 438, in execute
+    text dic_slave_conditions[text_slave_conditions_index] size 16 color "#000000" font "fonts/Segoe Print.ttf" pos(0.5,0.5) xmaximum 500
+  File "game/home.rpy", line 438, in <module>
+    text dic_slave_conditions[text_slave_conditions_index] size 16 color "#000000" font "fonts/Segoe Print.ttf" pos(0.5,0.5) xmaximum 500
+KeyError: '  Prison - a tiny dark room. It is impossible to lie down or completely stretch out. A night in this cell is able to break the will to resist, but it can also damage health, not to mention the bad dreams. Has an especially strong effect on people with claustrophobia.'
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Wed May 21 14:43:16 2025
+Thu May 22 03:06:34 2025

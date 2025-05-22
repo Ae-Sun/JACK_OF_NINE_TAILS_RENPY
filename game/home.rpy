@@ -3,7 +3,6 @@ default bgstyle2 = "bg_old.webp"
 default bgstyle3 = "bg_stat_old.webp"
 default home_decoration = "bg/interiors/slum_study_large.webp"
 default home_decoration_mini = "bg/interiors/slum_study.webp"
-default day_tracker = 1
 default home_menu_image1 = "ui overhaul/activity.webp"
 default home_menu_image2 = "ui overhaul/slave_assignments.webp"
 default home_menu_image3 = "ui overhaul/domestic_issues.webp"
@@ -12,19 +11,24 @@ default home_menu_image5 = "ui overhaul/assistant_assignments.webp"
 default home_menu_image6 = "ui overhaul/end_day.webp"
 default energy_image1 = "ui overhaul/energy/energy_green.webp"
 default energy_image2 = "ui overhaul/energy/energy_green_half.webp"
+default dic_spellbook_info_index = "default"
 default mc_image = ""
-default energy_value = 0
-default current_menu = 0
+default mc_image2 = ""
+default text_slave_conditions_index = "default"
 default next_day_check = True
 default is_main_slave = False
 default show_main_slave = False
 default is_assistant_assigned = False
+default energy_value = 0
+default current_menu = 0
 default mood_value = 0
-default dic_spellbook_info_index = "default"
-default mc_image2 = ""
+default number_of_rules = 0
+default day_tracker = 1
+
 label iniciation_label:
     if is_tutorial == True:
         $mc_image = "master/master_noble.webp"
+        $ all_girls_list[girl_index]["day_bought"] = day_tracker
         if current_menu == 0:
             show screen goguild()
         else:
@@ -44,14 +48,12 @@ label Home:
     if next_day_check:
         $ energy_value = strength_value_1 *2 + 2
         if girl_index in all_girls_list:
-            if "attributes" in all_girls_list[girl_index] and "endurance" in all_girls_list[girl_index]["attributes"]:
-                $ all_girls_list[girl_index]["energy"] = all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2
-                $ is_main_slave = True
-                $ all_girls_list[girl_index]["day_bought"] = day_tracker
+            $ all_girls_list[girl_index]["energy"] = all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2
+            $ is_main_slave = True
         $ next_day_check = False
-
     if show_main_slave:
         show screen main_slave_image() 
+
     show screen home_attributes_menu()
     show screen sparks_menu()
     if customboxcheck:
@@ -69,6 +71,7 @@ label Home:
     if current_menu == 0:
         $ show_main_slave = False
         hide screen main_slave_image
+        hide screen screen_rules
         call screen home_menu()
     elif current_menu == 1:
         call screen slave_activities_menu()
@@ -84,9 +87,29 @@ label Home:
         hide screen goguild
         hide screen sparks_menu
         hide screen home_attributes_menu
-        call screen slave_menu()
+        show screen screen_rules
+        call screen slave_rules_menu()
+    elif current_menu == 101:
+        hide screen goguild
+        hide screen sparks_menu
+        hide screen home_attributes_menu
+        show screen screen_rules
+        call screen slave_anatomy_menu()
+    elif current_menu == 102:
+        hide screen goguild
+        hide screen sparks_menu
+        hide screen home_attributes_menu
+        show screen screen_rules
+        call screen slave_equipment_menu()
+    elif current_menu == 103:
+        hide screen goguild
+        hide screen sparks_menu
+        hide screen home_attributes_menu
+        show screen screen_rules
+        call screen slave_aura_menu()
 screen main_slave_image():
     add all_girls_list[girl_index]["fullimage"] + ".webp" xalign 0.2 yalign 0.9999 size(795,535)
+
 screen goguild():
     zorder 10
     textbutton "Go to Guild" xalign 0.10 yalign 0.76:
@@ -401,15 +424,21 @@ screen sparks_menu():
         add "spacer" size(4,0) 
         text "(" + str(sparks_37) + "$)":
             style "day_tracker_button_text"
-
-screen slave_menu():
-    add bgstyle3 xsize 1280 ysize 720
-    add home_decoration_mini xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
+screen slave_anatomy_menu():
+    add "bg/page_blank.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
+    key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+screen slave_equipment_menu():
+    add "bg/page_blank.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
+    key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+screen slave_aura_menu():
+    add "page_aura.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
+    key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+screen slave_rules_menu():
     add all_girls_list[girl_index]["fullimage"] + ".webp" xalign 0.5 yalign 0.1838 size(795,535)  
     add "padding.webp" xsize 230 ysize 535 pos(0.2835,0.42) anchor (0.5,0.5)
     add "padding.webp" xsize 230 ysize 535 pos(0.724,0.42) anchor (0.5,0.5)
-    key "K_SPACE" action SetVariable("current_menu", 0),Jump("Home")
-   
+    key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
    
     vbox:
         pos(0.20,0.05)
@@ -421,92 +450,484 @@ screen slave_menu():
         text "PORTION SIZE:" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
         add "spacer" size(0,110)
         text "CALORIES REMAINING:" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
+
+  
+    vbox:
+        pos(0.205,0.095)
+        anchor (0.0,0.0)
+        spacing 6
+        for i in range(5):
+            if all_girls_list[girl_index]["sleep"] == i:
+                imagebutton:
+                    idle "buttons/sel_button.webp"
+                    hover "buttons/sel_button_hover.webp"
+                    action NullAction()
+            else:
+                imagebutton:
+                    idle "buttons/unsel_button.webp"
+                    hover "buttons/unsel_button_hover.webp"
+                    action SetDict(all_girls_list[girl_index], "sleep", i),SetVariable("text_slave_conditions_index",dic_slave_conditions_sleep[i]), Jump("Home")
+        add "spacer" size(0,19.5)
+        for i in range(3):
+            if all_girls_list[girl_index]["diet"] == i:
+                imagebutton:
+                    idle "buttons/sel_button.webp"
+                    hover "buttons/sel_button_hover.webp"
+                    action NullAction()
+            else:
+                imagebutton:
+                    idle "buttons/unsel_button.webp"
+                    hover "buttons/unsel_button_hover.webp"
+                    action SetDict(all_girls_list[girl_index], "diet", i),SetVariable("text_slave_conditions_index", dic_slave_conditions[dic_slave_conditions_food[i]]), Jump("Home")
+        if all_girls_list[girl_index]["your_leftovers"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index], "your_leftovers", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index], "your_leftovers", True), Jump("Home")
+        if all_girls_list[girl_index]["supplements"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index], "supplements", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index], "supplements", True), Jump("Home")
+        add "spacer" size(0,19.5)
+        for i in range(4):
+            if all_girls_list[girl_index]["portion_size"] == i:
+                imagebutton:
+                    idle "buttons/sel_button.webp"
+                    hover "buttons/sel_button_hover.webp"
+                    action NullAction()
+            else:
+                imagebutton:
+                    idle "buttons/unsel_button.webp"
+                    hover "buttons/unsel_button_hover.webp"
+                    action SetDict(all_girls_list[girl_index], "portion_size", i), Jump("Home")
+
     vbox:
         pos(0.225,0.09)
         anchor (0.0,0.0)
-        textbutton "- in the cells ": 
+        textbutton "- In the cells": 
             style "slave_screen_order_button"
-            action NullAction()
-        textbutton "- on the floor ": 
+            action SetDict(all_girls_list[girl_index], "sleep", 0),SetVariable("text_slave_conditions_index","in_the_cells"), Jump("Home")
+        textbutton "- On the floor": 
             style "slave_screen_order_button"
-            action NullAction()
-        textbutton "- on a bedroll ": 
+            action SetDict(all_girls_list[girl_index], "sleep", 1),SetVariable("text_slave_conditions_index","On_the_floor"), Jump("Home")
+        textbutton "- On a bedroll": 
             style "slave_screen_order_button"
-            action NullAction()
-        textbutton "- in my bed ": 
+            action SetDict(all_girls_list[girl_index], "sleep", 2),SetVariable("text_slave_conditions_index","On_a_bedroll"), Jump("Home")
+        textbutton "- In my bed": 
             style "slave_screen_order_button"
-            action NullAction()
-        textbutton "- Do not sleep ": 
+            action SetDict(all_girls_list[girl_index], "sleep", 3),SetVariable("text_slave_conditions_index","In_my_bed"), Jump("Home")
+        textbutton "- Do not sleep": 
             style "slave_screen_order_button"
-            action NullAction()
+            action SetDict(all_girls_list[girl_index], "sleep", 4),SetVariable("text_slave_conditions_index","Do_not_sleep"), Jump("Home")
         add "spacer" size(0,25)
-        textbutton "- Dehydrated food ": 
+        textbutton "- Dehydrated food": 
             style "slave_screen_order_button"
-            action NullAction()
-        textbutton "- Fresh food ": 
+            action SetDict(all_girls_list[girl_index], "diet", 0), Jump("Home")
+        textbutton "- Canned food": 
             style "slave_screen_order_button"
-            action NullAction()
-        textbutton "- Fiend's cum ": 
+            action SetDict(all_girls_list[girl_index], "diet", 1), Jump("Home")
+        textbutton "- Fiend's cum": 
             style "slave_screen_order_button"
-            action NullAction()
-        textbutton "- Your leftovers ": 
-            style "slave_screen_order_button"
-            action NullAction()
-        textbutton "- Supplements ": 
-            style "slave_screen_order_button"
-            action NullAction()
+            action SetDict(all_girls_list[girl_index], "diet", 2), Jump("Home")
+        if all_girls_list[girl_index]["your_leftovers"]:
+            textbutton "- Your leftovers": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "your_leftovers", False), Jump("Home")
+        else:
+            textbutton "- Your leftovers": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "your_leftovers", True), Jump("Home")
+        if all_girls_list[girl_index]["supplements"]:
+            textbutton "- Supplements": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "supplements", False), Jump("Home")
+        else:
+            textbutton "- Supplements": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "supplements", True), Jump("Home")
         add "spacer" size(0,25)
         textbutton "- Restricted":
             style "slave_screen_order_button"
-            action NullAction()
+            action SetDict(all_girls_list[girl_index], "portion_size", 0), Jump("Home")
         textbutton "- Moderate":
             style "slave_screen_order_button"
-            action NullAction()
+            action SetDict(all_girls_list[girl_index], "portion_size", 1), Jump("Home")
         textbutton "- Generous":
             style "slave_screen_order_button"
-            action NullAction()
+            action SetDict(all_girls_list[girl_index], "portion_size", 2), Jump("Home")
         textbutton "- Calculated":
             style "slave_screen_order_button"
-            action NullAction()
+            action SetDict(all_girls_list[girl_index], "portion_size", 3), Jump("Home")
         add "spacer" size(0,25)
         textbutton "  2000":
             style "slave_screen_order_button"
             action NullAction()
+    vbox:
+        pos(0.807,0.05)
+        anchor (1.0,0.0)
+        text "RULES: (" + str(number_of_rules) + ")" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
+    vbox:
+        pos(0.802,0.095)
+        anchor (1.0,0.0)
+        spacing 6
+        if all_girls_list[girl_index]["rules"]["act_as_cook"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True), Jump("Home")
+
+        if all_girls_list[girl_index]["rules"]["act_as_maid"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["bath_slave"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_alarm"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_humility"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_pet"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_silence"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_toilet"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_urinal"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["deny_orgasm"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["deny_toileting"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["milk_the_fiend"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["no_masturbation"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["use_vaginal_beads"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["enforce_rules"]:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", False), Jump("Home")
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", True), Jump("Home")
+
+    vbox:
+        pos(0.65,0.09)
+        anchor (0.0,0.0)
+        if all_girls_list[girl_index]["rules"]["act_as_cook"]:
+            textbutton "Act as cook -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False), Jump("Home")
+        else:
+            textbutton "Act as cook -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["act_as_maid"]:
+            textbutton "Act as maid -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False), Jump("Home")
+        else:
+            textbutton "Act as maid -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["bath_slave"]:
+            textbutton "Bath slave -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False), Jump("Home")
+        else:
+            textbutton "Bath slave -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_alarm"]:
+            textbutton "Behave: alarm -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False), Jump("Home")
+        else:
+            textbutton "Behave: alarm -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_humility"]:
+            textbutton "Behave: humility -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False), Jump("Home")
+        else:
+            textbutton "Behave: humility -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_pet"]:
+            textbutton "Behave: pet -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False), Jump("Home")
+        else:
+            textbutton "Behave: pet -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True), Jump("Home")
+        
+        if all_girls_list[girl_index]["rules"]["behave_silence"]:
+            textbutton "Behave: silence -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False), Jump("Home")
+        else:
+            textbutton "Behave: silence -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_toilet"]:
+            textbutton "Behave: toilet -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False), Jump("Home")
+        else:
+            textbutton "Behave: toilet -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["behave_urinal"]:
+            textbutton "Behave: urinal -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False), Jump("Home")
+        else:
+            textbutton "Behave: urinal -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["deny_orgasm"]:
+            textbutton "Deny orgasm -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False), Jump("Home")
+        else:
+            textbutton "Deny orgasm -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["deny_toileting"]:
+            textbutton "Deny toileting -" xalign 1.0: 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False), Jump("Home")
+        else:
+            textbutton "Deny toileting -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["milk_the_fiend"]:
+            textbutton "Milk the fiend -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False), Jump("Home")
+        else:
+            textbutton "Milk the fiend -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["no_masturbation"]:
+            textbutton "No masturbation -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False), Jump("Home")
+        else:
+            textbutton "No masturbation -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["use_vaginal_beads"]:
+            textbutton "Use vaginal beads -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False), Jump("Home")
+        else:
+            textbutton "Use vaginal beads -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True), Jump("Home")
+        if all_girls_list[girl_index]["rules"]["enforce_rules"]:
+            textbutton "Enforce rules -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", False), Jump("Home")
+        else:
+            textbutton "Enforce rules -" xalign 1.0:
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", True), Jump("Home")
+
+
+
+screen screen_rules():   
+    add bgstyle3 xsize 1280 ysize 720
+    add home_decoration_mini xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     imagebutton:
         idle "buttons/close_button.webp" pos (1004,1)
         hover "buttons/close_button_hover.webp"
-        action SetVariable("current_menu", 0),Jump("Home")
+        action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
     hbox: 
         pos(0.475,0.01)
         anchor (0.5,0.0)
         spacing 122
         textbutton "Rules":
             style "slave_screen_button"
-            action NullAction() 
+            action SetVariable("current_menu", 100),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
         textbutton "Anatomy":
             style "slave_screen_button"
-            action NullAction()
+            action SetVariable("current_menu", 101),Jump("Home")
         textbutton "Equipment":
             style "slave_screen_button"
-            action NullAction()
+            action SetVariable("current_menu", 102),Jump("Home")
         textbutton "Aura":
             style "slave_screen_button"
-            action NullAction()
-    vbox:
-        pos(0.99,0.02)
-        anchor (1.0,0.0)
-        text "{u}                     SKILLS{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
-        for key, values in dic_slave_skills.items():
-            if key in all_girls_list[girl_index]["skills"]:
-                textbutton values[all_girls_list[girl_index]["skills"][key]]:
-                    style "attribute_custom_slave" + str(all_girls_list[girl_index]["skills"][key]) xalign 1.0
-                    action NullAction()
-        text "{u}     SEX TECHNIQUES{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
-        for key, values in dic_slave_skills_sexual.items():
-            if key in all_girls_list[girl_index]["sex_experience"][key]:
-                textbutton values[all_girls_list[girl_index]["sex_experience"][key][key]]:
-                    style "attribute_custom_slave" + str(all_girls_list[girl_index]["sex_experience"][key][key]) xalign 1.0
-                    action NullAction()
+            action SetVariable("current_menu", 103),Jump("Home")   
+    hbox: 
+        pos(0.525,0.005)
+        anchor (0.50,0.0)
+        spacing 162 
+        if current_menu == 100:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action NullAction()
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetVariable("current_menu", 100),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+        if current_menu == 101:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action NullAction()
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetVariable("current_menu", 101),Jump("Home")
+        if current_menu == 102:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action NullAction()
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp"
+                hover "buttons/unsel_button_hover.webp"
+                action SetVariable("current_menu", 102),Jump("Home")
+        if current_menu == 103:
+            imagebutton:
+                idle "buttons/sel_button.webp"
+                hover "buttons/sel_button_hover.webp"
+                action NullAction()
+        else:
+            imagebutton:
+                idle "buttons/unsel_button.webp" 
+                hover "buttons/unsel_button_hover.webp"
+                action SetVariable("current_menu", 103),Jump("Home")
+   
     vbox:
         pos(0.01,0.02)
         text "Name: " + all_girls_list[girl_index]["name"] size 16 color "#000000" font "fonts/Segoe Print.ttf"
@@ -644,7 +1065,21 @@ screen slave_menu():
                 textbutton label_text:
                     style style_used
                     action SetVariable("attribute_track_index", key),SetVariable("dictionary_track_index", val),SetVariable("dictionary_name", dic_traits_attributes_description),SetVariable("customboxcheck", True),Jump("Home")
-
+    vbox:
+        pos(0.99,0.02)
+        anchor (1.0,0.0)
+        text "{u}                     SKILLS{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        for key, values in dic_slave_skills.items():
+            if key in all_girls_list[girl_index]["skills"]:
+                textbutton values[all_girls_list[girl_index]["skills"][key]]:
+                    style "attribute_custom_slave" + str(all_girls_list[girl_index]["skills"][key]) xalign 1.0
+                    action NullAction()
+        text "{u}     SEX TECHNIQUES{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        for key, values in dic_slave_skills_sexual.items():
+            if key in all_girls_list[girl_index]["sex_experience"][key]:
+                textbutton values[all_girls_list[girl_index]["sex_experience"][key][key]]:
+                    style "attribute_custom_slave" + str(all_girls_list[girl_index]["sex_experience"][key][key]) xalign 1.0
+                    action NullAction()
 screen home_attributes_menu():
     vbox:
         pos(0.90,0.05)
