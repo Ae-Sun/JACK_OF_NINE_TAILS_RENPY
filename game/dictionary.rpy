@@ -355,6 +355,7 @@ define dic_slave_conditions = {
     "min_portion": "  Just enough for your slave not to starve, as long as you do not over-spend her calories. It is unlikely that she will be satisfied, but she will lose weight and understand who's the boss. And you will save some money.",
     "normal_portion": "  Just the right amount of food for your slave to maintain her weight, as long as you do not over-spend her calories. For an accurate calculation of calories, a medical assistant would be helpful. Instead, you do everything by eye; it should be fine.",
     "max_portion": "  Your slave's bowl is filled to the brim. She can eat as much as she wants. This is, of course, wasteful, but she will not be hungry, as long as you do not over-spend her calories. She might gain a little weight though.",
+    "supplements": "  High-tech complex of biologically active additives with fancy descriptions like \"25% more nanomolecules\" and \"does not contain GM food\". What the hell?… If your slave's health is below average, it might help. If your slave is already healthy though, it is only a waste of money.\n\n  Costs one spark per day, billed each decade.",
     "default":""
 }
 define dic_slave_conditions_sleep ={
@@ -368,5 +369,5 @@ define dic_slave_conditions_food ={
     0:"Dehydrated_food",
     1:"Canned_food",
     2:"Fiend_cum",
-
+    3:"No_food"
 }

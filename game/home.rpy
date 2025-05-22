@@ -473,22 +473,22 @@ screen slave_rules_menu():
                 imagebutton:
                     idle "buttons/sel_button.webp"
                     hover "buttons/sel_button_hover.webp"
-                    action NullAction()
+                    action SetDict(all_girls_list[girl_index], "diet", 3),SetVariable("text_slave_conditions_index", dic_slave_conditions_food[3]), Jump("Home")
             else:
                 imagebutton:
                     idle "buttons/unsel_button.webp"
                     hover "buttons/unsel_button_hover.webp"
-                    action SetDict(all_girls_list[girl_index], "diet", i),SetVariable("text_slave_conditions_index", dic_slave_conditions[dic_slave_conditions_food[i]]), Jump("Home")
+                    action SetDict(all_girls_list[girl_index], "diet", i),SetVariable("text_slave_conditions_index", dic_slave_conditions_food[i]), Jump("Home")
         if all_girls_list[girl_index]["your_leftovers"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index], "your_leftovers", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "your_leftovers", False), SetVariable("text_slave_conditions_index","no_leftovers"), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index], "your_leftovers", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "your_leftovers", True), SetVariable("text_slave_conditions_index","eats_leftovers"), Jump("Home")
         if all_girls_list[girl_index]["supplements"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
@@ -498,7 +498,7 @@ screen slave_rules_menu():
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index], "supplements", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "supplements", True),SetVariable("text_slave_conditions_index","supplements"), Jump("Home")
         add "spacer" size(0,19.5)
         for i in range(4):
             if all_girls_list[girl_index]["portion_size"] == i:
@@ -531,23 +531,38 @@ screen slave_rules_menu():
             style "slave_screen_order_button"
             action SetDict(all_girls_list[girl_index], "sleep", 4),SetVariable("text_slave_conditions_index","Do_not_sleep"), Jump("Home")
         add "spacer" size(0,25)
-        textbutton "- Dehydrated food": 
-            style "slave_screen_order_button"
-            action SetDict(all_girls_list[girl_index], "diet", 0), Jump("Home")
-        textbutton "- Canned food": 
-            style "slave_screen_order_button"
-            action SetDict(all_girls_list[girl_index], "diet", 1), Jump("Home")
-        textbutton "- Fiend's cum": 
-            style "slave_screen_order_button"
-            action SetDict(all_girls_list[girl_index], "diet", 2), Jump("Home")
+        if all_girls_list[girl_index]["diet"] == 0:
+            textbutton "- Dehydrated food": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 3),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[3]), Jump("Home")
+        else:
+            textbutton "- Dehydrated food": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 0),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[0]), Jump("Home")
+        if all_girls_list[girl_index]["diet"] == 1:
+            textbutton "- Canned food": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 3),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[3]), Jump("Home")
+        else:
+            textbutton "- Canned food": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 1),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[1]), Jump("Home")
+        if all_girls_list[girl_index]["diet"] == 2:
+            textbutton "- Fiend's cum": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 3),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[3]), Jump("Home")
+        else:
+            textbutton "- Fiend's cum": 
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 2),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[2]), Jump("Home")
         if all_girls_list[girl_index]["your_leftovers"]:
             textbutton "- Your leftovers": 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index], "your_leftovers", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "your_leftovers", False), SetVariable("text_slave_conditions_index","no_leftovers"), Jump("Home")
         else:
             textbutton "- Your leftovers": 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index], "your_leftovers", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "your_leftovers", True), SetVariable("text_slave_conditions_index","eats_leftovers"), Jump("Home")
         if all_girls_list[girl_index]["supplements"]:
             textbutton "- Supplements": 
                 style "slave_screen_order_button"
@@ -555,7 +570,7 @@ screen slave_rules_menu():
         else:
             textbutton "- Supplements": 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index], "supplements", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "supplements", True),SetVariable("text_slave_conditions_index","supplements"), Jump("Home")
         add "spacer" size(0,25)
         textbutton "- Restricted":
             style "slave_screen_order_button"

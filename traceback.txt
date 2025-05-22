@@ -5,15 +5,23 @@ While running game code:
     call screen slave_rules_menu()
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 433, in execute
+  File "game/home.rpy", line 436, in execute
     screen slave_rules_menu():
-  File "game/home.rpy", line 433, in execute
+  File "game/home.rpy", line 436, in execute
     screen slave_rules_menu():
-  File "game/home.rpy", line 438, in execute
-    text dic_slave_conditions[text_slave_conditions_index] size 16 color "#000000" font "fonts/Segoe Print.ttf" pos(0.5,0.5) xmaximum 500
-  File "game/home.rpy", line 438, in <module>
-    text dic_slave_conditions[text_slave_conditions_index] size 16 color "#000000" font "fonts/Segoe Print.ttf" pos(0.5,0.5) xmaximum 500
-KeyError: '  Prison - a tiny dark room. It is impossible to lie down or completely stretch out. A night in this cell is able to break the will to resist, but it can also damage health, not to mention the bad dreams. Has an especially strong effect on people with claustrophobia.'
+  File "game/home.rpy", line 455, in execute
+    vbox:
+  File "game/home.rpy", line 471, in execute
+    for i in range(3):
+  File "game/home.rpy", line 472, in execute
+    if all_girls_list[girl_index]["diet"] == i:
+  File "game/home.rpy", line 473, in execute
+    imagebutton:
+  File "game/home.rpy", line 473, in keywords
+    imagebutton:
+  File "game/home.rpy", line 476, in <module>
+    action SetDict(all_girls_list[girl_index], "diet", 3),SetVariable("text_slave_conditions_index", dic_slave_conditions_food[3]), Jump("Home")
+KeyError: 3
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -50,17 +58,25 @@ Full traceback:
     self.update()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/home.rpy", line 433, in execute
+  File "game/home.rpy", line 436, in execute
     screen slave_rules_menu():
-  File "game/home.rpy", line 433, in execute
+  File "game/home.rpy", line 436, in execute
     screen slave_rules_menu():
-  File "game/home.rpy", line 438, in execute
-    text dic_slave_conditions[text_slave_conditions_index] size 16 color "#000000" font "fonts/Segoe Print.ttf" pos(0.5,0.5) xmaximum 500
-  File "game/home.rpy", line 438, in <module>
-    text dic_slave_conditions[text_slave_conditions_index] size 16 color "#000000" font "fonts/Segoe Print.ttf" pos(0.5,0.5) xmaximum 500
-KeyError: '  Prison - a tiny dark room. It is impossible to lie down or completely stretch out. A night in this cell is able to break the will to resist, but it can also damage health, not to mention the bad dreams. Has an especially strong effect on people with claustrophobia.'
+  File "game/home.rpy", line 455, in execute
+    vbox:
+  File "game/home.rpy", line 471, in execute
+    for i in range(3):
+  File "game/home.rpy", line 472, in execute
+    if all_girls_list[girl_index]["diet"] == i:
+  File "game/home.rpy", line 473, in execute
+    imagebutton:
+  File "game/home.rpy", line 473, in keywords
+    imagebutton:
+  File "game/home.rpy", line 476, in <module>
+    action SetDict(all_girls_list[girl_index], "diet", 3),SetVariable("text_slave_conditions_index", dic_slave_conditions_food[3]), Jump("Home")
+KeyError: 3
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Thu May 22 03:06:34 2025
+Thu May 22 13:10:38 2025
