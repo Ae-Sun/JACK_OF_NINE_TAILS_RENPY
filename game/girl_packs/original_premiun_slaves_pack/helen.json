@@ -28,8 +28,8 @@
         "physical": 2
     },
     "skills":{
-        "maid": 3,
         "cooking": 2,
+        "maid": 3,
         "secretary": 1,
         "elocution": 1
     },

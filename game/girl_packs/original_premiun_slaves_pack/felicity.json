@@ -37,8 +37,8 @@
         "fame": 4
     },
     "skills":{
-        "maid": 0,
         "cooking": 0,
+        "maid": 0,
         "secretary": 0,
         "elocution": 2,
         "nursing": 0,

@@ -110,8 +110,8 @@ define dic_sex_experience = {
     }
 
 define dic_traits_skills = {
-    "maidtrait":         ["Average", "Good Maid", "Excellent Maid", "Disastrous Maid", "Bad Maid"],
     "cookingtrait":      ["Average", "Good Cook", "Excellent Cook", "Disastrous Cook", "Bad Cook"],
+    "maidtrait":         ["Average", "Good Maid", "Excellent Maid", "Disastrous Maid", "Bad Maid"],
     "secretarytrait":    ["Average", "Good Secretary", "Excellent Secretary", "Disastrous Secretary", "Bad Secretary"],
     "elocutiontrait":    ["Average", "Good Speaker", "Excellent Speaker", "Disastrous Speaker", "Bad Speaker"],
     "nursingtrait":      ["Average", "Good Nurse", "Excellent Nurse", "Disastrous Nurse", "Bad Nurse"],
@@ -127,19 +127,19 @@ define dic_traits_skills = {
     "cowtrait":          ["Average", "Good Cow", "Excellent Cow", "Disastrous Cow", "Bad Cow"]
 }
 define dic_traits_skills_descriptions = {
-    "maidtrait": [
-        "Null",
-        "{b}Good Maid{/b} \nYour slave seems to take great pleasure in keeping order in the house. This will allow her to become an excellent maid!",
-        "{b}Excellent Maid{/b} \nYour slave seems to take great pleasure in keeping order in the house. This will allow her to become an excellent maid! She has a natural talent for this skill, which will allow her to reach new heights.",
-        "{b}Disastrous Maid{/b} \nYour slave shows little interest in maintaining order around the house. Becoming a good maid may prove difficult for her. She lacks talent in this area, which will limit her potential for improvement.",
-        "{b}Bad Maid{/b} \nYour slave shows little interest in maintaining order around the house. Becoming a good maid may prove difficult for her."
-    ],
     "cookingtrait": [
         "Null",
         "{b}Good Cook{/b} \nYour slave enjoys cooking and often prepares tasty meals. This will allow her to become an excellent cook!",
         "{b}Excellent Cook{/b} \nYour slave enjoys cooking and often prepares tasty meals. This will allow her to become an excellent cook! She has a natural talent for this skill, which will allow her to reach new heights.",
         "{b}Disastrous Cook{/b} \nYour slave shows little interest in cooking. Becoming a good cook may prove difficult for her. She lacks talent in this area, which will limit her potential for improvement.",
         "{b}Bad Cook{/b} \nYour slave shows little interest in cooking. Becoming a good cook may prove difficult for her."
+    ],
+    "maidtrait": [
+        "Null",
+        "{b}Good Maid{/b} \nYour slave seems to take great pleasure in keeping order in the house. This will allow her to become an excellent maid!",
+        "{b}Excellent Maid{/b} \nYour slave seems to take great pleasure in keeping order in the house. This will allow her to become an excellent maid! She has a natural talent for this skill, which will allow her to reach new heights.",
+        "{b}Disastrous Maid{/b} \nYour slave shows little interest in maintaining order around the house. Becoming a good maid may prove difficult for her. She lacks talent in this area, which will limit her potential for improvement.",
+        "{b}Bad Maid{/b} \nYour slave shows little interest in maintaining order around the house. Becoming a good maid may prove difficult for her."
     ],
     "secretarytrait": [
         "Null",
@@ -665,26 +665,75 @@ default aura_descriptions2 = {
         "{color=#00a86b}Emerald glow of devotion{/color} dominates the aura of your slave, dotting it with {color=#009900}myriads{/color} of bright and clear stars."
     ]
 }
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-###############################################################################################################################################################################################################
-
-
-default demo_girl_stats = {
-    "Helen":      [3,3,3,3,5,3,3,0,2,0,0],
-    "Yasmin":     [4,5,2,5,4,4,1,3,5,0,0],
-    "Wilhelmine": [5,2,5,5,3,5,1,2,5,0,0]
+define dic_slave_conditions = {
+    "in_the_cells": "  Prison - a tiny dark room. It is impossible to lie down or completely stretch out. A night in this cell is able to break the will to resist, but it can also damage health, not to mention the bad dreams. Has an especially strong effect on people with claustrophobia.",
+    "On_the_floor": "  You took away the bedroll from your slave to show her that comfort should be earned. A night on the cold hard floor is neither good for resting, nor for her health, but [all_girls_list[girl_index]['name']] certainly will be a little more compliant. (TODO: But if she does not feel guilty, it may drive her into depression.)",
+    "On_a_bedroll": "  It is a common thing for slaves to sleep on a hard bedroll right on the floor. A small warm blanket and cushion filled with rice husks will keep her warm at night and enable her to sleep well, although it's not comfortable at all.",
+    "In_my_bed": "  As a special encouragement, your slave can be allowed to sleep with her master on his bed. This will let her sleep deeper and more comfortably. Sleeping with her owner is a great source of happiness for an obedient and devoted slave, but a poorly trained or moody girl will not be pleased at all.",
+    "Do_not_sleep": "  Order her to not sleep at all. This will be a great punishment for a slave, but also greatly damage her health.",
+    "No_food": "  In the Eternal Rome there are almost no opportunities to grow your own food. All food is brought from the worlds that lie beyond the Fog and because of that it costs fair amount of money. By depriving your slave of food you will kill two birds with one stone - it will teach her to be more obedient and you will save money. Of course, it is not good for her health.",
+    "Dehydrated_food": "  Dzhulbars Jumas' dehydrated pet food is the choice of leading slave traders. It is delivered in ten-liter cellophane bags, and due to its low weight it is cheap to transport through the Fogs. Contains all the nutrients and fiber a female slave needs, but it tastes disgusting.",
+    "Canned_food": "  Canned food for pets. It perfectly matches the composition of nutrients for female slaves and it tastes better than dry food or fiend cum. Unfortunately, it is rather expensive - fresh food weighs a lot, and it is necessary to import it from other worlds. This should be used as a reward for excellent obedience and moderate devotion, otherwise you risk spoiling your slave.",
+    "Fiend_cum": "  Fiends are the scourge and blessing of Rome. They are dangerous, but they can produce huge masses of nasty but nutritious sperm. It is not easy to milk these creatures so the seed is not cheap. However, if you have your own fiend and a good milker, feeding your slave becomes a lot easier. Only if you are able to make her eat it of course…",
+    "No_leftovers": "  Not every slave deserves to eat scraps from her master's table. This honor must be earned. Also, do not forget about the slave's shape.\n\n  If you are fattening a woman up in a barn you could feed her the scraps, instead.",
+    "Eats_leftovers": "  Your slave may eat your left-overs. Table scraps are more delicious than ordinary slave food although usually not enough to be sated. You can consider this dessert, a nice addition to the staple food. This should be used as a reward for excellent obedience and moderate devotion, otherwise you risk spoiling your slave.",
+    "Restricted": "  Just enough for your slave not to starve, as long as you do not over-spend her calories. It is unlikely that she will be satisfied, but she will lose weight and understand who's the boss. And you will save some money.",
+    "Moderate": "  Just the right amount of food for your slave to maintain her weight, as long as you do not over-spend her calories. For an accurate calculation of calories, a medical assistant would be helpful. Instead, you do everything by eye; it should be fine.",
+    "Generous": "  Your slave's bowl is filled to the brim. She can eat as much as she wants. This is, of course, wasteful, but she will not be hungry, as long as you do not over-spend her calories. She might gain a little weight though.",
+    "Calculated": "  With your medical expertise, you will prepare carefully calculated meals from the food available, designed to keep your slave's weight ideal by managing the caloric intake. Of course, you must still ensure the slave does not exceed her limits and spend more calories than she obtains from her food. (Costs half energy per day )",
+    "supplements": "  High-tech complex of biologically active additives with fancy descriptions like \"25% more nanomolecules\" and \"does not contain GM food\". What the hell?… If your slave's health is below average, it might help. If your slave is already healthy though, it is only a waste of money.\n\n  Costs one spark per day, billed each decade.",
+    "cook_rules": "  You give an order to your slave to cook meals for you. Now, if only she can find enough time and has energy left, she will do it herself without your further reminders.",
+    "cook_rules_abort": "  You allow your slave not to waste energy on a daily cooking. You have other plans in this regard.",
+    "maid_rules": "  You give an order to your slave to take care of cleanliness and order in the house. Now, if she can find enough time and has energy left, she will do it herself without your further reminders.",
+    "maid_rules_abort": "  You allow your slave not to waste time on keeping order in the house. You have other plans in this regard.",
+    "bath_slave_rule": "  There is no need to wash yourself; this work can be assigned to a beautiful and gentle girl. You order your slave to help you wash.",
+    "bath_slave_abort_rule": "  You decide to wash yourself, in order not to distract your slave from more important matters.",
+    "behave_alarm_rules": "  You will use your slave as a human alarm clock. Every morning at the appointed time, [all_girls_list[girl_index]['name']] should wake you by taking care of your morning wood with a gentle, deep blowjob. This approach will improve your mood in the morning and prepare your slave for sexual practices.",
+    "behave_alarm_rules_abort": "  You decide to wake up in the morning without being distracted by the slave’s attempts to make you feel good or evade from her responsibilities.",
+    "behave_humility_rules": "  You order the slave to behave as a well-mannered slave should from now on. She is to always call you politely, \"Master\". This way she will quickly get accustomed to absolute obedience.",
+    "behave_humility_rules_abort": "  You allow the slave to address you familiarly without following formal rules of communication between slave and master.",
+    "behave_pet_rules": "  You order the slave to behave like a pet: she should always walk on all fours and make sounds that befit an animal. This will help teach her humility, while developing flexibility.",
+    "behave_pet_rules_abort": "  You let the slave behave like a human again.",
+    "behave_silence_rules": "  You order the slave to remain silent until she is asked about anything. This will help her to develop sensitivity, humility and expressiveness of movements but can suppress temperament.",
+    "behave_silence_rules_abort": "  You allow the slave to talk on her own and express her opinion.",
+    "behave_toilet_rules": "  You will use the slave as a human toilet. [all_girls_list[girl_index]['name']] should swallow everything and gently scrub you with her tongue. There is no better way to get rid of unnecessary pride. In addition, a well-trained toilet is a comfort at home and lifts your mood. And if nothing else, the slave at least will learn something. Harmful to health and hygiene.",
+    "behave_toilet_rules_abort": "  You tell to your slave that you will use the ordinary toilet, and her services in the near future are not needed.",
+    "behave_urinal_rules": "  You will use the slave as a human urinal. [all_girls_list[girl_index]['name']] must carefully swallow all your urine and lick up any that has been spilled. This will seriously reduce her pride and will enhance your mood. It will also teach the slave necessary skills if they are not developed yet. It has a bad effect on hygiene.",
+    "behave_urinal_rules_abort": "  You tell your slave that you will use the ordinary toilet, and her services in the near future are not needed.",
+    "deny_orgasm_rules": "  You forbid the slave to experience orgasm, unless you gave her a special permission. Whenever she can restrain from cumming, her arousal and sensitivity will increase.",
+    "deny_orgasm_rules_abort": "  You tell the slave she may orgasm without permission, allowing her release, but you warn her that you can change your mind!",
+    "deny_toileting_rules": "  You forbid the slave go to the toilet without your permission. She will be allowed to visit the restroom rarely and only under your supervision. This will help teach her humility, though the price will be the slave mood.",
+    "deny_toileting_rules_abort": "  You let the slave go to the toilet by herself whenever she wants. At least she will not distract you with her constant tears and pleas.",
+    "slave_tentacle_rule": "  You order the slave to take care of your fiend and regularly milk it so that it does not wither in captivity.",
+    "slave_tentacle_rule_abort": "  You say that the slave can forget about the fiend and need not take care of him.",
+    "no_masturbation_rules": "  You order your slave not to masturbate unless you instruct her otherwise. This will prevent her from relieving her arousal if she obeys, and successfully resisting the urge to masturbate will slightly increase her taming.",
+    "no_masturbation_rules_abort": "  You let your slave masturbate freely.",
+    "use_vaginal_beads_rule": "  You put vaginal beads in the slave's pussy and order her to wear them all the time, so she can develop her sensitivity and desire.",
+    "use_vaginal_beads_rule_abort": "  You order the slave to remove the vaginal beads, wash them well, and give to you. Her excitement must be controlled so that it does not become an obstacle to learning.",
+    "enforce_rules": "  You tell the slave that you will use various tools such as anal pears, gags, chastity belts, pet suits and toilet racks, as well as special supervision of your assistant in order to prevent her from ignoring the rules. Of course, this may make her miserable and depressed, but it will also humble her and teach her that compliance is in her own best interest.",
+    "enforce_rules_abort": "  You tell the slave that henceforth she should obediently follow all her rules without the help of your special tools and additional supervision. Of course, this does not mean that ignoring orders will leave her unpunished…",    
+    "default":""
 }
-default dic_girl_age_text ={
+define dic_slave_conditions_sleep ={
+    0:"in_the_cells",
+    1:"On_the_floor",
+    2:"On_a_bedroll",
+    3:"In_my_bed",
+    4:"Do_not_sleep" 
+}
+define dic_slave_conditions_food ={
+    0:"Dehydrated_food",
+    1:"Canned_food",
+    2:"Fiend_cum",
+    3:"No_food"
+}
+define dic_slave_conditions_portion ={
+    0:"Restricted",
+    1:"Moderate",
+    2:"Generous",
+    3:"Calculated"
+}
+define dic_girl_age_text ={
     0: "Young",
     1: "Loli",
     2: "Madure"

@@ -483,12 +483,12 @@ screen slave_rules_menu():
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index], "your_leftovers", False), SetVariable("text_slave_conditions_index","no_leftovers"), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "your_leftovers", False), SetVariable("text_slave_conditions_index","No_leftovers"), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index], "your_leftovers", True), SetVariable("text_slave_conditions_index","eats_leftovers"), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "your_leftovers", True), SetVariable("text_slave_conditions_index","Eats_leftovers"), Jump("Home")
         if all_girls_list[girl_index]["supplements"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
@@ -500,17 +500,26 @@ screen slave_rules_menu():
                 hover "buttons/unsel_button_hover.webp"
                 action SetDict(all_girls_list[girl_index], "supplements", True),SetVariable("text_slave_conditions_index","supplements"), Jump("Home")
         add "spacer" size(0,19.5)
-        for i in range(4):
-            if all_girls_list[girl_index]["portion_size"] == i:
+       
+        if all_girls_list[girl_index]["diet"] != 3:
+            for i in range(4):
+                if all_girls_list[girl_index]["portion_size"] == i:
+                    imagebutton:
+                        idle "buttons/sel_button.webp"
+                        hover "buttons/sel_button_hover.webp"
+                        action NullAction()
+                else:
+                    imagebutton:
+                        idle "buttons/unsel_button.webp"
+                        hover "buttons/unsel_button_hover.webp"
+                        action SetDict(all_girls_list[girl_index], "portion_size", i),SetVariable("text_slave_conditions_index",dic_slave_conditions_portion[i]), Jump("Home")
+        else:
+            for i in range(4):
                 imagebutton:
-                    idle "buttons/sel_button.webp"
-                    hover "buttons/sel_button_hover.webp"
-                    action NullAction()
-            else:
-                imagebutton:
-                    idle "buttons/unsel_button.webp"
-                    hover "buttons/unsel_button_hover.webp"
-                    action SetDict(all_girls_list[girl_index], "portion_size", i), Jump("Home")
+                    idle "buttons/unactive_button.webp"
+                    hover "buttons/unactive_button_hover.webp"
+                    action SetDict(all_girls_list[girl_index], "diet", 0),SetDict(all_girls_list[girl_index], "portion_size", i),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[0]), Jump("Home")
+
 
     vbox:
         pos(0.225,0.09)
@@ -558,11 +567,11 @@ screen slave_rules_menu():
         if all_girls_list[girl_index]["your_leftovers"]:
             textbutton "- Your leftovers": 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index], "your_leftovers", False), SetVariable("text_slave_conditions_index","no_leftovers"), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "your_leftovers", False), SetVariable("text_slave_conditions_index","No_leftovers"), Jump("Home")
         else:
             textbutton "- Your leftovers": 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index], "your_leftovers", True), SetVariable("text_slave_conditions_index","eats_leftovers"), Jump("Home")
+                action SetDict(all_girls_list[girl_index], "your_leftovers", True), SetVariable("text_slave_conditions_index","Eats_leftovers"), Jump("Home")
         if all_girls_list[girl_index]["supplements"]:
             textbutton "- Supplements": 
                 style "slave_screen_order_button"
@@ -572,18 +581,33 @@ screen slave_rules_menu():
                 style "slave_screen_order_button"
                 action SetDict(all_girls_list[girl_index], "supplements", True),SetVariable("text_slave_conditions_index","supplements"), Jump("Home")
         add "spacer" size(0,25)
-        textbutton "- Restricted":
-            style "slave_screen_order_button"
-            action SetDict(all_girls_list[girl_index], "portion_size", 0), Jump("Home")
-        textbutton "- Moderate":
-            style "slave_screen_order_button"
-            action SetDict(all_girls_list[girl_index], "portion_size", 1), Jump("Home")
-        textbutton "- Generous":
-            style "slave_screen_order_button"
-            action SetDict(all_girls_list[girl_index], "portion_size", 2), Jump("Home")
-        textbutton "- Calculated":
-            style "slave_screen_order_button"
-            action SetDict(all_girls_list[girl_index], "portion_size", 3), Jump("Home")
+        if all_girls_list[girl_index]["diet"] != 3:
+            textbutton "- Restricted":
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "portion_size", 0),SetVariable("text_slave_conditions_index",dic_slave_conditions_portion[0]), Jump("Home")
+            textbutton "- Moderate":
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "portion_size", 1),SetVariable("text_slave_conditions_index",dic_slave_conditions_portion[1]), Jump("Home")
+            textbutton "- Generous":
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "portion_size", 2),SetVariable("text_slave_conditions_index",dic_slave_conditions_portion[2]), Jump("Home")
+            textbutton "- Calculated":
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "portion_size", 3),SetVariable("text_slave_conditions_index",dic_slave_conditions_portion[3]), Jump("Home")
+        else:
+            textbutton "- Restricted":
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 0),SetDict(all_girls_list[girl_index], "portion_size", 0),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[0]), Jump("Home")
+            textbutton "- Moderate":
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 0),SetDict(all_girls_list[girl_index], "portion_size", 1),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[0]), Jump("Home")
+            textbutton "- Generous":
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 0),SetDict(all_girls_list[girl_index], "portion_size", 2),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[0]), Jump("Home")
+            textbutton "- Calculated":
+                style "slave_screen_order_button"
+                action SetDict(all_girls_list[girl_index], "diet", 0),SetDict(all_girls_list[girl_index], "portion_size", 3),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[0]), Jump("Home")
+                
         add "spacer" size(0,25)
         textbutton "  2000":
             style "slave_screen_order_button"
@@ -591,7 +615,10 @@ screen slave_rules_menu():
     vbox:
         pos(0.807,0.05)
         anchor (1.0,0.0)
-        text "RULES: (" + str(number_of_rules) + ")" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
+        if number_of_rules > 2:
+            text "{color=#FFD700}RULES: ([str(number_of_rules)]){/color}" size 16 font "fonts/Segoe Print.ttf"
+        else:
+            text "{color=#FFD700}RULES: ({/color}{color=#CD0000}[str(number_of_rules)]{/color}{color=#FFD700}){/color}" size 16 font "fonts/Segoe Print.ttf"
     vbox:
         pos(0.802,0.095)
         anchor (1.0,0.0)
@@ -600,153 +627,153 @@ screen slave_rules_menu():
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False),SetVariable("text_slave_conditions_index","cook_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True),SetVariable("text_slave_conditions_index","cook_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
 
         if all_girls_list[girl_index]["rules"]["act_as_maid"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False),SetVariable("text_slave_conditions_index","maid_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True),SetVariable("text_slave_conditions_index","maid_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["bath_slave"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False),SetVariable("text_slave_conditions_index","bath_slave_abort_rule"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True),SetVariable("text_slave_conditions_index","bath_slave_rule"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_alarm"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False),SetVariable("text_slave_conditions_index","behave_alarm_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True),SetVariable("text_slave_conditions_index","behave_alarm_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_humility"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False),SetVariable("text_slave_conditions_index","behave_humility_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True),SetVariable("text_slave_conditions_index","behave_humility_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_pet"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False),SetVariable("text_slave_conditions_index","behave_pet_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True),SetVariable("text_slave_conditions_index","behave_pet_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_silence"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False),SetVariable("text_slave_conditions_index","behave_silence_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True),SetVariable("text_slave_conditions_index","behave_silence_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_toilet"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False),SetVariable("text_slave_conditions_index","behave_toilet_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True),SetVariable("text_slave_conditions_index","behave_toilet_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_urinal"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False),SetVariable("text_slave_conditions_index","behave_urinal_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True),SetVariable("text_slave_conditions_index","behave_urinal_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["deny_orgasm"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False),SetVariable("text_slave_conditions_index","deny_orgasm_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True),SetVariable("text_slave_conditions_index","deny_orgasm_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["deny_toileting"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False),SetVariable("text_slave_conditions_index","deny_toileting_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True),SetVariable("text_slave_conditions_index","deny_toileting_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["milk_the_fiend"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False),SetVariable("text_slave_conditions_index","slave_tentacle_rule_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True),SetVariable("text_slave_conditions_index","slave_tentacle_rule"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["no_masturbation"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False),SetVariable("text_slave_conditions_index","no_masturbation_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", True),SetVariable("text_slave_conditions_index","no_masturbation_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["use_vaginal_beads"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["enforce_rules"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", False),SetVariable("text_slave_conditions_index","enforce_rules_abort"), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", True),SetVariable("text_slave_conditions_index","enforce_rules"), Jump("Home")
 
     vbox:
         pos(0.65,0.09)
@@ -754,124 +781,124 @@ screen slave_rules_menu():
         if all_girls_list[girl_index]["rules"]["act_as_cook"]:
             textbutton "Act as cook -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False),SetVariable("text_slave_conditions_index","cook_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Act as cook -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True),SetVariable("text_slave_conditions_index","cook_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["act_as_maid"]:
             textbutton "Act as maid -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False),SetVariable("text_slave_conditions_index","maid_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Act as maid -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True),SetVariable("text_slave_conditions_index","maid_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["bath_slave"]:
             textbutton "Bath slave -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False),SetVariable("text_slave_conditions_index","bath_slave_rule"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Bath slave -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True),SetVariable("text_slave_conditions_index","bath_slave_abort_rule"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_alarm"]:
             textbutton "Behave: alarm -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False),SetVariable("text_slave_conditions_index","behave_alarm_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Behave: alarm -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True),SetVariable("text_slave_conditions_index","behave_alarm_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_humility"]:
             textbutton "Behave: humility -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False),SetVariable("text_slave_conditions_index","behave_humility_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Behave: humility -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True),SetVariable("text_slave_conditions_index","behave_humility_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_pet"]:
             textbutton "Behave: pet -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False),SetVariable("text_slave_conditions_index","behave_pet_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Behave: pet -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True),SetVariable("text_slave_conditions_index","behave_pet_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         
         if all_girls_list[girl_index]["rules"]["behave_silence"]:
             textbutton "Behave: silence -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False),SetVariable("text_slave_conditions_index","behave_silence_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Behave: silence -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True),SetVariable("text_slave_conditions_index","behave_silence_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_toilet"]:
             textbutton "Behave: toilet -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False),SetVariable("text_slave_conditions_index","behave_toilet_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Behave: toilet -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True),SetVariable("text_slave_conditions_index","behave_toilet_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_urinal"]:
             textbutton "Behave: urinal -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False),SetVariable("text_slave_conditions_index","behave_urinal_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Behave: urinal -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True),SetVariable("text_slave_conditions_index","behave_urinal_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["deny_orgasm"]:
             textbutton "Deny orgasm -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False),SetVariable("text_slave_conditions_index","deny_orgasm_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Deny orgasm -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True),SetVariable("text_slave_conditions_index","deny_orgasm_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["deny_toileting"]:
             textbutton "Deny toileting -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False),SetVariable("text_slave_conditions_index","deny_toileting_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Deny toileting -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True),SetVariable("text_slave_conditions_index","deny_toileting_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["milk_the_fiend"]:
             textbutton "Milk the fiend -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False),SetVariable("text_slave_conditions_index","slave_tentacle_rule"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Milk the fiend -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True),SetVariable("text_slave_conditions_index","slave_tentacle_rule_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["no_masturbation"]:
             textbutton "No masturbation -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False),SetVariable("text_slave_conditions_index","no_masturbation_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "No masturbation -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", True),SetVariable("text_slave_conditions_index","no_masturbation_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["use_vaginal_beads"]:
             textbutton "Use vaginal beads -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
         else:
             textbutton "Use vaginal beads -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["enforce_rules"]:
             textbutton "Enforce rules -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", False), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", False),SetVariable("text_slave_conditions_index","enforce_rules_abort"), Jump("Home")
         else:
             textbutton "Enforce rules -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", True), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", True),SetVariable("text_slave_conditions_index","enforce_rules"), Jump("Home")
 
 
 

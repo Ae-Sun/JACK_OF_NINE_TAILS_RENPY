@@ -9,19 +9,11 @@ While running game code:
     screen slave_rules_menu():
   File "game/home.rpy", line 436, in execute
     screen slave_rules_menu():
-  File "game/home.rpy", line 455, in execute
-    vbox:
-  File "game/home.rpy", line 471, in execute
-    for i in range(3):
-  File "game/home.rpy", line 472, in execute
-    if all_girls_list[girl_index]["diet"] == i:
-  File "game/home.rpy", line 473, in execute
-    imagebutton:
-  File "game/home.rpy", line 473, in keywords
-    imagebutton:
-  File "game/home.rpy", line 476, in <module>
-    action SetDict(all_girls_list[girl_index], "diet", 3),SetVariable("text_slave_conditions_index", dic_slave_conditions_food[3]), Jump("Home")
-KeyError: 3
+  File "game/home.rpy", line 441, in execute
+    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
+  File "game/home.rpy", line 441, in <module>
+    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
+KeyError: 'enforce_rules'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -62,21 +54,13 @@ Full traceback:
     screen slave_rules_menu():
   File "game/home.rpy", line 436, in execute
     screen slave_rules_menu():
-  File "game/home.rpy", line 455, in execute
-    vbox:
-  File "game/home.rpy", line 471, in execute
-    for i in range(3):
-  File "game/home.rpy", line 472, in execute
-    if all_girls_list[girl_index]["diet"] == i:
-  File "game/home.rpy", line 473, in execute
-    imagebutton:
-  File "game/home.rpy", line 473, in keywords
-    imagebutton:
-  File "game/home.rpy", line 476, in <module>
-    action SetDict(all_girls_list[girl_index], "diet", 3),SetVariable("text_slave_conditions_index", dic_slave_conditions_food[3]), Jump("Home")
-KeyError: 3
+  File "game/home.rpy", line 441, in execute
+    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
+  File "game/home.rpy", line 441, in <module>
+    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
+KeyError: 'enforce_rules'
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Thu May 22 13:10:38 2025
+Thu May 22 23:15:51 2025

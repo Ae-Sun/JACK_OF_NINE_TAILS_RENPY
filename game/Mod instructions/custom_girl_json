@@ -37,8 +37,8 @@
         "fame": 0
     },
     "skills":{
-        "maid": 0,
         "cooking": 0,
+        "maid": 0,
         "secretary": 0,
         "elocution": 0,
         "nursing": 0,
@@ -70,11 +70,11 @@
         },
         "traits_hidden": {
             "traits_skills(1/8)": {
-                "maidtrait": {
+                "cookingtrait": {
                     "value": 0,
                     "revealed": false
                 },
-                "cookingtrait": {
+                "maidtrait": {
                     "value": 0,
                     "revealed": false
                 },
