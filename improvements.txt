@@ -15,3 +15,4 @@
 - Reworked the entire trait system — while the original system was solid, it was overly complex and difficult to replicate. Simplified the underlying logic and expanded the variety of available traits for greater flexibility and depth.
 - Improve slave json
 - Created slave Mod support
+- Remove loli explicit text content Easter Egg (Too much work for something that probably only the 5% of community are enjoying, someone (not me) does have a lot time may try to restore it)

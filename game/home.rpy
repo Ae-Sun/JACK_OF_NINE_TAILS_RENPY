@@ -24,6 +24,13 @@ default current_menu = 0
 default mood_value = 0
 default number_of_rules = 0
 default day_tracker = 1
+default boobs1 =" marshmallowy tits"
+default boobs2 =" motherly breasts"
+default boobs3 =" empty breast-sacks"
+default boobs4 =" round tits"
+default boobs5 =" firm melons"
+default boobs6 =" shapely balloons"
+
 
 label iniciation_label:
     if is_tutorial == True:
@@ -427,6 +434,59 @@ screen sparks_menu():
 screen slave_anatomy_menu():
     add "bg/page_blank.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+    if all_girls_list[girl_index]["lactation"]:
+        $boobs1 = "milk-swollen breasts"
+        $boobs2 = "milk-swollen breasts"
+        $boobs3 = "milk-distended breasts"
+        $boobs4 = "milk-swollen breasts"
+        $boobs5 = "milk-swollen breasts"
+        $boobs6 = "milk-swollen breasts"
+    else:
+        $boobs1 =" marshmallowy tits"
+        $boobs2 =" motherly breasts"
+        $boobs3 =" empty breast-sacks"
+        $boobs4 =" round tits"
+        $boobs5 =" firm melons"
+        $boobs6 =" shapely balloons"
+    hbox:
+        pos(0.205,0.07)
+        add "girls/body/" + all_girls_list[girl_index]["boobs_img"] + ".webp" size(372,250)
+        add "spacer" size(20,0)
+        add "girls/body/" + all_girls_list[girl_index]["pussy_img"] + ".webp" size(372,250)  
+    vbox:
+        pos(0.21,0.42)
+
+        if all_girls_list[girl_index]["age"]==0:
+            text dic_girl_boobs_text["young"][all_girls_list[girl_index]["boobs"]] size 16 color "#000000" font "fonts/Segoe Print.ttf"
+        elif all_girls_list[girl_index]["age"]==1:
+            text dic_girl_boobs_text["loli"][all_girls_list[girl_index]["boobs"]] size 16 color "#000000" font "fonts/Segoe Print.ttf"
+        elif all_girls_list[girl_index]["age"]==2:
+            text dic_girl_boobs_text["mature"][all_girls_list[girl_index]["boobs"]] size 16 color "#000000" font "fonts/Segoe Print.ttf"
+        if all_girls_list[girl_index]["lactation"]:
+            text "Lactating" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+        else:
+            text "Not lactating" size 16 color "#000000" font "fonts/Segoe Print.ttf" 
+        if all_girls_list[girl_index]["nipples_pierced"]:
+            text "Nipples pierced" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+        else:
+            text "Nipples not pierced" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+        text dic_girl_breast_modification[all_girls_list[girl_index]["breast_modification"]] size 16 color "#000000" font "fonts/Segoe Print.ttf"
+        text dic_girl_age_text[all_girls_list[girl_index]["age"]] size 16 color "#000000" font "fonts/Segoe Print.ttf"
+    vbox:
+        pos(0.64,0.42)
+        text dic_girl_vaginal_tightness[all_girls_list[girl_index]["vaginal_tightness"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        text dic_girl_anal_tightness[all_girls_list[girl_index]["anal_tightness"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        if all_girls_list[girl_index]["clitoris_pierced"]:
+            text "Clitoris pierced" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        else:
+            text "Clitoris not pierced" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        text dic_girl_vagina_modification[all_girls_list[girl_index]["vagina_modification"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        text dic_girl_brand[all_girls_list[girl_index]["brand"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+    vbox:
+        pos(0.215,0.62)
+        text "Beauty = Natural Beauty + Neoplasty - (No Scars + Bruises + Physique)" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+        text "Style = Clothes + Natural Beauty + Tangled Hair + Scent, Nails & Pelage + Natural Grace - Hygiene" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+        text "Exoticism = Natural Exoticism + No Tattoos + No Piercings + Clothes" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
 screen slave_equipment_menu():
     add "bg/page_blank.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")

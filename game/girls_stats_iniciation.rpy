@@ -738,3 +738,65 @@ define dic_girl_age_text ={
     1: "Loli",
     2: "Madure"
 }
+
+define dic_girl_boobs_text ={
+    "young": [
+        "Flat chested",
+        "Small perky boobs",
+        "Round, handful-sized breasts",
+        "Big[boobs1]",
+        "Huge[boobs2]",
+        "Massive [boobs3]",
+        "Stupendous [boobs3]",
+    ],
+    "loli": [
+        "Flat chested",
+        "Budding boobies",
+        "Very large breasts",
+        "{i}Enormous{/i}, womanly breasts",
+    ],
+    "mature": [
+        "Flat chested",
+        "Small drooping breasts",
+        "Soft handful-sized breasts",
+        "Big[boobs4]",
+        "Huge[boobs5]",
+        "Enormous [boobs6]",
+        "Colossal [boobs6]",
+    ],
+}
+define dic_girl_breast_modification ={
+    0:"No Breast Modifications",
+    1:"Breast Size Modified",
+    2:"Vagina Breasts",
+    3:"Nipple-Mouths",
+}
+define dic_girl_vaginal_tightness ={
+    0:"Virgin",
+    1:"Restored Hymen",
+    2:"Firm Vagina",
+    3:"Relaxed Vagina",
+}
+define dic_girl_anal_tightness ={
+    0:"Tight Anus",
+    1:"Stiff Anus",
+    2:"Firm Anus",
+    3:"Developed Anus",
+    4:"Relaxed Anus",
+    5:"Loose Anus",
+}
+define dic_girl_vagina_modification ={
+    0:"No Vaginal Modifications",
+    1:"Vaginal Ball Implants",
+    2:"Lubricative Glands+",
+    3:"Vagina Tongue",
+    4:"Egg Birthing",
+}
+define dic_girl_brand ={
+    0:"No Brand",
+    1:"My brand",
+    2:"Someone else's brand",
+    3:"Guild brand",
+    4:"Special quest",
+    5:"xd",
+}

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/dictionary.rpy", line 344: expected statement.
-    }
-    ^
+File "game/home.rpy", line 487: keyword argument 'anchor' is incompatible with 'xalign'.
+    text "Beauty = Natural Beauty + Neoplasty - (No Scars + Bruises + Physique)" xalign 0.5 size 16 color "#000000" font "fonts/Segoe Print.ttf" anchor (0.5,0.5)
+                                                                                                                                                       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 22 22:03:57 2025
+Fri May 23 04:00:58 2025

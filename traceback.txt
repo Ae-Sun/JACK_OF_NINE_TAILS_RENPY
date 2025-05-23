@@ -1,25 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/home.rpy", line 91, in script
-    call screen slave_rules_menu()
+  File "game/home.rpy", line 104, in script
+    call screen slave_anatomy_menu()
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 436, in execute
-    screen slave_rules_menu():
-  File "game/home.rpy", line 436, in execute
-    screen slave_rules_menu():
-  File "game/home.rpy", line 441, in execute
-    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
-  File "game/home.rpy", line 441, in <module>
-    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
-KeyError: 'enforce_rules'
+  File "game/home.rpy", line 434, in execute
+    screen slave_anatomy_menu():
+  File "game/home.rpy", line 434, in execute
+    screen slave_anatomy_menu():
+  File "game/home.rpy", line 475, in execute
+    vbox:
+  File "game/home.rpy", line 484, in execute
+    text dic_girl_brand[all_girls_list[girl_index]["brand"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+  File "game/home.rpy", line 484, in <module>
+    text dic_girl_brand[all_girls_list[girl_index]["brand"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+KeyError: 'brand'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/home.rpy", line 91, in script
-    call screen slave_rules_menu()
+  File "game/home.rpy", line 104, in script
+    call screen slave_anatomy_menu()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
@@ -50,17 +52,19 @@ Full traceback:
     self.update()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/home.rpy", line 436, in execute
-    screen slave_rules_menu():
-  File "game/home.rpy", line 436, in execute
-    screen slave_rules_menu():
-  File "game/home.rpy", line 441, in execute
-    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
-  File "game/home.rpy", line 441, in <module>
-    text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
-KeyError: 'enforce_rules'
+  File "game/home.rpy", line 434, in execute
+    screen slave_anatomy_menu():
+  File "game/home.rpy", line 434, in execute
+    screen slave_anatomy_menu():
+  File "game/home.rpy", line 475, in execute
+    vbox:
+  File "game/home.rpy", line 484, in execute
+    text dic_girl_brand[all_girls_list[girl_index]["brand"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+  File "game/home.rpy", line 484, in <module>
+    text dic_girl_brand[all_girls_list[girl_index]["brand"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+KeyError: 'brand'
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Thu May 22 23:15:51 2025
+Fri May 23 03:56:36 2025
