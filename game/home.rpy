@@ -24,6 +24,7 @@ default current_menu = 0
 default mood_value = 0
 default number_of_rules = 0
 default day_tracker = 1
+default is_auspex_active = False
 default boobs1 =" marshmallowy tits"
 default boobs2 =" motherly breasts"
 default boobs3 =" empty breast-sacks"
@@ -484,12 +485,24 @@ screen slave_anatomy_menu():
         text dic_girl_brand[all_girls_list[girl_index]["brand"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
     vbox:
         pos(0.215,0.62)
-        text "Beauty = Natural Beauty + Neoplasty - (No Scars + Bruises + Physique)" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
-        text "Style = Clothes + Natural Beauty + Tangled Hair + Scent, Nails & Pelage + Natural Grace - Hygiene" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
-        text "Exoticism = Natural Exoticism + No Tattoos + No Piercings + Clothes" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+        text "Beauty{color=#0000D8} ={/color} {color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["natural_beauty"]] + "} Natural Beauty{/color}{color=#0000D8} +{/color} Neoplasty{color=#0000D8} - ({/color} No Scars{color=#0000D8} +{/color} Bruises{color=#0000D8} +{/color} Physique{color=#0000D8}){/color}" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+        text "Style {color=#0000D8}={/color} Clothes{color=#0000D8} +{/color} Natural Beauty{color=#0000D8} +{/color} Tangled Hair{color=#0000D8} +{/color} Scent, Nails & Pelage{color=#0000D8} +{/color} Natural Grace{color=#0000D8} -{/color} Hygiene" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+        text "Exoticism {color=#0000D8}={/color} Natural Exoticism{color=#0000D8} +{/color} No Tattoos{color=#0000D8} +{/color} No Piercings{color=#0000D8} +{/color} Clothes" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf"
+        add "spacer" size(0,2)
+        if is_auspex_active:
+            text "Aura {color=#0000D8}={/color} No Devotion {color=#0000D8}-{/color} (No Despair {color=#0000D8}+{/color} Not Spoiled)" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+            text "Charm    {color=#0000D8}={/color} Unknown{color=#0000D8} +{/color} Unknown{color=#0000D8} +{/color} Style{color=#0000D8} +{/color} Exoticism{color=#0000D8} +{/color} Aura{color=#0000D8} +{/color} Weight{color=#0000D8} -{/color} No Scars{color=#0000D8} -{/color} No Bruises" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+        else:
+            text "You must cast Auspex to view the aura and charm rating of your slave" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+
 screen slave_equipment_menu():
     add "bg/page_blank.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+    vbox:
+        pos(0.24,0.068)
+        text "{u}SLAVE EQUIPMENT{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf"       
+         
+
 screen slave_aura_menu():
     add "page_aura.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")

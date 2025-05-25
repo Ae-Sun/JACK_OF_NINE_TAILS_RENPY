@@ -340,3 +340,866 @@ define dic_improvement_rooms ={
         }
     }
 }
+define dic_equipment_armor = {
+    "Light Armor": {
+        "No armor": {
+            "description": "No armor",
+            "price": 0,
+            "weight": 0,
+            "speed": 0,
+            "fisical_protection": 0,
+            "magic_protection": 0,
+            "status_poison_protection": 0,
+            "status_bleeding_protection": 0,
+            "status_stun_protection": 0,
+            "status_confusion_protection": 0,
+            "status_injured_protection": 0,
+            "status_sleep_protection": 0,
+            "status_pain_protection": 0
+        },
+        "Aramid Suit": {
+            "description": "  This tight suit is made of aramid fibers, which are a lot more durable than steel. The armor is fastened to the body by means of numerous straps and velcro.",
+            "price": 100,
+            "weight": 1,
+            "speed": -1,
+            "durability": 100,
+            "fisical_protection": 1,
+            "magic_protection": 1,
+            "status_poison_protection": 2,
+            "status_bleeding_protection": 0,
+            "status_stun_protection": 1,
+            "status_confusion_protection": 1,
+            "status_injured_protection": 0,
+            "status_sleep_protection": 2,
+            "status_pain_protection": 1
+        },
+        "Leather Armor": {
+            "description": "  This thick leather armor is made from a megalodon's chemically treated skin. With little weight, it's much better that Aramid Suit and unlike metal armor, can reliably protect against fire, cold and electricity, but has a lot less durability.",
+            "price": 200,
+            "weight": 1,
+            "speed": 0,
+            "durability": 30,
+            "fisical_protection": 2,
+            "magic_protection": 3,
+            "status_poison_protection": 3,
+            "status_bleeding_protection": 1,
+            "status_stun_protection": 1,
+            "status_confusion_protection": 3,
+            "status_injureded_protection": 2,
+            "status_sleep_protection": 1,
+            "status_pain_protection": 2
+        },
+        "Adaptive Nanoweave Suit": {
+            "description": "  An elite armor made from nano-fibers that adapt in real time to damage types. Light, durable, and provides balanced protection. Very powerful armor, but also expensive\n +3 to all combat defense stats. Weight: 2 (reduces stamina) Speed: +1 (increase initiative, action speed, very importat stat)",
+            "price": 800,
+            "weight": 2,
+            "speed": 1,
+            "durability": 80,
+            "fisical_protection": 3,
+            "magic_protection": 3,
+            "status_poison_protection": 2,
+            "status_bleeding_protection": 4,
+            "status_stun_protection": 2,
+            "status_confusion_protection": 3,
+            "status_injured_protection": 2,
+            "status_sleep_protection": 2,
+            "status_pain_protection": 3
+        },
+        "Phantom Aegis Suit": {
+            "description": "Speed, Speed and Speed! The best defense is a good offense, very fragile armor.\n -1 to all combat defense stats. Speed: 7 (increase initiative, action speed, very importat stat)",
+            "price": 500,
+            "weight": 0,
+            "speed": 7,
+            "durability": 10,
+            "fisical_protection": -1,
+            "magic_protection": -1,
+            "status_poison_protection": -1,
+            "status_bleeding_protection": -1,
+            "status_stun_protection": -1,
+            "status_confusion_protection": -1,
+            "status_injured_protection": -1,
+            "status_sleep_protection": -1,
+            "status_pain_protection": -1
+        }
+    },
+    "Medium Armor": {
+        "Elven Chainmail": { 
+            "description": "   This chainmail with a padded overlay is woven of fine titanium rings that provides it with extraordinary ease and flexibility of movement together with very considerable durability.",
+            "price": 250,
+            "weight": 3,
+            "speed": -2,
+            "durability": 150,
+            "fisical_protection": 2,
+            "magic_protection": 2,
+            "status_poison_protection": 2,
+            "status_bleeding_protection": 2,
+            "status_stun_protection": 1,
+            "status_confusion_protection": 2,
+            "status_injured_protection": 2,
+            "status_sleep_protection": 3,
+            "status_pain_protection": 1
+        },
+        "Combined Armor": {
+            "description": "  The basis of this armor is a dampening aramid lining, closed from the top with curly titanium plates where special protection is needed and with mail web in places where maximum flexibility is needed. This design provides an optimal balance of weight, protection and mobility with very considerable durability.",
+            "price": 800,
+            "weight": 3,
+            "speed": -3,
+            "durability": 150,
+            "fisical_protection": 4,
+            "magic_protection": 4,
+            "status_poison_protection": 5,
+            "status_bleeding_protection": 3,
+            "status_stun_protection": 4,
+            "status_confusion_protection": 3,
+            "status_injured_protection": 4,
+            "status_sleep_protection": 2,
+            "status_pain_protection": 2
+        },
+        "Adaptive armor": {
+            "description": "  This armor is made from a special material that adapts to the user's body. Has a special combat ability that allow to swap physical and magic protection stats, also very durable.",
+            "price": 700,
+            "weight": 4,
+            "speed": -2,
+            "durability": 150,
+            "fisical_protection": 6,
+            "magic_protection": 1,
+            "status_poison_protection": 4,
+            "status_bleeding_protection": 3,
+            "status_stun_protection": 3,
+            "status_confusion_protection": 2,
+            "status_injured_protection": 3,
+            "status_sleep_protection": 2,
+            "status_pain_protection": 3
+        },
+        "Semi-perfect armor": {
+            "description": "  This armor is made from a special material that adapts to the user's body. Has a special combat ability that allow to swap physical and magic protection stats, also extremely durable.",
+            "price": 1000,
+            "weight": 4,
+            "speed": -4,
+            "durability": 200,
+            "fisical_protection": 6,
+            "magic_protection": 6,
+            "status_poison_protection": -1,
+            "status_bleeding_protection": -2,
+            "status_stun_protection": -2,
+            "status_confusion_protection": -2,
+            "status_injured_protection": -2,
+            "status_sleep_protection": -3,
+            "status_pain_protection": -2
+        }
+    },
+    "Heavy Armor": {
+        "Iron Armor": {
+            "description": "  Cheap, extremely durable and good protection, what more you can ask?",
+            "price": 300,
+            "weight": 5,
+            "speed": -5,
+            "durability": 200,
+            "fisical_protection": 4,
+            "magic_protection": 4,
+            "status_poison_protection": 3,
+            "status_bleeding_protection": 5,
+            "status_stun_protection": 4,
+            "status_confusion_protection": 3,
+            "status_injured_protection": 4,
+            "status_sleep_protection": 3,
+            "status_pain_protection": 4
+        },
+        "Obsidian Bulwark": {
+            "description": "  Crafted from volcanic alloys and obsidian plating. Heavy but resistant to both magic and elements, also extremly durable +.",
+            "price": 900,
+            "weight": 6,
+            "speed": -6,
+            "durability": 300,
+            "fisical_protection": 6,
+            "magic_protection": 6,
+            "status_poison_protection": 5,
+            "status_bleeding_protection": 6,
+            "status_stun_protection": 7,
+            "status_confusion_protection": 6,
+            "status_injured_protection": 6,
+            "status_sleep_protection": 5,
+            "status_pain_protection": 5
+        },
+        "Gothic plate": {
+            "description": "  This full knight armor is made of sintered armored metal-ceramic. It provides excellent protection against all kinds of blades, but the high thermal and electrical conductivity create vulnerability for many magical attacks, also extremely durable +.",
+            "price": 1500,
+            "weight": 5,
+            "speed": -5,
+            "durability": 300,
+            "fisical_protection": 8,
+            "magic_protection": 2,
+            "status_poison_protection": 8,
+            "status_bleeding_protection": 7,
+            "status_stun_protection": 8,
+            "status_confusion_protection": 8,
+            "status_injured_protection": 9,
+            "status_sleep_protection": 8,
+            "status_pain_protection": 6
+        },
+        "Mithril Mail": {
+            "description": "  The strongest armor in the Eternal Roma, the only defense that can protect against all kinds of attacks only if weight and speed are not a problem, also extremely durable +.",
+            "price": 3000,
+            "weight": 7,
+            "speed": -7,
+            "durability": 300,
+            "fisical_protection": 10,
+            "magic_protection": 10,
+            "status_poison_protection": 10,
+            "status_bleeding_protection": 10,
+            "status_stun_protection": 10,
+            "status_confusion_protection": 10,
+            "status_injured_protection": 10,
+            "status_sleep_protection": 10,
+            "status_pain_protection": 10
+        }
+    }
+}
+
+define dic_equipment_weapon = {
+    "One-Handed Weapon":{
+        "Baton":{
+            "description":"  This is a baton made of tough polymer, similar to rubber, but more resistant to frost. Police from technologically advanced worlds use these.",
+            "price":25,
+            "attack":{
+                "quick_jab":{                
+                    "stamina_cost":1,
+                    "attack_speed":-1,
+                    "attack_damage":10,
+                    "attack_penetration":1,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 1
+                },
+                "strong_jab":{
+                    "stamina_cost":3,
+                    "attack_speed":-2,
+                    "attack_damage":20,
+                    "attack_penetration":5,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 3
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Rapier":{
+            "description":"  With a long, narrow, double-edged blade and a sharp tip, this weapon is designed for stabbing and cutting. High damage, good speed but low durability and penetration.",
+            "price":50,
+            "attack":{
+                "Thrusting Lunge":{
+                    "stamina_cost":5,
+                    "attack_speed":-1,
+                    "attack_damage":36,
+                    "attack_penetration":0,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 2
+                },
+                "Fleche":{
+                    "stamina_cost":8,
+                    "attack_speed":-2,
+                    "attack_damage":60,
+                    "attack_penetration":0,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 3
+                }
+            },
+            "weapon_durability":30,
+        },
+        "Koncerz":{
+            "description":"  This heavy thrusting sword has a long, thin blade of faceted powder cermet. moderate damage, good penetration, good durability but bad speed and inefficient stamina usage",
+            "price":50,
+            "attack":{
+                "Armor-Piercing Thrust":{
+                    "stamina_cost":10,
+                    "attack_speed":-3,
+                    "attack_damage":36,
+                    "attack_penetration":24,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 5,
+                    "bleeding":10,
+                },
+                "Impaling Drive":{
+                    "stamina_cost":15,
+                    "attack_speed":-4,
+                    "attack_damage":50,
+                    "attack_penetration":30,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 7,
+                    "bleeding":55,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Whip":{
+            "description":"  This is a long whip woven from durable leather and horsehair. This design is made especially for the punishment of slaves.",
+            "price":50,
+            "attack":{
+                "Whipping Strike":{
+                    "stamina_cost":2,
+                    "attack_speed":-1,
+                    "attack_damage":1,
+                    "attack_penetration":1,
+                    "attack_range":1,
+                    "attack_type":"physical",
+                    "durability_cost": 2,
+                    "pain":130,
+                },
+                "Lashing Strike":{
+                    "stamina_cost":3,
+                    "attack_speed":-1,
+                    "attack_damage":1,
+                    "attack_penetration":1,
+                    "attack_range":1,
+                    "attack_type":"physical",
+                    "durability_cost": 3,
+                    "bleeding":30,
+                    "pain":50,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Epee":{
+            "description":"  This thrusting weapon has a long, straight, triangular blade of branded steel, tapering to a sharp point. It has an advance guard to protect the hand. Very good stamina cost efficient",
+            "price":50,
+            "attack":{
+                "Straight Thrust":{
+                    "stamina_cost":1,
+                    "attack_speed":0,
+                    "attack_damage":24,
+                    "attack_penetration":3,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 2,
+                    "bleeding":30,
+                },
+                "Weak point hit":{
+                    "stamina_cost":2,
+                    "attack_speed":0,
+                    "attack_damage":16,
+                    "attack_penetration":5,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 3,
+                    "stun":70,
+                    "bleeding":30,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Gladius":{
+            "description":"  This short sword is a favorite weapon of gladiators and gladiatrii. It is well suited for fighting in close formation, or in confined spaces. Good damage, good durability can cause bleeding and stun",
+            "price":50,
+            "attack":{
+                "Pommel Bash":{
+                    "stamina_cost":3,
+                    "attack_speed":-2,
+                    "attack_damage":12,
+                    "attack_penetration":2,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 2,
+                    "stun":40,
+                },
+                "Cross-Slash":{
+                    "stamina_cost":5,
+                    "attack_speed":-1,
+                    "attack_damage":8,
+                    "attack_penetration":2,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 3,
+                    "bleeding":90,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "katana":{
+            "description":"  This is a long, thin, double-edged blade with a sharp tip. It is used for cutting and stabbing. Good damage, good penetration, poor durability but bad speed and inefficient stamina usage",
+            "price":100,
+            "attack":{
+                "Slash":{
+                    "stamina_cost":10,
+                    "attack_speed":-2,
+                    "attack_damage":40,
+                    "attack_penetration":12,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 5,
+                    "bleeding":50,
+                    "injured":10,
+                },
+                "Stab":{
+                    "stamina_cost":15,
+                    "attack_speed":-3,
+                    "attack_damage":60,
+                    "attack_penetration":18,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 7,
+                    "bleeding":100,
+                    "injured":10,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Blowgun Darts":{
+            "description":"  This weapon doesn't do a lot damage but cause many bad status effects (20 Darts included, we don't sell darts separated)",
+            "price":100,
+            "attack":{
+                "Venom Dart":{ 
+                    "stamina_cost":2,
+                    "attack_speed":4,
+                    "attack_damage":1,
+                    "attack_penetration":1,
+                    "attack_range":2,
+                    "attack_type":"physical",
+                    "durability_cost": 5,
+                    "poison":10,
+                    "bleeding":10,
+                    "stun":10,
+                    "confusion":10,
+                    "injured":10,
+                    "sleep":10,
+                    "pain":10,
+                },
+                "Powerful Dart":{ 
+                    "stamina_cost":3,
+                    "attack_speed":3,
+                    "attack_damage":5,
+                    "attack_penetration":2,
+                    "attack_range":2,
+                    "attack_type":"physical",
+                    "durability_cost": 5,
+                    "poison":60,
+                    "confusion":60,
+                    "sleep":60
+                },
+            },
+            "weapon_durability":100,
+        },
+        "shuriken":{
+            "description":"  This is a small, sharp throwing weapon. It is used for throwing at close range. 10 shuriken included,",
+            "price":100,
+            "attack":{
+                "Throw":{
+                    "stamina_cost":1,
+                    "attack_speed":0,
+                    "attack_damage":24,
+                    "attack_penetration":15,
+                    "attack_range":2,
+                    "attack_type":"physical",
+                    "durability_cost": 10,
+                    "bleeding":10,
+                    "injured":10,
+                },
+                "Multi-Throw":{ 
+                    "stamina_cost":3,
+                    "attack_speed":0,
+                    "attack_damage":70,
+                    "attack_penetration":45,
+                    "attack_range":2,
+                    "attack_type":"physical",
+                    "durability_cost": 50,
+                    "bleeding":80,
+                    "injured":40,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Buckler":{
+            "description":"  This is a small shield that can be used to block attacks. It is good for defense and preserve stamina.",
+            "price":20,
+            "defense":{
+                "Block":{
+                    "stamina_cost":1,
+                    "defense_a":30,
+                    "defense_b":0.6,
+                    "defense_range":0,
+                    "defense_type":"physical",
+                    "durability_cost": 5,
+                }
+            
+            },
+            "weapon_durability":100,
+        },
+        "Adarga":{
+            "description":"  This is a large shield that can be used to block attacks. It is good for defense and preserve stamina.",
+            "price":50,
+            "defense":{
+                "Block":{
+                    "stamina_cost":5,
+                    "defense_a":80,
+                    "defense_b":0.8,
+                    "defense_range":0,
+                    "defense_type":"physical",
+                    "durability_cost": 5,
+                }
+            },
+            "weapon_durability":200,
+        }
+    },
+    "Two-Handed Weapon":{
+        "Huge mace":{
+            "description":"  This is a heavy weapon with a large, solid head. It is used for crushing and knocking out enemies. Good damage, good penetration, good durability but bad speed and inefficient stamina usage",
+            "price":200,
+            "attack":{
+                "Crushing Strike":{
+                    "stamina_cost":24,
+                    "attack_speed":-6,
+                    "attack_damage":72,
+                    "attack_penetration":50,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 5,
+                    "bleeding":20,
+                    "stun":20,
+                },
+                "Deadly Slam":{
+                    "stamina_cost":40,
+                    "attack_speed":-7,
+                    "attack_damage":120,
+                    "attack_penetration":70,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 7,
+                    "bleeding":25,
+                    "stun":25,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Baseball Bat":{
+            "description":"  In fact, this thing is designed for games, but it works just as well as clubbing heads and limbs",
+            "price":200,
+            "attack":{
+                "Swing":{
+                    "stamina_cost":18,
+                    "attack_speed":-3,
+                    "attack_damage":90,
+                    "attack_penetration":10,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 5,
+                    "bleeding":25,
+                    "stun":25,
+                    "confusion":100,
+                },
+                "Hard Hit":{
+                    "stamina_cost":25,
+                    "attack_speed":-4,
+                    "attack_damage":120,
+                    "attack_penetration":25,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 7,
+                    "confusion":130,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Gattle Prod":{
+            "description":"  A shocker device on a long stick. Cause magical damage. Being hit with it feels like an electric shock, although in fact it is made with stinging glands from a Fog field. It does not cause lasting damage.",
+            "price":200,
+            "attack":{
+                "Shock":{
+                    "stamina_cost":16,
+                    "attack_speed":-5,
+                    "attack_damage":70,
+                    "attack_penetration":20,
+                    "attack_range":0,
+                    "attack_type":"magical",
+                    "durability_cost": 2,
+                    "pain":100,
+                    "stun":100,
+                },
+                "Hiper-shock":{
+                    "stamina_cost":40,
+                    "attack_speed":-6,
+                    "attack_damage":150,
+                    "attack_penetration":12,
+                    "attack_range":0,
+                    "attack_type":"magical",
+                    "durability_cost": 5,
+                    "pain":100,
+                    "stun":100,
+                }
+            },
+            "weapon_durability":100,
+        },
+        "Naginata":{
+            "description":" A two-handed sword with a long, thin, wavy blade. Such a weapon leaves terribles scars. And it looks impressive...",
+            "price":200,
+            "attack":{
+                "Slash":{
+                    "stamina_cost":20,
+                    "attack_speed":-4,
+                    "attack_damage":100,
+                    "attack_penetration":30,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 3,
+                    "bleeding":20,
+                    "stun":20,
+                    "injured":100,
+                },
+                "Cut":{
+                    "stamina_cost":10,
+                    "attack_speed":-5,
+                    "attack_damage":80,
+                    "attack_penetration":40,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 2,
+                    "bleeding":20,
+                    "injured":180,
+                }
+            },
+            "weapon_durability":100,
+        }
+    },
+}
+
+
+
+define dic_equipment_amulet ={
+    "amulet":{
+        "magic_protection":{
+            "description":"  +1 magic protection",
+            "price":100,
+            "magic_protection":1,
+            },
+        "physical_protection":{
+            "description":"  +1 physical protection",
+            "price":100,
+            "physical_protection":1,
+            },
+        "stamina_restore":{
+            "description":"  gain 2 stamina each turn",
+            "price":100,
+            "stamina_restore":2,
+            },
+        "penetration":{
+            "description":"  + 5 penetration",
+            "price":100,
+            "penetration":5,
+            },
+        "Lucky":{
+            "description":"  Restore 1 healt point after receive fatal damage, broke after use",
+            "price":100,
+            "bleeding":10,
+            },
+        "speed":{
+            "description":"  + 1 speed",
+            "price":100,
+            "speed":1,
+            }
+        }
+    }
+define dic_equipment_rings = {
+    "bleeding_ring":{
+        "description":"  attacks cause bleeding +5",
+        "price":50,
+        "bleeding":5
+    },
+    "stun_ring":{
+        "description":"  attacks cause stun +5",
+        "price":50,
+        "stun":5
+    },
+    "confusion_ring":{
+        "description":"  attacks cause confusion +5",
+        "price":50,
+        "confusion":5
+    },
+    "injured_ring":{
+        "description":"  attacks cause injured +5",
+        "price":50,
+        "charm":5
+    },  
+    "sleep_ring":{
+        "description":"  attacks cause sleep +5",
+        "price":50,
+        "sleep":5
+    },  
+    "pain_ring":{
+        "description":"  attacks cause pain +5",
+        "price":50,
+        "pain":5
+    },
+}
+    
+    
+    
+    
+define dic_health_points ={
+    0:20,
+    1:40,
+    2:60,
+    3:80,
+    4:100,
+    5:120,
+    6:140,
+    7:160,
+    8:180,
+    9:200,
+    10:220,
+    11:240,
+    12:260,
+    13:280,
+    14:300,
+    15:320,
+    16:350,
+    17:400,
+    18:500
+}
+# Health_points = girl endurance *2 + gladiator skill - wounds
+# stamina = gladiator skill*2 + girl endurance - girl physical*2
+# willpower = nature *2 + gladiator skill
+# willpower damage = health damage - willpower mitigation
+# willpower mitigation = 2*Devotion + gladiator skill
+# speed = 5 + pony skill - wounds (minimun 1) + speed from armor
+# damage = weapon damage - damage reduction (minimun 1)
+# status protection = armor protection + intelligence
+# status chance = (status effect chance - status protection) (minimun 1)/status protection )
+# status poison, deal 5% of stamina points per turn. Can Stack
+# status bleeding, deal 5% of health points per turn and fix 3 willpower. Can Stack
+# status stun, cannot act for 1 turn. Cannot Stack
+# status confusion, doble the next damage received. Cannot Stack
+# status injured, reduce speed to half for 1 turn. Cannot Stack
+# status sleep, cannot act for 3 turn, restore 20% of health and stamina points per turn. Can only be affected once by battle.
+# status pain, deal 5 fix willpower damage per turn. Can Stack
+# making girl go to battle will cause despair if devotion are not high enoght 
+# 16 17 and 18 have a higher increase beacause is a lot harder to reach
+define dic_willpower_mitigation ={
+    0:3,
+    1:6,
+    2:9,
+    3:12,
+    4:15,
+    5:18,
+    6:21,
+    7:24,
+    8:27,
+    9:30,
+    10:33,
+    11:36,
+    12:39,
+    13:42,
+    14:45,
+    15:48,
+    16:55,
+    17:70,
+    18:100,
+}
+define dic_status_protection ={
+    0:1, # cannot divide by 0
+    1:10,
+    2:20,
+    3:30,
+    4:40,
+    5:50,
+    6:60,
+    7:70,
+    8:80,
+    9:90,
+    10:100,
+    11:110,
+    12:120,
+    13:130,
+    14:140,
+    15:150,
+    16:200,
+}
+
+define dic_damage_reductionA ={
+    0:0,
+    1:1,
+    2:2,
+    3:3,
+    4:4,
+    5:5,
+    6:6,
+    7:7,
+    8:8,
+    9:9,
+    10:10,
+    11:11,
+}
+define dic_damage_reductionB ={
+    0:0.00,
+    1:0.08,
+    2:0.16,
+    3:0.24,
+    4:0.32,
+    5:0.40,
+    6:0.48,
+    7:0.56,
+    8:0.64,
+    9:0.72,
+    10:0.80,
+    11:0.88,
+}
+
+define dic_willpower ={
+    0:5,
+    1:10,
+    2:15,
+    3:20,
+    4:25,
+    5:30,
+    6:35,
+    7:40,
+    8:45,
+    9:50,
+    10:55,
+    11:60,
+    12:65,
+    13:70,
+    14:75,
+    15:80,
+    16:90,
+    17:115,
+    18:150,
+}
+define dic_stamina ={
+    0:10,
+    1:20,
+    2:30,
+    3:40,
+    4:50,
+    5:60,
+    6:70,
+    7:80,
+    8:90,
+    9:100,
+    10:110,
+    11:120,
+    12:130,
+    13:140,
+    14:150,
+    15:160,
+    16:170,
+    17:180,
+    18:200,
+    19:240,
+    20:300,
+}
+
+
+define weight_penalty ={
+    0:2,
+    1:4,
+    2:6,
+    3:8,
+    4:10,
+    5:12,
+    6:14,
+    7:16
+}
+# lose that extra amount of stamina for every action
+

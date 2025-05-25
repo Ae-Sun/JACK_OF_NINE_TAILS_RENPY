@@ -115,40 +115,6 @@ screen choose_inicial_girl_screen():
     text "Choose your slave" pos(0.315, 0.04) anchor (0.5, 0.5) size 36 color "#ffff00" font "fonts/victoriana.ttf"
     text demo_girl_text[demo_girl_text_index] pos (0.02, 0.78) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
     add inicial_girl pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 535
-    
-    python:
-
-        all_girls_list[girl_index].setdefault("aura",{
-        "fear": 0,
-        "despair": 0,
-        "awareness": 0,
-        "taming": 0,
-        "habit": 0,
-        "spoil": 0,
-        "devotion": 0,
-        "obedience_bonus":0
-        })
-        all_girls_list[girl_index].setdefault("attributes", {})
-        all_girls_list[girl_index].setdefault("skills", {})
-        all_girls_list[girl_index].setdefault("traits", {})
-        all_girls_list[girl_index]["traits"].setdefault("traits_open", {})
-        all_girls_list[girl_index]["traits"]["traits_open"].setdefault("traits_always", {})
-        all_girls_list[girl_index]["traits"]["traits_open"].setdefault("traits_especial", {})
-        all_girls_list[girl_index]["traits"].setdefault("traits_hidden", {})
-        all_girls_list[girl_index]["traits"]["traits_hidden"].setdefault("traits_skills(1/8)", {})
-        all_girls_list[girl_index]["traits"]["traits_hidden"].setdefault("traits_sexual(1/10)", {})       
-        all_girls_list[girl_index]["traits"]["traits_hidden"].setdefault("traits_miscellaneous(1/12)", {})       
-        all_girls_list[girl_index]["traits"]["traits_hidden"].setdefault("traits_aura(1/16)", {})     
-        all_girls_list[girl_index]["traits"]["traits_hidden"].setdefault("traits_attributes(1/20)", {})
-        all_girls_list[girl_index].setdefault("sex_experience", {})
-        all_girls_list[girl_index]["sex_experience"].setdefault("petting", {})
-        all_girls_list[girl_index]["sex_experience"].setdefault("oral_pleasure", {})
-        all_girls_list[girl_index]["sex_experience"].setdefault("penetration", {})
-        all_girls_list[girl_index]["sex_experience"].setdefault("group_sex", {})
-        all_girls_list[girl_index]["sex_experience"].setdefault("demostration", {})
-        all_girls_list[girl_index]["sex_experience"].setdefault("fetishism", {})
-        all_girls_list[girl_index]["sex_experience"].setdefault("xenophily", {})
-    
 
     vbox:
         xpos 850
@@ -156,41 +122,15 @@ screen choose_inicial_girl_screen():
         spacing 2
         text "{u}ATTRIBUTES{/u}" font "fonts/Segoe Print.ttf" color "000000" size 16
         for key, values in dic_slave_attributes.items():
-            if key in all_girls_list[girl_index]["attributes"]:
-                if key != "physical":
-                    textbutton values[all_girls_list[girl_index]["attributes"][key]]:
-                        style "attribute_custom_slave" + str(all_girls_list[girl_index]["attributes"][key])
-                        action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),Jump("choose_inicial_girl")
-                else:
-                    textbutton values[all_girls_list[girl_index]["attributes"][key]]:
-                        style "attribute_custom_physical" + str(all_girls_list[girl_index]["attributes"][key])
-                        action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",True),Jump("choose_inicial_girl")                    
+            if key != "physical":
+                textbutton values[all_girls_list[girl_index]["attributes"][key]]:
+                    style "attribute_custom_slave" + str(all_girls_list[girl_index]["attributes"][key])
+                    action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),Jump("choose_inicial_girl")
             else:
-                if key in ["exoticism", "style", "fame"]:                    
-                    python:
-                        roll = 0
-                        all_girls_list[girl_index]["attributes"].setdefault(key, roll)
-                    if key != "physical":
-                        textbutton values[roll]:
-                            style "attribute_custom_slave" + str(all_girls_list[girl_index]["attributes"][key])
-                            action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),Jump("choose_inicial_girl")
-                    else:
-                        textbutton values[all_girls_list[girl_index]["attributes"][key]]:
-                            style "attribute_custom_physical" + str(all_girls_list[girl_index]["attributes"][key])
-                            action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",True),Jump("choose_inicial_girl")     
-                else:
-                    python:
-                        roll = random.randint(0, 5)
-                        all_girls_list[girl_index]["attributes"].setdefault(key, roll)
-                    if key != "physical":
-                        textbutton values[roll]:
-                            style "attribute_custom_slave" + str(all_girls_list[girl_index]["attributes"][key])
-                            action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),Jump("choose_inicial_girl")
-                    else:
-                        textbutton values[all_girls_list[girl_index]["attributes"][key]]:
-                            style "attribute_custom_physical" + str(all_girls_list[girl_index]["attributes"][key])
-                            action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("attributeisphysical",True),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),Jump("choose_inicial_girl")                    
-              
+                textbutton values[all_girls_list[girl_index]["attributes"][key]]:
+                    style "attribute_custom_physical" + str(all_girls_list[girl_index]["attributes"][key])
+                    action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",True),Jump("choose_inicial_girl")                    
+ 
 
 
         add "spacer" size(0,20) 
@@ -315,7 +255,7 @@ screen choose_inicial_girl_screen():
                 textbutton label_text:
                     style style_used
                     action SetVariable("attribute_track_index", key),SetVariable("dictionary_track_index", val),SetVariable("dictionary_name", dic_traits_attributes_description),SetVariable("customboxcheck", True),Jump("choose_inicial_girl")
-        
+
 
     vbox:
         xalign 0.655
@@ -587,6 +527,28 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("vaginal_tightness",0)
         all_girls_list[girl_index].setdefault("anal_tightness",0)
         all_girls_list[girl_index].setdefault("brand",2)
+        all_girls_list[girl_index].setdefault("equipment",{})
+        all_girls_list[girl_index]["equipment"].setdefault("armour",0)
+        all_girls_list[girl_index]["equipment"].setdefault("weapon",0)
+        all_girls_list[girl_index]["equipment"].setdefault("shield",0)
+        all_girls_list[girl_index]["equipment"].setdefault("amulet",0)
+        all_girls_list[girl_index]["equipment"].setdefault("ring",0)
+        all_girls_list[girl_index]["equipment"].setdefault("potion",0)
+        all_girls_list[girl_index]["equipment"].setdefault("scroll",0)
+        all_girls_list[girl_index]["equipment"].setdefault("clothes",0)
+        all_girls_list[girl_index]["equipment"].setdefault("headgear",0)
+        all_girls_list[girl_index]["equipment"].setdefault("neck",0)
+        all_girls_list[girl_index]["equipment"].setdefault("hands",0)
+        all_girls_list[girl_index]["equipment"].setdefault("feet",0)
+        all_girls_list[girl_index]["equipment"].setdefault("ring1",0)
+        all_girls_list[girl_index]["equipment"].setdefault("ring2",0)
+        all_girls_list[girl_index]["equipment"].setdefault("earrings",0)
+        all_girls_list[girl_index]["equipment"].setdefault("tongue",0)
+        all_girls_list[girl_index]["equipment"].setdefault("nipples",0)
+        all_girls_list[girl_index]["equipment"].setdefault("clitoris",0)
+        all_girls_list[girl_index]["equipment"].setdefault("navel",0)
+        all_girls_list[girl_index]["equipment"].setdefault("anus",0)
+        
         all_girls_list[girl_index]["traits"].setdefault("traits_open", {})
         all_girls_list[girl_index]["traits"]["traits_open"].setdefault("traits_always", {})
         all_girls_list[girl_index]["traits"]["traits_open"].setdefault("traits_especial", {})
@@ -711,6 +673,15 @@ label choose_inicial_girl:
                     else:
                         val = 0
                     all_girls_list[girl_index]["sex_experience"][key][key2] = val
+        for key, values in dic_slave_attributes.items():
+            if key not in all_girls_list[girl_index]["attributes"]:
+                if key == "beauty":
+                    roll = random.randint(1, 5)
+                elif key in ["exoticism", "style", "fame"]:
+                    roll = 0
+                else:
+                    roll = random.randint(0, 5)
+                all_girls_list[girl_index]["attributes"].setdefault(key, roll)
         all_girls_list[girl_index]["sex_experience"]["petting"]["petting"] = (all_girls_list[girl_index]["sex_experience"]["petting"]["handjob"] + all_girls_list[girl_index]["sex_experience"]["petting"]["footjob"] + all_girls_list[girl_index]["sex_experience"]["petting"]["rubbing"] + all_girls_list[girl_index]["sex_experience"]["petting"]["titjob"]) // 4
         all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["oral_pleasure"] = (all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["kissing"] + all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["licking"] + all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["blowjob"] + all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["deep_throat"] + all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["rimming"]) // 5
         all_girls_list[girl_index]["sex_experience"]["penetration"]["penetration"] = (all_girls_list[girl_index]["sex_experience"]["penetration"]["vaginal_sex"] + all_girls_list[girl_index]["sex_experience"]["penetration"]["fisting"] + all_girls_list[girl_index]["sex_experience"]["penetration"]["anal_sex"] + all_girls_list[girl_index]["sex_experience"]["penetration"]["anal_fisting"]) // 4
@@ -718,7 +689,16 @@ label choose_inicial_girl:
         all_girls_list[girl_index]["sex_experience"]["demostration"]["demostration"] = (all_girls_list[girl_index]["sex_experience"]["demostration"]["seduction"] + all_girls_list[girl_index]["sex_experience"]["demostration"]["masturbation"] + all_girls_list[girl_index]["sex_experience"]["demostration"]["dildo"] + all_girls_list[girl_index]["sex_experience"]["demostration"]["humiliation"] + all_girls_list[girl_index]["sex_experience"]["demostration"]["exhibitionism"]) // 5
         all_girls_list[girl_index]["sex_experience"]["fetishism"]["fetishism"] = (all_girls_list[girl_index]["sex_experience"]["fetishism"]["enema"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["masochism"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["self-torture"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["golden_shower"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["scat"]) // 5
         all_girls_list[girl_index]["sex_experience"]["xenophily"]["xenophily"] = (all_girls_list[girl_index]["sex_experience"]["xenophily"]["dog_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["pig_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["house_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["spider_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["sea_tentacle_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["field_mating"]) // 6
-        
+        all_girls_list[girl_index]["attributes"]["natural_beauty"] = all_girls_list[girl_index]["attributes"]["beauty"]
+    if all_girls_list[girl_index]["sex_experience"]["penetration"]["vaginal_sex"] >= 1:
+        $ all_girls_list[girl_index]["vaginal_tightness"] = 2
+    elif all_girls_list[girl_index]["sex_experience"]["penetration"]["fisting"] >= 4:
+        $ all_girls_list[girl_index]["vaginal_tightness"] = 3
+    if all_girls_list[girl_index]["sex_experience"]["penetration"]["anal_sex"] >= 1:
+        $ all_girls_list[girl_index]["anal_tightness"] = 2
+    elif all_girls_list[girl_index]["sex_experience"]["penetration"]["anal_fisting"] >= 4:
+        $ all_girls_list[girl_index]["anal_tightness"] = 3
+
     call screen choose_inicial_girl_screen
     return
 

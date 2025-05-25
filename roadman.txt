@@ -5,7 +5,16 @@ roadman for 0.1.0
        trait random assigment - Done
        attribute random assigment - Done
        Improve Slave JSON -Done
-       home screen - Not yet
+       home screen visual - done
+       home screen - simple buttons -Done
+       home screen direct sub button -Done
+       slave screen rules - 80%
+       slave screen anatomy -80%
+       slave screen equipment 30%
+          all weapon and equipment add - Done
+          improve weapon systen - done 
+          all weapon and effect - Not done yet
+      master screen - Not done yet
     Normal Start -  Done
     Custom Start - Done
     Controls - Done

@@ -118,7 +118,177 @@ define dic_custom_character_selection = {
     "master_granpa":       ["custom_master/master_granpa.webp", "custom_master/master_granpa_hover.webp",10],
     "master_nerd":         ["custom_master/master_nerd.webp", "custom_master/master_nerd_hover.webp",11],
 }
-
+define dic_master_items = {
+    "man_rugs": {
+        "name": "Worn clothes", 
+        "price": 5,
+        "desc": "Price: 5 sparks\nThese clothes are worn out and out of fashion. They do not meet any of your goals. It would be better to get some new clothes.",
+        "image": "scene/item/item_worn_clothes",
+        "size": 0,
+        "style": -1,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "master_moodlet": {"neg_worn_clothes": 100}
+        }
+    },
+    "comfy_robes": {
+        "name": "Housecoat",
+        "price": 25,
+        "desc": "Price: 25 sparks\nComfortable and soft housecoat. Does not look very nice, but very convenient and comfortable to wear. Just what you need to relax!",
+        "image": "scene/item/item_Housecoat",
+        "size": 0,
+        "style": -1,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "master_moodlet": {"pos_master_cloth": 100}
+        }
+    },
+    "regal_suit": {
+        "name": "Noble Regalia",
+        "price": 200,
+        "desc": "Price: 200 sparks\nThis heavy clothing is richly decorated with precious inserts and decorative elements, making you look bigger and grander. Beautiful and impressive, of course, but very impractical.",
+        "image": "scene/item/item_Noble_regalia",
+        "size": 0,
+        "style": 2,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "master_moodlet": {"neg_master_cloth": 100}
+        }
+    },
+    "fancy_suit": {
+        "name": "Fashionable Attire",
+        "price": 100,
+        "desc": "Price: 100 sparks\nKeeping track of Eternal Rome fashion is almost impossible, but many are trying. In any case, this outfit is a perfect compromise between luxury and convenience.",
+        "image": "scene/item/item_Fashionable_attire",
+        "size": 0,
+        "style": 1,
+        "item_property": False,
+        "equiped":False,
+        "effect": {}
+    },
+    "formal_suit": {
+        "name": "Formal Suit",
+        "price": 40,
+        "desc": "Price: 40 sparks\nVery formal clothing. Looks old-fashioned and not very charming, but at least you will be taken seriously. It is perfect for the impresario or for an entertainer.",
+        "image": "scene/item/item_Formal_suit",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "boost_up": {"master_artdirector": 1}
+        }
+    },
+    "aketon": {
+        "name": "Aketon",
+        "price": 40,
+        "desc": "Price: 40 sparks\nQuilted armor jacket, light enough to be used as everyday wear. Great outfit for a warrior.",
+        "image": "scene/item/item_Aketon",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "boost_up": {"master_fighter": 1}
+        }
+    },
+    "livery": {
+        "name": "Livery",
+        "price": 40,
+        "desc": "Price: 40 sparks\nOrnate livery of a senior butler. In this uniform you immediately feel like the sole ruler over your household.",
+        "image": "scene/item/item_Livery",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "boost_up": {"master_butler": 1}
+        }
+    },
+    "medic_robes": {
+        "name": "Medical Gown",
+        "price": 40,
+        "desc": "Price: 40 sparks\nVery comfortable and practical clothing for the healthcare worker. Immediately makes you a qualified doctor - even if only due to self-hypnosis.",
+        "image": "scene/item/item_Medical_gown",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "boost_up": {"master_medic": 1}
+        }
+    },
+    "wizard_robes": {
+        "name": "Wizard Robes",
+        "price": 40,
+        "desc": "Price: 40 sparks\nThis ritual costume is covered with magical runes. Increases your magical power!",
+        "image": "scene/item/item_Wizard robes",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "boost_up": {"master_mage": 1}
+        }
+    },
+    "raven_crown": {
+        "name": "Raven Crown",
+        "price": 0,
+        "desc": "This artifact, called the Raven Crown by its creator, Master Valios, grants permanent auspex, greater insight when looking at others, and strengthens the aura.",
+        "image": "",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "auspex": 1,
+            "magna_magnifika": 10,
+            "item_supermacy_bonus": 1,
+        }
+    },
+    "chimera_earring": {
+        "name": "Chimaera’s Gem",
+        "price": 0,
+        "desc": "This earring, taken from or given to me by the strange hissing creature Garsid, increases libido, strengthens the aura and heals wounds rapidly.",
+        "image": "",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "item_supermacy_bonus": 2
+        }
+    },
+    "snake_amulet": {
+        "name": "Snake Talisman",
+        "price": 0,
+        "desc": "This amulet, given to me by its maker, Vujin the Wise of House Serpis, increases concentration, personality, resistance to pain and fear, and strengthens the aura of the wearer, while also blocking scanning.",
+        "image": "",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "item_supermacy_bonus": 1
+        }
+    },
+    "bull_ring": {
+        "name": "Bull Ring",
+        "price": 0,
+        "desc": "This normal-looking ring, given to me by Sir Aramus of House Taurus, increases stamina and hardiness in battle and strengthens the aura of the wearer.",
+        "image": "",
+        "size": 0,
+        "style": 0,
+        "item_property": False,
+        "equiped":False,
+        "effect": {
+            "item_supermacy_bonus": 1
+        }
+    }
+}
 
 
 

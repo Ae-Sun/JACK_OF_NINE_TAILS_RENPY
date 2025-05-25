@@ -16,3 +16,6 @@
 - Improve slave json
 - Created slave Mod support
 - Remove loli explicit text content Easter Egg (Too much work for something that probably only the 5% of community are enjoying, someone (not me) does have a lot time may try to restore it)
+- Reworked the entire equipment system — Because the original system code are in russian, also weapon aren't remarkeble.(naginata or flamberge? can you really tell the difference without looking the wiki?)
+- Ask you slave to battle will increase despair if devotion aren't high enought (she is literally fighting for her life)
+- Ask you slave to race will increase despair if devotion aren't high enought (you are puting her in a live dead situation)

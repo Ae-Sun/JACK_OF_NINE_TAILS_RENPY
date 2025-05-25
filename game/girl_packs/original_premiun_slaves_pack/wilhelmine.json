@@ -110,6 +110,10 @@
                 "physicaltrait": {
                     "value": -1,
                     "revealed": false
+                },
+                "exorticismtrait": {
+                    "value": 1,
+                    "revealed": false
                 }
 
             }
