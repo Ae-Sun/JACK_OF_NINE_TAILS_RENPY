@@ -1260,3 +1260,4 @@ screen home_attributes_menu():
 screen bg_home():
     add bgstyle xsize 1280 ysize 720
     add home_decoration xsize 1000 ysize 675 pos (0.002,0.057)
+
