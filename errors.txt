@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/girls_stats_iniciation.rpy", line 1126: invalid syntax
-            "escape":true\
-             ^
+File "game/girls_stats_iniciation.rpy", line 262: is not terminated with a newline. (Check strings and parenthesis.)
+    define dic_attributes_min_threshold_physical = {
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May 25 15:27:41 2025
+Mon May 26 17:16:30 2025

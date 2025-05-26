@@ -16,7 +16,61 @@ define dic_slave_attributes_keys = {
     "style":        "STYLE",
     "fame":         "FAME",
 }
+define dic_slave_attributes_description_keys = {
+    "beauty": "Beauty",
+    "endurance": "Endurance",
+    "empathy": "Empathy",
+    "temperament": "Temperament",
+    "intelligence": "Intelligence",
+    "nature": "Nature",
+    "pride": "Pride",
+    "physical":"Physical",
+    "style":"Style",
+    "fame":"Fame",
+    "exoticism":"Exoticism",
+    "cooking": "Cooking",
+    "maid": "Maid",
+    "secretary": "Secretary",
+    "elocution": "Elocution",
+    "nursing": "Nursing",
+    "alchemy": "Alchemy",
+    "witchcraft": "Witchcraft",
+    "athletics": "Athletics",
+    "gladiatrix": "Gladiatrix",
+    "dance": "Dance",
+    "music": "Music",
+    "painting": "Painting",
+    "pet": "Pet",
+    "pony": "Pony",
+    "cow": "Cow",
+    "petting":"Petting",
+    "oral_pleasure":"Oral Pleasure",
+    "penetration":"Penetration",
+    "group_sex":"Group Sex",
+    "demostration":"Demostration",
+    "fetishism":"Fetishism",
+    "xenophily":"Xenophily",
+}
 
+
+define dic_slave_tier_classification = {
+    0: "F-",
+    1: "D-",
+    2: "C-",
+    3: "B+",
+    4: "A+",
+    5: "S+",
+    6: "S++",
+}
+define dic_slave_tier_classification_physical = {
+    0: "F-",
+    1: "D-",
+    2: "B+",
+    3: "A+",
+    4: "S+",
+    5: "F-",
+    6: "S++",
+}
 
 define dic_slave_attributes = {
     "beauty":        ["Ugly"            ,"Plain"          ,"Cute"          ,"Pretty   "    ,"Beautiful"    ,"Exquisite"      ,"Goddess"     ,"{b}BEAUTY:{/b}\n  Natural beauty very strongly influences her market price. Your slave's rank will never rise higher than her beauty or fame (whichever is higher). At auctions, beautiful slaves are sold for higher prices.","   ll your efforts to improve the appearance of the slave will influence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by neoplasty surgery in the Technosphere medical center and only once for each slave. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty is decreased while a slave has scars or bruises until they are removed or healed."],
@@ -31,6 +85,105 @@ define dic_slave_attributes = {
     "style":         ["Unfashionable"   ,"Unremarkable"   ,"Common"        ,"Stylish"      ,"Refined"      ,"Elegant"        ,"Elegant+"    ,"{b}STYLE:{/b}\n  A slave's appearance is extremely important during the sale. Customers will like well-groomed and well-dressed slaves, and an unappealing slave can be turned down even if she fits the requirements.","   Style depends little on natural abilities and skills, though it is influenced by the ability to communicate (elocution) and presence (dancing). Style suffers from dirt and sloppiness. Hairstyle, make-up, perfume, beautiful clothes and jewelry - all of these improve style and make the slave more attractive to customers. It is not necessary to constantly maintain style - it plays a role only when it is time to show the girl to the customer."],
     "fame":          ["Unknown"         ,"Rumored"        ,"Recognized"    ,"Celebrity"    ,"Famous"       ,"Legendary"      ,"Legendary+"  ,"{b}FAME:{/b}\n  Famous slaves are much more valuable. Your slave's rank can reach the level of her fame, even if she lacks other attributes, beauty included.","   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena and colosseum.","   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena and colosseum."]
     }
+define dic_slave_misc ={
+    "charm_moral": ["No Devotion", "Wavering", "Dutiful", "Loyal", "Devoted", "Zealous","Zealous+"],
+    "charm_angst": ["No Despair", "Despondent", "Demoralized", "Disheartened", "Despairing", "Hopeless","No Despair+"],
+    "charm_spoil": ["Not Spoiled", "Balky", "Unruly", "Restive", "Entitled", "Contumacious","Not Spoiled+"],
+    "hair_style": ["Tangled Hair", "Combed Hair", "Orderly Hair", "Orderly Hair", "Orderly Hair", "Neat Hair", "Neat Hair", "Stylish Hair"],
+    "slave_tattoo": ["No Tattoos", "Small Tattoo", "Tattoo Outline", "Colorful Tattoo", "Traced Body", "Adorned Body"]
+}
+define dic_slave_moodlevel ={
+    -5: "Depressed",
+    -4: "Dysphoric",
+    -3: "Sullen",
+    -2: "Melancholic",
+    -1: "Pessimistic",
+    0: "Calm",
+    1: "Hopeful",
+    2: "Optimistic",
+    3: "Pleased",
+    4: "Euphoric",
+    5: "Ecstatic"
+}
+define dic_slave_mood ={
+    "good_mood": {
+        "slave_winner"           : "[all_girls_list[girl_index][name]]\n- Hooray, we won! That was amazing. I feel much more confident.",
+        "multiple_orgasm"        : "[all_girls_list[girl_index][name]]\n- Ohh, it was great sex! Such a heavenly pleasure… I would like to experience this once again.",
+        "slave_kannabis"         : "[all_girls_list[girl_index][name]]\n- Oooo… …this weed is a thing. Such bliss, we need to add some relaxing music.",
+        "slave_opium"            : "[all_girls_list[girl_index][name]]\n- I feel good. I feel oblivion flowing through my veins, carrying away pain and sorrow.",
+        "slave_alco"             : "[all_girls_list[girl_index][name]]\n- I… hic… am soooooo drunk. Why did you get me drunk, eh? You want to take advantage of my… hic… helpless situation?",
+        "no_punish"              : "[all_girls_list[girl_index][name]]\n- You decided not to punish me, although I know that I was guilty. Nice to know that you are sorry for me ^ _ ^",
+        "ineffective_punishment" : "[all_girls_list[girl_index][name]]\n- I know you meant to punish me, but it was not as bad as I expected…",
+        "gentle"                 : "[all_girls_list[girl_index][name]]\n- It's nice to feel someone's care and affection…",
+        "praise"                 : "[all_girls_list[girl_index][name]]\n- Your fair words pleased me.",
+        "slave_date"             : "[all_girls_list[girl_index][name]]\n- I loved our walk. I would like to go out again some time!",
+        "games"                  : "[all_girls_list[girl_index][name]]\n- Free time for entertainment - that's just awesome! So nice to get away from worries.",
+        "dessert"                : "[all_girls_list[girl_index][name]]\n- I still remember the flavor of sweet treats. Mmmm… yummy!",
+        "reward"                 : "[all_girls_list[girl_index][name]]\n- A reward for good behavior is nice.",
+        "spellguarded"           : "[all_girls_list[girl_index][name]]\n- My will was stronger than your spell! I feel much more confident.",
+        "cookie"                 : "[all_girls_list[girl_index][name]]\n- I ate very tasty food and it is certainly nice. Food on your table is much better than in my bowl.",
+        "sleep"                  : "[all_girls_list[girl_index][name]]\n- I got a good night's sleep in my room. It is so nice sometimes to relax in comfort.",
+        "slept_with_master"      : "[all_girls_list[girl_index][name]]\n- It was so nice to sleep in Master's bed last night.",
+        "job"                    : "[all_girls_list[girl_index][name]]\n- Since I did my favorite thing, I feel relieved.",
+        "cow"                    : "[all_girls_list[girl_index][name]]\n- I'm so proud of these tits… I never thought it was so good to be milked…",
+        "barn"                   : "[all_girls_list[girl_index][name]]\n- It was great to laze in my pen: I want to go back in the barn, please… Mooo!",
+        "slave_clean"            : "[all_girls_list[girl_index][name]]\n- I washed recently. Nice to feel clean and fresh.",
+        "well_rested"            : "[all_girls_list[girl_index][name]]\n- I rested well yesterday, it is pleasant to slack off from time to time.",
+        "orgasm"                 : "[all_girls_list[girl_index][name]]\n- Well… It was so nice to get a discharge. I would not mind cumming like that once more…",
+        "clothes"                : "[all_girls_list[girl_index][name]]\n- I have very comfortable clothes. Nothing is too tight and it doesn't interfere.",
+        "pony"                   : "[all_girls_list[girl_index][name]]\n- I also have my little pony - being with her is always fun!",
+        "slave_love"             : "[all_girls_list[girl_index][name]]\n- Some kind of irresistible force beckons me to you. I always think of you. I want to be beside you… forever.",
+        "moral"                  : "[all_girls_list[girl_index][name]]\n- I'm always happy to serve my Master. I'm a good girl, right, Master?",
+        "default"                : "[all_girls_list[girl_index][name]]\n- I'm all right. Nothing special…",
+        "artifact"               : "[all_girls_list[girl_index][name]]\n- This magic decoration just superb. While I wear it, the world seems a lot better than it is. I will never take it off!"
+    },
+    "bad_mood": {
+        "slave"              : "[all_girls_list[girl_index][name]]\n- I got into this strange unfamiliar world and I was immediately made into a slave. How do you think I feel?",
+        "angst"              : "[all_girls_list[girl_index][name]]\n- I do not know what will happen to me tomorrow or even the next minute. Why do I live? I feel like howling of hopelessness…",
+        "fear"               : "[all_girls_list[girl_index][name]]\n- I know that you can punish me for any wrongdoing, and live in constant fear. Thoughts about various horrors do not go out of my head.",
+        "meth"               : "[all_girls_list[girl_index][name]]\n- I feel sick. I feel very, very sick. My mouth is dry, I feel weak, my muscles ache… I NEED DUST!",
+        "opium"              : "[all_girls_list[girl_index][name]]\n- I can't stand it. I NEED A DOSE, URGENTLY! Oh, please… I beg of you…",
+        "koffe"              : "[all_girls_list[girl_index][name]]\n- I can not wake up before I drink some kamra. I can't even open my eyes.",
+        "alco"               : "[all_girls_list[girl_index][name]]\n- My head still hurts after yesterday. I can not drink so much.",
+        "loser"              : "[all_girls_list[girl_index][name]]\n- I'm not to blame for this loss! They were too strong…",
+        "wounded"            : "[all_girls_list[girl_index][name]]\n- My wounds ache. Every wrong move hurts.",
+        "ugly"               : "[all_girls_list[girl_index][name]]\n- All these bruises and scratches… They mutilated me. I'm scared to look at myself in the mirror.",
+        "hungry"             : "[all_girls_list[girl_index][name]]\n- I did not get enough food and I worked too hard. I feel weak.",
+        "starvation"         : "[all_girls_list[girl_index][name]]\n- I feel really bad. I'm dizzy.",
+        "exhausted"          : "[all_girls_list[girl_index][name]]\n- I'm very tired. I need to rest.",
+        "raped"              : "[all_girls_list[girl_index][name]]\n- You raped me! I feel dirty, abused and trampled.",
+        "defloration"        : "[all_girls_list[girl_index][name]]\n- Sex for the first time is painful. I still hurt down there…",
+        "barn_plus"          : "[all_girls_list[girl_index][name]]\n- Yes, this place, this… barn… is dreadful and oppressive… It was like a nightmare.",
+        "barn"               : "[all_girls_list[girl_index][name]]\n- All this time in a barn… You cannot treat me like some animal! Please, I won't go back there…",
+        "cow"                : "[all_girls_list[girl_index][name]]\n- Milk constantly pours from my breasts… It's awful, I don't want to be a cow!",
+        "pain"               : "[all_girls_list[girl_index][name]]\n- You hurt me. I still feel it. It does not go away.",
+        "forced"             : "[all_girls_list[girl_index][name]]\n- You have coerced me into doing ugly things. I feel so helpless. And my bruises hurt.",
+        "spellbound"         : "[all_girls_list[girl_index][name]]\n- Your evil spell put me down. There are strange voices whispering in my head. They drive me crazy!",
+        "shame"              : "[all_girls_list[girl_index][name]]\n- God, I'm still embarrassed. Why did you make me display myself like that?",
+        "no_praise"          : "[all_girls_list[girl_index][name]]\n- I tried so hard to do well, and you have not even told me a single good word.",
+        "abuse"              : "[all_girls_list[girl_index][name]]\n- You were swearing at me so strongly that I still feel sick from it.",
+        "disgust"            : "[all_girls_list[girl_index][name]]\n- I can not forget all this horror. Even pain is easier to endure than those hideous, horrible things that you are doing to me.",
+        "slave_food"         : "[all_girls_list[girl_index][name]]\n- That food you are giving me, it is not very good. To tell the truth, it is so vile that it is easier to stay hungry than to push it down my throat…",
+        "bad_sleep"          : "[all_girls_list[girl_index][name]]\n- Sleeping conditions are just terrible. My whole body is numb and sore from such a 'rest'…",
+        "slept_with_master"  : "[all_girls_list[girl_index][name]]\n- Your bed is softer than the floor, but sleep does not come…",
+        "slave_mess"         : "[all_girls_list[girl_index][name]]\n- The house now is a terrible mess, dishes are unwashed, everything is upside down. Not the best conditions for life.",
+        "slave_ill"          : "[all_girls_list[girl_index][name]]\n- It hurts to go to the toilet and secretions look strange. I guess I caught something…",
+        "slave_dirty"        : "[all_girls_list[girl_index][name]]\n- I'm itchy from the dirt and bad smell. It would be nice to wash…",
+        "menstruation"       : "[all_girls_list[girl_index][name]]\n- I have these days… during my period. So my mood isn't the best and I'm moody…",
+        "job"                : "[all_girls_list[girl_index][name]]\n- You make me engage in boring and unpleasant work. From this I have a bad mood.",
+        "prisoner"           : "[all_girls_list[girl_index][name]]\n- I spent so much time in prison. Not the most pleasant experience…",
+        "naked"              : "[all_girls_list[girl_index][name]]\n- I have to go naked everywhere. It's cold and humiliating.",
+        "clothes"            : "[all_girls_list[girl_index][name]]\n- What you put on me is not pleasant to wear.",
+        "horny"              : "[all_girls_list[girl_index][name]]\n- Every girl needs a bit of affection from time to time. Without this it is so sad…",
+        "rules"              : "[all_girls_list[girl_index][name]]\n- All these terrible rules that you are forcing me to do… they do not add to the joy of life, actually.",
+        "spoil"              : "[all_girls_list[girl_index][name]]\n- You do not appreciate me at all! Look, what kind of conditions are these?! Cheer me up or something! I'm bored!",
+        "cheap_gift"         : "[all_girls_list[girl_index][name]]\n- When will you give me the special gift you promised?",
+        "cheap_reward"       : "[all_girls_list[girl_index][name]]\n- The reward you promised… was that it?",
+        "pony_died"          : "[all_girls_list[girl_index][name]]\n- My little pony died!",
+        "default"            : "[all_girls_list[girl_index][name]]\n- Nohow, I do not care.",
+        "artifact"           : "[all_girls_list[girl_index][name]]\n- My magic decoration! My… My… precioooous… Angry master took it away from us… gollum… poor… poor us… so lonely…"
+    }
+}
 define dic_slave_skills = {
     "maid": ["Not a Maid F-", "Drudge D-", "Skivvy C-", "Maid B+", "Handmaid A+", "Housekeeper S+", "Mistress of the Manor S++"],
     "cooking": ["Not a Cook F-", "Scullery Trainee D-", "Kitchener C-", "Cook B+", "Chef A+", "Culinary Artist S+", "Gastronomic Legend S++"],
@@ -108,7 +261,39 @@ define dic_sex_experience = {
         }
 
     }
+define attributes_min_threshold = {
+    0: -10,
+    1: -10,
+    2: -10,
+    3: -20,
+    4: -40,
+    5: -80,
+}
+define attributes_max_threshold = {
+    0: 10,
+    1: 20,
+    2: 40,
+    3: 80,
+    4: 160,
+    5: 10,
+}
 
+define attributes_max_threshold_physical = {
+    0: 10,
+    1: 160,
+    2: 80,
+    3: 40,
+    4: 20,
+    5: 10,
+}
+define attributes_min_threshold_physical = {
+    0: -80,
+    1: -40,
+    2: -20,
+    3: -10,
+    4: -10,
+    5: -10,
+}
 define dic_traits_skills = {
     "cookingtrait":      ["Average", "Good Cook", "Excellent Cook", "Disastrous Cook", "Bad Cook"],
     "maidtrait":         ["Average", "Good Maid", "Excellent Maid", "Disastrous Maid", "Bad Maid"],
@@ -798,7 +983,8 @@ define dic_girl_brand ={
     2:"Someone else's brand",
     3:"Guild brand",
     4:"Fire brand",
-    5:"Special quest (cannot brand)",
+    5:"Magical brand",
+    6:"Special quest (cannot brand)",
 }
 define dic_color_level ={
     0:"CD0000",
@@ -822,7 +1008,7 @@ define learn_bonus ={
     "enchanter":0,
     "stamina":0,
 }
-
+define dic_overnight_rules_count =[2,2,4]
 
 define dic_girl_clothing_dress ={
     "naked": {

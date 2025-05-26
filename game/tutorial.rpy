@@ -492,6 +492,7 @@ label choose_inicial_girl:
         $ premiun_girl_tutorial_selected_localization = "girl_packs/original_premiun_slaves_pack/helen.json"
         $ all_girls_list[0]= {}
         $ girl_index = 0
+
     if inicial_girl == "demo/choose_amazon.webp":
         $ demo_girl_text_index = 1
         $ demo_girl_selection = "Yasmin"
@@ -505,7 +506,12 @@ label choose_inicial_girl:
         $ all_girls_list[2]={}
         $ girl_index = 2
     $ all_girls_list[girl_index] = load_json(premiun_girl_tutorial_selected_localization)
+    $ keys_to_delete = [k for k in all_girls_list.keys() if k != girl_index]
+    
     python:
+        for k in keys_to_delete:
+            del all_girls_list[k]
+
         all_girls_list[girl_index].setdefault("aura",{
         "fear": 0,
         "despair": 0,
@@ -514,8 +520,35 @@ label choose_inicial_girl:
         "habit": 0,
         "spoil": 0,
         "devotion": 0,
-        "obedience_bonus":0
         })
+        all_girls_list[girl_index].setdefault("experience", {})
+        all_girls_list[girl_index].setdefault("name", "WIP")
+        all_girls_list[girl_index].setdefault("mood",0)
+        all_girls_list[girl_index].setdefault("mood_state",{})
+        all_girls_list[girl_index]["mood_state"].setdefault("good_mood",{})
+        all_girls_list[girl_index]["mood_state"].setdefault("bad_mood",{})
+        for key in dic_slave_mood["good_mood"]:
+            all_girls_list[girl_index]["mood_state"]["good_mood"].setdefault(key, False)
+        for key in dic_slave_mood["bad_mood"]:
+            all_girls_list[girl_index]["mood_state"]["bad_mood"].setdefault(key, False)
+        all_girls_list[girl_index]["experience"].setdefault("aura", {})
+        all_girls_list[girl_index]["experience"]["aura"].setdefault("fear", 0)
+        all_girls_list[girl_index]["experience"]["aura"].setdefault("despair", 0)
+        all_girls_list[girl_index]["experience"]["aura"].setdefault("awareness", 0)
+        all_girls_list[girl_index]["experience"]["aura"].setdefault("taming", 0)
+        all_girls_list[girl_index]["experience"]["aura"].setdefault("habit", 0)
+        all_girls_list[girl_index]["experience"]["aura"].setdefault("spoil", 0)
+        all_girls_list[girl_index]["experience"]["aura"].setdefault("devotion", 0)
+        all_girls_list[girl_index]["experience"].setdefault("attributes", {})
+        all_girls_list[girl_index]["experience"].setdefault("skills", {})
+        all_girls_list[girl_index]["experience"].setdefault("traits", {})
+        all_girls_list[girl_index]["experience"].setdefault("sex_experience", {})
+        all_girls_list[girl_index]["experience"].setdefault("traits_skills", {})
+        all_girls_list[girl_index]["experience"].setdefault("traits_sexual", {})
+        all_girls_list[girl_index]["experience"].setdefault("traits_miscellaneous", {})
+        all_girls_list[girl_index]["experience"].setdefault("traits_aura", {})
+        all_girls_list[girl_index]["experience"].setdefault("traits_attributes", {})
+        all_girls_list[girl_index].setdefault("energy", 0)
         all_girls_list[girl_index].setdefault("attributes", {})
         all_girls_list[girl_index].setdefault("skills", {})
         all_girls_list[girl_index].setdefault("traits", {})
@@ -528,27 +561,32 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("anal_tightness",0)
         all_girls_list[girl_index].setdefault("brand",2)
         all_girls_list[girl_index].setdefault("equipment",{})
-        all_girls_list[girl_index]["equipment"].setdefault("armour",0)
-        all_girls_list[girl_index]["equipment"].setdefault("weapon",0)
-        all_girls_list[girl_index]["equipment"].setdefault("shield",0)
-        all_girls_list[girl_index]["equipment"].setdefault("amulet",0)
-        all_girls_list[girl_index]["equipment"].setdefault("ring",0)
-        all_girls_list[girl_index]["equipment"].setdefault("potion",0)
-        all_girls_list[girl_index]["equipment"].setdefault("scroll",0)
-        all_girls_list[girl_index]["equipment"].setdefault("clothes",0)
-        all_girls_list[girl_index]["equipment"].setdefault("headgear",0)
-        all_girls_list[girl_index]["equipment"].setdefault("neck",0)
-        all_girls_list[girl_index]["equipment"].setdefault("hands",0)
-        all_girls_list[girl_index]["equipment"].setdefault("feet",0)
-        all_girls_list[girl_index]["equipment"].setdefault("ring1",0)
-        all_girls_list[girl_index]["equipment"].setdefault("ring2",0)
-        all_girls_list[girl_index]["equipment"].setdefault("earrings",0)
-        all_girls_list[girl_index]["equipment"].setdefault("tongue",0)
-        all_girls_list[girl_index]["equipment"].setdefault("nipples",0)
-        all_girls_list[girl_index]["equipment"].setdefault("clitoris",0)
-        all_girls_list[girl_index]["equipment"].setdefault("navel",0)
-        all_girls_list[girl_index]["equipment"].setdefault("anus",0)
-        
+        all_girls_list[girl_index].setdefault("broken",False)
+        all_girls_list[girl_index].setdefault("days_without_food",0)
+        all_girls_list[girl_index].setdefault("days_without_sleep",0)
+        all_girls_list[girl_index].setdefault("daily_count",{})
+        all_girls_list[girl_index]["daily_count"].setdefault("reward",0)
+        all_girls_list[girl_index]["daily_count"].setdefault("punishments",0)
+        all_girls_list[girl_index]["equipment"].setdefault("armour","default")
+        all_girls_list[girl_index]["equipment"].setdefault("weapon","default")
+        all_girls_list[girl_index]["equipment"].setdefault("shield","default")
+        all_girls_list[girl_index]["equipment"].setdefault("amulet","default")
+        all_girls_list[girl_index]["equipment"].setdefault("ring","default")
+        all_girls_list[girl_index]["equipment"].setdefault("potion","default")
+        all_girls_list[girl_index]["equipment"].setdefault("scroll","default")
+        all_girls_list[girl_index]["equipment"].setdefault("clothes","default")
+        all_girls_list[girl_index]["equipment"].setdefault("headgear","default")
+        all_girls_list[girl_index]["equipment"].setdefault("neck","default")
+        all_girls_list[girl_index]["equipment"].setdefault("hands","default")
+        all_girls_list[girl_index]["equipment"].setdefault("feet","default")
+        all_girls_list[girl_index]["equipment"].setdefault("ring1","default")
+        all_girls_list[girl_index]["equipment"].setdefault("ring2","default")
+        all_girls_list[girl_index]["equipment"].setdefault("anus","default")
+        all_girls_list[girl_index]["equipment"].setdefault("earrings",{"pierced":False,"type":"default"})
+        all_girls_list[girl_index]["equipment"].setdefault("tongue",{"pierced":False,"type":"default"})
+        all_girls_list[girl_index]["equipment"].setdefault("nipples",{"pierced":False,"type":"default"})
+        all_girls_list[girl_index]["equipment"].setdefault("clitoris",{"pierced":False,"type":"default"})
+        all_girls_list[girl_index]["equipment"].setdefault("navel",{"pierced":False,"type":"default"})
         all_girls_list[girl_index]["traits"].setdefault("traits_open", {})
         all_girls_list[girl_index]["traits"]["traits_open"].setdefault("traits_always", {})
         all_girls_list[girl_index]["traits"]["traits_open"].setdefault("traits_especial", {})
@@ -572,6 +610,7 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("your_leftovers",False)
         all_girls_list[girl_index].setdefault("supplements",False)
         all_girls_list[girl_index].setdefault("rules", {})
+        all_girls_list[girl_index]["rules"].setdefault("rules_count",0)
         all_girls_list[girl_index]["rules"].setdefault("act_as_cook",False)
         all_girls_list[girl_index]["rules"].setdefault("act_as_maid",False)
         all_girls_list[girl_index]["rules"].setdefault("bath_slave",False)
@@ -592,8 +631,19 @@ label choose_inicial_girl:
         traits_miscellaneous = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]
         traits_aura = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_aura(1/16)"]
         traits_attributes = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_attributes(1/20)"]
+        if dic_custom_start_difficulty_selection_index_index == 0:
+            all_girls_list[girl_index]["aura"].setdefault("obedience_bonus",4)
+            dic_overnight_rules_count_index = 0
+        elif dic_custom_start_difficulty_selection_index_index == 1:
+            all_girls_list[girl_index]["aura"].setdefault("obedience_bonus",2)
+            dic_overnight_rules_count_index = 1
+        else:
+            all_girls_list[girl_index]["aura"].setdefault("obedience_bonus",0)
+            dic_overnight_rules_count_index = 2
+
         for key, values in dic_slave_skills.items():
             import random
+            all_girls_list[girl_index]["experience"]["skills"].setdefault(key,0)
             if key not in all_girls_list[girl_index]["skills"]:
                 roll = random.randint(1, 3)
                 if roll == 1:
@@ -603,7 +653,7 @@ label choose_inicial_girl:
                     val = 0
                 all_girls_list[girl_index]["skills"][key] = val
         for key, values in dic_traits_skills.items():
-
+            all_girls_list[girl_index]["experience"]["traits_skills"].setdefault(key,0)
             if key not in traits_skills:
                 roll = random.randint(1, 16)
                 if roll == 1:
@@ -616,6 +666,7 @@ label choose_inicial_girl:
                     val = 0
                 traits_skills[key] = {"value": val, "revealed": False}    
         for key, values in dic_traits_sexual.items():
+            all_girls_list[girl_index]["experience"]["traits_sexual"].setdefault(key,0)
             if key not in traits_sexual:
                 roll = random.randint(1, 20)
                 if roll == 1:
@@ -628,6 +679,7 @@ label choose_inicial_girl:
                     val = 0
                 traits_sexual[key] = {"value": val, "revealed": False}
         for key, values in dic_traits_miscellaneous.items():
+            all_girls_list[girl_index]["experience"]["traits_miscellaneous"].setdefault(key,0)
             if key not in traits_miscellaneous:
                 roll = random.randint(1, 24)
                 if roll == 1:
@@ -640,6 +692,7 @@ label choose_inicial_girl:
                     val = 0
                 traits_miscellaneous[key] = {"value": val, "revealed": False}
         for key, values in dic_traits_aura.items():
+            all_girls_list[girl_index]["experience"]["traits_aura"].setdefault(key,0)
             if key not in traits_aura:
                 roll = random.randint(1, 32)
                 if roll == 1:
@@ -652,6 +705,7 @@ label choose_inicial_girl:
                     val = 0
                 traits_aura[key] = {"value": val, "revealed": False}
         for key, values in dic_traits_attributes.items():
+            all_girls_list[girl_index]["experience"]["traits_attributes"].setdefault(key,0)
             if key not in traits_attributes:
                 roll = random.randint(1, 40)
                 if roll == 1:
@@ -664,6 +718,7 @@ label choose_inicial_girl:
                     val = 0
                 traits_attributes[key] = {"value": val, "revealed": False}
         for key, values in dic_sex_experience.items():
+            all_girls_list[girl_index]["experience"]["sex_experience"].setdefault(key, {})
             for key2, values2 in dic_sex_experience[key].items():
                 if key2 not in all_girls_list[girl_index]["sex_experience"][key]:
                     roll = random.randint(1, 3)
@@ -673,7 +728,9 @@ label choose_inicial_girl:
                     else:
                         val = 0
                     all_girls_list[girl_index]["sex_experience"][key][key2] = val
+                all_girls_list[girl_index]["experience"]["sex_experience"][key].setdefault(key2,0)
         for key, values in dic_slave_attributes.items():
+            all_girls_list[girl_index]["experience"]["attributes"].setdefault(key,0)
             if key not in all_girls_list[girl_index]["attributes"]:
                 if key == "beauty":
                     roll = random.randint(1, 5)
@@ -690,6 +747,8 @@ label choose_inicial_girl:
         all_girls_list[girl_index]["sex_experience"]["fetishism"]["fetishism"] = (all_girls_list[girl_index]["sex_experience"]["fetishism"]["enema"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["masochism"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["self-torture"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["golden_shower"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["scat"]) // 5
         all_girls_list[girl_index]["sex_experience"]["xenophily"]["xenophily"] = (all_girls_list[girl_index]["sex_experience"]["xenophily"]["dog_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["pig_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["house_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["spider_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["sea_tentacle_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["field_mating"]) // 6
         all_girls_list[girl_index]["attributes"]["natural_beauty"] = all_girls_list[girl_index]["attributes"]["beauty"]
+        all_girls_list[girl_index]["energy"] = min(12, all_girls_list[girl_index]["energy"] + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
+
     if all_girls_list[girl_index]["sex_experience"]["penetration"]["vaginal_sex"] >= 1:
         $ all_girls_list[girl_index]["vaginal_tightness"] = 2
     elif all_girls_list[girl_index]["sex_experience"]["penetration"]["fisting"] >= 4:
@@ -698,7 +757,7 @@ label choose_inicial_girl:
         $ all_girls_list[girl_index]["anal_tightness"] = 2
     elif all_girls_list[girl_index]["sex_experience"]["penetration"]["anal_fisting"] >= 4:
         $ all_girls_list[girl_index]["anal_tightness"] = 3
-
+    $ is_main_slave = True
     call screen choose_inicial_girl_screen
     return
 

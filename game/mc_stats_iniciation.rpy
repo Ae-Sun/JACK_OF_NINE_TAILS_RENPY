@@ -14,7 +14,7 @@ define dic_characters = [ #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     ("master_nerd", "master/master_nerd.webp", "master/master_nerd_hover.webp",11),
 ]
 
-##### I should use Json instead of Dict or make a better Json structure, but requiere a lot rework and I'm lazy -rec3ks
+##### I should use Json instead of Dict or make a better Dictionary structure, but requiere a lot rework and I'm lazy -rec3ks
 define dic_mc_inicial_stats = { #DO NOT ADD ANY VARIABLE TO THIS DICTIONARY -rec3ks
     "master_noble"      : ["M'lord"     , 4, 4, 0, 2, 4, 0, 0, 0, 5, 0, 5, 2, 2, 3, 2, 4, 0, 4, 3, 0, 3, 2, 4, 3,"Elven Chainmail"     ,""           ,"Fist"         ,"Epée"           ,""                 ,""        ,"Noble Regalia"       ,"","","","","Taurus Great House",8000, "simple difficulty",    5,""                                 , "   An aristocrat with a great education, with \n experience in court and military service. Having all \n the basic skills that are necesarry to teach, the easily \n joined the ranks of the slavers and all agree that a \n wonderful career awaits him..."], 
     "master_torturer"   : ["Robespierre", 5, 1, 0, 3, 3, 0, 0, 0, 5, 0, 5, 1, 1, 0, 3, 3, 0, 5, 5, 5, 2, 2, 4, 4,"Without armor"       ,""           ,"Fist"         ,"Whip"           ,""                 ,""        ,"Worn clothes"        ,"","","","","Taurus Great House",7000, "simple difficulty",    5,""                                 , "   Once upon a time he was a soldier and fought for \n the king in his colonial wars. Then the king was \n overthrown and the revolution needed executioners. \n More than anything, he is proud to have personally \n decapitated the beautiful, but hanghty queen. In the \n Eternal Rome, a hangman's skills some in handy. "],
@@ -117,6 +117,29 @@ define dic_custom_character_selection = {
     "master_werwolf":      ["custom_master/master_werwolf.webp", "custom_master/master_werwolf_hover.webp",9],
     "master_granpa":       ["custom_master/master_granpa.webp", "custom_master/master_granpa_hover.webp",10],
     "master_nerd":         ["custom_master/master_nerd.webp", "custom_master/master_nerd_hover.webp",11],
+}
+define master_caps = {
+    "wounds": [10, 20, 40, 80, 160],
+    "STRENGTH": [10, 25, 50, 160, 666],
+    "PERSONALITY": [10, 20, 40, 80, 160],
+    "LIBIDO": [45, 90, 180, 360, 999],
+    "BRAND": [5, 15, 30, 70, 100],
+    "GUILD REPUTATION": [5, 10, 20, 40, 75],
+    "HYGIENE": [10, 20, 40, 60, 80],
+    "TEACHING": [15, 75, 150, 300, 600],
+    "STEWARDSHIP": [15, 75, 150, 300, 600],
+    "ARTISTRY": [15, 75, 150, 300, 600],
+    "MEDIC": [15, 75, 150, 300, 600],
+    "FIGHTER": [15, 75, 150, 300, 600],
+    "MAGIC": [15, 75, 150, 300, 600],
+    "DOMINANCE": [45, 90, 180, 360, 999],
+    "FLAGELLATION": [1, 20, 40, 80, 160],
+    "TORTURE": [1, 20, 40, 80, 160],
+    "BINDING": [1, 20, 40, 80, 160],
+    "PETTING": [1, 45, 90, 180, 360],
+    "ORAL SEX": [1, 45, 90, 180, 360],
+    "PENETRATION": [1, 45, 90, 180, 360],
+    "FETISHISM": [1, 45, 90, 180, 360],
 }
 define dic_master_items = {
     "man_rugs": {

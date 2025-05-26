@@ -15,7 +15,6 @@ default dic_spellbook_info_index = "default"
 default mc_image = ""
 default mc_image2 = ""
 default text_slave_conditions_index = "default"
-default next_day_check = True
 default is_main_slave = False
 default show_main_slave = False
 default is_assistant_assigned = False
@@ -31,8 +30,8 @@ default boobs3 =" empty breast-sacks"
 default boobs4 =" round tits"
 default boobs5 =" firm melons"
 default boobs6 =" shapely balloons"
-
-
+default dic_overnight_rules_count_index = 1
+default description_slave_attributes_track_value = "default"
 label iniciation_label:
     if is_tutorial == True:
         $mc_image = "master/master_noble.webp"
@@ -49,16 +48,62 @@ label iniciation_label:
     $ mc_image2 = mc_image.replace(".webp", "_hover.webp")
     jump Home
 
+label next_day_label:
+    python:
+        energy_value = strength_value_1 *2 + 2
+        for girl_index in all_girls_list:
+            is_main_slave = True
+            ### energy and sleep condition -half done
+            if all_girls_list[girl_index]["sleep"] != 4:
+                all_girls_list[girl_index]["energy"] = min(12, all_girls_list[girl_index]["energy"] + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
+                all_girls_list[girl_index]["days_without_sleep"] = 0
+            else:
+                all_girls_list[girl_index]["energy"] = min(12,all_girls_list[girl_index]["energy"] + (all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)/2)
+                all_girls_list[girl_index]["days_without_sleep"] += 1
+                all_girls_list[girl_index]["experience"]["attributes"]["endurance"] -= all_girls_list[girl_index]["days_without_sleep"] *3
+                all_girls_list[girl_index]["experience"]["aura"]["taming"] += all_girls_list[girl_index]["days_without_sleep"]
+        ######## SPOILING SECTION - Done
+            ### spoiling - increase
+            if all_girls_list[girl_index]["daily_count"]["reward"] > 2:
+                all_girls_list[girl_index]["experience"]["aura"]["spoil"] += all_girls_list[girl_index]["daily_count"]["reward"]*5
+            if all_girls_list[girl_index]["aura"]["devotion"] <= 2 and all_girls_list[girl_index]["aura"]["fear"] == 0 and all_girls_list[girl_index]["days_without_food"] == 0 and all_girls_list[girl_index]["days_without_sleep"] == 0 and all_girls_list[girl_index]["rules"]["rules_count"] <= 2:
+                all_girls_list[girl_index]["experience"]["aura"]["spoil"] += all_girls_list[girl_index]["attributes"]["pride"] + all_girls_list[girl_index]["attributes"]["nature"] + all_girls_list[girl_index]["attributes"]["temperament"]
+            if all_girls_list[girl_index]["experience"]["aura"]["spoil"] >= attributes_max_threshold[all_girls_list[girl_index]["aura"]["spoil"]] and all_girls_list[girl_index]["aura"]["spoil"] < 5:
+                all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= attributes_max_threshold[all_girls_list[girl_index]["aura"]["spoil"]]
+                all_girls_list[girl_index]["aura"]["spoil"] = min(5, all_girls_list[girl_index]["aura"]["spoil"] + 1)
+            if all_girls_list[girl_index]["aura"]["spoil"] > 0:
+                all_girls_list[girl_index]["experience"]["aura"]["devotion"] -= all_girls_list[girl_index]["aura"]["spoil"]
+                all_girls_list[girl_index]["experience"]["aura"]["awareness"] -= all_girls_list[girl_index]["aura"]["spoil"]
+                all_girls_list[girl_index]["experience"]["aura"]["taming"] -= all_girls_list[girl_index]["aura"]["spoil"]
+                all_girls_list[girl_index]["experience"]["aura"]["habit"] -= all_girls_list[girl_index]["aura"]["spoil"]
+                if all_girls_list[girl_index]["experience"]["aura"]["devotion"] <= attributes_min_threshold[all_girls_list[girl_index]["aura"]["devotion"]] and all_girls_list[girl_index]["aura"]["devotion"] > 0:
+                    all_girls_list[girl_index]["experience"]["aura"]["devotion"] -= attributes_min_threshold[all_girls_list[girl_index]["aura"]["devotion"]]
+                    all_girls_list[girl_index]["aura"]["devotion"] = max(0, all_girls_list[girl_index]["aura"]["devotion"] - 1)
+                if all_girls_list[girl_index]["experience"]["aura"]["awareness"] <= attributes_min_threshold[all_girls_list[girl_index]["aura"]["awareness"]] and all_girls_list[girl_index]["aura"]["awareness"] > 0:
+                    all_girls_list[girl_index]["experience"]["aura"]["awareness"] -= attributes_min_threshold[all_girls_list[girl_index]["aura"]["awareness"]]
+                    all_girls_list[girl_index]["aura"]["awareness"] = max(0, all_girls_list[girl_index]["aura"]["awareness"] - 1)
+                if all_girls_list[girl_index]["experience"]["aura"]["taming"] <= attributes_min_threshold[all_girls_list[girl_index]["aura"]["taming"]] and all_girls_list[girl_index]["aura"]["taming"] > 0:
+                    all_girls_list[girl_index]["experience"]["aura"]["taming"] -= attributes_min_threshold[all_girls_list[girl_index]["aura"]["taming"]]
+                    all_girls_list[girl_index]["aura"]["taming"] = max(0, all_girls_list[girl_index]["aura"]["taming"] - 1)
+                if all_girls_list[girl_index]["experience"]["aura"]["habit"] <= attributes_min_threshold[all_girls_list[girl_index]["aura"]["habit"]] and all_girls_list[girl_index]["aura"]["habit"] > 0:
+                    all_girls_list[girl_index]["experience"]["aura"]["habit"] -= attributes_min_threshold[all_girls_list[girl_index]["aura"]["habit"]]
+                    all_girls_list[girl_index]["aura"]["habit"] = max(0, all_girls_list[girl_index]["aura"]["habit"] - 1) 
+            if all_girls_list[girl_index]["aura"]["spoil"] > max(0, all_girls_list[girl_index]["mood"], all_girls_list[girl_index]["aura"]["fear"]) and all_girls_list[girl_index]["sleep"] in [2,3]:
+                all_girls_list[girl_index]["neg_spoil"] = True
+            all_girls_list[girl_index]["daily_count"]["reward"] == 0
+            ### spoiling - reduce
+            if all_girls_list[girl_index]["aura"]["spoil"] > 0 or all_girls_list[girl_index]["experience"]["aura"]["spoil"] > 0 and dic_overnight_rules_count[dic_overnight_rules_count_index] <= all_girls_list[girl_index]["rules"]["rules_count"] or all_girls_list[girl_index]["days_without_food"] != 0 or all_girls_list[girl_index]["days_without_sleep"] != 0: # or dynslave['fear'] > dynslave['moral'] sorry, but this didn't make sense - rec3ks
+                all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= 1 + all_girls_list[girl_index]["aura"]["devotion"] + all_girls_list[girl_index]["aura"]["fear"] + all_girls_list[girl_index]["aura"]["despair"]*2 + max(0, all_girls_list[girl_index]["days_without_food"])*3 + max(0, all_girls_list[girl_index]["days_without_sleep"])*3
+            if all_girls_list[girl_index]["mood"] < 0:
+                all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= all_girls_list[girl_index]["attributes"]["empathy"]
+    jump Home
+
+
+
 
 label Home:
     show screen bg_home()
     $ infobox_jump = "Home"
-    if next_day_check:
-        $ energy_value = strength_value_1 *2 + 2
-        if girl_index in all_girls_list:
-            $ all_girls_list[girl_index]["energy"] = all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2
-            $ is_main_slave = True
-        $ next_day_check = False
     if show_main_slave:
         show screen main_slave_image() 
 
@@ -688,7 +733,7 @@ screen slave_rules_menu():
     vbox:
         pos(0.807,0.05)
         anchor (1.0,0.0)
-        if number_of_rules > 2:
+        if number_of_rules >= dic_overnight_rules_count[dic_overnight_rules_count_index]:
             text "{color=#FFD700}RULES: ([str(number_of_rules)]){/color}" size 16 font "fonts/Segoe Print.ttf"
         else:
             text "{color=#FFD700}RULES: ({/color}{color=#CD0000}[str(number_of_rules)]{/color}{color=#FFD700}){/color}" size 16 font "fonts/Segoe Print.ttf"
@@ -1056,10 +1101,14 @@ screen screen_rules():
                     textbutton values[all_girls_list[girl_index]["attributes"][key]]:
                         style "attribute_custom_slave" + str(all_girls_list[girl_index]["attributes"][key])
                         action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),Jump("Home")
+                        hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", key)
+                        unhovered Hide("description_slave_attributes")
                 else:
                     textbutton values[all_girls_list[girl_index]["attributes"][key]]:
                         style "attribute_custom_physical" + str(all_girls_list[girl_index]["attributes"][key])
                         action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",True),Jump("Home")                    
+                        hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", key)
+                        unhovered Hide("description_slave_attributes")
         text "Mood" size 16 color "#000000" font "fonts/Segoe Print.ttf"
         text "{u}TRAITS{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf"
         for key, values in dic_traits_skills.items():
@@ -1085,7 +1134,8 @@ screen screen_rules():
                 textbutton label_text:
                     style style_used
                     action SetVariable("attribute_track_index", key), SetVariable("dictionary_track_index", val), SetVariable("dictionary_name", dic_traits_skills_descriptions), SetVariable("customboxcheck", True), Jump("Home")
-     
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "default")
+                    unhovered Hide("description_slave_attributes")
             ################ - i'm a genus -rec3ks
         for key, values in dic_traits_sexual.items():
            
@@ -1111,6 +1161,9 @@ screen screen_rules():
                 textbutton label_text:
                     style style_used
                     action SetVariable("attribute_track_index", key), SetVariable("dictionary_track_index", val), SetVariable("dictionary_name", dic_traits_sexual_description), SetVariable("customboxcheck", True), Jump("Home")
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "default")
+                    unhovered Hide("description_slave_attributes")
+       
         for key, values in dic_traits_miscellaneous.items():
 
             $ skill_info = traits_miscellaneous[key]
@@ -1134,6 +1187,8 @@ screen screen_rules():
                 textbutton label_text:
                     style style_used
                     action SetVariable("attribute_track_index", key),SetVariable("dictionary_track_index", val),SetVariable("dictionary_name", dic_traits_miscellaneous_description),SetVariable("customboxcheck", True),Jump("Home")
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "wip")
+                    unhovered Hide("description_slave_attributes")
         for key, values in dic_traits_aura.items():
 
             $ skill_info = traits_aura[key]
@@ -1157,6 +1212,8 @@ screen screen_rules():
                 textbutton label_text:
                     style style_used
                     action SetVariable("attribute_track_index", key),SetVariable("dictionary_track_index", val),SetVariable("dictionary_name", dic_traits_aura_description),SetVariable("customboxcheck", True),Jump("Home")
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "default")
+                    unhovered Hide("description_slave_attributes")
         for key, values in dic_traits_attributes.items():
 
             $ skill_info = traits_attributes[key]
@@ -1180,6 +1237,8 @@ screen screen_rules():
                 textbutton label_text:
                     style style_used
                     action SetVariable("attribute_track_index", key),SetVariable("dictionary_track_index", val),SetVariable("dictionary_name", dic_traits_attributes_description),SetVariable("customboxcheck", True),Jump("Home")
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "default")
+                    unhovered Hide("description_slave_attributes")
     vbox:
         pos(0.99,0.02)
         anchor (1.0,0.0)
@@ -1189,12 +1248,85 @@ screen screen_rules():
                 textbutton values[all_girls_list[girl_index]["skills"][key]]:
                     style "attribute_custom_slave" + str(all_girls_list[girl_index]["skills"][key]) xalign 1.0
                     action NullAction()
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", key)
+                    unhovered Hide("description_slave_attributes")
         text "{u}     SEX TECHNIQUES{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
         for key, values in dic_slave_skills_sexual.items():
             if key in all_girls_list[girl_index]["sex_experience"][key]:
                 textbutton values[all_girls_list[girl_index]["sex_experience"][key][key]]:
                     style "attribute_custom_slave" + str(all_girls_list[girl_index]["sex_experience"][key][key]) xalign 1.0
                     action NullAction()
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", key)
+                    unhovered Hide("description_slave_attributes")
+screen description_slave_attributes():
+    $ curx, cury = renpy.get_mouse_pos()
+    if description_slave_attributes_track_value == "default":
+        frame:
+            pos(curx + 150,cury)
+            style "description_slave_attributes_frame"
+            text "Innate (Cannot learn or forget)" style "description_slave_attributes_frame_text"
+    if description_slave_attributes_track_value in ["beauty","exoticism","style","fame"]:
+        frame:
+            pos(curx + 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["attributes"][description_slave_attributes_track_value]] style "description_slave_attributes_frame_text"
+    if description_slave_attributes_track_value in ["endurance", "empathy", "temperament","intelligence","nature","pride"]:
+        frame:
+            pos(curx + 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["attributes"][description_slave_attributes_track_value]] +"; " + str(all_girls_list[girl_index]["experience"]["attributes"][description_slave_attributes_track_value]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["attributes"][description_slave_attributes_track_value]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["attributes"][description_slave_attributes_track_value]]) + ")" style "description_slave_attributes_frame_text"
+    if description_slave_attributes_track_value == "physical":
+        frame:
+            pos(curx + 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification_physical[all_girls_list[girl_index]["attributes"][description_slave_attributes_track_value]] +"; " + str(all_girls_list[girl_index]["experience"]["attributes"][description_slave_attributes_track_value]) + " (+" + str(attributes_max_threshold_physical[all_girls_list[girl_index]["attributes"][description_slave_attributes_track_value]]) + "/" + str(attributes_min_threshold_physical[all_girls_list[girl_index]["attributes"][description_slave_attributes_track_value]]) + ")" style "description_slave_attributes_frame_text"
+    if description_slave_attributes_track_value == "wip":
+        frame:
+            pos(curx + 150,cury)
+            style "description_slave_attributes_frame"
+            text "WIP" style "description_slave_attributes_frame_text"
+    if description_slave_attributes_track_value == "petting":
+        frame:
+            pos(curx - 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["handjob"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["handjob"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["footjob"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["footjob"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["rubbing"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["rubbing"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["titjob"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["titjob"]]) style "description_slave_attributes_frame_text"
+    if description_slave_attributes_track_value == "oral_pleasure":
+        frame:
+            pos(curx - 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["kissing"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["kissing"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["licking"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["licking"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["blowjob"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["blowjob"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["deep_throat"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["deep_throat"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["rimming"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["rimming"]]) style "description_slave_attributes_frame_little_text"
+    if description_slave_attributes_track_value == "penetration":
+        frame:
+            pos(curx - 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["vaginal_sex"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["vaginal_sex"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["fisting"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["fisting"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["anal_sex"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["anal_sex"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["anal_fisting"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["anal_fisting"]]) style "description_slave_attributes_frame_little_text"
+    if description_slave_attributes_track_value == "group_sex":
+        frame:
+            pos(curx - 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["threesome"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["threesome"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["bukkake"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["bukkake"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["doble_penetration"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["doble_penetration"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["triple_penetration"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["triple_penetration"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["gangbang"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["gangbang"]]) style "description_slave_attributes_frame_little_text"
+    if description_slave_attributes_track_value == "demostration":
+        frame:
+            pos(curx - 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["seduction"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["seduction"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["masturbation"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["masturbation"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["dildo"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["dildo"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["humiliation"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["humiliation"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["exhibitionism"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["exhibitionism"]]) style "description_slave_attributes_frame_little_text"
+    if description_slave_attributes_track_value in all_girls_list[girl_index]["skills"]:
+        frame:
+            pos(curx - 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification_physical[all_girls_list[girl_index]["skills"][description_slave_attributes_track_value]] +"; " + str(all_girls_list[girl_index]["experience"]["skills"][description_slave_attributes_track_value]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["skills"][description_slave_attributes_track_value]]) + ")" style "description_slave_attributes_frame_text"
+    if description_slave_attributes_track_value == "fetishism":
+        frame:
+            pos(curx - 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["enema"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["enema"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["masochism"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["masochism"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["self-torture"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["self-torture"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["golden_shower"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["golden_shower"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["scat"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["scat"]]) style "description_slave_attributes_frame_little_text"
+    if description_slave_attributes_track_value == "xenophily":
+        frame:
+            pos(curx - 150,cury)
+            style "description_slave_attributes_frame"
+            text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["dog_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["dog_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["pig_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["pig_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["house_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["house_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["spider_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["spider_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["sea_tentacle_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["sea_tentacle_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["field_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["field_mating"]]) style "description_slave_attributes_frame_little_text"
+
+
 screen home_attributes_menu():
     vbox:
         pos(0.90,0.05)

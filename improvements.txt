@@ -19,3 +19,4 @@
 - Reworked the entire equipment system — Because the original system code are in russian, also weapon aren't remarkeble.(naginata or flamberge? can you really tell the difference without looking the wiki?)
 - Ask you slave to battle will increase despair if devotion aren't high enought (she is literally fighting for her life)
 - Ask you slave to race will increase despair if devotion aren't high enought (you are puting her in a live dead situation)
+- obedience always fade when slave have spoil (instead of >1, more simple, better)

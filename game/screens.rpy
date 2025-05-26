@@ -560,6 +560,27 @@ style game_menu_button_text:
     xalign 0.5
     yalign 0.5
 
+style description_slave_attributes_frame:
+    xalign 0.5
+    yalign 0.5
+    background Frame("menu_button.webp", 0, 0)
+    xsize 300
+    ysize 50
+    bottom_padding 15
+    right_padding 15
+style description_slave_attributes_frame_text:
+    xalign 0.5
+    yalign 0.5
+    font "fonts/victoriana.ttf"
+    color "#ffffff"
+    size 18
+style description_slave_attributes_frame_little_text:
+    xalign 0.5
+    yalign 0.5
+    font "fonts/victoriana.ttf"
+    color "#ffffff"
+    size 16
+
 
 
 style leftalign:
