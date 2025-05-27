@@ -34,6 +34,8 @@ default dic_overnight_rules_count_index = 1
 default description_slave_attributes_track_value = "default"
 default available_options = 0
 default equipment_choice = "armour"
+default equipment_choice_image = "scene/item/clear_small"
+default equipment_choice_image_text = ""
 default inventory = {
     "No armor": 0,
     "Aramid Suit": 0,
@@ -195,7 +197,7 @@ default inventory_type = {
     "tongue": [
         "barbells", "heavy_gauge_rings"
     ],
-    "nipple": [
+    "nipples": [
         "barbells", "nipple_chain", "heavy_gauge_rings"
     ],
     "navel": [
@@ -208,14 +210,11 @@ default inventory_type = {
         "anal_plug", "anal_tail"
     ]
 }
-
-
-
 label iniciation_label:
-    if is_tutorial == True:
+    if is_tutorial:
         python:
             mc_image = "master/master_noble.webp"
-            all_girls_list[girl_index]["day_bought"] = day_tracker
+
             for key, value in inventory.items():
                 if value != "-":
                     inventory[key] = 1
@@ -225,10 +224,10 @@ label iniciation_label:
         else:
             $mc_image = dic_custom_character_selection[dic_charactersOnlyName[characterOnlyNameIndex]][0]
     $ mc_image2 = mc_image.replace(".webp", "_hover.webp")
-    jump next_day_label
-
+    if is_tutorial:
+        jump equipment_check
+    jump Home
 label next_day_label:
-        ###### yep I month into the proyect and i complety forgot that I can use python functions in renpy -rec3ks
     python:
         energy_value = strength_value_1 *2 + 2
         for girl_index in all_girls_list:
@@ -271,10 +270,6 @@ label next_day_label:
                 all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= all_girls_list[girl_index]["attributes"]["empathy"]
             reduce_check( "aura","spoil")
     jump Home
-
-
-
-
 label Home:
     show screen bg_home()
     $ infobox_jump = "Home"
@@ -334,9 +329,26 @@ label Home:
         hide screen home_attributes_menu
         show screen screen_rules
         call screen slave_aura_menu()
+label equipment_check():
+    python:
+        for girl_index in all_girls_list:
+            for keys in all_girls_list[girl_index]["learning_bonus"]:
+                all_girls_list[girl_index]["learning_bonus"][keys] = 0
+            for keys in all_girls_list[girl_index]["daily_bonus"]:
+                all_girls_list[girl_index]["daily_bonus"][keys] = 0
+
+            if all_girls_list[girl_index]["equipment"]["clothes"] == "Naked":
+                all_girls_list[girl_index]["learning_bonus"]["sex"] += 1 
+                all_girls_list[girl_index]["learning_bonus"]["athletics"] += 1 
+                all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
+################################################
+########################################################################
+#            if all_girls_list[girl_index]["equipment"]["clothes"] == "Frilly Apron":
+
+
+    jump Home
 screen main_slave_image():
     add all_girls_list[girl_index]["fullimage"] + ".webp" xalign 0.2 yalign 0.9999 size(795,535)
-
 screen goguild():
     zorder 10
     textbutton "Go to Guild" xalign 0.10 yalign 0.76:
@@ -400,8 +412,6 @@ screen spellbook_info():
         add "ui overhaul/delikacia spellbook.webp" size(50,50)
         add "ui overhaul/domini dictum spellbook.webp" size(50,50)
         add "ui overhaul/adverto servili spellbook.webp" size(50,50)
-
-
 screen cast_spell_menu():
     key "K_SPACE" action SetVariable("current_menu", 0),Jump("Home")
     imagebutton pos(0.02,0.4):
@@ -490,7 +500,6 @@ screen domestic_issues_menu():
         add "ui overhaul/drink a potion.webp" size(50,50)
         add "ui overhaul/accounting.webp" size(50,50)
         add "ui overhaul/business.webp" size(50,50)
-
 screen home_menu():
     vbox:
         yalign 0.5
@@ -548,6 +557,24 @@ screen home_menu():
         add home_menu_image4 size(50,50)
         add home_menu_image5 size(50,50)
         add home_menu_image6 size(50,50)
+   
+    vbox:
+
+        if is_tutorial:
+            yalign 0.08
+            xalign 0.74
+            if girl_index == 0:
+                textbutton "change girl":   
+                    style "home_button"
+                    action SetVariable("girl_index", 1),Jump("Home")
+            if girl_index == 1:
+                textbutton "change girl":
+                    style "home_button"
+                    action SetVariable("girl_index", 2),Jump("Home")
+            if girl_index == 2:
+                textbutton "change girl":
+                    style "home_button"
+                    action SetVariable("girl_index", 0),Jump("Home")
 screen slave_activities_menu():
     key "K_SPACE" action SetVariable("current_menu", 0),Jump("Home")
     imagebutton pos(0.02,0.4):
@@ -713,9 +740,10 @@ screen slave_anatomy_menu():
             text "Charm    {color=#0000D8}={/color} Unknown{color=#0000D8} +{/color} Unknown{color=#0000D8} +{/color} Style{color=#0000D8} +{/color} Exoticism{color=#0000D8} +{/color} Aura{color=#0000D8} +{/color} Weight{color=#0000D8} -{/color} No Scars{color=#0000D8} -{/color} No Bruises" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
         else:
             text "You must cast Auspex to view the aura and charm rating of your slave" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
-
 screen slave_equipment_menu():
     add "bg/page_blank.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
+    add equipment_choice_image + ".webp" xsize 160 ysize 120 pos(0.24,0.815)
+    text equipment_choice_image_text size 16 color "#000000" font "fonts/Consolas.ttf" pos(0.40,0.82) xmaximum 500
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
     vbox:
         pos(0.24,0.068)
@@ -736,98 +764,240 @@ screen slave_equipment_menu():
             style "slave_equipment_menu_button"
             action SetVariable("available_options", 2),SetVariable("equipment_choice", "ring")
         add "spacer" size(0,20)
-        textbutton "{u}Clothes:{/u} [all_girls_list[girl_index]['equipment']['clothes']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "clothes")
+        if available_options != 1:
+            textbutton "{u}Clothes:{/u} [all_girls_list[girl_index]['equipment']['clothes']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "clothes"), Jump("equipment_check")
 
-        textbutton "{u}Headgear:{/u} [all_girls_list[girl_index]['equipment']['headgear']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "headgear")
+            textbutton "{u}Headgear:{/u} [all_girls_list[girl_index]['equipment']['headgear']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "headgear"), Jump("equipment_check")
 
-        textbutton "{u}Neck:{/u} [all_girls_list[girl_index]['equipment']['neck']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "neck")
+            textbutton "{u}Neck:{/u} [all_girls_list[girl_index]['equipment']['neck']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "neck"), Jump("equipment_check")
 
-        textbutton "{u}Hands:{/u} [all_girls_list[girl_index]['equipment']['hands']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "hands") 
+            textbutton "{u}Hands:{/u} [all_girls_list[girl_index]['equipment']['hands']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "hands"), Jump("equipment_check")
 
-        textbutton "{u}Feet:{/u} [all_girls_list[girl_index]['equipment']['feet']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "feet")
+            textbutton "{u}Feet:{/u} [all_girls_list[girl_index]['equipment']['feet']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "feet"), Jump("equipment_check")
 
-        textbutton "{u}Ring 1:{/u} [all_girls_list[girl_index]['equipment']['ring1']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "ring1")
+            textbutton "{u}Ring 1:{/u} [all_girls_list[girl_index]['equipment']['ring1']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "ring1"), Jump("equipment_check")
 
-        textbutton "{u}Ring 2:{/u} [all_girls_list[girl_index]['equipment']['ring2']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "ring2")
+            textbutton "{u}Ring 2:{/u} [all_girls_list[girl_index]['equipment']['ring2']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "ring2"), Jump("equipment_check")
 
-        textbutton "{u}Earrings:{/u} [all_girls_list[girl_index]['equipment']['earrings']['type']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "earrings")
+            textbutton "{u}Earrings:{/u} [all_girls_list[girl_index]['equipment']['earrings']['type']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "earrings"), Jump("equipment_check")
 
-        textbutton "{u}Tongue:{/u} [all_girls_list[girl_index]['equipment']['tongue']['type']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "tongue")
+            textbutton "{u}Tongue:{/u} [all_girls_list[girl_index]['equipment']['tongue']['type']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "tongue"), Jump("equipment_check")
 
-        textbutton "{u}Nipple:{/u} [all_girls_list[girl_index]['equipment']['nipples']['type']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "nipple")
+            textbutton "{u}Nipples:{/u} [all_girls_list[girl_index]['equipment']['nipples']['type']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "nipples"), Jump("equipment_check")
 
-        textbutton "{u}Navel:{/u} [all_girls_list[girl_index]['equipment']['navel']['type']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "navel") 
+            textbutton "{u}Navel:{/u} [all_girls_list[girl_index]['equipment']['navel']['type']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "navel"), Jump("equipment_check")
 
-        textbutton "{u}Clitoris:{/u} [all_girls_list[girl_index]['equipment']['clitoris']['type']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "clitoris")
+            textbutton "{u}Clitoris:{/u} [all_girls_list[girl_index]['equipment']['clitoris']['type']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "clitoris"), Jump("equipment_check")
 
-        textbutton "{u}Anal:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
-            style "slave_equipment_menu_button"
-            action SetVariable("available_options", 1),SetVariable("equipment_choice", "anus")
+            textbutton "{u}Anal:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
+                style "slave_equipment_menu_button"
+                action SetVariable("available_options", 1),SetVariable("equipment_choice", "anus"), Jump("equipment_check")
+        if available_options == 1:
+            if equipment_choice == "clothes":
+                textbutton "{u}Clothes:{/u} [all_girls_list[girl_index]['equipment']['clothes']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "clothes"), Jump("equipment_check")
+            else:
+                textbutton "{u}Clothes:{/u} [all_girls_list[girl_index]['equipment']['clothes']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "clothes"), Jump("equipment_check")
+            if equipment_choice == "headgear":
+                textbutton "{u}Headgear:{/u} [all_girls_list[girl_index]['equipment']['headgear']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "headgear"), Jump("equipment_check")
+            else:
+                textbutton "{u}Headgear:{/u} [all_girls_list[girl_index]['equipment']['headgear']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "headgear"), Jump("equipment_check")
+            if equipment_choice == "neck":
+                textbutton "{u}Neck:{/u} [all_girls_list[girl_index]['equipment']['neck']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "neck"), Jump("equipment_check")
+            else:
+                textbutton "{u}Neck:{/u} [all_girls_list[girl_index]['equipment']['neck']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "neck"), Jump("equipment_check")
+            if equipment_choice == "hands":
+                textbutton "{u}Hands:{/u} [all_girls_list[girl_index]['equipment']['hands']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "hands"), Jump("equipment_check")
+            else:
+                textbutton "{u}Hands:{/u} [all_girls_list[girl_index]['equipment']['hands']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "hands"), Jump("equipment_check")
+            if equipment_choice == "feet":
+                textbutton "{u}Feet:{/u} [all_girls_list[girl_index]['equipment']['feet']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "feet"), Jump("equipment_check")
+            else:
+                textbutton "{u}Feet:{/u} [all_girls_list[girl_index]['equipment']['feet']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "feet"), Jump("equipment_check")
+            if equipment_choice == "ring1":
+                textbutton "{u}Ring 1:{/u} [all_girls_list[girl_index]['equipment']['ring1']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "ring1"), Jump("equipment_check")
+            else:
+                textbutton "{u}Ring 1:{/u} [all_girls_list[girl_index]['equipment']['ring1']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "ring1"), Jump("equipment_check")
+            if equipment_choice == "ring2":
+                textbutton "{u}Ring 2:{/u} [all_girls_list[girl_index]['equipment']['ring2']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "ring2"), Jump("equipment_check")
+            else:
+                textbutton "{u}Ring 2:{/u} [all_girls_list[girl_index]['equipment']['ring2']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "ring2"), Jump("equipment_check")
+            if equipment_choice == "earrings":
+                textbutton "{u}Earrings:{/u} [all_girls_list[girl_index]['equipment']['earrings']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "earrings"), Jump("equipment_check")
+            else:
+                textbutton "{u}Earrings:{/u} [all_girls_list[girl_index]['equipment']['earrings']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "earrings"), Jump("equipment_check")
+            if equipment_choice == "tongue":
+                textbutton "{u}Tongue:{/u} [all_girls_list[girl_index]['equipment']['tongue']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "tongue"), Jump("equipment_check")
+            else:
+                textbutton "{u}Tongue:{/u} [all_girls_list[girl_index]['equipment']['tongue']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "tongue"), Jump("equipment_check")
+            if equipment_choice == "nipples":
+                textbutton "{u}Nipples:{/u} [all_girls_list[girl_index]['equipment']['nipples']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "nipples"), Jump("equipment_check")
+            else:
+                textbutton "{u}Nipples:{/u} [all_girls_list[girl_index]['equipment']['nipples']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "nipples"), Jump("equipment_check")
+            if equipment_choice == "navel":
+                textbutton "{u}Navel:{/u} [all_girls_list[girl_index]['equipment']['navel']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "navel"), Jump("equipment_check")
+            else:
+                textbutton "{u}Navel:{/u} [all_girls_list[girl_index]['equipment']['navel']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "navel"), Jump("equipment_check")
+            if equipment_choice == "clitoris":
+                textbutton "{u}Clitoris:{/u} [all_girls_list[girl_index]['equipment']['clitoris']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "clitoris"), Jump("equipment_check")
+            else:
+                textbutton "{u}Clitoris:{/u} [all_girls_list[girl_index]['equipment']['clitoris']['type']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "clitoris"), Jump("equipment_check")
+            if equipment_choice == "anus":
+                textbutton "{u}Anal:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("available_options", 0),SetVariable("equipment_choice", "anus"), Jump("equipment_check")
+            else:
+                textbutton "{u}Anal:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
+                    style "slave_equipment_menu_button"
+                    action SetVariable("equipment_choice", "anus"), Jump("equipment_check")
     vbox:
         pos(0.62,0.068)
         spacing -1
         text "{u}AVAILABLE OPTIONS{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
         if available_options == 0:
             text "{u}Active effects:{/u}" size 14 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+            for key, values in all_girls_list[girl_index]["learning_bonus"].items(): 
+                text "{color=009FEF}{u}Learning bonus{/u}{/color}: " + "{color=#0000D8}" + str(key) + "{/color}" + " " + str(values) xalign 1.0 size 12 color "#000000" font "fonts/Segoe Print.ttf"
+            for key, values in all_girls_list[girl_index]["daily_bonus"].items():
+                text "{color=009900}{u}Daily bonus{/u}{/color}: " + "{color=#0000D8}" + str(key) + "{/color}" + " " + str(values) xalign 1.0 size 12 color "#000000" font "fonts/Segoe Print.ttf"
         elif available_options == 1:
             for values in inventory_type[equipment_choice]:
-                if inventory[values] == "-":
-                    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-                        style "slave_equipment_menu_button2"
-                        action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"])
-                elif all_girls_list[girl_index]["equipment"]["aura_bound"][values] == True:
-                    hbox:
-                        xalign 1.0
+                if equipment_choice not in ["tongue","nipples","navel","clitoris","earrings"]:
+                    if inventory[values] == "-":
                         textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-                            style "slave_equipment_menu_button3"
-                            action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"])
-                        add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
-                elif inventory[values] > 0:
-                    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-                        style "slave_equipment_menu_button2"
-                        action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True)
+                            style "slave_equipment_menu_button2"
+                            action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]), Jump("Home")
+                    elif all_girls_list[girl_index]["equipment"]["aura_bound"][values] == True:
+                        hbox:
+                            xalign 1.0
+                            textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                                style "slave_equipment_menu_button3"
+                                action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]), Jump("Home")
+                            add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
+                    elif inventory[values] > 0:
+                        textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                            style "slave_equipment_menu_button2"
+                            action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]), Jump("Home")
+                    else:
+                        textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                            style "slave_equipment_menu_button"
                 else:
-                    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                    if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"]:
+                        if all_girls_list[girl_index]["equipment"]["aura_bound"][values] == True:
+                            hbox:
+                                xalign 1.0
+                                textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                                    style "slave_equipment_menu_button3"
+                                    action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]), Jump("Home")
+                                add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
+                        elif inventory[values] > 0:
+                            textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                                style "slave_equipment_menu_button2"
+                                action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]), Jump("Home")
+                        else:
+                            textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                                style "slave_equipment_menu_button"
+                                action SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]), SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
+            if equipment_choice in ["tongue","nipples","navel","clitoris","earrings"]:          
+                if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"] == False:
+                    textbutton equipment_choice + " (Not pierced)" xalign 1.0:
                         style "slave_equipment_menu_button"
+                        action NullAction()
     vbox:   
         pos(0.62,0.068)
         spacing -1
         text "" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
         if available_options == 1:
             for values in inventory_type[equipment_choice]:
-                if inventory[values] == "-":
-                    text str(inventory[values]) xalign 0.5:
-                        style "slave_equipment_menu_button2_text"
-                elif inventory[values] > 0:
-                    text str(inventory[values]) xalign 0.5:
-                        style "slave_equipment_menu_button2_text"
+                if equipment_choice not in ["tongue","nipples","navel","clitoris","earrings"]:
+                    if inventory[values] == "-":
+                        text str(inventory[values]) xalign 0.5:
+                            style "slave_equipment_menu_button2_text"
+                    elif inventory[values] > 0:
+                        text str(inventory[values]) xalign 0.5:
+                            style "slave_equipment_menu_button2_text"
+                    else:
+                        text str(inventory[values]) xalign 0.5:
+                            style "slave_equipment_menu_button_text"
                 else:
-                    text str(inventory[values]) xalign 0.5:
-                        style "slave_equipment_menu_button_text"
+                    if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"]:
+                        if inventory[values] > 0:
+                            text str(inventory[values]) xalign 0.5:
+                                style "slave_equipment_menu_button2_text"
+                        else:
+                            text str(inventory[values]) xalign 0.5:
+                                style "slave_equipment_menu_button_text"
 
 
 screen slave_aura_menu():
@@ -1299,9 +1469,6 @@ screen slave_rules_menu():
             textbutton "Enforce rules -" xalign 1.0:
                 style "slave_screen_order_button"
                 action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", True),SetVariable("text_slave_conditions_index","enforce_rules"), Jump("Home")
-
-
-
 screen screen_rules():   
     add bgstyle3 xsize 1280 ysize 720
     add home_decoration_mini xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
@@ -1607,8 +1774,6 @@ screen description_slave_attributes():
             pos(curx - 150,cury)
             style "description_slave_attributes_frame"
             text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["dog_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["dog_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["pig_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["pig_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["house_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["house_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["spider_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["spider_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["sea_tentacle_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["sea_tentacle_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["field_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["field_mating"]]) style "description_slave_attributes_frame_little_text"
-
-
 screen home_attributes_menu():
     vbox:
         pos(0.90,0.05)
@@ -1670,7 +1835,6 @@ screen home_attributes_menu():
                 add energy_image1 size(7,7) anchor (0.5,0.5)
             if has_half:
                 add energy_image2 size(7,7) anchor (0.5,0.5)
-
 screen bg_home():
     add bgstyle xsize 1280 ysize 720
     add home_decoration xsize 1000 ysize 675 pos (0.002,0.057)

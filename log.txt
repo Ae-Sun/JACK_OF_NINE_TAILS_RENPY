@@ -1,100 +1,35 @@
-2025-05-26 22:38:41 UTC
+2025-05-27 17:15:57 UTC
 Windows-10-10.0.19041
 Ren'Py 8.3.7.25031702
 
-Early init took 1.23s
-Loading error handling took 0.08s
-Loading script took 0.98s
-Loading save slot metadata took 0.48s
+Early init took 1.22s
+Loading error handling took 0.05s
+Loading script took 1.01s
+Loading save slot metadata took 0.06s
 Loading persistent took 0.00s
-
-File "game/home.rpy", line 792: is not terminated with a newline. (Check strings and parenthesis.)
-                for values in [inventory_type[equipment_choice]:
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 1.11s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 43.24s
-Loading error handling took 0.04s
-Loading script took 0.43s
-Loading save slot metadata took 0.09s
-Loading persistent took 0.00s
-Running init code took 0.31s
-Loading analysis data took 0.05s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.05s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.36s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.06s
-Prepare screens took 0.19s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.18s
-Running _start took 0.00s
-Interface start took 1.26s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 149.21s
-Loading error handling took 0.04s
-Loading script took 0.48s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.30s
+Running init code took 0.39s
 Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.10s
+Dump and make backups took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.09s
+Initial gc took 0.07s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.36s
+Creating interface object took 0.56s
 Cleaning stores took 0.00s
-Init translation took 0.00s
+Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.08s
-Save bytecode. took 0.03s
+Analyze screens took 0.13s
+Save screen analysis took 0.14s
+Prepare screens took 0.66s
+Save pyanalysis. took 0.07s
+Save bytecode. took 0.06s
 Running _start took 0.00s
 Interface start took 0.75s
 
@@ -108,359 +43,42 @@ Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-KeyError: 'Fist'
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-KeyError: 'Fist'
-Resetting cache.
-Early init took 251.69s
-Loading error handling took 0.04s
-Loading script took 0.41s
-Loading save slot metadata took 0.06s
-Loading persistent took 0.00s
-Running init code took 0.28s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.39s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
+Load screen analysis took 0.19s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
 Running _start took 0.00s
-Interface start took 0.65s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-KeyError: 'id'
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-KeyError: 'id'
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-KeyError: 'id'
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-KeyError: 'id'
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-KeyError: 'id'
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["id"] xalign 1.0:
-KeyError: 'id'
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.01s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
 Resetting cache.
-Early init took 452.95s
-Loading error handling took 0.04s
-Loading script took 0.51s
+Early init took 864.00s
+Loading error handling took 0.06s
+Loading script took 0.71s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
+
+File "game/home.rpy", line 333: expected statement.
+    all_girls_list[girl_index]["learning_bonus"]["sex"] += 1 
+                                                        ^
+
+File "game/home.rpy", line 334: expected statement.
+    all_girls_list[girl_index]["learning_bonus"]["athletics"] += 1 
+                                                              ^
+
+File "game/home.rpy", line 335: expected statement.
+    all_girls_list[girl_index]["daily_bonus"]["taming"] += 1 
+                                                        ^
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.67s
+Interface start took 0.56s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -472,162 +90,22 @@ Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-KeyError: 'bleeding_ring'
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-KeyError: 'bleeding_ring'
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-KeyError: 'No armor'
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 789, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 792, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in execute
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-  File "game/home.rpy", line 793, in <module>
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-KeyError: 'No armor'
 Resetting cache.
-Early init took 529.04s
-Loading error handling took 0.04s
-Loading script took 0.51s
-Loading save slot metadata took 0.08s
+Early init took 942.90s
+Loading error handling took 0.07s
+Loading script took 0.77s
+Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
+Running init code took 0.29s
+Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.10s
+Dump and make backups took 0.11s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.08s
+Initial gc took 0.07s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
@@ -636,13 +114,13 @@ Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.02s
+Analyze screens took 0.04s
 Save screen analysis took 0.04s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
+Prepare screens took 0.29s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.73s
+Interface start took 0.85s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -655,13 +133,461 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 702.73s
+Early init took 1087.45s
+Loading error handling took 0.04s
+Loading script took 0.35s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.31s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.10s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.04s
+Prepare screens took 0.31s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 1.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1444.26s
+Loading error handling took 0.04s
+Loading script took 0.59s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+
+File "game/home.rpy", line 555: Line is indented, but the preceding textbutton statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    style "home_button"
+    ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.42s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1460.82s
+Loading error handling took 0.04s
+Loading script took 0.52s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.28s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.46s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.04s
+Save screen analysis took 0.04s
+Prepare screens took 0.28s
+Save pyanalysis. took 0.04s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.81s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/home.rpy", line 315, in script
+    call screen slave_rules_menu()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1527, in execute
+    vbox:
+  File "game/home.rpy", line 1531, in execute
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+  File "game/home.rpy", line 1531, in <module>
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+KeyError: 'day_bought'
+
+While running game code:
+  File "game/home.rpy", line 315, in script
+    call screen slave_rules_menu()
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1527, in execute
+    vbox:
+  File "game/home.rpy", line 1531, in execute
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+  File "game/home.rpy", line 1531, in <module>
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+KeyError: 'day_bought'
+
+Full traceback:
+  File "game/home.rpy", line 315, in script
+    call screen slave_rules_menu()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1527, in execute
+    vbox:
+  File "game/home.rpy", line 1531, in execute
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+  File "game/home.rpy", line 1531, in <module>
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+KeyError: 'day_bought'
+
+While running game code:
+  File "game/home.rpy", line 315, in script
+    call screen slave_rules_menu()
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1527, in execute
+    vbox:
+  File "game/home.rpy", line 1531, in execute
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+  File "game/home.rpy", line 1531, in <module>
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+KeyError: 'day_bought'
+
+Full traceback:
+  File "game/home.rpy", line 315, in script
+    call screen slave_rules_menu()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1527, in execute
+    vbox:
+  File "game/home.rpy", line 1531, in execute
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+  File "game/home.rpy", line 1531, in <module>
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+KeyError: 'day_bought'
+
+While running game code:
+  File "game/home.rpy", line 315, in script
+    call screen slave_rules_menu()
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1527, in execute
+    vbox:
+  File "game/home.rpy", line 1531, in execute
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+  File "game/home.rpy", line 1531, in <module>
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+KeyError: 'day_bought'
+Resetting cache.
+Early init took 1674.13s
 Loading error handling took 0.05s
 Loading script took 0.43s
 Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
-Running init code took 0.34s
+Running init code took 0.32s
 Loading analysis data took 0.05s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.19s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.42s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.06s
+Prepare screens took 0.69s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.83s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/home.rpy", line 315, in script
+    call screen slave_rules_menu()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1527, in execute
+    vbox:
+  File "game/home.rpy", line 1531, in execute
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+  File "game/home.rpy", line 1531, in <module>
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+KeyError: 'day_bought'
+
+While running game code:
+  File "game/home.rpy", line 315, in script
+    call screen slave_rules_menu()
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1459, in execute
+    screen screen_rules():
+  File "game/home.rpy", line 1527, in execute
+    vbox:
+  File "game/home.rpy", line 1531, in execute
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+  File "game/home.rpy", line 1531, in <module>
+    text "Owned for: " + str(day_tracker - all_girls_list[girl_index]["day_bought"]) + " days" size 16 color "#000000" font "fonts/Segoe Print.ttf"
+KeyError: 'day_bought'
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.07s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 1873.59s
+Loading error handling took 0.16s
+Loading script took 1.40s
+Loading save slot metadata took 0.09s
+Loading persistent took 0.00s
+Running init code took 0.39s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.07s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.18s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.37s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.19s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Interface start took 0.77s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1897.09s
+Loading error handling took 0.04s
+Loading script took 0.58s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.30s
+Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
 Index archives took 0.00s
@@ -679,184 +605,12 @@ Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.21s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 1.03s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 719.94s
-Loading error handling took 0.07s
-Traceback (most recent call last):
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\script.py", line 768, in load_file
-    with open(rpycfn, "wb") as f:
-OSError: [Errno 22] Invalid argument: 'D:\\RE\\Descargas\\Jack o nine tails renpy\\game/girls_stats_iniciation.rpyc'
-Loading script took 1.05s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.70s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 743.05s
-Loading error handling took 0.04s
-Loading script took 0.58s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.05s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.36s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.17s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.66s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 784.72s
-Loading error handling took 0.04s
-Loading script took 0.50s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.17s
+Save screen analysis took 0.05s
+Prepare screens took 0.20s
 Save pyanalysis. took 0.05s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.69s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 815.69s
-Loading error handling took 0.04s
-Loading script took 0.57s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.04s
-Prepare screens took 0.24s
-Save pyanalysis. took 0.04s
 Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.93s
+Interface start took 1.00s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -869,13 +623,13 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 895.23s
-Loading error handling took 0.05s
-Loading script took 0.69s
-Loading save slot metadata took 0.06s
+Early init took 1912.85s
+Loading error handling took 0.04s
+Loading script took 0.54s
+Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.31s
-Loading analysis data took 0.05s
+Running init code took 0.28s
+Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
 Index archives took 0.00s
@@ -887,18 +641,18 @@ Initial gc took 0.09s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.57s
+Creating interface object took 0.35s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.03s
+Analyze screens took 0.02s
 Save screen analysis took 0.04s
-Prepare screens took 0.38s
-Save pyanalysis. took 0.16s
-Save bytecode. took 0.08s
+Prepare screens took 0.19s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.96s
+Interface start took 0.78s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -911,15 +665,57 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1025.42s
+Early init took 1927.46s
 Loading error handling took 0.05s
-Loading script took 0.52s
+Loading script took 0.54s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
+Running init code took 0.30s
+Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.08s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.36s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.04s
+Prepare screens took 0.21s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.79s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1940.33s
+Loading error handling took 0.04s
+Loading script took 0.57s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.33s
+Loading analysis data took 0.05s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.07s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
 Dump and make backups took 0.07s
@@ -929,18 +725,18 @@ Initial gc took 0.11s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.36s
+Creating interface object took 0.39s
 Cleaning stores took 0.00s
-Init translation took 0.00s
+Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
-Save screen analysis took 0.05s
-Prepare screens took 0.55s
-Save pyanalysis. took 0.07s
+Save screen analysis took 0.12s
+Prepare screens took 0.48s
+Save pyanalysis. took 0.12s
 Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.71s
+Interface start took 0.78s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -953,13 +749,13 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1081.58s
+Early init took 1952.87s
 Loading error handling took 0.04s
-Loading script took 0.50s
+Loading script took 0.54s
 Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
 Running init code took 0.27s
-Loading analysis data took 0.03s
+Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
 Index archives took 0.00s
@@ -967,133 +763,7 @@ Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Ja
 Dump and make backups took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.51s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.70s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1142.08s
-Loading error handling took 0.04s
-Loading script took 0.59s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.28s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.06s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
 Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.24s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.66s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1156.10s
-Loading error handling took 0.04s
-Loading script took 0.49s
-Loading save slot metadata took 0.06s
-Loading persistent took 0.00s
-Running init code took 0.28s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.36s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.17s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.69s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1170.12s
-Loading error handling took 0.04s
-Loading script took 0.49s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.10s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
@@ -1104,9 +774,9 @@ Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.04s
-Prepare screens took 0.39s
-Save pyanalysis. took 0.16s
-Save bytecode. took 0.04s
+Prepare screens took 0.19s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.74s
 
@@ -1121,77 +791,36 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1249.61s
-Loading error handling took 0.04s
-Loading script took 0.56s
+Early init took 1962.87s
+Loading error handling took 0.05s
+Loading script took 0.62s
 Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
-Running init code took 0.29s
+Running init code took 0.30s
 Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.16s
+Dump and make backups took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.16s
+Initial gc took 0.12s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.41s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.08s
-Running _start took 0.00s
-Interface start took 0.77s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1262.14s
-Loading error handling took 0.04s
-Loading script took 0.24s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.06s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.16s
-Index archives took 0.00s
-Dump and make backups took 0.11s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.14s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.41s
+Creating interface object took 0.36s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.07s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.44s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.05s
+Prepare screens took 0.56s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 1.19s
+Interface start took 0.79s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -1204,15 +833,41 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1329.75s
+Early init took 2003.73s
 Loading error handling took 0.04s
-Loading script took 0.57s
+Loading script took 0.65s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+
+File "game/home.rpy", line 552: reached end of line when expecting ':'.
+    if is_tutorial
+                  ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.46s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 2012.95s
+Loading error handling took 0.04s
+Loading script took 0.58s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.25s
+ - Init at renpy/common/00images.rpy:55 took 0.26930 s.
+Running init code took 0.36s
 Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
+Reloading save slot metadata took 0.05s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
 Dump and make backups took 0.08s
@@ -1222,60 +877,18 @@ Initial gc took 0.10s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
+Creating interface object took 0.41s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.26s
-Save pyanalysis. took 0.06s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.67s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1368.70s
-Loading error handling took 0.04s
-Loading script took 0.54s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.05s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.17s
-Save pyanalysis. took 0.04s
+Analyze screens took 0.05s
+Save screen analysis took 0.14s
+Prepare screens took 0.60s
+Save pyanalysis. took 0.05s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.68s
+Interface start took 0.72s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -1290,38 +903,61 @@ Maximum texture size: 4096x4096
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
+Load screen analysis took 0.19s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.01s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.01s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.01s
 Load screen analysis took 0.06s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s
 Resetting cache.
-Early init took 1407.51s
-Loading error handling took 0.04s
-Loading script took 0.23s
-Loading save slot metadata took 0.06s
+Early init took 2877.08s
+Loading error handling took 0.06s
+Loading script took 0.44s
+Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
-Running init code took 0.26s
+ - Init at renpy/common/00images.rpy:55 took 0.25117 s.
+Running init code took 0.33s
 Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
+Reloading save slot metadata took 0.05s
 Index archives took 0.00s
-Dump and make backups took 0.06s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.11s
+Initial gc took 0.18s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.41s
+Creating interface object took 0.39s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.10s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.48s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.06s
+Prepare screens took 0.54s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.04s
 Running _start took 0.00s
 Interface start took 1.17s
 
@@ -1336,36 +972,36 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1431.18s
+Early init took 2884.19s
 Loading error handling took 0.04s
-Loading script took 0.48s
-Loading save slot metadata took 0.04s
+Loading script took 0.77s
+Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.03s
+Running init code took 0.29s
+Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
+Reloading save slot metadata took 0.06s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
+Dump and make backups took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.13s
+Initial gc took 0.11s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.35s
+Creating interface object took 0.40s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.08s
-Prepare screens took 0.42s
+Analyze screens took 0.04s
+Save screen analysis took 0.12s
+Prepare screens took 0.75s
 Save pyanalysis. took 0.05s
-Save bytecode. took 0.02s
+Save bytecode. took 0.05s
 Running _start took 0.00s
-Interface start took 0.67s
+Interface start took 0.77s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -1377,36 +1013,112 @@ Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.07s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.01s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
 Resetting cache.
-Early init took 1640.34s
-Loading error handling took 0.04s
-Loading script took 0.59s
-Loading save slot metadata took 0.08s
+Early init took 2965.09s
+Loading error handling took 0.05s
+Loading script took 0.38s
+Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
-Running init code took 0.27s
+Running init code took 0.28s
 Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
+Dump and make backups took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.14s
+Initial gc took 0.24s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.52s
+Creating interface object took 0.46s
 Cleaning stores took 0.00s
-Init translation took 0.00s
+Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.33s
-Save pyanalysis. took 0.06s
-Save bytecode. took 0.06s
-Running _start took 0.02s
+Analyze screens took 0.11s
+Save screen analysis took 0.14s
+Prepare screens took 0.39s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Interface start took 0.79s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.07s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.01s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.01s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 3014.11s
+Loading error handling took 0.04s
+Loading script took 0.27s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.29s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.19s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.38s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.18s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.69s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
 Interface start took 0.96s
 
 Initializing gl2 renderer:
@@ -1420,13 +1132,348 @@ Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 1646.75s
+Early init took 3129.73s
+Loading error handling took 0.06s
+Loading script took 0.42s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+
+File "game/tutorial.rpy", line 545: unmatched ')'
+    all_girls_list[girl_index].setdefault("energy", all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2))
+                                                                                                                   ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.57s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3133.18s
+Loading error handling took 0.04s
+Loading script took 0.65s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+
+File "game/tutorial.rpy", line 545: unmatched ')'
+    all_girls_list[girl_index].setdefault("energy", all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2))
+                                                                                                                   ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.66s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3153.00s
+Loading error handling took 0.04s
+Loading script took 0.49s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.31s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.11s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.45s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.10s
+Prepare screens took 0.61s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.80s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.08s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 3168.88s
+Loading error handling took 0.04s
+Loading script took 0.24s
+Loading save slot metadata took 0.04s
+Loading persistent took 0.00s
+Running init code took 0.25s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.04s
+Index archives took 0.00s
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.11s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.40s
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.12s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.47s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 1.16s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 3481.05s
+Loading error handling took 0.05s
+Loading script took 0.72s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+
+File "game/home.rpy", line 228: end of line expected.
+    jump equipment_check():
+                        ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.69s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3494.72s
 Loading error handling took 0.04s
 Loading script took 0.56s
-Loading save slot metadata took 0.07s
+Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
- - Init at renpy/common/00images.rpy:55 took 0.27925 s.
-Running init code took 0.36s
+Running init code took 0.28s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.10s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.39s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.04s
+Save screen analysis took 0.04s
+Prepare screens took 0.29s
+Save pyanalysis. took 0.04s
+Save bytecode. took 0.07s
+Running _start took 0.00s
+Interface start took 0.85s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.25s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 3707.83s
+Loading error handling took 0.04s
+Loading script took 0.74s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.29s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.09s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.19s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.40s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.05s
+Save screen analysis took 0.06s
+Prepare screens took 0.91s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.80s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3774.48s
+Loading error handling took 0.05s
+Loading script took 1.02s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.30s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.05s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
+Dump and make backups took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.12s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.37s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.04s
+Save screen analysis took 0.04s
+Prepare screens took 0.33s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Interface start took 0.97s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.07s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 4920.38s
+Loading error handling took 0.05s
+Loading script took 0.74s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+
+File "game/home.rpy", line 346: expected an indented block
+        if all_girls_list[girl_index]["equipment"]["clothes"] == "Frilly Apron":
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.55s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1200)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 4944.99s
+Loading error handling took 0.05s
+Loading script took 0.71s
+Loading save slot metadata took 0.05s
+Loading persistent took 0.00s
+Running init code took 0.30s
 Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.05s
@@ -1444,1478 +1491,13 @@ Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.05s
-Prepare screens took 0.56s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.82s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1728.80s
-Loading error handling took 0.04s
-Loading script took 0.68s
-Loading save slot metadata took 0.06s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.24s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.66s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1783.26s
-Loading error handling took 0.04s
-Loading script took 0.50s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.17s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.66s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 1828.23s
-Loading error handling took 0.04s
-Loading script took 0.75s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.35s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.64s
-Save pyanalysis. took 0.06s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.68s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 790, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 793, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in <module>
-    for values in inventory_type[equipment_choice]:
-KeyError: 'enchanter_robe'
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 790, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 793, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 793, in <module>
-    for values in inventory_type[equipment_choice]:
-KeyError: 'enchanter_robe'
-Resetting cache.
-Early init took 1927.64s
-Loading error handling took 0.05s
-Loading script took 0.50s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.35s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.17s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.69s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-TypeError: string indices must be integers
-Resetting cache.
-Early init took 2143.10s
-Loading error handling took 0.18s
-Loading script took 2.04s
-Loading save slot metadata took 1.44s
-Loading persistent took 0.00s
- - Init at game/gui.rpy:11 took 0.58403 s.
-Running init code took 1.03s
-Loading analysis data took 0.13s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.08s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.09s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.17s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 0.79s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "game/home.rpy", line 719, in execute
-    textbutton "{u}Armour:{/u} [all_girls_list[girl_index]['equipment']['armour']]":
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 1015, in _textbutton
-    text = renpy.text.text.Text(label, style=text_style, substitute=substitute, scope=scope, **text_kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2079, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "game/home.rpy", line 719, in execute
-    textbutton "{u}Armour:{/u} [all_girls_list[girl_index]['equipment']['armour']]":
-TypeError: string indices must be integers
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "game/home.rpy", line 719, in execute
-    textbutton "{u}Armour:{/u} [all_girls_list[girl_index]['equipment']['armour']]":
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 1015, in _textbutton
-    text = renpy.text.text.Text(label, style=text_style, substitute=substitute, scope=scope, **text_kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2079, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "game/home.rpy", line 719, in execute
-    textbutton "{u}Armour:{/u} [all_girls_list[girl_index]['equipment']['armour']]":
-TypeError: string indices must be integers
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Resetting cache.
-Early init took 2265.16s
-Loading error handling took 0.04s
-Loading script took 0.30s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.24s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.06s
-Index archives took 0.00s
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.22s
-Save pyanalysis. took 0.06s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 1.21s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 790, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 793, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 794, in execute
-    if inventory[values] == "-":
-  File "game/home.rpy", line 795, in execute
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-  File "game/home.rpy", line 795, in keywords
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-  File "game/home.rpy", line 797, in <module>
-    action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, values),SetDict(all_girls_list[girl_index]["inventory"], values, inventory[values] - 1)
-KeyError: 'inventory'
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 786, in execute
-    vbox:
-  File "game/home.rpy", line 790, in execute
-    if available_options == 0:
-  File "game/home.rpy", line 793, in execute
-    for values in inventory_type[equipment_choice]:
-  File "game/home.rpy", line 794, in execute
-    if inventory[values] == "-":
-  File "game/home.rpy", line 795, in execute
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-  File "game/home.rpy", line 795, in keywords
-    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-  File "game/home.rpy", line 797, in <module>
-    action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, values),SetDict(all_girls_list[girl_index]["inventory"], values, inventory[values] - 1)
-KeyError: 'inventory'
-Resetting cache.
-Early init took 2353.75s
-Loading error handling took 0.33s
-Loading script took 6.29s
-Loading save slot metadata took 0.32s
-Loading persistent took 0.00s
-Running init code took 0.37s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.11s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.38s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.05s
-Prepare screens took 0.54s
-Save pyanalysis. took 0.08s
-Save bytecode. took 0.05s
-Running _start took 0.00s
-Interface start took 0.73s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-TypeError: string indices must be integers
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-TypeError: string indices must be integers
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-TypeError: string indices must be integers
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-TypeError: string indices must be integers
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-TypeError: string indices must be integers
-
-Full traceback:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 327, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 713, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 716, in execute
-    vbox:
-TypeError: string indices must be integers
-Resetting cache.
-Early init took 2824.00s
-Loading error handling took 0.04s
-Loading script took 0.58s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.13s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.04s
-Prepare screens took 0.27s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.81s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 2926.23s
-Loading error handling took 0.05s
-Loading script took 0.62s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.28s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.05s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.42s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.12s
-Prepare screens took 0.48s
-Save pyanalysis. took 0.08s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.65s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 3175.24s
-Loading error handling took 0.06s
-Traceback (most recent call last):
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\script.py", line 768, in load_file
-    with open(rpycfn, "wb") as f:
-OSError: [Errno 22] Invalid argument: 'D:\\RE\\Descargas\\Jack o nine tails renpy\\game/tutorial.rpyc'
-Loading script took 0.47s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.30s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.63s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.19s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 1.24s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 3450.20s
-Loading error handling took 0.04s
-Loading script took 0.34s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.33s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.08s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.15s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.53s
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.07s
+Analyze screens took 0.05s
 Save screen analysis took 0.08s
-Prepare screens took 0.48s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 0.78s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 3734.18s
-Loading error handling took 0.05s
-Loading script took 0.62s
-Loading save slot metadata took 0.06s
-Loading persistent took 0.00s
-Running init code took 0.28s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.37s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.04s
-Prepare screens took 0.29s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.88s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.07s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-
-Full traceback:
-  File "game/home.rpy", line 216, in script
-    python:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/home.rpy", line 219, in <module>
-    for key in inventory.items():
-RuntimeError: dictionary changed size during iteration
-
-While running game code:
-  File "game/home.rpy", line 216, in script
-    python:
-  File "game/home.rpy", line 219, in <module>
-    for key in inventory.items():
-RuntimeError: dictionary changed size during iteration
-Resetting cache.
-Early init took 3971.07s
-Loading error handling took 0.04s
-Loading script took 0.55s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-
-File "game/home.rpy", line 219: expected statement.
-    for key, value in inventory.items():
-           ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 0.50s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4025.52s
-Loading error handling took 0.04s
-Loading script took 0.47s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-
-File "game/home.rpy", line 219: expected statement.
-    for key, value in inventory.items():
-           ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 0.40s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4040.79s
-Loading error handling took 0.05s
-Loading script took 0.48s
-Loading save slot metadata took 0.06s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.05s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.65s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.06s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.06s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Resetting cache.
-Early init took 4130.33s
-Loading error handling took 0.04s
-Loading script took 0.83s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.14s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.38s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.18s
-Prepare screens took 0.52s
+Prepare screens took 0.65s
 Save pyanalysis. took 0.06s
 Save bytecode. took 0.03s
 Running _start took 0.00s
-Interface start took 0.66s
+Interface start took 0.76s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -2927,590 +1509,3 @@ Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.07s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Resetting cache.
-Early init took 4358.97s
-Loading error handling took 0.05s
-Loading script took 0.51s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.16s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.51s
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.12s
-Prepare screens took 0.31s
-Save pyanalysis. took 0.09s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.70s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4571.33s
-Loading error handling took 0.05s
-Loading script took 0.64s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.27s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.05s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.60s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.10s
-Prepare screens took 0.26s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 1.26s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4599.69s
-Loading error handling took 0.06s
-Loading script took 0.52s
-Loading save slot metadata took 0.06s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.36s
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.07s
-Prepare screens took 0.53s
-Save pyanalysis. took 0.09s
-Save bytecode. took 0.08s
-Running _start took 0.00s
-Interface start took 0.73s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.06s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Resetting cache.
-Early init took 4622.67s
-Loading error handling took 0.04s
-Loading script took 0.47s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
- - Init at renpy/common/00images.rpy:55 took 0.31408 s.
-Running init code took 0.41s
-Loading analysis data took 0.07s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.10s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.09s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.49s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.22s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 1.30s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4627.53s
-Loading error handling took 0.04s
-Loading script took 0.26s
-Loading save slot metadata took 0.08s
-Loading persistent took 0.00s
-Running init code took 0.24s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.35s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.06s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.36s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 0.93s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4778.46s
-Loading error handling took 0.04s
-Loading script took 0.47s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.14s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.50s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.08s
-Running _start took 0.00s
-Interface start took 0.82s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 5212.70s
-Loading error handling took 0.04s
-Loading script took 0.64s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.25s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.08s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.27s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.05s
-Running _start took 0.00s
-Interface start took 0.66s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 5250.10s
-Loading error handling took 0.04s
-Loading script took 0.54s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.27s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.11s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.39s
-Save pyanalysis. took 0.08s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.73s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 5272.21s
-Loading error handling took 0.04s
-Loading script took 0.51s
-Loading save slot metadata took 0.05s
-Loading persistent took 0.00s
-Running init code took 0.37s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.35s
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.17s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Interface start took 0.72s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 5317.32s
-Loading error handling took 0.04s
-Loading script took 0.59s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.24s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.34s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.04s
-Prepare screens took 0.30s
-Save pyanalysis. took 0.06s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.77s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 5393.51s
-Loading error handling took 0.05s
-Loading script took 0.62s
-Loading save slot metadata took 0.06s
-Loading persistent took 0.00s
-Running init code took 0.27s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.07s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.12s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.35s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.49s
-Save pyanalysis. took 0.11s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 0.80s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 5452.46s
-Loading error handling took 0.04s
-Loading script took 0.51s
-Loading save slot metadata took 0.04s
-Loading persistent took 0.00s
-Running init code took 0.26s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.04s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\rec3k\\AppData\\Roaming/RenPy/backups\\Jack o nine tails renpy':
-Dump and make backups took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.09s
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.33s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.69s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1200)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/home.rpy", line 331, in script
-    call screen slave_equipment_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/home.rpy", line 717, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 717, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 720, in execute
-    vbox:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-TypeError: string indices must be integers
-
-While running game code:
-  File "game/home.rpy", line 331, in script
-    call screen slave_equipment_menu()
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 717, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 717, in execute
-    screen slave_equipment_menu():
-  File "game/home.rpy", line 720, in execute
-    vbox:
-TypeError: string indices must be integers

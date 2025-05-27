@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 219: expected statement.
-    for key, value in inventory.items():
-           ^
+File "game/home.rpy", line 346: expected an indented block
+        if all_girls_list[girl_index]["equipment"]["clothes"] == "Frilly Apron":
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue May 27 01:45:45 2025
+Tue May 27 20:37:57 2025

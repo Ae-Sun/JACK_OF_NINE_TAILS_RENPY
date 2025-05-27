@@ -29,7 +29,6 @@ label splashscreen:
         "Exit immediately":
             $ result = "Quit"
             $ renpy.quit()
-
 label after_splash:
     # Handle the outcome after the player selects an option
     if result == "Accepted":
@@ -51,18 +50,12 @@ label after_splash:
 ################################################################
 #### main menu control page code -rec3ks
 ###########################################################
-
-
-        
-        
 transform custom_position:
     xpos 0.23
     ypos 0.12
     xanchor 0 # idk this, i only know it works -rec3ks
     yanchor 0 # idk this, i only know it works -rec3ks
 image maincontroltext = ParameterizedText(xalign=0.5, yalign=0.0) 
-
-
 label mainControls:
     scene donotdelete
     show scroll_large
@@ -76,7 +69,6 @@ label mainControls:
 label mainload:
     call screen load
     return  # Ends the new game session if user cancels load
-
 label mainpreferences:
     call screen preferences
     return  # Ends the new game session if user cancels load

@@ -24,7 +24,6 @@ screen mistress_angelika2():
     key "K_SPACE" action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Tutorial")
 screen angelika_speech():
     text angelika_speech_text[angelika_speech_text_count] pos (0.02, 0.78) size 20 font "consolas.ttf" xmaximum 750 
-
 screen angelika_buttons():
     vbox:
         xalign 0.655
@@ -96,7 +95,6 @@ screen slaver_guild():
     text "{color=#000000}I must choose which lecture I want to hear, or I can ask about the conditions of the examination or ask to start when I am ready.{/color}" pos (0.02, 0.78) size 20 font "consolas.ttf" xmaximum 750 
 screen lecture_screen():
     text tutorial_lectureGIGA[lecture_name][angelika_speech_text_count] pos (0.02, 0.78) size 20 font "consolas.ttf" xmaximum 750 color "#000000"
-
 screen lecture_screenbuttons():   
     vbox:
         xalign 0.655
@@ -109,7 +107,6 @@ screen lecture_screenbuttons():
             idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
             hover "buttons/auk_fwrd_hover.webp"
             action SetVariable("angelika_speech_text_count", angelika_speech_text_count + 1),Jump("Lecture")
-
 screen choose_inicial_girl_screen():
     add "bg/interiors/classic_dungeon.webp"pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 535
     text "Choose your slave" pos(0.315, 0.04) anchor (0.5, 0.5) size 36 color "#ffff00" font "fonts/victoriana.ttf"
@@ -275,7 +272,6 @@ screen choose_inicial_girl_screen():
             xsize 265
             ysize 515
             action SetVariable("inicial_girl", girl_path), Jump("choose_inicial_girl")
-
 screen tutorial_attribute():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
@@ -294,8 +290,6 @@ screen tutorial_attribute():
         hover "buttons/ok-icon_hover.webp"
         action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump(infobox_jump)
     key "K_SPACE" action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump(infobox_jump)
-
-
 screen tutorial_description():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
@@ -348,7 +342,6 @@ screen tutorial_descriptionphysical():
         hover "buttons/ok-icon_hover.webp"
         action Hide("tutorial_descriptionphysical"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump(infobox_jump)
     key "K_SPACE" action Hide("tutorial_descriptionphysical"),SetVariable("attribute_checkbox", False),Show("tutorial_description2"),Jump(infobox_jump)
-
 screen tutorial_description2():
     zorder 5
     add "gui/confirm_frame.png" at truecenter
@@ -506,11 +499,11 @@ label choose_inicial_girl:
         $ all_girls_list[2]={}
         $ girl_index = 2
     $ all_girls_list[girl_index] = load_json(premiun_girl_tutorial_selected_localization)
-    $ keys_to_delete = [k for k in all_girls_list.keys() if k != girl_index]
+#    $ keys_to_delete = [k for k in all_girls_list.keys() if k != girl_index]
     
     python:
-        for k in keys_to_delete:
-            del all_girls_list[k]
+#        for k in keys_to_delete:
+#            del all_girls_list[k]
 
         all_girls_list[girl_index].setdefault("aura",{
         "fear": 0,
@@ -548,7 +541,8 @@ label choose_inicial_girl:
         all_girls_list[girl_index]["experience"].setdefault("traits_miscellaneous", {})
         all_girls_list[girl_index]["experience"].setdefault("traits_aura", {})
         all_girls_list[girl_index]["experience"].setdefault("traits_attributes", {})
-        all_girls_list[girl_index].setdefault("energy", 0)
+        all_girls_list[girl_index]["experience"].setdefault("lust", 0)
+        all_girls_list[girl_index].setdefault("energy", all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
         all_girls_list[girl_index].setdefault("attributes", {})
         all_girls_list[girl_index].setdefault("skills", {})
         all_girls_list[girl_index].setdefault("traits", {})
@@ -565,6 +559,8 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("days_without_food",0)
         all_girls_list[girl_index].setdefault("days_without_sleep",0)
         all_girls_list[girl_index].setdefault("daily_count",{})
+        all_girls_list[girl_index].setdefault("lust",0)
+        all_girls_list[girl_index]["day_bought"] = day_tracker
         all_girls_list[girl_index]["daily_count"].setdefault("reward",0)
         all_girls_list[girl_index]["daily_count"].setdefault("punishments",0)
         all_girls_list[girl_index]["equipment"].setdefault("armour","Without armour")
@@ -588,6 +584,17 @@ label choose_inicial_girl:
         all_girls_list[girl_index]["equipment"].setdefault("aura_bound",{})
         for key in dic_girl_clothing_full:
             all_girls_list[girl_index]["equipment"]["aura_bound"].setdefault(key, False)
+        all_girls_list[girl_index].setdefault("learning_bonus",{})
+        for key in dic_slave_skills:
+            all_girls_list[girl_index]["learning_bonus"].setdefault(key,0)
+        all_girls_list[girl_index]["learning_bonus"].setdefault("sex",0)
+        all_girls_list[girl_index].setdefault("daily_bonus",{})
+        all_girls_list[girl_index]["daily_bonus"].setdefault("taming",0)
+        all_girls_list[girl_index]["daily_bonus"].setdefault("lust",0)
+        all_girls_list[girl_index]["daily_bonus"].setdefault("empathy",0)
+        all_girls_list[girl_index]["daily_bonus"].setdefault("temperament",0)
+        all_girls_list[girl_index]["daily_bonus"].setdefault("nature",0)
+        all_girls_list[girl_index]["daily_bonus"].setdefault("pride",0)
         all_girls_list[girl_index]["traits"].setdefault("traits_open", {})
         all_girls_list[girl_index]["traits"]["traits_open"].setdefault("traits_always", {})
         all_girls_list[girl_index]["traits"]["traits_open"].setdefault("traits_especial", {})
@@ -748,7 +755,6 @@ label choose_inicial_girl:
         all_girls_list[girl_index]["sex_experience"]["fetishism"]["fetishism"] = (all_girls_list[girl_index]["sex_experience"]["fetishism"]["enema"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["masochism"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["self-torture"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["golden_shower"] + all_girls_list[girl_index]["sex_experience"]["fetishism"]["scat"]) // 5
         all_girls_list[girl_index]["sex_experience"]["xenophily"]["xenophily"] = (all_girls_list[girl_index]["sex_experience"]["xenophily"]["dog_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["pig_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["house_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["spider_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["sea_tentacle_mating"] + all_girls_list[girl_index]["sex_experience"]["xenophily"]["field_mating"]) // 6
         all_girls_list[girl_index]["attributes"]["natural_beauty"] = all_girls_list[girl_index]["attributes"]["beauty"]
-        all_girls_list[girl_index]["energy"] = min(12, all_girls_list[girl_index]["energy"] + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
 
     if all_girls_list[girl_index]["sex_experience"]["penetration"]["vaginal_sex"] >= 1:
         $ all_girls_list[girl_index]["vaginal_tightness"] = 2
