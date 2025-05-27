@@ -558,6 +558,31 @@ define dic_equipment_armor = {
 
 define dic_equipment_weapon = {
     "One-Handed Weapon":{
+        "Fist":{
+            "description":"  This is a fist, it's the most basic weapon, it's good for close combat and for training, but it's not very effective in combat.",
+            "price":0,
+            "attack":{
+                "quick_jab":{                
+                    "stamina_cost":1,
+                    "attack_speed":-1,
+                    "attack_damage":5,
+                    "attack_penetration":1,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 0
+                },
+                "strong_jab":{
+                    "stamina_cost":3,
+                    "attack_speed":-2,
+                    "attack_damage":10,
+                    "attack_penetration":5,
+                    "attack_range":0,
+                    "attack_type":"physical",
+                    "durability_cost": 0
+                }
+            },
+            "weapon_durability":100,
+        },
         "Baton":{
             "description":"  This is a baton made of tough polymer, similar to rubber, but more resistant to frost. Police from technologically advanced worlds use these.",
             "price":25,
@@ -999,7 +1024,7 @@ define dic_equipment_amulet ={
             "speed":1,
             }
         }
-    }
+}
 define dic_equipment_rings = {
     "bleeding_ring":{
         "description":"  attacks cause bleeding +5",

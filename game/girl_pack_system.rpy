@@ -43,3 +43,11 @@ init python:
         global next_id       # Tell Python we want to use the external variable
         all_girls_list[next_id] = slave
         next_id += 1         # Increase the counter
+    def reduce_check(x,a):
+        if all_girls_list[girl_index]["experience"][x][a] <= attributes_min_threshold[all_girls_list[girl_index][x][a]] and all_girls_list[girl_index][x][a] > 0:
+            all_girls_list[girl_index]["experience"][x][a] -= attributes_min_threshold[all_girls_list[girl_index][x][a]]
+            all_girls_list[girl_index][x][a] = all_girls_list[girl_index][x][a] - 1
+    def increase_check(x,a):
+        if all_girls_list[girl_index]["experience"][x][a] >= attributes_max_threshold[all_girls_list[girl_index][x][a]] and all_girls_list[girl_index][x][a] < 5:
+            all_girls_list[girl_index]["experience"][x][a] -= attributes_max_threshold[all_girls_list[girl_index][x][a]]
+            all_girls_list[girl_index][x][a] = all_girls_list[girl_index][x][a] + 1

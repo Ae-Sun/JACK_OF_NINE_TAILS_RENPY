@@ -1012,118 +1012,101 @@ define dic_overnight_rules_count =[2,2,4]
 
 define dic_girl_clothing_dress ={
     "naked": {
-        "id": "naked",
         "name": "Naked",
         "price": 0,
         "description": "Your slave is completely naked. This is helpful for some types of training, and it will remind her of her place, but she might be happier if she had something to wear.",
     },
     "common_apron": {
-        "id": "common_apron",
         "name": "Frilly Apron",
         "price": 5,
         "description": "Price: 5 sparks\nAprons are most useful in the kitchen. This apron is worn without any other clothing, leaving plenty of opportunities to enjoy the sight of your woman working in the kitchen.",
         "image": "scene/item/item_apron1",
     },
     "maid_dress": {
-        "id": "maid_dress",
         "name": "Maid Outfit",
         "price": 5,
         "description": "Price: 5 sparks\nClassic French maid uniform. Many parts of the uniform have been left out in order to preserve fabric. Most customers actually like this design.",
         "image": "scene/item/item_maido",
     },
     "nurse_dress": {
-        "id": "nurse_dress",
         "name": "Nurse Outfit",
         "price": 5,
         "description": "Price: 5 sparks\nA flashy white nurse dress. This is what you need to lift the spirit of any patient.",
         "image": "scene/item/item_nurse",
     },
     "leotard": {
-        "id": "leotard",
         "name": "Athletic Leotard",
         "price": 5,
         "description": "Price: 5 sparks\nA tight leotard which emphasizes the shape of your slave while not hampering her movements. Perfect for any sports activity, except for battles.",
         "image": "scene/item/item_leotard",
     },
     "chainmail_bikini": {
-        "id": "chainmail_bikini",
         "name": "Chainmail Bikini",
         "price": 5,
         "description": "Price: 5 sparks\nClassic gladiatrix clothing. I repeat - clothing. It's not an armor, it's a stage props, made of light and gleaming anodized aluminum. The cut is so minimal that it almost hides nothing.",
         "image": "scene/item/item_chainmail_bikini",
     },
     "enchanter_robe": {
-        "id": "enchanter_robe",
         "name": "Sorceress Robes",
         "price": 5,
         "description": "Price: 5 sparks\nMade of a very light but opaque fabric - this arcane robe with a hood completely hides the shape of your slave. Not very sexy, but very mysterious and helps to tune in to a mystical way.",
         "image": "scene/item/item_robe",
     },
     "sun_dress": {
-        "id": "sun_dress",
         "name": "Light Sundress",
         "price": 5,
         "description": "Price: 5 sparks\nThis cute little dress is perfect for relaxing and raises the mood of those who wear it. Of course, there are more beautiful or functional dresses, but wearing a sundress is just very nice.",
         "image": "scene/item/item_sundress",
     },
     "laced_underwear": {
-        "id": "laced_underwear",
         "name": "Lace Underwear",
         "price": 5,
         "description": "Price: 5 sparks\nIn this set of sexy lace underwear that includes bra, panties, lightweight corset and stockings with garters, any girl would look desirable. Treat yourself to a beautiful sight and tune your slave for a rough night!",
         "image": "scene/item/item_laced_underwear",
     },
     "sailor_foku": {
-        "id": "sailor_foku",
         "name": "School Uniform",
         "price": 10,
         "description": "Price: 10 sparks\nUniform of the Academy of St. Peter. If your slave will ever attend classes there, this dress will make her feel at home. In any case, what can be more charming and naive than a young schoolgirl?",
         "image": "scene/item/item_sailor",
     },
     "cocktail_dress": {
-        "id": "cocktail_dress",
         "name": "Gown",
         "price": 10,
         "description": "Price: 10 sparks\nA dress made only of the finest fabric. This dress will make your slave stand out at any party. Very stylish and quite affordable - a great choice.",
         "image": "scene/item/item_laced_dreess",
     },
     "rubber_dress": {
-        "id": "rubber_dress",
         "name": "Latex Dress",
         "price": 20,
         "description": "Price: 20 sparks\nThis dress made of thin latex will fit the body of your slave so tightly that every aspect of her body will be highlighted. Easily associable with sex, this outfit will constantly remind your slave that she is expected to learn fast and to be diligent when it comes to any sexual lesson. At the same time, the dress has a strict cut, so it can be worn at dinner parties.",
         "image": "scene/item/item_rubber_dress",
     },
     "ukata": {
-        "id": "ukata",
         "name": "Kimono-Yukata",
         "price": 20,
         "description": "Price: 20 sparks\nBeautiful but strict Japanese clothes - the choice of a Geisha. Bright fabric colors and a lush wide belt will help to emphasize the beauty of the dress, and the strict cut will complement formal communication in any elite company.",
         "image": "scene/item/item_ukata",
     },
     "bellydance": {
-        "id": "bellydance",
         "name": "Exotic Outfit",
         "price": 25,
         "description": "Price: 25 sparks\nIn our city, it is difficult to surprise someone with exotic clothes. This dress with transparent sleeves, baggy trousers, shiny gold and ringing monists is definitely suited for such a task. And belly dancing too!",
         "image": "scene/item/item_bellydance",
     },
     "leather_corset": {
-        "id": "leather_corset",
         "name": "Leather Corset",
         "price": 50,
         "description": "Price: 50 sparks\nA brace dress - the best choice for any sex slave! This hard corset with metal edges has an open front which reveals her breasts and pussy. The gentle brush of air over her exposed erogenous zones will stimulate her and direct her sexual interest towards her master! Moreover, she is certain to be more focused in any sexual training. Beautiful, exciting and practical!",
         "image": "scene/item/item_corset",
     },
     "rich_dress": {
-        "id": "rich_dress",
         "name": "Gorgeous Dress",
         "price": 50,
         "description": "Price: 50 sparks\nYes, this dress is expensive and not very comfortable, but it is GORGEOUS! Talented designers made sure that anyone wearing this dress will appear elegant and tasteful.",
         "image": "scene/item/item_rich_dress",
     },
     "wedding_dress": {
-        "id": "wedding_dress",
         "name": "Wedding Dress",
         "price": 100,
         "description": "Price: 100 sparks\nThere is nothing better than a wedding dress. This is not just a luxury outfit, it's a symbol of purity and happiness, especially for a devoted slave. Every girl dreams of wearing a wedding dress and it will make every girl irresistible! For special ceremonies there is a sexy open front option.",
@@ -1372,6 +1355,12 @@ define dic_girl_clothing_hand_or_feet = {
     }
 }
 define dic_girl_clothing_pony = {
+    "anal_tail":{
+        "name": "Anal tail",
+        "desc":"This device consists of two parts - a large plastic phallus with an extension that provides a secure fit in the ass, and a set of removable tails. Well suited for animal play and increases the arousal of your slave.",
+        "icon": "scene/item/item_anal_tail",
+        "price": 10
+    },
     "pony_plume": {
         "name": "Plumed Bridle",
         "desc": "It's just a necessary accessory for any ponygirl. The leather bridle is securely locked in the mouth gag and a bit and reins are already connected. Thick leather blinkers allow for the slave only to look straight ahead and a bright and high plume makes the whole construction look pleasing to the eye.",
@@ -1449,6 +1438,441 @@ define dic_girl_clothing_enforce = {
 }
 
 define dic_girl_clothing_gift = {
+    "bouqet": {
+        "name": "Bouquet of Flowers ($2)",
+        "desc": "A small but very beautiful bouquet of flowers. This is a special ripening variety, grown hydroponically in the technosphere - only blooms for one day, but quite affordable.",
+        "icon": "scene/item/item_bouqet",
+        "price": 2
+    },
+    "plaid": {
+        "name": "Warm Plaid ($9)",
+        "desc": "Great soft weave with a scot-pattern. Wrapped in this plaid, a slave will feel comfortable and warm when she rests during the day or in her bedroll, and it will be easier to go through difficult times in life.",
+        "icon": "scene/item/item_plaid",
+        "price": 9
+    },
+    "stuffed_toy": {
+        "name": "Plush Toy ($15)",
+        "desc": "A rather large and expensive toy will be a good gift. Will also keep the slave warm, lying on a thin bedroll near the door.",
+        "icon": "scene/item/item_stuffed_toy",
+        "price": 15
+    },
+    "perfume": {
+        "name": "Perfume ($20)",
+        "desc": "A beautiful bottle of perfume with a magnificent composition, brought through the fog. Of course, such a gift will please any woman, but you are pursuing two purposes - your slave will also be more stylish and more desirable for customers. And using it will help her grow accustomed to her fate.",
+        "icon": "scene/item/item_perfume",
+        "price": 20
+    },
+    "pony": {
+        "name": "Mini-Pony ($50)",
+        "desc": "These incredibly cute creatures the size of a cat are grown from eggs in the technosphere. Their life expectancy is not very long and they are inedible, but they are faithful and lovely. You will have to pay for food regularly. (1 spark/day)",
+        "icon": "scene/item/item_pony",
+        "price": 50
+    }
+}
+define dic_girl_clothing_full ={
+    "naked": {
+        "name": "Naked",
+        "price": 0,
+        "description": "Your slave is completely naked. This is helpful for some types of training, and it will remind her of her place, but she might be happier if she had something to wear.",
+    },
+    "common_apron": {
+        "name": "Frilly Apron",
+        "price": 5,
+        "description": "Price: 5 sparks\nAprons are most useful in the kitchen. This apron is worn without any other clothing, leaving plenty of opportunities to enjoy the sight of your woman working in the kitchen.",
+        "image": "scene/item/item_apron1",
+    },
+    "maid_dress": {
+        "name": "Maid Outfit",
+        "price": 5,
+        "description": "Price: 5 sparks\nClassic French maid uniform. Many parts of the uniform have been left out in order to preserve fabric. Most customers actually like this design.",
+        "image": "scene/item/item_maido",
+    },
+    "nurse_dress": {
+        "name": "Nurse Outfit",
+        "price": 5,
+        "description": "Price: 5 sparks\nA flashy white nurse dress. This is what you need to lift the spirit of any patient.",
+        "image": "scene/item/item_nurse",
+    },
+    "leotard": {
+        "name": "Athletic Leotard",
+        "price": 5,
+        "description": "Price: 5 sparks\nA tight leotard which emphasizes the shape of your slave while not hampering her movements. Perfect for any sports activity, except for battles.",
+        "image": "scene/item/item_leotard",
+    },
+    "chainmail_bikini": {
+        "name": "Chainmail Bikini",
+        "price": 5,
+        "description": "Price: 5 sparks\nClassic gladiatrix clothing. I repeat - clothing. It's not an armor, it's a stage props, made of light and gleaming anodized aluminum. The cut is so minimal that it almost hides nothing.",
+        "image": "scene/item/item_chainmail_bikini",
+    },
+    "enchanter_robe": {
+        "name": "Sorceress Robes",
+        "price": 5,
+        "description": "Price: 5 sparks\nMade of a very light but opaque fabric - this arcane robe with a hood completely hides the shape of your slave. Not very sexy, but very mysterious and helps to tune in to a mystical way.",
+        "image": "scene/item/item_robe",
+    },
+    "sun_dress": {
+        "name": "Light Sundress",
+        "price": 5,
+        "description": "Price: 5 sparks\nThis cute little dress is perfect for relaxing and raises the mood of those who wear it. Of course, there are more beautiful or functional dresses, but wearing a sundress is just very nice.",
+        "image": "scene/item/item_sundress",
+    },
+    "laced_underwear": {
+        "name": "Lace Underwear",
+        "price": 5,
+        "description": "Price: 5 sparks\nIn this set of sexy lace underwear that includes bra, panties, lightweight corset and stockings with garters, any girl would look desirable. Treat yourself to a beautiful sight and tune your slave for a rough night!",
+        "image": "scene/item/item_laced_underwear",
+    },
+    "sailor_foku": {
+        "name": "School Uniform",
+        "price": 10,
+        "description": "Price: 10 sparks\nUniform of the Academy of St. Peter. If your slave will ever attend classes there, this dress will make her feel at home. In any case, what can be more charming and naive than a young schoolgirl?",
+        "image": "scene/item/item_sailor",
+    },
+    "cocktail_dress": {
+        "name": "Gown",
+        "price": 10,
+        "description": "Price: 10 sparks\nA dress made only of the finest fabric. This dress will make your slave stand out at any party. Very stylish and quite affordable - a great choice.",
+        "image": "scene/item/item_laced_dreess",
+    },
+    "rubber_dress": {
+        "name": "Latex Dress",
+        "price": 20,
+        "description": "Price: 20 sparks\nThis dress made of thin latex will fit the body of your slave so tightly that every aspect of her body will be highlighted. Easily associable with sex, this outfit will constantly remind your slave that she is expected to learn fast and to be diligent when it comes to any sexual lesson. At the same time, the dress has a strict cut, so it can be worn at dinner parties.",
+        "image": "scene/item/item_rubber_dress",
+    },
+    "ukata": {
+        "name": "Kimono-Yukata",
+        "price": 20,
+        "description": "Price: 20 sparks\nBeautiful but strict Japanese clothes - the choice of a Geisha. Bright fabric colors and a lush wide belt will help to emphasize the beauty of the dress, and the strict cut will complement formal communication in any elite company.",
+        "image": "scene/item/item_ukata",
+    },
+    "bellydance": {
+        "name": "Exotic Outfit",
+        "price": 25,
+        "description": "Price: 25 sparks\nIn our city, it is difficult to surprise someone with exotic clothes. This dress with transparent sleeves, baggy trousers, shiny gold and ringing monists is definitely suited for such a task. And belly dancing too!",
+        "image": "scene/item/item_bellydance",
+    },
+    "leather_corset": {
+        "name": "Leather Corset",
+        "price": 50,
+        "description": "Price: 50 sparks\nA brace dress - the best choice for any sex slave! This hard corset with metal edges has an open front which reveals her breasts and pussy. The gentle brush of air over her exposed erogenous zones will stimulate her and direct her sexual interest towards her master! Moreover, she is certain to be more focused in any sexual training. Beautiful, exciting and practical!",
+        "image": "scene/item/item_corset",
+    },
+    "rich_dress": {
+        "name": "Gorgeous Dress",
+        "price": 50,
+        "description": "Price: 50 sparks\nYes, this dress is expensive and not very comfortable, but it is GORGEOUS! Talented designers made sure that anyone wearing this dress will appear elegant and tasteful.",
+        "image": "scene/item/item_rich_dress",
+    },
+    "wedding_dress": {
+        "name": "Wedding Dress",
+        "price": 100,
+        "description": "Price: 100 sparks\nThere is nothing better than a wedding dress. This is not just a luxury outfit, it's a symbol of purity and happiness, especially for a devoted slave. Every girl dreams of wearing a wedding dress and it will make every girl irresistible! For special ceremonies there is a sexy open front option.",
+        "image": "scene/item/item_wedding_dress",
+    },
+    "rubber_gloves": {
+        "name": "Rubber Gloves",
+        "desc": "Although rubber gloves do not complement any costume and will not decorate the hands of your slave, they have a lot of applications. These gloves will protect the delicate skin of the slave while cleaning and washing dishes. It also comes in handy for some medical procedures.",
+        "icon": "scene/item/item_rubber_gloves",
+        "price": 5
+    },
+    "laced_gloves": {
+        "name": "Lace Gloves",
+        "desc": "Elbow-length laced gloves are elegant and well suited for accentuating the style and charm of your slave's outfit. This pair covers the skin from elbow to fingertip with delicate lace.",
+        "icon": "scene/item/item_laced_gloves",
+        "price": 5
+    },
+    "leather_gloves": {
+        "name": "Leather Gloves",
+        "desc": "Elegant and durable leather gloves not only serve a stylish addition to most outfits, but also protect the hands of your slave during weapon training or alchemy.",
+        "icon": "scene/item/item_leather_gloves",
+        "price": 5
+    },
+    "plastic_bracers": {
+        "name": "Carbon Fiber Gloves",
+        "desc": "Lightweight and durable bracers from black carbon fiber hardly will add elegance to your slave. It will however protect her hands during combat training. And health is sometimes more important than beauty.",
+        "icon": "scene/item/item_bracers",
+        "price": 10
+    },
+    "fluffy_gloves": {
+        "name": "Fluffy Paws",
+        "desc": "These plump and fluffy gloves are made in the form of soft cat paws. It is not functional, but a very nice addition to the wardrobe of your slave. It is easier for her to feel like a pet!",
+        "icon": "scene/item/item_fluffy_gloves",
+        "price": 5
+    },
+    "tabi": {
+        "name": "Tabi Socks",
+        "desc": "This type of thick socks is cut with a separate thumb. Classic footwear for martial arts and silent movement. These socks will last through any sort of training.",
+        "icon": "scene/item/item_tabi",
+        "price": 5
+    },
+    "fluffy_stepins": {
+        "name": "Soft Slippers",
+        "desc": "These soft and fluffy slippers create an incredible feeling of warmth and comfort. They have a simple design, open at the back and with a pair of soft tassel balls on each slipper, decorated with tiny ribbons.",
+        "icon": "scene/item/item_fluffy_stepins",
+        "price": 5
+    },
+    "pointes": {
+        "name": "Pointes",
+        "desc": "Indispensable attribute of every ballerina - pointes. The most comfortable shoes for ballroom dancing.",
+        "icon": "scene/item/item_pointes",
+        "price": 5
+    },
+    "sneakers": {
+        "name": "Sneakers",
+        "desc": "Comfortable and practical footwear for sports and everyday wear.",
+        "icon": "scene/item/item_sneakers",
+        "price": 5
+    },
+    "high_heels": {
+        "name": "Heels",
+        "desc": "These shoes with high and sharp heels are a sample of elegance and style. A wide range of styles and colors means there is a fitting pair for every dress. No elegant outfit would be complete without a set of high heels.",
+        "icon": "scene/item/item_high_heels",
+        "price": 5
+    },
+    "high_boots": {
+        "name": "High Boots",
+        "desc": "High leather boots with shiny buckles and elegant heel. These are not only as elegant as high heels, but also emphasize the sexuality and unbridled temper of your slave.",
+        "icon": "scene/item/item_high_boots",
+        "price": 20
+    },
+    "plain_ring": {
+        "name": "Elegant Ring",
+        "desc": "A well crafted and beautiful ring made out of precious metals.",
+        "icon": "scene/item/item_plain_ring",
+        "price": 3
+    },
+    "incrusted_ring": {
+        "name": "Gemstone Ring",
+        "desc": "This ring is made out of higher quality metal and the inlaid stone enhances the beauty of anyone wearing this ring.",
+        "icon": "scene/item/item_incrusted_ring",
+        "price": 5
+    },
+    "plain_earrings": {
+        "name": "Small Hoop",
+        "desc": "These elegant little hoops are perfectly suited for all pierced areas of the body.",
+        "icon": "scene/item/item_plain_earring",
+        "price": 3
+    },
+    "incrusted_earrings": {
+        "name": "Gemstone Stud",
+        "desc": "This drop stud is encrusted with synthetic crystals, which are generally more rare and exotic than standard gemstones. For the ears there is an option with clips that does not require piercing.",
+        "icon": "scene/item/item_incrusted_earring",
+        "price": 5
+    },
+    "barbells": {
+        "name": "Barbell",
+        "desc": "These barbells are made out of precious metal and polished to perfection with a rare gemstone on either end. Barbells can provide mild stimulation to a pierced tongue, nipple, navel or clit.",
+        "icon": "scene/service/service_tongue_piercing",
+        "price": 10
+    },
+    "nipple_chain": {
+        "name": "Nipple Chain",
+        "desc": "A pair of rings linked with a chain, which is meant to connect the nipples of a slave. This will give your slave a slightly exotic look. The rings provide constant stimulation, and knowing that you can always pull the chain, she will behave more respectfully - as pulling it hurts.",
+        "icon": "scene/item/item_nipple_chain",
+        "price": 10
+    },
+    "heavy_gauge_rings": {
+        "name": "Thick Steel Ring",
+        "desc": "Add drama to any piercing and remind your slave of her place. Because nothing says 'slave' like heavy gauge steel. Exotic, but not the most elegant, of course. A trio of these make a good complement for a nipple chain and a nose ring.",
+        "icon": "scene/item/item_heavy_gauge",
+        "price": 30
+    },
+    "plain_headband": {
+        "name": "Headband",
+        "desc": "This accessory is designed not only as an accessory, but for everyday use. The lightweight and flexible headband allows to neatly tuck away hair so that it does not conceal the face or fall into the pot.",
+        "icon": "scene/item/item_headband",
+        "price": 3
+    },
+    "hijab": {
+        "name": "Hijab",
+        "desc": "A hijab completely covers the hair. Perhaps not the best kind of jewelry for the head, but it is very practical in everyday affairs. The hair will not fall into the soup or interfere during cleaning!",
+        "icon": "scene/item/item_hijab",
+        "price": 3
+    },
+    "crown_of_thorns": {
+        "name": "Crown of Thorns",
+        "desc": "Of course this is only the name, it has no thorns. These rims are made out of barbed wire. The trick is the attachment mechanism - it is arranged such as to cause pain, but not to injure and not be removed so easily. Constant, though mild pain reminds a slave of humility.",
+        "icon": "scene/item/item_thorns",
+        "price": 5
+    },
+    "plain_tiara": {
+        "name": "Ornamented Diadem",
+        "desc": "A stylish diadem from precious metal. It perfectly complements the hairstyle of your slave and surrounds her with an aura of luxury.",
+        "icon": "scene/item/item_plain_tiara",
+        "price": 10
+    },
+    "hairnet": {
+        "name": "Hairnet",
+        "desc": "Elegant hair mesh decorated with pearls and preciously woven, it will not only accentuate the style of your slave, but also permanently retain her hairstyle. In addition to the product itself, a set of silver pins and a pearl comb are included.",
+        "icon": "scene/item/item_hairnet",
+        "price": 10
+    },
+    "glasses": {
+        "name": "Stylish Glasses",
+        "desc": "Beautiful and practical accessory. The expertly selected lenses are optimal for the slave's vision correction, allowing her to read documents more efficiently. And a stylish frame from precious metal accentuates the unique style of the girl.",
+        "icon": "scene/item/item_glasses",
+        "price": 10
+    },
+    "nekomimi": {
+        "name": "Cat Ears",
+        "desc": "Large fur cat ears with a flexible rim certainly attract the attention of others and will help your slave feel like a real pet.",
+        "icon": "scene/item/item_nekomimi",
+        "price": 10
+    },
+    "incrusted_tiara": {
+        "name": "Precious Tiara",
+        "desc": "This massive tiara is decorated with shimmering gems of the highest quality - it will certainly attract attention and emphasize the beauty of your slave.",
+        "icon": "scene/item/item_incrusted_tiara",
+        "price": 20
+    },
+    "exotic_wig": {
+        "name": "Exotic Wig",
+        "desc": "Want to raise the exotic nature of your slave? Use a gorgeous exotic wig. Incredible colors, feathers, dreadlocks as well as shiny jewelry woven into the hair literally attract glances.",
+        "icon": "scene/item/item_exotic_wig",
+        "price": 20
+    },
+    "plain_pendant": {
+        "name": "Chain with Pendant",
+        "desc": "A chain from precious metal with a shaped pendant perfectly accentuates the style and elegance of your slave.",
+        "icon": "scene/item/item_plain_pendant",
+        "price": 5,
+        "escape": True,
+    },
+    "incrusted_necklace": {
+        "name": "Gemstone Necklace",
+        "desc": "Figured necklace, studded with beautiful gems.",
+        "icon": "scene/item/item_incrusted_necklace",
+        "price": 10,
+        "escape": True,
+    },
+    "dog_collar": {
+        "name": "Collar and Leash",
+        "desc": "Provided with a leash, it is immediately obvious that this is not made for humans, but for a pet. Helps set up a slave in the right mood, but it's easy to remove. This collar is not meant to remind your slave of her fate, as it is obviously a pet collar, not a slave collar.",
+        "icon": "scene/item/item_dog_collar",
+        "price": 5,
+        "escape": True,
+    },
+    "leather_collar": {
+        "name": "Leather Collar",
+        "desc": "Wide leather collar with studs and rings for attaching a leash and shackles. Wearing one of these, your slave will never forget about her fate. Not to mention the fact that it's just very practical for many games. It is equipped with your name token to get her back in case of loss.",
+        "icon": "scene/item/item_leather_collar",
+        "price": 3,
+        "escape": False,
+    },
+    "steel_collar": {
+        "name": "Steel Collar",
+        "desc": "Durable steel collar - heavy reminder of the fate of the slave from which it is impossible to escape. Wearing a steel collar is not a pleasant experience - it rubs the neck and grazes the skin. Not to mention the impact on the pride and conceit. It is engraved with your name and address to get her back in case of loss.",
+        "icon": "scene/item/item_steel_collar",
+        "price": 10,
+        "escape": False,
+    },
+    "spiked_collar": {
+        "name": "Spiked Collar",
+        "desc": "Brutal form of a collar decorated with long and sharp steel spikes. It not only reminds the slave of her status, but also makes her feel more aggressive. Good accessory for a gladiatrix, and indeed for any temperamental bitch. It is equipped with your name token to get her back in case of loss.",
+        "icon": "scene/item/item_spiked_collar",
+        "price": 10,
+        "escape": False,
+    },
+    "shock_collar": {
+        "name": "Shock Collar",
+        "desc": "A technogenic shock collar. Serpis developed these to discipline cloned soldiers and reached an agreement with the Guild of Trainers for non-military use. It not only reminds a slave of her status but continuously monitors mental patterns during speech and applies an effect similar to Cruciato when it senses an attitude lacking in humility. It is equipped with your name token in case of loss.",
+        "icon": "scene/item/item_shock_collar",
+        "price": 25,
+        "escape": False,
+    },
+    "golden_collar": {
+        "name": "Ornamented Collar",
+        "desc": "A luxurious wide and golden collar. It is adorned with exotic jewels and equipped with your name token to get her back in case of loss. Multiple rings allow for attaching leash and shackles. This stylish accessory will make sure that the slave will not forget that you are her master and she has to obey.",
+        "icon": "scene/item/item_golden_collar",
+        "price": 20,
+        "escape": False,
+    },
+    "leather_straps": {
+        "name": "Leather Shackles",
+        "desc": "A pair of sturdy leather bracelets with steel rings for fixing chains. This accessory will make sure that the slave will not forget that you are her master and she has to obey. Can be worn on the hands or feet, and successfully used in any bondage. Very practical!",
+        "icon": "scene/item/item_leather_straps",
+        "price": 5
+    },
+    "anal_tail":{
+        "name": "Anal tail",
+        "desc":"This device consists of two parts - a large plastic phallus with an extension that provides a secure fit in the ass, and a set of removable tails. Well suited for animal play and increases the arousal of your slave.",
+        "icon": "scene/item/item_anal_tail",
+        "price": 10
+    },
+    "pony_plume": {
+        "name": "Plumed Bridle",
+        "desc": "It's just a necessary accessory for any ponygirl. The leather bridle is securely locked in the mouth gag and a bit and reins are already connected. Thick leather blinkers allow for the slave only to look straight ahead and a bright and high plume makes the whole construction look pleasing to the eye.",
+        "icon": "scene/item/item_pony_plume",
+        "price": 15
+    },
+    "ponygirl_harness": {
+        "name": "Pony Harness",
+        "desc": "The main objective of this leather corset is to fix a ponygirl's hands behind her back so that she can no longer use them. A big ring in the area of the fixed hands provides the convenience of rides and additional straps in the front provide a fixation and emphasize the breasts.",
+        "icon": "scene/item/item_harness",
+        "price": 20
+    },
+    "hoofed_boots": {
+        "name": "Hooved Boots",
+        "desc": "This is a special kind of boots with heels, imitating horse hooves. Walking with them is even more uncomfortable than with usual heels, but they look stylish and they can be used to stomp loudly, showing your temper.",
+        "icon": "scene/item/item_hoofs",
+        "price": 25
+    },
+    "cow_gear": {
+        "name": "Cow Gear",
+        "desc": "Tail, ears, and a nice bell with your name engraved on it: all indispensable elements to remind your cow of her role. The ringing can be a bit mind-numbing, though.",
+        "icon": "scene/item/item_cow_gear",
+        "price": 25
+    },
+    "petsuit": {
+        "name": "Petsuit",
+        "desc": "This version of a deprivation suit does not impede vision or hearing. It is made so that the wearer acts like a cat or a dog. Allows you to move only on all fours, leaning on elbows and knees.",
+        "icon": "scene/item/item_petsuit",
+        "price": 25
+    },
+    "deprivation_suit": {
+        "name": "Deprivation Suit",
+        "desc": "Although it is called a suit, it is not intended to be worn as such, it's for radical bondage. The thick rubber shell and durable leather belts prevent any movement and apply a constant uniform pressure. The eyes, ears and mouth are tightly shut to completely cut off the wearer from the outside world.",
+        "icon": "scene/item/item_dsuit",
+        "price": 50
+    },
+    "vaginal_balls": {
+        "name": "Vaginal Beads",
+        "desc": "A pair of beads on a string with a ring designed for extended wear in the vagina. They are excellent to help build arousal and develop muscles.",
+        "icon": "scene/item/item_vaginal_balls",
+        "price": 5
+    },
+    "anal_plug": {
+        "name": "Anal Pear",
+        "desc": "Unlike the normal anal plug, this pear has a screw that allows you to expand it after inserting it in the ass. The screw is fixed with a small padlock, so there is no way to remove the pear without the key.",
+        "icon": "scene/item/item_toys",
+        "price": 20
+    },
+    "secure_gag": {
+        "name": "Reliable Gag",
+        "desc": "This impressive steel structure inherits the best traits of the horse bridle and dental reamer. You cannot remove it without the key and the mouth is fixed in the maximum open state.",
+        "icon": "scene/item/item_secure_gag",
+        "price": 20
+    },
+    "chastity_belt": {
+        "name": "Chastity Belt",
+        "desc": "A solid garment of steel and leather that prevents all access to the vagina for anybody but the keyholder.",
+        "icon": "scene/item/item_chastity_belt",
+        "price": 30
+    },
+    "pissuar_stable": {
+        "name": "Urinal Rack",
+        "desc": "This piece of furniture does not take up too much space, as its main component is a slave. The rack is equipped with robust clamps for hands, feet and the head. It comes with a ring expander for the mouth as well as a nose clip. You can also set a transparent headband bowl of a «drink or choke» type.",
+        "icon": "scene/item/item_pissuar",
+        "price": 100
+    },
+    "toilet_stable": {
+        "name": "Toilet Seat",
+        "desc": "A pretty massive piece of furniture, but it is well worth it. The construct completely immobilizes the slave and only her head sticks out. A special device makes sure that her mouth is open at all times so it can be used to take a dump. The massive construction prevents any attempts to escape.",
+        "icon": "scene/item/item_toilet",
+        "price": 250
+    },
     "bouqet": {
         "name": "Bouquet of Flowers ($2)",
         "desc": "A small but very beautiful bouquet of flowers. This is a special ripening variety, grown hydroponically in the technosphere - only blooms for one day, but quite affordable.",

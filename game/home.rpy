@@ -32,23 +32,203 @@ default boobs5 =" firm melons"
 default boobs6 =" shapely balloons"
 default dic_overnight_rules_count_index = 1
 default description_slave_attributes_track_value = "default"
+default available_options = 0
+default equipment_choice = "armour"
+default inventory = {
+    "No armor": 0,
+    "Aramid Suit": 0,
+    "Leather Armor": 0,
+    "Adaptive Nanoweave Suit": 0,
+    "Phantom Aegis Suit": 0,
+    "Elven Chainmail": 0,
+    "Combined Armor": 0,
+    "Adaptive armor": 0,
+    "Semi-perfect armor": 0,
+    "Iron Armor": 0,
+    "Obsidian Bulwark": 0,
+    "Gothic plate": 0,
+    "Mithril Mail": 0,
+    "Fist": 0,
+    "Baton": 0,
+    "Rapier": 0,
+    "Koncerz": 0,
+    "Whip": 0,
+    "Epee": 0,
+    "Gladius": 0,
+    "katana": 0,
+    "Blowgun Darts": 0,
+    "shuriken": 0,
+    "Buckler": 0,
+    "Adarga": 0,
+    "Huge mace": 0,
+    "Baseball Bat": 0,
+    "Gattle Prod": 0,
+    "Naginata": 0,
+    "magic_protection": 0,
+    "physical_protection": 0,
+    "stamina_restore": 0,
+    "penetration": 0,
+    "Lucky": 0,
+    "speed": 0,
+    "bleeding_ring": 0,
+    "stun_ring": 0,
+    "confusion_ring": 0,
+    "injured_ring": 0,
+    "sleep_ring": 0,
+    "pain_ring": 0,
+    "naked": "-",
+    "common_apron": 0,
+    "maid_dress": 0,
+    "nurse_dress": 0,
+    "leotard": 0,
+    "chainmail_bikini": 0,
+    "enchanter_robe": 0,
+    "sun_dress": 0,
+    "laced_underwear": 0,
+    "sailor_foku": 0,
+    "cocktail_dress": 0,
+    "rubber_dress": 0,
+    "ukata": 0,
+    "bellydance": 0,
+    "leather_corset": 0,
+    "rich_dress": 0,
+    "wedding_dress": 0,
+    "petsuit": 0,
+    "deprivation_suit": 0,
+    "cow_gear": 0,
+    "pony_plume": 0,
+    "plain_headband": 0,
+    "hijab": 0,
+    "crown_of_thorns": 0,
+    "plain_tiara": 0,
+    "hairnet": 0,
+    "glasses": 0,
+    "nekomimi": 0,
+    "incrusted_tiara": 0,
+    "exotic_wig": 0,
+    "plain_pendant": 0,
+    "incrusted_necklace": 0,
+    "dog_collar": 0,
+    "leather_collar": 0,
+    "steel_collar": 0,
+    "spiked_collar": 0,
+    "shock_collar": 0,
+    "golden_collar": 0,
+    "rubber_gloves": 0,
+    "laced_gloves": 0,
+    "leather_gloves": 0,
+    "plastic_bracers": 0,
+    "fluffy_gloves": 0,
+    "ponygirl_harness": 0,
+    "leather_straps": 0,
+    "tabi": 0,
+    "fluffy_stepins": 0,
+    "pointes": 0,
+    "sneakers": 0,
+    "high_heels": 0,
+    "high_boots": 0,
+    "hoofed_boots": 0,
+    "plain_ring": 0,
+    "incrusted_ring": 0,
+    "plain_earrings": 0,
+    "incrusted_earrings": 0,
+    "heavy_gauge_rings": 0,
+    "barbells": 0,
+    "nipple_chain": 0,
+    "anal_plug": 0,
+    "anal_tail": 0
+}
+default inventory_type = {
+    "armour": [
+        "No armor", "Aramid Suit", "Leather Armor", "Adaptive Nanoweave Suit",
+        "Phantom Aegis Suit", "Elven Chainmail", "Combined Armor", "Adaptive armor",
+        "Semi-perfect armor", "Iron Armor", "Obsidian Bulwark", "Gothic plate", "Mithril Mail"
+    ],
+    "left_hand": [
+        "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
+        "Blowgun Darts", "shuriken", "Buckler", "Adarga", "Huge mace", "Baseball Bat",
+        "Gattle Prod", "Naginata"
+    ],
+    "right_hand": [
+        "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
+        "Blowgun Darts", "shuriken", "Buckler", "Adarga", "Huge mace", "Baseball Bat",
+        "Gattle Prod", "Naginata"
+    ],
+    "amulet": [
+        "magic_protection", "physical_protection", "stamina_restore", "penetration",
+        "Lucky", "speed"
+    ],
+    "ring": [
+        "bleeding_ring", "stun_ring", "confusion_ring", "injured_ring", "sleep_ring", "pain_ring"
+    ],
+    "clothes": [
+        "naked", "common_apron", "maid_dress", "nurse_dress", "leotard", "chainmail_bikini",
+        "enchanter_robe", "sun_dress", "laced_underwear", "sailor_foku", "cocktail_dress",
+        "rubber_dress", "ukata", "bellydance", "leather_corset", "rich_dress", "wedding_dress",
+        "petsuit", "deprivation_suit", "cow_gear"
+    ],
+    "headgear": [
+        "pony_plume", "plain_headband", "hijab", "crown_of_thorns", "plain_tiara", "hairnet",
+        "glasses", "nekomimi", "incrusted_tiara", "exotic_wig"
+    ],
+    "neck": [
+        "plain_pendant", "incrusted_necklace", "dog_collar", "leather_collar", "steel_collar",
+        "spiked_collar", "shock_collar", "golden_collar"
+    ],
+    "hands": [
+        "rubber_gloves", "laced_gloves", "leather_gloves", "plastic_bracers",
+        "fluffy_gloves", "ponygirl_harness", "leather_straps"
+    ],
+    "feet": [
+        "tabi", "fluffy_stepins", "pointes", "sneakers", "high_heels",
+        "high_boots", "hoofed_boots", "leather_straps"
+    ],
+    "ring1": [
+        "plain_ring", "incrusted_ring"
+    ],
+    "ring2": [
+        "plain_ring", "incrusted_ring"
+    ],
+    "earrings": [
+        "plain_earrings", "incrusted_earrings", "heavy_gauge_rings"
+    ],
+    "tongue": [
+        "barbells", "heavy_gauge_rings"
+    ],
+    "nipple": [
+        "barbells", "nipple_chain", "heavy_gauge_rings"
+    ],
+    "navel": [
+        "barbells", "heavy_gauge_rings"
+    ],
+    "clitoris": [
+        "barbells", "heavy_gauge_rings"
+    ],
+    "anus": [
+        "anal_plug", "anal_tail"
+    ]
+}
+
+
+
 label iniciation_label:
     if is_tutorial == True:
-        $mc_image = "master/master_noble.webp"
-        $ all_girls_list[girl_index]["day_bought"] = day_tracker
-        if current_menu == 0:
-            show screen goguild()
-        else:
-            hide screen goguild
+        python:
+            mc_image = "master/master_noble.webp"
+            all_girls_list[girl_index]["day_bought"] = day_tracker
+            for key, value in inventory.items():
+                if value != "-":
+                    inventory[key] = 1
     else:
         if is_normal_start == True:
             $mc_image = dic_custom_character_selection[mc][0]
         else:
             $mc_image = dic_custom_character_selection[dic_charactersOnlyName[characterOnlyNameIndex]][0]
     $ mc_image2 = mc_image.replace(".webp", "_hover.webp")
-    jump Home
+    jump next_day_label
 
 label next_day_label:
+        ###### yep I month into the proyect and i complety forgot that I can use python functions in renpy -rec3ks
     python:
         energy_value = strength_value_1 *2 + 2
         for girl_index in all_girls_list:
@@ -62,32 +242,25 @@ label next_day_label:
                 all_girls_list[girl_index]["days_without_sleep"] += 1
                 all_girls_list[girl_index]["experience"]["attributes"]["endurance"] -= all_girls_list[girl_index]["days_without_sleep"] *3
                 all_girls_list[girl_index]["experience"]["aura"]["taming"] += all_girls_list[girl_index]["days_without_sleep"]
+                reduce_check("attributes","endurance")
+                increase_check("aura","taming")
+
         ######## SPOILING SECTION - Done
             ### spoiling - increase
             if all_girls_list[girl_index]["daily_count"]["reward"] > 2:
                 all_girls_list[girl_index]["experience"]["aura"]["spoil"] += all_girls_list[girl_index]["daily_count"]["reward"]*5
             if all_girls_list[girl_index]["aura"]["devotion"] <= 2 and all_girls_list[girl_index]["aura"]["fear"] == 0 and all_girls_list[girl_index]["days_without_food"] == 0 and all_girls_list[girl_index]["days_without_sleep"] == 0 and all_girls_list[girl_index]["rules"]["rules_count"] <= 2:
                 all_girls_list[girl_index]["experience"]["aura"]["spoil"] += all_girls_list[girl_index]["attributes"]["pride"] + all_girls_list[girl_index]["attributes"]["nature"] + all_girls_list[girl_index]["attributes"]["temperament"]
-            if all_girls_list[girl_index]["experience"]["aura"]["spoil"] >= attributes_max_threshold[all_girls_list[girl_index]["aura"]["spoil"]] and all_girls_list[girl_index]["aura"]["spoil"] < 5:
-                all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= attributes_max_threshold[all_girls_list[girl_index]["aura"]["spoil"]]
-                all_girls_list[girl_index]["aura"]["spoil"] = min(5, all_girls_list[girl_index]["aura"]["spoil"] + 1)
+            increase_check("aura","spoil")
             if all_girls_list[girl_index]["aura"]["spoil"] > 0:
                 all_girls_list[girl_index]["experience"]["aura"]["devotion"] -= all_girls_list[girl_index]["aura"]["spoil"]
                 all_girls_list[girl_index]["experience"]["aura"]["awareness"] -= all_girls_list[girl_index]["aura"]["spoil"]
                 all_girls_list[girl_index]["experience"]["aura"]["taming"] -= all_girls_list[girl_index]["aura"]["spoil"]
                 all_girls_list[girl_index]["experience"]["aura"]["habit"] -= all_girls_list[girl_index]["aura"]["spoil"]
-                if all_girls_list[girl_index]["experience"]["aura"]["devotion"] <= attributes_min_threshold[all_girls_list[girl_index]["aura"]["devotion"]] and all_girls_list[girl_index]["aura"]["devotion"] > 0:
-                    all_girls_list[girl_index]["experience"]["aura"]["devotion"] -= attributes_min_threshold[all_girls_list[girl_index]["aura"]["devotion"]]
-                    all_girls_list[girl_index]["aura"]["devotion"] = max(0, all_girls_list[girl_index]["aura"]["devotion"] - 1)
-                if all_girls_list[girl_index]["experience"]["aura"]["awareness"] <= attributes_min_threshold[all_girls_list[girl_index]["aura"]["awareness"]] and all_girls_list[girl_index]["aura"]["awareness"] > 0:
-                    all_girls_list[girl_index]["experience"]["aura"]["awareness"] -= attributes_min_threshold[all_girls_list[girl_index]["aura"]["awareness"]]
-                    all_girls_list[girl_index]["aura"]["awareness"] = max(0, all_girls_list[girl_index]["aura"]["awareness"] - 1)
-                if all_girls_list[girl_index]["experience"]["aura"]["taming"] <= attributes_min_threshold[all_girls_list[girl_index]["aura"]["taming"]] and all_girls_list[girl_index]["aura"]["taming"] > 0:
-                    all_girls_list[girl_index]["experience"]["aura"]["taming"] -= attributes_min_threshold[all_girls_list[girl_index]["aura"]["taming"]]
-                    all_girls_list[girl_index]["aura"]["taming"] = max(0, all_girls_list[girl_index]["aura"]["taming"] - 1)
-                if all_girls_list[girl_index]["experience"]["aura"]["habit"] <= attributes_min_threshold[all_girls_list[girl_index]["aura"]["habit"]] and all_girls_list[girl_index]["aura"]["habit"] > 0:
-                    all_girls_list[girl_index]["experience"]["aura"]["habit"] -= attributes_min_threshold[all_girls_list[girl_index]["aura"]["habit"]]
-                    all_girls_list[girl_index]["aura"]["habit"] = max(0, all_girls_list[girl_index]["aura"]["habit"] - 1) 
+            reduce_check( "aura","devotion")
+            reduce_check( "aura","awareness")
+            reduce_check( "aura","taming")
+            reduce_check( "aura","habit")
             if all_girls_list[girl_index]["aura"]["spoil"] > max(0, all_girls_list[girl_index]["mood"], all_girls_list[girl_index]["aura"]["fear"]) and all_girls_list[girl_index]["sleep"] in [2,3]:
                 all_girls_list[girl_index]["neg_spoil"] = True
             all_girls_list[girl_index]["daily_count"]["reward"] == 0
@@ -96,6 +269,7 @@ label next_day_label:
                 all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= 1 + all_girls_list[girl_index]["aura"]["devotion"] + all_girls_list[girl_index]["aura"]["fear"] + all_girls_list[girl_index]["aura"]["despair"]*2 + max(0, all_girls_list[girl_index]["days_without_food"])*3 + max(0, all_girls_list[girl_index]["days_without_sleep"])*3
             if all_girls_list[girl_index]["mood"] < 0:
                 all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= all_girls_list[girl_index]["attributes"]["empathy"]
+            reduce_check( "aura","spoil")
     jump Home
 
 
@@ -104,6 +278,10 @@ label next_day_label:
 label Home:
     show screen bg_home()
     $ infobox_jump = "Home"
+    if is_tutorial == True and current_menu == 0:
+        show screen goguild()
+    else:
+        hide screen goguild
     if show_main_slave:
         show screen main_slave_image() 
 
@@ -137,25 +315,21 @@ label Home:
     elif current_menu == 41:
         call screen spellbook_info()
     elif current_menu == 100:
-        hide screen goguild
         hide screen sparks_menu
         hide screen home_attributes_menu
         show screen screen_rules
         call screen slave_rules_menu()
     elif current_menu == 101:
-        hide screen goguild
         hide screen sparks_menu
         hide screen home_attributes_menu
         show screen screen_rules
         call screen slave_anatomy_menu()
     elif current_menu == 102:
-        hide screen goguild
         hide screen sparks_menu
         hide screen home_attributes_menu
         show screen screen_rules
         call screen slave_equipment_menu()
     elif current_menu == 103:
-        hide screen goguild
         hide screen sparks_menu
         hide screen home_attributes_menu
         show screen screen_rules
@@ -531,8 +705,8 @@ screen slave_anatomy_menu():
     vbox:
         pos(0.215,0.62)
         text "Beauty{color=#0000D8} ={/color} {color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["natural_beauty"]] + "} Natural Beauty{/color}{color=#0000D8} +{/color} Neoplasty{color=#0000D8} - ({/color} No Scars{color=#0000D8} +{/color} Bruises{color=#0000D8} +{/color} Physique{color=#0000D8}){/color}" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
-        text "Style {color=#0000D8}={/color} Clothes{color=#0000D8} +{/color} Natural Beauty{color=#0000D8} +{/color} Tangled Hair{color=#0000D8} +{/color} Scent, Nails & Pelage{color=#0000D8} +{/color} Natural Grace{color=#0000D8} -{/color} Hygiene" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
-        text "Exoticism {color=#0000D8}={/color} Natural Exoticism{color=#0000D8} +{/color} No Tattoos{color=#0000D8} +{/color} No Piercings{color=#0000D8} +{/color} Clothes" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf"
+        text "{color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["style"]] + "}Style{/color} {color=#0000D8}={/color} Clothes{color=#0000D8} +{/color} {color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["natural_beauty"]] + "} Natural Beauty{/color}{color=#0000D8} +{/color} Tangled Hair{color=#0000D8} +{/color} Scent, Nails & Pelage{color=#0000D8} +{/color} Natural Grace{color=#0000D8} -{/color} Hygiene" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+        text "{color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["exoticism"]] + "}Exoticism{/color} {color=#0000D8}={/color} Natural Exoticism{color=#0000D8} +{/color} No Tattoos{color=#0000D8} +{/color} No Piercings{color=#0000D8} +{/color} Clothes" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf"
         add "spacer" size(0,2)
         if is_auspex_active:
             text "Aura {color=#0000D8}={/color} No Devotion {color=#0000D8}-{/color} (No Despair {color=#0000D8}+{/color} Not Spoiled)" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
@@ -546,7 +720,115 @@ screen slave_equipment_menu():
     vbox:
         pos(0.24,0.068)
         text "{u}SLAVE EQUIPMENT{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf"       
-         
+        textbutton "{u}Armour:{/u} [all_girls_list[girl_index]['equipment']['armour']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 2),SetVariable("equipment_choice", "armour")
+        textbutton "{u}Left Hand:{/u} [all_girls_list[girl_index]['equipment']['weapon']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 2),SetVariable("equipment_choice", "left_hand")
+        textbutton "{u}Right Hand:{/u} [all_girls_list[girl_index]['equipment']['weapon2']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 2),SetVariable("equipment_choice", "right_hand")
+        textbutton "{u}Amulet:{/u} [all_girls_list[girl_index]['equipment']['amulet']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 2),SetVariable("equipment_choice", "amulet")
+        textbutton "{u}Ring:{/u} [all_girls_list[girl_index]['equipment']['ring']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 2),SetVariable("equipment_choice", "ring")
+        add "spacer" size(0,20)
+        textbutton "{u}Clothes:{/u} [all_girls_list[girl_index]['equipment']['clothes']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "clothes")
+
+        textbutton "{u}Headgear:{/u} [all_girls_list[girl_index]['equipment']['headgear']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "headgear")
+
+        textbutton "{u}Neck:{/u} [all_girls_list[girl_index]['equipment']['neck']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "neck")
+
+        textbutton "{u}Hands:{/u} [all_girls_list[girl_index]['equipment']['hands']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "hands") 
+
+        textbutton "{u}Feet:{/u} [all_girls_list[girl_index]['equipment']['feet']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "feet")
+
+        textbutton "{u}Ring 1:{/u} [all_girls_list[girl_index]['equipment']['ring1']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "ring1")
+
+        textbutton "{u}Ring 2:{/u} [all_girls_list[girl_index]['equipment']['ring2']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "ring2")
+
+        textbutton "{u}Earrings:{/u} [all_girls_list[girl_index]['equipment']['earrings']['type']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "earrings")
+
+        textbutton "{u}Tongue:{/u} [all_girls_list[girl_index]['equipment']['tongue']['type']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "tongue")
+
+        textbutton "{u}Nipple:{/u} [all_girls_list[girl_index]['equipment']['nipples']['type']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "nipple")
+
+        textbutton "{u}Navel:{/u} [all_girls_list[girl_index]['equipment']['navel']['type']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "navel") 
+
+        textbutton "{u}Clitoris:{/u} [all_girls_list[girl_index]['equipment']['clitoris']['type']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "clitoris")
+
+        textbutton "{u}Anal:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
+            style "slave_equipment_menu_button"
+            action SetVariable("available_options", 1),SetVariable("equipment_choice", "anus")
+    vbox:
+        pos(0.62,0.068)
+        spacing -1
+        text "{u}AVAILABLE OPTIONS{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        if available_options == 0:
+            text "{u}Active effects:{/u}" size 14 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        elif available_options == 1:
+            for values in inventory_type[equipment_choice]:
+                if inventory[values] == "-":
+                    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                        style "slave_equipment_menu_button2"
+                        action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"])
+                elif all_girls_list[girl_index]["equipment"]["aura_bound"][values] == True:
+                    hbox:
+                        xalign 1.0
+                        textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                            style "slave_equipment_menu_button3"
+                            action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"])
+                        add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
+                elif inventory[values] > 0:
+                    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                        style "slave_equipment_menu_button2"
+                        action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True)
+                else:
+                    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                        style "slave_equipment_menu_button"
+    vbox:   
+        pos(0.62,0.068)
+        spacing -1
+        text "" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
+        if available_options == 1:
+            for values in inventory_type[equipment_choice]:
+                if inventory[values] == "-":
+                    text str(inventory[values]) xalign 0.5:
+                        style "slave_equipment_menu_button2_text"
+                elif inventory[values] > 0:
+                    text str(inventory[values]) xalign 0.5:
+                        style "slave_equipment_menu_button2_text"
+                else:
+                    text str(inventory[values]) xalign 0.5:
+                        style "slave_equipment_menu_button_text"
+
 
 screen slave_aura_menu():
     add "page_aura.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)

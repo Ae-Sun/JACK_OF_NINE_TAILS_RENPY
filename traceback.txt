@@ -1,29 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/home.rpy", line 144, in script
-    call screen slave_rules_menu()
+  File "game/home.rpy", line 331, in script
+    call screen slave_equipment_menu()
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 1261, in execute
-    screen description_slave_attributes():
-  File "game/home.rpy", line 1261, in execute
-    screen description_slave_attributes():
-  File "game/home.rpy", line 1293, in execute
-    if description_slave_attributes_track_value == "oral_pleasure":
-  File "game/home.rpy", line 1294, in execute
-    frame:
-  File "game/home.rpy", line 1297, in execute
-    text dic_slave_attributes_description_keys[description_slave_attributes_track_value]  style "description_slave_attributes_frame_text"
-  File "game/home.rpy", line 1297, in <module>
-    text dic_slave_attributes_description_keys[description_slave_attributes_track_value]  style "description_slave_attributes_frame_text"
-KeyError: 'oral_pleasure'
+  File "game/home.rpy", line 717, in execute
+    screen slave_equipment_menu():
+  File "game/home.rpy", line 717, in execute
+    screen slave_equipment_menu():
+  File "game/home.rpy", line 720, in execute
+    vbox:
+TypeError: string indices must be integers
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/home.rpy", line 144, in script
-    call screen slave_rules_menu()
+  File "game/home.rpy", line 331, in script
+    call screen slave_equipment_menu()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
@@ -54,21 +48,30 @@ Full traceback:
     self.update()
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/home.rpy", line 1261, in execute
-    screen description_slave_attributes():
-  File "game/home.rpy", line 1261, in execute
-    screen description_slave_attributes():
-  File "game/home.rpy", line 1293, in execute
-    if description_slave_attributes_track_value == "oral_pleasure":
-  File "game/home.rpy", line 1294, in execute
-    frame:
-  File "game/home.rpy", line 1297, in execute
-    text dic_slave_attributes_description_keys[description_slave_attributes_track_value]  style "description_slave_attributes_frame_text"
-  File "game/home.rpy", line 1297, in <module>
-    text dic_slave_attributes_description_keys[description_slave_attributes_track_value]  style "description_slave_attributes_frame_text"
-KeyError: 'oral_pleasure'
+  File "game/home.rpy", line 717, in execute
+    screen slave_equipment_menu():
+  File "game/home.rpy", line 717, in execute
+    screen slave_equipment_menu():
+  File "game/home.rpy", line 720, in execute
+    vbox:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
+    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+TypeError: string indices must be integers
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Mon May 26 18:46:52 2025
+Tue May 27 02:10:08 2025

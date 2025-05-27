@@ -429,32 +429,3 @@ default sparks_37 =""
 default mc ="Jack"
 default characterOnlyNameIndex = 0
 
-default clothesinventory = {
-    'maid_dress': 0,
-    'apron': 0,
-    'common_apron': 0,
-    'nurse_dress': 0,
-    'sailor_foku': 0,
-    'leotard': 0,
-    'chainmail_bikini': 0,
-    'enchanter_robe': 0,
-    'sun_dress': 0,
-    'leather_corset': 0,
-    'fluffy_stepins': 0,
-    'high_boots': 0,
-    'sneakers': 0,
-    'tabi': 0,
-    'glasses': 0,
-    'nekomimi': 0,
-    'anal_tail': 0,
-    'pony_plume': 0,
-    'ponygirl_harness': 0,
-    'hoofed_boots': 0,
-    'leather_gloves': 0,
-    'fluffy_gloves': 0,
-    'rubber_gloves': 0,
-    'plain_headband': 0,
-    'golden_collar': 0,
-    'leather_collar': 0,
-    'spiked_collar': 0,
-}

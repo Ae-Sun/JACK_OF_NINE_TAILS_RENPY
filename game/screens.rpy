@@ -580,6 +580,27 @@ style description_slave_attributes_frame_little_text:
     font "fonts/victoriana.ttf"
     color "#ffffff"
     size 16
+style slave_equipment_menu_button is default
+style slave_equipment_menu_button_text:
+    size 14 
+    color "#000000" 
+    font "fonts/Segoe Print.ttf"     
+    hover_color "#ffff00"
+style slave_equipment_menu_button2 is default
+style slave_equipment_menu_button2_text:
+    size 14 
+    color "#0000D8" 
+    font "fonts/Segoe Print.ttf"     
+    hover_color "#ffff00"
+style slave_equipment_menu_button3 is default
+style slave_equipment_menu_button3_text:
+    size 14 
+    color "#009900" 
+    font "fonts/Segoe Print.ttf"     
+    hover_color "#ffff00"
+
+
+
 
 
 
