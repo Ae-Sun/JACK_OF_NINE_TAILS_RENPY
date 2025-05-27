@@ -20,7 +20,9 @@
 - Reworked the entire equipment system — Because the original system code are in russian, also weapon aren't remarkeble.(naginata or flamberge? can you really tell the difference without looking the wiki?)
 - Ask you slave to battle will increase despair if devotion aren't high enought (she is literally fighting for her life)
 - Ask you slave to race will increase despair if devotion aren't high enought (you are puting her in a live dead situation)
-- Obedience always fade when slave have spoil (instead of >1, more simple, better)
+- Obedience always fade when slave have spoil (instead of >1, more simple, more intuitive, better)
+- Slaves always hate being nude based of pride instead of proud slaves dislike being put on display(instead of 2<, same reason as above)
 - When you buy items that can be equipment in multiples part of slave body like like barbells, you will buy a whole set for one slave instead of x quantitive. (Code problems, the original system requiere a lot more code.) 
 - Expand girl dominium - instead of one slave at the time, now support multiples slaves at the same time. [No freeze]
 - Added change girl for testing reasons 
+- 

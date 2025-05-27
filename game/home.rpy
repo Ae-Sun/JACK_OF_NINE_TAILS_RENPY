@@ -290,8 +290,10 @@ label Home:
     if attribute_checkbox:
         if attributeisphysical:
             show screen tutorial_descriptionphysical()
+            hide screen tutorial_description
         else:
             show screen tutorial_description()
+            hide screen tutorial_descriptionphysical
         hide screen tutorial_attribute
     ### this may look stupid, but it's not. Think how back feature works in renpy. -rec3ks
     if current_menu == 0:
@@ -332,6 +334,7 @@ label Home:
 label equipment_check():
     python:
         for girl_index in all_girls_list:
+            all_girls_list[girl_index]["worn_mood"] = 0           
             for keys in all_girls_list[girl_index]["learning_bonus"]:
                 all_girls_list[girl_index]["learning_bonus"][keys] = 0
             for keys in all_girls_list[girl_index]["daily_bonus"]:
@@ -341,6 +344,14 @@ label equipment_check():
                 all_girls_list[girl_index]["learning_bonus"]["sex"] += 1 
                 all_girls_list[girl_index]["learning_bonus"]["athletics"] += 1 
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
+                all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["attributes"]["pride"]*3 - 15 
+            all_girls_list[girl_index]["worn_mood"] = all_girls_list[girl_index]["worn_mood"]/10           
+
+                   
+
+                
+
+                    
 ################################################
 ########################################################################
 #            if all_girls_list[girl_index]["equipment"]["clothes"] == "Frilly Apron":
@@ -931,6 +942,8 @@ screen slave_equipment_menu():
                 text "{color=009FEF}{u}Learning bonus{/u}{/color}: " + "{color=#0000D8}" + str(key) + "{/color}" + " " + str(values) xalign 1.0 size 12 color "#000000" font "fonts/Segoe Print.ttf"
             for key, values in all_girls_list[girl_index]["daily_bonus"].items():
                 text "{color=009900}{u}Daily bonus{/u}{/color}: " + "{color=#0000D8}" + str(key) + "{/color}" + " " + str(values) xalign 1.0 size 12 color "#000000" font "fonts/Segoe Print.ttf"
+            text "{color=6B0084}{u}Mood bonus for clothes{/u}{/color}: " + str(all_girls_list[girl_index]["worn_mood"]) xalign 1.0 size 12 color "#000000" font "fonts/Segoe Print.ttf"
+
         elif available_options == 1:
             for values in inventory_type[equipment_choice]:
                 if equipment_choice not in ["tongue","nipples","navel","clitoris","earrings"]:
@@ -998,8 +1011,6 @@ screen slave_equipment_menu():
                         else:
                             text str(inventory[values]) xalign 0.5:
                                 style "slave_equipment_menu_button_text"
-
-
 screen slave_aura_menu():
     add "page_aura.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
@@ -1545,19 +1556,18 @@ screen screen_rules():
         text "Rank:" size 16 color "#000000" font "fonts/Segoe Print.ttf"
         text "{u}ATTRIBUTES{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf"
         for key, values in dic_slave_attributes.items():
-            if key in all_girls_list[girl_index]["attributes"]:
-                if key != "physical":
-                    textbutton values[all_girls_list[girl_index]["attributes"][key]]:
-                        style "attribute_custom_slave" + str(all_girls_list[girl_index]["attributes"][key])
-                        action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),Jump("Home")
-                        hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", key)
-                        unhovered Hide("description_slave_attributes")
-                else:
-                    textbutton values[all_girls_list[girl_index]["attributes"][key]]:
-                        style "attribute_custom_physical" + str(all_girls_list[girl_index]["attributes"][key])
-                        action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",True),Jump("Home")                    
-                        hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", key)
-                        unhovered Hide("description_slave_attributes")
+            if key != "physical":
+                textbutton values[all_girls_list[girl_index]["attributes"][key]]:
+                    style "attribute_custom_slave" + str(all_girls_list[girl_index]["attributes"][key])
+                    action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",False),Jump("Home")
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", key)
+                    unhovered Hide("description_slave_attributes")
+            else:
+                textbutton values[all_girls_list[girl_index]["attributes"][key]]:
+                    style "attribute_custom_physical_special" + str(all_girls_list[girl_index]["attributes"][key])
+                    action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",True),Jump("Home")                    
+                    hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", key)
+                    unhovered Hide("description_slave_attributes")
         text "Mood" size 16 color "#000000" font "fonts/Segoe Print.ttf"
         text "{u}TRAITS{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf"
         for key, values in dic_traits_skills.items():
@@ -1612,7 +1622,6 @@ screen screen_rules():
                     action SetVariable("attribute_track_index", key), SetVariable("dictionary_track_index", val), SetVariable("dictionary_name", dic_traits_sexual_description), SetVariable("customboxcheck", True), Jump("Home")
                     hovered Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "default")
                     unhovered Hide("description_slave_attributes")
-       
         for key, values in dic_traits_miscellaneous.items():
 
             $ skill_info = traits_miscellaneous[key]

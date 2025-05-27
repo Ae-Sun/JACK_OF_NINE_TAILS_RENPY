@@ -273,50 +273,97 @@ style attribute_custom_physical0 is default
 style attribute_custom_physical0_text:
     font "fonts/Segoe Print.ttf"
     color "#CD0000"
-    size 16
+    size 20
     hover_color "#ffff00"
 
 style attribute_custom_physical1 is default
 style attribute_custom_physical1_text:
     font "fonts/Segoe Print.ttf"
     color "#6B0084"
-    size 16
+    size 20
     hover_color "#ffff00"
 
 style attribute_custom_physical2 is default
 style attribute_custom_physical2_text:
     font "fonts/Segoe Print.ttf"
     color "#0000D8"
-    size 16
+    size 20
     hover_color "#ffff00"
 
 style attribute_custom_physical3 is default
 style attribute_custom_physical3_text:
     font "fonts/Segoe Print.ttf"
     color "#009FEF"
-    size 16
+    size 20
     hover_color "#ffff00"
 
 style attribute_custom_physical4 is default
 style attribute_custom_physical4_text:
     font "fonts/Segoe Print.ttf"
     color "#009900"
-    size 16
+    size 20
     hover_color "#ffff00"
 
 style attribute_custom_physical5 is default
 style attribute_custom_physical5_text:
     font "fonts/Segoe Print.ttf"
     color "#CD0000"
-    size 16
+    size 20
     hover_color "#ffff00"
 
 style attribute_custom_physical6 is default
 style attribute_custom_physical6_text:
     font "fonts/Segoe Print.ttf"
     color "#996515"
+    size 20
+    hover_color "#ffff00"
+style attribute_custom_physical_special0 is default
+style attribute_custom_physical_special0_text:
+    font "fonts/Segoe Print.ttf"
+    color "#CD0000"
     size 16
-    kerning 1
+    hover_color "#ffff00"
+
+style attribute_custom_physical_special1 is default
+style attribute_custom_physical_special1_text:
+    font "fonts/Segoe Print.ttf"
+    color "#6B0084"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical_special2 is default
+style attribute_custom_physical_special2_text:
+    font "fonts/Segoe Print.ttf"
+    color "#0000D8"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical_special3 is default
+style attribute_custom_physical_special3_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009FEF"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical_special4 is default
+style attribute_custom_physical_special4_text:
+    font "fonts/Segoe Print.ttf"
+    color "#009900"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical_special5 is default
+style attribute_custom_physical_special5_text:
+    font "fonts/Segoe Print.ttf"
+    color "#CD0000"
+    size 16
+    hover_color "#ffff00"
+
+style attribute_custom_physical_special6 is default
+style attribute_custom_physical_special6_text:
+    font "fonts/Segoe Print.ttf"
+    color "#996515"
+    size 16
     hover_color "#ffff00"
 ######################################################
 
@@ -392,55 +439,18 @@ style attribute_check_slave5_text:
     color "#009900"
     size 20
     hover_color "#ffff00"
+style attribute_check_slave6 is default
+style attribute_check_slave6_text:
+    font "fonts/Segoe Print.ttf"
+    color "#996515"
+    size 20
+    hover_color "#ffff00"
 #########################################################
 style day_tracker_button is default
 style day_tracker_button_text:
     font "fonts/victoriana.ttf"
     color "#000000"
     size 20
-    hover_color "#ffff00"
-
-style attribute_custom_physical1 is default
-style attribute_custom_physical1_text:
-    font "fonts/Segoe Print.ttf"
-    color "#6B0084"
-    size 16
-    hover_color "#ffff00"
-
-style attribute_custom_physical2 is default
-style attribute_custom_physical2_text:
-    font "fonts/Segoe Print.ttf"
-    color "#0000D8"
-    size 16
-    hover_color "#ffff00"
-
-style attribute_custom_physical3 is default
-style attribute_custom_physical3_text:
-    font "fonts/Segoe Print.ttf"
-    color "#009FEF"
-    size 16
-    hover_color "#ffff00"
-
-style attribute_custom_physical4 is default
-style attribute_custom_physical4_text:
-    font "fonts/Segoe Print.ttf"
-    color "#009900"
-    size 16
-    hover_color "#ffff00"
-
-style attribute_custom_physical5 is default
-style attribute_custom_physical5_text:
-    font "fonts/Segoe Print.ttf"
-    color "#CD0000"
-    size 16
-    hover_color "#ffff00"
-
-style attribute_custom_physical6 is default
-style attribute_custom_physical6_text:
-    font "fonts/Segoe Print.ttf"
-    color "#996515"
-    size 16
-    kerning 1
     hover_color "#ffff00"
 ######################################################
 

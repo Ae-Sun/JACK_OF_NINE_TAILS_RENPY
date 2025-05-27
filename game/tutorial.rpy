@@ -122,10 +122,10 @@ screen choose_inicial_girl_screen():
             if key != "physical":
                 textbutton values[all_girls_list[girl_index]["attributes"][key]]:
                     style "attribute_custom_slave" + str(all_girls_list[girl_index]["attributes"][key])
-                    action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),Jump("choose_inicial_girl")
+                    action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",False),Jump("choose_inicial_girl")
             else:
                 textbutton values[all_girls_list[girl_index]["attributes"][key]]:
-                    style "attribute_custom_physical" + str(all_girls_list[girl_index]["attributes"][key])
+                    style "attribute_custom_physical_special" + str(all_girls_list[girl_index]["attributes"][key])
                     action SetVariable("attribute_track_index",key),SetVariable("attribute_track_basic",key),SetVariable("dictionary_track_index",7),SetVariable("dictionary_name",dic_slave_attributes),SetVariable("attribute_checkbox",True),SetVariable("attributeisphysical",True),Jump("choose_inicial_girl")                    
  
 
@@ -475,8 +475,10 @@ label choose_inicial_girl:
     if attribute_checkbox:
         if attributeisphysical:
             show screen tutorial_descriptionphysical()
+            hide screen tutorial_description
         else:
             show screen tutorial_description()
+            hide screen tutorial_descriptionphysical
         hide screen tutorial_attribute
     hide screen slaver_guild
     if inicial_girl == "demo/choose_slave.webp":
@@ -499,12 +501,8 @@ label choose_inicial_girl:
         $ all_girls_list[2]={}
         $ girl_index = 2
     $ all_girls_list[girl_index] = load_json(premiun_girl_tutorial_selected_localization)
-#    $ keys_to_delete = [k for k in all_girls_list.keys() if k != girl_index]
     
     python:
-#        for k in keys_to_delete:
-#            del all_girls_list[k]
-
         all_girls_list[girl_index].setdefault("aura",{
         "fear": 0,
         "despair": 0,
@@ -517,6 +515,8 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("experience", {})
         all_girls_list[girl_index].setdefault("name", "WIP")
         all_girls_list[girl_index].setdefault("mood",0)
+        all_girls_list[girl_index].setdefault("worn_mood",0)
+        all_girls_list[girl_index].setdefault("worn_comfortable",False)
         all_girls_list[girl_index].setdefault("mood_state",{})
         all_girls_list[girl_index]["mood_state"].setdefault("good_mood",{})
         all_girls_list[girl_index]["mood_state"].setdefault("bad_mood",{})
@@ -768,5 +768,7 @@ label choose_inicial_girl:
     call screen choose_inicial_girl_screen
     return
 
-
+#keys_to_delete = [k for k in all_girls_list.keys() if k != girl_index]
+#for k in keys_to_delete:
+#del all_girls_list[k]
 
