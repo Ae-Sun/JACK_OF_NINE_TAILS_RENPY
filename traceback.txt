@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/home.rpy", line 343, in script
+  File "game/home.rpy", line 275, in script
     python:
-  File "game/home.rpy", line 738, in <module>
-    dictionary_name = dic_traits_skills_description
-NameError: name 'dic_traits_skills_description' is not defined
+  File "game/home.rpy", line 664, in <module>
+    if all_girls_list[girl_index]["equipment"]["tongue"]["type"] == "Barbell":
+TypeError: string indices must be integers
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/home.rpy", line 343, in script
+  File "game/home.rpy", line 275, in script
     python:
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/home.rpy", line 738, in <module>
-    dictionary_name = dic_traits_skills_description
-NameError: name 'dic_traits_skills_description' is not defined
+  File "game/home.rpy", line 664, in <module>
+    if all_girls_list[girl_index]["equipment"]["tongue"]["type"] == "Barbell":
+TypeError: string indices must be integers
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Thu May 29 02:10:30 2025
+Thu May 29 19:15:57 2025

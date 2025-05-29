@@ -25,7 +25,7 @@
 - Having exhibitionism trait now increase worn mood on reveling clothes
 - Slaves now dislike less wearing revealing clothes that being naked. (originaly wearing revealing clothes are worse that being nude?)
 - wearing Kimono-Yutaka will have positive moodlet if slave have elocution affinity instead of secretary affinity
-- Heels and High boots now check dance skills instead of athletics skills 
+- cow gear no longer daily reduce intelligence (no space in equipment screen. Also no longer incentive to switch clothes before end the day because the lowering of intelligence )
 - simplefied heavy gauge rings. each now give 1 taming for -0.3 mood
 - When you buy items that can be equipment in multiples part of slave body like like barbells, you will buy a whole set for one slave instead of x quantitive. (Code problems, the original system requiere a lot more code.) 
 - Expand girl dominium - instead of one slave at the time, now support multiples slaves at the same time. [No freeze]

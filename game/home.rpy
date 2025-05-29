@@ -38,6 +38,7 @@ default equipment_choice = "clothes"
 default equipment_choice_image = "scene/item/clear_small"
 default equipment_choice_image_text = ""
 default inventory = {
+    "remove": "-",
     "No armor": 0,
     "Aramid Suit": 0,
     "Leather Armor": 0,
@@ -141,76 +142,7 @@ default inventory = {
     "anal_plug": 0,
     "anal_tail": 0
 }
-default inventory_type = {
-    "armour": [
-        "No armor", "Aramid Suit", "Leather Armor", "Adaptive Nanoweave Suit",
-        "Phantom Aegis Suit", "Elven Chainmail", "Combined Armor", "Adaptive armor",
-        "Semi-perfect armor", "Iron Armor", "Obsidian Bulwark", "Gothic plate", "Mithril Mail"
-    ],
-    "left_hand": [
-        "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
-        "Blowgun Darts", "shuriken", "Buckler", "Adarga", "Huge mace", "Baseball Bat",
-        "Gattle Prod", "Naginata"
-    ],
-    "right_hand": [
-        "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
-        "Blowgun Darts", "shuriken", "Buckler", "Adarga", "Huge mace", "Baseball Bat",
-        "Gattle Prod", "Naginata"
-    ],
-    "amulet": [
-        "magic_protection", "physical_protection", "stamina_restore", "penetration",
-        "Lucky", "speed"
-    ],
-    "ring": [
-        "bleeding_ring", "stun_ring", "confusion_ring", "injured_ring", "sleep_ring", "pain_ring"
-    ],
-    "clothes": [
-        "naked", "common_apron", "maid_dress", "nurse_dress", "leotard", "chainmail_bikini",
-        "enchanter_robe", "sun_dress", "laced_underwear", "sailor_foku", "cocktail_dress",
-        "rubber_dress", "ukata", "bellydance", "leather_corset", "rich_dress", "wedding_dress",
-        "petsuit", "deprivation_suit", "cow_gear"
-    ],
-    "headgear": [
-        "pony_plume", "plain_headband", "hijab", "crown_of_thorns", "plain_tiara", "hairnet",
-        "glasses", "nekomimi", "incrusted_tiara", "exotic_wig"
-    ],
-    "neck": [
-        "plain_pendant", "incrusted_necklace", "dog_collar", "leather_collar", "steel_collar",
-        "spiked_collar", "shock_collar", "golden_collar"
-    ],
-    "hands": [
-        "rubber_gloves", "laced_gloves", "leather_gloves", "plastic_bracers",
-        "fluffy_gloves", "ponygirl_harness", "leather_straps"
-    ],
-    "feet": [
-        "tabi", "fluffy_stepins", "pointes", "sneakers", "high_heels",
-        "high_boots", "hoofed_boots", "leather_straps"
-    ],
-    "ring1": [
-        "plain_ring", "incrusted_ring"
-    ],
-    "ring2": [
-        "plain_ring", "incrusted_ring"
-    ],
-    "earrings": [
-        "plain_earrings", "incrusted_earrings", "heavy_gauge_rings"
-    ],
-    "tongue": [
-        "barbells", "heavy_gauge_rings"
-    ],
-    "nipples": [
-        "barbells", "nipple_chain", "heavy_gauge_rings"
-    ],
-    "navel": [
-        "barbells", "heavy_gauge_rings"
-    ],
-    "clitoris": [
-        "barbells", "heavy_gauge_rings"
-    ],
-    "anus": [
-        "anal_plug", "anal_tail"
-    ]
-}
+
 label iniciation_label:
     if is_tutorial:
         python:
@@ -450,6 +382,90 @@ label equipment_check:
                     all_girls_list[girl_index]["daily_bonus"]["devotion"] += 1
                     all_girls_list[girl_index]["daily_bonus"]["arousal"] += 1
                     all_girls_list[girl_index]["worn_mood"] += 5
+            if all_girls_list[girl_index]["equipment"]["clothes"] == "Cow Gear":
+                all_girls_list[girl_index]["learning_bonus"]["cow"] += 2
+                if all_girls_list[girl_index]["attributes"]["pride"] < 4:
+                    all_girls_list[girl_index]["daily_bonus"]["pride"] += 1
+                all_girls_list[girl_index]["style_plus"] -= 2
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] < 0 and all_girls_list[girl_index]["skills"]["cow"] < 3 and all_girls_list[girl_index]["skills"]["pet"] < 3:
+                    if all_girls_list[girl_index]["conscience"] and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] > 0 and all_girls_list[girl_index]["obedience"] < 0 and not all_girls_list[girl_index]["beaten_ever"] and not all_girls_list[girl_index]["domini_dictum_ever"]:
+                        slave_rebellion_fight = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] != 0:
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] * 3
+                    if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] > 0:
+                        all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    elif all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] < 0 and max(all_girls_list[girl_index]["skills"]["cow"],all_girls_list[girl_index]["skills"]["pet"]) < 3:
+                        all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                        all_girls_list[girl_index]["worn_mood"] -= 5
+            if all_girls_list[girl_index]["equipment"]["clothes"] == "Petsuit":
+                all_girls_list[girl_index]["daily_bonus"]["pride"] += 1
+                all_girls_list[girl_index]["daily_bonus"]["taming"] += 2
+                all_girls_list[girl_index]["learning_bonus"]["pet"] += 3
+                all_girls_list[girl_index]["learning_bonus"]["maid"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["cooking"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["secretary"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["elocution"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["nursing"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["alchemy"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["witchcraft"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["dance"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["gladiatrix"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["music"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["painting"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["pony"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["cow"] -= 10
+                all_girls_list[girl_index]["style_plus"] -= 2
+                all_girls_list[girl_index]["exotic_plus"] += 1
+                if all_girls_list[girl_index]["attributes"]["pride"] > 4 and all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] <= 0 and all_girls_list[girl_index]["skills"]["pet"] < 3 and all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] <= 0:
+                    if all_girls_list[girl_index]["conscience"] and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] > 0 and all_girls_list[girl_index]["obedience"] < 0 and not all_girls_list[girl_index]["beaten_ever"] and not all_girls_list[girl_index]["domini_dictum_ever"]:
+                        slave_rebellion_fight = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] != 0:
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] * 3
+                    if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"]:
+                        attribute_track_index = "deprivation_attitude"
+                        dictionary_track_index = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] 
+                        dictionary_name = dic_traits_miscellaneous_description
+                        customboxcheck = True
+                        all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"] = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] <= 0:
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["worn_mood"] += -1 + all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]
+                    all_girls_list[girl_index]["daily_bonus"]["nature"] -= 1
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] > 0:   
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]                      
+            if all_girls_list[girl_index]["equipment"]["clothes"] == "Deprivation Suit":
+                all_girls_list[girl_index]["daily_bonus"]["taming"] += 3
+                all_girls_list[girl_index]["style_plus"] -= 4
+                all_girls_list[girl_index]["exotic_plus"] += 2
+                all_girls_list[girl_index]["learning_bonus"]["maid"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["cooking"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["secretary"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["elocution"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["nursing"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["alchemy"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["witchcraft"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["dance"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["gladiatrix"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["music"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["painting"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["pet"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["pony"] -= 10
+                all_girls_list[girl_index]["learning_bonus"]["cow"] -= 10
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] <= 0:
+                    if all_girls_list[girl_index]["conscience"] and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] > 0 and all_girls_list[girl_index]["obedience"] < 0 and not all_girls_list[girl_index]["beaten_ever"] and not all_girls_list[girl_index]["domini_dictum_ever"]:
+                        slave_rebellion_fight = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] != 0:
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] * 3
+                    if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"]:
+                        attribute_track_index = "deprivation_attitude"
+                        dictionary_track_index = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] 
+                        dictionary_name = dic_traits_miscellaneous_description
+                        customboxcheck = True
+                        all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"] = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] <= 0:
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["worn_mood"] += -1 + all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]
+                    all_girls_list[girl_index]["daily_bonus"]["temperament"] -= 1
             if all_girls_list[girl_index]["equipment"]["hands"] == "Rubber Gloves":
                 all_girls_list[girl_index]["learning_bonus"]["nurse"] += 1
                 all_girls_list[girl_index]["learning_bonus"]["maid"] += 1
@@ -481,6 +497,42 @@ label equipment_check:
                 all_girls_list[girl_index]["style_plus"] -= 1                
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] > 0:
                     all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+            if all_girls_list[girl_index]["equipment"]["hands"] == "Pony Harness":
+                all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
+                all_girls_list[girl_index]["learning_bonus"]["pony"] += 4
+                all_girls_list[girl_index]["style_plus"] -= 2
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0:
+                    if all_girls_list[girl_index]["conscience"] and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] > 0 and all_girls_list[girl_index]["obedience"] < 0 and not all_girls_list[girl_index]["beaten_ever"] and not all_girls_list[girl_index]["domini_dictum_ever"]:
+                        slave_rebellion_fight = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] != 0:
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] *3
+                    if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["revealed"]:
+                        attribute_track_index = "ponytrait"
+                        dictionary_track_index = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] 
+                        dictionary_name = dic_traits_skills_descriptions
+                        customboxcheck = True
+                        all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["revealed"] = True
+                elif all_girls_list[girl_index]["races_won"] < 4 or all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0:
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["worn_mood"] += -2
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] != 0:
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]
+                    if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"]:
+                        attribute_track_index = "deprivation_attitude"
+                        dictionary_track_index = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] 
+                        dictionary_name = dic_traits_miscellaneous_description
+                        customboxcheck = True
+                        all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"] = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"] != 0:
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"]
+                    if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["revealed"]:
+                        attribute_track_index = "exhibitionism"
+                        dictionary_track_index = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"] 
+                        dictionary_name = dic_traits_miscellaneous_description
+                        customboxcheck = True
+                        all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["revealed"] = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"] <= 0:
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
             if all_girls_list[girl_index]["equipment"]["hands"] == "Leather Shackles":
                 all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] * 3
                 all_girls_list[girl_index]["daily_bonus"]["arousal"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]
@@ -544,11 +596,24 @@ label equipment_check:
                     all_girls_list[girl_index]["worn_mood"] -= 3
                 if all_girls_list[girl_index]["attributes"]["temperament"] > 2:
                     all_girls_list[girl_index]["daily_bonus"]["temperament"] += 1
+            if all_girls_list[girl_index]["equipment"]["feet"] == "Hooved Boots":
+                all_girls_list[girl_index]["learning_bonus"]["pony"] += 5
+                if all_girls_list[girl_index]["attributes"]["temperament"] > 2:
+                    all_girls_list[girl_index]["daily_bonus"]["temperament"] += 1
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] != 0:
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] * 3
+                    if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["revealed"]:
+                        attribute_track_index = "ponytrait"
+                        dictionary_track_index = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] 
+                        dictionary_name = dic_traits_skills_descriptions
+                        customboxcheck = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0 and all_girls_list[girl_index]["races_won"] < 4:
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["worn_mood"] += -15
             if all_girls_list[girl_index]["equipment"]["ring1"] == "Elegant Ring":
                 all_girls_list[girl_index]["style_plus"] += 1
             if all_girls_list[girl_index]["equipment"]["ring1"] == "Gemstone Ring":
                 all_girls_list[girl_index]["style_plus"] += 2
-                all_girls_list[girl_index]["exotic_plus"] -= 1
             if all_girls_list[girl_index]["equipment"]["ring2"] == "Elegant Ring":
                 all_girls_list[girl_index]["style_plus"] += 1
             if all_girls_list[girl_index]["equipment"]["ring2"] == "Gemstone Ring":
@@ -594,6 +659,50 @@ label equipment_check:
                 all_girls_list[girl_index]["exotic_plus"] += 2
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
                 all_girls_list[girl_index]["worn_mood"] -= 3
+            if all_girls_list[girl_index]["equipment"]["nipples"]["type"] == "Small Hoop":
+                all_girls_list[girl_index]["style_plus"] += 1
+            if all_girls_list[girl_index]["equipment"]["tongue"]["type"] == "Barbell":
+                all_girls_list[girl_index]["daily_bonus"]["arousal"] += 1
+                all_girls_list[girl_index]["style_plus"] += 1
+                all_girls_list[girl_index]["exotic_plus"] += 1
+            if all_girls_list[girl_index]["equipment"]["tongue"]["type"] == "Thick Steel Ring":
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["style_plus"] -= 1
+                all_girls_list[girl_index]["exotic_plus"] += 2
+                all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
+                all_girls_list[girl_index]["worn_mood"] -= 3
+            if all_girls_list[girl_index]["equipment"]["tongue"]["type"] == "Small Hoop":
+                all_girls_list[girl_index]["style_plus"] += 1
+            if all_girls_list[girl_index]["equipment"]["navel"]["type"] == "Barbell":
+                all_girls_list[girl_index]["daily_bonus"]["arousal"] += 1
+                all_girls_list[girl_index]["style_plus"] += 1
+                all_girls_list[girl_index]["exotic_plus"] += 1
+            if all_girls_list[girl_index]["equipment"]["navel"]["type"] == "Thick Steel Ring":
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["style_plus"] -= 1
+                all_girls_list[girl_index]["exotic_plus"] += 2
+                all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
+                all_girls_list[girl_index]["worn_mood"] -= 3
+            if all_girls_list[girl_index]["equipment"]["navel"]["type"] == "Small Hoop":
+                all_girls_list[girl_index]["style_plus"] += 1
+            if all_girls_list[girl_index]["equipment"]["navel"]["type"] == "Gemstone Stud":
+                all_girls_list[girl_index]["style_plus"] += 2
+                all_girls_list[girl_index]["exotic_plus"] += 2
+            if all_girls_list[girl_index]["equipment"]["clitoris"]["type"] == "Barbell":
+                all_girls_list[girl_index]["daily_bonus"]["arousal"] += 1
+                all_girls_list[girl_index]["style_plus"] += 1
+                all_girls_list[girl_index]["exotic_plus"] += 1
+            if all_girls_list[girl_index]["equipment"]["clitoris"]["type"] == "Thick Steel Ring":
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["style_plus"] -= 1
+                all_girls_list[girl_index]["exotic_plus"] += 2
+                all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
+                all_girls_list[girl_index]["worn_mood"] -= 3
+            if all_girls_list[girl_index]["equipment"]["clitoris"]["type"] == "Small Hoop":
+                all_girls_list[girl_index]["style_plus"] += 1
+            if all_girls_list[girl_index]["equipment"]["clitoris"]["type"] == "Gemstone Stud":
+                all_girls_list[girl_index]["style_plus"] += 2
+                all_girls_list[girl_index]["exotic_plus"] += 2
             if all_girls_list[girl_index]["equipment"]["headgear"] == "Headband":
                 all_girls_list[girl_index]["wig"] = True
                 all_girls_list[girl_index]["learning_bonus"]["cooking"] += 1
@@ -602,7 +711,7 @@ label equipment_check:
                 all_girls_list[girl_index]["learning_bonus"]["cooking"] += 1
                 all_girls_list[girl_index]["style_plus"] -= 1
             if all_girls_list[girl_index]["equipment"]["headgear"] == "Crown of Thorns":
-                all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["value"]
+                all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["value"]*3 -3
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 2
                 all_girls_list[girl_index]["style_plus"] -= 2
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["value"] <= 0:
@@ -637,7 +746,8 @@ label equipment_check:
                     all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
             if all_girls_list[girl_index]["equipment"]["headgear"] == "Cat Ears":
                 all_girls_list[girl_index]["style_plus"] -= 1
-                all_girls_list[girl_index]["style_plus"] += 1
+                all_girls_list[girl_index]["exotic_plus"] += 1
+                all_girls_list[girl_index]["learning_bonus"]["pet"] += 1
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] > 0:
                     all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
             if all_girls_list[girl_index]["equipment"]["headgear"] == "Precious Tiara":
@@ -655,6 +765,26 @@ label equipment_check:
                 all_girls_list[girl_index]["wig"] = True
                 all_girls_list[girl_index]["style_plus"] += 1
                 all_girls_list[girl_index]["exotic_plus"] += 2
+            if all_girls_list[girl_index]["equipment"]["headgear"] == "Plumed Bridle":
+                all_girls_list[girl_index]["style_plus"] += 1
+                all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
+                all_girls_list[girl_index]["learning_bonus"]["pony"] += 3
+                if all_girls_list[girl_index]["attributes"]["pride"] < 4:
+                    all_girls_list[girl_index]["daily_bonus"]["pride"] += 1
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0:
+                    if all_girls_list[girl_index]["conscience"] and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] > 0 and all_girls_list[girl_index]["obedience"] < 0 and not all_girls_list[girl_index]["beaten_ever"] and not all_girls_list[girl_index]["domini_dictum_ever"]:
+                        slave_rebellion_fight = True
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] != 0:
+                    all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] *3
+                    if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["revealed"]:
+                        attribute_track_index = "ponytrait"
+                        dictionary_track_index = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] 
+                        dictionary_name = dic_traits_skills_descriptions
+                        customboxcheck = True
+                        all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["revealed"] = True
+                elif all_girls_list[girl_index]["races_won"] < 4 or all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0:
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["worn_mood"] += -2
             if all_girls_list[girl_index]["equipment"]["neck"] == "Chain with Pendant":
                 all_girls_list[girl_index]["style_plus"] += 1
             if all_girls_list[girl_index]["equipment"]["neck"] == "Gemstone Necklace":
@@ -745,27 +875,10 @@ label equipment_check:
                         all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] *3
                     else:
                         all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] *3
-                
-
-
-
-
-
-
-               
-
-    
-                    
-
-
-
-
-
-
-
-                
-
-                
+            if all_girls_list[girl_index]["equipment"]["anus"] == "Anal Pear":
+                all_girls_list[girl_index]["daily_bonus"]["arousal"] += 1
+                all_girls_list[girl_index]["daily_bonus"]["pride"] += 1
+                all_girls_list[girl_index]["style_plus"] -= 1            
             if all_girls_list[girl_index]["equipment"]["clothes"] in ["Frilly Apron","Maid Outfit","Athletic Leotard","Chainmail Bikini","Lace Underwear","Latex Dress","Exotic Outfit","Leather Corset"]:
                 all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["attributes"]["pride"]*2 - 10
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"] != 0:
@@ -781,7 +894,6 @@ label equipment_check:
                         customboxcheck = True
                         all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["revealed"] = True
                         # show exhibition text -rec3ks
-
             all_girls_list[girl_index]["worn_mood"] = all_girls_list[girl_index]["worn_mood"]/10           
         girl_index = girl_index_save
 
@@ -1184,6 +1296,8 @@ screen slave_equipment_menu():
     add equipment_choice_image + ".webp" xsize 160 ysize 120 pos(0.24,0.815)
     text equipment_choice_image_text size 15 color "#000000" font "fonts/Consolas.ttf" pos(0.40,0.82) xmaximum 500
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+    key "K_1" action SetVariable("equipment_choice", dic_inventory_move_down[(dic_inventory_move_up[equipment_choice]+1) % 13]),Jump("Home")
+    key "K_2" action SetVariable("equipment_choice", dic_inventory_move_down[(dic_inventory_move_up[equipment_choice]-1) % 13]),Jump("Home")
     vbox:
         pos(0.24,0.068)
         text "{u}SLAVE EQUIPMENT{/u}" size 16 color "#000000" font "fonts/Segoe Print.ttf"       
@@ -1258,7 +1372,7 @@ screen slave_equipment_menu():
         if available_options == 1:
             if equipment_choice == "clothes":
                 textbutton "{u}Clothes:{/u} [all_girls_list[girl_index]['equipment']['clothes']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "clothes"), Jump("Home")
             else:
                 textbutton "{u}Clothes:{/u} [all_girls_list[girl_index]['equipment']['clothes']]":
@@ -1266,7 +1380,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "clothes"), Jump("Home")
             if equipment_choice == "headgear":
                 textbutton "{u}Headgear:{/u} [all_girls_list[girl_index]['equipment']['headgear']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "headgear"), Jump("Home")
             else:
                 textbutton "{u}Headgear:{/u} [all_girls_list[girl_index]['equipment']['headgear']]":
@@ -1274,7 +1388,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "headgear"), Jump("Home")
             if equipment_choice == "neck":
                 textbutton "{u}Neck:{/u} [all_girls_list[girl_index]['equipment']['neck']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "neck"), Jump("Home")
             else:
                 textbutton "{u}Neck:{/u} [all_girls_list[girl_index]['equipment']['neck']]":
@@ -1282,7 +1396,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "neck"), Jump("Home")
             if equipment_choice == "hands":
                 textbutton "{u}Hands:{/u} [all_girls_list[girl_index]['equipment']['hands']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "hands"), Jump("Home")
             else:
                 textbutton "{u}Hands:{/u} [all_girls_list[girl_index]['equipment']['hands']]":
@@ -1290,7 +1404,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "hands"), Jump("Home")
             if equipment_choice == "feet":
                 textbutton "{u}Feet:{/u} [all_girls_list[girl_index]['equipment']['feet']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "feet"), Jump("Home")
             else:
                 textbutton "{u}Feet:{/u} [all_girls_list[girl_index]['equipment']['feet']]":
@@ -1298,7 +1412,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "feet"), Jump("Home")
             if equipment_choice == "ring1":
                 textbutton "{u}Ring 1:{/u} [all_girls_list[girl_index]['equipment']['ring1']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "ring1"), Jump("Home")
             else:
                 textbutton "{u}Ring 1:{/u} [all_girls_list[girl_index]['equipment']['ring1']]":
@@ -1306,7 +1420,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "ring1"), Jump("Home")
             if equipment_choice == "ring2":
                 textbutton "{u}Ring 2:{/u} [all_girls_list[girl_index]['equipment']['ring2']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "ring2"), Jump("Home")
             else:
                 textbutton "{u}Ring 2:{/u} [all_girls_list[girl_index]['equipment']['ring2']]":
@@ -1314,7 +1428,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "ring2"), Jump("Home")
             if equipment_choice == "earrings":
                 textbutton "{u}Earrings:{/u} [all_girls_list[girl_index]['equipment']['earrings']['type']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "earrings"), Jump("Home")
             else:
                 textbutton "{u}Earrings:{/u} [all_girls_list[girl_index]['equipment']['earrings']['type']]":
@@ -1322,7 +1436,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "earrings"), Jump("Home")
             if equipment_choice == "tongue":
                 textbutton "{u}Tongue:{/u} [all_girls_list[girl_index]['equipment']['tongue']['type']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "tongue"), Jump("Home")
             else:
                 textbutton "{u}Tongue:{/u} [all_girls_list[girl_index]['equipment']['tongue']['type']]":
@@ -1330,7 +1444,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "tongue"), Jump("Home")
             if equipment_choice == "nipples":
                 textbutton "{u}Nipples:{/u} [all_girls_list[girl_index]['equipment']['nipples']['type']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "nipples"), Jump("Home")
             else:
                 textbutton "{u}Nipples:{/u} [all_girls_list[girl_index]['equipment']['nipples']['type']]":
@@ -1338,7 +1452,7 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "nipples"), Jump("Home")
             if equipment_choice == "navel":
                 textbutton "{u}Navel:{/u} [all_girls_list[girl_index]['equipment']['navel']['type']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "navel"), Jump("Home")
             else:
                 textbutton "{u}Navel:{/u} [all_girls_list[girl_index]['equipment']['navel']['type']]":
@@ -1346,18 +1460,18 @@ screen slave_equipment_menu():
                     action SetVariable("equipment_choice", "navel"), Jump("Home")
             if equipment_choice == "clitoris":
                 textbutton "{u}Clitoris:{/u} [all_girls_list[girl_index]['equipment']['clitoris']['type']]":
-                    style "slave_equipment_menu_button"
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "clitoris"), Jump("Home")
             else:
                 textbutton "{u}Clitoris:{/u} [all_girls_list[girl_index]['equipment']['clitoris']['type']]":
                     style "slave_equipment_menu_button"
                     action SetVariable("equipment_choice", "clitoris"), Jump("Home")
             if equipment_choice == "anus":
-                textbutton "{u}Anal:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
-                    style "slave_equipment_menu_button"
+                textbutton "{u}Anus:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
+                    style "slave_equipment_menu_button4"
                     action SetVariable("available_options", 0),SetVariable("equipment_choice", "anus"), Jump("Home")
             else:
-                textbutton "{u}Anal:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
+                textbutton "{u}Anus:{/u} [all_girls_list[girl_index]['equipment']['anus']]":
                     style "slave_equipment_menu_button"
                     action SetVariable("equipment_choice", "anus"), Jump("Home")
     if available_options == 0:
@@ -1384,44 +1498,54 @@ screen slave_equipment_menu():
 
         elif available_options == 1:
             for values in inventory_type[equipment_choice]:
-                if equipment_choice not in ["tongue","nipples","navel","clitoris","earrings"]:
-                    if inventory[values] == "-":
-                        textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-                            style "slave_equipment_menu_button2"
-                            action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
-                    elif all_girls_list[girl_index]["equipment"]["aura_bound"][values] == True:
-                        hbox:
-                            xalign 1.0
-                            textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-                                style "slave_equipment_menu_button3"
+                if all_girls_list[girl_index]["equipment"][equipment_choice] != dic_girl_clothing_full[values]["name"]:
+                    if equipment_choice not in ["tongue","nipples","navel","clitoris","earrings"]:
+                        if dic_girl_clothing_full[values]["name"] == "Naked":
+                            textbutton "- Strip -" xalign 1.0:
+                                style "slave_equipment_menu_button2"
                                 action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
-                            add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
-                    elif inventory[values] > 0:
-                        textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-                            style "slave_equipment_menu_button2"
-                            action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
-                    else:
-                        textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
-                            style "slave_equipment_menu_button"
-                            action SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]), SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
-
-                else:
-                    if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"]:
-                        if all_girls_list[girl_index]["equipment"]["aura_bound"][values] == True:
+                        elif dic_girl_clothing_full[values]["name"] == "":
+                            textbutton "- Remove -" xalign 1.0:
+                                style "slave_equipment_menu_button2"
+                                action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice,""),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                        elif all_girls_list[girl_index]["equipment"]["aura_bound"][values] == True:
                             hbox:
                                 xalign 1.0
                                 textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                     style "slave_equipment_menu_button3"
-                                    action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                    action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
                                 add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
                         elif inventory[values] > 0:
                             textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                 style "slave_equipment_menu_button2"
-                                action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
                         else:
                             textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                 style "slave_equipment_menu_button"
                                 action SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]), SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
+
+                    else:
+                        if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"]:
+                            if all_girls_list[girl_index]["equipment"][equipment_choice]["type"] != dic_girl_clothing_full[values]["name"]:
+                                if all_girls_list[girl_index]["equipment"]["aura_bound"][values] == True:
+                                    hbox:
+                                        xalign 1.0
+                                        textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                                            style "slave_equipment_menu_button3"
+                                            action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                        add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
+                                elif dic_girl_clothing_full[values]["name"] == "":
+                                    textbutton "- Remove -" xalign 1.0:
+                                        style "slave_equipment_menu_button2"
+                                        action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", ""),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                elif inventory[values] > 0:
+                                    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                                        style "slave_equipment_menu_button2"
+                                        action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                else:
+                                    textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
+                                        style "slave_equipment_menu_button"
+                                        action SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]), SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
             if equipment_choice in ["tongue","nipples","navel","clitoris","earrings"]:          
                 if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"] == False:
                     textbutton equipment_choice + " (Not pierced)" xalign 1.0:
@@ -1433,24 +1557,29 @@ screen slave_equipment_menu():
         text "" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
         if available_options == 1:
             for values in inventory_type[equipment_choice]:
-                if equipment_choice not in ["tongue","nipples","navel","clitoris","earrings"]:
-                    if inventory[values] == "-":
-                        text str(inventory[values]) xalign 0.5:
-                            style "slave_equipment_menu_button2_text"
-                    elif inventory[values] > 0:
-                        text str(inventory[values]) xalign 0.5:
-                            style "slave_equipment_menu_button2_text"
-                    else:
-                        text str(inventory[values]) xalign 0.5:
-                            style "slave_equipment_menu_button_text"
-                else:
-                    if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"]:
-                        if inventory[values] > 0:
+                if all_girls_list[girl_index]["equipment"][equipment_choice] != dic_girl_clothing_full[values]["name"]:
+                    if equipment_choice not in ["tongue","nipples","navel","clitoris","earrings"]:
+                        if inventory[values] == "-":
+                            text str(inventory[values]) xalign 0.5:
+                                style "slave_equipment_menu_button2_text"
+                        elif inventory[values] > 0:
                             text str(inventory[values]) xalign 0.5:
                                 style "slave_equipment_menu_button2_text"
                         else:
                             text str(inventory[values]) xalign 0.5:
                                 style "slave_equipment_menu_button_text"
+                    else:
+                        if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"]:
+                            if all_girls_list[girl_index]["equipment"][equipment_choice]["type"] != dic_girl_clothing_full[values]["name"]:
+                                if dic_girl_clothing_full[values]["name"] == "":
+                                    text "-" xalign 0.5:
+                                        style "slave_equipment_menu_button2_text"
+                                elif inventory[values] > 0:
+                                    text str(inventory[values]) xalign 0.5:
+                                        style "slave_equipment_menu_button2_text"
+                                else:
+                                    text str(inventory[values]) xalign 0.5:
+                                        style "slave_equipment_menu_button_text"
 screen slave_aura_menu():
     add "page_aura.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")

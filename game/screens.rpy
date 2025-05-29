@@ -608,7 +608,12 @@ style slave_equipment_menu_button3_text:
     color "#009900" 
     font "fonts/Segoe Print.ttf"     
     hover_color "#ffff00"
-
+style slave_equipment_menu_button4 is default
+style slave_equipment_menu_button4_text:
+    size 14 
+    color "#0000D8" 
+    font "fonts/Segoe Print.ttf"     
+    hover_color "#ffff00"
 
 
 

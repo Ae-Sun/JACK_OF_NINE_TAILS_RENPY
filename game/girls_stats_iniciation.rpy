@@ -1908,6 +1908,12 @@ define dic_girl_clothing_full ={
         "desc": "These incredibly cute creatures the size of a cat are grown from eggs in the technosphere. Their life expectancy is not very long and they are inedible, but they are faithful and lovely. You will have to pay for food regularly. (1 spark/day)",
         "icon": "scene/item/item_pony",
         "price": 50
+    },
+    "remove": {
+        "name": "",
+        "desc": "You removed the item from the slave",
+        "icon": "scene/item/clear_small",
+        "price": 0
     }
 }
 define dic_girl_psy_status = {
@@ -1927,4 +1933,104 @@ define dic_girl_psy_status = {
     "servile": 0,
     "soft": 0,
     "default": 0,
+}
+define inventory_type = {
+    "armour": [
+        "No armor", "Aramid Suit", "Leather Armor", "Adaptive Nanoweave Suit",
+        "Phantom Aegis Suit", "Elven Chainmail", "Combined Armor", "Adaptive armor",
+        "Semi-perfect armor", "Iron Armor", "Obsidian Bulwark", "Gothic plate", "Mithril Mail"
+    ],
+    "left_hand": [
+        "remove", "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
+        "Blowgun Darts", "shuriken", "Buckler", "Adarga", "Huge mace", "Baseball Bat",
+        "Gattle Prod", "Naginata"
+    ],
+    "right_hand": [
+        "remove", "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
+        "Blowgun Darts", "shuriken", "Buckler", "Adarga", "Huge mace", "Baseball Bat",
+        "Gattle Prod", "Naginata"
+    ],
+    "amulet": [
+        "remove", "magic_protection", "physical_protection", "stamina_restore", "penetration",
+        "Lucky", "speed"
+    ],
+    "ring": [
+        "remove", "bleeding_ring", "stun_ring", "confusion_ring", "injured_ring", "sleep_ring", "pain_ring"
+    ],
+    "clothes": [
+        "naked", "common_apron", "maid_dress", "nurse_dress", "leotard", "chainmail_bikini",
+        "enchanter_robe", "sun_dress", "laced_underwear", "sailor_foku", "cocktail_dress",
+        "rubber_dress", "ukata", "bellydance", "leather_corset", "rich_dress", "wedding_dress",
+        "petsuit", "deprivation_suit", "cow_gear"
+    ],
+    "headgear": [
+        "remove", "pony_plume", "plain_headband", "hijab", "crown_of_thorns", "plain_tiara", "hairnet",
+        "glasses", "nekomimi", "incrusted_tiara", "exotic_wig"
+    ],
+    "neck": [
+        "remove", "plain_pendant", "incrusted_necklace", "dog_collar", "leather_collar", "steel_collar",
+        "spiked_collar", "shock_collar", "golden_collar"
+    ],
+    "hands": [
+        "remove", "rubber_gloves", "laced_gloves", "leather_gloves", "plastic_bracers",
+        "fluffy_gloves", "ponygirl_harness", "leather_straps"
+    ],
+    "feet": [
+        "remove", "tabi", "fluffy_stepins", "pointes", "sneakers", "high_heels",
+        "high_boots", "hoofed_boots", "leather_straps"
+    ],
+    "ring1": [
+        "remove", "plain_ring", "incrusted_ring"
+    ],
+    "ring2": [
+        "remove", "plain_ring", "incrusted_ring"
+    ],
+    "earrings": [
+        "remove", "plain_earrings", "incrusted_earrings", "heavy_gauge_rings"
+    ],
+    "tongue": [
+        "remove", "plain_earrings", "barbells", "heavy_gauge_rings"
+    ],
+    "nipples": [
+        "remove", "plain_earrings", "barbells", "nipple_chain", "heavy_gauge_rings"
+    ],
+    "navel": [
+        "remove", "plain_earrings", "barbells", "heavy_gauge_rings", "incrusted_earrings"
+    ],
+    "clitoris": [
+        "remove", "plain_earrings", "barbells", "heavy_gauge_rings", "incrusted_earrings"
+    ],
+    "anus": [
+        "remove", "anal_plug", "anal_tail"
+    ]
+}
+define dic_inventory_move_up = {
+    'clothes': 0,
+    'headgear': 1,
+    'neck': 2,
+    'hands': 3,
+    'feet': 4,
+    'ring1': 5,
+    'ring2': 6,
+    'earrings': 7,
+    'tongue': 8,
+    'nipples': 9,
+    'navel': 10,
+    'clitoris': 11,
+    'anus': 12
+}
+define dic_inventory_move_down = {
+    0: 'clothes',
+    1: 'headgear',
+    2: 'neck',
+    3: 'hands',
+    4: 'feet',
+    5: 'ring1',
+    6: 'ring2',
+    7: 'earrings',
+    8: 'tongue',
+    9: 'nipples',
+    10: 'navel',
+    11: 'clitoris',
+    12: 'anus'
 }
