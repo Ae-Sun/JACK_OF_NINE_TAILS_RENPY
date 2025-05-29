@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 346: expected an indented block
-        if all_girls_list[girl_index]["equipment"]["clothes"] == "Frilly Apron":
+File "game/home.rpy", line 741: invalid syntax
+                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] > 0 or all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] >0
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue May 27 20:37:57 2025
+Thu May 29 01:49:19 2025

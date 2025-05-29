@@ -65,6 +65,10 @@
                 "blood_attitude": {
                     "value": 2,
                     "revealed": false
+                },
+                "deprivation_attitude":{
+                    "value":-1,
+                    "revealed":false
                 }
 
             },

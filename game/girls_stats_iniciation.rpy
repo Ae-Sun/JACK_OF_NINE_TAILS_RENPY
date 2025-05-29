@@ -275,7 +275,7 @@ define attributes_max_threshold = {
     4: 160,
     5: 10,
 }
-define attributes_max_threshold_physical = {
+define attributes_max_threshold_inverse = {
     0: 10,
     1: 160,
     2: 80,
@@ -283,7 +283,7 @@ define attributes_max_threshold_physical = {
     4: 20,
     5: 10,
 }
-define attributes_min_threshold_physical = {
+define attributes_min_threshold_inverse = {
     0: -80,
     1: -40,
     2: -20,
@@ -491,7 +491,8 @@ define dic_traits_miscellaneous = {
     "passion_fame":      ["None", "Likes Fame", "Loves Fame", "Hates Fame", "Dislikes Fame"],
     "passion_luxury":    ["None", "Likes Luxury", "Loves Luxury", "Hates Luxury", "Dislikes Luxury"],
     "passion_sweets":    ["None", "Likes Sweets", "Loves Sweets", "Hates Sweets", "Dislikes Sweets"],
-    "fertility":         ["None", "Fertile", "Very Fertile", "Very Infertile", "Infertile"]
+    "fertility":         ["None", "Fertile", "Very Fertile", "Very Infertile", "Infertile"],
+    "deprivation_attitude":["None", "Likes Deprivation", "Loves Deprivation", "Hates Deprivation", "Dislikes Deprivation"]
 }
 
 define dic_traits_miscellaneous_description = {
@@ -599,6 +600,13 @@ define dic_traits_miscellaneous_description = {
         "{b}Very Fertile{/b}\nYour slave is very fertile and likely to conceive easily.",
         "{b}Very Infertile{/b}\nYour slave is very infertile and has very little chance to conceive children.",
         "{b}Infertile{/b}\nYour slave is infertile, with little chance of conception."
+    ],
+    "deprivation_attitude": [
+        "Null",
+        "{b}Likes Deprivation{/b}\nYour slave likes deprivation and enjoys the challenge of being deprived.",
+        "{b}Loves Deprivation{/b}\nYour slave loves deprivation and craves the challenge of being deprived. She has a natural talent for this skill, which will allow her to reach new heights.",
+        "{b}Hates Deprivation{/b}\nYour slave strongly dislikes deprivation and avoids it whenever possible. She lacks talent in this area, which will limit her potential for improvement.",
+        "{b}Dislikes Deprivation{/b}\nYour slave strongly dislikes deprivation and avoids it whenever possible."
     ]
 }
 define dic_traits_aura = {
@@ -774,7 +782,7 @@ default aura_descriptions = {
 
 
 default aura_descriptions2 = {
-    "lust": [
+    "arousal": [
         "{color=#000000}The aura moves slowly and smoothly, almost without pulsation. You don't notice any signs of sexual desire.{/color}",
         "{color=#000000}Light twitching of the aura suggests to you that there is slight sexual desire present.{/color}",
         "{color=#000000}Sensual aura fluctuations indicate the presence of significant sexual arousal.{/color}",
@@ -1531,7 +1539,7 @@ define dic_girl_clothing_full ={
         "name": "Gown",
         "price": 10,
         "desc": "Price: 10 sparks\nA dress made only of the finest fabric. This dress will make your slave stand out at any party. Very stylish and quite affordable - a great choice.",
-        "icon":"scene/item/item_laced_dreess",
+        "icon":"scene/item/item_laced_dress",
     },
     "rubber_dress": {
         "name": "Latex Dress",
@@ -1901,4 +1909,22 @@ define dic_girl_clothing_full ={
         "icon": "scene/item/item_pony",
         "price": 50
     }
+}
+define dic_girl_psy_status = {
+    "arrogant": 2,
+    "broken": -100,
+    "depresive": -1,
+    "docile": -1,
+    "frightened": -2,
+    "hateful": 4,
+    "horny": 0,
+    "hysteric": 3,
+    "lachrymose": -1,
+    "obedient": 0,
+    "optimistic": 0,
+    "reluctant": 0,
+    "resistant": 3,
+    "servile": 0,
+    "soft": 0,
+    "default": 0,
 }

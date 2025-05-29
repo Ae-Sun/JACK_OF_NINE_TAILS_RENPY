@@ -1,20 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-PermissionError: [WinError 5] Acceso denegado: 'D:\\RE\\Descargas\\Jack o nine tails renpy\\game\\saves\\navigation.json'
+While running game code:
+  File "game/home.rpy", line 343, in script
+    python:
+  File "game/home.rpy", line 738, in <module>
+    dictionary_name = dic_traits_skills_description
+NameError: name 'dic_traits_skills_description' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\main.py", line 599, in main
-    renpy.dump.dump(False)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\dump.py", line 260, in dump
-    os.unlink(filename)
-PermissionError: [WinError 5] Acceso denegado: 'D:\\RE\\Descargas\\Jack o nine tails renpy\\game\\saves\\navigation.json'
+  File "game/home.rpy", line 343, in script
+    python:
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/home.rpy", line 738, in <module>
+    dictionary_name = dic_traits_skills_description
+NameError: name 'dic_traits_skills_description' is not defined
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Wed May 28 00:11:49 2025
+Thu May 29 02:10:30 2025

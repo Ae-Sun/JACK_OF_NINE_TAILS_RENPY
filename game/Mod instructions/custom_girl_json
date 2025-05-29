@@ -99,7 +99,7 @@
                     "revealed": false
                 },
                 "athleticstrait": {
-                    "value": "NONE",
+                    "value": 0,
                     "revealed": false
                 },
                 "gladiatrixtrait": {
@@ -221,6 +221,10 @@
                 "fertility":{
                     "value":0,
                     "revealed": false
+                },
+                "deprivation_attitude":{
+                    "value":0,
+                    "revealed":false
                 }
             },
             "traits_aura(1/16)": {

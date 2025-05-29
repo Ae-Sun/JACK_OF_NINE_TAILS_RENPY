@@ -113,9 +113,7 @@ define tutorial_lectureGIGA ={
 define demo_girl_text = ["Former housewife who was sold into slavery by the bank, for the debts of her husband. She served as a «specialist in entertainment» for the managers of a corporation, so she has some required experience. But she is not specially trained.\n{color=#009900}Difficulty: minimal{/color}",
                         "Lesbian amazon from the savage space tribe. She has great makings, but do not forget that this girl has great physical strength, fighting skills, and she despises men.\n{color=#6B0084}Difficulty: normal{/color}",
                         "Little princess of a small kingdom of a highly-magical world. The combination of poor health, vulnerability and prohibitive defiance will make her training especially challenging. But her beauty is worth it.\n{color=#cd0000}Difficulty: high{/color}"
-
 ]
-
 define dic_custom_start_difficulty_selection = {
     "Free mode": ["Free mode",10000,999999],
     "Normal":    ["Normal"   ,6000 ,590   ],
@@ -555,7 +553,6 @@ define dic_equipment_armor = {
         }
     }
 }
-
 define dic_equipment_weapon = {
     "One-Handed Weapon":{
         "Fist":{
@@ -988,9 +985,6 @@ define dic_equipment_weapon = {
         }
     },
 }
-
-
-
 define dic_equipment_amulet ={
     "amulet":{
         "magic_protection":{
@@ -1057,10 +1051,6 @@ define dic_equipment_rings = {
         "pain":5
     },
 }
-    
-    
-    
-    
 define dic_health_points ={
     0:20,
     1:40,
@@ -1140,7 +1130,6 @@ define dic_status_protection ={
     15:150,
     16:200,
 }
-
 define dic_damage_reductionA ={
     0:0,
     1:1,
@@ -1169,7 +1158,6 @@ define dic_damage_reductionB ={
     10:0.80,
     11:0.88,
 }
-
 define dic_willpower ={
     0:5,
     1:10,
@@ -1214,8 +1202,6 @@ define dic_stamina ={
     19:240,
     20:300,
 }
-
-
 define weight_penalty ={
     0:2,
     1:4,

@@ -503,6 +503,7 @@ label choose_inicial_girl:
     $ all_girls_list[girl_index] = load_json(premiun_girl_tutorial_selected_localization)
     
     python:
+        all_girls_list[girl_index].setdefault("obedience",0)
         all_girls_list[girl_index].setdefault("aura",{
         "fear": 0,
         "despair": 0,
@@ -513,11 +514,18 @@ label choose_inicial_girl:
         "devotion": 0,
         })
         all_girls_list[girl_index].setdefault("experience", {})
+        all_girls_list[girl_index].setdefault("psy_status","default")
         all_girls_list[girl_index].setdefault("name", "WIP")
+        all_girls_list[girl_index].setdefault("style_plus",0)
+        all_girls_list[girl_index].setdefault("exotic_plus",0)
         all_girls_list[girl_index].setdefault("mood",0)
         all_girls_list[girl_index].setdefault("worn_mood",0)
         all_girls_list[girl_index].setdefault("worn_comfortable",False)
         all_girls_list[girl_index].setdefault("mood_state",{})
+        all_girls_list[girl_index].setdefault("beaten_ever",False)
+        all_girls_list[girl_index].setdefault("domini_dictum_ever",False)
+        all_girls_list[girl_index].setdefault("wig",False)
+        all_girls_list[girl_index].setdefault("races_won",0)
         all_girls_list[girl_index]["mood_state"].setdefault("good_mood",{})
         all_girls_list[girl_index]["mood_state"].setdefault("bad_mood",{})
         for key in dic_slave_mood["good_mood"]:
@@ -541,7 +549,6 @@ label choose_inicial_girl:
         all_girls_list[girl_index]["experience"].setdefault("traits_miscellaneous", {})
         all_girls_list[girl_index]["experience"].setdefault("traits_aura", {})
         all_girls_list[girl_index]["experience"].setdefault("traits_attributes", {})
-        all_girls_list[girl_index]["experience"].setdefault("lust", 0)
         all_girls_list[girl_index].setdefault("energy", all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
         all_girls_list[girl_index].setdefault("attributes", {})
         all_girls_list[girl_index].setdefault("skills", {})
@@ -556,10 +563,11 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("brand",2)
         all_girls_list[girl_index].setdefault("equipment",{})
         all_girls_list[girl_index].setdefault("broken",False)
+        all_girls_list[girl_index].setdefault("conscience",True)
         all_girls_list[girl_index].setdefault("days_without_food",0)
         all_girls_list[girl_index].setdefault("days_without_sleep",0)
         all_girls_list[girl_index].setdefault("daily_count",{})
-        all_girls_list[girl_index].setdefault("lust",0)
+        all_girls_list[girl_index].setdefault("arousal",0)
         all_girls_list[girl_index]["day_bought"] = day_tracker
         all_girls_list[girl_index]["daily_count"].setdefault("reward",0)
         all_girls_list[girl_index]["daily_count"].setdefault("punishments",0)
@@ -575,9 +583,9 @@ label choose_inicial_girl:
         all_girls_list[girl_index]["equipment"].setdefault("feet","")
         all_girls_list[girl_index]["equipment"].setdefault("ring1","")
         all_girls_list[girl_index]["equipment"].setdefault("ring2","")
-        all_girls_list[girl_index]["equipment"].setdefault("earrings",{"pierced":False,"type":""})
-        all_girls_list[girl_index]["equipment"].setdefault("tongue",{"pierced":False,"type":""})
-        all_girls_list[girl_index]["equipment"].setdefault("nipples",{"pierced":False,"type":""})
+        all_girls_list[girl_index]["equipment"].setdefault("earrings",{"pierced":True,"type":""})
+        all_girls_list[girl_index]["equipment"].setdefault("tongue",{"pierced":True,"type":""})
+        all_girls_list[girl_index]["equipment"].setdefault("nipples",{"pierced":True,"type":""})
         all_girls_list[girl_index]["equipment"].setdefault("clitoris",{"pierced":False,"type":""})
         all_girls_list[girl_index]["equipment"].setdefault("navel",{"pierced":False,"type":""})
         all_girls_list[girl_index]["equipment"].setdefault("anus","")
@@ -588,9 +596,12 @@ label choose_inicial_girl:
         for key in dic_slave_skills:
             all_girls_list[girl_index]["learning_bonus"].setdefault(key,0)
         all_girls_list[girl_index]["learning_bonus"].setdefault("sex",0)
+        all_girls_list[girl_index]["learning_bonus"].setdefault("academy",0)
         all_girls_list[girl_index].setdefault("daily_bonus",{})
+        all_girls_list[girl_index]["daily_bonus"].setdefault("devotion",0)
         all_girls_list[girl_index]["daily_bonus"].setdefault("taming",0)
-        all_girls_list[girl_index]["daily_bonus"].setdefault("lust",0)
+        all_girls_list[girl_index]["daily_bonus"].setdefault("arousal",0)
+        all_girls_list[girl_index]["daily_bonus"].setdefault("endurance",0)
         all_girls_list[girl_index]["daily_bonus"].setdefault("empathy",0)
         all_girls_list[girl_index]["daily_bonus"].setdefault("temperament",0)
         all_girls_list[girl_index]["daily_bonus"].setdefault("nature",0)

@@ -428,4 +428,4 @@ default sparks_37 =""
 ###################################################
 default mc ="Jack"
 default characterOnlyNameIndex = 0
-
+default master_style = 0
