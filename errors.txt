@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 741: invalid syntax
-                if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] > 0 or all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] >0
+File "game/home.rpy", line 1532: reached end of line when expecting ':'.
+    elif inventory[inventory_type[equipment_choice][values]] > 0 
+                                                                 ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 29 01:49:19 2025
+Fri May 30 00:32:21 2025

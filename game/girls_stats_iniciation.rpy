@@ -1936,17 +1936,17 @@ define dic_girl_psy_status = {
 }
 define inventory_type = {
     "armour": [
-        "No armor", "Aramid Suit", "Leather Armor", "Adaptive Nanoweave Suit",
+        "Without armour", "Aramid Suit", "Leather Armor", "Adaptive Suit",
         "Phantom Aegis Suit", "Elven Chainmail", "Combined Armor", "Adaptive armor",
         "Semi-perfect armor", "Iron Armor", "Obsidian Bulwark", "Gothic plate", "Mithril Mail"
     ],
-    "left_hand": [
-        "remove", "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
+    "weapon": [
+        "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
         "Blowgun Darts", "shuriken", "Buckler", "Adarga", "Huge mace", "Baseball Bat",
         "Gattle Prod", "Naginata"
     ],
-    "right_hand": [
-        "remove", "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
+    "weapon2": [
+        "Fist", "Baton", "Rapier", "Koncerz", "Whip", "Epee", "Gladius", "katana",
         "Blowgun Darts", "shuriken", "Buckler", "Adarga", "Huge mace", "Baseball Bat",
         "Gattle Prod", "Naginata"
     ],

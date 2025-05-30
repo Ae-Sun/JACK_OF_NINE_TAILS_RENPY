@@ -618,7 +618,6 @@ style slave_equipment_menu_button4_text:
 
 
 
-
 style leftalign:
     xalign 0.0
     yalign 0.0
