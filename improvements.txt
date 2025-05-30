@@ -14,12 +14,10 @@
 - Pressing space will close infobox.    
 - Pressing space is now very usefull.
 - Reworked the entire trait system — while the original system was solid, it was overly complex and difficult to replicate. Simplified the underlying logic and expanded the variety of available traits for greater flexibility and depth.
-- Improve slave json
+- Improve slave json structure
 - Created slave Mod support
 - Remove loli explicit text content Easter Egg (Too much work for something that probably only the 5% of community are enjoying, someone (not me) does have a lot time may try to restore it)
-- Reworked the entire equipment system — Because the original system code are in russian, also weapon aren't remarkeble.(naginata or flamberge? can you really tell the difference without looking the wiki?)
-- Ask you slave to battle will increase despair if devotion aren't high enought (she is literally fighting for her life)
-- Ask you slave to race will increase despair if devotion aren't high enought (you are puting her in a live dead situation)
+- Reworked the entire combat equipment system — Because the original system code are in russian, also weapon aren't remarkeble.(naginata or flamberge? can you really tell the difference without looking the wiki?)
 - Obedience always fade when slave have spoil (instead of >1, more simple, more intuitive, better)
 - Slaves always hate being nude based of pride instead of proud slaves dislike being put on display(instead of 2<, same reason as above)
 - Having exhibitionism trait now increase worn mood on reveling clothes
@@ -27,6 +25,9 @@
 - wearing Kimono-Yutaka will have positive moodlet if slave have elocution affinity instead of secretary affinity
 - cow gear no longer daily reduce intelligence (no space in equipment screen. Also no longer incentive to switch clothes before end the day because the lowering of intelligence )
 - simplefied heavy gauge rings. each now give 1 taming for -0.3 mood
+- some clothes effect are slightly changed to adaptade new trait system
+- Improve slave equipment screen ui
+- Now clicking 1 or 2 will move between equipments in slave equipment screen
 - When you buy items that can be equipment in multiples part of slave body like like barbells, you will buy a whole set for one slave instead of x quantitive. (Code problems, the original system requiere a lot more code.) 
 - Expand girl dominium - instead of one slave at the time, now support multiples slaves at the same time. [No freeze]
 - Added change girl for testing reasons 
