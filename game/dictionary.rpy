@@ -1484,3 +1484,43 @@ define dic_combat_full = {
     "sleep_ring": "Sleep Ring",
     "pain_ring": "Pain Ring"
 }
+define spells_books_description = {
+    "Auspex": {
+        "cast": "You call the Flame of Creation sleeping in your heart and send its light to your brow chakra. Immediately you begin to see things as they really are, as if scales fell from your eyes. Now you can easily read any unprotected aura.",
+        "fail": "You call the Flame of Creation sleeping in your heart and send its light to your brow chakra. Immediately you begin to see things as they really are, as if scales fell from your eyes. But in the next moment, you blink, and your vision returns to normal. You need more practice or something to enhance your ability.",
+    },
+    "Magnamagnifika": {
+        "cast": "Calling the Sparks out of your soul, you collect them in a spell of pain. Without causing any real harm, this spell nevertheless causes all the nerve endings of the victim to send signals to the brain about unbearable pain.",
+    },
+    "Sententia Veritas": {
+        "cast": "You awaken Sparks and cast a spell of pleasure. This magic gives unearthly pleasure without any physical impact. Enough to experience several strong orgasms in a row.",
+    },
+    "Tremendio": {
+        "cast": "You cast a justice spell on <<$dynslave_name>>, which should make her feel guilt or merit much sharper.",
+    },
+    "Cruciato": {
+        "cast": "You collect Sparks in your soul and create from them a spell that surrounds you in an invisible but clearly perceptible aura of majesty and power. People around you will experience an unaccountable desire to obey you.",
+    },
+    "Delikacia": {
+        "cast": "You cast a fear spell on <<$dynslave_name>>. Fear, sticky and unaccountable, penetrates into her soul and stays there, granting you power and control over the trembling <<$dynslave_noun2[dynslave[\"age\"]]>>.",
+    },
+    "Domini Dictum": {
+        "cast": "Using Sparks dissolved in your soul, you endow your voice with unstoppable force in the mind of your target, compelling her to obey any of your orders. Only those whose will is stronger than your spell will be able to disobey.",
+    },
+    "Adverto Servili": {
+        "cast": "You direct the force of Sparks in your hand, and on the palm of your hand begins to brightly shine the symbol of your personal brand. One touch to the slave’s thigh and the symbol appears on her delicate skin, staying there forever.",
+    }
+}
+define tips = {
+    1: "You can move up and down on clothes equipment selection using the keys 1 and 2",
+    2: "The first and second devotion point give you a extra 2 obedience in maximun difficulty",
+    3: "The first point on fear give you extra obedience points based of slave nature (max +5)",
+    4: "Gorgeous Dress is trash",
+    5: "The maximun obedience is 100, only archieveble when slave are broken",
+    6: "Slave rang will never increase beyond beauty",
+    7: "One part of obedience is the sum of slave nature (pride + temperament + nature + intelligence)",
+    8: "Spoil will decrease 2 points of obedience, avoid it at all costs",
+    9: "Given more that 2 rewards per day will increase spoil",
+    10:"Spoil will reduce all aura by spoil value at the end of day",
+    11:"devotion will give 4 points of obedience, but there's no reliable way to increase it without increasing others stats first" 
+}

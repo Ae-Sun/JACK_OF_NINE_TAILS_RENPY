@@ -746,7 +746,7 @@ define dic_traits_attributes_description = {
         "{b}Unremarkable{/b} \nYour slave is unremarkable, lacking any distinguishing features. Her look fails to attract attention in any way. She is completely common in appearance and blends into the crowd."
     ]
 }
-default aura_descriptions = {
+define aura_descriptions = {
     "obedience": [
         "You try to find signs of obedience, but stable structures cannot form. There are no spikes of rebellion, alas there are no buds of obedience as well.",
         "You concentrate on the signs of obedience, but you can only see {color=#009900}one open bud of obedience{/color}.",
@@ -779,9 +779,42 @@ default aura_descriptions = {
         "{color=#009900}The aura of your slave is considerably fainter than yours{/color}."
     ]
 }
+define aura_descriptions_no_color = {
+    "obedience": [
+        "You try to find signs of obedience, but stable structures cannot form. There are no spikes of rebellion, alas there are no buds of obedience as well.",
+        "You concentrate on the signs of obedience, but you can only see one open bud of obedience.",
+        "You concentrate on the signs of obedience and count a pair of open buds of obedience.",
+        "You concentrate on the signs of obedience and count three open buds of obedience.",
+        "You concentrate on the signs of obedience and count four open buds of obedience.",
+        "You concentrate on the signs of obedience and count five open buds of obedience.",
+        "You concentrate on the signs of obedience and count six open buds of obedience.",
+        "You concentrate on the signs of obedience and count seven open buds of obedience.",
+        "You concentrate on the signs of obedience and count eight open buds of obedience.",
+        "You concentrate on the signs of obedience and count nine open buds of obedience.",
+        "You concentrate on the signs of obedience and count a lot of open buds of obedience.",
+        "You concentrate on the signs of obedience and count one sharp thorn of rebellion.",
+        "You concentrate on the signs of obedience and count a pair of sharp thorns of rebellion.",
+        "You concentrate on the signs of obedience and count three sharp thorns of rebellion.",
+        "You concentrate on the signs of obedience and count four sharp thorns of rebellion.",
+        "You concentrate on the signs of obedience and count five sharp thorns of rebellion.",
+        "You concentrate on the signs of obedience and count six sharp thorns of rebellion.",
+        "You concentrate on the signs of obedience and count seven sharp thorns of rebellion.",
+        "You concentrate on the signs of obedience and count eight sharp thorns of rebellion.",
+        "You concentrate on the signs of obedience and count nine sharp thorns of rebellion.",
+        "You concentrate on the signs of obedience and count a lot of sharp thorns of rebellion."
+    ],
+
+    "supermacy": [
+        "The aura of your slave shines considerably brighter than yours.",
+        "The aura of your slave shines brighter than yours.",
+        "The aura of your slave is approximately equal to yours.",
+        "The aura of your slave is fainter than yours.",
+        "The aura of your slave is considerably fainter than yours."
+    ]
+}
 
 
-default aura_descriptions2 = {
+define aura_descriptions2 = {
     "arousal": [
         "{color=#000000}The aura moves slowly and smoothly, almost without pulsation. You don't notice any signs of sexual desire.{/color}",
         "{color=#000000}Light twitching of the aura suggests to you that there is slight sexual desire present.{/color}",
@@ -853,6 +886,79 @@ default aura_descriptions2 = {
         "{color=#00a86b}Emerald glow of devotion{/color} comes from {color=#0000D8}three{/color} well-marked stars.",
         "{color=#00a86b}Emerald glow of devotion{/color} comes from {color=#009FEF}four{/color} bright stars, illuminating the aura of your slave.",
         "{color=#00a86b}Emerald glow of devotion{/color} dominates the aura of your slave, dotting it with {color=#009900}myriads{/color} of bright and clear stars."
+    ]
+}
+define aura_descriptions2_no_color = {
+    "arousal": [
+        "The aura moves slowly and smoothly, almost without pulsation. You don't notice any signs of sexual desire.",
+        "Light twitching of the aura suggests to you that there is slight sexual desire present.",
+        "Sensual aura fluctuations indicate the presence of significant sexual arousal.",
+        "The aura is clearly trembling, twisting and then unwinding in an erotic rhythm. This indicates a strong sexual arousal.",
+        "The aura is pulsing sensually and eagerly, stretching and arching your way. This is a sign of powerful sexual arousal and almost uncontrollable desire.",
+        "Almost epileptic flicker speed and modulations suggest ultimate sexual arousal. All colors are mixed in a fast paced whirlwind, like on the surface of a spinning whirligig."
+    ],
+
+    "fear": [
+        "Ruby flashes of fear are insignificant.",
+        "Ruby flashes of fear are rare, in one minute you noticed just one.",
+        "Ruby flashes of fear appear from time to time, you counted a pair of them in a minute.",
+        "Ruby flashes of fear appear quite often. You counted three of them.",
+        "Ruby flashes of fear are quite bright and noticeable. You counted four especially strong ones.",
+        "Ruby flashes of fear appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as five just in one minute."
+    ],
+
+    "despair": [
+        "Anthracite colored despair is almost imperceptible.",
+        "Anthracite colored despair has formed one tentacle, permeating through the whole aura of your slave.",
+        "Anthracite colored despair has formed two tentacles, tightly gripping the aura of your slave from both sides.",
+        "Anthracite colored despair has formed a dense clot, with three disgusting writhing tentacles sticking from it.",
+        "Anthracite colored despair has grown and released four tentacles, engulfing the aura of your slave from all sides.",
+        "Anthracite colored despair permeates the entire aura of your slave. You can clearly see five fat, disgusting writhing tentacles, which tear all other colors to shreds."
+    ],
+
+    "awareness": [
+        "Amethyst core of awareness is not formed.",
+        "Amethyst core of awareness is very small, being formed by only one globule.",
+        "Amethyst core of awareness is formed by two tightly agglutinated globules.",
+        "Amethyst core of awareness is medium-sized. You counted three globules in it.",
+        "Amethyst core of awareness is big and dense, formed by four crisp globules.",
+        "Amethyst core of awareness predominates in the central portion. Its shape indicates the presence of at least five well-formed globules."
+    ],
+
+    "taming": [
+        "Golden strings of taming are hardly noticeable.",
+        "Golden strings of taming are hardly formed. Just one of them seems to be strong enough.",
+        "Golden strings of taming are seen here and there. You find a pair of strong ones.",
+        "Golden strings of taming are noticeable in lots of places. Three of them seem to be particularly strong.",
+        "Golden strings of taming are seen everywhere. Four especially bright coils pass on the perimeter of the aura, like the meridians on the globe.",
+        "Golden strings of taming cover the whole aura, making it look like a piece of ham in a tight braid."
+    ],
+
+    "habit": [
+        "Sapphire flicker of habit is completely absent.",
+        "Sapphire flicker of habit looks very dull and only noticeable in one place.",
+        "Sapphire flicker of habit appears rather poorly and only in a pair of places.",
+        "Sapphire flicker of habit is fairly stable. You find three points of its concentration.",
+        "Sapphire flicker of habit meanders over the entire surface of the aura of your slave, covering it from four sides.",
+        "Sapphire flicker of habit envelops the whole aura of your slave, like a soft misty haze. It softens and masks all angles, ledges and bright colors."
+    ],
+
+    "spoil": [
+        "Vulgar-pink iridescence of spoiling does not spoil the aura of your slave.",
+        "Vulgar-pink iridescence of spoiling is gathered in one place, forming a disgusting wormhole.",
+        "Vulgar-pink iridescence of spoiling forms two loathsome sores in the aura of your slave.",
+        "Vulgar-pink iridescence of spoiling forms three nasty sores in the aura of your slave.",
+        "Vulgar-pink iridescence of spoiling forms four ugly ulcerations on the aura of your slave.",
+        "Vulgar-pink iridescence of spoiling is seen everywhere, speckling your slave's aura with bloody sore-like structures."
+    ],
+
+    "devotion": [
+        "Emerald glow of devotion does not manifest at all.",
+        "Emerald glow of devotion is seen just in one place, like a dim star on the cloudy sky.",
+        "Emerald glow of devotion forms a pair of softly shining stars.",
+        "Emerald glow of devotion comes from three well-marked stars.",
+        "Emerald glow of devotion comes from four bright stars, illuminating the aura of your slave.",
+        "Emerald glow of devotion dominates the aura of your slave, dotting it with myriads of bright and clear stars."
     ]
 }
 define dic_slave_conditions = {
@@ -2033,4 +2139,8 @@ define dic_inventory_move_down = {
     10: 'navel',
     11: 'clitoris',
     12: 'anus'
+}
+define dic_slave_aura_conditions = {
+    "nocast": "  Without spells reinforcing auspex, the aura of your slave is seen as pale and indistinct shadow. You can not determine the color, strength or direction of her spiritual field.",
+    "casted": "  Auspex allows you to distinguish between colors, direction and strength of the spiritual field of your slave. After analyzing them, you get detailed information."
 }

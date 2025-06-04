@@ -513,6 +513,7 @@ label choose_inicial_girl:
         "spoil": 0,
         "devotion": 0,
         })
+        all_girls_list[girl_index]["aura"].setdefault("obedience_bonus",0)
         all_girls_list[girl_index].setdefault("experience", {})
         all_girls_list[girl_index].setdefault("psy_status","default")
         all_girls_list[girl_index].setdefault("name", "WIP")
@@ -526,6 +527,8 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("domini_dictum_ever",False)
         all_girls_list[girl_index].setdefault("wig",False)
         all_girls_list[girl_index].setdefault("races_won",0)
+        all_girls_list[girl_index].setdefault("supermacy",0)
+        all_girls_list[girl_index].setdefault("bonus_fear",0)
         all_girls_list[girl_index]["mood_state"].setdefault("good_mood",{})
         all_girls_list[girl_index]["mood_state"].setdefault("bad_mood",{})
         for key in dic_slave_mood["good_mood"]:
@@ -650,15 +653,7 @@ label choose_inicial_girl:
         traits_miscellaneous = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]
         traits_aura = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_aura(1/16)"]
         traits_attributes = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_attributes(1/20)"]
-        if dic_custom_start_difficulty_selection_index_index == 0:
-            all_girls_list[girl_index]["aura"].setdefault("obedience_bonus",4)
-            dic_overnight_rules_count_index = 0
-        elif dic_custom_start_difficulty_selection_index_index == 1:
-            all_girls_list[girl_index]["aura"].setdefault("obedience_bonus",2)
-            dic_overnight_rules_count_index = 1
-        else:
-            all_girls_list[girl_index]["aura"].setdefault("obedience_bonus",0)
-            dic_overnight_rules_count_index = 2
+
 
         for key, values in dic_slave_skills.items():
             import random

@@ -614,8 +614,18 @@ style slave_equipment_menu_button4_text:
     color "#0000D8" 
     font "fonts/Segoe Print.ttf"     
     hover_color "#ffff00"
-
-
+style slave_aura_button is default
+style slave_aura_button_text:
+    size 18
+    color "#0000D8"
+    font "fonts/Consolas.ttf"
+    hover_color "#ffff00"
+style aura_description_button is default
+style aura_description_button_text:
+    size 18
+    color "#000000"
+    font "fonts/Philosopher-Regular.ttf"
+    hover_color "#ffff00"
 
 
 style leftalign:

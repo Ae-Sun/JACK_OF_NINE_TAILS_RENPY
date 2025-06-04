@@ -103,7 +103,7 @@ define dic_mc_normal_selection_textdescription ={
     "WHITE TOWN":          ["{b} WHITE TOWN:{/b} \n Cannot start in White Town on Normal or Extreme \n difficulty. Only patricians are allowed to live there."],
     "START FAIL":          ["{b} START FAIL:{/b} \n Points must be igual or greater than 0."]
     }
-# I know you can use xmaximun and xminimun, just happened I learned that too late, so unless someone want to change it, I will leave it like this with the \n
+# I know you can use xmaximum and xminimum, just happened I learned that too late, so unless someone want to change it, I will leave it like this with the \n
 define dic_custom_character_selection = {
     "master_noble":        ["custom_master/master_noble.webp", "custom_master/master_noble_hover.webp",0],
     "master_torturer":     ["custom_master/master_torturer.webp", "custom_master/master_torturer_hover.webp",1],
@@ -383,31 +383,31 @@ default fetishism_value_24 = 0
 default reputation_value_1 = 0
 
 ############################################# number value -rec3ks
-default strength_number_value_1 = 0
-default personality_number_value_2 = 0
-default allure_number_value_3 = 0
-default libido_number_value_4 = 0
-default dominance_number_value_5 = 0
-default brand_reputation_number_value_6 = 0
-default guild_reputation_number_value_7 = 0
-default standard_of_living_number_value_8 = 0
-default hygiene_number_value_9 = 0
-default mood_number_value_10 = 0
-default injuries_number_value_11 = 0
-default teaching_number_value_12 = 0
-default stewardship_number_value_13 = 0
-default artistry_number_value_14 = 0
-default medic_number_value_15 = 0
-default fighter_number_value_16 = 0
-default magic_number_value_17 = 0
-default flagellation_number_value_18 = 0
-default torture_number_value_19 = 0
-default binding_number_value_20 = 0
-default petting_number_value_21 = 0
-default oral_sex_number_value_22 = 0
-default penetration_number_value_23 = 0
-default fetishism_number_value_24 = 0
-
+default strength_experience_value_1 = 0
+default personality_experience_value_2 = 0
+default allure_experience_value_3 = 0
+default libido_experience_value_4 = 0
+default dominance_experience_value_5 = 0
+default brand_reputation_experience_value_6 = 0
+default guild_reputation_experience_value_7 = 0
+default standard_of_living_experience_value_8 = 0
+default hygiene_experience_value_9 = 0
+default mood_experience_value_10 = 0
+default injuries_experience_value_11 = 0
+default teaching_experience_value_12 = 0
+default stewardship_experience_value_13 = 0
+default artistry_experience_value_14 = 0
+default medic_experience_value_15 = 0
+default fighter_experience_value_16 = 0
+default magic_experience_value_17 = 0
+default flagellation_experience_value_18 = 0
+default torture_experience_value_19 = 0
+default binding_experience_value_20 = 0
+default petting_experience_value_21 = 0
+default oral_sex_experience_value_22 = 0
+default penetration_experience_value_23 = 0
+default fetishism_experience_value_24 = 0
+default master_supremacy = 0
 ############################################ textvalue track - herculean
 ############################################ value track - 5
 ############################################ number value track 999/999

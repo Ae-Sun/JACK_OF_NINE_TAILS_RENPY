@@ -37,9 +37,13 @@ default available_options = 0
 default equipment_choice = "clothes"
 default equipment_choice_image = "scene/item/clear_small"
 default equipment_choice_image_text = ""
+default aura_is_hover = False
+default aura_check_hover = ""
 default inventory_track =""
 default inventory_track_weapon = ""
 default inventory_track_weapon2 = ""
+default slave_obedience_bonus = 0
+default slave_difficulty = 0
 default inventory = {
     "remove": "-",
     "Without armour": "-",
@@ -146,8 +150,8 @@ default inventory = {
     "anal_tail": 0,
     "":0 # this is necesary -rec3ks
 }
-
 label iniciation_label:
+    $ mc_image2 = mc_image.replace(".webp", "_hover.webp")
     if is_tutorial:
         python:
             mc_image = "master/master_noble.webp"
@@ -155,14 +159,12 @@ label iniciation_label:
             for key, value in inventory.items():
                 if value != "-":
                     inventory[key] = 1
+        jump equipment_check
     else:
         if is_normal_start == True:
             $mc_image = dic_custom_character_selection[mc][0]
         else:
             $mc_image = dic_custom_character_selection[dic_charactersOnlyName[characterOnlyNameIndex]][0]
-    $ mc_image2 = mc_image.replace(".webp", "_hover.webp")
-    if is_tutorial:
-        jump equipment_check
     jump Home
 label next_day_label:
     python:
@@ -212,7 +214,43 @@ label Home:
     show screen bg_home()
     show screen home_attributes_menu()
     show screen sparks_menu()
-    $ infobox_jump = "Home"
+    python:
+        infobox_jump = "Home"
+        if dic_custom_start_difficulty_selection_index_index == 0:
+            slave_obedience_bonus = 4
+            slave_difficulty = 2
+        elif dic_custom_start_difficulty_selection_index_index == 1:
+            slave_obedience_bonus = 0
+            slave_difficulty = 4
+        elif dic_custom_start_difficulty_selection_index_index == 2:
+            slave_obedience_bonus = 0
+            slave_difficulty = 14 - min(8, 4*all_girls_list[girl_index]["aura"]["devotion"])
+        girl_index_save = girl_index
+        for girl_index in all_girls_list:
+            slave_nature = 5 - all_girls_list[girl_index]["attributes"]["pride"] + all_girls_list[girl_index]["attributes"]["temperament"] + all_girls_list[girl_index]["attributes"]["nature"] + all_girls_list[girl_index]["attributes"]["intelligence"]
+            if all_girls_list[girl_index]["aura"]["fear"] > 0:    
+                if slave_nature < 11:
+                    all_girls_list[girl_index]["bonus_fear"] = all_girls_list[girl_index]["aura"]["fear"] *2
+                elif slave_nature == 11:
+                    all_girls_list[girl_index]["bonus_fear"] = all_girls_list[girl_index]["aura"]["fear"] *2 + 1
+                elif slave_nature == 12:
+                    all_girls_list[girl_index]["bonus_fear"] = all_girls_list[girl_index]["aura"]["fear"] *2 + 2
+                elif slave_nature == 13:
+                    all_girls_list[girl_index]["bonus_fear"] = all_girls_list[girl_index]["aura"]["fear"] *2 + 3
+                elif slave_nature == 14:
+                    all_girls_list[girl_index]["bonus_fear"] = all_girls_list[girl_index]["aura"]["fear"] *2 + 4
+                elif slave_nature > 14:
+                    all_girls_list[girl_index]["bonus_fear"] = all_girls_list[girl_index]["aura"]["fear"] *2 + 5
+            else:
+                all_girls_list[girl_index]["bonus_fear"] = 0
+                
+                
+            all_girls_list[girl_index]["obedience"] = slave_obedience_bonus + all_girls_list[girl_index]["mood"] + all_girls_list[girl_index]["bonus_fear"] + all_girls_list[girl_index]["aura"]["devotion"]*4 + all_girls_list[girl_index]["aura"]["taming"] * 2 \
+            + int((1+all_girls_list[girl_index]["aura"]["despair"]) // 2) + all_girls_list[girl_index]["aura"]["awareness"] + all_girls_list[girl_index]["aura"]["habit"] - all_girls_list[girl_index]["aura"]["spoil"]*2 - int(slave_difficulty/2) - slave_nature
+
+            if all_girls_list[girl_index]["psy_status"] == "broken":
+                all_girls_list[girl_index]["obedience"] = 100
+        girl_index = girl_index_save
     if slave_rebellion_fight:
         jump slave_rebelion_fight_label
     if is_tutorial == True and current_menu == 0:
@@ -251,6 +289,8 @@ label Home:
         call screen cast_spell_menu()
     elif current_menu == 41:
         call screen spellbook_info()
+    elif current_menu == 42:
+        call screen home_menu_auspex()
     elif current_menu == 100:
         hide screen sparks_menu
         hide screen home_attributes_menu
@@ -979,9 +1019,14 @@ screen cast_spell_menu():
         textbutton "Spellbook":
             style "home_button"
             action SetVariable("current_menu", 41),SetVariable("dic_spellbook_info_index", "default"),Jump("Home")
-        textbutton "Auspex":
-            style "home_button"
-            action NullAction()
+        if is_auspex_active:
+            textbutton "Auspex":
+                style "home_button"
+                action NullAction()
+        else:
+            textbutton "Auspex":
+                style "home_button"
+                action SetVariable("current_menu", 42),SetVariable("sparks_37",sparks_37 -2),Jump("Home")
         textbutton "Magna Magnifika":
             style "home_button"
             action NullAction()
@@ -1007,7 +1052,10 @@ screen cast_spell_menu():
         yalign 0.48
         xalign 0.05
         add "ui overhaul/spellbook.webp" size(50,50)
-        add "ui overhaul/auspex.webp" size(50,50)
+        if is_auspex_active:
+            add "ui overhaul/auspex_gray.webp" size(50,50)
+        else:
+            add "ui overhaul/auspex.webp" size(50,50)
         add "ui overhaul/magna magnifika.webp" size(50,50)
         add "ui overhaul/sententia veritas.webp" size(50,50)
         add "ui overhaul/tremendio.webp" size(50,50)
@@ -1055,6 +1103,36 @@ screen domestic_issues_menu():
         add "ui overhaul/drink a potion.webp" size(50,50)
         add "ui overhaul/accounting.webp" size(50,50)
         add "ui overhaul/business.webp" size(50,50)
+screen home_menu_auspex():
+    add bgstyle2 xsize 1280 ysize 720
+    add home_decoration_mini pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 535
+    if magic_value_17 > 0:
+        add "magic.webp"  pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 535
+        text spells_books_description["Auspex"]["cast"] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.02, 0.78) xmaximum 750
+        vbox:
+            xalign 0.655
+            yalign 0.96
+            imagebutton:
+                idle "buttons/demo_noback_button_hover.webp" anchor (0.5, 0.5)
+                hover "buttons/demo_noback_button_hover.webp"
+                action NullAction()
+            imagebutton:
+                idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
+                hover "buttons/auk_fwrd_hover.webp"
+                action SetVariable("is_auspex_active", True),Hide("home_menu_auspex")
+    else:
+        text spells_books_description["Auspex"]["fail"] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.02, 0.78) xmaximum 750  
+        vbox:
+            xalign 0.655
+            yalign 0.96
+            imagebutton:
+                idle "buttons/demo_noback_button_hover.webp" anchor (0.5, 0.5)
+                hover "buttons/demo_noback_button_hover.webp"
+                action NullAction()
+            imagebutton:
+                idle "buttons/auk_fwrd.webp" anchor (0.5, 0.5)
+                hover "buttons/auk_fwrd_hover.webp"
+                action Hide("home_menu_auspex")
 screen home_menu():
     vbox:
         yalign 0.5
@@ -1286,13 +1364,15 @@ screen slave_anatomy_menu():
         text dic_girl_brand[all_girls_list[girl_index]["brand"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
     vbox:
         pos(0.215,0.62)
+
         text "Beauty{color=#0000D8} ={/color} {color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["natural_beauty"]] + "} Natural Beauty{/color}{color=#0000D8} +{/color} Neoplasty{color=#0000D8} - ({/color} No Scars{color=#0000D8} +{/color} Bruises{color=#0000D8} +{/color} Physique{color=#0000D8}){/color}" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
         text "{color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["style"]] + "}Style{/color} {color=#0000D8}={/color} Clothes{color=#0000D8} +{/color} {color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["natural_beauty"]] + "} Natural Beauty{/color}{color=#0000D8} +{/color} Tangled Hair{color=#0000D8} +{/color} Scent, Nails & Pelage{color=#0000D8} +{/color} Natural Grace{color=#0000D8} -{/color} Hygiene" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
         text "{color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["exoticism"]] + "}Exoticism{/color} {color=#0000D8}={/color} Natural Exoticism{color=#0000D8} +{/color} No Tattoos{color=#0000D8} +{/color} No Piercings{color=#0000D8} +{/color} Clothes" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf"
         add "spacer" size(0,2)
         if is_auspex_active:
+            spacing(-2)
             text "Aura {color=#0000D8}={/color} No Devotion {color=#0000D8}-{/color} (No Despair {color=#0000D8}+{/color} Not Spoiled)" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
-            text "Charm    {color=#0000D8}={/color} Unknown{color=#0000D8} +{/color} Unknown{color=#0000D8} +{/color} Style{color=#0000D8} +{/color} Exoticism{color=#0000D8} +{/color} Aura{color=#0000D8} +{/color} Weight{color=#0000D8} -{/color} No Scars{color=#0000D8} -{/color} No Bruises" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
+            text "Charm    {color=#0000D8}={/color} Unknown{color=#0000D8} +{/color} Unknown{color=#0000D8} +{/color}{color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["style"]] + "} Style{/color}{color=#0000D8} +{/color} {color=#" + dic_color_level[all_girls_list[girl_index]["attributes"]["exoticism"]] + "}Exoticism{/color}{color=#0000D8} +{/color} Aura{color=#0000D8} +{/color} Weight{color=#0000D8} -{/color} No Scars{color=#0000D8} -{/color} No Bruises" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
         else:
             text "You must cast Auspex to view the aura and charm rating of your slave" xalign 0.5 size 14 color "#000000" font "fonts/Segoe Print.ttf" 
 screen slave_equipment_menu():
@@ -1698,13 +1778,114 @@ screen slave_equipment_menu():
 screen slave_aura_menu():
     add "page_aura.webp" xsize 795 ysize 535 pos(0.5028,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+    if not is_auspex_active:
+        text dic_slave_aura_conditions["nocast"] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750  
+        textbutton "Cast auspex ( 2 sparks)" pos(0.40,0.92):
+            style "slave_aura_button"
+            action Show("home_menu_auspex") ,SetVariable("sparks_37",sparks_37 -2)
+    else:
+        text dic_slave_aura_conditions["casted"] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750  
+    if is_auspex_active:
+        vbox: 
+            pos (0.22,0.08)
+            spacing(20)
+            if aura_is_hover and "obedience" == aura_check_hover:
+                if all_girls_list[girl_index]["obedience"] >= 0 and all_girls_list[girl_index]["obedience"] < 10:
+                    textbutton aura_descriptions_no_color["obedience"][all_girls_list[girl_index]["obedience"]] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
+                        unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
+                elif all_girls_list[girl_index]["obedience"] > 9:
+                    textbutton aura_descriptions_no_color["obedience"][10] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
+                        unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
+                elif all_girls_list[girl_index]["obedience"] < 0 and all_girls_list[girl_index]["obedience"] > -10:
+                    textbutton aura_descriptions_no_color["obedience"][(all_girls_list[girl_index]["obedience"])*-1 + 10] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
+                        unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
+                elif all_girls_list[girl_index]["obedience"] < -9:
+                    textbutton aura_descriptions_no_color["obedience"][-1] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
+                        unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
+            else:
+                if all_girls_list[girl_index]["obedience"] >= 0 and all_girls_list[girl_index]["obedience"] < 10:
+                    textbutton aura_descriptions["obedience"][all_girls_list[girl_index]["obedience"]] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
+                        unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
+                elif all_girls_list[girl_index]["obedience"] > 9:
+                    textbutton aura_descriptions_no_color["obedience"][10] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
+                        unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
+                elif all_girls_list[girl_index]["obedience"] < 0 and all_girls_list[girl_index]["obedience"] > -10:
+                    textbutton aura_descriptions["obedience"][(all_girls_list[girl_index]["obedience"])*-1 + 10] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
+                        unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
+                elif all_girls_list[girl_index]["obedience"] < -9:
+                    textbutton aura_descriptions["obedience"][-1] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
+                        unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
+            if aura_is_hover and "supremacy" == aura_check_hover:
+                textbutton "The aura of your slave is approximately equal to yours" xmaximum 750:
+                    style "aura_description_button"
+                    action NullAction()
+                    hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "supremacy")
+                    unhovered SetVariable("aura_is_hover", False)      
+                
+            else:    
+                textbutton "{color=#0000D8}The aura of your slave is approximately equal to yours{/color}" xmaximum 750:
+                    style "aura_description_button"
+                    action NullAction()
+                    hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "supremacy")
+                    unhovered SetVariable("aura_is_hover", False)
+
+            if aura_is_hover and "arousal" == aura_check_hover: 
+                textbutton aura_descriptions2_no_color["arousal"][all_girls_list[girl_index]["arousal"]] xmaximum 750:
+                    style "aura_description_button"
+                    action NullAction()
+                    hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "arousal")
+                    unhovered SetVariable("aura_is_hover", False)
+            else:
+                textbutton aura_descriptions2["arousal"][all_girls_list[girl_index]["arousal"]] xmaximum 750:
+                    style "aura_description_button"
+                    action NullAction()
+                    hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "arousal")
+                    unhovered SetVariable("aura_is_hover", False)
+
+            # Display aura description buttons in a loop
+            for aura_key in ["fear", "despair", "awareness", "taming", "habit", "spoil", "devotion"]:
+                if aura_is_hover and aura_key == aura_check_hover: 
+                    textbutton aura_descriptions2_no_color[aura_key][all_girls_list[girl_index]["aura"][aura_key]] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", aura_key),Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", aura_key)
+                        unhovered SetVariable("aura_is_hover", False),Hide("description_slave_attributes")
+                else:
+                    textbutton aura_descriptions2[aura_key][all_girls_list[girl_index]["aura"][aura_key]] xmaximum 750:
+                        style "aura_description_button"
+                        action NullAction()
+                        hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", aura_key),Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", aura_key)
+                        unhovered SetVariable("aura_is_hover", False)
 screen slave_rules_menu():
     add all_girls_list[girl_index]["fullimage"] + ".webp" xalign 0.5 yalign 0.1838 size(795,535)  
     add "padding.webp" xsize 230 ysize 535 pos(0.2835,0.42) anchor (0.5,0.5)
     add "padding.webp" xsize 230 ysize 535 pos(0.724,0.42) anchor (0.5,0.5)
     key "K_SPACE" action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
     text dic_slave_conditions[text_slave_conditions_index] size 18 color "#000000" font "fonts/Consolas.ttf" pos(0.21,0.82) xmaximum 750
-   
     vbox:
         pos(0.20,0.05)
         anchor (0.0,0.0)
@@ -1715,8 +1896,6 @@ screen slave_rules_menu():
         text "PORTION SIZE:" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
         add "spacer" size(0,110)
         text "CALORIES REMAINING:" size 16 color "#FFD700" font "fonts/Segoe Print.ttf"
-
-  
     vbox:
         pos(0.205,0.095)
         anchor (0.0,0.0)
@@ -1784,8 +1963,6 @@ screen slave_rules_menu():
                     idle "buttons/unactive_button.webp"
                     hover "buttons/unactive_button_hover.webp"
                     action SetDict(all_girls_list[girl_index], "diet", 0),SetDict(all_girls_list[girl_index], "portion_size", i),SetVariable("text_slave_conditions_index",dic_slave_conditions_food[0]), Jump("Home")
-
-
     vbox:
         pos(0.225,0.09)
         anchor (0.0,0.0)
@@ -2039,7 +2216,6 @@ screen slave_rules_menu():
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
                 action SetDict(all_girls_list[girl_index]["rules"], "enforce_rules", True),SetVariable("text_slave_conditions_index","enforce_rules"), Jump("Home")
-
     vbox:
         pos(0.65,0.09)
         anchor (0.0,0.0)
@@ -2231,7 +2407,6 @@ screen screen_rules():
                 idle "buttons/unsel_button.webp" 
                 hover "buttons/unsel_button_hover.webp"
                 action SetVariable("current_menu", 103),Jump("Home")
-   
     vbox:
         pos(0.01,0.02)
         text "Name: " + all_girls_list[girl_index]["name"] size 16 color "#000000" font "fonts/Segoe Print.ttf"
@@ -2478,6 +2653,53 @@ screen description_slave_attributes():
             pos(curx - 150,cury)
             style "description_slave_attributes_frame"
             text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["dog_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["dog_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["pig_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["pig_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["house_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["house_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["spider_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["spider_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["sea_tentacle_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["sea_tentacle_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["field_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["field_mating"]]) style "description_slave_attributes_frame_little_text"
+    if description_slave_attributes_track_value == "fear":
+        frame:
+            pos(curx ,cury +50)
+            style "description_slave_attributes_frame"
+            text "Fear ; " + str(all_girls_list[girl_index]["aura"]["fear"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["fear"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["fear"]]) + ")" style "description_slave_attributes_frame_text"
+
+    if description_slave_attributes_track_value == "despair":
+        frame:
+            pos(curx ,cury +50)
+            style "description_slave_attributes_frame"
+            text "Despair ; " + str(all_girls_list[girl_index]["aura"]["despair"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["despair"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["despair"]]) + ")" style "description_slave_attributes_frame_text"
+
+    if description_slave_attributes_track_value == "awareness":
+        frame:
+            pos(curx ,cury +50)
+            style "description_slave_attributes_frame"
+            text "Awareness ; " + str(all_girls_list[girl_index]["aura"]["awareness"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["awareness"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["awareness"]]) + ")" style "description_slave_attributes_frame_text"
+
+    if description_slave_attributes_track_value == "taming":
+        frame:
+            pos(curx ,cury +50)
+            style "description_slave_attributes_frame"  
+            text "Taming ; " + str(all_girls_list[girl_index]["aura"]["taming"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["taming"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["taming"]]) + ")" style "description_slave_attributes_frame_text"
+
+    if description_slave_attributes_track_value == "habit":
+        frame:
+            pos(curx ,cury +50)
+            style "description_slave_attributes_frame"
+            text "Habit ; " + str(all_girls_list[girl_index]["aura"]["habit"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["habit"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["habit"]]) + ")" style "description_slave_attributes_frame_text"
+
+    if description_slave_attributes_track_value == "spoil":
+        frame:
+            pos(curx ,cury +50)
+            style "description_slave_attributes_frame"
+            text "Spoil ; " + str(all_girls_list[girl_index]["aura"]["spoil"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["spoil"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["spoil"]]) + ")" style "description_slave_attributes_frame_text"
+
+    if description_slave_attributes_track_value == "devotion":
+        frame:
+            pos(curx ,cury +50)
+            style "description_slave_attributes_frame"
+            text "Devotion ; " + str(all_girls_list[girl_index]["aura"]["devotion"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["devotion"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["devotion"]]) + ")" style "description_slave_attributes_frame_text"
+    if description_slave_attributes_track_value == "obedience":
+        frame:
+            pos(curx,cury +50)
+            style "description_slave_attributes_frame"
+            text "Obedience ; " + str(all_girls_list[girl_index]["obedience"]) style "description_slave_attributes_frame_text"
+
 screen home_attributes_menu():
     vbox:
         pos(0.90,0.05)
