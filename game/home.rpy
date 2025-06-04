@@ -2658,37 +2658,31 @@ screen description_slave_attributes():
             pos(curx ,cury +50)
             style "description_slave_attributes_frame"
             text "Fear ; " + str(all_girls_list[girl_index]["aura"]["fear"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["fear"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["fear"]]) + ")" style "description_slave_attributes_frame_text"
-
     if description_slave_attributes_track_value == "despair":
         frame:
             pos(curx ,cury +50)
             style "description_slave_attributes_frame"
             text "Despair ; " + str(all_girls_list[girl_index]["aura"]["despair"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["despair"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["despair"]]) + ")" style "description_slave_attributes_frame_text"
-
     if description_slave_attributes_track_value == "awareness":
         frame:
             pos(curx ,cury +50)
             style "description_slave_attributes_frame"
             text "Awareness ; " + str(all_girls_list[girl_index]["aura"]["awareness"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["awareness"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["awareness"]]) + ")" style "description_slave_attributes_frame_text"
-
     if description_slave_attributes_track_value == "taming":
         frame:
             pos(curx ,cury +50)
             style "description_slave_attributes_frame"  
             text "Taming ; " + str(all_girls_list[girl_index]["aura"]["taming"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["taming"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["taming"]]) + ")" style "description_slave_attributes_frame_text"
-
     if description_slave_attributes_track_value == "habit":
         frame:
             pos(curx ,cury +50)
             style "description_slave_attributes_frame"
             text "Habit ; " + str(all_girls_list[girl_index]["aura"]["habit"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["habit"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["habit"]]) + ")" style "description_slave_attributes_frame_text"
-
     if description_slave_attributes_track_value == "spoil":
         frame:
             pos(curx ,cury +50)
             style "description_slave_attributes_frame"
             text "Spoil ; " + str(all_girls_list[girl_index]["aura"]["spoil"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["spoil"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["spoil"]]) + ")" style "description_slave_attributes_frame_text"
-
     if description_slave_attributes_track_value == "devotion":
         frame:
             pos(curx ,cury +50)
