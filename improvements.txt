@@ -32,3 +32,4 @@
 - Expand girl dominium - instead of one slave at the time, now support multiples slaves at the same time. [No freeze]
 - Added change girl for testing reasons
 - meat evaluation now give more meat if age == milf
+- reworked girl background effectes, now girl background will have a significally effect in the gameplay (instead of changing some attribute and skills value, now change the increase of those skills and values)
