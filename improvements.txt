@@ -30,4 +30,5 @@
 - Now clicking 1 or 2 will move between equipments in slave equipment screen
 - When you buy items that can be equipment in multiples part of slave body like like barbells, you will buy a whole set for one slave instead of x quantitive. (Code problems, the original system requiere a lot more code.) 
 - Expand girl dominium - instead of one slave at the time, now support multiples slaves at the same time. [No freeze]
-- Added change girl for testing reasons 
+- Added change girl for testing reasons
+- meat evaluation now give more meat if age == milf

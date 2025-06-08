@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/home.rpy", line 217, in script
+  File "game/home.rpy", line 171, in script
     python:
-  File "game/home.rpy", line 248, in <module>
-    all_girls_list[girl_index]["obedience"] = slave_obedience_bonus + all_girls_list[girl_index]["mood"] + all_girls_list[girl_index]["bonus_fear"] + all_girls_list[girl_index]["aura"]["devotion"]*4 + all_girls_list[girl_index]["aura"]["taming"] * 2 \
-TypeError: unsupported operand type(s) for -: 'int' and 'str'
+  File "game/home.rpy", line 217, in <module>
+    Show(home_menu)
+NameError: name 'home_menu' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/home.rpy", line 217, in script
+  File "game/home.rpy", line 171, in script
     python:
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/home.rpy", line 248, in <module>
-    all_girls_list[girl_index]["obedience"] = slave_obedience_bonus + all_girls_list[girl_index]["mood"] + all_girls_list[girl_index]["bonus_fear"] + all_girls_list[girl_index]["aura"]["devotion"]*4 + all_girls_list[girl_index]["aura"]["taming"] * 2 \
-TypeError: unsupported operand type(s) for -: 'int' and 'str'
+  File "game/home.rpy", line 217, in <module>
+    Show(home_menu)
+NameError: name 'home_menu' is not defined
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Sat May 31 02:24:49 2025
+Thu Jun  5 18:39:06 2025

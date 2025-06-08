@@ -2144,3 +2144,216 @@ define dic_slave_aura_conditions = {
     "nocast": "  Without spells reinforcing auspex, the aura of your slave is seen as pale and indistinct shadow. You can not determine the color, strength or direction of her spiritual field.",
     "casted": "  Auspex allows you to distinguish between colors, direction and strength of the spiritual field of your slave. After analyzing them, you get detailed information."
 }
+define shared_families = {
+        "prehistoric": ["tribe", "amazon"],
+        "barbarian": ["amazon", "nomad", "pesant", "hunter", "fisher", "viking", "barbarian_king"],
+        "sns": ["amazon", "nomad", "pesant", "hunter", "fisher", "viking", "barbarian_king"],
+        "medieval": ["orphan", "bondman", "gypsy", "church", "craftsman", "merchant", "valetry", "knight", "mprincess"],
+        "darkfantasy": ["orphan", "bondman", "gypsy", "church", "craftsman", "merchant", "valetry", "knight", "mprincess"],
+        "highfantasy": ["orphan", "bondman", "gypsy", "church", "craftsman", "merchant", "valetry", "knight", "mprincess"],
+        "steampunk": ["farmers", "workhouse", "proletarian", "clerk", "naturalist", "ingeneer", "doctor", "servant", "magnat", "bankeer", "mayor", "mafiosi"],
+        "industrial": ["farmers", "workhouse", "proletarian", "clerk", "naturalist", "ingeneer", "doctor", "servant", "magnat", "bankeer", "mayor", "mafiosi"],
+        "modern": ["orpnange", "worker", "policeman", "manager", "biologist", "programmer", "surgeon", "businessman", "finance", "general"],
+        "cyberpunk": ["orpnange", "worker", "policeman", "manager", "biologist", "programmer", "surgeon", "businessman", "finance", "general", "gendesigner"],
+        "utopia": ["poet", "artist", "architect", "operator"],
+        "darkfuture": ["jailer", "bioreactor", "minitruth", "anter"],
+        "space": ["freetrader", "astrofarm", "asteroid", "astrogator", "admiral", "nanofarmacist", "gendesigner"]
+}
+
+define worlds = {
+    1: {
+        "name": "prehistoric",
+        "families": shared_families["prehistoric"],
+        "descriptions": [
+            "In my world, as far as the eye can see, wild forests stretch everywhere. Sweet air. Good hunting. You can go many days, but only trees will be around. There’s a lot of prey, but the forests are inhabited by terrible beasts: saber-toothed tigers, cave bears and swamp lizards.",
+            "In my country everything is covered with snow and ice, from horizon to horizon. People wrap themselves in the skins of large animals and make a fire in caves to keep warm. Often many days there is no food, but when the hunters manage to get the mammoth, the whole tribe rejoices and we all eat our fill.",
+            "Where I was born there are a lot of trees with broad leaves and swamps over which gnats swarm. In the trees colorful birds flutter and at the bottom of the muddy river lurk huge crocodiles. We gather fruit and hunt in the jungle, using poisoned arrows."
+        ]
+    },
+    2: {
+        "name": "barbarian",
+        "families": shared_families["barbarian"],
+        "descriptions": [
+            "In my homelands steppes stretches without end. There, a herd of mustangs cleaves the waves of golden feather grass, sky greener than emeralds and three beautiful moons shine brightly in the sky at night. People often at war, because the richer great leaders are, if the more loot they take in the war.",
+            "In my country a lot of forests, rivers and hills. In the woods there are countless fur animals, and lakes teem with fish. In the hills and valleys - good pasture for sheep. Some people settle in cities, behind high walls, while others wander from place to place, driving huge herds.",
+            "I was born on the seacoast, the waters of which are black, like the night. Wind incessantly sings in the fjords and the waves foam, breaking against the rocks. There are a lot of different people, and everyone has their own life. Some sail or fish, some tend the nomadic flocks, while the rest settle in the fortified cities."
+        ]
+    },
+    3: {
+        "name": "sns",
+        "families": shared_families["sns"],
+        "descriptions": [
+            "In my world lives a lot of different nations, and they constantly fight for a place under the sun. Innumerable hordes of nomads besiege rich cities, surrounded by high walls. Wild tribes inhabit the forests and swamps, earning a living from caravans robbery. Great kings rule huge empires.",
+            "My world is great and immense. I know that at the east lies the endless sea. The far south is inhabited by wild people with skin as black as the night itself. In the north is impenetrable forests in which live undersized, but evil tribes of hunters. Western steppes ruled by nomads who live with robbery, plundering the cities.",
+            "In my world there are many different cultures and nations. There are kings whose treasuries are full of gold, black magicians, whose power is above that of kings, and fearless heroes who are not afraid of even magicians. But there was more, of course, an ordinary people - peasants, soldiers, artisans, and merchants."
+        ]
+    },
+    4: {
+        "name": "medieval",
+        "families": shared_families["medieval"],
+        "descriptions": [
+            "My country has a very beautiful nature: a lot of forests, meadows, rivers and lakes. The mountains are covered with shiny snowcaps. All the lands are owned by the barons and knights, who serve to the king and collect tributes from peasants living near their castles. Ordinary people live a difficult life.",
+            "In my world every man has his place and everyone knows what to do. Kings and barons ruled their lands, knights fight with enemies, artisans make pots and tools, farmers plow the land, and the priests are praying for all of them and help with good advice.",
+            "My world is very big, so I do not know everything about it. People in cities live richly, but it is dirty, crowded, and smells bad. Barons and knights sit in their stone castles, or go on the military campaigns. And the peasants in the villages plow all year round to feed the nobles and themselves."
+        ]
+    },
+    5: {
+        "name": "darkfantasy",
+        "families": shared_families["darkfantasy"],
+        "descriptions": [
+            "As I can remember, we always had a hard time. It is said that once upon a time, under the old empire, people live richly and happily. But now the forests are full of robbers and wild animals, barons cannot, or do not, want to maintain order in their lands, and the peasants under their oppression starve almost every winter.",
+            "Life in my world is not easy. In the dark forests lurk terrible creatures that can ruin an entire village. Eastern necromancers raise an army of undead, and warlocks rule with western lands, whispering orders to kings. Of course there are heroes who fight back evil, but they are too few.",
+            "The priests say that our world is dying, and the end is near. Dead arise from their graves and roam at night through abandoned ancient cities. Dragons burn down villages and devour cattle. The Black Death decimates children and the elderly. And each year is worse than the previous one."
+        ]
+    },
+    6: {
+        "name": "highfantasy",
+        "families": shared_families["highfantasy"],
+        "descriptions": [
+            "My world is ruled by powerful archmages, who form the Great Conclave and decide the fate of mortals on it. But they do not interfere in ordinary life. Cities thrive, although, of course, wealth breeds corruption and theft. And sorcerers’ experiments sometimes end with serious troubles.",
+            "My world is arena of war between good and evil. Union of elves, humans, and dwarves from immemorial time opposes the machinations of King Necromancer who wants to enslave all the free land and populate them with his ugly slaves: goblins, trolls and dragons.",
+            "Our world is very large. I know nothing about the lands beyond the seas, but in my homeland there were seven kingdoms. Now they are united into one great empire. It is said that in the north, behind the Great Wall, Ancient Evil is waiting in the wings. And when the Long Winter comes, the Evil will wake up and brings innumerable troubles to people of the Empire."
+        ]
+    },
+    7: {
+        "name": "steampunk",
+        "families": shared_families["steampunk"],
+        "descriptions": [
+            "My world is ruled by science and technology. There are several advanced empires that are vying for influence in the underdeveloped but resource-rich, colonies. The advantage will go to the one with the most modern battleships, airships and steam engines.",
+            "Science and technology is developed very high in my world. We use advanced steam engines for transport and industry. To plan production we use a powerful arithmometers. For transcontinental flights we have giant zeppelins.",
+            "In my world there are a few advanced countries, where the industrial revolution was accomplished. Military and technological power is based on coal and steel. Villages are low on people, because youth are going to work to the cities. Sometimes it is impossible to breathe from factory soot, and the fish in the rivers suffocate due to toxic waste."
+        ]
+    },
+    8: {
+        "name": "industrial",
+        "families": shared_families["industrial"],
+        "descriptions": [
+            "Although in my world there are many different states, everyone understands that the real power is in the hands of bankers and industrialists. Working people create trade unions and go on strike, but the government will not tolerate such disturbances and suppress them very severely. People are angry, many of them live in poverty and cannot find work.",
+            "In my world there is a very big war, it is even called World War, because it involves almost all the states. Bombing, artillery shelling, gas attacks - all this has become habitually not only for the soldiers in the trenches but also for civilians. The food is not enough, everything is rationed.",
+            "In my world a great war recently ended. It was so terrible that after settlement agreement all the countries of the world have united in the World League, to prevent its recurrence. Industry is gradually recovering, but still there is a lot of devastation. Sometimes even revolutions occur, regimes are changed."
+        ]
+    },
+    9: {
+        "name": "modern",
+        "families": shared_families["modern"],
+        "descriptions": [
+            "In my world there are a lot of different countries, but only some of them are really well developed and rich. In the others reigns poverty and devastation, many of them ruled by dictators. These backward countries are hotbeds of terrorism and for the civilized countries sometimes it is necessary to use force.",
+            "We have one country that is richer and more powerful than the others. But although everyone tries to be equal to it, there is now a severe crisis and because of that economy suffers all over the world. Unemployment growing, inflation rising. People all over the world go out to the demonstrations. In many countries civil wars have already started.",
+            "Once in my world, there were two great Empires that fought each other for dominance in the world. But then one of them broke in pieces and now most of the world adopted a common value system. Most likely, over time, the border between the states will disappear and the world will be united."
+        ]
+    },
+    10: {
+        "name": "cyberpunk",
+        "families": shared_families["cyberpunk"],
+        "descriptions": [
+            "My world is ruled by information. Global network connects the most remote corners of the planet. In the Web you can find everything: movies, music, games, and every sort of pornography. 95% of the population lives on allowances, barely enough for food. But as long as there is entertainment, there are no objections.",
+            "My world is divided into States and Enclaves. Though more people live in the States, they are just the dying form of social organization. Enclaves are entirely owned by corporations and obey corporate laws. And it is Enclaves that own most of the wealth and technology.",
+            "My world is ruled by multinational corporations. The state as a form of government does not exist, the laws are written by corporate management, and their one goal - profit. Those who have money can afford anything. And those who have not… there will always be a place in the shade of a society among scum and synthetic drugs."
+        ]
+    },
+    11: {
+        "name": "utopia",
+        "families": shared_families["utopia"],
+        "descriptions": [
+            "In my world people have reached harmony with nature and forget forever about famine, wars, crimes, and diseases. A flexible system of governance involving all the adult population of the planet can quickly solve any problems and fairly distribute the resources.",
+            "In our world science and technology have developed so far that there is no need for hard work and competition for resources. Laws are written by outstanding people of culture and only in the poetic form. In the upbringing of children special attention is paid to the development of the aesthetic sense.",
+            "Thanks to social progress we have been able to arrange society so perfectly that we have eradicated the need for states, wars, police, and other instruments of violence. All people live in peace and prosperity. Every citizen should draw well and compose poems. Conflicts are settled only through negotiations."
+        ]
+    },
+    12: {
+        "name": "darkfuture",
+        "families": shared_families["darkfuture"],
+        "descriptions": [
+            "In my world I come from the one true state. We live by the precepts of the Great Leader and are constantly fighting for freedom and brotherhood. The enemies are trying to break us and poison with their propaganda, but we know that only our people live happily and freely. All that is necessary is distributed equitably.",
+            "In my world there are three states, but only in ours do people live organized and happily. Big Brother is always watching over us and helps not to go astray. Ministry of Truth explains all the unclear questions. Norms on human food are growing steadily, and the war is about to end with our unconditional victory.",
+            "I live in a world of justice and equality. We all wear the same uniform, there is no difference between races and genders. Homes are the same, with transparent walls. We are governed by the Benefactor, which is always elected unanimously. Feelings are under strict medicinal control in order to avoid suffering."
+        ]
+    },
+    13: {
+        "name": "space",
+        "families": shared_families["space"],
+        "descriptions": [
+            "The universe contains many inhabited worlds, and we can move freely between them thanks to the hyperdrive. Thousands of planets are united in the Galactic Republic, controlled by the Senate. Of course, each of the worlds has their own view of life, and conflicts are frequent. The threat of separatism is greater than ever.",
+            "The universe is much bigger than any one world. Our planet has united into a global state and colonized many worlds. But the universe is infinite. We were exploring it, getting acquainted with alien civilizations, learning and developing.",
+            "Under the shadow of the Golden Throne of the Eternal Emperor, the people’s empire thrives in thousands of worlds. But the dangers are innumerable: xenos, heretics, nightmarish creatures of the Warp. Only thanks to the dedication of the Imperial Guard, Space Marines, Inquisition, and Ecclesiarchy we are still alive."
+        ]
+    }
+}
+
+default occupation = {
+    "tribe": ["tribal_girl", "shaman"],
+    "amazon": ["heroine", "shaman", "huntress"],
+    "nomad": ["heroine", "shaman", "huntress"],
+    "pesant": ["bride", "viking_wife", "witch", "herbalist"],
+    "hunter": ["bride", "viking_wife", "heroine", "witch", "herbalist"],
+    "fisher": ["bride", "viking_wife", "witch"],
+    "viking": ["heroine", "viking_wife", "witch"],
+    "barbarian_king": ["barbarian_princess"],
+    "orphan": ["thief", "beggar", "whore", "markitane", "valertry", "heroine", "sorceress", "thug"],
+    "bondman": ["poor_bride", "herbalist", "brigand", "markitane", "valertry", "sorceress", "nun"],
+    "gypsy": ["thief", "gypsy", "whore", "markitane", "brigand", "heroine", "sorceress", "thug"],
+    "church": ["beggar", "nun", "valertry", "nun", "nun"],
+    "craftsman": ["poor_bride", "nun", "whore", "brothel", "thug", "valertry", "sorceress", "poor_bride"],
+    "merchant": ["rich_bride", "nun", "sorceress", "rich_bride", "heroine"],
+    "valetry": ["valertry", "nun", "markitane", "herbalist", "brigand", "valertry", "sorceress", "heroine"],
+    "knight": ["noble_bride", "heroine", "sorceress", "brigand", "noble_bride", "heroine"],
+    "mprincess": ["mprincess"],
+    "farmers": ["farmer", "milker", "swiner", "poor_bride"],
+    "workhouse": ["thief", "beggar", "whore", "weaver", "freaser", "thug", "sufragist", "maid", "maid"],
+    "proletarian": ["thief", "beggar", "whore", "weaver", "freaser", "thug", "sufragist", "brothel", "maid", "maid"],
+    "clerk": ["thief", "nun", "oficiant", "weaver", "freaser", "teacher", "sufragist", "nurse"],
+    "naturalist": ["avanturiste", "sufragist", "teacher", "nurse"],
+    "ingeneer": ["avanturiste", "nurse", "oficiant", "sufragist", "freaser", "teacher"],
+    "doctor": ["avanturiste", "nurse", "oficiant", "sufragist", "freaser", "teacher"],
+    "servant": ["thief", "beggar", "whore", "weaver", "freaser", "maid", "sufragist", "brothel", "maid"],
+    "magnat": ["avanturiste", "rich_bride", "rich_bride", "sufragist"],
+    "bankeer": ["avanturiste", "rich_bride", "rich_bride", "sufragist"],
+    "mayor": ["avanturiste", "rich_bride", "rich_bride", "sufragist"],
+    "mafiosi": ["avanturiste", "rich_bride", "rich_bride", "sufragist"],
+    "orpnange": ["thief", "nurse", "punk", "oficiant", "secretary", "teacher", "voleyball", "karateka", "hymnast", "policewoman", "whore", "hacker", "brothel"],
+    "worker": ["student", "nurse", "punk", "oficiant", "secretary", "teacher", "voleyball", "karateka", "hymnast", "policewoman", "hacker"],
+    "policeman": ["student", "nurse", "punk", "oficiant", "secretary", "teacher", "voleyball", "karateka", "hymnast", "policewoman"],
+    "manager": ["student", "nurse", "punk", "oficiant", "secretary", "teacher", "voleyball", "karateka", "hymnast", "policewoman", "model", "hacker", "writer"],
+    "biologist": ["student", "nurse", "writer", "oficiant", "secretary", "teacher", "voleyball", "karateka", "hymnast", "hacker", "artist"],
+    "programmer": ["student", "nurse", "punk", "oficiant", "secretary", "teacher", "voleyball", "karateka", "hymnast", "policewoman", "model", "hacker", "writer"],
+    "surgeon": ["student", "nurse", "writer", "oficiant", "secretary", "teacher", "voleyball", "karateka", "hymnast", "hacker", "artist"],
+    "businessman": ["major", "model", "writer", "artist"],
+    "finance": ["major", "model", "writer", "artist"],
+    "general": ["major", "model", "writer", "artist"],
+    "poet": ["student", "hymnast", "writer", "artist"],
+    "operator": ["student", "hymnast", "writer", "artist"],
+    "artist": ["student", "hymnast", "writer", "artist"],
+    "architect": ["student", "hymnast", "writer", "artist"],
+    "jailer": ["mind_contol", "time_plice", "jailer", "anter"],
+    "bioreactor": ["mind_contol", "time_plice", "jailer", "anter"],
+    "minitruth": ["mind_contol", "time_plice", "jailer", "anter"],
+    "anter": ["mind_contol", "time_plice", "jailer", "anter"],
+    "freetrader": ["academy", "mech", "contraband"],
+    "asteroid": ["time_plice", "academy", "mech", "astrofarmer", "installer", "contraband"],
+    "astrofarm": ["time_plice", "academy", "mech", "astrofarmer", "installer", "contraband"],
+    "astrogator": ["time_plice", "academy", "mech", "contraband"],
+    "admiral": ["time_plice", "academy", "mech", "contraband"],
+    "nanofarmacist": ["time_plice", "academy", "mech", "contraband"],
+    "gendesigner": ["time_plice", "academy", "mech", "contraband"],
+}
+default family_description = {
+    "tribe": "Our tribe roamed the lands of ancestors in search of a good hunting. If we find a good place, we built a hut or occupy a comfortable cave. Then, when the prey went, we walked behind it. Like the all little kids, I played in the woods, far away from the camps, gathering roots and berries.",
+    "amazon": "In my tribe was not men. Our women take husbands for one month, and then killed them. If a boy is born he is thrown off a cliff, and if a girl - then from her we raised a hunter and warrior. Men were afraid of us like the plague; we were the strongest of all.",
+    "nomad": "Our horde wandered across the steppe. During the day we went into the tent, driving behind a herd of horses and flocks of sheep, and on the night we camped in marquees. We danced around the fires, drank kumis and ate meat. Our warriors were the strongest, and the inhabitants of the cities were shaking from only our Khan’s name. Everyone paid tribute to us.",
+    "pesant": "My parents were an ordinary peasants. Father plowed field using a large plow, which he harness an ox, and mother spun yarn and prepared food. I helped babysit the younger children and carried lunch to the father and brothers in the cornfield. In the winter I was gathering firewood in the forest and playing with friends in a snowball fight.",
+    "hunter": "My father was a hunter, and I do not remember my mother - she died when I was very young. Dad often brought to home rabbits and partridges, but sometimes it was a deer, wild boar, or even a bear. He traded skins and meat in the village to the necessary things, so we lived well.",
+    "fisher": "My father and brother were fishing in the sea. My father had a durable boat and a large fishnet. If there were a lot of fish, then we traded it on the market for all sorts of necessary things. I helped my dad to repair the net, although it caused severe pain to fingers. I also had a little sister, but she drowned in the sea.",
+    "viking": "My father was a brave and fearless warrior. Every year he went on a campaign for the sea, and jarl always put him at the helm of the largest drakkar. Ships brought to home a lot of gold and all sorts of interesting things. I herded sheep on the hills, and helped my mother make yarn from their wool.",
+    "barbarian_king": "My father was a wise ruler and a brave warrior. He led his troops in the campaign and brought the booty, a lot of gold and slaves. I lived in the palace, where hundreds of servants was ready to fulfill any of my wishes at any moment.",
+    "orphan": "I do not remember my parents, maybe they died when I was little, or maybe they left me in order to avoid feeding an extra mouth. Overall, my family became a homeless beggars and other waifs. Since childhood I had to learn to gather food and spend the night on the street.",
+    "bondman": "I was born in a very ordinary family in a village not far from the castle of our lord. Father and brothers worked in the fields or in the woods, and I helped mother to spin yarn and grazed geese. With the other children we used to play tags and hide-and-seek at the forest edge.",
+    "gypsy": "I was brought up by gypsies, in a traveling encampment that did not stay in one place for more than a few weeks. My life was pretty carefree, though hungry. Wearing whatever came to hand, I stole and begged for change, but I was free as the wind.",
+    "church": "Since infancy, I became an orphan, but I was lucky to get into a church shelter. The monks taught us how to behave, help with the housework and to worship God. The most talented of us studied reading and writing. Of course, sometimes we were naughty, and because of that I was often flogged or locked in a cell.",
+    "craftsman": "Since I can remember, I have lived in the city. My father had a pottery and a shop with it. My brothers kneaded clay, father molded pots, and I with my mother painted them in bright colors. Sometimes I was able to walk, although they rarely let me go beyond the city wall.",
+    "merchant": "My father was a merchant and led caravans from distant countries. Me and my sisters often received different wonderful goodies, especially if he was leaving for a long time. We lived better than many of the townspeople, and of course better than the peasants in the villages.",
+    "valetry": "My mother was a servant in the knight’s castle, and I never knew my father. It is possible that even the old lord don’t know him, though I do not remember him much too. From early childhood I was taught to help and serve, but I also had a lot of time for games.",
+    "knight": "I grew up in the castle of my father, together with my sisters and brothers. However, my brothers left the castle as soon as they turned seven, to learn manners in the courts of other lords. My mother taught me with my sisters herself. Father was absent for a long time when he went on military campaigns.",
+    "mprincess": "From childhood I was accustomed to luxury befitting a princess. Although I was the youngest daughter, I was the most beloved. Mom and dad doted on me and everyone in the castle executed my whims. Together with my sisters and the servants, we often played in the garden.",
+# working in progress
+
+}

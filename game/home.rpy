@@ -42,8 +42,11 @@ default aura_check_hover = ""
 default inventory_track =""
 default inventory_track_weapon = ""
 default inventory_track_weapon2 = ""
+default is_slave_nearly_fainted = False
 default slave_obedience_bonus = 0
 default slave_difficulty = 0
+default debt_tracker = 0
+default debt = 0
 default inventory = {
     "remove": "-",
     "Without armour": "-",
@@ -152,6 +155,7 @@ default inventory = {
 }
 label iniciation_label:
     $ mc_image2 = mc_image.replace(".webp", "_hover.webp")
+    $ energy_value = 10
     if is_tutorial:
         python:
             mc_image = "master/master_noble.webp"
@@ -169,12 +173,32 @@ label iniciation_label:
 label next_day_label:
     python:
         energy_value += strength_value_1 *2 + 2
-        is_main_slave = True
+        energy_value = min(10, energy_value)
+        day_tracker += 1
+        save_girl_index = girl_index
         for girl_index in all_girls_list:
             if all_girls_list[girl_index]["conscience"]:
+                all_girls_list[girl_index]["epilation"] = max(all_girls_list[girl_index]["epilation"]-1,0)
+                all_girls_list[girl_index]["manicure"] = max(all_girls_list[girl_index]["manicure"]-1,0)
+                all_girls_list[girl_index]["hairstyle"] = max(all_girls_list[girl_index]["hairstyle"]-1,0)
+                all_girls_list[girl_index]["perfume"] = max(all_girls_list[girl_index]["perfume"]-1,0)
+                all_girls_list[girl_index]["caught_masturbating"] = max(all_girls_list[girl_index]["caught_masturbating"]-1,0)
+                all_girls_list[girl_index]["daring"] = max(all_girls_list[girl_index]["daring"]- random.randint(0, 3),0)
+                if all_girls_list[girl_index]["energised"] > 5:
+                    all_girls_list[girl_index]["energised"] = max(all_girls_list[girl_index]["energised"]- random.randint(0, 7),0)
+                if debt_tracker > 0:
+                    debt_tracker -= 1
+                    if debt_tracker == 0 and debt > 0:
+                        msg("As in any other city, in the Eternal Rome it is reckless to forget to repay money you have borrowed. You died a disgraceful death at the hand of the moneylender’s henchmen…")
+                if all_girls_list[girl_index]["assistant"]:
+                    
+
             ### energy and sleep condition -half done
                 if all_girls_list[girl_index]["sleep"] != 4:
-                    all_girls_list[girl_index]["energy"] = min(12, all_girls_list[girl_index]["energy"] + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
+                    if all_girls_list[girl_index]["aura"]["devotion"] >= 3:
+                        all_girls_list[girl_index]["energy"] = min(12, all_girls_list[girl_index]["energy"] + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
+                    else:
+                        all_girls_list[girl_index]["energy"] = min(10, all_girls_list[girl_index]["energy"] + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
                     all_girls_list[girl_index]["days_without_sleep"] = 0
                 else:
                     all_girls_list[girl_index]["energy"] = min(12,all_girls_list[girl_index]["energy"] + (all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)/2)
@@ -204,11 +228,15 @@ label next_day_label:
                     all_girls_list[girl_index]["neg_spoil"] = True
                 all_girls_list[girl_index]["daily_count"]["reward"] == 0
                 ### spoiling - reduce
-                if all_girls_list[girl_index]["aura"]["spoil"] > 0 or all_girls_list[girl_index]["experience"]["aura"]["spoil"] > 0 and dic_overnight_rules_count[dic_overnight_rules_count_index] <= all_girls_list[girl_index]["rules"]["rules_count"] or all_girls_list[girl_index]["days_without_food"] != 0 or all_girls_list[girl_index]["days_without_sleep"] != 0: # or dynslave['fear'] > dynslave['moral'] sorry, but this didn't make sense - rec3ks
+                if all_girls_list[girl_index]["aura"]["spoil"] > 0 or all_girls_list[girl_index]["experience"]["aura"]["spoil"] > 0 and dic_overnight_rules_count[dic_overnight_rules_count_index] <= all_girls_list[girl_index]["rules"]["rules_count"] or all_girls_list[girl_index]["days_without_food"] != 0 or all_girls_list[girl_index]["days_without_sleep"] != 0 or all_girls_list[girl_index]["aura"]["fear"] > all_girls_list[girl_index]["aura"]["devotion"]:
                     all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= 1 + all_girls_list[girl_index]["aura"]["devotion"] + all_girls_list[girl_index]["aura"]["fear"] + all_girls_list[girl_index]["aura"]["despair"]*2 + max(0, all_girls_list[girl_index]["days_without_food"])*3 + max(0, all_girls_list[girl_index]["days_without_sleep"])*3
                 if all_girls_list[girl_index]["mood"] < 0:
                     all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= all_girls_list[girl_index]["attributes"]["empathy"]
                 reduce_check( "aura","spoil")
+        slave_nearly_fainted = False
+        girl_index = save_girl_index
+    show screen home_menu
+    $ msg("New day [day_tracker]")
     jump Home
 label Home: 
     show screen bg_home()
@@ -243,13 +271,38 @@ label Home:
                     all_girls_list[girl_index]["bonus_fear"] = all_girls_list[girl_index]["aura"]["fear"] *2 + 5
             else:
                 all_girls_list[girl_index]["bonus_fear"] = 0
-                
-                
             all_girls_list[girl_index]["obedience"] = slave_obedience_bonus + all_girls_list[girl_index]["mood"] + all_girls_list[girl_index]["bonus_fear"] + all_girls_list[girl_index]["aura"]["devotion"]*4 + all_girls_list[girl_index]["aura"]["taming"] * 2 \
             + int((1+all_girls_list[girl_index]["aura"]["despair"]) // 2) + all_girls_list[girl_index]["aura"]["awareness"] + all_girls_list[girl_index]["aura"]["habit"] - all_girls_list[girl_index]["aura"]["spoil"]*2 - int(slave_difficulty/2) - slave_nature
 
             if all_girls_list[girl_index]["psy_status"] == "broken":
                 all_girls_list[girl_index]["obedience"] = 100
+            for aura in ["fear","despair","awareness","taming","habit","spoil","devotion"]:
+                if all_girls_list[girl_index]["aura"][aura] == 0 and all_girls_list[girl_index]["experience"]["aura"][aura] < -10:
+                    all_girls_list[girl_index]["experience"]["aura"][aura] = -10
+                if all_girls_list[girl_index]["aura"][aura] == 5 and all_girls_list[girl_index]["experience"]["aura"][aura] > 10:
+                    all_girls_list[girl_index]["experience"]["aura"][aura] = 10
+            ### fainted code
+            if all_girls_list[girl_index]["energy"] <= -5:
+                all_girls_list[girl_index]["conscience"] = False
+                msg("Your slave fainted due to extreme exhaustion.")
+            elif all_girls_list[girl_index]["attributes"]["endurance"] == 0:
+                all_girls_list[girl_index]["conscience"] = False
+                msg("Your slave fainted due to having no stamina.")
+            elif all_girls_list[girl_index]["attributes"]["endurance"] == 1 and all_girls_list[girl_index]["experience"]["attributes"]["endurance"] <= 0:
+                if not is_slave_nearly_fainted:
+                    slave_nearly_fainted = True
+                    msg("Be careful, your slave nearly fainted due to a lack of stamina.")
+            ### slave dead code
+            if all_girls_list[girl_index]["attributes"]["endurance"] == 0 and all_girls_list[girl_index]["attributes"]["physical"] == 5 and max(all_girls_list[girl_index]["experience"]["attributes"]["endurance"] ,all_girls_list[girl_index]["experience"]["attributes"]["physical"]) <= -10:    
+                temporal_value = meat_evaluation()
+                del all_girls_list[girl_index]
+                sparks_37 += temporal_value
+                msg("Your slave is dead, and you sale the meat to the butcher for [temporal_value]")
+
+
+
+
+
         girl_index = girl_index_save
     if slave_rebellion_fight:
         jump slave_rebelion_fight_label
@@ -312,7 +365,7 @@ label Home:
         show screen screen_rules
         call screen slave_aura_menu()
 label slave_rebelion_fight_label:
-    "You slaves refuses to wear the nipple chain. Use force to make her wear it anyway"
+    "You slaves refuses to wear the [all_girls_list[girl_index]['equipment']['clothes']]. Use force to make her wear it anyway"
     "WIP"
     return 
 label equipment_check:
@@ -1180,7 +1233,7 @@ screen home_menu():
                 action NullAction()
         textbutton "End of the day":
             style "home_button"
-            action NullAction()
+            action SetVariable("current_menu", 0), Jump("next_day_label")
     vbox:
         yalign 0.49
         xalign 0.05
@@ -1190,7 +1243,6 @@ screen home_menu():
         add home_menu_image4 size(50,50)
         add home_menu_image5 size(50,50)
         add home_menu_image6 size(50,50)
-   
     vbox:
 
         if is_tutorial:
@@ -2655,45 +2707,51 @@ screen description_slave_attributes():
             text dic_slave_attributes_description_keys[description_slave_attributes_track_value] + " " + dic_slave_tier_classification[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value][description_slave_attributes_track_value]] + " " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["dog_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["dog_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["pig_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["pig_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["house_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["house_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["spider_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["spider_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["sea_tentacle_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["sea_tentacle_mating"]]) + " | " + str(all_girls_list[girl_index]["experience"]["sex_experience"][description_slave_attributes_track_value]["field_mating"]) + "/" + str(attributes_max_threshold[all_girls_list[girl_index]["sex_experience"][description_slave_attributes_track_value]["field_mating"]]) style "description_slave_attributes_frame_little_text"
     if description_slave_attributes_track_value == "fear":
         frame:
-            pos(curx ,cury +50)
+            pos(curx ,cury + 50)
             style "description_slave_attributes_frame"
-            text "Fear ; " + str(all_girls_list[girl_index]["aura"]["fear"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["fear"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["fear"]]) + ")" style "description_slave_attributes_frame_text"
+            text "Fear " + str(all_girls_list[girl_index]["aura"]["fear"]) + " ; " + str(all_girls_list[girl_index]["experience"]["aura"]["fear"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["fear"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["fear"]]) + ")" style "description_slave_attributes_frame_text"
+
     if description_slave_attributes_track_value == "despair":
         frame:
-            pos(curx ,cury +50)
+            pos(curx ,cury + 50)
             style "description_slave_attributes_frame"
-            text "Despair ; " + str(all_girls_list[girl_index]["aura"]["despair"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["despair"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["despair"]]) + ")" style "description_slave_attributes_frame_text"
+            text "Despair " + str(all_girls_list[girl_index]["aura"]["despair"]) + " ; " + str(all_girls_list[girl_index]["experience"]["aura"]["despair"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["despair"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["despair"]]) + ")" style "description_slave_attributes_frame_text"
+
     if description_slave_attributes_track_value == "awareness":
         frame:
-            pos(curx ,cury +50)
+            pos(curx ,cury + 50)
             style "description_slave_attributes_frame"
-            text "Awareness ; " + str(all_girls_list[girl_index]["aura"]["awareness"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["awareness"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["awareness"]]) + ")" style "description_slave_attributes_frame_text"
+            text "Awareness " + str(all_girls_list[girl_index]["aura"]["awareness"]) + " ; " + str(all_girls_list[girl_index]["experience"]["aura"]["awareness"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["awareness"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["awareness"]]) + ")" style "description_slave_attributes_frame_text"
+
     if description_slave_attributes_track_value == "taming":
         frame:
-            pos(curx ,cury +50)
+            pos(curx ,cury + 50)
             style "description_slave_attributes_frame"  
-            text "Taming ; " + str(all_girls_list[girl_index]["aura"]["taming"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["taming"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["taming"]]) + ")" style "description_slave_attributes_frame_text"
+            text "Taming " + str(all_girls_list[girl_index]["aura"]["taming"]) + " ; " + str(all_girls_list[girl_index]["experience"]["aura"]["taming"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["taming"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["taming"]]) + ")" style "description_slave_attributes_frame_text"
+
     if description_slave_attributes_track_value == "habit":
         frame:
-            pos(curx ,cury +50)
+            pos(curx ,cury + 50)
             style "description_slave_attributes_frame"
-            text "Habit ; " + str(all_girls_list[girl_index]["aura"]["habit"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["habit"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["habit"]]) + ")" style "description_slave_attributes_frame_text"
+            text "Habit " + str(all_girls_list[girl_index]["aura"]["habit"]) + " ; " + str(all_girls_list[girl_index]["experience"]["aura"]["habit"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["habit"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["habit"]]) + ")" style "description_slave_attributes_frame_text"
+
     if description_slave_attributes_track_value == "spoil":
         frame:
-            pos(curx ,cury +50)
+            pos(curx ,cury + 50)
             style "description_slave_attributes_frame"
-            text "Spoil ; " + str(all_girls_list[girl_index]["aura"]["spoil"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["spoil"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["spoil"]]) + ")" style "description_slave_attributes_frame_text"
+            text "Spoil " + str(all_girls_list[girl_index]["aura"]["spoil"]) + " ; " + str(all_girls_list[girl_index]["experience"]["aura"]["spoil"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["spoil"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["spoil"]]) + ")" style "description_slave_attributes_frame_text"
+
     if description_slave_attributes_track_value == "devotion":
         frame:
-            pos(curx ,cury +50)
+            pos(curx ,cury + 50)
             style "description_slave_attributes_frame"
-            text "Devotion ; " + str(all_girls_list[girl_index]["aura"]["devotion"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["devotion"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["devotion"]]) + ")" style "description_slave_attributes_frame_text"
+            text "Devotion " + str(all_girls_list[girl_index]["aura"]["devotion"]) + " ; " + str(all_girls_list[girl_index]["experience"]["aura"]["devotion"]) + " (+" + str(attributes_max_threshold[all_girls_list[girl_index]["aura"]["devotion"]]) + "/" + str(attributes_min_threshold[all_girls_list[girl_index]["aura"]["devotion"]]) + ")" style "description_slave_attributes_frame_text"
+    
     if description_slave_attributes_track_value == "obedience":
         frame:
             pos(curx,cury +50)
             style "description_slave_attributes_frame"
             text "Obedience ; " + str(all_girls_list[girl_index]["obedience"]) style "description_slave_attributes_frame_text"
-
 screen home_attributes_menu():
     vbox:
         pos(0.90,0.05)
@@ -2758,4 +2816,21 @@ screen home_attributes_menu():
 screen bg_home():
     add bgstyle xsize 1280 ysize 720
     add home_decoration xsize 1000 ysize 675 pos (0.002,0.057)
-
+screen msg(msg_text):
+    zorder 50
+    add "gui/confirm_frame.png" at truecenter
+    text msg_text xmaximum  445:
+        pos (0.33, 0.28)
+        color "#191970"
+        size 14
+        font "fonts/Segoe Print.ttf"
+    text " Press space to close this window.":
+        pos (0.33, 0.65)
+        color "#191970"
+        size 14
+        font "fonts/Segoe Print.ttf"
+    imagebutton:
+        idle "buttons/ok-icon.webp" pos (0.5, 0.7)
+        hover "buttons/ok-icon_hover.webp"
+        action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump(infobox_jump)
+    key "K_SPACE" action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump(infobox_jump)

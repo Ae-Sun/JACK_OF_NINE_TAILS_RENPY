@@ -51,3 +51,33 @@ init python:
         if all_girls_list[girl_index]["experience"][x][a] >= attributes_max_threshold[all_girls_list[girl_index][x][a]] and all_girls_list[girl_index][x][a] < 5:
             all_girls_list[girl_index]["experience"][x][a] -= attributes_max_threshold[all_girls_list[girl_index][x][a]]
             all_girls_list[girl_index][x][a] = all_girls_list[girl_index][x][a] + 1
+    def msg(x):
+        renpy.call_screen("msg", msg_text=x)
+    def meat_evaluation():
+        base_meat_gain = all_girls_list[girl_index]["attributes"]["physical"] + 2
+        if all_girls_list[girl_index]["age"] == 0:
+            base_meat_gain = base_meat_gain*2
+        elif all_girls_list[girl_index]["age"] == 2:
+            base_meat_gain = base_meat_gain*3
+        mince_gain = all_girls_list[girl_index]["attributes"]["physical"] * all_girls_list[girl_index]["boobs"]
+        meat_max = 1 + all_girls_list[girl_index]["attributes"]["endurance"]
+        if all_girls_list[girl_index]["age"] == 0:
+            meat_max = meat_max*2
+        elif all_girls_list[girl_index]["age"] == 2:
+            meat_max = meat_max*3
+        if base_meat_gain > meat_max:
+            meat_gain = meat_max
+            mince_bonus = base_meat_gain - meat_max
+        else:
+            meat_gain = base_meat_gain
+            mince_gain += mince_bonus
+        if all_girls_list[girl_index]["age"] == 1 or ( all_girls_list[girl_index]["age"] == 0 and all_girls_list[girl_index]["vaginal_tightness"] == 0):
+            virgin_meat_gain = meat_gain
+            meat_gain = 0
+        else:
+            virgin_meat_gain = 0
+        meat_price = mince_gain + meat_gain*2 + virgin_meat_gain*4
+        return(meat_price)
+
+
+            

@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 250: invalid syntax
-            if all_girls_list[girl_index]["psy_status"] == "broken":
-                                                                    ^
+File "game/home.rpy", line 273: invalid syntax
+        elif all_girls_list[girl_index]["attributes"]["endurance"] == 1 and all_girls_list[girl_index]["experience"]["attributes"]["endurance"] <= 0
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May 31 02:23:15 2025
+Thu Jun  5 19:04:23 2025

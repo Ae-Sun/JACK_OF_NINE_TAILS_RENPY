@@ -1512,15 +1512,18 @@ define spells_books_description = {
     }
 }
 define tips = {
-    1: "You can move up and down on clothes equipment selection using the keys 1 and 2",
-    2: "The first and second devotion point give you a extra 2 obedience in maximun difficulty",
-    3: "The first point on fear give you extra obedience points based of slave nature (max +5)",
-    4: "Gorgeous Dress is trash",
-    5: "The maximun obedience is 100, only archieveble when slave are broken",
-    6: "Slave rang will never increase beyond beauty",
-    7: "One part of obedience is the sum of slave nature (pride + temperament + nature + intelligence)",
-    8: "Spoil will decrease 2 points of obedience, avoid it at all costs",
-    9: "Given more that 2 rewards per day will increase spoil",
-    10:"Spoil will reduce all aura by spoil value at the end of day",
-    11:"devotion will give 4 points of obedience, but there's no reliable way to increase it without increasing others stats first" 
+    1: "You can navigate up and down in the clothing equipment menu using the 1 and 2 keys.",
+    2: "The first and second Devotion points each grant extra +2 Obedience on maximum difficulty.",
+    3: "The first Fear point gives bonus Obedience based on the slave's nature (up to +5).",
+    4: "The Gorgeous Dress is trash — don't bother buying it.",
+    5: "The maximum Obedience is 100, only achievable when the slave is fully broken.",
+    6: "Slave rank will never increase beyond Beauty or fame.",
+    7: "Part of Obedience is calculated from the sum of Pride, Temperament, Nature, and Intelligence.",
+    8: "Spoiling reduces Obedience by 2 points — avoid it whenever possible.",
+    9: "Giving more than 2 rewards per day increases Spoiling.",
+    10: "Spoiling reduces all Auras (devotion, awareness, taming, habit) by its value at the end of the day.",
+    11: "Devotion grants +4 Obedience, but it's hard to increase without improving other stats first.",
+    12: "Fear acts like having the correct overnight rules, at least for reducing Spoiling.",
+    13: "Set the correct overnight rules to earn daily Devotion bonuses.",
+    14: "Magical brand give addicional habit points per day"
 }
