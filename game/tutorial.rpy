@@ -540,9 +540,9 @@ label choose_inicial_girl:
         all_girls_list[girl_index]["mood_state"].setdefault("good_mood",{})
         all_girls_list[girl_index]["mood_state"].setdefault("bad_mood",{})
         for key in dic_slave_mood["good_mood"]:
-            all_girls_list[girl_index]["mood_state"]["good_mood"].setdefault(key, False)
+            all_girls_list[girl_index]["mood_state"]["good_mood"].setdefault(key, {"permanent": False , "accustomed": False, "accustomed_value": 20, "active": False})
         for key in dic_slave_mood["bad_mood"]:
-            all_girls_list[girl_index]["mood_state"]["bad_mood"].setdefault(key, False)
+            all_girls_list[girl_index]["mood_state"]["bad_mood"].setdefault(key, {"permanent": False , "accustomed": False, "accustomed_value": 20, "active": False})
         all_girls_list[girl_index]["experience"].setdefault("aura", {})
         all_girls_list[girl_index]["experience"]["aura"].setdefault("fear", 0)
         all_girls_list[girl_index]["experience"]["aura"].setdefault("despair", 0)
@@ -662,7 +662,6 @@ label choose_inicial_girl:
         traits_aura = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_aura(1/16)"]
         traits_attributes = all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_attributes(1/20)"]
 
-
         for key, values in dic_slave_skills.items():
             import random
             all_girls_list[girl_index]["experience"]["skills"].setdefault(key,0)
@@ -761,6 +760,130 @@ label choose_inicial_girl:
                 else:
                     roll = random.randint(0, 5)
                 all_girls_list[girl_index]["attributes"].setdefault(key, roll)
+        if not "world_description" in all_girls_list[girl_index]:
+            roll = random.randint(0,13)
+            all_girls_list[girl_index]["world"] = world[roll][name]
+            roll = random.randint(0, len(shared_families[all_girls_list[girl_index]["world"]])-1)
+            all_girls_list[girl_index]["family"] = shared_families[all_girls_list[girl_index]["world"]][roll]
+            roll = random.randint(0, len(occupation[all_girls_list[girl_index]["family"]])-1)
+            all_girls_list[girl_index]["ocupation"] = ocupation[all_girls_list[girl_index]["family"]][roll]
+            if all_girls_list[girl_index]["world"] == "prehistoric":
+                all_girls_list[girl_index]["attributes"]["exotic"] += 1
+                if all_girls_list[girl_index]["attributes"]["endurance"] < 5:
+                    all_girls_list[girl_index]["attributes"]["endurance"] += 1
+                if all_girls_list[girl_index]["attributes"]["temperament"] < 5:
+                    all_girls_list[girl_index]["attributes"]["temperament"] += 1
+                if all_girls_list[girl_index]["attributes"]["nature"] > 0:
+                    all_girls_list[girl_index]["attributes"]["nature"] -= 1
+                if all_girls_list[girl_index]["attributes"]["intelligence"] > 0:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] -= 1
+            elif all_girls_list[girl_index]["world"] == "barbarian":
+                if all_girls_list[girl_index]["attributes"]["endurance"] < 5:
+                    all_girls_list[girl_index]["attributes"]["endurance"] += 1
+                if all_girls_list[girl_index]["attributes"]["temperament"] < 5:
+                    all_girls_list[girl_index]["attributes"]["temperament"] += 1
+                if all_girls_list[girl_index]["attributes"]["nature"] > 0:
+                    all_girls_list[girl_index]["attributes"]["nature"] -= 1
+                if all_girls_list[girl_index]["attributes"]["intelligence"] > 0:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] -= 1
+            elif all_girls_list[girl_index]["world"] == "sns":
+                if all_girls_list[girl_index]["attributes"]["endurance"] < 5:
+                    all_girls_list[girl_index]["attributes"]["endurance"] += 1
+                if all_girls_list[girl_index]["attributes"]["nature"] > 0:
+                    all_girls_list[girl_index]["attributes"]["nature"] -= 1 
+                if all_girls_list[girl_index]["attributes"]["intelligence"] > 0:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] -= 1
+            elif all_girls_list[girl_index]["world"] == "medieval":
+                if all_girls_list[girl_index]["attributes"]["temperament"] > 0:
+                    all_girls_list[girl_index]["attributes"]["temperament"] -= 1
+                if all_girls_list[girl_index]["attributes"]["nature"] > 0:
+                    all_girls_list[girl_index]["attributes"]["nature"] -= 1
+                if all_girls_list[girl_index]["attributes"]["intelligence"] > 0:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] -= 1
+                all_girls_list[girl_index]["aura"]["habit"] += 1
+            elif all_girls_list[girl_index]["world"] == "highfantasy":
+                all_girls_list[girl_index]["attributes"]["exotic"] += 1
+                if all_girls_list[girl_index]["attributes"]["empathy"] < 5:
+                    all_girls_list[girl_index]["attributes"]["empathy"] += 1
+            elif all_girls_list[girl_index]["world"] == "darkfantasy":
+                all_girls_list[girl_index]["attributes"]["exotic"] += 1
+                all_girls_list[girl_index]["aura"]["habit"] += 2
+                if all_girls_list[girl_index]["attributes"]["endurance"] > 0:
+                    all_girls_list[girl_index]["attributes"]["endurance"] -= 1
+                if all_girls_list[girl_index]["attributes"]["temperament"] > 0:
+                    all_girls_list[girl_index]["attributes"]["temperament"] -= 1
+                if all_girls_list[girl_index]["attributes"]["nature"] > 0:
+                    all_girls_list[girl_index]["attributes"]["nature"] -= 1
+                if all_girls_list[girl_index]["attributes"]["empathy"] > 0:
+                    all_girls_list[girl_index]["attributes"]["empathy"] -= 1
+                if all_girls_list[girl_index]["attributes"]["intelligence"] > 0:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] -= 1
+                if all_girls_list[girl_index]["attributes"]["pride"] < 5:
+                    all_girls_list[girl_index]["attributes"]["pride"] += 1
+            elif all_girls_list[girl_index]["world"] == "steampunk":
+                all_girls_list[girl_index]["aura"]["habit"] += 1
+            elif all_girls_list[girl_index]["world"] == "industrial":
+                all_girls_list[girl_index]["aura"]["habit"] += 1
+            elif all_girls_list[girl_index]["world"] == "modern":
+                if all_girls_list[girl_index]["attributes"]["nature"] < 5:
+                    all_girls_list[girl_index]["attributes"]["nature"] += 1
+                if all_girls_list[girl_index]["attributes"]["pride"] > 0:
+                    all_girls_list[girl_index]["attributes"]["pride"] -= 1
+                if all_girls_list[girl_index]["attributes"]["intelligence"] < 5:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] += 1
+                if all_girls_list[girl_index]["attributes"]["endurance"] > 0:
+                    all_girls_list[girl_index]["attributes"]["endurance"] -= 1
+            elif all_girls_list[girl_index]["world"] == "cyberpunk":
+                if all_girls_list[girl_index]["attributes"]["pride"] > 0:
+                    all_girls_list[girl_index]["attributes"]["pride"] -= 1                                
+                if all_girls_list[girl_index]["attributes"]["intelligence"] < 5:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] += 1
+                if all_girls_list[girl_index]["attributes"]["temperament"] > 0:
+                    all_girls_list[girl_index]["attributes"]["temperament"] -= 1      
+                if all_girls_list[girl_index]["attributes"]["endurance"] > 0:
+                    all_girls_list[girl_index]["attributes"]["endurance"] -= 1
+            elif all_girls_list[girl_index]["world"] == "utopia":
+                all_girls_list[girl_index]["attributes"]["exotic"] += 1
+                all_girls_list[girl_index]["aura"]["spoil"] += 1
+                if all_girls_list[girl_index]["attributes"]["intelligence"] < 5:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] += 1
+                all_girls_list[girl_index]["attributes"]["empathy"] = min(all_girls_list[girl_index]["attributes"]["empathy"]+2,5)
+                if all_girls_list[girl_index]["attributes"]["pride"] > 0:
+                    all_girls_list[girl_index]["attributes"]["pride"] -= 1        
+            elif all_girls_list[girl_index]["world"] == "darkfuture":
+                all_girls_list[girl_index]["aura"]["habit"] += 2
+                all_girls_list[girl_index]["attributes"]["temperament"] = max(all_girls_list[girl_index]["attributes"]["temperament"]-2,0)
+                all_girls_list[girl_index]["attributes"]["nature"] = max(all_girls_list[girl_index]["attributes"]["nature"]-2,0)
+                if all_girls_list[girl_index]["attributes"]["endurance"] > 0:
+                    all_girls_list[girl_index]["attributes"]["endurance"] -= 1        
+                if all_girls_list[girl_index]["attributes"]["temperament"] > 0:
+                    all_girls_list[girl_index]["attributes"]["temperament"] -= 1  
+                if all_girls_list[girl_index]["attributes"]["intelligence"] < 5:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] += 1
+                if all_girls_list[girl_index]["attributes"]["empathy"] > 0:
+                    all_girls_list[girl_index]["attributes"]["empathy"] -= 1
+                if all_girls_list[girl_index]["attributes"]["pride"] > 0:
+                    all_girls_list[girl_index]["attributes"]["pride"] -= 1 
+                if all_girls_list[girl_index]["attributes"]["physical"] < 5:
+                    all_girls_list[girl_index]["attributes"]["physical"] += 1 
+            elif all_girls_list[girl_index]["world"] == "space":
+                all_girls_list[girl_index]["attributes"]["exotic"] += 1
+                if all_girls_list[girl_index]["attributes"]["endurance"] > 0:
+                    all_girls_list[girl_index]["attributes"]["endurance"] -= 1                
+                if all_girls_list[girl_index]["attributes"]["intelligence"] < 5:
+                    all_girls_list[girl_index]["attributes"]["intelligence"] += 1
+                if all_girls_list[girl_index]["attributes"]["pride"] > 0:
+                    all_girls_list[girl_index]["attributes"]["pride"] -= 1         
+                if all_girls_list[girl_index]["attributes"]["nature"] < 5:
+                    all_girls_list[girl_index]["attributes"]["nature"] += 1        
+        
+        
+        
+        
+        
+        
+        
+        
         all_girls_list[girl_index]["sex_experience"]["petting"]["petting"] = (all_girls_list[girl_index]["sex_experience"]["petting"]["handjob"] + all_girls_list[girl_index]["sex_experience"]["petting"]["footjob"] + all_girls_list[girl_index]["sex_experience"]["petting"]["rubbing"] + all_girls_list[girl_index]["sex_experience"]["petting"]["titjob"]) // 4
         all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["oral_pleasure"] = (all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["kissing"] + all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["licking"] + all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["blowjob"] + all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["deep_throat"] + all_girls_list[girl_index]["sex_experience"]["oral_pleasure"]["rimming"]) // 5
         all_girls_list[girl_index]["sex_experience"]["penetration"]["penetration"] = (all_girls_list[girl_index]["sex_experience"]["penetration"]["vaginal_sex"] + all_girls_list[girl_index]["sex_experience"]["penetration"]["fisting"] + all_girls_list[girl_index]["sex_experience"]["penetration"]["anal_sex"] + all_girls_list[girl_index]["sex_experience"]["penetration"]["anal_fisting"]) // 4

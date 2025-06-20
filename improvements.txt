@@ -1,35 +1,38 @@
-- Every clickeble element now also have hover effect.
+- Every clickable element now also have hover effect.
 - When the mouse is pressed, it will transform into a whip.
 - The penetration is now after oral sex - (more clean)
 - The master selection now is ordered by difficulty
 - the game no longer use png, now use webp
 - some skill text are changed (2 way to call the same thing? no,no,no...)
-- maximun difficulty is called now extreme difficulty and extreme difficulty is called maximun difficulty (because nothing can be harder that maximun difficulty)
-- eazy difficulty is now call Free mode (start with 10000 sparks, full stats, on white town and c+ assistant, is too much even for eazy difficulty, also cause confusion between eazy difficulty and simple difficulty )
+- maximum difficulty is called now extreme difficulty and extreme difficulty is called maximum difficulty (because nothing can be harder that maximum difficulty)
+- eazy difficulty is now call Free mode (start with 10000 sparks, full stats, on white town and c+ assistant, is too much even for easy difficulty, also cause confusion between eazy difficulty and simple difficulty )
 - you can get as many sparks as you want on free mode (no really, max 999,999 sparks)
 - butle difficult is now normal difficult instead of high difficulty (just compare with other high difficult character)
 - clicking attributes on normal selection menu will show attribute tips
 - clicking on mc name will show some persistent data -WIP 
 - clicking on difficulty will show a difficulty description (need improvement)
 - Pressing space will close infobox.    
-- Pressing space is now very usefull.
+- Pressing space is now very useful.
 - Reworked the entire trait system — while the original system was solid, it was overly complex and difficult to replicate. Simplified the underlying logic and expanded the variety of available traits for greater flexibility and depth.
 - Improve slave json structure
 - Created slave Mod support
 - Remove loli explicit text content Easter Egg (Too much work for something that probably only the 5% of community are enjoying, someone (not me) does have a lot time may try to restore it)
-- Reworked the entire combat equipment system — Because the original system code are in russian, also weapon aren't remarkeble.(naginata or flamberge? can you really tell the difference without looking the wiki?)
+- Reworked the entire combat equipment system — Because the original system code are in russian, also weapon aren't remarkable.(naginata or flamberge? can you really tell the difference without looking the wiki?)
 - Obedience always fade when slave have spoil (instead of >1, more simple, more intuitive, better)
 - Slaves always hate being nude based of pride instead of proud slaves dislike being put on display(instead of 2<, same reason as above)
 - Having exhibitionism trait now increase worn mood on reveling clothes
-- Slaves now dislike less wearing revealing clothes that being naked. (originaly wearing revealing clothes are worse that being nude?)
+- Slaves now dislike less wearing revealing clothes that being naked. (originally wearing revealing clothes are worse that being nude?)
 - wearing Kimono-Yutaka will have positive moodlet if slave have elocution affinity instead of secretary affinity
+- secretary affinity no longer include elocution affinity (now both are different)
 - cow gear no longer daily reduce intelligence (no space in equipment screen. Also no longer incentive to switch clothes before end the day because the lowering of intelligence )
-- simplefied heavy gauge rings. each now give 1 taming for -0.3 mood
+- simplified heavy gauge rings. each now give 1 taming for -0.3 mood
 - some clothes effect are slightly changed to adaptade new trait system
 - Improve slave equipment screen ui
 - Now clicking 1 or 2 will move between equipments in slave equipment screen
-- When you buy items that can be equipment in multiples part of slave body like like barbells, you will buy a whole set for one slave instead of x quantitive. (Code problems, the original system requiere a lot more code.) 
+- When you buy items that can be equipment in multiples part of slave body like like barbells, you will buy a whole set for one slave instead of x quantitative. (Code problems, the original system require a lot more code.) 
 - Expand girl dominium - instead of one slave at the time, now support multiples slaves at the same time. [No freeze]
 - Added change girl for testing reasons
 - meat evaluation now give more meat if age == milf
-- reworked girl background effectes, now girl background will have a significally effect in the gameplay (instead of changing some attribute and skills value, now change the increase of those skills and values)
+- reworked girl background effects, now girl background will have a significantly affect in the gameplay (instead of changing some attribute and skills value, now change the increase of those skills and values) - WIP
+- generate_stock world bonus check if attribute is bigger that 0 instead of 1 (I believe the original code is wrong)
+- reworked daily mood drop and rise ( the original is a joke lowering magnitude of positive and negative moodlet by 1% per day. Now moodlet is now more complex, extra info (permanent: true or false, accustomated: true or false, active: true or false)

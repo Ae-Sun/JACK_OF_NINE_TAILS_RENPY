@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 273: invalid syntax
-        elif all_girls_list[girl_index]["attributes"]["endurance"] == 1 and all_girls_list[girl_index]["experience"]["attributes"]["endurance"] <= 0
+File "game/tutorial.rpy", line 770: invalid syntax
+        if all_girls_list[girl_index]["world"] = "prehistoric":
+                                                ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Jun  5 19:04:23 2025
+Fri Jun 20 01:30:16 2025

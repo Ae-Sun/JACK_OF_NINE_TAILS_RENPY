@@ -47,6 +47,7 @@ default slave_obedience_bonus = 0
 default slave_difficulty = 0
 default debt_tracker = 0
 default debt = 0
+default gameover = False
 default inventory = {
     "remove": "-",
     "Without armour": "-",
@@ -172,6 +173,7 @@ label iniciation_label:
     jump Home
 label next_day_label:
     python:
+        is_auspex_active = False
         energy_value += strength_value_1 *2 + 2
         energy_value = min(10, energy_value)
         day_tracker += 1
@@ -186,13 +188,25 @@ label next_day_label:
                 all_girls_list[girl_index]["daring"] = max(all_girls_list[girl_index]["daring"]- random.randint(0, 3),0)
                 if all_girls_list[girl_index]["energised"] > 5:
                     all_girls_list[girl_index]["energised"] = max(all_girls_list[girl_index]["energised"]- random.randint(0, 7),0)
+                for key in dic_slave_mood["good_mood"]:
+                    if not all_girls_list[girl_index]["mood_state"]["good_mood"][key]["permanent"]:
+                        if not all_girls_list[girl_index]["mood_state"]["good_mood"][key]["accustomed"]:
+                            all_girls_list[girl_index]["mood_state"]["good_mood"][key]["accustomed_value"] -= 1
+                            if all_girls_list[girl_index]["mood_state"]["good_mood"][key]["accustomed_value"] == 0:
+                                all_girls_list[girl_index]["mood_state"]["good_mood"][key]["accustomed"] = True
+                for key in dic_slave_mood["bad_mood"]:
+                    if not all_girls_list[girl_index]["mood_state"]["bad_mood"][key]["permanent"]:
+                        if not all_girls_list[girl_index]["mood_state"]["bad_mood"][key]["accustomed"]:
+                            all_girls_list[girl_index]["mood_state"]["bad_mood"][key]["accustomed_value"] -= 1
+                            if all_girls_list[girl_index]["mood_state"]["bad_mood"][key]["accustomed_value"] == 0:
+                                all_girls_list[girl_index]["mood_state"]["bad_mood"][key]["accustomed"] = True
                 if debt_tracker > 0:
                     debt_tracker -= 1
                     if debt_tracker == 0 and debt > 0:
                         msg("As in any other city, in the Eternal Rome it is reckless to forget to repay money you have borrowed. You died a disgraceful death at the hand of the moneylender’s henchmen…")
-                if all_girls_list[girl_index]["assistant"]:
+                        gameover = True
+                #if all_girls_list[girl_index]["assistant"]:
                     
-
             ### energy and sleep condition -half done
                 if all_girls_list[girl_index]["sleep"] != 4:
                     if all_girls_list[girl_index]["aura"]["devotion"] >= 3:
