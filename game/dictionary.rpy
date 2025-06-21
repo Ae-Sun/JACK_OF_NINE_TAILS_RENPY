@@ -1525,5 +1525,8 @@ define tips = {
     11: "Devotion grants +4 Obedience, but it's hard to increase without improving other stats first.",
     12: "Fear acts like having the correct overnight rules, at least for reducing Spoiling.",
     13: "Set the correct overnight rules to earn daily Devotion bonuses.",
-    14: "Magical brand give addicional habit points per day"
+    14: "Magical brand give addicional habit points per day",
+    15: "No setting enought rules may increase spoiling",
+    16: "No happy slave with low Obedience may try to escape, master charisma and assistant intelligence, devotion make it less likely",
+    17: "Only slave with despair will try to kill their masters"
 }

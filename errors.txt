@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/tutorial.rpy", line 770: invalid syntax
-        if all_girls_list[girl_index]["world"] = "prehistoric":
-                                                ^
+File "game/home.rpy", line 221: invalid syntax
+                    if all_girls_list[girl_index]["mood"] < -1 and all_girls_list[girl_index]["attributes"]["temperament"] > all_girls_list[girl_index]["obedience"]
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Jun 20 01:30:16 2025
+Sat Jun 21 15:05:38 2025

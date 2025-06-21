@@ -21,7 +21,6 @@ default is_assistant_assigned = False
 default energy_value = 0
 default current_menu = 0
 default mood_value = 0
-default number_of_rules = 0
 default day_tracker = 1
 default is_auspex_active = False
 default boobs1 =" marshmallowy tits"
@@ -48,6 +47,7 @@ default slave_difficulty = 0
 default debt_tracker = 0
 default debt = 0
 default gameover = False
+default pony_count = 0
 default inventory = {
     "remove": "-",
     "Without armour": "-",
@@ -174,6 +174,7 @@ label iniciation_label:
 label next_day_label:
     python:
         is_auspex_active = False
+        is_slave_nearly_fainted = False
         energy_value += strength_value_1 *2 + 2
         energy_value = min(10, energy_value)
         day_tracker += 1
@@ -205,17 +206,53 @@ label next_day_label:
                     if debt_tracker == 0 and debt > 0:
                         msg("As in any other city, in the Eternal Rome it is reckless to forget to repay money you have borrowed. You died a disgraceful death at the hand of the moneylender’s henchmen…")
                         gameover = True
-                #if all_girls_list[girl_index]["assistant"]:
-                    
+                if all_girls_list[girl_index]["attributes"]["endurance"] == 0 and all_girls_list[girl_index]["experience"]["attributes"]["endurance"] <= -10:
+                    roll = random.randint(1, 2)
+                    if roll == 1:
+                        temporal_value = meat_evaluation()
+                        key_to_delete = list(all_girls_list.keys())[girl_index]
+                        del all_girls_list[key_to_delete]                       
+                        sparks_37 += temporal_value
+                        msg("Your slave is dead, and you sale the meat to the butcher for [temporal_value]")
+                    if roll == 2:
+                        all_girls_list[girl_index]["experience"]["attributes"]["endurance"] = -10
+                if all_girls_list[girl_index]["sleep"] != 0 and all_girls_list[girl_index]["psy_status"] != "broken":
+                    if all_girls_list[girl_index]["attributes"]["endurance"] > 0:
+                        if all_girls_list[girl_index]["mood"] < -1 and all_girls_list[girl_index]["attributes"]["temperament"] > all_girls_list[girl_index]["obedience"]
+                            n = 7 + personality_value_2 - all_girls_list[girl_index]["aura"]["despair"]
+                            for girl_index in all_girls_list:
+                                if all_girls_list[girl_index]["conscience"]:
+                                    if all_girls_list[girl_index]["assistant"]:
+                                        n += all_girls_list[girl_index]["attributes"]["intelligence"] + all_girls_list[girl_index]["aura"]["devotion"]
+                            ### need assistant supervision code  - WIP
+                            roll = random.randint(1, n)
+                            if roll == 1:
+                                if all_girls_list[girl_index]["aura"]["despair"] > 0: # and (slave['gladiatrix'] + slave['angst']) > max(0, master_supermacy - master_style): WIP
+                                    slave_rebellion_fight = True
+
+
+                
+                
+                
+                
+                if all_girls_list[girl_index]["assistant"]:
+                    if all_girls_list[girl_index]["attributes"]["nature"] < 3:
+                        all_girls_list[girl_index]["experience"]["attributes"]["nature"] +=1
+                        increase_check("attributes","nature")
+                if all_girls_list[girl_index]["brand"] != 0:
+                    all_girls_list[girl_index]["experience"]["aura"]["habit"] += 1
+                if all_girls_list[girl_index]["brand"] == 1:
+                    all_girls_list[girl_index]["experience"]["aura"]["habit"] += 1
+                increase_check("aura","habit")
             ### energy and sleep condition -half done
                 if all_girls_list[girl_index]["sleep"] != 4:
                     if all_girls_list[girl_index]["aura"]["devotion"] >= 3:
-                        all_girls_list[girl_index]["energy"] = min(12, all_girls_list[girl_index]["energy"] + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
+                        all_girls_list[girl_index]["energy"] = min(12, all_girls_list[girl_index]["energy"]//2 + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
                     else:
-                        all_girls_list[girl_index]["energy"] = min(10, all_girls_list[girl_index]["energy"] + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
+                        all_girls_list[girl_index]["energy"] = min(10, all_girls_list[girl_index]["energy"]//2 + all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)
                     all_girls_list[girl_index]["days_without_sleep"] = 0
                 else:
-                    all_girls_list[girl_index]["energy"] = min(12,all_girls_list[girl_index]["energy"] + (all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)/2)
+                    all_girls_list[girl_index]["energy"] = min(12,all_girls_list[girl_index]["energy"]//2 + (all_girls_list[girl_index]["attributes"]["endurance"] * 2 + 2)/2)
                     all_girls_list[girl_index]["days_without_sleep"] += 1
                     all_girls_list[girl_index]["experience"]["attributes"]["endurance"] -= all_girls_list[girl_index]["days_without_sleep"] *3
                     all_girls_list[girl_index]["experience"]["aura"]["taming"] += all_girls_list[girl_index]["days_without_sleep"]
@@ -226,7 +263,7 @@ label next_day_label:
                 ### spoiling - increase
                 if all_girls_list[girl_index]["daily_count"]["reward"] > 2:
                     all_girls_list[girl_index]["experience"]["aura"]["spoil"] += all_girls_list[girl_index]["daily_count"]["reward"]*5
-                if all_girls_list[girl_index]["aura"]["devotion"] <= 2 and all_girls_list[girl_index]["aura"]["fear"] == 0 and all_girls_list[girl_index]["days_without_food"] == 0 and all_girls_list[girl_index]["days_without_sleep"] == 0 and all_girls_list[girl_index]["rules"]["rules_count"] <= 2:
+                if all_girls_list[girl_index]["aura"]["devotion"] <= 2 and all_girls_list[girl_index]["aura"]["fear"] == 0 and all_girls_list[girl_index]["days_without_food"] == 0 and all_girls_list[girl_index]["days_without_sleep"] == 0 and all_girls_list[girl_index]["rules"]["rules_count"] < dic_overnight_rules_count[dic_overnight_rules_count_index]:
                     all_girls_list[girl_index]["experience"]["aura"]["spoil"] += all_girls_list[girl_index]["attributes"]["pride"] + all_girls_list[girl_index]["attributes"]["nature"] + all_girls_list[girl_index]["attributes"]["temperament"]
                 increase_check("aura","spoil")
                 if all_girls_list[girl_index]["aura"]["spoil"] > 0:
@@ -247,6 +284,7 @@ label next_day_label:
                 if all_girls_list[girl_index]["mood"] < 0:
                     all_girls_list[girl_index]["experience"]["aura"]["spoil"] -= all_girls_list[girl_index]["attributes"]["empathy"]
                 reduce_check( "aura","spoil")
+
         slave_nearly_fainted = False
         girl_index = save_girl_index
     show screen home_menu
@@ -295,16 +333,21 @@ label Home:
                     all_girls_list[girl_index]["experience"]["aura"][aura] = -10
                 if all_girls_list[girl_index]["aura"][aura] == 5 and all_girls_list[girl_index]["experience"]["aura"][aura] > 10:
                     all_girls_list[girl_index]["experience"]["aura"][aura] = 10
+            for attributes in ["endurance"]:
+                if all_girls_list[girl_index]["attributes"][attributes] == 0 and all_girls_list[girl_index]["experience"]["attributes"][attributes] < -10:
+                    all_girls_list[girl_index]["experience"]["attributes"][attributes] = -10
+                if all_girls_list[girl_index]["attributes"][attributes] == 5 and all_girls_list[girl_index]["experience"]["attributes"][attributes] > 10:
+                    all_girls_list[girl_index]["experience"]["attributes"][attributes] = 10
             ### fainted code
-            if all_girls_list[girl_index]["energy"] <= -5:
+            if all_girls_list[girl_index]["energy"] <= -5 and all_girls_list[girl_index]["conscience"]:
                 all_girls_list[girl_index]["conscience"] = False
                 msg("Your slave fainted due to extreme exhaustion.")
-            elif all_girls_list[girl_index]["attributes"]["endurance"] == 0:
+            elif all_girls_list[girl_index]["attributes"]["endurance"] == 0 and all_girls_list[girl_index]["conscience"]:
                 all_girls_list[girl_index]["conscience"] = False
                 msg("Your slave fainted due to having no stamina.")
             elif all_girls_list[girl_index]["attributes"]["endurance"] == 1 and all_girls_list[girl_index]["experience"]["attributes"]["endurance"] <= 0:
                 if not is_slave_nearly_fainted:
-                    slave_nearly_fainted = True
+                    is_slave_nearly_fainted = True
                     msg("Be careful, your slave nearly fainted due to a lack of stamina.")
             ### slave dead code
             if all_girls_list[girl_index]["attributes"]["endurance"] == 0 and all_girls_list[girl_index]["attributes"]["physical"] == 5 and max(all_girls_list[girl_index]["experience"]["attributes"]["endurance"] ,all_girls_list[girl_index]["experience"]["attributes"]["physical"]) <= -10:    
@@ -389,8 +432,8 @@ label equipment_check:
             all_girls_list[girl_index]["worn_mood"] = 0
             all_girls_list[girl_index]["style_plus"] = 0
             all_girls_list[girl_index]["exotic_plus"] = 0
-            all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = False
-            all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = False
+            all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = False
+            all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = False
             all_girls_list[girl_index]["wig"] = False
             for keys in all_girls_list[girl_index]["learning_bonus"]:
                 all_girls_list[girl_index]["learning_bonus"][keys] = 0
@@ -415,38 +458,38 @@ label equipment_check:
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Frilly Apron":
                 all_girls_list[girl_index]["learning_bonus"]["cooking"] += 2
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cookingtrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Maid Outfit":
                 all_girls_list[girl_index]["learning_bonus"]["maid"] += 2
                 all_girls_list[girl_index]["style_plus"] += 1
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["maidtrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Nurse Outfit":
                 all_girls_list[girl_index]["learning_bonus"]["nursing"] += 2
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["nursingtrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Athletic Leotard":
                 all_girls_list[girl_index]["learning_bonus"]["athletics"] += 2
                 all_girls_list[girl_index]["daily_bonus"]["endurance"] += 2
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["athleticstrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Chainmail Bikini":
                 all_girls_list[girl_index]["learning_bonus"]["athletics"] += 1
                 all_girls_list[girl_index]["learning_bonus"]["gladiatrix"] += 3
                 all_girls_list[girl_index]["exotic_plus"] += 1
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["gladiatrixtrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Sorceress Robes":
                 all_girls_list[girl_index]["learning_bonus"]["witchcraft"] += 3
                 all_girls_list[girl_index]["learning_bonus"]["alchemy"] += 2
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] += 2               
                 if all_girls_list[girl_index]["attributes"]["pride"] <=2:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["witchcrafttrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Light Sundress":
-                all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["style_plus"] += 1
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Lace Underwear":
                 all_girls_list[girl_index]["learning_bonus"]["sex"] += 2
@@ -458,7 +501,7 @@ label equipment_check:
                 all_girls_list[girl_index]["learning_bonus"]["academy"] += 2
                 all_girls_list[girl_index]["style_plus"] += 1
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["secretarytrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True                     
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True                     
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Gown":
                 all_girls_list[girl_index]["style_plus"] += 2
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Latex Dress":
@@ -468,10 +511,10 @@ label equipment_check:
                 all_girls_list[girl_index]["learning_bonus"]["elocution"] += 3
                 all_girls_list[girl_index]["style_plus"] += 2
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["elocutiontrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Exotic Outfit":
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["athleticstrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True                            
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True                            
                 all_girls_list[girl_index]["learning_bonus"]["dance"] += 3
                 all_girls_list[girl_index]["learning_bonus"]["sex"] += 1
                 all_girls_list[girl_index]["exotic_plus"] += 3
@@ -482,13 +525,13 @@ label equipment_check:
                 if all_girls_list[girl_index]["aura"]["devotion"] > 0 and master_style >= 3:
                     all_girls_list[girl_index]["daily_bonus"]["arousal"] += 2
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Gorgeous Dress":
-                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["worn_mood"] -= 5
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Wedding Dress":
                 all_girls_list[girl_index]["learning_bonus"]["sex"] += all_girls_list[girl_index]["aura"]["devotion"]
                 all_girls_list[girl_index]["style_plus"] += 3
                 if all_girls_list[girl_index]["attributes"]["pride"] >=3 and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] <= 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
                 if min(all_girls_list[girl_index]["aura"]["devotion"],all_girls_list[girl_index]["mood"],master_style) >=3: 
                     all_girls_list[girl_index]["daily_bonus"]["devotion"] += 1
                     all_girls_list[girl_index]["daily_bonus"]["arousal"] += 1
@@ -504,9 +547,9 @@ label equipment_check:
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] != 0:
                     all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] * 3
                     if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] > 0:
-                        all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                        all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
                     elif all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["cowtrait"]["value"] < 0 and max(all_girls_list[girl_index]["skills"]["cow"],all_girls_list[girl_index]["skills"]["pet"]) < 3:
-                        all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                        all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                         all_girls_list[girl_index]["worn_mood"] -= 5
             if all_girls_list[girl_index]["equipment"]["clothes"] == "Petsuit":
                 all_girls_list[girl_index]["daily_bonus"]["pride"] += 1
@@ -539,7 +582,7 @@ label equipment_check:
                         customboxcheck = True
                         all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"] = True
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] <= 0:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] += -1 + all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]
                     all_girls_list[girl_index]["daily_bonus"]["nature"] -= 1
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] > 0:   
@@ -574,7 +617,7 @@ label equipment_check:
                         customboxcheck = True
                         all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"] = True
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] <= 0:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] += -1 + all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]
                     all_girls_list[girl_index]["daily_bonus"]["temperament"] -= 1
             if all_girls_list[girl_index]["equipment"]["hands"] == "Rubber Gloves":
@@ -607,7 +650,7 @@ label equipment_check:
                 all_girls_list[girl_index]["learning_bonus"]["cow"] -= 10
                 all_girls_list[girl_index]["style_plus"] -= 1                
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["hands"] == "Pony Harness":
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
                 all_girls_list[girl_index]["learning_bonus"]["pony"] += 4
@@ -624,7 +667,7 @@ label equipment_check:
                         customboxcheck = True
                         all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["revealed"] = True
                 elif all_girls_list[girl_index]["races_won"] < 4 or all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] += -2
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] != 0:
                     all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]
@@ -643,7 +686,7 @@ label equipment_check:
                         customboxcheck = True
                         all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["revealed"] = True
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"] <= 0:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["hands"] == "Leather Shackles":
                 all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"] * 3
                 all_girls_list[girl_index]["daily_bonus"]["arousal"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["value"]
@@ -679,12 +722,12 @@ label equipment_check:
                         customboxcheck = True
                         all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["deprivation_attitude"]["revealed"] = True         
             if all_girls_list[girl_index]["equipment"]["feet"] == "Soft Slippers":
-                all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] -= 1
             if all_girls_list[girl_index]["equipment"]["feet"] == "Pointes":
                 if all_girls_list[girl_index]["skills"]["dance"] > 2 or all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["dancetrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["learning_bonus"]["dance"] += 2
             if all_girls_list[girl_index]["equipment"]["feet"] == "Sneakers":
                 all_girls_list[girl_index]["learning_bonus"]["athletics"] += 3
@@ -693,17 +736,17 @@ label equipment_check:
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] -= 1
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["athleticstrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["feet"] == "Heels":
                 if all_girls_list[girl_index]["skills"]["dance"] < 3:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] -= 3
                 all_girls_list[girl_index]["style_plus"] += 2
             if all_girls_list[girl_index]["equipment"]["feet"] == "High Boots":
                 all_girls_list[girl_index]["learning_bonus"]["sex"] += 2
                 all_girls_list[girl_index]["style_plus"] += 2 
                 if all_girls_list[girl_index]["skills"]["dance"] < 3:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] -= 3
                 if all_girls_list[girl_index]["attributes"]["temperament"] > 2:
                     all_girls_list[girl_index]["daily_bonus"]["temperament"] += 1
@@ -719,7 +762,7 @@ label equipment_check:
                         dictionary_name = dic_traits_skills_descriptions
                         customboxcheck = True
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0 and all_girls_list[girl_index]["races_won"] < 4:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] += -15
             if all_girls_list[girl_index]["equipment"]["ring1"] == "Elegant Ring":
                 all_girls_list[girl_index]["style_plus"] += 1
@@ -735,7 +778,7 @@ label equipment_check:
                 all_girls_list[girl_index]["style_plus"] += 2
                 all_girls_list[girl_index]["exotic_plus"] += 2
             if all_girls_list[girl_index]["equipment"]["earrings"]["type"] == "Thick Steel Ring":
-                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] += 2
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
@@ -759,13 +802,13 @@ label equipment_check:
                     if all_girls_list[girl_index]["conscience"] and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] > 0 and all_girls_list[girl_index]["obedience"] < 0 and not all_girls_list[girl_index]["beaten_ever"] and not all_girls_list[girl_index]["domini_dictum_ever"]:
                         slave_rebellion_fight = True
                 if all_girls_list[girl_index]["arousal"] == 0 and all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["value"] < 0:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] += 3 * all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["value"]
                 elif all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] += 3 * all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["value"]
             if all_girls_list[girl_index]["equipment"]["nipples"]["type"] == "Thick Steel Ring":
-                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] += 2
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
@@ -777,7 +820,7 @@ label equipment_check:
                 all_girls_list[girl_index]["style_plus"] += 1
                 all_girls_list[girl_index]["exotic_plus"] += 1
             if all_girls_list[girl_index]["equipment"]["tongue"]["type"] == "Thick Steel Ring":
-                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] += 2
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
@@ -789,7 +832,7 @@ label equipment_check:
                 all_girls_list[girl_index]["style_plus"] += 1
                 all_girls_list[girl_index]["exotic_plus"] += 1
             if all_girls_list[girl_index]["equipment"]["navel"]["type"] == "Thick Steel Ring":
-                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] += 2
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
@@ -804,7 +847,7 @@ label equipment_check:
                 all_girls_list[girl_index]["style_plus"] += 1
                 all_girls_list[girl_index]["exotic_plus"] += 1
             if all_girls_list[girl_index]["equipment"]["clitoris"]["type"] == "Thick Steel Ring":
-                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] += 2
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
@@ -836,7 +879,7 @@ label equipment_check:
                         customboxcheck = True
                         all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["revealed"] = True
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["masochism"]["value"] != 2:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["headgear"] == "Ornamented Diadem":
                 all_girls_list[girl_index]["style_plus"] += 2
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["passion_luxury"]["value"] != 0:
@@ -854,13 +897,13 @@ label equipment_check:
                 all_girls_list[girl_index]["learning_bonus"]["secretary"] += 1
                 all_girls_list[girl_index]["style_plus"] += 2 
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["secretarytrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["headgear"] == "Cat Ears":
                 all_girls_list[girl_index]["style_plus"] -= 1
                 all_girls_list[girl_index]["exotic_plus"] += 1
                 all_girls_list[girl_index]["learning_bonus"]["pet"] += 1
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] > 0:
-                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["good_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["headgear"] == "Precious Tiara":
                 all_girls_list[girl_index]["style_plus"] += 3
                 all_girls_list[girl_index]["exotic_plus"] += 1
@@ -894,7 +937,7 @@ label equipment_check:
                         customboxcheck = True
                         all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["revealed"] = True
                 elif all_girls_list[girl_index]["races_won"] < 4 or all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0:
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] += -2
             if all_girls_list[girl_index]["equipment"]["neck"] == "Chain with Pendant":
                 all_girls_list[girl_index]["style_plus"] += 1
@@ -916,7 +959,7 @@ label equipment_check:
                 if all_girls_list[girl_index]["conscience"] and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] > 0 and all_girls_list[girl_index]["obedience"] < 0 and not all_girls_list[girl_index]["beaten_ever"] and not all_girls_list[girl_index]["domini_dictum_ever"]:
                     slave_rebellion_fight = True
             if all_girls_list[girl_index]["equipment"]["neck"] == "Steel Collar":
-                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 2
                 all_girls_list[girl_index]["style_plus"] -= 2
                 if all_girls_list[girl_index]["attributes"]["pride"] < 2:
@@ -935,10 +978,10 @@ label equipment_check:
                     all_girls_list[girl_index]["worn_mood"] += 5
                 else:
                     all_girls_list[girl_index]["worn_mood"] -= 1
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
             if all_girls_list[girl_index]["equipment"]["neck"] == "Shock Collar":
                 all_girls_list[girl_index]["worn_mood"] -= 1
-                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                 all_girls_list[girl_index]["daily_bonus"]["taming"] += 1
                 all_girls_list[girl_index]["style_plus"] += 2
                 all_girls_list[girl_index]["exotic_plus"] += 1
@@ -965,7 +1008,7 @@ label equipment_check:
                     if all_girls_list[girl_index]["conscience"] and dic_girl_psy_status[all_girls_list[girl_index]["psy_status"]] > 0 and all_girls_list[girl_index]["obedience"] < 0 and not all_girls_list[girl_index]["beaten_ever"] and not all_girls_list[girl_index]["domini_dictum_ever"]:
                         slave_rebellion_fight = True
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] <= 0 and all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["pettrait"]["value"] <= 0 and all_girls_list[girl_index]["races_won"] <= 7 and all_girls_list[girl_index]["psy_status"] != "horny":
-                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                    all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     all_girls_list[girl_index]["worn_mood"] += -25 + all_girls_list[girl_index]["attributes"]["pride"] * 5
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["value"] != 0:
                     if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_skills(1/8)"]["ponytrait"]["revealed"]:
@@ -995,7 +1038,7 @@ label equipment_check:
                 if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"] != 0:
                     if all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"] < 0 and all_girls_list[girl_index]["psy_status"] != "horny":
                         all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"]
-                        all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"] = True
+                        all_girls_list[girl_index]["mood_state"]["bad_mood"]["clothes"]["active"] = True
                     elif all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"] > 0:
                         all_girls_list[girl_index]["worn_mood"] += all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["value"]
                     if not all_girls_list[girl_index]["traits"]["traits_hidden"]["traits_miscellaneous(1/12)"]["exhibitionism"]["revealed"]:
@@ -2123,10 +2166,10 @@ screen slave_rules_menu():
     vbox:
         pos(0.807,0.05)
         anchor (1.0,0.0)
-        if number_of_rules >= dic_overnight_rules_count[dic_overnight_rules_count_index]:
-            text "{color=#FFD700}RULES: ([str(number_of_rules)]){/color}" size 16 font "fonts/Segoe Print.ttf"
+        if all_girls_list[girl_index]["rules"]["rules_count"] >= dic_overnight_rules_count[dic_overnight_rules_count_index]:
+            text "{color=#FFD700}RULES: ([str(all_girls_list[girl_index]['rules']['rules_count'])]){/color}" size 16 font "fonts/Segoe Print.ttf"
         else:
-            text "{color=#FFD700}RULES: ({/color}{color=#CD0000}[str(number_of_rules)]{/color}{color=#FFD700}){/color}" size 16 font "fonts/Segoe Print.ttf"
+            text "{color=#FFD700}RULES: ({/color}{color=#CD0000}[str(all_girls_list[girl_index]['rules']['rules_count'])]{/color}{color=#FFD700}){/color}" size 16 font "fonts/Segoe Print.ttf"
     vbox:
         pos(0.802,0.095)
         anchor (1.0,0.0)
@@ -2135,143 +2178,143 @@ screen slave_rules_menu():
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False),SetVariable("text_slave_conditions_index","cook_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False),SetVariable("text_slave_conditions_index","cook_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True),SetVariable("text_slave_conditions_index","cook_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True),SetVariable("text_slave_conditions_index","cook_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
 
         if all_girls_list[girl_index]["rules"]["act_as_maid"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False),SetVariable("text_slave_conditions_index","maid_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False),SetVariable("text_slave_conditions_index","maid_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True),SetVariable("text_slave_conditions_index","maid_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True),SetVariable("text_slave_conditions_index","maid_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["bath_slave"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False),SetVariable("text_slave_conditions_index","bath_slave_abort_rule"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False),SetVariable("text_slave_conditions_index","bath_slave_abort_rule"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True),SetVariable("text_slave_conditions_index","bath_slave_rule"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True),SetVariable("text_slave_conditions_index","bath_slave_rule"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_alarm"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False),SetVariable("text_slave_conditions_index","behave_alarm_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False),SetVariable("text_slave_conditions_index","behave_alarm_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True),SetVariable("text_slave_conditions_index","behave_alarm_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True),SetVariable("text_slave_conditions_index","behave_alarm_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_humility"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False),SetVariable("text_slave_conditions_index","behave_humility_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False),SetVariable("text_slave_conditions_index","behave_humility_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True),SetVariable("text_slave_conditions_index","behave_humility_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True),SetVariable("text_slave_conditions_index","behave_humility_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_pet"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False),SetVariable("text_slave_conditions_index","behave_pet_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False),SetVariable("text_slave_conditions_index","behave_pet_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True),SetVariable("text_slave_conditions_index","behave_pet_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True),SetVariable("text_slave_conditions_index","behave_pet_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_silence"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False),SetVariable("text_slave_conditions_index","behave_silence_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False),SetVariable("text_slave_conditions_index","behave_silence_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True),SetVariable("text_slave_conditions_index","behave_silence_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True),SetVariable("text_slave_conditions_index","behave_silence_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_toilet"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False),SetVariable("text_slave_conditions_index","behave_toilet_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False),SetVariable("text_slave_conditions_index","behave_toilet_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True),SetVariable("text_slave_conditions_index","behave_toilet_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True),SetVariable("text_slave_conditions_index","behave_toilet_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_urinal"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False),SetVariable("text_slave_conditions_index","behave_urinal_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False),SetVariable("text_slave_conditions_index","behave_urinal_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True),SetVariable("text_slave_conditions_index","behave_urinal_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True),SetVariable("text_slave_conditions_index","behave_urinal_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["deny_orgasm"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False),SetVariable("text_slave_conditions_index","deny_orgasm_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False),SetVariable("text_slave_conditions_index","deny_orgasm_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True),SetVariable("text_slave_conditions_index","deny_orgasm_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True),SetVariable("text_slave_conditions_index","deny_orgasm_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["deny_toileting"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False),SetVariable("text_slave_conditions_index","deny_toileting_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False),SetVariable("text_slave_conditions_index","deny_toileting_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True),SetVariable("text_slave_conditions_index","deny_toileting_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True),SetVariable("text_slave_conditions_index","deny_toileting_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["milk_the_fiend"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False),SetVariable("text_slave_conditions_index","slave_tentacle_rule_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False),SetVariable("text_slave_conditions_index","slave_tentacle_rule_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True),SetVariable("text_slave_conditions_index","slave_tentacle_rule"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True),SetVariable("text_slave_conditions_index","slave_tentacle_rule"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["no_masturbation"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False),SetVariable("text_slave_conditions_index","no_masturbation_rules_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False),SetVariable("text_slave_conditions_index","no_masturbation_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", True),SetVariable("text_slave_conditions_index","no_masturbation_rules"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", True),SetVariable("text_slave_conditions_index","no_masturbation_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["use_vaginal_beads"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
                 hover "buttons/sel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule_abort"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             imagebutton:
                 idle "buttons/unsel_button.webp"
                 hover "buttons/unsel_button_hover.webp"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["enforce_rules"]:
             imagebutton:
                 idle "buttons/sel_button.webp"
@@ -2288,116 +2331,116 @@ screen slave_rules_menu():
         if all_girls_list[girl_index]["rules"]["act_as_cook"]:
             textbutton "Act as cook -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False),SetVariable("text_slave_conditions_index","cook_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", False),SetVariable("text_slave_conditions_index","cook_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Act as cook -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True),SetVariable("text_slave_conditions_index","cook_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_cook", True),SetVariable("text_slave_conditions_index","cook_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["act_as_maid"]:
             textbutton "Act as maid -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False),SetVariable("text_slave_conditions_index","maid_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", False),SetVariable("text_slave_conditions_index","maid_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Act as maid -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True),SetVariable("text_slave_conditions_index","maid_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "act_as_maid", True),SetVariable("text_slave_conditions_index","maid_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["bath_slave"]:
             textbutton "Bath slave -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False),SetVariable("text_slave_conditions_index","bath_slave_rule"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", False),SetVariable("text_slave_conditions_index","bath_slave_rule"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Bath slave -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True),SetVariable("text_slave_conditions_index","bath_slave_abort_rule"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "bath_slave", True),SetVariable("text_slave_conditions_index","bath_slave_abort_rule"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_alarm"]:
             textbutton "Behave: alarm -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False),SetVariable("text_slave_conditions_index","behave_alarm_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", False),SetVariable("text_slave_conditions_index","behave_alarm_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Behave: alarm -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True),SetVariable("text_slave_conditions_index","behave_alarm_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_alarm", True),SetVariable("text_slave_conditions_index","behave_alarm_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_humility"]:
             textbutton "Behave: humility -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False),SetVariable("text_slave_conditions_index","behave_humility_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", False),SetVariable("text_slave_conditions_index","behave_humility_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Behave: humility -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True),SetVariable("text_slave_conditions_index","behave_humility_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_humility", True),SetVariable("text_slave_conditions_index","behave_humility_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_pet"]:
             textbutton "Behave: pet -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False),SetVariable("text_slave_conditions_index","behave_pet_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", False),SetVariable("text_slave_conditions_index","behave_pet_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Behave: pet -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True),SetVariable("text_slave_conditions_index","behave_pet_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_pet", True),SetVariable("text_slave_conditions_index","behave_pet_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         
         if all_girls_list[girl_index]["rules"]["behave_silence"]:
             textbutton "Behave: silence -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False),SetVariable("text_slave_conditions_index","behave_silence_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", False),SetVariable("text_slave_conditions_index","behave_silence_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Behave: silence -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True),SetVariable("text_slave_conditions_index","behave_silence_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_silence", True),SetVariable("text_slave_conditions_index","behave_silence_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_toilet"]:
             textbutton "Behave: toilet -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False),SetVariable("text_slave_conditions_index","behave_toilet_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", False),SetVariable("text_slave_conditions_index","behave_toilet_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Behave: toilet -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True),SetVariable("text_slave_conditions_index","behave_toilet_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_toilet", True),SetVariable("text_slave_conditions_index","behave_toilet_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["behave_urinal"]:
             textbutton "Behave: urinal -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False),SetVariable("text_slave_conditions_index","behave_urinal_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", False),SetVariable("text_slave_conditions_index","behave_urinal_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Behave: urinal -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True),SetVariable("text_slave_conditions_index","behave_urinal_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "behave_urinal", True),SetVariable("text_slave_conditions_index","behave_urinal_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["deny_orgasm"]:
             textbutton "Deny orgasm -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False),SetVariable("text_slave_conditions_index","deny_orgasm_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", False),SetVariable("text_slave_conditions_index","deny_orgasm_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Deny orgasm -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True),SetVariable("text_slave_conditions_index","deny_orgasm_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_orgasm", True),SetVariable("text_slave_conditions_index","deny_orgasm_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["deny_toileting"]:
             textbutton "Deny toileting -" xalign 1.0: 
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False),SetVariable("text_slave_conditions_index","deny_toileting_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", False),SetVariable("text_slave_conditions_index","deny_toileting_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Deny toileting -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True),SetVariable("text_slave_conditions_index","deny_toileting_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "deny_toileting", True),SetVariable("text_slave_conditions_index","deny_toileting_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["milk_the_fiend"]:
             textbutton "Milk the fiend -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False),SetVariable("text_slave_conditions_index","slave_tentacle_rule"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", False),SetVariable("text_slave_conditions_index","slave_tentacle_rule"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Milk the fiend -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True),SetVariable("text_slave_conditions_index","slave_tentacle_rule_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "milk_the_fiend", True),SetVariable("text_slave_conditions_index","slave_tentacle_rule_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["no_masturbation"]:
             textbutton "No masturbation -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False),SetVariable("text_slave_conditions_index","no_masturbation_rules"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", False),SetVariable("text_slave_conditions_index","no_masturbation_rules"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "No masturbation -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", True),SetVariable("text_slave_conditions_index","no_masturbation_rules_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "no_masturbation", True),SetVariable("text_slave_conditions_index","no_masturbation_rules_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["use_vaginal_beads"]:
             textbutton "Use vaginal beads -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule"),SetVariable("number_of_rules",number_of_rules-1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", False),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] - 1), Jump("Home")
         else:
             textbutton "Use vaginal beads -" xalign 1.0:
                 style "slave_screen_order_button"
-                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule_abort"),SetVariable("number_of_rules",number_of_rules+1), Jump("Home")
+                action SetDict(all_girls_list[girl_index]["rules"], "use_vaginal_beads", True),SetVariable("text_slave_conditions_index","use_vaginal_beads_rule_abort"),SetDict(all_girls_list[girl_index]["rules"],"rules_count",all_girls_list[girl_index]["rules"]["rules_count"] + 1), Jump("Home")
         if all_girls_list[girl_index]["rules"]["enforce_rules"]:
             textbutton "Enforce rules -" xalign 1.0:
                 style "slave_screen_order_button"
@@ -2779,16 +2822,22 @@ screen home_attributes_menu():
         text "Contented" anchor (0.5,0.5) color "#000000" font "fonts/Segoe Print.ttf" size 12
         text "Pristine" anchor (0.5,0.5) color "#000000" font "fonts/Segoe Print.ttf" size 12
         add "spacer" size(0,60)
-        if girl_index in all_girls_list and "ava_clear" in all_girls_list[girl_index]:
+        if girl_index in all_girls_list and "ava_clear" in all_girls_list[girl_index] and all_girls_list[girl_index]["conscience"]:
             imagebutton anchor (0.5,0.5):
                 idle all_girls_list[girl_index]["ava_clear"] + ".webp"
+                hover all_girls_list[girl_index]["ava_clear"] + "_sepia.webp"
+                action SetVariable("current_menu", 100),Jump("Home")
+                at avatar_scale
+        elif girl_index in all_girls_list and "ava_clear" in all_girls_list[girl_index] and all_girls_list[girl_index]["conscience"]:
+            imagebutton anchor (0.5,0.5):
+                idle all_girls_list[girl_index]["ava_clear"] + "_sepia.webp"
                 hover all_girls_list[girl_index]["ava_clear"] + "_sepia.webp"
                 action SetVariable("current_menu", 100),Jump("Home")
                 at avatar_scale
         else:
             add "blank_ava.webp" size(140,140) anchor (0.5,0.5)
         add "spacer" size(0,-38)
-        if is_main_slave:
+        if girl_index in all_girls_list and "ava_clear" in all_girls_list[girl_index]:
             text "Calm" anchor (0.5,0.5) color "#000000" font "fonts/Segoe Print.ttf" size 12
             text "No achievements" anchor (0.5,0.5) color "#000000" font "fonts/Segoe Print.ttf" size 12
             text "Pristine" anchor (0.5,0.5) color "#000000" font "fonts/Segoe Print.ttf" size 12
@@ -2813,7 +2862,7 @@ screen home_attributes_menu():
             add energy_image1 size(7,7) anchor (0.5,0.5)
         if has_half:
             add energy_image2 size(7,7) anchor (0.5,0.5)
-    if not is_main_slave:
+    if not (girl_index in all_girls_list and "ava_clear" in all_girls_list[girl_index]):
         text "No slave" anchor (0.5,0.5) color "#000000" font "fonts/Segoe Print.ttf" size 12 pos(0.90,0.575)
     hbox:
         pos(0.91,0.575)
@@ -2821,8 +2870,8 @@ screen home_attributes_menu():
         if girl_index in all_girls_list and "energy" in all_girls_list[girl_index]:
             text "Energy" anchor (0.5,0.5) color "#000000" font "fonts/Segoe Print.ttf" size 12
             add "spacer" size(-10,0)
-            $ full_energy = all_girls_list[girl_index]["energy"] // 2
-            $ has_half = all_girls_list[girl_index]["energy"] % 2 == 1
+            $ full_energy = int(all_girls_list[girl_index]["energy"] // 2)
+            $ has_half = int(all_girls_list[girl_index]["energy"] % 2 == 1)
             for i in range(full_energy):
                 add energy_image1 size(7,7) anchor (0.5,0.5)
             if has_half:
@@ -2846,5 +2895,5 @@ screen msg(msg_text):
     imagebutton:
         idle "buttons/ok-icon.webp" pos (0.5, 0.7)
         hover "buttons/ok-icon_hover.webp"
-        action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump(infobox_jump)
-    key "K_SPACE" action Hide("tutorial_attribute"),SetVariable("customboxcheck", False),Jump(infobox_jump)
+        action Hide("msg")
+    key "K_SPACE" action Hide("msg")
