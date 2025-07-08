@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 221: invalid syntax
-                    if all_girls_list[girl_index]["mood"] < -1 and all_girls_list[girl_index]["attributes"]["temperament"] > all_girls_list[girl_index]["obedience"]
+File "game/home.rpy", line 249: invalid syntax
+                    if all_girls_list[girl_index]["mood"] =< -5 and all_girls_list[girl_index]["aura"]["despair"] > max(all_girls_list[girl_index]["attributes"]["nature"],all_girls_list[girl_index]["attributes"]["temperament"]):
+                                                           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jun 21 15:54:05 2025
+Tue Jul  8 20:17:19 2025

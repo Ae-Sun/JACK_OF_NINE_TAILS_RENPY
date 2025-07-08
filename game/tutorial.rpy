@@ -537,6 +537,7 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("caught_masturbating",0)
         all_girls_list[girl_index].setdefault("daring",0)
         all_girls_list[girl_index].setdefault("energised",0)
+        all_girls_list[girl_index].setdefault("suicide_rate",0)
         all_girls_list[girl_index]["mood_state"].setdefault("good_mood",{})
         all_girls_list[girl_index]["mood_state"].setdefault("bad_mood",{})
         for key in dic_slave_mood["good_mood"]:
@@ -573,7 +574,6 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("anal_tightness",0)
         all_girls_list[girl_index].setdefault("brand",2)
         all_girls_list[girl_index].setdefault("equipment",{})
-        all_girls_list[girl_index].setdefault("broken",False)
         all_girls_list[girl_index].setdefault("conscience",True)
         all_girls_list[girl_index].setdefault("days_without_food",0)
         all_girls_list[girl_index].setdefault("days_without_sleep",0)

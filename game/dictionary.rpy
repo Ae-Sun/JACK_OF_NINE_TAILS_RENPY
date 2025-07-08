@@ -1528,5 +1528,9 @@ define tips = {
     14: "Magical brand give addicional habit points per day",
     15: "No setting enought rules may increase spoiling",
     16: "No happy slave with low Obedience may try to escape, master charisma and assistant intelligence, devotion make it less likely",
-    17: "Only slave with despair will try to kill their masters"
+    17: "Only slave with despair will try to kill their masters",
+    18: "slave with 8 or more points of obedience or more than 1 of devotion will never try to escape or kill the master at the end of day",
+    19: "A broken girl will not increase aura stats and temperament and pride until nature is increased"
+
+
 }

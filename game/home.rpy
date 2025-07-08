@@ -23,6 +23,7 @@ default current_menu = 0
 default mood_value = 0
 default day_tracker = 1
 default is_auspex_active = False
+default slave_suicide = False
 default boobs1 =" marshmallowy tits"
 default boobs2 =" motherly breasts"
 default boobs3 =" empty breast-sacks"
@@ -48,6 +49,7 @@ default debt_tracker = 0
 default debt = 0
 default gameover = False
 default pony_count = 0
+default slave_escape_type = 0
 default inventory = {
     "remove": "-",
     "Without armour": "-",
@@ -218,7 +220,7 @@ label next_day_label:
                         all_girls_list[girl_index]["experience"]["attributes"]["endurance"] = -10
                 if all_girls_list[girl_index]["sleep"] != 0 and all_girls_list[girl_index]["psy_status"] != "broken":
                     if all_girls_list[girl_index]["attributes"]["endurance"] > 0:
-                        if all_girls_list[girl_index]["mood"] < -1 and all_girls_list[girl_index]["attributes"]["temperament"] > all_girls_list[girl_index]["obedience"]
+                        if all_girls_list[girl_index]["mood"] < -1 and all_girls_list[girl_index]["attributes"]["temperament"] > all_girls_list[girl_index]["obedience"]:
                             n = 7 + personality_value_2 - all_girls_list[girl_index]["aura"]["despair"]
                             for girl_index in all_girls_list:
                                 if all_girls_list[girl_index]["conscience"]:
@@ -229,9 +231,32 @@ label next_day_label:
                             if roll == 1:
                                 if all_girls_list[girl_index]["aura"]["despair"] > 0: # and (slave['gladiatrix'] + slave['angst']) > max(0, master_supermacy - master_style): WIP
                                     slave_rebellion_fight = True
+                                elif dic_girl_equipment_neck_mod[all_girls_list[girl_index]["equipment"]["neck"]]["escape"]:
+                                    if all_girls_list[girl_index]["brand"] == 5:
+                                        slave_escape_type = 2
+                                    else: 
+                                        slave_escape_type = 1
+                                elif all_girls_list[girl_index]["brand"] in [1,4]:
+                                    slave_escape_type = 3
+                                elif all_girls_list[girl_index]["brand"] == 3:
+                                    slave_escape_type = 4
+                        if all_girls_list[girl_index]["aura"]["despair"] > 2 and all_girls_list[girl_index]["attributes"]["endurance"] > 3 and all_girls_list[girl_index]["skills"]["gladiatrix"] > 0 and all_girls_list[girl_index]["aura"]["devotion"] == 0 and all_girls_list[girl_index]["mood"] < 0: #and (master_supermacy - master_style) < 2 and exam_in_progress = 0:
+                            slave_rebellion_fight = True
+                            slave_escape_type = 0
+                        if all_girls_list[girl_index]["obedience"] > 7 or all_girls_list[girl_index]["aura"]["devotion"] > 1:
+                            slave_rebellion_fight = False
+                            slave_escape_type = 0
+                        if all_girls_list[girl_index]["mood"] <= -5 and all_girls_list[girl_index]["aura"]["despair"] > max(all_girls_list[girl_index]["attributes"]["nature"], all_girls_list[girl_index]["attributes"]["temperament"]):
+                            roll = random.randint(1, 100)
+                            roll += all_girls_list[girl_index]["suicide_rate"]
+                            if roll >= 90:
+                                slave_suicide = True
+                            else:
+                                all_girls_list[girl_index]["suicide_rate"] += 15
+                        else:
+                            all_girls_list[girl_index]["suicide_rate"] = min(all_girls_list[girl_index]["suicide_rate"] - 3, 0)
 
-
-                
+                                    
                 
                 
                 
@@ -241,7 +266,7 @@ label next_day_label:
                         increase_check("attributes","nature")
                 if all_girls_list[girl_index]["brand"] != 0:
                     all_girls_list[girl_index]["experience"]["aura"]["habit"] += 1
-                if all_girls_list[girl_index]["brand"] == 1:
+                if all_girls_list[girl_index]["brand"] == 5:
                     all_girls_list[girl_index]["experience"]["aura"]["habit"] += 1
                 increase_check("aura","habit")
             ### energy and sleep condition -half done
@@ -355,6 +380,19 @@ label Home:
                 del all_girls_list[girl_index]
                 sparks_37 += temporal_value
                 msg("Your slave is dead, and you sale the meat to the butcher for [temporal_value]")
+            if all_girls_list[girl_index]["attributes"]["nature"] + all_girls_list[girl_index]["attributes"]["temperament"] + 5 - all_girls_list[girl_index]["attributes"]["pride"] < 3:
+                all_girls_list[girl_index]["psy_status"] = "broken"
+                all_girls_list[girl_index]["experience"]["attributes"]["pride"] = 0
+                all_girls_list[girl_index]["experience"]["attributes"]["temperament"] = 0
+                all_girls_list[girl_index]["experience"]["aura"]["fear"] = 0
+                all_girls_list[girl_index]["experience"]["aura"]["despair"] = 0
+                all_girls_list[girl_index]["experience"]["aura"]["devotion"] = 0
+                all_girls_list[girl_index]["experience"]["aura"]["spoil"] = 0
+                all_girls_list[girl_index]["experience"]["aura"]["habit"] = 0
+                all_girls_list[girl_index]["experience"]["aura"]["taming"] = 0
+                all_girls_list[girl_index]["experience"]["aura"]["awareness"] = 0
+                all_girls_list[girl_index]["arousal"] = 0
+
 
 
 

@@ -2444,7 +2444,7 @@ default occupation_description = {
     "major": "Teen drama gave way to wild nights and street races. I was a party queen, wrecking luxury cars for thrills. It was a hell of a ride.",
     "artist": "Art consumed me from childhood. I painted passionately, showed my work, but always felt my style wasn’t complete. I dreamed of starting an artistic revolution.",
     "mind_contol": "Ordinary crimes are easy to spot — but thoughts? They’re the real danger. I joined the thought-police to protect our society from traitors within.",
-    "time_plice": "Time travel exists, but it’s forbidden. Criminals exploit it to change history. I joined the time-police to hunt them down before they succeeded.",
+    "time_plice": "Time travel exists, but it’s forbidden. Crsiminals exploit it to change history. I joined the time-police to hunt them down before they succeeded.",
     "jailer": "Prisons aren't efficient, but our enemies are many. I worked in a high-security facility, watching over the condemned, awaiting their final sentence.",
     "anter": "At legal age, I proudly joined a weapons factory. Fourteen-hour days, personal beds, and Leaders who care. A life of purpose and production.",
     "academy": "I dreamed of the stars and joined Starfleet Academy. I studied everything — from hyperspace physics to zero-G tactics. I was ready for the cosmos.",
@@ -2452,4 +2452,54 @@ default occupation_description = {
     "contraband": "I got lucky and scored a fast little ship. Smuggling through deep space was risky but profitable. I stayed ahead of the law… barely.",
     "astrofarmer": "I ran a space farm. Just a handful of people and machines keeping everything alive. Quiet, isolated, with the same faces every day. Lonely, but steady.",
     "installer": "With few options, I joined a space rigging crew. Heavy exosuits, zero-G welding — rough work, but it suited me. It felt real."
+}
+define dic_girl_equipment_neck_mod = {
+    "Chain with Pendant": {
+        "desc": "A chain from precious metal with a shaped pendant perfectly accentuates the style and elegance of your slave.",
+        "icon": "scene/item/item_plain_pendant",
+        "price": 5,
+        "escape": True,
+    },
+    "Gemstone Necklace": {
+        "desc": "Figured necklace, studded with beautiful gems.",
+        "icon": "scene/item/item_incrusted_necklace",
+        "price": 10,
+        "escape": True,
+    },
+    "Collar and Leash": {
+        "desc": "Provided with a leash, it is immediately obvious that this is not made for humans, but for a pet. Helps set up a slave in the right mood, but it's easy to remove. This collar is not meant to remind your slave of her fate, as it is obviously a pet collar, not a slave collar.",
+        "icon": "scene/item/item_dog_collar",
+        "price": 5,
+        "escape": True,
+    },
+    "Leather Collar": {
+        "desc": "Wide leather collar with studs and rings for attaching a leash and shackles. Wearing one of these, your slave will never forget about her fate. Not to mention the fact that it's just very practical for many games. It is equipped with your name token to get her back in case of loss.",
+        "icon": "scene/item/item_leather_collar",
+        "price": 3,
+        "escape": False,
+    },
+    "Steel Collar": {
+        "desc": "Durable steel collar - heavy reminder of the fate of the slave from which it is impossible to escape. Wearing a steel collar is not a pleasant experience - it rubs the neck and grazes the skin. Not to mention the impact on the pride and conceit. It is engraved with your name and address to get her back in case of loss.",
+        "icon": "scene/item/item_steel_collar",
+        "price": 10,
+        "escape": False,
+    },
+    "Spiked Collar": {
+        "desc": "Brutal form of a collar decorated with long and sharp steel spikes. It not only reminds the slave of her status, but also makes her feel more aggressive. Good accessory for a gladiatrix, and indeed for any temperamental bitch. It is equipped with your name token to get her back in case of loss.",
+        "icon": "scene/item/item_spiked_collar",
+        "price": 10,
+        "escape": False,
+    },
+    "Shock Collar": {
+        "desc": "A technogenic shock collar. Serpis developed these to discipline cloned soldiers and reached an agreement with the Guild of Trainers for non-military use. It not only reminds a slave of her status but continuously monitors mental patterns during speech and applies an effect similar to Cruciato when it senses an attitude lacking in humility. It is equipped with your name token in case of loss.",
+        "icon": "scene/item/item_shock_collar",
+        "price": 25,
+        "escape": False,
+    },
+    "Ornamented Collar": {
+        "desc": "A luxurious wide and golden collar. It is adorned with exotic jewels and equipped with your name token to get her back in case of loss. Multiple rings allow for attaching leash and shackles. This stylish accessory will make sure that the slave will not forget that you are her master and she has to obey.",
+        "icon": "scene/item/item_golden_collar",
+        "price": 20,
+        "escape": False,
+    },
 }
