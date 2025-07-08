@@ -515,7 +515,17 @@ label choose_inicial_girl:
         })
         all_girls_list[girl_index]["aura"].setdefault("obedience_bonus",0)
         all_girls_list[girl_index].setdefault("experience", {})
-        all_girls_list[girl_index].setdefault("psy_status","default")
+        roll = random.randint(1,4)
+        a = ""
+        if roll == 1:
+            a = "reluctant"
+        if roll == 2:
+            a = "soft"
+        if roll == 3:
+            a = "optimistic"
+        if roll == 4:
+            a = "depresive"
+        all_girls_list[girl_index].setdefault("psy_status",a)
         all_girls_list[girl_index].setdefault("name", "WIP")
         all_girls_list[girl_index].setdefault("style_plus",0)
         all_girls_list[girl_index].setdefault("exotic_plus",0)

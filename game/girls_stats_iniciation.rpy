@@ -2038,7 +2038,6 @@ define dic_girl_psy_status = {
     "resistant": 3,
     "servile": 0,
     "soft": 0,
-    "default": 0,
 }
 define inventory_type = {
     "armour": [

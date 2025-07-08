@@ -380,6 +380,7 @@ label Home:
                 del all_girls_list[girl_index]
                 sparks_37 += temporal_value
                 msg("Your slave is dead, and you sale the meat to the butcher for [temporal_value]")
+            ### check slave broken
             if all_girls_list[girl_index]["attributes"]["nature"] + all_girls_list[girl_index]["attributes"]["temperament"] + 5 - all_girls_list[girl_index]["attributes"]["pride"] < 3:
                 all_girls_list[girl_index]["psy_status"] = "broken"
                 all_girls_list[girl_index]["experience"]["attributes"]["pride"] = 0
@@ -392,6 +393,17 @@ label Home:
                 all_girls_list[girl_index]["experience"]["aura"]["taming"] = 0
                 all_girls_list[girl_index]["experience"]["aura"]["awareness"] = 0
                 all_girls_list[girl_index]["arousal"] = 0
+            ### define maxmotivation
+            maxmotivation = max(all_girls_list[girl_index]["aura"]["fear"],all_girls_list[girl_index]["aura"]["devotion"],all_girls_list[girl_index]["aura"]["habit"],all_girls_list[girl_index]["aura"]["awareness"],all_girls_list[girl_index]["aura"]["taming"],all_girls_list[girl_index]["arousal"])
+            if all_girls_list[girl_index]["psy_status"] != "broken":
+                if all_girls_list[girl_index]["psy_status"] == "lachrymose" and all_girls_list[girl_index]["aura"]["devotion"] > 0 and all_girls_list[girl_index]["mood"] >= 0:
+                    all_girls_list[girl_index]["psy_status"] = "soft"
+                if all_girls_list[girl_index]["aura"]["devotion"] < 2:
+                    if all_girls_list[girl_index]["attributes"]["temperament"] >= min(4, maxmotivation):
+                        all_girls_list[girl_index]["psy_status"] = "hateful"
+
+
+            
 
 
 
