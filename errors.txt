@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 249: invalid syntax
-                    if all_girls_list[girl_index]["mood"] =< -5 and all_girls_list[girl_index]["aura"]["despair"] > max(all_girls_list[girl_index]["attributes"]["nature"],all_girls_list[girl_index]["attributes"]["temperament"]):
-                                                           ^
+File "game/dictionary.rpy", line 1559: invalid syntax
+        21: "Your aura shine brigter agaisnt slaves that got ever beated or ever dominius dictated "\
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jul  8 20:17:19 2025
+Wed Jul  9 03:56:33 2025

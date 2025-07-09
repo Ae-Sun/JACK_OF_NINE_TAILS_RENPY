@@ -407,7 +407,7 @@ default petting_experience_value_21 = 0
 default oral_sex_experience_value_22 = 0
 default penetration_experience_value_23 = 0
 default fetishism_experience_value_24 = 0
-default master_supremacy = 0
+default master_supermacy = 0
 ############################################ textvalue track - herculean
 ############################################ value track - 5
 ############################################ number value track 999/999

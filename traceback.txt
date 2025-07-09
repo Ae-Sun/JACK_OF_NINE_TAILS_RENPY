@@ -1,70 +1,78 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/home.rpy", line 366, in script
-    call screen home_menu()
+  File "game/home.rpy", line 520, in script
+    call screen slave_aura_menu()
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/home.rpy", line 2787, in execute
-    screen home_attributes_menu():
-  File "game/home.rpy", line 2787, in execute
-    screen home_attributes_menu():
-  File "game/home.rpy", line 2788, in execute
+  File "game/home.rpy", line 1984, in execute
+    screen slave_aura_menu():
+  File "game/home.rpy", line 1984, in execute
+    screen slave_aura_menu():
+  File "game/home.rpy", line 1994, in execute
+    if is_auspex_active:
+  File "game/home.rpy", line 1995, in execute
     vbox:
-  File "game/home.rpy", line 2790, in execute
-    imagebutton anchor (0.5,0.0):
-Exception: Imagebutton does not have a idle image.
+  File "game/home.rpy", line 2048, in execute
+    if aura_is_hover and "supermacy" == aura_check_hover:
+  File "game/home.rpy", line 2049, in execute
+    python:
+  File "game/home.rpy", line 2058, in <module>
+    supermacy_text = aura_descriptions_no_color["supermacy"][1]
+KeyError: 'supermacy'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/home.rpy", line 366, in script
-    call screen home_menu()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
+  File "game/home.rpy", line 520, in script
+    call screen slave_aura_menu()
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
     self.call("execute")
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
     return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
     return method(parsed, *args, **kwargs)
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 345, in call_screen
     rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
     root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
     d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
     d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
     d.visit_all(callback, seen)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
     callback(self)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
     root_widget.visit_all(lambda d : d.per_interact())
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
     self.update()
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+  File "C:\Users\User\Downloads\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/home.rpy", line 2787, in execute
-    screen home_attributes_menu():
-  File "game/home.rpy", line 2787, in execute
-    screen home_attributes_menu():
-  File "game/home.rpy", line 2788, in execute
+  File "game/home.rpy", line 1984, in execute
+    screen slave_aura_menu():
+  File "game/home.rpy", line 1984, in execute
+    screen slave_aura_menu():
+  File "game/home.rpy", line 1994, in execute
+    if is_auspex_active:
+  File "game/home.rpy", line 1995, in execute
     vbox:
-  File "game/home.rpy", line 2790, in execute
-    imagebutton anchor (0.5,0.0):
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 975, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "D:\RE\Descargas\renpy-8.3.7-sdk\renpy\ui.py", line 971, in choice
-    raise Exception("Imagebutton does not have a %s image." % (name,))
-Exception: Imagebutton does not have a idle image.
+  File "game/home.rpy", line 2048, in execute
+    if aura_is_hover and "supermacy" == aura_check_hover:
+  File "game/home.rpy", line 2049, in execute
+    python:
+  File "game/home.rpy", line 2058, in <module>
+    supermacy_text = aura_descriptions_no_color["supermacy"][1]
+KeyError: 'supermacy'
 
-Windows-10-10.0.19041 AMD64
+Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Sat Jun 21 03:26:28 2025
+Wed Jul  9 03:31:35 2025

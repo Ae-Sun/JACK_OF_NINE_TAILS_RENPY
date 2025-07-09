@@ -38,3 +38,8 @@
 - reworked daily mood drop and rise ( the original is a joke lowering magnitude of positive and negative moodlet by 1% per day. Now moodlet is now more complex, extra info (permanent: true or false, accustomated: true or false, active: true or false))
 - day end suicide now take in consideration previous intents, making more likely to happen if don't success
 - broken girl now will not reset entire aura stats, temp and pride, just don't gain any exp.
+- Now dominium dictated ever also add + 1 to master supermacy
+- Now you can decide eat slave food (because is cheaper, greatly reduce mood, increase slave pride, lower all aura stats, fully devoted slave are inmune) - WIP
+- Food delivery. Why not? (No longer need to go the pub every single day, cost extra 5 sparks per decade, free if you live in bull) - WIP some day
+- clothes delivery. Why not again (cost extra 2 sparks per item, can be accesible on slave equipment screen ) - WIP
+- 

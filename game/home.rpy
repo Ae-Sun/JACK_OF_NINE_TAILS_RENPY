@@ -50,6 +50,11 @@ default debt = 0
 default gameover = False
 default pony_count = 0
 default slave_escape_type = 0
+default home_estate ={
+    "kitchen": 0,
+    "barn": 0,
+    "laboratory": 0,
+}
 default inventory = {
     "remove": "-",
     "Without armour": "-",
@@ -154,8 +159,10 @@ default inventory = {
     "nipple_chain": 0,
     "anal_plug": 0,
     "anal_tail": 0,
-    "":0 # this is necesary -rec3ks
+    "":0 # this is necessary -rec3ks
 }
+default magna_magnifika = 0
+default item_supermacy_bonus = 0
 label iniciation_label:
     $ mc_image2 = mc_image.replace(".webp", "_hover.webp")
     $ energy_value = 10
@@ -255,6 +262,9 @@ label next_day_label:
                                 all_girls_list[girl_index]["suicide_rate"] += 15
                         else:
                             all_girls_list[girl_index]["suicide_rate"] = min(all_girls_list[girl_index]["suicide_rate"] - 3, 0)
+                #if not all_girls_list[girl_index]["assistant"]:
+                    # WIP Cooking rule
+                    #if home_estate["kitchen"] != 0: 
 
                                     
                 
@@ -321,6 +331,12 @@ label Home:
     show screen sparks_menu()
     python:
         infobox_jump = "Home"
+        master_supermacy = personality_value_2 + allure_value_3 + dominance_value_5 + strength_value_1 + magna_magnifika
+        all_girls_list[girl_index]["supermacy"] = all_girls_list[girl_index]["attributes"]["temperament"] + all_girls_list[girl_index]["attributes"]["nature"] + 5 - all_girls_list[girl_index]["attributes"]["pride"] + all_girls_list[girl_index]["attributes"]["endurance"] + all_girls_list[girl_index]["attributes"]["intelligence"] - 3
+        if all_girls_list[girl_index]["beaten_ever"]:
+            all_girls_list[girl_index]["supermacy"] -= 1
+        if all_girls_list[girl_index]["domini_dictum_ever"]:
+            all_girls_list[girl_index]["supermacy"] -= 1
         if dic_custom_start_difficulty_selection_index_index == 0:
             slave_obedience_bonus = 4
             slave_difficulty = 2
@@ -415,7 +431,7 @@ label Home:
                         all_girls_list[girl_index]["psy_status"] = "soft"
                 if all_girls_list[girl_index]["mood"] < 2 and all_girls_list[girl_index]["aura"]["despair"] > 1 or all_girls_list[girl_index]["mood"] <= -5:
                     all_girls_list[girl_index]["psy_status"] = "depresive"
-                    if all_girls_list[girl_index]["attributes"]["empathy"] > 3 and if all_girls_list[girl_index]["mood"] < 2:
+                    if all_girls_list[girl_index]["attributes"]["empathy"] > 3 and all_girls_list[girl_index]["mood"] < 2:
                         all_girls_list[girl_index]["psy_status"] = "lachrymose"
                 if all_girls_list[girl_index]["obedience"] > slave_psy_hardness/2:
                     if all_girls_list[girl_index]["aura"]["spoil"] > max(1, all_girls_list[girl_index]["aura"]["fear"], (all_girls_list[girl_index]["aura"]["devotion"]+1)/2):
@@ -429,8 +445,9 @@ label Home:
                         all_girls_list[girl_index]["psy_status"] = "servile"
                     if all_girls_list[girl_index]["aura"]["spoil"] >= (all_girls_list[girl_index]["aura"]["devotion"]+1)/2:
                         all_girls_list[girl_index]["psy_status"] = "docile"
-                    if maxmotivation == all_girls_list[girl_index]["aura"]["arousal"] and all_girls_list[girl_index]["aura"]["devotion"] > 0:
+                    if maxmotivation == all_girls_list[girl_index]["arousal"] and all_girls_list[girl_index]["aura"]["devotion"] > 0:
                         all_girls_list[girl_index]["psy_status"] = "horny"
+                
 
 
                 
@@ -2031,18 +2048,42 @@ screen slave_aura_menu():
                         action NullAction()
                         hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "obedience"), Show("description_slave_attributes"),SetVariable("description_slave_attributes_track_value", "obedience")
                         unhovered SetVariable("aura_is_hover", False), Hide("description_slave_attributes")
-            if aura_is_hover and "supremacy" == aura_check_hover:
-                textbutton "The aura of your slave is approximately equal to yours" xmaximum 750:
+            if aura_is_hover and "supermacy" == aura_check_hover:
+                python:
+                    supermacy_text = ""
+                    if master_supermacy - all_girls_list[girl_index]["supermacy"] > 2:
+                        supermacy_text = aura_descriptions_no_color["supermacy"][4]
+                    if master_supermacy > all_girls_list[girl_index]["supermacy"]:
+                        supermacy_text = aura_descriptions_no_color["supermacy"][3]
+                    if master_supermacy == all_girls_list[girl_index]["supermacy"]:
+                        supermacy_text = aura_descriptions_no_color["supermacy"][2]
+                    if master_supermacy < all_girls_list[girl_index]["supermacy"]:
+                        supermacy_text = aura_descriptions_no_color["supermacy"][1]
+                    if master_supermacy - all_girls_list[girl_index]["supermacy"] < -2:
+                        supermacy_text = aura_descriptions_no_color["supermacy"][0]
+                textbutton supermacy_text xmaximum 750:
                     style "aura_description_button"
                     action NullAction()
-                    hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "supremacy")
+                    hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "supermacy")
                     unhovered SetVariable("aura_is_hover", False)      
                 
-            else:    
-                textbutton "{color=#0000D8}The aura of your slave is approximately equal to yours{/color}" xmaximum 750:
+            else:
+                python:
+                    supermacy_text = ""
+                    if master_supermacy - all_girls_list[girl_index]["supermacy"] > 2:
+                        supermacy_text = aura_descriptions["supermacy"][4]
+                    if master_supermacy > all_girls_list[girl_index]["supermacy"]:
+                        supermacy_text = aura_descriptions["supermacy"][3]
+                    if master_supermacy == all_girls_list[girl_index]["supermacy"]:
+                        supermacy_text = aura_descriptions["supermacy"][2]
+                    if master_supermacy < all_girls_list[girl_index]["supermacy"]:
+                        supermacy_text = aura_descriptions["supermacy"][1]
+                    if master_supermacy - all_girls_list[girl_index]["supermacy"] < -2:
+                        supermacy_text = aura_descriptions["supermacy"][0]                
+                textbutton supermacy_text xmaximum 750:
                     style "aura_description_button"
                     action NullAction()
-                    hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "supremacy")
+                    hovered SetVariable("aura_is_hover", True), SetVariable("aura_check_hover", "supermacy")
                     unhovered SetVariable("aura_is_hover", False)
 
             if aura_is_hover and "arousal" == aura_check_hover: 
