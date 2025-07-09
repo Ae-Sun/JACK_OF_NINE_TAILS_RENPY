@@ -1551,11 +1551,12 @@ define tips = {
     13: "Set the correct overnight rules to earn daily Devotion bonuses.",
     14: "Magical brand give addicional habit points per day",
     15: "No setting enought rules may increase spoiling",
-    16: "No happy slave with low Obedience may try to escape, master charisma and assistant intelligence, devotion make it less likely",
+    16: "sad slave with low Obedience may try to escape, master charisma, assistant intelligence and slave devotion make it less likely",
     17: "Only slave with despair will try to kill their masters",
     18: "slave with 8 or more points of obedience or more than 1 of devotion will never try to escape or kill the master at the end of day",
     19: "A broken girl will not increase aura stats and temperament and pride until nature is increased",
     20: "Clothes can give you 2 type of mood, flat mood and moodlet. Both give or reduce mood, but flat mood can stack, moodlet if it's the same not. You can consult the moodlet interacting with your slave",
-    21: "Your aura shine brigter agaisnt slaves that got ever beated or ever dominius dictated "
+    21: "Your aura shine brigter agaisnt slaves that got ever beated or ever dominius dictated ",
+    22: ""
 
 }

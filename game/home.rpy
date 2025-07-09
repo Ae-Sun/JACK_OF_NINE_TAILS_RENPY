@@ -413,22 +413,23 @@ label Home:
             maxmotivation = max(all_girls_list[girl_index]["aura"]["fear"],all_girls_list[girl_index]["aura"]["devotion"],all_girls_list[girl_index]["aura"]["spoil"],all_girls_list[girl_index]["aura"]["habit"],all_girls_list[girl_index]["aura"]["awareness"],all_girls_list[girl_index]["aura"]["taming"],all_girls_list[girl_index]["arousal"])
             slave_psy_hardness = max(all_girls_list[girl_index]["attributes"]["temperament"],all_girls_list[girl_index]["attributes"]["nature"],(5 - all_girls_list[girl_index]["attributes"]["pride"]),all_girls_list[girl_index]["attributes"]["intelligence"])
             if all_girls_list[girl_index]["psy_status"] != "broken":
-                if all_girls_list[girl_index]["psy_status"] == "lachrymose" and all_girls_list[girl_index]["aura"]["devotion"] > 0 and all_girls_list[girl_index]["mood"] >= 0:
+                if all_girls_list[girl_index]["psy_status"] == "lachrymose" and all_girls_list[girl_index]["aura"]["devotion"] > 0:
                     all_girls_list[girl_index]["psy_status"] = "soft"
-                if all_girls_list[girl_index]["aura"]["devotion"] < 2:
-                    if all_girls_list[girl_index]["attributes"]["temperament"] >= min(4, maxmotivation):
-                        all_girls_list[girl_index]["psy_status"] = "hateful"
-                    if all_girls_list[girl_index]["attributes"]["nature"] >= min(4, maxmotivation):
-                        all_girls_list[girl_index]["psy_status"] = "resistant"
-                    if all_girls_list[girl_index]["attributes"]["pride"] >= min(4, maxmotivation):
-                        all_girls_list[girl_index]["psy_status"] = "arrogant"
-                else:
-                    if all_girls_list[girl_index]["attributes"]["temperament"] >= min(4, maxmotivation):
-                        all_girls_list[girl_index]["psy_status"] = "hysteric"
-                    if all_girls_list[girl_index]["attributes"]["nature"] >= min(4, maxmotivation):
-                        all_girls_list[girl_index]["psy_status"] = "docile"
-                    if all_girls_list[girl_index]["attributes"]["pride"] >= min(4, maxmotivation):
-                        all_girls_list[girl_index]["psy_status"] = "soft"
+                if all_girls_list[girl_index]["mood"] <= 0:
+                    if all_girls_list[girl_index]["aura"]["devotion"] < 2:
+                        if all_girls_list[girl_index]["attributes"]["temperament"] >= min(4, maxmotivation):
+                            all_girls_list[girl_index]["psy_status"] = "hateful"
+                        if all_girls_list[girl_index]["attributes"]["nature"] >= min(4, maxmotivation):
+                            all_girls_list[girl_index]["psy_status"] = "resistant"
+                        if all_girls_list[girl_index]["attributes"]["pride"] >= min(4, maxmotivation):
+                            all_girls_list[girl_index]["psy_status"] = "arrogant"
+                    else:
+                        if all_girls_list[girl_index]["attributes"]["temperament"] >= min(4, maxmotivation):
+                            all_girls_list[girl_index]["psy_status"] = "hysteric"
+                        if all_girls_list[girl_index]["attributes"]["nature"] >= min(4, maxmotivation):
+                            all_girls_list[girl_index]["psy_status"] = "docile"
+                        if all_girls_list[girl_index]["attributes"]["pride"] >= min(4, maxmotivation):
+                            all_girls_list[girl_index]["psy_status"] = "soft"
                 if all_girls_list[girl_index]["mood"] < 2 and all_girls_list[girl_index]["aura"]["despair"] > 1 or all_girls_list[girl_index]["mood"] <= -5:
                     all_girls_list[girl_index]["psy_status"] = "depresive"
                     if all_girls_list[girl_index]["attributes"]["empathy"] > 3 and all_girls_list[girl_index]["mood"] < 2:
@@ -1314,6 +1315,7 @@ screen domestic_issues_menu():
         add "ui overhaul/accounting.webp" size(50,50)
         add "ui overhaul/business.webp" size(50,50)
 screen home_menu_auspex():
+    key "K_SPACE" action SetVariable("current_menu", 103),Hide("home_menu_auspex"),SetVariable("is_auspex_active", True),Jump("Home")
     add bgstyle2 xsize 1280 ysize 720
     add home_decoration_mini pos(0.004,0.007111) anchor (0.0, 0.0) xsize 795 ysize 535
     if magic_value_17 > 0:
@@ -1555,7 +1557,7 @@ screen slave_anatomy_menu():
             text "Lactating" size 16 color "#000000" font "fonts/Segoe Print.ttf"
         else:
             text "Not lactating" size 16 color "#000000" font "fonts/Segoe Print.ttf" 
-        if all_girls_list[girl_index]["nipples_pierced"]:
+        if all_girls_list[girl_index]["equipment"]["nipples"]["pierced"]:
             text "Nipples pierced" size 16 color "#000000" font "fonts/Segoe Print.ttf"
         else:
             text "Nipples not pierced" size 16 color "#000000" font "fonts/Segoe Print.ttf"
@@ -1565,7 +1567,7 @@ screen slave_anatomy_menu():
         pos(0.64,0.42)
         text dic_girl_vaginal_tightness[all_girls_list[girl_index]["vaginal_tightness"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
         text dic_girl_anal_tightness[all_girls_list[girl_index]["anal_tightness"]] size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
-        if all_girls_list[girl_index]["clitoris_pierced"]:
+        if all_girls_list[girl_index]["equipment"]["clitoris"]["pierced"]:
             text "Clitoris pierced" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
         else:
             text "Clitoris not pierced" size 16 color "#000000" font "fonts/Segoe Print.ttf" xalign 1.0
@@ -1918,15 +1920,19 @@ screen slave_equipment_menu():
                                 textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                     style "slave_equipment_menu_button3"
                                     action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                    hovered SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
                                 add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
                         elif inventory[values] > 0:
                             textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                 style "slave_equipment_menu_button2"
                                 action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                hovered SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
+
                         else:
                             textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                 style "slave_equipment_menu_button"
                                 action SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]), SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
+                                hovered SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
 
                     else:
                         if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"]:
@@ -1937,6 +1943,7 @@ screen slave_equipment_menu():
                                         textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                             style "slave_equipment_menu_button3"
                                             action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", dic_girl_clothing_full[values]["name"]),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                            hovered SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
                                         add "aurabound.webp" size(15,15) xalign 1.0 yalign 0.5
                                 elif dic_girl_clothing_full[values]["name"] == "":
                                     textbutton "- Remove -" xalign 1.0:
@@ -1946,10 +1953,12 @@ screen slave_equipment_menu():
                                     textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                         style "slave_equipment_menu_button2"
                                         action SetDict(all_girls_list[girl_index]["equipment"][equipment_choice], "type", dic_girl_clothing_full[values]["name"]), SetDict(inventory, values, inventory[values] - 1), SetDict(all_girls_list[girl_index]["equipment"]["aura_bound"], values, True),SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"]),SetVariable("available_options", 0), Jump("equipment_check")
+                                        hovered SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
                                 else:
                                     textbutton dic_girl_clothing_full[values]["name"] xalign 1.0:
                                         style "slave_equipment_menu_button"
                                         action SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]), SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
+                                        hovered SetVariable("equipment_choice_image", dic_girl_clothing_full[values]["icon"]),SetVariable("equipment_choice_image_text", dic_girl_clothing_full[values]["desc"])
             if equipment_choice in ["tongue","nipples","navel","clitoris","earrings"]:          
                 if all_girls_list[girl_index]["equipment"][equipment_choice]["pierced"] == False:
                     textbutton equipment_choice + " (Not pierced)" xalign 1.0:
@@ -2580,6 +2589,32 @@ screen screen_rules():
         idle "buttons/close_button.webp" pos (1004,1)
         hover "buttons/close_button_hover.webp"
         action SetVariable("current_menu", 0),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+    hbox:
+        pos(0.475,0.01)
+        anchor (0.5,0.0)
+        spacing 0
+        button:
+            xsize 185
+            ysize 40
+            style "slave_screen_button"
+            action SetVariable("current_menu", 100),SetVariable("text_slave_conditions_index", "default"),Jump("Home")
+        button:
+            xsize 185
+            ysize 40
+            style "slave_screen_button"
+            action SetVariable("current_menu", 101),Jump("Home")
+        button:
+            xsize 185
+            ysize 40
+            style "slave_screen_button"
+            action SetVariable("current_menu", 102),Jump("Home")
+        button:
+            xsize 185
+            ysize 40
+            style "slave_screen_button"
+            action SetVariable("current_menu", 103),Jump("Home")
+    
+    
     hbox: 
         pos(0.475,0.01)
         anchor (0.5,0.0)
@@ -2596,6 +2631,10 @@ screen screen_rules():
         textbutton "Aura":
             style "slave_screen_button"
             action SetVariable("current_menu", 103),Jump("Home")   
+
+
+
+    
     hbox: 
         pos(0.525,0.005)
         anchor (0.50,0.0)
@@ -3001,6 +3040,7 @@ screen home_attributes_menu():
             if has_half:
                 add energy_image2 size(7,7) anchor (0.5,0.5)
 screen bg_home():
+    key "K_SPACE" action SetVariable("current_menu", 100), Jump("Home")
     add bgstyle xsize 1280 ysize 720
     add home_decoration xsize 1000 ysize 675 pos (0.002,0.057)
 screen msg(msg_text):

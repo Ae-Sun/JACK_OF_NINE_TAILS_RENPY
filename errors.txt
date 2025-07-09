@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/dictionary.rpy", line 1559: invalid syntax
-        21: "Your aura shine brigter agaisnt slaves that got ever beated or ever dominius dictated "\
-         ^
+File "game/home.rpy", line 332: end of line expected.
+    hide screen angelika_display()
+                                ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jul  9 03:56:33 2025
+Wed Jul  9 20:24:33 2025

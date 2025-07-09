@@ -576,8 +576,6 @@ label choose_inicial_girl:
         all_girls_list[girl_index].setdefault("skills", {})
         all_girls_list[girl_index].setdefault("traits", {})
         all_girls_list[girl_index].setdefault("lactation", False)
-        all_girls_list[girl_index].setdefault("nipples_pierced", False)
-        all_girls_list[girl_index].setdefault("clitoris_pierced", False)
         all_girls_list[girl_index].setdefault("breast_modification", 0)
         all_girls_list[girl_index].setdefault("vagina_modification", 0)
         all_girls_list[girl_index].setdefault("vaginal_tightness",0)
