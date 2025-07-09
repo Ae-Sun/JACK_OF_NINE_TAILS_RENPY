@@ -394,14 +394,47 @@ label Home:
                 all_girls_list[girl_index]["experience"]["aura"]["awareness"] = 0
                 all_girls_list[girl_index]["arousal"] = 0
             ### define maxmotivation
-            maxmotivation = max(all_girls_list[girl_index]["aura"]["fear"],all_girls_list[girl_index]["aura"]["devotion"],all_girls_list[girl_index]["aura"]["habit"],all_girls_list[girl_index]["aura"]["awareness"],all_girls_list[girl_index]["aura"]["taming"],all_girls_list[girl_index]["arousal"])
+            maxmotivation = max(all_girls_list[girl_index]["aura"]["fear"],all_girls_list[girl_index]["aura"]["devotion"],all_girls_list[girl_index]["aura"]["spoil"],all_girls_list[girl_index]["aura"]["habit"],all_girls_list[girl_index]["aura"]["awareness"],all_girls_list[girl_index]["aura"]["taming"],all_girls_list[girl_index]["arousal"])
+            slave_psy_hardness = max(all_girls_list[girl_index]["attributes"]["temperament"],all_girls_list[girl_index]["attributes"]["nature"],(5 - all_girls_list[girl_index]["attributes"]["pride"]),all_girls_list[girl_index]["attributes"]["intelligence"])
             if all_girls_list[girl_index]["psy_status"] != "broken":
                 if all_girls_list[girl_index]["psy_status"] == "lachrymose" and all_girls_list[girl_index]["aura"]["devotion"] > 0 and all_girls_list[girl_index]["mood"] >= 0:
                     all_girls_list[girl_index]["psy_status"] = "soft"
                 if all_girls_list[girl_index]["aura"]["devotion"] < 2:
                     if all_girls_list[girl_index]["attributes"]["temperament"] >= min(4, maxmotivation):
                         all_girls_list[girl_index]["psy_status"] = "hateful"
+                    if all_girls_list[girl_index]["attributes"]["nature"] >= min(4, maxmotivation):
+                        all_girls_list[girl_index]["psy_status"] = "resistant"
+                    if all_girls_list[girl_index]["attributes"]["pride"] >= min(4, maxmotivation):
+                        all_girls_list[girl_index]["psy_status"] = "arrogant"
+                else:
+                    if all_girls_list[girl_index]["attributes"]["temperament"] >= min(4, maxmotivation):
+                        all_girls_list[girl_index]["psy_status"] = "hysteric"
+                    if all_girls_list[girl_index]["attributes"]["nature"] >= min(4, maxmotivation):
+                        all_girls_list[girl_index]["psy_status"] = "docile"
+                    if all_girls_list[girl_index]["attributes"]["pride"] >= min(4, maxmotivation):
+                        all_girls_list[girl_index]["psy_status"] = "soft"
+                if all_girls_list[girl_index]["mood"] < 2 and all_girls_list[girl_index]["aura"]["despair"] > 1 or all_girls_list[girl_index]["mood"] <= -5:
+                    all_girls_list[girl_index]["psy_status"] = "depresive"
+                    if all_girls_list[girl_index]["attributes"]["empathy"] > 3 and if all_girls_list[girl_index]["mood"] < 2:
+                        all_girls_list[girl_index]["psy_status"] = "lachrymose"
+                if all_girls_list[girl_index]["obedience"] > slave_psy_hardness/2:
+                    if all_girls_list[girl_index]["aura"]["spoil"] > max(1, all_girls_list[girl_index]["aura"]["fear"], (all_girls_list[girl_index]["aura"]["devotion"]+1)/2):
+                        all_girls_list[girl_index]["psy_status"] = "hysteric"
+                elif all_girls_list[girl_index]["mood"] >= 0:
+                    if maxmotivation == all_girls_list[girl_index]["aura"]["fear"]:
+                        all_girls_list[girl_index]["psy_status"] = "docile"
+                    if maxmotivation == all_girls_list[girl_index]["aura"]["taming"] or all_girls_list[girl_index]["aura"]["devotion"] > 1:
+                        all_girls_list[girl_index]["psy_status"] = "obedient"
+                    if maxmotivation == all_girls_list[girl_index]["aura"]["devotion"] or all_girls_list[girl_index]["aura"]["devotion"] > 3:
+                        all_girls_list[girl_index]["psy_status"] = "servile"
+                    if all_girls_list[girl_index]["aura"]["spoil"] >= (all_girls_list[girl_index]["aura"]["devotion"]+1)/2:
+                        all_girls_list[girl_index]["psy_status"] = "docile"
+                    if maxmotivation == all_girls_list[girl_index]["aura"]["arousal"] and all_girls_list[girl_index]["aura"]["devotion"] > 0:
+                        all_girls_list[girl_index]["psy_status"] = "horny"
 
+
+                
+                    
 
             
 
