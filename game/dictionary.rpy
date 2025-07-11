@@ -1508,6 +1508,53 @@ define dic_combat_full = {
     "sleep_ring": "Sleep Ring",
     "pain_ring": "Pain Ring"
 }
+define dic_combat_full_inv = {
+    "Without armour": "Without armour",
+    "Aramid Suit": "Aramid Suit",
+    "Leather Armor": "Leather Armor",
+    "Adaptive Suit": "Adaptive Suit",
+    "Phantom Aegis Suit": "Phantom Aegis Suit",
+    "Elven Chainmail": "Elven Chainmail",
+    "Combined Armor": "Combined Armor",
+    "Adaptive Armor": "Adaptive armor",
+    "Semi-Perfect Armor": "Semi-perfect armor",
+    "Iron Armor": "Iron Armor",
+    "Obsidian Bulwark": "Obsidian Bulwark",
+    "Gothic Plate": "Gothic plate",
+    "Mithril Mail": "Mithril Mail",
+
+    "- Remove -": "remove",
+    "Fist": "Fist",
+    "Baton": "Baton",
+    "Rapier": "Rapier",
+    "Koncerz": "Koncerz",
+    "Whip": "Whip",
+    "Epee": "Epee",
+    "Gladius": "Gladius",
+    "Katana": "katana",
+    "Blowgun Darts": "Blowgun Darts",
+    "Shuriken": "shuriken",
+    "Buckler": "Buckler",
+    "Adarga": "Adarga",
+    "Huge Mace": "Huge mace",
+    "Baseball Bat": "Baseball Bat",
+    "Gattle Prod": "Gattle Prod",
+    "Naginata": "Naginata",
+
+    "Magic Amulet": "magic_protection",
+    "Physical Amulet": "physical_protection",
+    "Stamina Amulet": "stamina_restore",
+    "Penetration Amulet": "penetration",
+    "Lucky Amulet": "Lucky",
+    "Speed Amulet": "speed",
+
+    "Bleeding Ring": "bleeding_ring",
+    "Stun Ring": "stun_ring",
+    "Confusion Ring": "confusion_ring",
+    "Injured Ring": "injured_ring",
+    "Sleep Ring": "sleep_ring",
+    "Pain Ring": "pain_ring"
+}
 define spells_books_description = {
     "Auspex": {
         "cast": "You call the Flame of Creation sleeping in your heart and send its light to your brow chakra. Immediately you begin to see things as they really are, as if scales fell from your eyes. Now you can easily read any unprotected aura.",

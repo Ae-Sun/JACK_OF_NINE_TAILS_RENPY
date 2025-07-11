@@ -1841,20 +1841,30 @@ screen slave_equipment_menu():
                                 style "slave_equipment_menu_button"
                                 action NullAction()
                     elif equipment_choice == "weapon":
-                        if all_girls_list[girl_index]["equipment"]["weapon2"] != dic_combat_full[inventory_type[equipment_choice][values]] or all_girls_list[girl_index]["equipment"]["weapon2"] == "Fist":
-                            if values == 0:
-                                textbutton "- Remove -" xalign 1.0: 
-                                    style "slave_equipment_menu_button2"
-                                    action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice,"Fist"),SetDict(inventory, inventory_track_weapon, inventory[inventory_track_weapon]+1),SetVariable("inventory_track_weapon", ""),Jump("Home")
-                            elif inventory[inventory_type[equipment_choice][values]] > 0:
-                                textbutton dic_combat_full[inventory_type[equipment_choice][values]] xalign 1.0:
-                                    style "slave_equipment_menu_button2"
-                                    action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_combat_full[inventory_type[equipment_choice][values]]),SetDict(inventory, inventory_type[equipment_choice][values], inventory[inventory_type[equipment_choice][values]]-1),SetVariable("inventory_track_weapon", inventory_type[equipment_choice][values]),SetDict(inventory, inventory_track_weapon, inventory[inventory_track_weapon]+1), Jump("Home")
+                        python:
+                            if all_girls_list[girl_index]["equipment"]["weapon"] != "Fist":
+                                inventory_track_weapon = dic_combat_full_inv[all_girls_list[girl_index]["equipment"]["weapon"]]
                             else:
-                                textbutton dic_combat_full[inventory_type[equipment_choice][values]] xalign 1.0:
-                                    style "slave_equipment_menu_button"
-                                    action NullAction()
+                                inventory_track_weapon = ""
+                        if all_girls_list[girl_index]["equipment"]["weapon2"] != dic_combat_full[inventory_type[equipment_choice][values]] or all_girls_list[girl_index]["equipment"]["weapon2"] == "Fist":
+                                if values == 0:
+                                    textbutton "- Remove -" xalign 1.0: 
+                                        style "slave_equipment_menu_button2"
+                                        action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice,"Fist"),SetDict(inventory, inventory_track_weapon, inventory[inventory_track_weapon]+1),SetVariable("inventory_track_weapon", ""),Jump("Home")
+                                elif inventory[inventory_type[equipment_choice][values]] > 0:
+                                    textbutton dic_combat_full[inventory_type[equipment_choice][values]] xalign 1.0:
+                                        style "slave_equipment_menu_button2"
+                                        action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_combat_full[inventory_type[equipment_choice][values]]),SetDict(inventory, inventory_type[equipment_choice][values], inventory[inventory_type[equipment_choice][values]]-1),SetVariable("inventory_track_weapon", inventory_type[equipment_choice][values]),SetDict(inventory, inventory_track_weapon, inventory[inventory_track_weapon]+1), Jump("Home")
+                                else:
+                                    textbutton dic_combat_full[inventory_type[equipment_choice][values]] xalign 1.0:
+                                        style "slave_equipment_menu_button"
+                                        action NullAction()
                     elif equipment_choice == "weapon2":
+                        python:
+                            if all_girls_list[girl_index]["equipment"]["weapon2"] != "Fist":
+                                inventory_track_weapon2 = dic_combat_full_inv[all_girls_list[girl_index]["equipment"]["weapon2"]]
+                            else:
+                                inventory_track_weapon2 = ""
                         if all_girls_list[girl_index]["equipment"]["weapon"] != dic_combat_full[inventory_type[equipment_choice][values]] or all_girls_list[girl_index]["equipment"]["weapon"] == "Fist":
                             if values == 0:
                                 textbutton "- Remove -" xalign 1.0: 
@@ -1866,8 +1876,8 @@ screen slave_equipment_menu():
                                     action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice, dic_combat_full[inventory_type[equipment_choice][values]]),SetDict(inventory, inventory_type[equipment_choice][values], inventory[inventory_type[equipment_choice][values]]-1),SetVariable("inventory_track_weapon2", inventory_type[equipment_choice][values]),SetDict(inventory, inventory_track_weapon2, inventory[inventory_track_weapon2]+1), Jump("Home")
                             else:
                                 textbutton dic_combat_full[inventory_type[equipment_choice][values]] xalign 1.0:
-                                    style "slave_equipment_menu_button"
-                                    action NullAction()
+                                        style "slave_equipment_menu_button"
+                                        action NullAction()
 
 
        

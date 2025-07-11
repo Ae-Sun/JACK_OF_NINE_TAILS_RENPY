@@ -19,11 +19,17 @@ While running game code:
     if all_girls_list[girl_index]["equipment"][equipment_choice] != dic_combat_full[inventory_type[equipment_choice][values]]:
   File "game/home.rpy", line 1816, in execute
     if equipment_choice == "armour":
-  File "game/home.rpy", line 1830, in execute
-    if values == 0 and all_girls_list[girl_index]["equipment"][equipment_choice] != "":
-  File "game/home.rpy", line 1834, in <module>
-    elif inventory[inventory_type[equipment_choice][values]] > 0:
-TypeError: '>' not supported between instances of 'str' and 'int'
+  File "game/home.rpy", line 1868, in execute
+    if all_girls_list[girl_index]["equipment"]["weapon"] != dic_combat_full[inventory_type[equipment_choice][values]] or all_girls_list[girl_index]["equipment"]["weapon"] == "Fist":
+  File "game/home.rpy", line 1869, in execute
+    if values == 0:
+  File "game/home.rpy", line 1870, in execute
+    textbutton "- Remove -" xalign 1.0:
+  File "game/home.rpy", line 1870, in keywords
+    textbutton "- Remove -" xalign 1.0:
+  File "game/home.rpy", line 1872, in <module>
+    action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice,"Fist"),SetDict(inventory, inventory_track_weapon2, inventory[inventory_track_weapon2]+1),SetVariable("inventory_track_weapon2", ""),Jump("Home")
+KeyError: 'Shuriken'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -74,13 +80,19 @@ Full traceback:
     if all_girls_list[girl_index]["equipment"][equipment_choice] != dic_combat_full[inventory_type[equipment_choice][values]]:
   File "game/home.rpy", line 1816, in execute
     if equipment_choice == "armour":
-  File "game/home.rpy", line 1830, in execute
-    if values == 0 and all_girls_list[girl_index]["equipment"][equipment_choice] != "":
-  File "game/home.rpy", line 1834, in <module>
-    elif inventory[inventory_type[equipment_choice][values]] > 0:
-TypeError: '>' not supported between instances of 'str' and 'int'
+  File "game/home.rpy", line 1868, in execute
+    if all_girls_list[girl_index]["equipment"]["weapon"] != dic_combat_full[inventory_type[equipment_choice][values]] or all_girls_list[girl_index]["equipment"]["weapon"] == "Fist":
+  File "game/home.rpy", line 1869, in execute
+    if values == 0:
+  File "game/home.rpy", line 1870, in execute
+    textbutton "- Remove -" xalign 1.0:
+  File "game/home.rpy", line 1870, in keywords
+    textbutton "- Remove -" xalign 1.0:
+  File "game/home.rpy", line 1872, in <module>
+    action SetDict(all_girls_list[girl_index]["equipment"], equipment_choice,"Fist"),SetDict(inventory, inventory_track_weapon2, inventory[inventory_track_weapon2]+1),SetVariable("inventory_track_weapon2", ""),Jump("Home")
+KeyError: 'Shuriken'
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 JONT Port by Rec3ks ver. 0.0.16
-Fri Jul 11 05:26:34 2025
+Sat Jul 12 00:22:26 2025
