@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/home.rpy", line 332: end of line expected.
-    hide screen angelika_display()
-                                ^
+File "game/home.rpy", line 1830: reached end of line when expecting ':'.
+    if values == 0 
+                   ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jul  9 20:24:33 2025
+Fri Jul 11 05:27:29 2025
